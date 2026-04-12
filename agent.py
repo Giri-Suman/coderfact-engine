@@ -1,7 +1,7 @@
 import os, sys, json, base64, requests, feedparser
 from datetime import datetime, timezone
 
-MEDIUM_TOKEN  = os.getenv("MEDIUM_TOKEN")
+DEVTO_KEY     = os.getenv("DEVTO_API_KEY")
 TELEGRAM_BOT  = os.getenv("TELEGRAM_BOT_TOKEN")
 TELEGRAM_CHAT = os.getenv("TELEGRAM_CHAT_ID")
 GEMINI_KEY    = os.getenv("GEMINI_API_KEY")
@@ -178,8 +178,8 @@ STRUCTURE (exact H2 headings, respect word budgets — this structure maximises 
 ## Try It Yourself
 ({cta} words — clear next steps. Link to coderfact.com for more tools. End with: "If this saved you time, tap the clap button — it genuinely helps me keep building free tools.")
 
-TAGS LINE (for Medium tag strategy — append at very end):
-TAGS: [tag1, tag2, tag3, tag4, tag5] — choose from HIGH-RATIO tags: "Software Engineering", "Python", "Programming", "Web Development", "Artificial Intelligence", "Productivity", "JavaScript", "Data Science", "Tutorial", "Automation"
+TAGS LINE (for Dev.to tag strategy — append at very end):
+TAGS: [tag1, tag2, tag3, tag4] — choose exactly 4, all lowercase, no spaces or hyphens (Dev.to rules). Pick from: "python", "programming", "webdev", "javascript", "ai", "tutorial", "automation", "productivity", "devops", "beginners"
 
 META: [one SEO sentence describing the article]
 
@@ -198,39 +198,57 @@ Output strictly in Markdown. No preamble outside the article.
             clean.append(line)
     body = "\n".join(clean).strip()
 
-    # Parse tags from the TAGS line, fallback to a separate AI call, then hardcoded
+    # Parse tags — Dev.to rules: max 4, lowercase, no spaces/hyphens/special chars
+    def sanitize_tag(t):
+        return t.strip().strip('"').strip("'").lower().replace("-", "").replace(" ", "")
+
     try:
-        raw_tags = [t.strip().strip('"').strip("'") for t in tags_line.strip("[]").split(",")]
-        tags = [t for t in raw_tags if t][:5]
-        if len(tags) < 3:
+        raw_tags = [sanitize_tag(t) for t in tags_line.strip("[]").split(",")]
+        tags = [t for t in raw_tags if t][:4]
+        if len(tags) < 2:
             raise ValueError
     except Exception:
         try:
-            tags = json.loads(ask_ai(
-                f'Return ONLY a JSON array of 5 high-ratio Medium tags for: "{title}". '
-                'Choose from: "Software Engineering", "Python", "Programming", "Web Development", '
-                '"Artificial Intelligence", "Productivity", "JavaScript", "Data Science", "Tutorial", "Automation". '
+            raw = ask_ai(
+                f'Return ONLY a JSON array of 4 Dev.to tags for: "{title}". '
+                'Rules: lowercase, no spaces, no hyphens, max 4 items. '
+                'Choose from: python, programming, webdev, javascript, ai, tutorial, automation, productivity, devops, beginners. '
                 'No explanation.'
-            ).strip("```json").strip("```"))
+            ).strip("```json").strip("```")
+            tags = [sanitize_tag(t) for t in json.loads(raw)][:4]
         except Exception:
-            tags = ["Software Engineering", "Python", "Programming", "Automation", "Productivity"]
+            tags = ["python", "programming", "automation", "tutorial"]
 
     thumb = "-".join(title.lower().split()[:6]) + "-dark-neon-code"
     img   = f"https://image.pollinations.ai/prompt/{thumb}?width=1280&height=720&nologo=true"
 
     content = f"![{title}]({img})\n\n{body}\n\n---\n*More free tools at [CoderFact](https://coderfact.com). AI-assisted draft, reviewed and edited by me.*"
 
-    hdrs = {"Authorization": f"Bearer {MEDIUM_TOKEN}", "Content-Type": "application/json"}
-    uid  = requests.get("https://api.medium.com/v1/me", headers=hdrs).json()["data"]["id"]
-    res  = requests.post(f"https://api.medium.com/v1/users/{uid}/posts", headers=hdrs, json={
-        "title": title, "contentFormat": "markdown", "content": content,
-        "tags": tags, "publishStatus": "draft"
-    })
+    res = requests.post(
+        "https://dev.to/api/articles",
+        headers={"api-key": DEVTO_KEY, "Content-Type": "application/json"},
+        json={"article": {
+            "title": title,
+            "body_markdown": content,
+            "published": False,   # saves as draft
+            "tags": tags,
+            "canonical_url": "https://coderfact.com",
+        }},
+        timeout=15,
+    )
 
     if res.status_code == 201:
-        send_tg(f"✅ *Draft ready!*\n📝 _{title}_\n📏 ~{target_words} words _{complexity}_\n🏷 {', '.join(tags)}\n📌 {meta}\n\nHead to Medium Drafts → do your 5-min edit → publish!")
+        draft_url = res.json().get("url", "https://dev.to/dashboard")
+        send_tg(
+            f"✅ *Draft ready on Dev.to!*\n"
+            f"📝 _{title}_\n"
+            f"📏 ~{target_words} words _{complexity}_\n"
+            f"🏷 {', '.join(tags)}\n"
+            f"📌 {meta}\n\n"
+            f"👉 [Open draft]({draft_url}) → 5-min edit → publish!"
+        )
     else:
-        send_tg(f"❌ Medium error {res.status_code}. Check GitHub Actions logs.")
+        send_tg(f"❌ Dev.to error {res.status_code}: {res.text[:200]}. Check GitHub Actions logs.")
 
 # ── Entry point ───────────────────────────────────────────────────────────────
 if __name__ == "__main__":
