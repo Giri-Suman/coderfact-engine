@@ -413,13 +413,16 @@ STRUCTURE — use these exact H2 headings:
 
 WRITING RULES:
 1. Open with the hook scene — no title, no "Introduction" heading. Just jump in mid-story.
-2. Every H2 section must have at least one of: a personal anecdote, a specific number, or a code snippet
-3. Include ONE clean, working, well-commented code block with the language tag. Make it genuinely useful — not hello-world level.
-4. After the code block, explain it like you're talking to a friend: "What this does is..." — not "The above code demonstrates..."
-5. The "results" section MUST mention the specific metric: {outline.get('real_metric')}
+2. Every H2 section MUST have substantive content — at least one personal anecdote, specific number, or code snippet.
+3. Include MULTIPLE code blocks throughout — minimum 2, ideally 3:
+   - A short "before" snippet showing the painful manual way (or a broken attempt)
+   - The main working solution — clean, well-commented, genuinely useful. Not hello-world level.
+   - A short "after" or "bonus tweak" snippet showing an improvement or variation
+4. After each code block, explain it like you're talking to a friend: "What this does is..." — not "The above code demonstrates..."
+5. The results section MUST mention the specific metric: {outline.get('real_metric')}
 6. Mention the surprising finding naturally: {outline.get('surprise_finding')}
-7. End with a 2-3 sentence human close. Something like: "If you build this, drop a comment — I'm genuinely curious what you use it for. And if it saves you time, the clap button is right there. It costs you nothing and it tells me to keep building stuff like this."
-8. Weave in a natural link to coderfact.com at least once (e.g. "I wrote about the full setup over at CoderFact if you want the extended version")
+7. End with a 2-3 sentence human close. Like: "If you build this, drop a comment — I'm genuinely curious what you use it for. And if it saves you time, the clap button is right there."
+8. Weave in a natural link to coderfact.com at least once
 9. HARD LIMIT: {target_words} words. Cut ruthlessly. No fluff.
 
 Append these two lines at the very end (outside the article body):
@@ -462,10 +465,161 @@ Output in Markdown. Start directly with the hook — no preamble, no "Here is yo
         except Exception:
             tags = ["python", "programming", "automation", "tutorial"]
 
-    thumb = "-".join(title.lower().split()[:6]) + "-dark-neon-code"
-    img   = f"https://image.pollinations.ai/prompt/{thumb}?width=1280&height=720&nologo=true"
+    # ── Dynamic Image + Code System ──────────────────────────────────────────
+    import re as _re
 
-    content = f"![{title}]({img})\n\n{body}\n\n---\n*More free tools at [CoderFact](https://coderfact.com). AI-assisted draft, reviewed and edited by me.*"
+    def slugify(text, words=12):
+        text = _re.sub(r'[^\w\s]', '', str(text).lower())
+        return "-".join(text.split()[:words])
+
+    def pollinations(prompt, w=1280, h=720, seed=None):
+        seed_part = f"&seed={seed}" if seed else ""
+        return (
+            f"https://image.pollinations.ai/prompt/{slugify(prompt)}?"
+            f"width={w}&height={h}&nologo=true&enhance=true{seed_part}"
+        )
+
+    # ── Pass 3: AI analyzes the article and plans ALL visual insertions ──────
+    visual_plan_raw = ask_ai(f"""
+You are a technical blog editor reviewing this article draft.
+Your job: decide exactly WHERE to place images and WHAT each image should show,
+AND identify any sections that need an extra code snippet added.
+
+ARTICLE TITLE: "{title}"
+ARTICLE BODY:
+{body}
+
+Analyze the article carefully. Then return a JSON array of insertion objects.
+Each object describes ONE thing to insert at a specific location.
+
+Types of insertions:
+- "image": a Pollinations image to generate
+- "code": an additional code snippet to insert
+
+For IMAGES decide:
+- After which line? (Give the exact heading text or first 6 words of the paragraph before it)
+- What should it visually show? (Be specific — mention the tool, concept, outcome)
+- What visual style fits? Choose one: "dark-terminal-code", "diagram-flowchart", "frustrated-dev-at-screen", "benchmark-graph-results", "architecture-diagram", "concept-illustration", "before-after-comparison", "tool-screenshot-ui"
+- Dimensions: "hero" (1280x720), "wide" (900x500), "inline" (700x380)
+
+For extra CODE SNIPPETS decide:
+- After which line? (Give the exact heading text or first 6 words of paragraph)  
+- What should the snippet show? (language + exact purpose — e.g. "python: the naive for-loop that caused the slowdown")
+- Label: short human-readable caption
+
+Rules:
+- Hero image MUST be first (after nothing — top of article)
+- Minimum 3 images total, maximum 6
+- Add an extra code snippet only if a section explains a concept but has no code yet
+- Every image prompt must mention the specific tool/technology from the article — not generic
+- Space images evenly — don't cluster 3 together
+
+Return ONLY a valid JSON array. No explanation. No markdown fences. Example format:
+[
+  {{"type":"image","after":"","prompt":"python automation script dark terminal neon glow professional","style":"dark-terminal-code","size":"hero","alt":"Setting up the automation"}},
+  {{"type":"image","after":"## Why This Problem","prompt":"developer frustrated manual csv export excel python","style":"frustrated-dev-at-screen","size":"wide","alt":"The painful manual process"}},
+  {{"type":"code","after":"## What I Tried First","language":"python","content":"# The slow way - what I was doing before\\nfor row in rows:\\n    process(row)  # This blocks everything","caption":"The original bottleneck"}}
+]
+""")
+
+    # Parse the visual plan
+    try:
+        vplan_clean = visual_plan_raw.strip().strip("```json").strip("```").strip()
+        visual_plan = json.loads(vplan_clean)
+        print(f"[images] AI planned {len(visual_plan)} insertions")
+    except Exception as e:
+        print(f"[images] Visual plan parse failed: {e} — using minimal fallback")
+        visual_plan = [
+            {"type": "image", "after": "", "prompt": f"{title} dark terminal developer workspace neon", "style": "dark-terminal-code", "size": "hero", "alt": title},
+            {"type": "image", "after": headings[1] if len(headings) > 1 else "## ", "prompt": f"{outline.get('solution_name','python')} code result terminal output", "style": "benchmark-graph-results", "size": "wide", "alt": "Results"},
+        ]
+
+    # Map style → visual keywords
+    STYLE_PROMPTS = {
+        "dark-terminal-code":       "dark background terminal green text syntax highlighting professional developer",
+        "diagram-flowchart":        "clean whiteboard diagram flowchart arrows nodes minimal vector art",
+        "frustrated-dev-at-screen": "frustrated developer staring at screen messy desk dark moody cinematic",
+        "benchmark-graph-results":  "dashboard benchmark graph before after comparison results metrics success",
+        "architecture-diagram":     "software architecture diagram system design boxes arrows clean minimal",
+        "concept-illustration":     "concept illustration flat design colorful developer workflow",
+        "before-after-comparison":  "split screen before after comparison terminal output dark professional",
+        "tool-screenshot-ui":       "modern dark UI tool screenshot dashboard clean professional",
+    }
+
+    SIZE_MAP = {
+        "hero":   (1280, 720),
+        "wide":   (900,  500),
+        "inline": (700,  380),
+    }
+
+    # ── Inject visuals into body ──────────────────────────────────────────────
+    def build_enriched_body(body: str, visual_plan: list) -> str:
+        lines  = body.splitlines()
+        output = []
+        used_seeds = set()
+
+        def next_seed(base):
+            s = base
+            while s in used_seeds:
+                s += 1
+            used_seeds.add(s)
+            return s
+
+        # Build lookup: "after" text → list of insertions
+        insertions = {}
+        for i, item in enumerate(visual_plan):
+            key = item.get("after", "").strip()
+            insertions.setdefault(key, []).append((i, item))
+
+        # Hero image goes at the very top (after="" key)
+        top_items = insertions.pop("", [])
+        for _, item in top_items:
+            if item["type"] == "image":
+                style_kw = STYLE_PROMPTS.get(item.get("style", "dark-terminal-code"), "")
+                full_prompt = f"{item['prompt']} {style_kw}"
+                w, h = SIZE_MAP.get(item.get("size", "wide"), (900, 500))
+                seed = next_seed(42)
+                url  = pollinations(full_prompt, w, h, seed)
+                output.append(f"![{item.get('alt', title)}]({url})\n")
+
+        for line in lines:
+            output.append(line)
+
+            # Check if this line matches any insertion trigger
+            line_stripped = line.strip()
+            for trigger, items in list(insertions.items()):
+                if not trigger:
+                    continue
+                # Match on heading or first ~6 words of paragraph
+                if (line_stripped.startswith("## ") and trigger in line_stripped) or \
+                   (trigger and line_stripped.startswith(trigger[:40])):
+                    for _, item in items:
+                        if item["type"] == "image":
+                            style_kw    = STYLE_PROMPTS.get(item.get("style", "dark-terminal-code"), "")
+                            full_prompt = f"{item['prompt']} {style_kw}"
+                            w, h = SIZE_MAP.get(item.get("size", "wide"), (900, 500))
+                            seed = next_seed(len(trigger) + 10)
+                            url  = pollinations(full_prompt, w, h, seed)
+                            output.append(f"\n![{item.get('alt', '')}]({url})\n")
+                        elif item["type"] == "code":
+                            lang    = item.get("language", "python")
+                            caption = item.get("caption", "")
+                            code    = item.get("content", "# example")
+                            output.append(f"\n*{caption}*\n```{lang}\n{code}\n```\n")
+                    del insertions[trigger]
+
+        return "\n".join(output)
+
+    enriched_body = build_enriched_body(body, visual_plan)
+
+    # ── Assemble final content ────────────────────────────────────────────────
+    content = (
+        f"![{title}]({hero_img})\n\n"
+        f"{enriched_body}\n\n"
+        f"---\n"
+        f"*More free tools and tutorials at [CoderFact](https://coderfact.com). "
+        f"AI-assisted draft, reviewed and edited by me.*"
+    )
 
     print(f"[draft] title='{title}' tags={tags} words={target_words}")
     print(f"[draft] DEVTO_KEY set: {bool(DEVTO_KEY)}")
