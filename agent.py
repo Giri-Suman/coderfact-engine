@@ -58,8 +58,12 @@ def send_tg(msg):
                   json={"chat_id": TELEGRAM_CHAT, "text": msg, "parse_mode": "Markdown"})
 
 def get_reply():
-    """Returns today's first unprocessed reply (0-3), or None."""
-    state = load_state()
+    """
+    Returns a list of chosen topic numbers (e.g. ['1'], ['1','3'], ['1','2','3']).
+    Accepts inputs like: '1', '1 2', '1 2 3', '12', '123', '0' (skip).
+    Returns None if no valid reply found today.
+    """
+    state   = load_state()
     last_id = state.get("last_update_id", 0)
     print(f"[get_reply] last_update_id={last_id}")
 
@@ -77,10 +81,25 @@ def get_reply():
         date    = datetime.fromtimestamp(msg.get("date", 0), tz=timezone.utc).date()
         print(f"[get_reply] update_id={u.get('update_id')} chat={chat_id} text='{text}' date={date} today={today}")
 
-        if chat_id == str(TELEGRAM_CHAT) and date == today and text in ("0", "1", "2", "3"):
-            print(f"[get_reply] ✅ Valid reply: '{text}'")
+        if chat_id != str(TELEGRAM_CHAT) or date != today:
+            continue
+
+        # Parse: "0", "1", "2", "3", "1 2", "1 3", "2 3", "1 2 3", "12", "123" etc.
+        digits = [c for c in text.replace(" ", "") if c in "0123"]
+        if not digits or len(digits) != len(text.replace(" ", "")):
+            continue  # contains invalid characters
+
+        choices = list(dict.fromkeys(digits))  # deduplicate, preserve order
+
+        if "0" in choices:
             save_state({**state, "last_update_id": u["update_id"]})
-            return text
+            return ["0"]
+
+        valid = [c for c in choices if c in ("1", "2", "3")]
+        if valid:
+            print(f"[get_reply] ✅ Valid choices: {valid}")
+            save_state({**state, "last_update_id": u["update_id"]})
+            return valid
 
     print("[get_reply] No valid reply found.")
     return None
@@ -279,21 +298,19 @@ Reply ONLY in this format — no explanations, no quotes:
     send_tg(
         f"🔥 *CoderFact — Daily Brief* | _{today}_\n\n"
         + "\n".join(f"{i+1}. {t}" for i, t in enumerate(titles))
-        + "\n\nReply *1*, *2*, *3* to draft • *0* to skip"
+        + "\n\n"
+        "Reply with your choice:\n"
+        "• `1` `2` or `3` — draft one article\n"
+        "• `1 2` or `1 3` or `2 3` — draft two\n"
+        "• `1 2 3` — draft all three\n"
+        "• `0` — skip today"
     )
 
 # ── PHASE 2: Drafter ─────────────────────────────────────────────────────────
-def draft():
-    choice = get_reply()
-    if choice is None: return print("No reply yet.")
-    if choice == "0":  return send_tg("👌 Skipping today. See you tomorrow!")
-
-    topics = load_state().get("topics", [])
-    print(f"[draft] choice={choice} topics={topics}")
-    if not topics: return send_tg("⚠️ No topics found. Run the morning researcher first.")
-
-    title = topics[int(choice) - 1]
-    send_tg(f"⏳ Drafting *\"{title}\"*... ~60 seconds")
+def draft_single(title: str, idx: int, total: int):
+    """Generate and publish one article. idx/total used for progress messages."""
+    progress = f"({idx}/{total}) " if total > 1 else ""
+    send_tg(f"⏳ {progress}Drafting *\"{title}\"*... ~60 seconds")
 
     # Dynamically decide article length based on topic complexity
     complexity_raw = ask_ai(f"""
@@ -643,18 +660,54 @@ Return ONLY a valid JSON array. No explanation. No markdown fences. Example form
 
     if res.status_code == 201:
         draft_url = res.json().get("url", "https://dev.to/dashboard")
+        progress  = f"({idx}/{total}) " if total > 1 else ""
         send_tg(
-            f"✅ *Draft ready on Dev.to!*\n\n"
+            f"✅ {progress}*Draft ready!*\n\n"
             f"📝 _{title}_\n"
             f"📏 ~{target_words} words _{complexity}_\n"
-            f"🎯 Angle: _{outline.get('hook_scene', '')[:80]}..._\n"
-            f"📊 Metric: _{outline.get('real_metric', '')}_\n"
+            f"🎯 _{outline.get('hook_scene', '')[:80]}..._\n"
+            f"📊 _{outline.get('real_metric', '')}_\n"
             f"🏷 {', '.join(tags)}\n"
             f"📌 {meta}\n\n"
-            f"👉 [Open draft]({draft_url}) → review → publish!"
+            f"👉 [Open draft]({draft_url})"
         )
     else:
-        send_tg(f"❌ Dev.to error {res.status_code}: {res.text[:300]}\n\nCheck GitHub Actions logs for full details.")
+        send_tg(f"❌ Dev.to error {res.status_code}: {res.text[:300]}\n\nCheck GitHub Actions logs.")
+
+
+def draft():
+    """Orchestrator: reads reply, loops over chosen topics."""
+    choices = get_reply()
+    if choices is None:
+        return print("No reply yet.")
+    if choices == ["0"]:
+        return send_tg("👌 Skipping today. See you tomorrow!")
+
+    topics = load_state().get("topics", [])
+    print(f"[draft] choices={choices} topics={topics}")
+    if not topics:
+        return send_tg("⚠️ No topics found. Run the morning researcher first.")
+
+    # Validate choices against available topics
+    valid = [c for c in choices if int(c) <= len(topics)]
+    if not valid:
+        return send_tg("⚠️ Invalid choice. Topics 1–3 only.")
+
+    total = len(valid)
+    if total > 1:
+        titles_list = "\n".join(f"{c}. {topics[int(c)-1]}" for c in valid)
+        send_tg(f"📋 Drafting *{total} articles*:\n{titles_list}\n\nThis will take ~{total * 60} seconds.")
+
+    for idx, choice in enumerate(valid, 1):
+        title = topics[int(choice) - 1]
+        try:
+            draft_single(title, idx, total)
+        except Exception as e:
+            send_tg(f"❌ Article {idx}/{total} failed: {str(e)[:200]}\nMoving to next...")
+            print(f"[draft] draft_single failed for '{title}': {e}")
+
+    if total > 1:
+        send_tg(f"🎉 All {total} drafts done! Check your Dev.to dashboard.")
 
 # ── Entry point ───────────────────────────────────────────────────────────────
 if __name__ == "__main__":
