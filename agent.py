@@ -529,8 +529,9 @@ Return ONLY a valid JSON array. No explanation. No markdown fences. Example form
         print(f"[images] AI planned {len(visual_plan)} insertions")
     except Exception as e:
         print(f"[images] Visual plan parse failed: {e} — using minimal fallback")
+        hero_prompt_fb = f"{title} dark terminal developer workspace cinematic neon glow"
         visual_plan = [
-            {"type": "image", "after": "", "prompt": f"{title} dark terminal developer workspace neon", "style": "dark-terminal-code", "size": "hero", "alt": title},
+            {"type": "image", "after": "", "prompt": hero_prompt_fb, "style": "dark-terminal-code", "size": "hero", "alt": title},
             {"type": "image", "after": headings[1] if len(headings) > 1 else "## ", "prompt": f"{outline.get('solution_name','python')} code result terminal output", "style": "benchmark-graph-results", "size": "wide", "alt": "Results"},
         ]
 
@@ -613,8 +614,9 @@ Return ONLY a valid JSON array. No explanation. No markdown fences. Example form
     enriched_body = build_enriched_body(body, visual_plan)
 
     # ── Assemble final content ────────────────────────────────────────────────
+    # Hero image is already prepended inside build_enriched_body (it handles after="" items)
+    # so just wrap with footer
     content = (
-        f"![{title}]({hero_img})\n\n"
         f"{enriched_body}\n\n"
         f"---\n"
         f"*More free tools and tutorials at [CoderFact](https://coderfact.com). "
