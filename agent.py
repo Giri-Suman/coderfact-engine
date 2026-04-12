@@ -60,16 +60,28 @@ def get_reply():
     """Returns today's first unprocessed reply (0-3), or None."""
     state = load_state()
     last_id = state.get("last_update_id", 0)
+    print(f"[get_reply] last_update_id={last_id}")
+
     res = requests.get(f"https://api.telegram.org/bot{TELEGRAM_BOT}/getUpdates",
                        params={"offset": last_id + 1, "limit": 20}, timeout=10).json()
+
+    updates = res.get("result", [])
+    print(f"[get_reply] {len(updates)} new updates found")
+
     today = datetime.now(timezone.utc).date()
-    for u in reversed(res.get("result", [])):
-        msg  = u.get("message", {})
-        text = msg.get("text", "").strip()
-        date = datetime.fromtimestamp(msg.get("date", 0), tz=timezone.utc).date()
-        if str(msg.get("chat", {}).get("id")) == str(TELEGRAM_CHAT) and date == today and text in "0123":
+    for u in reversed(updates):
+        msg     = u.get("message", {})
+        text    = msg.get("text", "").strip()
+        chat_id = str(msg.get("chat", {}).get("id", ""))
+        date    = datetime.fromtimestamp(msg.get("date", 0), tz=timezone.utc).date()
+        print(f"[get_reply] update_id={u.get('update_id')} chat={chat_id} text='{text}' date={date} today={today}")
+
+        if chat_id == str(TELEGRAM_CHAT) and date == today and text in ("0", "1", "2", "3"):
+            print(f"[get_reply] ✅ Valid reply: '{text}'")
             save_state({**state, "last_update_id": u["update_id"]})
             return text
+
+    print("[get_reply] No valid reply found.")
     return None
 
 # ── PHASE 1: Morning Researcher ───────────────────────────────────────────────
@@ -123,6 +135,7 @@ def draft():
     if choice == "0":  return send_tg("👌 Skipping today. See you tomorrow!")
 
     topics = load_state().get("topics", [])
+    print(f"[draft] choice={choice} topics={topics}")
     if not topics: return send_tg("⚠️ No topics found. Run the morning researcher first.")
 
     title = topics[int(choice) - 1]
@@ -234,18 +247,23 @@ Output strictly in Markdown. No preamble outside the article.
 
     content = f"![{title}]({img})\n\n{body}\n\n---\n*More free tools at [CoderFact](https://coderfact.com). AI-assisted draft, reviewed and edited by me.*"
 
+    print(f"[draft] title='{title}' tags={tags} words={target_words}")
+    print(f"[draft] DEVTO_KEY set: {bool(DEVTO_KEY)}")
+
     res = requests.post(
         "https://dev.to/api/articles",
         headers={"api-key": DEVTO_KEY, "Content-Type": "application/json"},
         json={"article": {
             "title": title,
             "body_markdown": content,
-            "published": False,   # saves as draft
+            "published": False,
             "tags": tags,
             "canonical_url": "https://coderfact.com",
         }},
         timeout=15,
     )
+
+    print(f"[draft] Dev.to response: {res.status_code} — {res.text[:300]}")
 
     if res.status_code == 201:
         draft_url = res.json().get("url", "https://dev.to/dashboard")
@@ -258,7 +276,7 @@ Output strictly in Markdown. No preamble outside the article.
             f"👉 [Open draft]({draft_url}) → 5-min edit → publish!"
         )
     else:
-        send_tg(f"❌ Dev.to error {res.status_code}: {res.text[:200]}. Check GitHub Actions logs.")
+        send_tg(f"❌ Dev.to error {res.status_code}: {res.text[:300]}\n\nCheck GitHub Actions logs for full details.")
 
 # ── Entry point ───────────────────────────────────────────────────────────────
 if __name__ == "__main__":
