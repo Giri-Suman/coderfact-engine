@@ -324,43 +324,109 @@ Rules for target_words:
     result  = round(target_words * 0.14)
     cta     = round(target_words * 0.08)
 
+    # ── Pass 1: Generate a rich, specific outline before writing ──
+    outline_raw = ask_ai(f"""
+You are helping Suman — a frontend developer from Kolkata who runs CoderFact (coderfact.com) — plan a blog post.
+
+Title: "{title}"
+Target length: ~{target_words} words
+Complexity: {complexity}
+
+Create a DETAILED writing outline. Be hyper-specific — invent realistic details that feel lived-in.
+This outline will be used to write the full article, so every detail matters.
+
+Return ONLY a JSON object like this:
+{{
+  "hook_scene": "A specific 2-3 sentence opening scene. Time of day, what Suman was doing, the exact moment the problem appeared. E.g.: It was 11pm on a Tuesday and I had just pushed a client project when I noticed my deploy script had been running for 40 minutes. Again.",
+  "pain_point": "The exact frustration in 1-2 sentences. Be specific — name the tool, the error, the wasted time.",
+  "failed_attempts": "1-2 things Suman tried first that didn't work. Makes the story credible.",
+  "solution_name": "The exact tool/library/technique used to solve it",
+  "real_metric": "A specific before/after number. E.g.: went from 47 minutes to 3 minutes, or reduced 200 lines to 18 lines",
+  "surprise_finding": "One unexpected thing discovered while building this. Makes the article feel like genuine experience.",
+  "code_concept": "In 1 sentence, what the core code snippet does. Be specific about the language and approach.",
+  "reader_benefit": "What the reader walks away able to DO after reading this",
+  "seo_keywords": ["keyword1", "keyword2", "keyword3", "keyword4", "keyword5"],
+  "h2_headings": ["heading1", "heading2", "heading3", "heading4"],
+  "devto_tags": ["tag1", "tag2", "tag3", "tag4"],
+  "meta_description": "One punchy SEO sentence under 160 chars"
+}}
+
+Make every field feel like it came from a real person's actual experience. No vague placeholders.
+Return ONLY valid JSON. No markdown, no explanation.
+""")
+
+    try:
+        outline_raw = outline_raw.strip().strip("```json").strip("```").strip()
+        outline = json.loads(outline_raw)
+    except Exception as e:
+        print(f"[draft] Outline parse failed: {e} — using defaults")
+        outline = {
+            "hook_scene": "It was midnight and I was staring at the same error for the third time that week.",
+            "pain_point": "The manual process was eating hours I didn't have.",
+            "failed_attempts": "I tried the obvious Stack Overflow solutions. None worked cleanly.",
+            "solution_name": "a simple Python script",
+            "real_metric": "cut the process from 45 minutes to under 2",
+            "surprise_finding": "The hardest part wasn't the code — it was figuring out the right data structure.",
+            "code_concept": "A Python script that automates the core workflow end-to-end",
+            "reader_benefit": "automate this exact workflow in under an hour",
+            "seo_keywords": ["python", "automation", "developer tools", "coding", "tutorial"],
+            "h2_headings": [
+                "Why This Problem Is More Painful Than It Looks",
+                "What I Tried First (And Why It Failed)",
+                "The Actual Fix — With the Full Code",
+                "Results, Surprises, and What I'd Do Differently"
+            ],
+            "devto_tags": ["python", "tutorial", "automation", "programming"],
+            "meta_description": f"A practical guide to {title.lower()} with real code and real results."
+        }
+
+    # ── Pass 2: Write the full article using the outline ──
     article = ask_ai(f"""
-You are Suman — frontend developer and coding content creator from Kolkata, running CoderFact (coderfact.com).
-Write a {target_words}-word Medium blog post titled: "{title}"
+You are ghostwriting a blog post for Suman — a frontend developer from Kolkata who runs CoderFact (coderfact.com).
 
-MEDIUM EARNING RULES (research-backed — follow strictly):
-- Target 5–7 minute read time. Medium's algorithm rewards this range the most.
-- Hook must work in the first 3 lines. If the reader doesn't feel addressed in 3 lines, they leave. Earnings drop.
-- Write in first person ("I", "me", "my") — personal experience out-earns generic tutorials
-- Include at least one specific, real-feeling metric or outcome (e.g. "cut my deploy time from 40 mins to 4")
-- SHORT paragraphs: max 3 sentences. White space = more reading = more earnings.
-- End with a genuine CTA asking for claps, highlights, or a comment — this directly boosts earnings
-- BANNED WORDS: delve, revolutionize, landscape, game-changer, unleash, supercharge, synergy, groundbreaking
-- HARD LIMIT: {target_words} words max. No padding. No repeating points.
+SUMAN'S VOICE — study this carefully before writing a single word:
+- Talks like a real person, not a tech writer. Uses "I" constantly. Says things like "honestly", "look", "here's the thing", "I'm not gonna lie"
+- Drops into casual mid-thought asides — "(yeah, I know, not ideal)" or "(this took me embarrassingly long to figure out)"
+- Uses SHORT punchy paragraphs. Never more than 3 sentences. Lots of white space.
+- Occasionally uses em-dashes for rhythm — like this — to add personality
+- References being from Kolkata naturally when relevant (power cuts, slow internet, client expectations)
+- Never writes "In conclusion" or "In summary" — just ends with a direct human thought
+- Does NOT use: "delve", "navigate", "leverage", "landscape", "robust", "seamless", "unleash", "utilize", "empower", "groundbreaking", "revolutionize", "game-changer", "synergy", "cutting-edge", "supercharge", "it's worth noting"
+- NEVER starts a paragraph with "Furthermore", "Moreover", "Additionally", "In addition"
+- The writing should pass any AI detector — it sounds like a tired, smart developer venting and teaching at the same time
 
-STRUCTURE (exact H2 headings, respect word budgets — this structure maximises read ratio):
+ARTICLE BRIEF:
+- Title: "{title}"
+- Target: ~{target_words} words
+- Hook scene: {outline.get('hook_scene')}
+- Pain point: {outline.get('pain_point')}
+- What failed first: {outline.get('failed_attempts')}
+- The solution: {outline.get('solution_name')}
+- Real metric to mention: {outline.get('real_metric')}
+- Surprising finding: {outline.get('surprise_finding')}
+- Core code concept: {outline.get('code_concept')}
+- What reader can do after: {outline.get('reader_benefit')}
+- SEO keywords to weave in naturally (don't stuff): {', '.join(outline.get('seo_keywords', []))}
 
-## [Write a specific, story-driven hook line here as the opening — NOT a heading]
-({hook} words — open mid-scene, like: "Last Tuesday at 2am, my Telegram bot sent me a draft article while I was asleep." Make the reader feel this happened to a real person.)
+STRUCTURE — use these exact H2 headings:
+{chr(10).join(f'## {h}' for h in outline.get('h2_headings', ['The Problem', 'What I Tried', 'The Fix', 'Results']))}
 
-## The Problem (And Why Nobody Fixes It)
-({concept} words — describe the pain point with a specific scenario. Use "you" to make it personal. Real developers nod at this section.)
+WRITING RULES:
+1. Open with the hook scene — no title, no "Introduction" heading. Just jump in mid-story.
+2. Every H2 section must have at least one of: a personal anecdote, a specific number, or a code snippet
+3. Include ONE clean, working, well-commented code block with the language tag. Make it genuinely useful — not hello-world level.
+4. After the code block, explain it like you're talking to a friend: "What this does is..." — not "The above code demonstrates..."
+5. The "results" section MUST mention the specific metric: {outline.get('real_metric')}
+6. Mention the surprising finding naturally: {outline.get('surprise_finding')}
+7. End with a 2-3 sentence human close. Something like: "If you build this, drop a comment — I'm genuinely curious what you use it for. And if it saves you time, the clap button is right there. It costs you nothing and it tells me to keep building stuff like this."
+8. Weave in a natural link to coderfact.com at least once (e.g. "I wrote about the full setup over at CoderFact if you want the extended version")
+9. HARD LIMIT: {target_words} words. Cut ruthlessly. No fluff.
 
-## The Fix: Here's Exactly What I Did
-({build} words — step-by-step. Lead with a real, working code snippet in a fenced block with language tag. Show the messy parts too — "This took me 3 tries to get right." Readers trust imperfect journeys.)
+Append these two lines at the very end (outside the article body):
+TAGS: {json.dumps(outline.get('devto_tags', ['python','tutorial','automation','programming']))}
+META: {outline.get('meta_description', '')}
 
-## The Results (With Actual Numbers)
-({result} words — be specific. Not "saved time" but "went from 2 hours to 11 minutes". Include one thing that surprised you.)
-
-## Try It Yourself
-({cta} words — clear next steps. Link to coderfact.com for more tools. End with: "If this saved you time, tap the clap button — it genuinely helps me keep building free tools.")
-
-TAGS LINE (for Dev.to tag strategy — append at very end):
-TAGS: [tag1, tag2, tag3, tag4] — choose exactly 4, all lowercase, no spaces or hyphens (Dev.to rules). Pick from: "python", "programming", "webdev", "javascript", "ai", "tutorial", "automation", "productivity", "devops", "beginners"
-
-META: [one SEO sentence describing the article]
-
-Output strictly in Markdown. No preamble outside the article.
+Output in Markdown. Start directly with the hook — no preamble, no "Here is your article".
 """)
 
     meta  = ""
@@ -422,12 +488,14 @@ Output strictly in Markdown. No preamble outside the article.
     if res.status_code == 201:
         draft_url = res.json().get("url", "https://dev.to/dashboard")
         send_tg(
-            f"✅ *Draft ready on Dev.to!*\n"
+            f"✅ *Draft ready on Dev.to!*\n\n"
             f"📝 _{title}_\n"
             f"📏 ~{target_words} words _{complexity}_\n"
+            f"🎯 Angle: _{outline.get('hook_scene', '')[:80]}..._\n"
+            f"📊 Metric: _{outline.get('real_metric', '')}_\n"
             f"🏷 {', '.join(tags)}\n"
             f"📌 {meta}\n\n"
-            f"👉 [Open draft]({draft_url}) → 5-min edit → publish!"
+            f"👉 [Open draft]({draft_url}) → review → publish!"
         )
     else:
         send_tg(f"❌ Dev.to error {res.status_code}: {res.text[:300]}\n\nCheck GitHub Actions logs for full details.")
