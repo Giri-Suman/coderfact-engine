@@ -10,22 +10,32 @@ GITHUB_TOKEN  = os.getenv("GITHUB_TOKEN")
 GITHUB_REPO   = os.getenv("GITHUB_REPOSITORY")
 STATE_FILE    = "state.json"
 
-# ── AI: Gemini → Groq fallback ───────────────────────────────────────────────
+# ── AI: Gemini 2.0 Flash → Groq fallback ────────────────────────────────────
 def ask_ai(prompt):
+    # Try Gemini 2.0 Flash (free tier, current stable model)
     try:
-        url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={GEMINI_KEY}"
+        url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={GEMINI_KEY}"
         r = requests.post(url, json={"contents": [{"parts": [{"text": prompt}]}]}, timeout=30)
         r.raise_for_status()
         return r.json()["candidates"][0]["content"]["parts"][0]["text"].strip()
     except Exception as e:
-        print(f"Gemini failed → Groq: {e}")
+        print(f"Gemini failed → trying Groq: {e}")
+
+    # Fallback: Groq (llama-3.3-70b is current free model)
+    try:
         r = requests.post(
             "https://api.groq.com/openai/v1/chat/completions",
-            headers={"Authorization": f"Bearer {GROQ_KEY}"},
-            json={"model": "llama3-8b-8192", "messages": [{"role": "user", "content": prompt}]},
+            headers={"Authorization": f"Bearer {GROQ_KEY}", "Content-Type": "application/json"},
+            json={"model": "llama-3.3-70b-versatile", "messages": [{"role": "user", "content": prompt}], "temperature": 0.7},
             timeout=30,
         )
-        return r.json()["choices"][0]["message"]["content"].strip()
+        r.raise_for_status()
+        data = r.json()
+        if "choices" not in data:
+            raise ValueError(f"Groq bad response: {data}")
+        return data["choices"][0]["message"]["content"].strip()
+    except Exception as e:
+        raise RuntimeError(f"Both Gemini and Groq failed. Last error: {e}")
 
 # ── State: load / save / commit to GitHub ────────────────────────────────────
 def load_state():
