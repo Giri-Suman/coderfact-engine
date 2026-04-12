@@ -1,8 +1,8 @@
 {
   "topics": [
-    "I Built Kronos in 60 Minutes Using Python",
-    "Stop Doing Cache TTL Updates Manually \u2014 Anthropic Script",
-    "I Automated AI Coding with Archon in 30 Lines"
+    "I Built Oberon in 30 Minutes on Raspberry Pi",
+    "Stop Doing Docker Pulls Manually \u2014 markitdown",
+    "I Automated Vibe Coding with Claude in 10 Lines"
   ],
   "date": "April 12, 2026",
   "title_history": [
@@ -11,7 +11,10 @@
     "I Automated Code Reviews With Multica AI in 10 Lines",
     "I Built Kronos in 60 Minutes Using Python",
     "Stop Doing Cache TTL Updates Manually \u2014 Anthropic Script",
-    "I Automated AI Coding with Archon in 30 Lines"
+    "I Automated AI Coding with Archon in 30 Lines",
+    "I Built Oberon in 30 Minutes on Raspberry Pi",
+    "Stop Doing Docker Pulls Manually \u2014 markitdown",
+    "I Automated Vibe Coding with Claude in 10 Lines"
   ],
   "last_update_id": 70323253
 }
