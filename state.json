@@ -1,8 +1,13 @@
 {
   "topics": [
-    "I Built a Web Scraper in 10 Minutes Using Python",
-    "The Script That Saved Me 5 Hours Weekly Using Software Engineering",
-    "Stop Doing Deployment Manually \u2014 This Free Python Script Does It"
+    "I Built Hermes Agent in 30 Minutes Using Python",
+    "Stop Doing Markdown Conversions Manually \u2014 markitdown Does It",
+    "I Automated Code Reviews With Multica AI in 10 Lines"
   ],
-  "date": "April 12, 2026"
+  "date": "April 12, 2026",
+  "title_history": [
+    "I Built Hermes Agent in 30 Minutes Using Python",
+    "Stop Doing Markdown Conversions Manually \u2014 markitdown Does It",
+    "I Automated Code Reviews With Multica AI in 10 Lines"
+  ]
 }
