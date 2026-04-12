@@ -1,4 +1,5 @@
 import os, sys, json, base64, requests, feedparser
+from bs4 import BeautifulSoup
 from datetime import datetime, timezone
 
 DEVTO_KEY     = os.getenv("DEVTO_API_KEY")
@@ -84,31 +85,180 @@ def get_reply():
     print("[get_reply] No valid reply found.")
     return None
 
+# ── Multi-Source Trend Aggregator ────────────────────────────────────────────
+def fetch_trends():
+    """
+    Scrapes/fetches from 4 real-time sources:
+    1. GitHub Trending  — what devs are actually building right now
+    2. HackerNews API   — top upvoted tech discussions
+    3. Reddit           — r/programming + r/MachineLearning hot posts
+    4. Dev.to           — trending articles on the platform we publish on
+    Returns a structured dict of signals per source.
+    """
+    HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; CoderFact-Bot/1.0)"}
+    signals = {}
+
+    # 1. GitHub Trending (scrape — no API exists)
+    try:
+        r = requests.get("https://github.com/trending", headers=HEADERS, timeout=10)
+        soup = BeautifulSoup(r.text, "html.parser")
+        repos = []
+        for article in soup.find_all("article", class_="Box-row")[:10]:
+            name_tag = article.find("h2")
+            desc_tag = article.find("p")
+            lang_tag = article.find("span", itemprop="programmingLanguage")
+            stars_tag = article.find("a", href=lambda h: h and "stargazers" in h)
+            if name_tag:
+                repos.append({
+                    "repo": name_tag.get_text(strip=True).replace("\n", "").replace(" ", ""),
+                    "desc": desc_tag.get_text(strip=True) if desc_tag else "",
+                    "lang": lang_tag.get_text(strip=True) if lang_tag else "",
+                    "stars": stars_tag.get_text(strip=True) if stars_tag else "",
+                })
+        signals["github_trending"] = repos
+        print(f"[trends] GitHub: {len(repos)} repos")
+    except Exception as e:
+        print(f"[trends] GitHub failed: {e}")
+        signals["github_trending"] = []
+
+    # 2. HackerNews — top stories via official API
+    try:
+        top_ids = requests.get("https://hacker-news.firebaseio.com/v0/topstories.json", timeout=8).json()[:12]
+        hn_stories = []
+        for sid in top_ids:
+            item = requests.get(f"https://hacker-news.firebaseio.com/v0/item/{sid}.json", timeout=5).json()
+            if item and item.get("type") == "story":
+                hn_stories.append({
+                    "title": item.get("title", ""),
+                    "score": item.get("score", 0),
+                    "comments": item.get("descendants", 0),
+                    "url": item.get("url", ""),
+                })
+        signals["hackernews"] = sorted(hn_stories, key=lambda x: x["score"], reverse=True)[:8]
+        print(f"[trends] HN: {len(signals['hackernews'])} stories")
+    except Exception as e:
+        print(f"[trends] HN failed: {e}")
+        signals["hackernews"] = []
+
+    # 3. Reddit — r/programming + r/MachineLearning (no auth needed for JSON)
+    reddit_posts = []
+    for sub in ["programming", "MachineLearning", "webdev"]:
+        try:
+            r = requests.get(
+                f"https://www.reddit.com/r/{sub}/hot.json?limit=8",
+                headers={**HEADERS, "Accept": "application/json"},
+                timeout=8,
+            )
+            posts = r.json()["data"]["children"]
+            for p in posts:
+                d = p["data"]
+                if not d.get("stickied"):
+                    reddit_posts.append({
+                        "title": d.get("title", ""),
+                        "upvotes": d.get("ups", 0),
+                        "comments": d.get("num_comments", 0),
+                        "sub": sub,
+                    })
+        except Exception as e:
+            print(f"[trends] Reddit r/{sub} failed: {e}")
+    signals["reddit"] = sorted(reddit_posts, key=lambda x: x["upvotes"], reverse=True)[:10]
+    print(f"[trends] Reddit: {len(signals['reddit'])} posts")
+
+    # 4. Dev.to trending articles (free API, no key needed)
+    try:
+        r = requests.get(
+            "https://dev.to/api/articles?top=7&per_page=10",
+            headers=HEADERS, timeout=8
+        )
+        articles = r.json()
+        signals["devto"] = [
+            {
+                "title": a.get("title", ""),
+                "tags": a.get("tag_list", []),
+                "reactions": a.get("positive_reactions_count", 0),
+                "comments": a.get("comments_count", 0),
+            }
+            for a in articles[:8]
+        ]
+        print(f"[trends] Dev.to: {len(signals['devto'])} articles")
+    except Exception as e:
+        print(f"[trends] Dev.to failed: {e}")
+        signals["devto"] = []
+
+    return signals
+
+
+def format_signals(signals: dict) -> str:
+    """Convert raw trend signals into a clean text block for the AI prompt."""
+    lines = []
+
+    if signals.get("github_trending"):
+        lines.append("🔥 GITHUB TRENDING (what devs are building RIGHT NOW):")
+        for r in signals["github_trending"][:6]:
+            lang = f" [{r['lang']}]" if r["lang"] else ""
+            lines.append(f"  • {r['repo']}{lang} — {r['desc'][:80]}")
+
+    if signals.get("hackernews"):
+        lines.append("\n📈 HACKER NEWS TOP STORIES (score = community interest):")
+        for s in signals["hackernews"][:6]:
+            lines.append(f"  • [{s['score']} pts, {s['comments']} comments] {s['title']}")
+
+    if signals.get("reddit"):
+        lines.append("\n💬 REDDIT HOT (real developer conversations):")
+        for p in signals["reddit"][:6]:
+            lines.append(f"  • [r/{p['sub']}, {p['upvotes']} upvotes] {p['title']}")
+
+    if signals.get("devto"):
+        lines.append("\n📝 DEV.TO TRENDING (what's getting read on our platform):")
+        for a in signals["devto"][:5]:
+            tags = ", ".join(a["tags"][:3])
+            lines.append(f"  • [{a['reactions']}❤️] {a['title']} ({tags})")
+
+    return "\n".join(lines)
+
+
 # ── PHASE 1: Morning Researcher ───────────────────────────────────────────────
 def research():
-    feed    = feedparser.parse("https://news.ycombinator.com/rss")
-    stories = "\n".join(f"- {e.title}" for e in feed.entries[:8])
-    today   = datetime.now(timezone.utc).strftime("%B %d, %Y")
+    today  = datetime.now(timezone.utc).strftime("%B %d, %Y")
+    state  = load_state()
+    title_history = state.get("title_history", [])
+
+    # Gather live trend signals from 4 sources
+    print("[research] Fetching live trends...")
+    signals      = fetch_trends()
+    trend_block  = format_signals(signals)
+    print(f"[research] Trend block:\n{trend_block}")
+
+    history_block = ""
+    if title_history:
+        history_block = "PREVIOUSLY USED TITLES (do NOT repeat or closely paraphrase any of these):\n"
+        history_block += "\n".join(f"- {t}" for t in title_history[-30:])
+        history_block += "\n\n"
 
     raw = ask_ai(f"""
 You are an SEO strategist for CoderFact — a coding blog by Suman, a frontend developer from Kolkata.
 Target audience: developers and small business owners who want to use AI/automation to save time.
 
-Today is {today}. Trending tech headlines:
-{stories}
+Today is {today}. Here are LIVE real-time signals from 4 sources showing what the dev community is excited about RIGHT NOW:
 
-Generate 3 Medium blog post titles optimized for the Partner Program (read time + engagement = earnings).
+{trend_block}
 
-TITLE RULES (all must apply):
-- Use HIGH-RATIO Medium tags in the title: "Python", "Software Engineering", "Programming", "Web Development", "Artificial Intelligence" (NOT just "AI" — that tag is oversaturated)
+{history_block}Your job: Analyze these signals and identify the 3 topics with the HIGHEST viral potential for a Dev.to/Medium article today. Pick topics where:
+- Multiple sources agree (e.g. same tool trending on GitHub AND discussed on Reddit = strong signal)
+- The topic is practical and buildable (something Suman can write a "I built this" tutorial about)
+- There's a clear "developer pain point" angle
+
+Then generate 3 UNIQUE blog post titles, one per winning topic.
+
+TITLE RULES:
+- Each title must cover a DIFFERENT topic — no overlapping themes
 - Follow proven earning title formulas:
   * "I Built X in Y Minutes Using Z — Here's the Exact Code"
-  * "The [Tool/Script] That Saved Me [X Hours] Every Week"
+  * "The [Tool/Script] That Saved Me [X Hours] Every Week"  
   * "Stop Doing X Manually — This Free Python Script Does It in Seconds"
   * "How I Automated [Relatable Task] With [Specific Tool] (Full Tutorial)"
-- Be specific: name the language, tool, or result — no vague promises
+- Be specific: name the language, tool, or result
 - Under 75 characters
-- Must feel like Suman genuinely built or discovered this — not generic blog content
 - NO banned phrases: "game-changer", "revolutionize", "the future of"
 
 Reply ONLY in this format — no explanations, no quotes:
@@ -120,7 +270,11 @@ Reply ONLY in this format — no explanations, no quotes:
     titles = [l.split(". ", 1)[1].strip().strip('"')
               for l in raw.splitlines() if l.strip()[:2] in ("1.", "2.", "3.")][:3]
 
-    save_state({**load_state(), "topics": titles, "date": today})
+    # Append new titles to history and save (keep last 30)
+    updated_history = (title_history + titles)[-30:]
+    save_state({**state, "topics": titles, "date": today, "title_history": updated_history})
+    print(f"[research] Generated: {titles}")
+    print(f"[research] Total title history: {len(updated_history)}")
 
     send_tg(
         f"🔥 *CoderFact — Daily Brief* | _{today}_\n\n"
