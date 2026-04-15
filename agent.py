@@ -260,29 +260,39 @@ def research():
 
     raw = ask_ai(f"""
 You are an SEO strategist for CoderFact — a coding blog by Suman, a frontend developer from Kolkata.
-Target audience: developers and small business owners who want to use AI/automation to save time.
+Target audience: developers and small business owners who use AI/automation to save time.
 
-Today is {today}. Here are LIVE real-time signals from 4 sources showing what the dev community is excited about RIGHT NOW:
+Today is {today}. Here are LIVE real-time signals from 4 sources:
 
 {trend_block}
 
-{history_block}Your job: Analyze these signals and identify the 3 topics with the HIGHEST viral potential for a Dev.to/Medium article today. Pick topics where:
-- Multiple sources agree (e.g. same tool trending on GitHub AND discussed on Reddit = strong signal)
-- The topic is practical and buildable (something Suman can write a "I built this" tutorial about)
-- There's a clear "developer pain point" angle
+{history_block}Identify the 3 topics with the highest viral + search potential. Then generate 3 UNIQUE, Google-rankable blog titles.
 
-Then generate 3 UNIQUE blog post titles, one per winning topic.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+TITLE SEO RULES — ALL MUST APPLY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1. INCLUDE SEARCHABLE KEYWORDS — people search for errors, tools, and how-tos:
+   ✓ Name the specific language/tool (Python, Node.js, React, Docker, etc.)
+   ✓ Name the specific problem or error (Timeout, Rate Limit, CORS, Memory Leak, etc.)
+   ✓ Include an action word (Fix, Automate, Build, Stop, Deploy, Debug)
 
-TITLE RULES:
-- Each title must cover a DIFFERENT topic — no overlapping themes
-- Follow proven earning title formulas:
-  * "I Built X in Y Minutes Using Z — Here's the Exact Code"
-  * "The [Tool/Script] That Saved Me [X Hours] Every Week"  
-  * "Stop Doing X Manually — This Free Python Script Does It in Seconds"
-  * "How I Automated [Relatable Task] With [Specific Tool] (Full Tutorial)"
-- Be specific: name the language, tool, or result
-- Under 75 characters
-- NO banned phrases: "game-changer", "revolutionize", "the future of"
+2. NO DIARY-STYLE TITLES — these don't rank:
+   ✗ "My Experience With X"
+   ✗ "Thoughts on Y"
+   ✗ "Automating My Routines" ← too vague, no keyword
+   ✓ "How I Fixed Claude API Timeouts With a Custom Node.js Script"
+   ✓ "Stop Manual Deployments: Automate Claude API With Node.js in 30 Minutes"
+
+3. FOLLOW THESE HIGH-EARNING FORMULAS:
+   • "How I Fixed [Specific Error] in [Tool] With [Language] (Full Code)"
+   • "Stop [Painful Manual Task] — This [Language] Script Does It in [Time]"
+   • "The [Specific Tool] Setup That Cut My [Task] From [X] to [Y]"
+   • "How to Automate [Specific Workflow] With [Tool] — Step by Step"
+   • "[Number] Ways to Fix [Common Error] in [Framework/Tool]"
+
+4. Under 80 characters. Specific. Actionable. Tool + language + outcome in every title.
+
+5. NO banned phrases: "game-changer", "revolutionize", "the future of", "unlock", "master"
 
 Reply ONLY in this format — no explanations, no quotes:
 1. [Title]
@@ -375,8 +385,15 @@ Return ONLY a JSON object:
   "reader_benefit": "What reader can DO after reading.",
   "seo_keywords": ["kw1","kw2","kw3","kw4","kw5"],
   "h2_headings": ["heading1","heading2","heading3","heading4"],
+  "aeo_h2_headings": ["Question-style H2 for AEO 1","Question-style H2 for AEO 2","Question-style H2 for AEO 3","Question-style H2 for AEO 4"],
+  "tldr": {{
+    "problem": "One sentence — name the specific error or pain (e.g. ETIMEDOUT errors on Claude API batch calls)",
+    "solution": "One sentence — name the exact tool/script/fix used",
+    "result": "One sentence — the specific metric (e.g. deployment time cut from 45 min to 2 min)"
+  }},
   "devto_tags": ["tag1","tag2","tag3","tag4"],
   "meta_description": "One punchy SEO sentence under 160 chars.",
+  "engagement_cta": "A specific question to ask readers at the end that encourages comments. Should relate to the article topic. E.g.: 'What deployment step wastes the most time for you? Drop it in the comments — I'm building a follow-up on that next.'"
 
   "code_snippets": [
     {{
@@ -428,6 +445,18 @@ Rules:
                 "The Actual Fix — With the Full Code",
                 "Results, Surprises, and What I'd Do Differently"
             ],
+            "aeo_h2_headings": [
+                "Why Does This Problem Keep Happening?",
+                "How Do You Fix It Without Breaking Everything Else?",
+                "What Does the Full Working Code Look Like?",
+                "How Much Time Does This Actually Save?"
+            ],
+            "tldr": {
+                "problem": "Manual process was slow and error-prone.",
+                "solution": "A Python automation script using the core library.",
+                "result": "Cut the process from 45 minutes to under 2."
+            },
+            "engagement_cta": "What part of this workflow would you automate first? Drop it in the comments — I read every one.",
             "devto_tags": ["python", "tutorial", "automation", "programming"],
             "meta_description": f"A practical tutorial on {title.lower()} with real code and real results.",
             "code_snippets": [],
@@ -499,9 +528,12 @@ What reader can do after: {outline.get('reader_benefit')}
 SEO keywords (weave in naturally, never stuff): {', '.join(outline.get('seo_keywords', []))}
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-STRUCTURE — use these exact H2 headings
+STRUCTURE — use these AEO-optimised H2 headings
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-{chr(10).join(f'## {h}' for h in outline.get('h2_headings', ['The Problem', 'What I Tried', 'The Fix', 'Results']))}
+{chr(10).join(f'## {h}' for h in outline.get('aeo_h2_headings', outline.get('h2_headings', ['The Problem', 'What I Tried', 'The Fix', 'Results'])))}
+
+These headings are phrased as questions/answers that Google's Answer Engine can index directly.
+Use them EXACTLY — do not rewrite them.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 VISUAL CONTENT RULES — THIS IS MANDATORY
@@ -540,13 +572,31 @@ SPECIFIC REQUIREMENT — pick the ones that fit this article:
 WRITING RULES
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 1. Open with the hook scene — no title, no "Introduction" heading. Jump in mid-story.
-2. Use ALL pre-planned code snippets above — place them in the sections indicated
-3. Use ALL pre-planned diagrams above — place them in the sections indicated
-4. Add MORE diagrams/tables wherever they naturally explain something
-5. Results section MUST show the metric: {outline.get('real_metric')} — use a table if possible
-6. Mention the surprise: {outline.get('surprise_finding')}
-7. End with 2-3 human sentences + clap/comment ask
-8. Link to coderfact.com naturally once
+
+2. IMMEDIATELY after the opening hook (before the first H2), insert a TL;DR block:
+   Format it EXACTLY like this — this is critical for Medium's read ratio algorithm:
+
+   **TL;DR**
+   - **Problem:** {outline.get('tldr', {}).get('problem', 'The specific pain point')}
+   - **Solution:** {outline.get('tldr', {}).get('solution', 'The exact fix used')}
+   - **Result:** {outline.get('tldr', {}).get('result', 'The measurable outcome')}
+
+   This lets scanners immediately understand the value before committing to read.
+
+3. Use ALL pre-planned code snippets — place each in the section indicated
+4. Use ALL pre-planned diagrams — place each in the section indicated
+5. Add MORE diagrams/tables wherever they naturally explain something
+6. Results section MUST show: {outline.get('real_metric')} — use a before/after table
+7. Mention the surprise naturally: {outline.get('surprise_finding')}
+8. Link to coderfact.com once naturally
+
+9. END THE ARTICLE with this exact engagement close — this drives the comments that
+   boost Medium/Dev.to ranking within the first 2 hours of publishing:
+
+   Write 2 sentences of genuine human close (no "In conclusion"), then on a new line:
+   > {outline.get('engagement_cta', 'What would you do differently? Drop it in the comments.')}
+   
+   Then: "If this saved you time, the clap button costs nothing — and it tells me what to build next. 👇"
 
 Append at the very end (outside article body):
 TAGS: {json.dumps(outline.get('devto_tags', ['python','tutorial','automation','programming']))}
