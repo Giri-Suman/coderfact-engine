@@ -1,6 +1,6 @@
 import os, sys, json, base64, requests, feedparser
 from bs4 import BeautifulSoup
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 
 DEVTO_KEY     = os.getenv("DEVTO_API_KEY")
 TELEGRAM_BOT  = os.getenv("TELEGRAM_BOT_TOKEN")
@@ -74,6 +74,10 @@ def get_reply():
     print(f"[get_reply] {len(updates)} new updates found")
 
     today = datetime.now(timezone.utc).date()
+    # Also accept IST "today" — Suman is in Kolkata (UTC+5:30)
+    # A reply at 00:30 IST = 19:00 prev UTC, so check both UTC and IST dates
+    ist_offset = timedelta(hours=5, minutes=30)
+    today_ist  = (datetime.now(timezone.utc) + ist_offset).date()
     for u in reversed(updates):
         msg     = u.get("message", {})
         text    = msg.get("text", "").strip()
@@ -81,7 +85,7 @@ def get_reply():
         date    = datetime.fromtimestamp(msg.get("date", 0), tz=timezone.utc).date()
         print(f"[get_reply] update_id={u.get('update_id')} chat={chat_id} text='{text}' date={date} today={today}")
 
-        if chat_id != str(TELEGRAM_CHAT) or date != today:
+        if chat_id != str(TELEGRAM_CHAT) or date not in (today, today_ist):
             continue
 
         # Parse: "0", "1", "2", "3", "1 2", "1 3", "2 3", "1 2 3", "12", "123" etc.
@@ -343,33 +347,65 @@ Rules for target_words:
 
     # ── Pass 1: Generate a rich, specific outline before writing ──
     outline_raw = ask_ai(f"""
-You are helping Suman — a frontend developer from Kolkata who runs CoderFact (coderfact.com) — plan a blog post.
+You are helping Suman — a frontend developer from Kolkata who runs CoderFact (coderfact.com) — plan a deeply visual, human-written blog post.
 
 Title: "{title}"
 Target length: ~{target_words} words
 Complexity: {complexity}
 
-Create a DETAILED writing outline. Be hyper-specific — invent realistic details that feel lived-in.
-This outline will be used to write the full article, so every detail matters.
+Create a DETAILED outline. Every field must be hyper-specific and feel lived-in.
+This outline drives Pass 2 which writes the full article — be precise.
 
-Return ONLY a JSON object like this:
+Analyze the topic carefully and decide which VISUAL ELEMENTS fit naturally:
+- flowcharts (when showing a process/decision/pipeline)
+- ASCII diagrams (when showing architecture, data flow, file structure, before/after)
+- Mermaid diagrams (when showing sequences, state machines, entity relationships)
+- code animations described as step-by-step commented code (when showing how something builds up)
+- tables (when comparing options, benchmarking, listing params)
+- numbered step lists with inline code (when showing a CLI workflow)
+
+Return ONLY a JSON object:
 {{
-  "hook_scene": "A specific 2-3 sentence opening scene. Time of day, what Suman was doing, the exact moment the problem appeared. E.g.: It was 11pm on a Tuesday and I had just pushed a client project when I noticed my deploy script had been running for 40 minutes. Again.",
-  "pain_point": "The exact frustration in 1-2 sentences. Be specific — name the tool, the error, the wasted time.",
-  "failed_attempts": "1-2 things Suman tried first that didn't work. Makes the story credible.",
-  "solution_name": "The exact tool/library/technique used to solve it",
-  "real_metric": "A specific before/after number. E.g.: went from 47 minutes to 3 minutes, or reduced 200 lines to 18 lines",
-  "surprise_finding": "One unexpected thing discovered while building this. Makes the article feel like genuine experience.",
-  "code_concept": "In 1 sentence, what the core code snippet does. Be specific about the language and approach.",
-  "reader_benefit": "What the reader walks away able to DO after reading this",
-  "seo_keywords": ["keyword1", "keyword2", "keyword3", "keyword4", "keyword5"],
-  "h2_headings": ["heading1", "heading2", "heading3", "heading4"],
-  "devto_tags": ["tag1", "tag2", "tag3", "tag4"],
-  "meta_description": "One punchy SEO sentence under 160 chars"
+  "hook_scene": "2-3 sentences. Specific time, what Suman was doing, exact moment problem hit.",
+  "pain_point": "The exact frustration. Name the tool, error, wasted time.",
+  "failed_attempts": "1-2 things tried first that failed. Makes story credible.",
+  "solution_name": "Exact tool/library/technique that solved it.",
+  "real_metric": "Specific before/after number. E.g. 47 min → 3 min, 200 lines → 18 lines.",
+  "surprise_finding": "One unexpected discovery. Only someone who built this would know.",
+  "reader_benefit": "What reader can DO after reading.",
+  "seo_keywords": ["kw1","kw2","kw3","kw4","kw5"],
+  "h2_headings": ["heading1","heading2","heading3","heading4"],
+  "devto_tags": ["tag1","tag2","tag3","tag4"],
+  "meta_description": "One punchy SEO sentence under 160 chars.",
+
+  "code_snippets": [
+    {{
+      "section": "which H2 heading this belongs to",
+      "language": "python|bash|javascript|yaml|json|etc",
+      "purpose": "what this snippet proves or demonstrates",
+      "style": "before|solution|bonus",
+      "content": "actual working code here — not a placeholder. minimum 8 lines. well commented."
+    }}
+  ],
+
+  "diagrams": [
+    {{
+      "section": "which H2 heading this belongs to",
+      "type": "mermaid|ascii|table",
+      "purpose": "what concept this diagram explains",
+      "content": "the full diagram content here — not a placeholder. for mermaid use proper syntax. for ascii use box-drawing chars."
+    }}
+  ],
+
+  "visual_summary": "One sentence describing the overall visual richness planned for this article."
 }}
 
-Make every field feel like it came from a real person's actual experience. No vague placeholders.
-Return ONLY valid JSON. No markdown, no explanation.
+Rules:
+- code_snippets: minimum 3 snippets. At least one before (broken/naive), one solution (full working), one bonus (tweak or variant).
+- diagrams: minimum 2 diagrams. At least one must be mermaid or ASCII showing the architecture or flow.
+- Every snippet and diagram must be ACTUAL CONTENT — no placeholders like "# your code here".
+- The code must relate directly to the specific topic: "{title}".
+- Return ONLY valid JSON. No markdown fences. No explanation.
 """)
 
     try:
@@ -377,14 +413,13 @@ Return ONLY valid JSON. No markdown, no explanation.
         outline = json.loads(outline_raw)
     except Exception as e:
         print(f"[draft] Outline parse failed: {e} — using defaults")
-        outline = {
+        outline = {{
             "hook_scene": "It was midnight and I was staring at the same error for the third time that week.",
             "pain_point": "The manual process was eating hours I didn't have.",
             "failed_attempts": "I tried the obvious Stack Overflow solutions. None worked cleanly.",
             "solution_name": "a simple Python script",
             "real_metric": "cut the process from 45 minutes to under 2",
             "surprise_finding": "The hardest part wasn't the code — it was figuring out the right data structure.",
-            "code_concept": "A Python script that automates the core workflow end-to-end",
             "reader_benefit": "automate this exact workflow in under an hour",
             "seo_keywords": ["python", "automation", "developer tools", "coding", "tutorial"],
             "h2_headings": [
@@ -394,59 +429,130 @@ Return ONLY valid JSON. No markdown, no explanation.
                 "Results, Surprises, and What I'd Do Differently"
             ],
             "devto_tags": ["python", "tutorial", "automation", "programming"],
-            "meta_description": f"A practical guide to {title.lower()} with real code and real results."
-        }
+            "meta_description": f"A practical tutorial on {title.lower()} with real code and real results.",
+            "code_snippets": [],
+            "diagrams": [],
+            "visual_summary": "Code-heavy tutorial with before/after snippets."
+        }}
+
+    # ── Build visual assets string from outline ──────────────────────────────
+    snippets  = outline.get("code_snippets", [])
+    diagrams  = outline.get("diagrams", [])
+
+    snippets_block = ""
+    if snippets:
+        snippets_block = "\nPRE-PLANNED CODE SNIPPETS (use these — place each in the section indicated):\n"
+        for i, s in enumerate(snippets, 1):
+            snippets_block += (
+                f"\nSnippet {i} [{s.get('style','').upper()}] → Section: \"{s.get('section','')}\"\n"
+                f"Purpose: {s.get('purpose','')}\n"
+                f"```{s.get('language','python')}\n{s.get('content','# code here')}\n```\n"
+            )
+
+    diagrams_block = ""
+    if diagrams:
+        diagrams_block = "\nPRE-PLANNED DIAGRAMS (use these — place each in the section indicated):\n"
+        for i, d in enumerate(diagrams, 1):
+            dtype = d.get("type", "ascii")
+            diagrams_block += (
+                f"\nDiagram {i} [{dtype.upper()}] → Section: \"{d.get('section','')}\"\n"
+                f"Purpose: {d.get('purpose','')}\n"
+            )
+            if dtype == "mermaid":
+                diagrams_block += f"```mermaid\n{d.get('content','')}\n```\n"
+            else:
+                diagrams_block += f"```\n{d.get('content','')}\n```\n"
 
     # ── Pass 2: Write the full article using the outline ──
     article = ask_ai(f"""
 You are ghostwriting a blog post for Suman — a frontend developer from Kolkata who runs CoderFact (coderfact.com).
 
-SUMAN'S VOICE — study this carefully before writing a single word:
-- Talks like a real person, not a tech writer. Uses "I" constantly. Says things like "honestly", "look", "here's the thing", "I'm not gonna lie"
-- Drops into casual mid-thought asides — "(yeah, I know, not ideal)" or "(this took me embarrassingly long to figure out)"
-- Uses SHORT punchy paragraphs. Never more than 3 sentences. Lots of white space.
-- Occasionally uses em-dashes for rhythm — like this — to add personality
-- References being from Kolkata naturally when relevant (power cuts, slow internet, client expectations)
-- Never writes "In conclusion" or "In summary" — just ends with a direct human thought
-- Does NOT use: "delve", "navigate", "leverage", "landscape", "robust", "seamless", "unleash", "utilize", "empower", "groundbreaking", "revolutionize", "game-changer", "synergy", "cutting-edge", "supercharge", "it's worth noting"
-- NEVER starts a paragraph with "Furthermore", "Moreover", "Additionally", "In addition"
-- The writing should pass any AI detector — it sounds like a tired, smart developer venting and teaching at the same time
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SUMAN'S VOICE — internalize this before writing a single word
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+• Talks like a real person, not a tech writer
+• Says "honestly", "look", "here's the thing", "I'm not gonna lie", "real talk"
+• Mid-thought asides: "(yeah, I know, not ideal)" "(took me embarrassingly long)"
+• SHORT paragraphs — max 3 sentences, lots of white space
+• Em-dashes for rhythm — like this — mid sentence
+• References Kolkata naturally: power cuts, slow internet, client timelines, 11pm sessions
+• Ends sections with a punchy one-liner, not a summary
+• NEVER writes: "In conclusion", "In summary", "To summarize", "It is worth noting"
+• NEVER starts paragraphs with: "Furthermore", "Moreover", "Additionally", "In addition"
+• BANNED WORDS — firing offence: delve, navigate, leverage, landscape, robust, seamless,
+  unleash, utilize, empower, groundbreaking, revolutionize, game-changer, synergy,
+  cutting-edge, supercharge, spearhead, foster, facilitate, paradigm, holistic
+• MUST pass AI detectors — write like a tired smart dev who's venting and teaching
 
-ARTICLE BRIEF:
-- Title: "{title}"
-- Target: ~{target_words} words
-- Hook scene: {outline.get('hook_scene')}
-- Pain point: {outline.get('pain_point')}
-- What failed first: {outline.get('failed_attempts')}
-- The solution: {outline.get('solution_name')}
-- Real metric to mention: {outline.get('real_metric')}
-- Surprising finding: {outline.get('surprise_finding')}
-- Core code concept: {outline.get('code_concept')}
-- What reader can do after: {outline.get('reader_benefit')}
-- SEO keywords to weave in naturally (don't stuff): {', '.join(outline.get('seo_keywords', []))}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ARTICLE BRIEF
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Title: "{title}"
+Target: ~{target_words} words (HARD LIMIT — cut ruthlessly)
+Hook scene: {outline.get('hook_scene')}
+Pain point: {outline.get('pain_point')}
+What failed first: {outline.get('failed_attempts')}
+The solution: {outline.get('solution_name')}
+Real metric: {outline.get('real_metric')}
+Surprising finding: {outline.get('surprise_finding')}
+What reader can do after: {outline.get('reader_benefit')}
+SEO keywords (weave in naturally, never stuff): {', '.join(outline.get('seo_keywords', []))}
 
-STRUCTURE — use these exact H2 headings:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STRUCTURE — use these exact H2 headings
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 {chr(10).join(f'## {h}' for h in outline.get('h2_headings', ['The Problem', 'What I Tried', 'The Fix', 'Results']))}
 
-WRITING RULES:
-1. Open with the hook scene — no title, no "Introduction" heading. Just jump in mid-story.
-2. Every H2 section MUST have substantive content — at least one personal anecdote, specific number, or code snippet.
-3. Include MULTIPLE code blocks throughout — minimum 2, ideally 3:
-   - A short "before" snippet showing the painful manual way (or a broken attempt)
-   - The main working solution — clean, well-commented, genuinely useful. Not hello-world level.
-   - A short "after" or "bonus tweak" snippet showing an improvement or variation
-4. After each code block, explain it like you're talking to a friend: "What this does is..." — not "The above code demonstrates..."
-5. The results section MUST mention the specific metric: {outline.get('real_metric')}
-6. Mention the surprising finding naturally: {outline.get('surprise_finding')}
-7. End with a 2-3 sentence human close. Like: "If you build this, drop a comment — I'm genuinely curious what you use it for. And if it saves you time, the clap button is right there."
-8. Weave in a natural link to coderfact.com at least once
-9. HARD LIMIT: {target_words} words. Cut ruthlessly. No fluff.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+VISUAL CONTENT RULES — THIS IS MANDATORY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+The article MUST be visually rich. Readers scan before they read.
+Every H2 section MUST contain at least ONE of: code block, diagram, table, or ASCII art.
 
-Append these two lines at the very end (outside the article body):
+CODE RULES:
+- Every code block must have a language tag (```python, ```bash, ```yaml, ```js etc)
+- Every code block must have inline comments explaining non-obvious lines
+- After every code block, write 2-3 sentences explaining it in plain English
+  (start with "What this does is..." or "So basically..." — NOT "The above code demonstrates")
+- Minimum 3 code blocks total in the article
+
+DIAGRAM RULES — use whichever fits the section:
+- Mermaid flowchart: use for decision flows, pipelines, processes
+  Format: ```mermaid\\ngraph TD\\n  A[Start] --> B{{Decision}}\\n```
+- Mermaid sequence: use for API calls, service interactions
+  Format: ```mermaid\\nsequenceDiagram\\n  Alice->>Bob: Hello\\n```
+- ASCII diagram: use for architecture, file structure, data flow
+  Format: ```\\n[Box] --> [Box]\\n  |\\n  v\\n[Box]\\n```
+- Markdown table: use for comparisons, benchmark results, option lists
+  Format: | Col1 | Col2 | Col3 |
+
+SPECIFIC REQUIREMENT — pick the ones that fit this article:
+✓ If the article shows a workflow/pipeline → add a Mermaid flowchart
+✓ If the article compares options/tools → add a Markdown table
+✓ If the article shows architecture/structure → add an ASCII diagram
+✓ If the article has a sequence of API/service calls → add a Mermaid sequence diagram
+✓ If results can be shown numerically → add a before/after table
+
+{snippets_block}
+{diagrams_block}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+WRITING RULES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1. Open with the hook scene — no title, no "Introduction" heading. Jump in mid-story.
+2. Use ALL pre-planned code snippets above — place them in the sections indicated
+3. Use ALL pre-planned diagrams above — place them in the sections indicated
+4. Add MORE diagrams/tables wherever they naturally explain something
+5. Results section MUST show the metric: {outline.get('real_metric')} — use a table if possible
+6. Mention the surprise: {outline.get('surprise_finding')}
+7. End with 2-3 human sentences + clap/comment ask
+8. Link to coderfact.com naturally once
+
+Append at the very end (outside article body):
 TAGS: {json.dumps(outline.get('devto_tags', ['python','tutorial','automation','programming']))}
 META: {outline.get('meta_description', '')}
 
-Output in Markdown. Start directly with the hook — no preamble, no "Here is your article".
+Output in Markdown. Start directly with the hook. No preamble.
 """)
 
     meta  = ""
@@ -684,9 +790,14 @@ def draft():
         return send_tg("👌 Skipping today. See you tomorrow!")
 
     topics = load_state().get("topics", [])
-    print(f"[draft] choices={choices} topics={topics}")
+    state_date = load_state().get("date", "")
+    today_str  = (datetime.now(timezone.utc) + timedelta(hours=5, minutes=30)).strftime("%B %d, %Y")
+    print(f"[draft] choices={choices} state_date='{state_date}' today='{today_str}' topics={topics}")
+
     if not topics:
-        return send_tg("⚠️ No topics found. Run the morning researcher first.")
+        return send_tg("⚠️ No topics found. Morning researcher hasn't run yet today.")
+    if state_date and state_date != today_str:
+        return send_tg(f"⚠️ Topics in state are from {state_date}, not today ({today_str}). Wait for today's morning brief or run researcher manually.")
 
     # Validate choices against available topics
     valid = [c for c in choices if int(c) <= len(topics)]
