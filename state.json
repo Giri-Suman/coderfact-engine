@@ -1,10 +1,10 @@
 {
   "topics": [
-    "Fix Claude API Timeouts With Node.js",
+    "Fix Claude Timeouts With Node.js",
     "Automate Docker Pulls With Python",
     "Debug CORS Errors in React"
   ],
-  "date": "April 15, 2026",
+  "date": "April 16, 2026",
   "title_history": [
     "I Built Hermes Agent in 30 Minutes Using Python",
     "Stop Doing Markdown Conversions Manually \u2014 markitdown Does It",
@@ -28,6 +28,9 @@
     "Stop Doing Markdown Conversions Manually \u2014 markitdown",
     "I Automated Claude Code Routines in 30 Lines",
     "Fix Claude API Timeouts With Node.js",
+    "Automate Docker Pulls With Python",
+    "Debug CORS Errors in React",
+    "Fix Claude Timeouts With Node.js",
     "Automate Docker Pulls With Python",
     "Debug CORS Errors in React"
   ],
