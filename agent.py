@@ -242,7 +242,7 @@ def format_signals(signals: dict) -> str:
 
 # ── PHASE 1: Morning Researcher ───────────────────────────────────────────────
 def research():
-    today  = datetime.now(timezone.utc).strftime("%B %d, %Y")
+    today  = (datetime.now(timezone.utc) + timedelta(hours=5, minutes=30)).strftime("%B %d, %Y")
     state  = load_state()
     title_history = state.get("title_history", [])
 
