@@ -6,9 +6,6 @@
   ],
   "date": "April 17, 2026",
   "title_history": [
-    "I Built Hermes Agent in 30 Minutes Using Python",
-    "Stop Doing Markdown Conversions Manually \u2014 markitdown Does It",
-    "I Automated Code Reviews With Multica AI in 10 Lines",
     "I Built Kronos in 60 Minutes Using Python",
     "Stop Doing Cache TTL Updates Manually \u2014 Anthropic Script",
     "I Automated AI Coding with Archon in 30 Lines",
@@ -35,7 +32,10 @@
     "Debug CORS Errors in React",
     "Fix Claude Timeouts With Python",
     "Automate Docker Pulls With Node.js",
+    "Debug CORS Errors in React",
+    "Fix Claude Timeouts With Python",
+    "Automate Docker Pulls With Node.js",
     "Debug CORS Errors in React"
   ],
-  "last_update_id": 70323260
+  "last_update_id": 70323261
 }
