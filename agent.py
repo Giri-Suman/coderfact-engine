@@ -428,75 +428,91 @@ Rules:
     try:
         outline_raw = outline_raw.strip().strip("```json").strip("```").strip()
         outline = json.loads(outline_raw)
+        if not isinstance(outline, dict):
+            raise ValueError("outline is not a dict")
     except Exception as e:
         print(f"[draft] Outline parse failed: {e} — using defaults")
-        outline = {{
-            "hook_scene": "It was midnight and I was staring at the same error for the third time that week.",
-            "pain_point": "The manual process was eating hours I didn't have.",
-            "failed_attempts": "I tried the obvious Stack Overflow solutions. None worked cleanly.",
-            "solution_name": "a simple Python script",
-            "real_metric": "cut the process from 45 minutes to under 2",
-            "surprise_finding": "The hardest part wasn't the code — it was figuring out the right data structure.",
-            "reader_benefit": "automate this exact workflow in under an hour",
-            "seo_keywords": ["python", "automation", "developer tools", "coding", "tutorial"],
-            "h2_headings": [
-                "Why This Problem Is More Painful Than It Looks",
-                "What I Tried First (And Why It Failed)",
-                "The Actual Fix — With the Full Code",
-                "Results, Surprises, and What I'd Do Differently"
-            ],
-            "aeo_h2_headings": [
-                "Why Does This Problem Keep Happening?",
-                "How Do You Fix It Without Breaking Everything Else?",
-                "What Does the Full Working Code Look Like?",
-                "How Much Time Does This Actually Save?"
-            ],
-            "tldr": {
-                "problem": "Manual process was slow and error-prone.",
-                "solution": "A Python automation script using the core library.",
-                "result": "Cut the process from 45 minutes to under 2."
-            },
-            "engagement_cta": "What part of this workflow would you automate first? Drop it in the comments — I read every one.",
-            "devto_tags": ["python", "tutorial", "automation", "programming"],
-            "meta_description": f"A practical tutorial on {title.lower()} with real code and real results.",
-            "code_snippets": [],
-            "diagrams": [],
-            "visual_summary": "Code-heavy tutorial with before/after snippets."
-        }}
+        outline = {}
 
-    # ── Build visual assets string from outline ──────────────────────────────
-    # Sanitize helper for any AI-returned dict field
+    # ── Harden every outline field — nothing reaches article prompt as a dict ──
     def _s(val, fallback=""):
-        if val is None: return fallback
-        if isinstance(val, dict): return str(next(iter(val.values()), fallback))
-        if isinstance(val, list): return "\n".join(str(v) for v in val)
-        return str(val)
+        """Coerce ANY value to a plain string."""
+        if val is None:            return fallback
+        if isinstance(val, dict):  return str(next((v for v in val.values() if v), fallback))
+        if isinstance(val, list):  return " ".join(str(v) for v in val if v)
+        return str(val).strip() or fallback
 
+    def _list(val, fallback=None):
+        """Coerce ANY value to a list of plain strings."""
+        if fallback is None: fallback = []
+        if val is None:            return fallback
+        if isinstance(val, str):   return [v.strip() for v in val.replace(",", "\n").splitlines() if v.strip()]
+        if isinstance(val, dict):  return [_s(v) for v in val.values() if v]
+        if isinstance(val, list):  return [_s(v) for v in val if v]
+        return fallback
+
+    def _dict(val, keys, fallback=""):
+        """Coerce ANY value to a dict with guaranteed string values."""
+        if not isinstance(val, dict): val = {}
+        return {k: _s(val.get(k), fallback) for k in keys}
+
+    hook_scene      = _s(outline.get("hook_scene"),      "It was 11pm when the error hit again.")
+    pain_point      = _s(outline.get("pain_point"),      "The manual process was killing my time.")
+    failed_attempts = _s(outline.get("failed_attempts"), "The obvious fixes didn't work.")
+    solution_name   = _s(outline.get("solution_name"),   "a custom script")
+    real_metric     = _s(outline.get("real_metric"),     "cut time from 45 mins to under 3")
+    surprise_finding= _s(outline.get("surprise_finding"),"The hardest part wasn't the code.")
+    reader_benefit  = _s(outline.get("reader_benefit"),  "build this in under an hour")
+    meta_desc       = _s(outline.get("meta_description"),f"How to fix {title.lower()} with working code.")
+    engagement_cta  = _s(outline.get("engagement_cta"),  "What would you do differently? Drop it in the comments.")
+    seo_keywords    = _list(outline.get("seo_keywords"),  ["python","automation","tutorial","coding","developer"])
+
+    h2_default = [
+        "Why This Problem Is More Painful Than It Looks",
+        "What I Tried First (And Why It Failed)",
+        "The Actual Fix — With the Full Code",
+        "Results, Surprises, and What I'd Do Differently",
+    ]
+    aeo_default = [
+        "Why Does This Problem Keep Happening?",
+        "How Do You Fix It Without Breaking Everything Else?",
+        "What Does the Full Working Code Look Like?",
+        "How Much Time Does This Actually Save?",
+    ]
+    h2_headings  = _list(outline.get("h2_headings"),     h2_default) or h2_default
+    aeo_headings = _list(outline.get("aeo_h2_headings"), aeo_default) or aeo_default
+
+    tldr_raw = outline.get("tldr", {})
+    tldr = _dict(tldr_raw, ["problem","solution","result"], "")
+    if not any(tldr.values()):
+        tldr = {"problem": pain_point, "solution": solution_name, "result": real_metric}
+
+    devto_tags_raw = outline.get("devto_tags", [])
+    raw_tag_list   = _list(devto_tags_raw, ["python","tutorial","webdev","programming"])
+    def clean_tag(t):
+        return str(t).lower().strip().strip('"').strip("'").replace("-","").replace(" ","")
+    devto_tags = [clean_tag(t) for t in raw_tag_list if t][:4] or ["python","tutorial","webdev","programming"]
+
+    # Snippets and diagrams
     raw_snippets = outline.get("code_snippets", [])
     raw_diagrams = outline.get("diagrams", [])
+    if not isinstance(raw_snippets, list): raw_snippets = []
+    if not isinstance(raw_diagrams, list): raw_diagrams = []
 
-    # Normalize each snippet — coerce every field to string
     snippets = []
-    for s in (raw_snippets if isinstance(raw_snippets, list) else []):
+    for s in raw_snippets:
         if not isinstance(s, dict): continue
-        snippets.append({
-            "section":  _s(s.get("section"), ""),
-            "language": _s(s.get("language"), "python"),
-            "purpose":  _s(s.get("purpose"), ""),
-            "style":    _s(s.get("style"), "solution"),
-            "content":  _s(s.get("content"), "# code here"),
-        })
+        snippets.append({k: _s(s.get(k), fb) for k, fb in [
+            ("section",""), ("language","python"), ("purpose",""),
+            ("style","solution"), ("content","# code here"),
+        ]})
 
-    # Normalize each diagram — coerce every field to string
     diagrams = []
-    for d in (raw_diagrams if isinstance(raw_diagrams, list) else []):
+    for d in raw_diagrams:
         if not isinstance(d, dict): continue
-        diagrams.append({
-            "section": _s(d.get("section"), ""),
-            "type":    _s(d.get("type"), "ascii"),
-            "purpose": _s(d.get("purpose"), ""),
-            "content": _s(d.get("content"), ""),
-        })
+        diagrams.append({k: _s(d.get(k), fb) for k, fb in [
+            ("section",""), ("type","ascii"), ("purpose",""), ("content",""),
+        ]})
 
     snippets_block = ""
     if snippets:
@@ -546,19 +562,19 @@ ARTICLE BRIEF
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 Title: "{title}"
 Target: ~{target_words} words (HARD LIMIT — cut ruthlessly)
-Hook scene: {outline.get('hook_scene')}
-Pain point: {outline.get('pain_point')}
-What failed first: {outline.get('failed_attempts')}
-The solution: {outline.get('solution_name')}
-Real metric: {outline.get('real_metric')}
-Surprising finding: {outline.get('surprise_finding')}
-What reader can do after: {outline.get('reader_benefit')}
-SEO keywords (weave in naturally, never stuff): {', '.join(outline.get('seo_keywords', []))}
+Hook scene: {hook_scene}
+Pain point: {pain_point}
+What failed first: {failed_attempts}
+The solution: {solution_name}
+Real metric: {real_metric}
+Surprising finding: {surprise_finding}
+What reader can do after: {reader_benefit}
+SEO keywords (weave in naturally, never stuff): {', '.join(seo_keywords)}
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 STRUCTURE — use these AEO-optimised H2 headings
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-{chr(10).join(f'## {h}' for h in outline.get('aeo_h2_headings', outline.get('h2_headings', ['The Problem', 'What I Tried', 'The Fix', 'Results'])))}
+{chr(10).join(f'## {h}' for h in aeo_headings)}
 
 These headings are phrased as questions/answers that Google's Answer Engine can index directly.
 Use them EXACTLY — do not rewrite them.
@@ -605,30 +621,29 @@ WRITING RULES
    Format it EXACTLY like this — this is critical for Medium's read ratio algorithm:
 
    **TL;DR**
-   - **Problem:** {outline.get('tldr', {}).get('problem', 'The specific pain point')}
-   - **Solution:** {outline.get('tldr', {}).get('solution', 'The exact fix used')}
-   - **Result:** {outline.get('tldr', {}).get('result', 'The measurable outcome')}
+   - **Problem:** {tldr.get('problem', pain_point)}
+   - **Solution:** {tldr.get('solution', solution_name)}
+   - **Result:** {tldr.get('result', real_metric)}
 
    This lets scanners immediately understand the value before committing to read.
 
 3. Use ALL pre-planned code snippets — place each in the section indicated
 4. Use ALL pre-planned diagrams — place each in the section indicated
 5. Add MORE diagrams/tables wherever they naturally explain something
-6. Results section MUST show: {outline.get('real_metric')} — use a before/after table
-7. Mention the surprise naturally: {outline.get('surprise_finding')}
+6. Results section MUST show: {real_metric} — use a before/after table
+7. Mention the surprise naturally: {surprise_finding}
 8. Link to coderfact.com once naturally
 
-9. END THE ARTICLE with this exact engagement close — this drives the comments that
-   boost Medium/Dev.to ranking within the first 2 hours of publishing:
+9. END THE ARTICLE with this exact engagement close:
 
-   Write 2 sentences of genuine human close (no "In conclusion"), then on a new line:
-   > {outline.get('engagement_cta', 'What would you do differently? Drop it in the comments.')}
+   Write 2 sentences of genuine human close (no "In conclusion"), then:
+   > {engagement_cta}
    
    Then: "If this saved you time, the clap button costs nothing — and it tells me what to build next. 👇"
 
 Append at the very end (outside article body):
-TAGS: {json.dumps(outline.get('devto_tags', ['python','tutorial','automation','programming']))}
-META: {outline.get('meta_description', '')}
+TAGS: {json.dumps(devto_tags)}
+META: {meta_desc}
 
 Output in Markdown. Start directly with the hook. No preamble.
 """)
@@ -731,9 +746,10 @@ Return ONLY a valid JSON array. No explanation. No markdown fences. Example form
     except Exception as e:
         print(f"[images] Visual plan parse failed: {e} — using minimal fallback")
         hero_prompt_fb = f"{title} dark terminal developer workspace cinematic neon glow"
+        second_heading = aeo_headings[1] if len(aeo_headings) > 1 else "## The Fix"
         visual_plan = [
             {"type": "image", "after": "", "prompt": hero_prompt_fb, "style": "dark-terminal-code", "size": "hero", "alt": title},
-            {"type": "image", "after": headings[1] if len(headings) > 1 else "## ", "prompt": f"{outline.get('solution_name','python')} code result terminal output", "style": "benchmark-graph-results", "size": "wide", "alt": "Results"},
+            {"type": "image", "after": second_heading, "prompt": f"{solution_name} code result terminal output", "style": "benchmark-graph-results", "size": "wide", "alt": "Results"},
         ]
 
     # Map style → visual keywords
@@ -867,10 +883,10 @@ Return ONLY a valid JSON array. No explanation. No markdown fences. Example form
             f"✅ {progress}*Draft ready!*\n\n"
             f"📝 _{title}_\n"
             f"📏 ~{target_words} words _{complexity}_\n"
-            f"🎯 _{outline.get('hook_scene', '')[:80]}..._\n"
-            f"📊 _{outline.get('real_metric', '')}_\n"
-            f"🏷 {', '.join(tags)}\n"
-            f"📌 {meta}\n\n"
+            f"🎯 _{hook_scene[:80]}..._\n"
+            f"📊 _{real_metric}_\n"
+            f"🏷 {', '.join(devto_tags)}\n"
+            f"📌 {meta_desc}\n\n"
             f"👉 [Open draft]({draft_url})"
         )
     else:
