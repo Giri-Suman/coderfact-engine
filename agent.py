@@ -733,53 +733,71 @@ Return ONLY a valid JSON array. No explanation. No markdown fences. Example form
         used_seeds = set()
 
         def next_seed(base):
-            s = base
+            s = int(base)
             while s in used_seeds:
                 s += 1
             used_seeds.add(s)
             return s
 
-        # Build lookup: "after" text → list of insertions
+        def to_str(val, fallback=""):
+            """Coerce any value to a clean string — handles dicts, lists, None."""
+            if val is None:
+                return fallback
+            if isinstance(val, dict):
+                # AI sometimes returns {"section": "## Heading"} instead of "## Heading"
+                return str(val.get("section") or val.get("heading") or val.get("text") or fallback)
+            if isinstance(val, list):
+                return " ".join(str(v) for v in val)
+            return str(val).strip()
+
+        def sanitize_item(item: dict) -> dict:
+            """Ensure every field in a visual plan item is the correct scalar type."""
+            return {
+                "type":     to_str(item.get("type"), "image"),
+                "after":    to_str(item.get("after"), ""),
+                "prompt":   to_str(item.get("prompt"), title),
+                "style":    to_str(item.get("style"), "dark-terminal-code"),
+                "size":     to_str(item.get("size"), "wide"),
+                "alt":      to_str(item.get("alt"), title),
+                "language": to_str(item.get("language"), "python"),
+                "content":  to_str(item.get("content"), "# code"),
+                "caption":  to_str(item.get("caption"), ""),
+            }
+
+        # Sanitize entire plan upfront — kills all unhashable type errors
+        safe_plan = [sanitize_item(item) for item in visual_plan if isinstance(item, dict)]
+
+        # Build lookup: "after" string → list of insertions
         insertions = {}
-        for i, item in enumerate(visual_plan):
-            key = item.get("after", "").strip()
+        for i, item in enumerate(safe_plan):
+            key = item["after"]   # already a clean string
             insertions.setdefault(key, []).append((i, item))
 
         # Hero image goes at the very top (after="" key)
         top_items = insertions.pop("", [])
         for _, item in top_items:
             if item["type"] == "image":
-                style_kw = STYLE_PROMPTS.get(item.get("style", "dark-terminal-code"), "")
-                full_prompt = f"{item['prompt']} {style_kw}"
-                w, h = SIZE_MAP.get(item.get("size", "wide"), (900, 500))
-                seed = next_seed(42)
-                url  = pollinations(full_prompt, w, h, seed)
-                output.append(f"![{item.get('alt', title)}]({url})\n")
+                style_kw = STYLE_PROMPTS.get(item["style"], "dark background neon developer")
+                url = pollinations(f"{item['prompt']} {style_kw}", 1280, 720, next_seed(42))
+                output.append(f"![{item['alt']}]({url})\n")
 
         for line in lines:
             output.append(line)
 
-            # Check if this line matches any insertion trigger
             line_stripped = line.strip()
             for trigger, items in list(insertions.items()):
                 if not trigger:
                     continue
-                # Match on heading or first ~6 words of paragraph
                 if (line_stripped.startswith("## ") and trigger in line_stripped) or \
-                   (trigger and line_stripped.startswith(trigger[:40])):
+                   line_stripped.startswith(trigger[:40]):
                     for _, item in items:
                         if item["type"] == "image":
-                            style_kw    = STYLE_PROMPTS.get(item.get("style", "dark-terminal-code"), "")
-                            full_prompt = f"{item['prompt']} {style_kw}"
-                            w, h = SIZE_MAP.get(item.get("size", "wide"), (900, 500))
-                            seed = next_seed(len(trigger) + 10)
-                            url  = pollinations(full_prompt, w, h, seed)
-                            output.append(f"\n![{item.get('alt', '')}]({url})\n")
+                            style_kw = STYLE_PROMPTS.get(item["style"], "dark neon developer tech")
+                            w, h = SIZE_MAP.get(item["size"], (900, 500))
+                            url  = pollinations(f"{item['prompt']} {style_kw}", w, h, next_seed(len(trigger) + 10))
+                            output.append(f"\n![{item['alt']}]({url})\n")
                         elif item["type"] == "code":
-                            lang    = item.get("language", "python")
-                            caption = item.get("caption", "")
-                            code    = item.get("content", "# example")
-                            output.append(f"\n*{caption}*\n```{lang}\n{code}\n```\n")
+                            output.append(f"\n*{item['caption']}*\n```{item['language']}\n{item['content']}\n```\n")
                     del insertions[trigger]
 
         return "\n".join(output)
