@@ -465,32 +465,60 @@ Rules:
         }}
 
     # ── Build visual assets string from outline ──────────────────────────────
-    snippets  = outline.get("code_snippets", [])
-    diagrams  = outline.get("diagrams", [])
+    # Sanitize helper for any AI-returned dict field
+    def _s(val, fallback=""):
+        if val is None: return fallback
+        if isinstance(val, dict): return str(next(iter(val.values()), fallback))
+        if isinstance(val, list): return "\n".join(str(v) for v in val)
+        return str(val)
+
+    raw_snippets = outline.get("code_snippets", [])
+    raw_diagrams = outline.get("diagrams", [])
+
+    # Normalize each snippet — coerce every field to string
+    snippets = []
+    for s in (raw_snippets if isinstance(raw_snippets, list) else []):
+        if not isinstance(s, dict): continue
+        snippets.append({
+            "section":  _s(s.get("section"), ""),
+            "language": _s(s.get("language"), "python"),
+            "purpose":  _s(s.get("purpose"), ""),
+            "style":    _s(s.get("style"), "solution"),
+            "content":  _s(s.get("content"), "# code here"),
+        })
+
+    # Normalize each diagram — coerce every field to string
+    diagrams = []
+    for d in (raw_diagrams if isinstance(raw_diagrams, list) else []):
+        if not isinstance(d, dict): continue
+        diagrams.append({
+            "section": _s(d.get("section"), ""),
+            "type":    _s(d.get("type"), "ascii"),
+            "purpose": _s(d.get("purpose"), ""),
+            "content": _s(d.get("content"), ""),
+        })
 
     snippets_block = ""
     if snippets:
         snippets_block = "\nPRE-PLANNED CODE SNIPPETS (use these — place each in the section indicated):\n"
         for i, s in enumerate(snippets, 1):
             snippets_block += (
-                f"\nSnippet {i} [{s.get('style','').upper()}] → Section: \"{s.get('section','')}\"\n"
-                f"Purpose: {s.get('purpose','')}\n"
-                f"```{s.get('language','python')}\n{s.get('content','# code here')}\n```\n"
+                f"\nSnippet {i} [{s['style'].upper()}] → Section: \"{s['section']}\"\n"
+                f"Purpose: {s['purpose']}\n"
+                f"```{s['language']}\n{s['content']}\n```\n"
             )
 
     diagrams_block = ""
     if diagrams:
         diagrams_block = "\nPRE-PLANNED DIAGRAMS (use these — place each in the section indicated):\n"
         for i, d in enumerate(diagrams, 1):
-            dtype = d.get("type", "ascii")
+            dtype = d["type"]
             diagrams_block += (
-                f"\nDiagram {i} [{dtype.upper()}] → Section: \"{d.get('section','')}\"\n"
-                f"Purpose: {d.get('purpose','')}\n"
+                f"\nDiagram {i} [{dtype.upper()}] → Section: \"{d['section']}\"\n"
+                f"Purpose: {d['purpose']}\n"
             )
-            if dtype == "mermaid":
-                diagrams_block += f"```mermaid\n{d.get('content','')}\n```\n"
-            else:
-                diagrams_block += f"```\n{d.get('content','')}\n```\n"
+            fence = "mermaid" if dtype == "mermaid" else ""
+            diagrams_block += f"```{fence}\n{d['content']}\n```\n"
 
     # ── Pass 2: Write the full article using the outline ──
     article = ask_ai(f"""
