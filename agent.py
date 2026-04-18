@@ -108,134 +108,201 @@ def get_reply():
     print("[get_reply] No valid reply found.")
     return None
 
-# ── Multi-Source Trend Aggregator ────────────────────────────────────────────
+# ── Multi-Source Trend Aggregator (8 sources) ────────────────────────────────
 def fetch_trends():
     """
-    Scrapes/fetches from 4 real-time sources:
-    1. GitHub Trending  — what devs are actually building right now
-    2. HackerNews API   — top upvoted tech discussions
-    3. Reddit           — r/programming + r/MachineLearning hot posts
-    4. Dev.to           — trending articles on the platform we publish on
-    Returns a structured dict of signals per source.
+    Pulls real-time signals from 8 sources:
+    1. GitHub Trending        — what devs are building right now
+    2. HackerNews API         — top upvoted tech discussions
+    3. Reddit                 — r/programming, r/MachineLearning, r/webdev, r/artificial
+    4. Dev.to Trending        — what's getting read on our publish platform
+    5. ProductHunt            — new tools launching today
+    6. Stack Overflow Blog    — what devs are asking about
+    7. AI/Tech RSS feeds      — TechCrunch AI, The Batch, import AI
+    8. pytrends               — real Google search trending for coding/AI keywords
     """
     HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; CoderFact-Bot/1.0)"}
     signals = {}
 
-    # 1. GitHub Trending (scrape — no API exists)
+    # 1. GitHub Trending (scrape)
     try:
         r = requests.get("https://github.com/trending", headers=HEADERS, timeout=10)
         soup = BeautifulSoup(r.text, "html.parser")
         repos = []
         for article in soup.find_all("article", class_="Box-row")[:10]:
-            name_tag = article.find("h2")
-            desc_tag = article.find("p")
-            lang_tag = article.find("span", itemprop="programmingLanguage")
+            name_tag  = article.find("h2")
+            desc_tag  = article.find("p")
+            lang_tag  = article.find("span", itemprop="programmingLanguage")
             stars_tag = article.find("a", href=lambda h: h and "stargazers" in h)
             if name_tag:
                 repos.append({
-                    "repo": name_tag.get_text(strip=True).replace("\n", "").replace(" ", ""),
-                    "desc": desc_tag.get_text(strip=True) if desc_tag else "",
-                    "lang": lang_tag.get_text(strip=True) if lang_tag else "",
+                    "repo":  name_tag.get_text(strip=True).replace("\n","").replace(" ",""),
+                    "desc":  desc_tag.get_text(strip=True) if desc_tag else "",
+                    "lang":  lang_tag.get_text(strip=True) if lang_tag else "",
                     "stars": stars_tag.get_text(strip=True) if stars_tag else "",
                 })
-        signals["github_trending"] = repos
+        signals["github"] = repos
         print(f"[trends] GitHub: {len(repos)} repos")
     except Exception as e:
         print(f"[trends] GitHub failed: {e}")
-        signals["github_trending"] = []
+        signals["github"] = []
 
-    # 2. HackerNews — top stories via official API
+    # 2. HackerNews top stories
     try:
-        top_ids = requests.get("https://hacker-news.firebaseio.com/v0/topstories.json", timeout=8).json()[:12]
-        hn_stories = []
+        top_ids = requests.get("https://hacker-news.firebaseio.com/v0/topstories.json", timeout=8).json()[:15]
+        hn = []
         for sid in top_ids:
             item = requests.get(f"https://hacker-news.firebaseio.com/v0/item/{sid}.json", timeout=5).json()
             if item and item.get("type") == "story":
-                hn_stories.append({
-                    "title": item.get("title", ""),
-                    "score": item.get("score", 0),
-                    "comments": item.get("descendants", 0),
-                    "url": item.get("url", ""),
-                })
-        signals["hackernews"] = sorted(hn_stories, key=lambda x: x["score"], reverse=True)[:8]
+                hn.append({"title": item.get("title",""), "score": item.get("score",0), "comments": item.get("descendants",0)})
+        signals["hackernews"] = sorted(hn, key=lambda x: x["score"], reverse=True)[:8]
         print(f"[trends] HN: {len(signals['hackernews'])} stories")
     except Exception as e:
         print(f"[trends] HN failed: {e}")
         signals["hackernews"] = []
 
-    # 3. Reddit — r/programming + r/MachineLearning (no auth needed for JSON)
+    # 3. Reddit — 4 subs
     reddit_posts = []
-    for sub in ["programming", "MachineLearning", "webdev"]:
+    for sub in ["programming", "MachineLearning", "webdev", "artificial"]:
         try:
-            r = requests.get(
-                f"https://www.reddit.com/r/{sub}/hot.json?limit=8",
-                headers={**HEADERS, "Accept": "application/json"},
-                timeout=8,
-            )
-            posts = r.json()["data"]["children"]
-            for p in posts:
+            r = requests.get(f"https://www.reddit.com/r/{sub}/hot.json?limit=8",
+                             headers={**HEADERS,"Accept":"application/json"}, timeout=8)
+            for p in r.json()["data"]["children"]:
                 d = p["data"]
                 if not d.get("stickied"):
-                    reddit_posts.append({
-                        "title": d.get("title", ""),
-                        "upvotes": d.get("ups", 0),
-                        "comments": d.get("num_comments", 0),
-                        "sub": sub,
-                    })
+                    reddit_posts.append({"title": d.get("title",""), "upvotes": d.get("ups",0),
+                                         "comments": d.get("num_comments",0), "sub": sub})
         except Exception as e:
             print(f"[trends] Reddit r/{sub} failed: {e}")
-    signals["reddit"] = sorted(reddit_posts, key=lambda x: x["upvotes"], reverse=True)[:10]
+    signals["reddit"] = sorted(reddit_posts, key=lambda x: x["upvotes"], reverse=True)[:12]
     print(f"[trends] Reddit: {len(signals['reddit'])} posts")
 
-    # 4. Dev.to trending articles (free API, no key needed)
+    # 4. Dev.to trending
     try:
-        r = requests.get(
-            "https://dev.to/api/articles?top=7&per_page=10",
-            headers=HEADERS, timeout=8
-        )
-        articles = r.json()
-        signals["devto"] = [
-            {
-                "title": a.get("title", ""),
-                "tags": a.get("tag_list", []),
-                "reactions": a.get("positive_reactions_count", 0),
-                "comments": a.get("comments_count", 0),
-            }
-            for a in articles[:8]
-        ]
+        articles = requests.get("https://dev.to/api/articles?top=7&per_page=10", headers=HEADERS, timeout=8).json()
+        signals["devto"] = [{"title": a.get("title",""), "tags": a.get("tag_list",[]),
+                              "reactions": a.get("positive_reactions_count",0)} for a in articles[:8]]
         print(f"[trends] Dev.to: {len(signals['devto'])} articles")
     except Exception as e:
         print(f"[trends] Dev.to failed: {e}")
         signals["devto"] = []
 
+    # 5. ProductHunt — today's top tech launches
+    try:
+        r = requests.get("https://www.producthunt.com/feed", headers=HEADERS, timeout=8)
+        soup = BeautifulSoup(r.text, "html.parser")
+        items = soup.find_all("item")[:8]
+        ph = []
+        for item in items:
+            title = item.find("title")
+            desc  = item.find("description")
+            ph.append({
+                "title": title.get_text(strip=True) if title else "",
+                "desc":  BeautifulSoup(desc.get_text(), "html.parser").get_text()[:120] if desc else "",
+            })
+        signals["producthunt"] = ph
+        print(f"[trends] ProductHunt: {len(ph)} launches")
+    except Exception as e:
+        print(f"[trends] ProductHunt failed: {e}")
+        signals["producthunt"] = []
+
+    # 6. Tech/AI RSS feeds — TechCrunch AI + The Verge Tech + MIT Tech Review
+    rss_items = []
+    rss_feeds = [
+        "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "https://www.theverge.com/rss/index.xml",
+        "https://www.technologyreview.com/feed/",
+    ]
+    for url in rss_feeds:
+        try:
+            feed = feedparser.parse(url)
+            for entry in feed.entries[:4]:
+                rss_items.append(entry.title)
+        except Exception:
+            pass
+    signals["rss_news"] = rss_items[:12]
+    print(f"[trends] RSS news: {len(rss_items)} items")
+
+    # 7. Stack Overflow — trending questions via blog RSS
+    try:
+        feed = feedparser.parse("https://stackoverflow.blog/feed/")
+        signals["stackoverflow"] = [e.title for e in feed.entries[:6]]
+        print(f"[trends] StackOverflow blog: {len(signals['stackoverflow'])} items")
+    except Exception as e:
+        print(f"[trends] StackOverflow failed: {e}")
+        signals["stackoverflow"] = []
+
+    # 8. Google Trends via pytrends — rising queries for coding/AI keywords
+    google_rising = []
+    try:
+        from pytrends.request import TrendReq
+        pt = TrendReq(hl="en-US", tz=330, timeout=(10, 25), retries=2, backoff_factor=0.5)
+        # Check rising related queries for core topic seeds
+        for seed in ["python automation", "AI coding", "machine learning"]:
+            try:
+                pt.build_payload([seed], timeframe="now 7-d", geo="")
+                related = pt.related_queries()
+                rising = related.get(seed, {}).get("rising")
+                if rising is not None and not rising.empty:
+                    google_rising += rising["query"].tolist()[:4]
+            except Exception:
+                pass
+        signals["google_trends"] = list(dict.fromkeys(google_rising))[:12]
+        print(f"[trends] Google Trends: {len(signals['google_trends'])} rising queries")
+    except ImportError:
+        print("[trends] pytrends not installed — skipping Google Trends")
+        signals["google_trends"] = []
+    except Exception as e:
+        print(f"[trends] Google Trends failed: {e}")
+        signals["google_trends"] = []
+
     return signals
 
 
 def format_signals(signals: dict) -> str:
-    """Convert raw trend signals into a clean text block for the AI prompt."""
     lines = []
 
-    if signals.get("github_trending"):
-        lines.append("🔥 GITHUB TRENDING (what devs are building RIGHT NOW):")
-        for r in signals["github_trending"][:6]:
+    if signals.get("google_trends"):
+        lines.append("🔍 GOOGLE TRENDS RISING QUERIES (people actively searching these RIGHT NOW):")
+        for q in signals["google_trends"][:8]:
+            lines.append(f"  • {q}")
+
+    if signals.get("github"):
+        lines.append("\n🔥 GITHUB TRENDING (what devs are building):")
+        for r in signals["github"][:6]:
             lang = f" [{r['lang']}]" if r["lang"] else ""
             lines.append(f"  • {r['repo']}{lang} — {r['desc'][:80]}")
 
     if signals.get("hackernews"):
-        lines.append("\n📈 HACKER NEWS TOP STORIES (score = community interest):")
+        lines.append("\n📈 HACKER NEWS TOP (score = community interest):")
         for s in signals["hackernews"][:6]:
-            lines.append(f"  • [{s['score']} pts, {s['comments']} comments] {s['title']}")
+            lines.append(f"  • [{s['score']}pts, {s['comments']} comments] {s['title']}")
 
     if signals.get("reddit"):
-        lines.append("\n💬 REDDIT HOT (real developer conversations):")
+        lines.append("\n💬 REDDIT HOT:")
         for p in signals["reddit"][:6]:
             lines.append(f"  • [r/{p['sub']}, {p['upvotes']} upvotes] {p['title']}")
 
+    if signals.get("producthunt"):
+        lines.append("\n🚀 PRODUCTHUNT (new tools launching today):")
+        for p in signals["producthunt"][:4]:
+            lines.append(f"  • {p['title']} — {p['desc'][:70]}")
+
+    if signals.get("rss_news"):
+        lines.append("\n📰 TECH/AI NEWS (TechCrunch, The Verge, MIT Tech Review):")
+        for item in signals["rss_news"][:6]:
+            lines.append(f"  • {item}")
+
     if signals.get("devto"):
-        lines.append("\n📝 DEV.TO TRENDING (what's getting read on our platform):")
+        lines.append("\n📝 DEV.TO TRENDING:")
         for a in signals["devto"][:5]:
             tags = ", ".join(a["tags"][:3])
             lines.append(f"  • [{a['reactions']}❤️] {a['title']} ({tags})")
+
+    if signals.get("stackoverflow"):
+        lines.append("\n🛠 STACK OVERFLOW BLOG:")
+        for s in signals["stackoverflow"][:4]:
+            lines.append(f"  • {s}")
 
     return "\n".join(lines)
 
@@ -355,11 +422,93 @@ Rules for target_words:
     result  = round(target_words * 0.14)
     cta     = round(target_words * 0.08)
 
-    # ── Pass 1: Generate a rich, specific outline before writing ──
+    # ── Pass 0: Dynamic keyword research for this specific title ────────────
+    kw_research_raw = ask_ai(f"""
+You are an SEO keyword researcher specializing in coding and developer content for Medium.
+
+Article title: "{title}"
+Platform: Medium + Dev.to (Medium has domain authority 90+, so articles can rank on Google)
+Audience: developers, engineers, technical founders aged 25-34
+
+Do keyword research for this specific article. Think like a developer searching Google:
+- What exact phrases would they type when stuck on this problem?
+- What long-tail questions do they ask? (these rank faster, lower competition)
+- What related terms should appear naturally in the article?
+
+Return ONLY a JSON object:
+{{
+  "primary_keyword": "the single most important keyword — what the article should rank #1 for. Be specific: 'fix CORS error React' not just 'CORS'",
+  "secondary_keywords": ["3-4 closely related terms that support the primary"],
+  "long_tail_keywords": ["4-5 specific question-style searches like 'how to fix cors error in react vite', 'cors error access-control-allow-origin missing'"],
+  "lsi_keywords": ["5-6 latent semantic terms — related concepts Google expects to see in this article"],
+  "search_intent": "informational|navigational|transactional — what is the searcher trying to DO?",
+  "keyword_placement": {{
+    "title": "rewrite the article title to lead with the primary keyword naturally",
+    "meta_description": "write a 150-char SEO meta description using primary + one secondary keyword",
+    "h1_suggestion": "the H1 to use — same as or very close to title",
+    "first_paragraph_keywords": ["keywords to use in the opening paragraph"],
+    "subheading_keywords": ["keywords to work into H2/H3 headings"]
+  }},
+  "medium_tags": ["4 Dev.to/Medium tags — use actual platform tags that exist, lowercase, no hyphens"],
+  "competitor_angle": "one sentence on what angle makes this article DIFFERENT from the 10 existing articles on this topic"
+}}
+
+Return ONLY valid JSON. No markdown. No explanation.
+""")
+
+    try:
+        kw_data = json.loads(kw_research_raw.strip().strip("```json").strip("```").strip())
+        if not isinstance(kw_data, dict): raise ValueError
+    except Exception as e:
+        print(f"[draft] Keyword research parse failed: {e} — using defaults")
+        kw_data = {
+            "primary_keyword": title,
+            "secondary_keywords": [],
+            "long_tail_keywords": [],
+            "lsi_keywords": [],
+            "search_intent": "informational",
+            "keyword_placement": {
+                "title": title,
+                "meta_description": f"How to {title.lower()} with working code and real examples.",
+                "first_paragraph_keywords": [],
+                "subheading_keywords": [],
+            },
+            "medium_tags": ["python","tutorial","webdev","programming"],
+            "competitor_angle": "Practical tutorial with real code from a working developer."
+        }
+
+    def _ks(val, fallback=""):
+        if not val: return fallback
+        if isinstance(val, list): return ", ".join(str(v) for v in val if v)
+        return str(val)
+
+    primary_kw      = _s(kw_data.get("primary_keyword"), title)
+    secondary_kws   = _list(kw_data.get("secondary_keywords"), [])
+    longtail_kws    = _list(kw_data.get("long_tail_keywords"), [])
+    lsi_kws         = _list(kw_data.get("lsi_keywords"), [])
+    competitor_angle = _s(kw_data.get("competitor_angle"), "")
+    kw_placement    = kw_data.get("keyword_placement", {})
+    if not isinstance(kw_placement, dict): kw_placement = {}
+
+    # Use SEO-optimised title from keyword research if available
+    seo_title = _s(kw_placement.get("title"), title)
+    seo_meta  = _s(kw_placement.get("meta_description"), "")
+    kw_tags   = _list(kw_data.get("medium_tags"), [])
+
+    print(f"[draft] Primary keyword: '{primary_kw}'")
+    print(f"[draft] Long-tail: {longtail_kws[:2]}")
+    print(f"[draft] SEO title: '{seo_title}'")
+
+    # ── Pass 1: Generate outline using real keyword data ──────────────────────
     outline_raw = ask_ai(f"""
 You are helping Suman — a frontend developer from Kolkata who runs CoderFact (coderfact.com) — plan a deeply visual, human-written blog post.
 
-Title: "{title}"
+Title: "{seo_title}"
+Primary keyword to rank for: "{primary_kw}"
+Secondary keywords: {_ks(secondary_kws, 'none')}
+Long-tail keywords (use these in H2s where possible): {_ks(longtail_kws, 'none')}
+LSI keywords (weave these naturally): {_ks(lsi_kws, 'none')}
+Competitor angle to beat: {competitor_angle}
 Target length: ~{target_words} words
 Complexity: {complexity}
 
@@ -370,58 +519,50 @@ Analyze the topic carefully and decide which VISUAL ELEMENTS fit naturally:
 - flowcharts (when showing a process/decision/pipeline)
 - ASCII diagrams (when showing architecture, data flow, file structure, before/after)
 - Mermaid diagrams (when showing sequences, state machines, entity relationships)
-- code animations described as step-by-step commented code (when showing how something builds up)
 - tables (when comparing options, benchmarking, listing params)
 - numbered step lists with inline code (when showing a CLI workflow)
 
 Return ONLY a JSON object:
 {{
-  "hook_scene": "2-3 sentences. Specific time, what Suman was doing, exact moment problem hit.",
-  "pain_point": "The exact frustration. Name the tool, error, wasted time.",
+  "hook_scene": "2-3 sentences. Specific time, what Suman was doing, exact moment problem hit. Reference the primary keyword naturally.",
+  "pain_point": "The exact frustration. Name the tool, specific error message, wasted time.",
   "failed_attempts": "1-2 things tried first that failed. Makes story credible.",
   "solution_name": "Exact tool/library/technique that solved it.",
   "real_metric": "Specific before/after number. E.g. 47 min → 3 min, 200 lines → 18 lines.",
-  "surprise_finding": "One unexpected discovery. Only someone who built this would know.",
+  "surprise_finding": "One unexpected discovery only someone who built this would know.",
   "reader_benefit": "What reader can DO after reading.",
-  "seo_keywords": ["kw1","kw2","kw3","kw4","kw5"],
   "h2_headings": ["heading1","heading2","heading3","heading4"],
-  "aeo_h2_headings": ["Question-style H2 for AEO 1","Question-style H2 for AEO 2","Question-style H2 for AEO 3","Question-style H2 for AEO 4"],
+  "aeo_h2_headings": ["Question phrasing that includes a long-tail keyword 1","Question 2","Question 3","Question 4"],
   "tldr": {{
-    "problem": "One sentence — name the specific error or pain (e.g. ETIMEDOUT errors on Claude API batch calls)",
-    "solution": "One sentence — name the exact tool/script/fix used",
-    "result": "One sentence — the specific metric (e.g. deployment time cut from 45 min to 2 min)"
+    "problem": "Sentence naming the specific error/pain + primary keyword",
+    "solution": "Sentence naming the exact tool/fix",
+    "result": "Sentence with the specific metric"
   }},
-  "devto_tags": ["tag1","tag2","tag3","tag4"],
-  "meta_description": "One punchy SEO sentence under 160 chars.",
-  "engagement_cta": "A specific question to ask readers at the end that encourages comments. Should relate to the article topic. E.g.: 'What deployment step wastes the most time for you? Drop it in the comments — I'm building a follow-up on that next.'"
-
+  "engagement_cta": "A specific question asking readers about their experience with this exact problem.",
   "code_snippets": [
     {{
       "section": "which H2 heading this belongs to",
-      "language": "python|bash|javascript|yaml|json|etc",
-      "purpose": "what this snippet proves or demonstrates",
+      "language": "python|bash|javascript|yaml|etc",
+      "purpose": "what this proves",
       "style": "before|solution|bonus",
-      "content": "actual working code here — not a placeholder. minimum 8 lines. well commented."
+      "content": "actual working code — minimum 8 lines, well commented, no placeholders"
     }}
   ],
-
   "diagrams": [
     {{
       "section": "which H2 heading this belongs to",
       "type": "mermaid|ascii|table",
-      "purpose": "what concept this diagram explains",
-      "content": "the full diagram content here — not a placeholder. for mermaid use proper syntax. for ascii use box-drawing chars."
+      "purpose": "what concept this explains",
+      "content": "full diagram content — no placeholders. Real mermaid syntax or real ASCII art."
     }}
-  ],
-
-  "visual_summary": "One sentence describing the overall visual richness planned for this article."
+  ]
 }}
 
 Rules:
-- code_snippets: minimum 3 snippets. At least one before (broken/naive), one solution (full working), one bonus (tweak or variant).
-- diagrams: minimum 2 diagrams. At least one must be mermaid or ASCII showing the architecture or flow.
-- Every snippet and diagram must be ACTUAL CONTENT — no placeholders like "# your code here".
-- The code must relate directly to the specific topic: "{title}".
+- code_snippets: minimum 3. At least one before (naive), one solution (full working), one bonus (tweak).
+- diagrams: minimum 2. At least one mermaid or ASCII.
+- Every snippet/diagram must be REAL CONTENT for "{seo_title}".
+- aeo_h2_headings must naturally include long-tail keywords like: {_ks(longtail_kws[:2], 'the topic keywords')}
 - Return ONLY valid JSON. No markdown fences. No explanation.
 """)
 
@@ -536,117 +677,119 @@ Rules:
             fence = "mermaid" if dtype == "mermaid" else ""
             diagrams_block += f"```{fence}\n{d['content']}\n```\n"
 
-    # ── Pass 2: Write the full article using the outline ──
+    # ── Pass 2: Write the full article using outline + real keyword data ──────
     article = ask_ai(f"""
 You are ghostwriting a blog post for Suman — a frontend developer from Kolkata who runs CoderFact (coderfact.com).
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-SUMAN'S VOICE — internalize this before writing a single word
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-• Talks like a real person, not a tech writer
-• Says "honestly", "look", "here's the thing", "I'm not gonna lie", "real talk"
-• Mid-thought asides: "(yeah, I know, not ideal)" "(took me embarrassingly long)"
-• SHORT paragraphs — max 3 sentences, lots of white space
-• Em-dashes for rhythm — like this — mid sentence
-• References Kolkata naturally: power cuts, slow internet, client timelines, 11pm sessions
-• Ends sections with a punchy one-liner, not a summary
-• NEVER writes: "In conclusion", "In summary", "To summarize", "It is worth noting"
-• NEVER starts paragraphs with: "Furthermore", "Moreover", "Additionally", "In addition"
-• BANNED WORDS — firing offence: delve, navigate, leverage, landscape, robust, seamless,
-  unleash, utilize, empower, groundbreaking, revolutionize, game-changer, synergy,
-  cutting-edge, supercharge, spearhead, foster, facilitate, paradigm, holistic
-• MUST pass AI detectors — write like a tired smart dev who's venting and teaching
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SUMAN'S VOICE — READ THIS TWICE BEFORE WRITING
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Suman is a real developer. Not a blogger. Not a content marketer.
+He figures stuff out at 11pm, writes about it the next morning, still mildly annoyed it took so long.
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PATTERNS HE ACTUALLY USES:
+• Opens mid-frustration: "I spent three hours on this. THREE hours. For a config change."
+• Uses "I" obsessively — this is his personal experience, not a generic tutorial
+• Casually admits mistakes: "I should've checked the docs first. I didn't. You can guess what happened."
+• Drops in bracket asides: "(which, by the way, is not documented anywhere)", "(no seriously, try it)"
+• Uses contrast for punch: "The wrong way takes 40 mins. The right way? 90 seconds."
+• Short questions to the reader: "Sound familiar?" / "Ever been there?" / "Yeah. Me too."
+• References real Indian dev context naturally: "My client was calling at 9am. It was 1am. Kolkata time."
+• Ends sections abruptly, like finishing a thought: "Anyway. That's the problem. Let's fix it."
+
+VOICE CHECKLIST — every paragraph must pass:
+☑ Would a real tired developer say this out loud?
+☑ Does it sound like ONE specific person, not generic content?
+☑ No padding — if a sentence doesn't add info or personality, delete it
+☑ No throat-clearing ("In this article, we will explore...")
+☑ No summary at the end ("In conclusion...")
+
+BANNED WORDS (automatic rejection if found):
+delve, navigate, leverage, landscape, robust, seamless, unleash, utilize, empower,
+groundbreaking, revolutionize, game-changer, synergy, cutting-edge, supercharge,
+spearhead, foster, facilitate, paradigm, holistic, it is worth noting, it should be noted,
+furthermore, moreover, additionally, in addition, in conclusion, in summary, to summarize
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SEO REQUIREMENTS — DYNAMIC, NOT GENERIC
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Primary keyword (MUST appear in: first paragraph, at least 2 H2s, last paragraph):
+  → "{primary_kw}"
+
+Secondary keywords (use 2-3 times each, naturally):
+  → {_ks(secondary_kws, 'use related terms naturally')}
+
+Long-tail keywords (work these into H2 headings and paragraph text):
+  → {_ks(longtail_kws, 'use specific question phrases')}
+
+LSI keywords (Google expects these in an article on this topic — use naturally):
+  → {_ks(lsi_kws, 'use semantically related terms')}
+
+SEO meta description to use (append at end as META: line):
+  → {seo_meta if seo_meta else f'How to fix {primary_kw} with working code and real examples.'}
+
+Competitor angle — what makes this article DIFFERENT:
+  → {competitor_angle}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ARTICLE BRIEF
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Title: "{title}"
-Target: ~{target_words} words (HARD LIMIT — cut ruthlessly)
-Hook scene: {hook_scene}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Title: "{seo_title}"
+Target: ~{target_words} words MAX — cut ruthlessly, no padding
+Hook scene (open with this, no heading): {hook_scene}
 Pain point: {pain_point}
 What failed first: {failed_attempts}
 The solution: {solution_name}
-Real metric: {real_metric}
+Real metric to use: {real_metric}
 Surprising finding: {surprise_finding}
 What reader can do after: {reader_benefit}
-SEO keywords (weave in naturally, never stuff): {', '.join(seo_keywords)}
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-STRUCTURE — use these AEO-optimised H2 headings
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STRUCTURE — exact AEO H2 headings (do NOT rewrite these)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 {chr(10).join(f'## {h}' for h in aeo_headings)}
 
-These headings are phrased as questions/answers that Google's Answer Engine can index directly.
-Use them EXACTLY — do not rewrite them.
+These are phrased as questions so Google's Answer Engine indexes them as direct answers.
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-VISUAL CONTENT RULES — THIS IS MANDATORY
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-The article MUST be visually rich. Readers scan before they read.
-Every H2 section MUST contain at least ONE of: code block, diagram, table, or ASCII art.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+MANDATORY STRUCTURE RULES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1. OPEN with hook scene — no title, no "Introduction". Jump in mid-story.
+   Primary keyword "{primary_kw}" must appear in the first 50 words naturally.
 
-CODE RULES:
-- Every code block must have a language tag (```python, ```bash, ```yaml, ```js etc)
-- Every code block must have inline comments explaining non-obvious lines
-- After every code block, write 2-3 sentences explaining it in plain English
-  (start with "What this does is..." or "So basically..." — NOT "The above code demonstrates")
-- Minimum 3 code blocks total in the article
-
-DIAGRAM RULES — use whichever fits the section:
-- Mermaid flowchart: use for decision flows, pipelines, processes
-  Format: ```mermaid\\ngraph TD\\n  A[Start] --> B{{Decision}}\\n```
-- Mermaid sequence: use for API calls, service interactions
-  Format: ```mermaid\\nsequenceDiagram\\n  Alice->>Bob: Hello\\n```
-- ASCII diagram: use for architecture, file structure, data flow
-  Format: ```\\n[Box] --> [Box]\\n  |\\n  v\\n[Box]\\n```
-- Markdown table: use for comparisons, benchmark results, option lists
-  Format: | Col1 | Col2 | Col3 |
-
-SPECIFIC REQUIREMENT — pick the ones that fit this article:
-✓ If the article shows a workflow/pipeline → add a Mermaid flowchart
-✓ If the article compares options/tools → add a Markdown table
-✓ If the article shows architecture/structure → add an ASCII diagram
-✓ If the article has a sequence of API/service calls → add a Mermaid sequence diagram
-✓ If results can be shown numerically → add a before/after table
-
-{snippets_block}
-{diagrams_block}
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-WRITING RULES
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-1. Open with the hook scene — no title, no "Introduction" heading. Jump in mid-story.
-
-2. IMMEDIATELY after the opening hook (before the first H2), insert a TL;DR block:
-   Format it EXACTLY like this — this is critical for Medium's read ratio algorithm:
-
+2. IMMEDIATELY after hook, before first H2, insert TL;DR:
    **TL;DR**
    - **Problem:** {tldr.get('problem', pain_point)}
    - **Solution:** {tldr.get('solution', solution_name)}
    - **Result:** {tldr.get('result', real_metric)}
 
-   This lets scanners immediately understand the value before committing to read.
+3. EVERY H2 section MUST contain at least one of: code block, diagram, or table.
+   No section can be text-only.
 
-3. Use ALL pre-planned code snippets — place each in the section indicated
-4. Use ALL pre-planned diagrams — place each in the section indicated
-5. Add MORE diagrams/tables wherever they naturally explain something
-6. Results section MUST show: {real_metric} — use a before/after table
-7. Mention the surprise naturally: {surprise_finding}
-8. Link to coderfact.com once naturally
+4. USE ALL pre-planned code snippets (place in section indicated):
+{snippets_block}
 
-9. END THE ARTICLE with this exact engagement close:
+5. USE ALL pre-planned diagrams (place in section indicated):
+{diagrams_block}
 
-   Write 2 sentences of genuine human close (no "In conclusion"), then:
-   > {engagement_cta}
-   
-   Then: "If this saved you time, the clap button costs nothing — and it tells me what to build next. 👇"
+6. RESULTS section must include a before/after table:
+   | Metric | Before | After |
+   |--------|--------|-------|
+   (fill with real numbers from: {real_metric})
 
-Append at the very end (outside article body):
-TAGS: {json.dumps(devto_tags)}
-META: {meta_desc}
+7. END with:
+   — 2 sentences of genuine close (no "In conclusion")
+   — This blockquote: > {engagement_cta}
+   — Final line: "Found this useful? The clap button is right there 👇 It literally takes one tap and it tells me what to write next."
 
-Output in Markdown. Start directly with the hook. No preamble.
+8. After article body, on separate lines:
+   TAGS: {json.dumps(kw_tags if kw_tags else devto_tags)}
+   META: {seo_meta if seo_meta else meta_desc}
+
+Output ONLY in Markdown. Start with the hook. Zero preamble.
 """)
+
+
 
     meta  = ""
     tags_line = ""

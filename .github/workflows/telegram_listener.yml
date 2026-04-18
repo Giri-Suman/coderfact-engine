@@ -2,7 +2,7 @@ name: 2. Telegram Listener & Drafter
 
 on:
   schedule:
-    - cron: '0 * * * *'  # Every hour — checks if you replied
+    - cron: '*/15 * * * *'  # Every 15 min — catches your reply fast
   workflow_dispatch:      # Manual trigger for testing
 
 jobs:
@@ -19,7 +19,7 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install requests feedparser beautifulsoup4
+        run: pip install requests feedparser beautifulsoup4 pytrends
 
       - name: Check Telegram & Draft Article
         env:
