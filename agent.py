@@ -391,29 +391,31 @@ Reply ONLY in this format — no explanations, no quotes:
 def draft_single(title: str, idx: int, total: int):
     """Generate and publish one article. idx/total used for progress messages."""
     progress = f"({idx}/{total}) " if total > 1 else ""
-    send_tg(f"⏳ {progress}Drafting *\"{title}\"*... ~60 seconds")
 
-    # Dynamically decide article length based on topic complexity
-    complexity_raw = ask_ai(f"""
-Classify this blog post title by complexity: "{title}"
+    def tg_step(msg):
+        send_tg(f"{progress}{msg}")
 
-Reply with ONLY a JSON object, nothing else:
-{{"complexity": "simple"|"moderate"|"deep", "reason": "one sentence", "target_words": <number between 600 and 1000>}}
+    def tg_err(step, e):
+        import traceback
+        tb = traceback.format_exc()[-600:]
+        send_tg(f"❌ {progress}*{step} failed*\n`{str(e)[:300]}`\n\nFull trace in GitHub Actions logs.")
+        print(f"[draft_single] {step} error:\n{tb}")
 
-Rules for target_words:
-- simple (concept/tip/list): 600–700
-- moderate (tool/tutorial): 700–850  
-- deep (build/architecture/code-heavy): 850–1000
-""")
+    tg_step(f"⏳ Drafting *\"{title}\"*...")
+
+    # ── Step 1: Complexity ────────────────────────────────────────────────────
     try:
+        complexity_raw = ask_ai(f"""Classify this blog post title by complexity: "{title}"
+Reply with ONLY a JSON object:
+{{"complexity": "simple"|"moderate"|"deep", "reason": "one sentence", "target_words": <600-1000>}}""")
         c = json.loads(complexity_raw.strip("```json").strip("```").strip())
         target_words = min(int(c.get("target_words", 800)), 1000)
-        complexity   = c.get("complexity", "moderate")
-        reason       = c.get("reason", "")
-    except Exception:
+        complexity   = _s(c.get("complexity"), "moderate")
+        reason       = _s(c.get("reason"), "")
+    except Exception as e:
         target_words, complexity, reason = 800, "moderate", ""
-
-    print(f"Complexity: {complexity} → {target_words} words ({reason})")
+        print(f"[draft] Complexity fallback: {e}")
+    print(f"[draft] Complexity: {complexity} → {target_words} words")
 
     # Scale section budgets proportionally to target_words
     hook    = round(target_words * 0.10)
@@ -422,149 +424,109 @@ Rules for target_words:
     result  = round(target_words * 0.14)
     cta     = round(target_words * 0.08)
 
-    # ── Pass 0: Dynamic keyword research for this specific title ────────────
-    kw_research_raw = ask_ai(f"""
-You are an SEO keyword researcher specializing in coding and developer content for Medium.
+    # ── Coercion helpers — available to ALL passes ────────────────────────────
+    def _s(val, fallback=""):
+        if val is None:           return fallback
+        if isinstance(val, dict): return str(next((v for v in val.values() if v), fallback))
+        if isinstance(val, list): return " ".join(str(v) for v in val if v)
+        return str(val).strip() or fallback
 
-Article title: "{title}"
-Platform: Medium + Dev.to (Medium has domain authority 90+, so articles can rank on Google)
-Audience: developers, engineers, technical founders aged 25-34
+    def _list(val, fallback=None):
+        if fallback is None: fallback = []
+        if val is None:           return fallback
+        if isinstance(val, str):  return [v.strip() for v in val.replace(",","\n").splitlines() if v.strip()]
+        if isinstance(val, dict): return [_s(v) for v in val.values() if v]
+        if isinstance(val, list): return [_s(v) for v in val if v]
+        return fallback
 
-Do keyword research for this specific article. Think like a developer searching Google:
-- What exact phrases would they type when stuck on this problem?
-- What long-tail questions do they ask? (these rank faster, lower competition)
-- What related terms should appear naturally in the article?
+    def _dict(val, keys, fallback=""):
+        if not isinstance(val, dict): val = {}
+        return {k: _s(val.get(k), fallback) for k in keys}
 
-Return ONLY a JSON object:
-{{
-  "primary_keyword": "the single most important keyword — what the article should rank #1 for. Be specific: 'fix CORS error React' not just 'CORS'",
-  "secondary_keywords": ["3-4 closely related terms that support the primary"],
-  "long_tail_keywords": ["4-5 specific question-style searches like 'how to fix cors error in react vite', 'cors error access-control-allow-origin missing'"],
-  "lsi_keywords": ["5-6 latent semantic terms — related concepts Google expects to see in this article"],
-  "search_intent": "informational|navigational|transactional — what is the searcher trying to DO?",
-  "keyword_placement": {{
-    "title": "rewrite the article title to lead with the primary keyword naturally",
-    "meta_description": "write a 150-char SEO meta description using primary + one secondary keyword",
-    "h1_suggestion": "the H1 to use — same as or very close to title",
-    "first_paragraph_keywords": ["keywords to use in the opening paragraph"],
-    "subheading_keywords": ["keywords to work into H2/H3 headings"]
-  }},
-  "medium_tags": ["4 Dev.to/Medium tags — use actual platform tags that exist, lowercase, no hyphens"],
-  "competitor_angle": "one sentence on what angle makes this article DIFFERENT from the 10 existing articles on this topic"
-}}
-
-Return ONLY valid JSON. No markdown. No explanation.
-""")
-
+    # ── Pass 0: Keyword research ──────────────────────────────────────────────
+    tg_step("🔍 Pass 0/3: Researching keywords...")
     try:
+        kw_research_raw = ask_ai(f"""You are an SEO keyword researcher for coding/developer content on Medium.
+Article title: "{title}"
+Audience: developers aged 25-34 who search Google when stuck on a problem.
+
+Return ONLY a JSON object — no markdown, no explanation:
+{{
+  "primary_keyword": "most important specific keyword e.g. 'fix CORS error React vite' not just 'CORS'",
+  "secondary_keywords": ["3 closely related terms"],
+  "long_tail_keywords": ["4 question-style searches like 'how to fix cors error in react vite 2025'"],
+  "lsi_keywords": ["5 semantically related terms Google expects in this article"],
+  "keyword_placement": {{
+    "title": "rewrite title leading with primary keyword",
+    "meta_description": "150-char SEO description with primary + secondary keyword"
+  }},
+  "medium_tags": ["4 existing Medium/Dev.to tags, lowercase, no hyphens"],
+  "competitor_angle": "one sentence: what makes this different from existing articles on this topic"
+}}""")
         kw_data = json.loads(kw_research_raw.strip().strip("```json").strip("```").strip())
-        if not isinstance(kw_data, dict): raise ValueError
+        if not isinstance(kw_data, dict): raise ValueError("not a dict")
+        print(f"[draft] KW research OK")
     except Exception as e:
-        print(f"[draft] Keyword research parse failed: {e} — using defaults")
-        kw_data = {
-            "primary_keyword": title,
-            "secondary_keywords": [],
-            "long_tail_keywords": [],
-            "lsi_keywords": [],
-            "search_intent": "informational",
-            "keyword_placement": {
-                "title": title,
-                "meta_description": f"How to {title.lower()} with working code and real examples.",
-                "first_paragraph_keywords": [],
-                "subheading_keywords": [],
-            },
-            "medium_tags": ["python","tutorial","webdev","programming"],
-            "competitor_angle": "Practical tutorial with real code from a working developer."
-        }
+        tg_err("Pass 0 keyword research", e)
+        kw_data = {}
 
     def _ks(val, fallback=""):
         if not val: return fallback
         if isinstance(val, list): return ", ".join(str(v) for v in val if v)
         return str(val)
 
-    primary_kw      = _s(kw_data.get("primary_keyword"), title)
-    secondary_kws   = _list(kw_data.get("secondary_keywords"), [])
-    longtail_kws    = _list(kw_data.get("long_tail_keywords"), [])
-    lsi_kws         = _list(kw_data.get("lsi_keywords"), [])
-    competitor_angle = _s(kw_data.get("competitor_angle"), "")
-    kw_placement    = kw_data.get("keyword_placement", {})
+    primary_kw       = _s(kw_data.get("primary_keyword"), title)
+    secondary_kws    = _list(kw_data.get("secondary_keywords"), [])
+    longtail_kws     = _list(kw_data.get("long_tail_keywords"), [])
+    lsi_kws          = _list(kw_data.get("lsi_keywords"), [])
+    competitor_angle = _s(kw_data.get("competitor_angle"), "Practical tutorial with real working code.")
+    kw_placement     = kw_data.get("keyword_placement", {})
     if not isinstance(kw_placement, dict): kw_placement = {}
-
-    # Use SEO-optimised title from keyword research if available
     seo_title = _s(kw_placement.get("title"), title)
     seo_meta  = _s(kw_placement.get("meta_description"), "")
     kw_tags   = _list(kw_data.get("medium_tags"), [])
+    print(f"[draft] primary='{primary_kw}' seo_title='{seo_title}'")
 
-    print(f"[draft] Primary keyword: '{primary_kw}'")
-    print(f"[draft] Long-tail: {longtail_kws[:2]}")
-    print(f"[draft] SEO title: '{seo_title}'")
-
-    # ── Pass 1: Generate outline using real keyword data ──────────────────────
-    outline_raw = ask_ai(f"""
-You are helping Suman — a frontend developer from Kolkata who runs CoderFact (coderfact.com) — plan a deeply visual, human-written blog post.
+    # ── Pass 1: Outline ───────────────────────────────────────────────────────
+    tg_step("📋 Pass 1/3: Building outline...")
+    try:
+        outline_raw = ask_ai(f"""You are helping Suman — frontend developer from Kolkata, runs CoderFact (coderfact.com) — plan a blog post.
 
 Title: "{seo_title}"
-Primary keyword to rank for: "{primary_kw}"
+Primary keyword: "{primary_kw}"
 Secondary keywords: {_ks(secondary_kws, 'none')}
-Long-tail keywords (use these in H2s where possible): {_ks(longtail_kws, 'none')}
-LSI keywords (weave these naturally): {_ks(lsi_kws, 'none')}
-Competitor angle to beat: {competitor_angle}
-Target length: ~{target_words} words
-Complexity: {complexity}
+Long-tail keywords: {_ks(longtail_kws, 'none')}
+LSI keywords: {_ks(lsi_kws, 'none')}
+Competitor angle: {competitor_angle}
+Target: ~{target_words} words, complexity: {complexity}
 
-Create a DETAILED outline. Every field must be hyper-specific and feel lived-in.
-This outline drives Pass 2 which writes the full article — be precise.
-
-Analyze the topic carefully and decide which VISUAL ELEMENTS fit naturally:
-- flowcharts (when showing a process/decision/pipeline)
-- ASCII diagrams (when showing architecture, data flow, file structure, before/after)
-- Mermaid diagrams (when showing sequences, state machines, entity relationships)
-- tables (when comparing options, benchmarking, listing params)
-- numbered step lists with inline code (when showing a CLI workflow)
-
-Return ONLY a JSON object:
+Return ONLY a JSON object — no markdown, no explanation:
 {{
-  "hook_scene": "2-3 sentences. Specific time, what Suman was doing, exact moment problem hit. Reference the primary keyword naturally.",
-  "pain_point": "The exact frustration. Name the tool, specific error message, wasted time.",
-  "failed_attempts": "1-2 things tried first that failed. Makes story credible.",
-  "solution_name": "Exact tool/library/technique that solved it.",
-  "real_metric": "Specific before/after number. E.g. 47 min → 3 min, 200 lines → 18 lines.",
-  "surprise_finding": "One unexpected discovery only someone who built this would know.",
+  "hook_scene": "2-3 sentences. Specific time, what Suman was doing, exact moment problem hit.",
+  "pain_point": "Exact frustration. Tool name, specific error, wasted time.",
+  "failed_attempts": "1-2 things tried first that failed.",
+  "solution_name": "Exact tool/library that solved it.",
+  "real_metric": "Specific before/after e.g. 47 min → 3 min.",
+  "surprise_finding": "One unexpected discovery only a builder would know.",
   "reader_benefit": "What reader can DO after reading.",
-  "h2_headings": ["heading1","heading2","heading3","heading4"],
-  "aeo_h2_headings": ["Question phrasing that includes a long-tail keyword 1","Question 2","Question 3","Question 4"],
-  "tldr": {{
-    "problem": "Sentence naming the specific error/pain + primary keyword",
-    "solution": "Sentence naming the exact tool/fix",
-    "result": "Sentence with the specific metric"
-  }},
-  "engagement_cta": "A specific question asking readers about their experience with this exact problem.",
+  "h2_headings": ["h1","h2","h3","h4"],
+  "aeo_h2_headings": ["Question with long-tail keyword 1","Q2","Q3","Q4"],
+  "tldr": {{"problem":"sentence","solution":"sentence","result":"sentence"}},
+  "engagement_cta": "Specific question for readers about this exact problem.",
   "code_snippets": [
-    {{
-      "section": "which H2 heading this belongs to",
-      "language": "python|bash|javascript|yaml|etc",
-      "purpose": "what this proves",
-      "style": "before|solution|bonus",
-      "content": "actual working code — minimum 8 lines, well commented, no placeholders"
-    }}
+    {{"section":"H2 heading","language":"python","purpose":"what it shows","style":"before|solution|bonus","content":"actual working code min 8 lines"}}
   ],
   "diagrams": [
-    {{
-      "section": "which H2 heading this belongs to",
-      "type": "mermaid|ascii|table",
-      "purpose": "what concept this explains",
-      "content": "full diagram content — no placeholders. Real mermaid syntax or real ASCII art."
-    }}
+    {{"section":"H2 heading","type":"mermaid|ascii|table","purpose":"what it explains","content":"actual diagram content"}}
   ]
 }}
-
-Rules:
-- code_snippets: minimum 3. At least one before (naive), one solution (full working), one bonus (tweak).
-- diagrams: minimum 2. At least one mermaid or ASCII.
-- Every snippet/diagram must be REAL CONTENT for "{seo_title}".
-- aeo_h2_headings must naturally include long-tail keywords like: {_ks(longtail_kws[:2], 'the topic keywords')}
-- Return ONLY valid JSON. No markdown fences. No explanation.
-""")
+Rules: min 3 code_snippets (before/solution/bonus), min 2 diagrams (1 must be mermaid or ascii). ALL content must be real — no placeholders.""")
+        outline = json.loads(outline_raw.strip().strip("```json").strip("```").strip())
+        if not isinstance(outline, dict): raise ValueError("not a dict")
+        print(f"[draft] Outline OK — {len(outline.get('code_snippets',[]))} snippets, {len(outline.get('diagrams',[]))} diagrams")
+    except Exception as e:
+        tg_err("Pass 1 outline", e)
+        outline = {}
 
     try:
         outline_raw = outline_raw.strip().strip("```json").strip("```").strip()
@@ -575,28 +537,7 @@ Rules:
         print(f"[draft] Outline parse failed: {e} — using defaults")
         outline = {}
 
-    # ── Harden every outline field — nothing reaches article prompt as a dict ──
-    def _s(val, fallback=""):
-        """Coerce ANY value to a plain string."""
-        if val is None:            return fallback
-        if isinstance(val, dict):  return str(next((v for v in val.values() if v), fallback))
-        if isinstance(val, list):  return " ".join(str(v) for v in val if v)
-        return str(val).strip() or fallback
-
-    def _list(val, fallback=None):
-        """Coerce ANY value to a list of plain strings."""
-        if fallback is None: fallback = []
-        if val is None:            return fallback
-        if isinstance(val, str):   return [v.strip() for v in val.replace(",", "\n").splitlines() if v.strip()]
-        if isinstance(val, dict):  return [_s(v) for v in val.values() if v]
-        if isinstance(val, list):  return [_s(v) for v in val if v]
-        return fallback
-
-    def _dict(val, keys, fallback=""):
-        """Coerce ANY value to a dict with guaranteed string values."""
-        if not isinstance(val, dict): val = {}
-        return {k: _s(val.get(k), fallback) for k in keys}
-
+    # ── Extract and harden outline fields ─────────────────────────────────────
     hook_scene      = _s(outline.get("hook_scene"),      "It was 11pm when the error hit again.")
     pain_point      = _s(outline.get("pain_point"),      "The manual process was killing my time.")
     failed_attempts = _s(outline.get("failed_attempts"), "The obvious fixes didn't work.")
@@ -678,7 +619,10 @@ Rules:
             diagrams_block += f"```{fence}\n{d['content']}\n```\n"
 
     # ── Pass 2: Write the full article using outline + real keyword data ──────
-    article = ask_ai(f"""
+    # ── Pass 2: Write article ─────────────────────────────────────────────────
+    tg_step("✍️ Pass 2/3: Writing article...")
+    try:
+        article = ask_ai(f"""
 You are ghostwriting a blog post for Suman — a frontend developer from Kolkata who runs CoderFact (coderfact.com).
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -788,8 +732,12 @@ MANDATORY STRUCTURE RULES
 
 Output ONLY in Markdown. Start with the hook. Zero preamble.
 """)
-
-
+        if not article or len(article) < 200:
+            raise ValueError(f"Article too short ({len(article)} chars) — AI may have returned empty response")
+        print(f"[draft] Article generated: {len(article)} chars")
+    except Exception as e:
+        tg_err("Pass 2 article writing", e)
+        raise  # re-raise so draft() catches it and moves to next article
 
     meta  = ""
     tags_line = ""
@@ -802,6 +750,7 @@ Output ONLY in Markdown. Start with the hook. Zero preamble.
         else:
             clean.append(line)
     body = "\n".join(clean).strip()
+    print(f"[draft] Body: {len(body)} chars, meta: {bool(meta)}")
 
     # Parse tags — Dev.to rules: max 4, lowercase, no spaces/hyphens/special chars
     def sanitize_tag(t):
@@ -838,61 +787,40 @@ Output ONLY in Markdown. Start with the hook. Zero preamble.
             f"width={w}&height={h}&nologo=true&enhance=true{seed_part}"
         )
 
-    # ── Pass 3: AI analyzes the article and plans ALL visual insertions ──────
-    visual_plan_raw = ask_ai(f"""
-You are a technical blog editor reviewing this article draft.
-Your job: decide exactly WHERE to place images and WHAT each image should show,
-AND identify any sections that need an extra code snippet added.
+    # ── Pass 3: AI plans visual insertions ───────────────────────────────────
+    tg_step("🎨 Pass 3/3: Planning visuals & publishing...")
+    try:
+        visual_plan_raw = ask_ai(f"""You are a technical blog editor. Decide WHERE to place images and code snippets in this article.
 
 ARTICLE TITLE: "{title}"
 ARTICLE BODY:
-{body}
+{body[:3000]}
 
-Analyze the article carefully. Then return a JSON array of insertion objects.
-Each object describes ONE thing to insert at a specific location.
-
-Types of insertions:
-- "image": a Pollinations image to generate
-- "code": an additional code snippet to insert
-
-For IMAGES decide:
-- After which line? (Give the exact heading text or first 6 words of the paragraph before it)
-- What should it visually show? (Be specific — mention the tool, concept, outcome)
-- What visual style fits? Choose one: "dark-terminal-code", "diagram-flowchart", "frustrated-dev-at-screen", "benchmark-graph-results", "architecture-diagram", "concept-illustration", "before-after-comparison", "tool-screenshot-ui"
-- Dimensions: "hero" (1280x720), "wide" (900x500), "inline" (700x380)
-
-For extra CODE SNIPPETS decide:
-- After which line? (Give the exact heading text or first 6 words of paragraph)  
-- What should the snippet show? (language + exact purpose — e.g. "python: the naive for-loop that caused the slowdown")
-- Label: short human-readable caption
-
+Return ONLY a valid JSON array. No explanation. No markdown fences.
 Rules:
-- Hero image MUST be first (after nothing — top of article)
-- Minimum 3 images total, maximum 6
-- Add an extra code snippet only if a section explains a concept but has no code yet
-- Every image prompt must mention the specific tool/technology from the article — not generic
-- Space images evenly — don't cluster 3 together
+- Hero image MUST be first (after="" key — top of article)
+- Min 3 images, max 6. Each prompt must mention the specific tool from the article.
+- Space images evenly across sections.
+- Add extra code snippet only if a section has none.
 
-Return ONLY a valid JSON array. No explanation. No markdown fences. Example format:
+Format:
 [
-  {{"type":"image","after":"","prompt":"python automation script dark terminal neon glow professional","style":"dark-terminal-code","size":"hero","alt":"Setting up the automation"}},
-  {{"type":"image","after":"## Why This Problem","prompt":"developer frustrated manual csv export excel python","style":"frustrated-dev-at-screen","size":"wide","alt":"The painful manual process"}},
-  {{"type":"code","after":"## What I Tried First","language":"python","content":"# The slow way - what I was doing before\\nfor row in rows:\\n    process(row)  # This blocks everything","caption":"The original bottleneck"}}
+  {{"type":"image","after":"","prompt":"specific tool dark terminal neon glow","style":"dark-terminal-code","size":"hero","alt":"alt text"}},
+  {{"type":"image","after":"## Exact Heading Text","prompt":"specific concept visual","style":"frustrated-dev-at-screen","size":"wide","alt":"alt text"}},
+  {{"type":"code","after":"## Exact Heading","language":"python","content":"# actual code here","caption":"caption"}}
 ]
-""")
-
-    # Parse the visual plan
-    try:
+Style options: dark-terminal-code, diagram-flowchart, frustrated-dev-at-screen, benchmark-graph-results, architecture-diagram, concept-illustration, before-after-comparison, tool-screenshot-ui
+Size options: hero (1280x720), wide (900x500), inline (700x380)""")
         vplan_clean = visual_plan_raw.strip().strip("```json").strip("```").strip()
         visual_plan = json.loads(vplan_clean)
+        if not isinstance(visual_plan, list): raise ValueError("not a list")
         print(f"[images] AI planned {len(visual_plan)} insertions")
     except Exception as e:
-        print(f"[images] Visual plan parse failed: {e} — using minimal fallback")
-        hero_prompt_fb = f"{title} dark terminal developer workspace cinematic neon glow"
+        print(f"[images] Visual plan failed: {e} — using fallback")
         second_heading = aeo_headings[1] if len(aeo_headings) > 1 else "## The Fix"
         visual_plan = [
-            {"type": "image", "after": "", "prompt": hero_prompt_fb, "style": "dark-terminal-code", "size": "hero", "alt": title},
-            {"type": "image", "after": second_heading, "prompt": f"{solution_name} code result terminal output", "style": "benchmark-graph-results", "size": "wide", "alt": "Results"},
+            {"type":"image","after":"","prompt":f"{title} dark terminal developer workspace cinematic neon","style":"dark-terminal-code","size":"hero","alt":title},
+            {"type":"image","after":second_heading,"prompt":f"{solution_name} result benchmark terminal output","style":"benchmark-graph-results","size":"wide","alt":"Results"},
         ]
 
     # Map style → visual keywords
@@ -906,14 +834,12 @@ Return ONLY a valid JSON array. No explanation. No markdown fences. Example form
         "before-after-comparison":  "split screen before after comparison terminal output dark professional",
         "tool-screenshot-ui":       "modern dark UI tool screenshot dashboard clean professional",
     }
-
     SIZE_MAP = {
         "hero":   (1280, 720),
         "wide":   (900,  500),
         "inline": (700,  380),
     }
 
-    # ── Inject visuals into body ──────────────────────────────────────────────
     def build_enriched_body(body: str, visual_plan: list) -> str:
         lines  = body.splitlines()
         output = []
@@ -921,46 +847,34 @@ Return ONLY a valid JSON array. No explanation. No markdown fences. Example form
 
         def next_seed(base):
             s = int(base)
-            while s in used_seeds:
-                s += 1
+            while s in used_seeds: s += 1
             used_seeds.add(s)
             return s
 
-        def to_str(val, fallback=""):
-            """Coerce any value to a clean string — handles dicts, lists, None."""
-            if val is None:
-                return fallback
-            if isinstance(val, dict):
-                # AI sometimes returns {"section": "## Heading"} instead of "## Heading"
-                return str(val.get("section") or val.get("heading") or val.get("text") or fallback)
-            if isinstance(val, list):
-                return " ".join(str(v) for v in val)
+        def _ts(val, fallback=""):
+            if val is None: return fallback
+            if isinstance(val, dict): return str(val.get("section") or val.get("heading") or val.get("text") or fallback)
+            if isinstance(val, list): return " ".join(str(v) for v in val)
             return str(val).strip()
 
-        def sanitize_item(item: dict) -> dict:
-            """Ensure every field in a visual plan item is the correct scalar type."""
+        def sanitize_item(item):
             return {
-                "type":     to_str(item.get("type"), "image"),
-                "after":    to_str(item.get("after"), ""),
-                "prompt":   to_str(item.get("prompt"), title),
-                "style":    to_str(item.get("style"), "dark-terminal-code"),
-                "size":     to_str(item.get("size"), "wide"),
-                "alt":      to_str(item.get("alt"), title),
-                "language": to_str(item.get("language"), "python"),
-                "content":  to_str(item.get("content"), "# code"),
-                "caption":  to_str(item.get("caption"), ""),
+                "type":     _ts(item.get("type"),     "image"),
+                "after":    _ts(item.get("after"),    ""),
+                "prompt":   _ts(item.get("prompt"),   title),
+                "style":    _ts(item.get("style"),    "dark-terminal-code"),
+                "size":     _ts(item.get("size"),     "wide"),
+                "alt":      _ts(item.get("alt"),      title),
+                "language": _ts(item.get("language"), "python"),
+                "content":  _ts(item.get("content"),  "# code"),
+                "caption":  _ts(item.get("caption"),  ""),
             }
 
-        # Sanitize entire plan upfront — kills all unhashable type errors
-        safe_plan = [sanitize_item(item) for item in visual_plan if isinstance(item, dict)]
-
-        # Build lookup: "after" string → list of insertions
+        safe_plan  = [sanitize_item(item) for item in visual_plan if isinstance(item, dict)]
         insertions = {}
         for i, item in enumerate(safe_plan):
-            key = item["after"]   # already a clean string
-            insertions.setdefault(key, []).append((i, item))
+            insertions.setdefault(item["after"], []).append((i, item))
 
-        # Hero image goes at the very top (after="" key)
         top_items = insertions.pop("", [])
         for _, item in top_items:
             if item["type"] == "image":
@@ -970,16 +884,13 @@ Return ONLY a valid JSON array. No explanation. No markdown fences. Example form
 
         for line in lines:
             output.append(line)
-
-            line_stripped = line.strip()
+            ls = line.strip()
             for trigger, items in list(insertions.items()):
-                if not trigger:
-                    continue
-                if (line_stripped.startswith("## ") and trigger in line_stripped) or \
-                   line_stripped.startswith(trigger[:40]):
+                if not trigger: continue
+                if (ls.startswith("## ") and trigger in ls) or ls.startswith(trigger[:40]):
                     for _, item in items:
                         if item["type"] == "image":
-                            style_kw = STYLE_PROMPTS.get(item["style"], "dark neon developer tech")
+                            style_kw = STYLE_PROMPTS.get(item["style"], "dark neon tech")
                             w, h = SIZE_MAP.get(item["size"], (900, 500))
                             url  = pollinations(f"{item['prompt']} {style_kw}", w, h, next_seed(len(trigger) + 10))
                             output.append(f"\n![{item['alt']}]({url})\n")
@@ -989,11 +900,15 @@ Return ONLY a valid JSON array. No explanation. No markdown fences. Example form
 
         return "\n".join(output)
 
-    enriched_body = build_enriched_body(body, visual_plan)
+    # ── Run Pass 3 ────────────────────────────────────────────────────────────
+    try:
+        enriched_body = build_enriched_body(body, visual_plan)
+        print(f"[draft] Enriched body: {len(enriched_body)} chars")
+    except Exception as e:
+        tg_err("Pass 3 visual injection", e)
+        enriched_body = body   # fallback — still publish without images
 
     # ── Assemble final content ────────────────────────────────────────────────
-    # Hero image is already prepended inside build_enriched_body (it handles after="" items)
-    # so just wrap with footer
     content = (
         f"{enriched_body}\n\n"
         f"---\n"
@@ -1001,39 +916,40 @@ Return ONLY a valid JSON array. No explanation. No markdown fences. Example form
         f"AI-assisted draft, reviewed and edited by me.*"
     )
 
-    print(f"[draft] title='{title}' tags={tags} words={target_words}")
-    print(f"[draft] DEVTO_KEY set: {bool(DEVTO_KEY)}")
-
-    res = requests.post(
-        "https://dev.to/api/articles",
-        headers={"api-key": DEVTO_KEY, "Content-Type": "application/json"},
-        json={"article": {
-            "title": title,
-            "body_markdown": content,
-            "published": False,
-            "tags": tags,
-            "canonical_url": "https://coderfact.com",
-        }},
-        timeout=15,
-    )
-
-    print(f"[draft] Dev.to response: {res.status_code} — {res.text[:300]}")
-
-    if res.status_code == 201:
-        draft_url = res.json().get("url", "https://dev.to/dashboard")
-        progress  = f"({idx}/{total}) " if total > 1 else ""
-        send_tg(
-            f"✅ {progress}*Draft ready!*\n\n"
-            f"📝 _{title}_\n"
-            f"📏 ~{target_words} words _{complexity}_\n"
-            f"🎯 _{hook_scene[:80]}..._\n"
-            f"📊 _{real_metric}_\n"
-            f"🏷 {', '.join(devto_tags)}\n"
-            f"📌 {meta_desc}\n\n"
-            f"👉 [Open draft]({draft_url})"
+    # ── Publish to Dev.to ─────────────────────────────────────────────────────
+    print(f"[draft] Publishing — title='{seo_title}' tags={tags} DEVTO_KEY={bool(DEVTO_KEY)}")
+    try:
+        res = requests.post(
+            "https://dev.to/api/articles",
+            headers={"api-key": DEVTO_KEY, "Content-Type": "application/json"},
+            json={"article": {
+                "title": seo_title,
+                "body_markdown": content,
+                "published": False,
+                "tags": tags,
+                "canonical_url": "https://coderfact.com",
+            }},
+            timeout=20,
         )
-    else:
-        send_tg(f"❌ Dev.to error {res.status_code}: {res.text[:300]}\n\nCheck GitHub Actions logs.")
+        print(f"[draft] Dev.to → {res.status_code}: {res.text[:200]}")
+
+        if res.status_code == 201:
+            draft_url = res.json().get("url", "https://dev.to/dashboard")
+            send_tg(
+                f"✅ {progress}*Draft ready on Dev.to!*\n\n"
+                f"📝 _{seo_title}_\n"
+                f"📏 ~{target_words} words _{complexity}_\n"
+                f"🎯 _{hook_scene[:80]}..._\n"
+                f"📊 _{real_metric}_\n"
+                f"🏷 {', '.join(tags)}\n"
+                f"📌 {meta or meta_desc}\n\n"
+                f"👉 [Open draft]({draft_url})"
+            )
+        else:
+            send_tg(f"❌ Dev.to error {res.status_code}:\n`{res.text[:300]}`\nCheck GitHub Actions logs.")
+    except Exception as e:
+        tg_err("Dev.to publish", e)
+        raise
 
 
 def draft():
