@@ -489,44 +489,117 @@ Return ONLY a JSON object — no markdown, no explanation:
 
     # ── Pass 1: Outline ───────────────────────────────────────────────────────
     tg_step("📋 Pass 1/3: Building outline...")
+
+    def extract_json(raw: str):
+        """Robustly extract JSON from messy AI output."""
+        import re as _re
+        raw = raw.strip()
+        # Strip markdown fences
+        raw = _re.sub(r'^```(?:json)?\s*', '', raw, flags=_re.MULTILINE)
+        raw = _re.sub(r'```\s*$', '', raw, flags=_re.MULTILINE)
+        raw = raw.strip()
+        # Try direct parse first
+        try:
+            return json.loads(raw)
+        except Exception:
+            pass
+        # Find first { ... } block
+        start = raw.find('{')
+        end   = raw.rfind('}')
+        if start != -1 and end != -1:
+            try:
+                return json.loads(raw[start:end+1])
+            except Exception:
+                pass
+        # Last resort: fix common issues
+        # Replace unescaped newlines inside strings
+        fixed = _re.sub(r'(?<!\\)\n(?=[^"]*"(?:[^"]*"[^"]*")*[^"]*$)', r'\\n', raw)
+        try:
+            return json.loads(fixed)
+        except Exception as e:
+            raise ValueError(f"JSON extraction failed: {e}\nRaw (first 200): {raw[:200]}")
+
     try:
-        outline_raw = ask_ai(f"""You are helping Suman — frontend developer from Kolkata, runs CoderFact (coderfact.com) — plan a blog post.
+        outline_raw = ask_ai(f"""You are helping Suman — frontend dev from Kolkata, CoderFact.com — plan a blog post.
 
 Title: "{seo_title}"
 Primary keyword: "{primary_kw}"
-Secondary keywords: {_ks(secondary_kws, 'none')}
-Long-tail keywords: {_ks(longtail_kws, 'none')}
-LSI keywords: {_ks(lsi_kws, 'none')}
+Secondary: {_ks(secondary_kws, 'none')}
+Long-tail: {_ks(longtail_kws, 'none')}
+LSI: {_ks(lsi_kws, 'none')}
 Competitor angle: {competitor_angle}
 Target: ~{target_words} words, complexity: {complexity}
 
-Return ONLY a JSON object — no markdown, no explanation:
+CRITICAL: Return ONLY a JSON object. No markdown. No code fences. No explanation.
+Every string value must be valid JSON — no unescaped quotes, no literal newlines inside strings.
+
 {{
-  "hook_scene": "2-3 sentences. Specific time, what Suman was doing, exact moment problem hit.",
-  "pain_point": "Exact frustration. Tool name, specific error, wasted time.",
-  "failed_attempts": "1-2 things tried first that failed.",
-  "solution_name": "Exact tool/library that solved it.",
-  "real_metric": "Specific before/after e.g. 47 min → 3 min.",
-  "surprise_finding": "One unexpected discovery only a builder would know.",
-  "reader_benefit": "What reader can DO after reading.",
-  "h2_headings": ["h1","h2","h3","h4"],
+  "hook_scene": "2-3 sentences. Specific moment the problem hit Suman.",
+  "pain_point": "Exact frustration with tool name and error.",
+  "failed_attempts": "1-2 things tried that failed.",
+  "solution_name": "Exact tool or library used.",
+  "real_metric": "Before/after number e.g. 47 min to 3 min.",
+  "surprise_finding": "Unexpected discovery only a builder would know.",
+  "reader_benefit": "What reader can do after reading.",
+  "h2_headings": ["heading 1","heading 2","heading 3","heading 4"],
   "aeo_h2_headings": ["Question with long-tail keyword 1","Q2","Q3","Q4"],
-  "tldr": {{"problem":"sentence","solution":"sentence","result":"sentence"}},
-  "engagement_cta": "Specific question for readers about this exact problem.",
-  "code_snippets": [
-    {{"section":"H2 heading","language":"python","purpose":"what it shows","style":"before|solution|bonus","content":"actual working code min 8 lines"}}
+  "tldr": {{"problem":"one sentence","solution":"one sentence","result":"one sentence"}},
+  "engagement_cta": "Specific question for readers.",
+  "snippet_plan": [
+    {{"section":"H2 heading text","language":"python","style":"before","purpose":"what this shows"}},
+    {{"section":"H2 heading text","language":"python","style":"solution","purpose":"what this shows"}},
+    {{"section":"H2 heading text","language":"python","style":"bonus","purpose":"what this shows"}}
   ],
-  "diagrams": [
-    {{"section":"H2 heading","type":"mermaid|ascii|table","purpose":"what it explains","content":"actual diagram content"}}
+  "diagram_plan": [
+    {{"section":"H2 heading text","type":"mermaid","purpose":"what flow this shows"}},
+    {{"section":"H2 heading text","type":"ascii","purpose":"what structure this shows"}}
   ]
 }}
-Rules: min 3 code_snippets (before/solution/bonus), min 2 diagrams (1 must be mermaid or ascii). ALL content must be real — no placeholders.""")
-        outline = json.loads(outline_raw.strip().strip("```json").strip("```").strip())
-        if not isinstance(outline, dict): raise ValueError("not a dict")
-        print(f"[draft] Outline OK — {len(outline.get('code_snippets',[]))} snippets, {len(outline.get('diagrams',[]))} diagrams")
+
+NOTE: snippet_plan and diagram_plan contain DESCRIPTIONS only — no actual code content.
+The article writer will generate actual code in Pass 2.
+Return ONLY the JSON object.""")
+
+        outline = extract_json(outline_raw)
+        if not isinstance(outline, dict): raise ValueError("outline is not a dict")
+        print(f"[draft] Outline OK — snippets:{len(outline.get('snippet_plan',[]))}, diagrams:{len(outline.get('diagram_plan',[]))}")
+
     except Exception as e:
         tg_err("Pass 1 outline", e)
         outline = {}
+
+    # Build backward-compatible snippet/diagram lists from new plan format
+    def _plan_to_snippets(outline):
+        raw = outline.get("snippet_plan") or outline.get("code_snippets", [])
+        if not isinstance(raw, list): return []
+        result = []
+        for s in raw:
+            if not isinstance(s, dict): continue
+            result.append({
+                "section":  _s(s.get("section"), ""),
+                "language": _s(s.get("language"), "python"),
+                "purpose":  _s(s.get("purpose"),  ""),
+                "style":    _s(s.get("style"),     "solution"),
+                "content":  _s(s.get("content"),   ""),  # empty — Pass 2 writes actual code
+            })
+        return result
+
+    def _plan_to_diagrams(outline):
+        raw = outline.get("diagram_plan") or outline.get("diagrams", [])
+        if not isinstance(raw, list): return []
+        result = []
+        for d in raw:
+            if not isinstance(d, dict): continue
+            result.append({
+                "section": _s(d.get("section"), ""),
+                "type":    _s(d.get("type"),    "ascii"),
+                "purpose": _s(d.get("purpose"), ""),
+                "content": _s(d.get("content"), ""),  # empty — Pass 2 writes actual diagram
+            })
+        return result
+
+    snippets = _plan_to_snippets(outline)
+    diagrams = _plan_to_diagrams(outline)
 
     try:
         outline_raw = outline_raw.strip().strip("```json").strip("```").strip()
@@ -575,50 +648,32 @@ Rules: min 3 code_snippets (before/solution/bonus), min 2 diagrams (1 must be me
         return str(t).lower().strip().strip('"').strip("'").replace("-","").replace(" ","")
     devto_tags = [clean_tag(t) for t in raw_tag_list if t][:4] or ["python","tutorial","webdev","programming"]
 
-    # Snippets and diagrams
-    raw_snippets = outline.get("code_snippets", [])
-    raw_diagrams = outline.get("diagrams", [])
-    if not isinstance(raw_snippets, list): raw_snippets = []
-    if not isinstance(raw_diagrams, list): raw_diagrams = []
-
-    snippets = []
-    for s in raw_snippets:
-        if not isinstance(s, dict): continue
-        snippets.append({k: _s(s.get(k), fb) for k, fb in [
-            ("section",""), ("language","python"), ("purpose",""),
-            ("style","solution"), ("content","# code here"),
-        ]})
-
-    diagrams = []
-    for d in raw_diagrams:
-        if not isinstance(d, dict): continue
-        diagrams.append({k: _s(d.get(k), fb) for k, fb in [
-            ("section",""), ("type","ascii"), ("purpose",""), ("content",""),
-        ]})
+    # snippets and diagrams already built by _plan_to_snippets/_plan_to_diagrams above
 
     snippets_block = ""
     if snippets:
-        snippets_block = "\nPRE-PLANNED CODE SNIPPETS (use these — place each in the section indicated):\n"
+        snippets_block = "\nCODE SNIPPET PLAN — write actual code for each in the section indicated:\n"
         for i, s in enumerate(snippets, 1):
             snippets_block += (
                 f"\nSnippet {i} [{s['style'].upper()}] → Section: \"{s['section']}\"\n"
-                f"Purpose: {s['purpose']}\n"
-                f"```{s['language']}\n{s['content']}\n```\n"
+                f"Language: {s['language']} | Purpose: {s['purpose']}\n"
+                f"Write at least 8 lines of real, working, well-commented code.\n"
             )
 
     diagrams_block = ""
     if diagrams:
-        diagrams_block = "\nPRE-PLANNED DIAGRAMS (use these — place each in the section indicated):\n"
+        diagrams_block = "\nDIAGRAM PLAN — create actual diagram content for each in the section indicated:\n"
         for i, d in enumerate(diagrams, 1):
             dtype = d["type"]
             diagrams_block += (
                 f"\nDiagram {i} [{dtype.upper()}] → Section: \"{d['section']}\"\n"
                 f"Purpose: {d['purpose']}\n"
             )
-            fence = "mermaid" if dtype == "mermaid" else ""
-            diagrams_block += f"```{fence}\n{d['content']}\n```\n"
+            if dtype == "mermaid":
+                diagrams_block += "Use proper Mermaid syntax (graph TD, sequenceDiagram, etc.)\n"
+            else:
+                diagrams_block += "Use ASCII box-drawing characters for architecture/flow.\n"
 
-    # ── Pass 2: Write the full article using outline + real keyword data ──────
     # ── Pass 2: Write article ─────────────────────────────────────────────────
     tg_step("✍️ Pass 2/3: Writing article...")
     try:
