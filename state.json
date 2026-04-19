@@ -1,14 +1,11 @@
 {
   "topics": [
-    "Fix AI Timeouts With Node.js",
-    "Automate Docker Pulls With Python",
-    "Debug CORS Errors in React"
+    "Fix AI Timeouts With Python",
+    "Automate Docker Deploy With Node.js",
+    "Stop CORS Errors in React"
   ],
   "date": "April 19, 2026",
   "title_history": [
-    "Fix Claude API Timeouts With Node.js",
-    "Automate Docker Pulls With Python",
-    "Debug CORS Errors in React",
     "Fix Claude Timeouts With Node.js",
     "Automate Docker Pulls With Python",
     "Debug CORS Errors in React",
@@ -35,7 +32,10 @@
     "Debug Claude API Timeouts With TypeScript",
     "Fix AI Timeouts With Node.js",
     "Automate Docker Pulls With Python",
-    "Debug CORS Errors in React"
+    "Debug CORS Errors in React",
+    "Fix AI Timeouts With Python",
+    "Automate Docker Deploy With Node.js",
+    "Stop CORS Errors in React"
   ],
   "last_update_id": 70323267
 }
