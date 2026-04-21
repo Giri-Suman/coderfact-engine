@@ -2,41 +2,96 @@ import os, sys, json, base64, requests, feedparser
 from bs4 import BeautifulSoup
 from datetime import datetime, timezone, timedelta
 
-DEVTO_KEY     = os.getenv("DEVTO_API_KEY")
-TELEGRAM_BOT  = os.getenv("TELEGRAM_BOT_TOKEN")
-TELEGRAM_CHAT = os.getenv("TELEGRAM_CHAT_ID")
-GEMINI_KEY    = os.getenv("GEMINI_API_KEY")
-GROQ_KEY      = os.getenv("GROQ_API_KEY")
-GITHUB_TOKEN  = os.getenv("GITHUB_TOKEN")
-GITHUB_REPO   = os.getenv("GITHUB_REPOSITORY")
-STATE_FILE    = "state.json"
+DEVTO_KEY      = os.getenv("DEVTO_API_KEY")
+TELEGRAM_BOT   = os.getenv("TELEGRAM_BOT_TOKEN")
+TELEGRAM_CHAT  = os.getenv("TELEGRAM_CHAT_ID")
+GEMINI_KEY     = os.getenv("GEMINI_API_KEY")
+GROQ_KEY       = os.getenv("GROQ_API_KEY")
+OPENROUTER_KEY = os.getenv("OPENROUTER_API_KEY")
+GITHUB_TOKEN   = os.getenv("GITHUB_TOKEN")
+GITHUB_REPO    = os.getenv("GITHUB_REPOSITORY")
+STATE_FILE     = "state.json"
 
-# ── AI: Gemini 2.0 Flash → Groq fallback ────────────────────────────────────
-def ask_ai(prompt):
-    # Try Gemini 2.0 Flash (free tier, current stable model)
-    try:
-        url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={GEMINI_KEY}"
-        r = requests.post(url, json={"contents": [{"parts": [{"text": prompt}]}]}, timeout=30)
-        r.raise_for_status()
-        return r.json()["candidates"][0]["content"]["parts"][0]["text"].strip()
-    except Exception as e:
-        print(f"Gemini failed → trying Groq: {e}")
+# ── AI: OpenRouter Llama → OpenRouter DeepSeek → OpenRouter Gemma → Gemini → Groq ──
+def ask_ai(prompt: str, max_tokens: int = 4000) -> str:
+    """
+    5-provider fallback chain — all free tiers.
+    Order: OpenRouter Llama 3.3 70B → OpenRouter DeepSeek R1 →
+           OpenRouter Gemma 3 27B  → Gemini 2.0 Flash → Groq Llama 3.3 70B
+    """
+    errors = []
 
-    # Fallback: Groq (llama-3.3-70b is current free model)
-    try:
+    def _call_openai_compat(url, headers, model, prompt, max_tokens, name):
         r = requests.post(
-            "https://api.groq.com/openai/v1/chat/completions",
-            headers={"Authorization": f"Bearer {GROQ_KEY}", "Content-Type": "application/json"},
-            json={"model": "llama-3.3-70b-versatile", "messages": [{"role": "user", "content": prompt}], "temperature": 0.7},
-            timeout=30,
+            url, headers=headers,
+            json={"model": model,
+                  "messages": [{"role": "user", "content": prompt}],
+                  "temperature": 0.7, "max_tokens": max_tokens},
+            timeout=60,
         )
         r.raise_for_status()
         data = r.json()
-        if "choices" not in data:
-            raise ValueError(f"Groq bad response: {data}")
-        return data["choices"][0]["message"]["content"].strip()
-    except Exception as e:
-        raise RuntimeError(f"Both Gemini and Groq failed. Last error: {e}")
+        if "choices" not in data: raise ValueError(f"No choices: {data}")
+        text = data["choices"][0]["message"]["content"].strip()
+        if len(text) < 50: raise ValueError(f"Too short ({len(text)} chars)")
+        print(f"[AI] {name} ✅")
+        return text
+
+    # 1–3. OpenRouter free models
+    if OPENROUTER_KEY:
+        or_headers = {
+            "Authorization": f"Bearer {OPENROUTER_KEY}",
+            "Content-Type":  "application/json",
+            "HTTP-Referer":  "https://coderfact.com",
+            "X-Title":       "CoderFact Content Engine",
+        }
+        or_models = [
+            ("meta-llama/llama-3.3-70b-instruct:free", "OpenRouter Llama 3.3 70B"),
+            ("deepseek/deepseek-r1:free",               "OpenRouter DeepSeek R1"),
+            ("google/gemma-3-27b-it:free",              "OpenRouter Gemma 3 27B"),
+        ]
+        for model_id, name in or_models:
+            try:
+                return _call_openai_compat(
+                    "https://openrouter.ai/api/v1/chat/completions",
+                    or_headers, model_id, prompt, max_tokens, name
+                )
+            except Exception as e:
+                errors.append(f"{name}: {e}")
+                print(f"[AI] {name} failed → {e}")
+
+    # 4. Gemini 2.0 Flash
+    if GEMINI_KEY:
+        try:
+            r = requests.post(
+                f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={GEMINI_KEY}",
+                json={"contents": [{"parts": [{"text": prompt}]}],
+                      "generationConfig": {"maxOutputTokens": max_tokens, "temperature": 0.7}},
+                timeout=45,
+            )
+            r.raise_for_status()
+            text = r.json()["candidates"][0]["content"]["parts"][0]["text"].strip()
+            if len(text) < 50: raise ValueError(f"Too short ({len(text)} chars)")
+            print("[AI] Gemini 2.0 Flash ✅")
+            return text
+        except Exception as e:
+            errors.append(f"Gemini: {e}")
+            print(f"[AI] Gemini failed → {e}")
+
+    # 5. Groq Llama 3.3 70B (last resort)
+    if GROQ_KEY:
+        try:
+            return _call_openai_compat(
+                "https://api.groq.com/openai/v1/chat/completions",
+                {"Authorization": f"Bearer {GROQ_KEY}", "Content-Type": "application/json"},
+                "llama-3.3-70b-versatile", prompt, max_tokens, "Groq Llama 3.3 70B"
+            )
+        except Exception as e:
+            errors.append(f"Groq: {e}")
+            print(f"[AI] Groq failed → {e}")
+
+    raise RuntimeError("All AI providers failed:\n" + "\n".join(errors))
+
 
 # ── State: load / save / commit to GitHub ────────────────────────────────────
 def load_state():
@@ -828,66 +883,168 @@ Output ONLY in Markdown. Start with the hook. Zero preamble.
         except Exception:
             tags = ["python", "programming", "automation", "tutorial"]
 
-    # ── Dynamic Image + Code System ──────────────────────────────────────────
+    # ── Dynamic Image System ──────────────────────────────────────────────────
     import re as _re
 
-    def slugify(text, words=12):
+    def slugify(text, words=16):
         text = _re.sub(r'[^\w\s]', '', str(text).lower())
         return "-".join(text.split()[:words])
 
     def pollinations(prompt, w=1280, h=720, seed=None):
+        """Generate high-quality specific image via Pollinations flux model."""
         seed_part = f"&seed={seed}" if seed else ""
         return (
             f"https://image.pollinations.ai/prompt/{slugify(prompt)}?"
-            f"width={w}&height={h}&nologo=true&enhance=true{seed_part}"
+            f"width={w}&height={h}&model=flux&nologo=true&enhance=true{seed_part}"
         )
 
-    # ── Pass 3: AI plans visual insertions ───────────────────────────────────
+    # ── Pass 3: Deep visual analysis — images, diagrams, flowcharts, charts ──
     tg_step("🎨 Pass 3/3: Planning visuals & publishing...")
+
+    article_tech  = _s(solution_name, title)
+    article_kw    = primary_kw
+    body_headings = [l[3:].strip() for l in body.splitlines() if l.startswith("## ")]
+    has_mermaid   = "```mermaid" in body
+    has_table     = "| ---" in body or "|---" in body
+
     try:
-        visual_plan_raw = ask_ai(f"""You are a technical blog editor. Decide WHERE to place images and code snippets in this article.
+        visual_plan_raw = ask_ai(f"""You are a senior technical content designer for CoderFact.
+Your job: make this article VISUALLY STUNNING and maximally useful by deciding WHERE to inject each type of visual.
 
-ARTICLE TITLE: "{title}"
+ARTICLE TITLE: "{seo_title}"
+MAIN TECHNOLOGY: "{article_tech}"
+PRIMARY KEYWORD: "{article_kw}"
+ARTICLE ALREADY HAS MERMAID: {has_mermaid}
+ARTICLE ALREADY HAS TABLES: {has_table}
+
+ACTUAL H2 HEADINGS IN ARTICLE:
+{chr(10).join(f'  - "{h}"' for h in body_headings)}
+
 ARTICLE BODY:
-{body[:3000]}
+{body[:4000]}
 
-Return ONLY a valid JSON array. No explanation. No markdown fences.
-Rules:
-- Hero image MUST be first (after="" key — top of article)
-- Min 3 images, max 6. Each prompt must mention the specific tool from the article.
-- Space images evenly across sections.
-- Add extra code snippet only if a section has none.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+VISUAL TYPES YOU CAN ADD
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-Format:
+TYPE 1 — image
+  Pollinations AI image. Use for: hero banner, tool screenshots, architecture
+  visualization, result dashboards, concept illustrations.
+  Prompt MUST be specific to "{article_tech}" — never generic.
+
+TYPE 2 — mermaid_flowchart
+  Add ONLY if article has a process/flow/decision tree not already shown.
+  Use: graph TD with proper node labels.
+  Example content:
+    graph TD
+      A[User Request] --> B{{CORS Header Present?}}
+      B -->|Yes| C[Allow Request]
+      B -->|No| D[Block + Error]
+
+TYPE 3 — mermaid_sequence
+  Add ONLY if article has API calls / client-server interactions.
+  Use: sequenceDiagram with realistic actor names from the article.
+
+TYPE 4 — ascii_diagram
+  For architecture, file structures, data flow between components.
+  Use box-drawing chars. Example:
+    ┌─────────────┐    ┌──────────────┐
+    │   Browser   │───▶│  Vite Proxy  │───▶ API Server
+    └─────────────┘    └──────────────┘
+
+TYPE 5 — comparison_table
+  Add ONLY if article compares options, tools, approaches, or benchmarks.
+  Must have real data from the article.
+
+TYPE 6 — callout
+  A highlighted tip/warning/note block using markdown blockquote.
+  Use for: gotchas, important notes, time-saving tips.
+  Example: > 💡 **Pro tip:** ...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+RULES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1. Hero image (after="") is MANDATORY — always add it first
+2. Read EVERY section. Add a visual wherever it helps understanding
+3. Add mermaid_flowchart if ANY section describes a process/pipeline
+4. Add mermaid_sequence if ANY section shows request/response flow
+5. Add ascii_diagram if ANY section describes components/architecture
+6. Add comparison_table if ANY section has performance data or tool comparison
+7. Add callouts for any gotcha, tip, or warning you spot in the content
+8. For images: max 4 total, prompts must mention "{article_tech}" specifically
+9. For diagrams/tables: add as many as genuinely fit — these are always valuable
+10. Use EXACT heading text from the list above for all "after" fields
+
+Return ONLY a valid JSON array — no markdown fences, no explanation:
 [
-  {{"type":"image","after":"","prompt":"specific tool dark terminal neon glow","style":"dark-terminal-code","size":"hero","alt":"alt text"}},
-  {{"type":"image","after":"## Exact Heading Text","prompt":"specific concept visual","style":"frustrated-dev-at-screen","size":"wide","alt":"alt text"}},
-  {{"type":"code","after":"## Exact Heading","language":"python","content":"# actual code here","caption":"caption"}}
-]
-Style options: dark-terminal-code, diagram-flowchart, frustrated-dev-at-screen, benchmark-graph-results, architecture-diagram, concept-illustration, before-after-comparison, tool-screenshot-ui
-Size options: hero (1280x720), wide (900x500), inline (700x380)""")
-        vplan_clean = visual_plan_raw.strip().strip("```json").strip("```").strip()
-        visual_plan = json.loads(vplan_clean)
-        if not isinstance(visual_plan, list): raise ValueError("not a list")
-        print(f"[images] AI planned {len(visual_plan)} insertions")
-    except Exception as e:
-        print(f"[images] Visual plan failed: {e} — using fallback")
-        second_heading = aeo_headings[1] if len(aeo_headings) > 1 else "## The Fix"
-        visual_plan = [
-            {"type":"image","after":"","prompt":f"{title} dark terminal developer workspace cinematic neon","style":"dark-terminal-code","size":"hero","alt":title},
-            {"type":"image","after":second_heading,"prompt":f"{solution_name} result benchmark terminal output","style":"benchmark-graph-results","size":"wide","alt":"Results"},
-        ]
+  {{
+    "type": "image",
+    "after": "",
+    "prompt": "{article_tech} {article_kw} dark terminal professional cinematic 4k",
+    "style": "dark-terminal-code",
+    "size": "hero",
+    "alt": "specific alt text"
+  }},
+  {{
+    "type": "mermaid_flowchart",
+    "after": "exact heading from list",
+    "content": "graph TD\\n  A[Step] --> B{{Decision}}\\n  B -->|Yes| C[Result]",
+    "caption": "short caption"
+  }},
+  {{
+    "type": "ascii_diagram",
+    "after": "exact heading from list",
+    "content": "┌───────┐\\n│ Box   │\\n└───────┘",
+    "caption": "short caption"
+  }},
+  {{
+    "type": "comparison_table",
+    "after": "exact heading from list",
+    "content": "| Approach | Time | Complexity |\\n|----------|------|------------|\\n| Before | 45 min | High |\\n| After | 2 min | Low |",
+    "caption": "short caption"
+  }},
+  {{
+    "type": "callout",
+    "after": "exact heading from list",
+    "content": "> 💡 **Pro tip:** specific actionable tip from article content",
+    "caption": ""
+  }}
+]""", max_tokens=3000)
 
-    # Map style → visual keywords
+        import re as _re2
+        vplan_raw  = visual_plan_raw.strip().strip("```json").strip("```").strip()
+        arr_match  = _re2.search(r'\[.*\]', vplan_raw, _re2.DOTALL)
+        visual_plan = json.loads(arr_match.group() if arr_match else vplan_raw)
+        if not isinstance(visual_plan, list): raise ValueError("not a list")
+
+        # Filter out generic/short image prompts
+        visual_plan = [
+            v for v in visual_plan if isinstance(v, dict) and (
+                v.get("type") != "image" or len(str(v.get("prompt", ""))) > 40
+            )
+        ]
+        print(f"[images] AI planned {len(visual_plan)} visuals: "
+              f"{sum(1 for v in visual_plan if v.get('type')=='image')} imgs, "
+              f"{sum(1 for v in visual_plan if 'mermaid' in str(v.get('type','')))} mermaid, "
+              f"{sum(1 for v in visual_plan if v.get('type') in ('ascii_diagram','comparison_table','callout'))} other")
+    except Exception as e:
+        print(f"[images] Visual plan failed: {e} — minimal fallback")
+        visual_plan = [{
+            "type": "image", "after": "",
+            "prompt": f"{article_tech} {article_kw} dark terminal professional developer cinematic 4k",
+            "style": "dark-terminal-code", "size": "hero", "alt": seo_title,
+        }]
+
+    # Style → detailed visual descriptor appended to every image prompt
     STYLE_PROMPTS = {
-        "dark-terminal-code":       "dark background terminal green text syntax highlighting professional developer",
-        "diagram-flowchart":        "clean whiteboard diagram flowchart arrows nodes minimal vector art",
-        "frustrated-dev-at-screen": "frustrated developer staring at screen messy desk dark moody cinematic",
-        "benchmark-graph-results":  "dashboard benchmark graph before after comparison results metrics success",
-        "architecture-diagram":     "software architecture diagram system design boxes arrows clean minimal",
-        "concept-illustration":     "concept illustration flat design colorful developer workflow",
-        "before-after-comparison":  "split screen before after comparison terminal output dark professional",
-        "tool-screenshot-ui":       "modern dark UI tool screenshot dashboard clean professional",
+        "dark-terminal-code":       "VS Code dark theme terminal code editor professional screenshot realistic",
+        "architecture-diagram":     "clean technical architecture diagram white background boxes arrows labels minimal professional",
+        "diagram-flowchart":        "clean flowchart diagram dark background neon lines decision boxes professional technical",
+        "before-after-comparison":  "split panel before after comparison dark terminal output green text professional",
+        "benchmark-graph-results":  "performance benchmark bar chart dark background green improvement metrics professional data viz",
+        "concept-illustration":     "clean technical concept illustration flat design dark background labeled components",
+        "frustrated-dev-at-screen": "cinematic developer frustrated at laptop multiple error screens dark office 4k realistic",
+        "tool-screenshot-ui":       "clean modern dark UI dashboard screenshot professional tool interface realistic",
     }
     SIZE_MAP = {
         "hero":   (1280, 720),
@@ -913,29 +1070,64 @@ Size options: hero (1280x720), wide (900x500), inline (700x380)""")
             return str(val).strip()
 
         def sanitize_item(item):
+            t = _ts(item.get("type"), "image")
             return {
-                "type":     _ts(item.get("type"),     "image"),
+                "type":     t,
                 "after":    _ts(item.get("after"),    ""),
                 "prompt":   _ts(item.get("prompt"),   title),
                 "style":    _ts(item.get("style"),    "dark-terminal-code"),
                 "size":     _ts(item.get("size"),     "wide"),
                 "alt":      _ts(item.get("alt"),      title),
                 "language": _ts(item.get("language"), "python"),
-                "content":  _ts(item.get("content"),  "# code"),
+                "content":  _ts(item.get("content"),  ""),
                 "caption":  _ts(item.get("caption"),  ""),
             }
+
+        def render_item(item: dict) -> str:
+            """Convert a visual plan item into Markdown."""
+            t       = item["type"]
+            caption = f"\n*{item['caption']}*\n" if item["caption"] else "\n"
+
+            if t == "image":
+                style_kw = STYLE_PROMPTS.get(item["style"], "dark neon professional developer")
+                w, h     = SIZE_MAP.get(item["size"], (900, 500))
+                seed     = next_seed(abs(hash(item["after"])) % 1000 + 10)
+                url      = pollinations(f"{item['prompt']} {style_kw}", w, h, seed)
+                return f"\n![{item['alt']}]({url})\n"
+
+            elif t == "mermaid_flowchart" or t == "mermaid_sequence":
+                fence = "mermaid"
+                return f"{caption}```{fence}\n{item['content']}\n```\n"
+
+            elif t == "ascii_diagram":
+                return f"{caption}```\n{item['content']}\n```\n"
+
+            elif t == "comparison_table":
+                return f"{caption}{item['content']}\n"
+
+            elif t == "callout":
+                return f"\n{item['content']}\n"
+
+            elif t == "code":
+                lang = item["language"] or "python"
+                return f"{caption}```{lang}\n{item['content']}\n```\n"
+
+            return ""
 
         safe_plan  = [sanitize_item(item) for item in visual_plan if isinstance(item, dict)]
         insertions = {}
         for i, item in enumerate(safe_plan):
             insertions.setdefault(item["after"], []).append((i, item))
 
+        # Hero and other top items (after="")
         top_items = insertions.pop("", [])
         for _, item in top_items:
             if item["type"] == "image":
                 style_kw = STYLE_PROMPTS.get(item["style"], "dark background neon developer")
                 url = pollinations(f"{item['prompt']} {style_kw}", 1280, 720, next_seed(42))
                 output.append(f"![{item['alt']}]({url})\n")
+            else:
+                output.append(render_item(item))
 
         for line in lines:
             output.append(line)
@@ -944,13 +1136,7 @@ Size options: hero (1280x720), wide (900x500), inline (700x380)""")
                 if not trigger: continue
                 if (ls.startswith("## ") and trigger in ls) or ls.startswith(trigger[:40]):
                     for _, item in items:
-                        if item["type"] == "image":
-                            style_kw = STYLE_PROMPTS.get(item["style"], "dark neon tech")
-                            w, h = SIZE_MAP.get(item["size"], (900, 500))
-                            url  = pollinations(f"{item['prompt']} {style_kw}", w, h, next_seed(len(trigger) + 10))
-                            output.append(f"\n![{item['alt']}]({url})\n")
-                        elif item["type"] == "code":
-                            output.append(f"\n*{item['caption']}*\n```{item['language']}\n{item['content']}\n```\n")
+                        output.append(render_item(item))
                     del insertions[trigger]
 
         return "\n".join(output)
