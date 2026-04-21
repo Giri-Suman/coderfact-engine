@@ -1,14 +1,11 @@
 {
   "topics": [
-    "Fix AI Timeouts With Python Script",
-    "Stop CORS Errors in React With Node.js",
-    "Automate Docker Deploy With TypeScript"
+    "I Built RuView Human Pose Estimator",
+    "I Automated AI Model Deployment",
+    "I Fixed Claude API Timeouts"
   ],
   "date": "April 22, 2026",
   "title_history": [
-    "Fix Claude Timeouts With Python",
-    "Automate Docker Pulls With Node.js",
-    "Debug CORS Errors in React",
     "Fix Claude Timeouts With Python",
     "Automate Docker Pulls With Node.js",
     "Debug CORS Errors in React",
@@ -35,7 +32,69 @@
     "Stop AI Timeouts With TypeScript",
     "Fix AI Timeouts With Python Script",
     "Stop CORS Errors in React With Node.js",
-    "Automate Docker Deploy With TypeScript"
+    "Automate Docker Deploy With TypeScript",
+    "I Built RuView Human Pose Estimator",
+    "I Automated AI Model Deployment",
+    "I Fixed Claude API Timeouts"
   ],
-  "last_update_id": 70323271
+  "last_update_id": 70323271,
+  "virality_data": [
+    {
+      "topic": "Building a Real-Time Human Pose Estimator with RuView and WiFi Signals",
+      "virality_score": 92,
+      "virality_reasoning": "This topic will go viral because it combines a unique and trending technology (RuView) with a practical application (human pose estimation), and the use of WiFi signals adds a fresh angle. The fact that RuView is trending on GitHub and has a low number of existing articles on the topic will give us a first-mover advantage.",
+      "cross_source_signals": [
+        "GitHub: RuView trending",
+        "Hacker News: 199 points for a related topic"
+      ],
+      "developer_pain": "medium",
+      "freshness": "new",
+      "suman_angle": "How I built a real-time human pose estimator using RuView and WiFi signals",
+      "target_keywords": [
+        "RuView",
+        "human pose estimation",
+        "WiFi signals",
+        "real-time pose tracking"
+      ],
+      "competing_articles": "Few articles exist yet \u2014 first-mover advantage"
+    },
+    {
+      "topic": "Automating AI Model Deployment with Thunderbolt and TypeScript",
+      "virality_score": 89,
+      "virality_reasoning": "This topic will go viral because it addresses a common pain point for developers (model deployment) and uses a trending technology (Thunderbolt) with a practical application (automation). The fact that Thunderbolt is trending on GitHub and has a strong community interest on Hacker News will increase its virality. I can write this article from personal experience, having automated model deployments in the past.",
+      "cross_source_signals": [
+        "GitHub: Thunderbolt trending",
+        "Hacker News: 611 points for a related topic"
+      ],
+      "developer_pain": "high",
+      "freshness": "trending",
+      "suman_angle": "How I automated AI model deployment using Thunderbolt and TypeScript",
+      "target_keywords": [
+        "Thunderbolt",
+        "AI model deployment",
+        "automation",
+        "TypeScript"
+      ],
+      "competing_articles": "Some articles exist, but none with a personal, hands-on approach"
+    },
+    {
+      "topic": "Debugging Claude API Timeouts with TypeScript and Zilliztech's Claude-Context",
+      "virality_score": 85,
+      "virality_reasoning": "This topic will go viral because it addresses a specific pain point for developers (Claude API timeouts) and uses a trending technology (Claude-Context) with a practical application (debugging). The fact that Claude-Context is trending on GitHub and has a strong community interest on Stack Overflow will increase its virality. I can write this article from personal experience, having debugged Claude API timeouts in the past.",
+      "cross_source_signals": [
+        "GitHub: Claude-Context trending",
+        "Stack Overflow: related questions"
+      ],
+      "developer_pain": "high",
+      "freshness": "existing pain point",
+      "suman_angle": "How I debugged Claude API timeouts using TypeScript and Claude-Context",
+      "target_keywords": [
+        "Claude API timeouts",
+        "debugging",
+        "TypeScript",
+        "Claude-Context"
+      ],
+      "competing_articles": "Some articles exist, but none with a personal, hands-on approach using Claude-Context"
+    }
+  ]
 }
