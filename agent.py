@@ -12,55 +12,68 @@ GITHUB_TOKEN   = os.getenv("GITHUB_TOKEN")
 GITHUB_REPO    = os.getenv("GITHUB_REPOSITORY")
 STATE_FILE     = "state.json"
 
-# ── AI: OpenRouter Llama → OpenRouter DeepSeek → OpenRouter Gemma → Gemini → Groq ──
+# ── AI: OpenRouter → Gemini → Groq with retry/backoff ────────────────────────
 def ask_ai(prompt: str, max_tokens: int = 4000) -> str:
     """
-    5-provider fallback chain — all free tiers.
-    Order: OpenRouter Llama 3.3 70B → OpenRouter DeepSeek R1 →
-           OpenRouter Gemma 3 27B  → Gemini 2.0 Flash → Groq Llama 3.3 70B
+    Robust 6-provider chain with 429 retry + exponential backoff.
+    Order: OR Llama 3.3 → Gemini 2.0 Flash → OR DeepSeek R1 0528 →
+           Groq Llama 3.3 → OR Gemma 3 27B → OR Free Router
+    Interleaved so a rate-limit on OpenRouter falls back to Gemini/Groq fast.
     """
+    import time
+
+    def _openai_compat(url, headers, model, prompt, max_tokens, name, retries=2):
+        for attempt in range(retries + 1):
+            try:
+                r = requests.post(
+                    url, headers=headers,
+                    json={"model": model,
+                          "messages": [{"role": "user", "content": prompt}],
+                          "temperature": 0.7, "max_tokens": max_tokens},
+                    timeout=60,
+                )
+                if r.status_code == 429:
+                    wait = 2 ** attempt
+                    print(f"[AI] {name} rate-limited — waiting {wait}s")
+                    time.sleep(wait)
+                    continue
+                r.raise_for_status()
+                data = r.json()
+                if "choices" not in data:
+                    raise ValueError(f"No choices key: {str(data)[:200]}")
+                text = data["choices"][0]["message"]["content"].strip()
+                if len(text) < 50:
+                    raise ValueError(f"Too short ({len(text)} chars)")
+                print(f"[AI] {name} ✅")
+                return text
+            except requests.HTTPError as e:
+                if attempt < retries and "429" in str(e):
+                    time.sleep(2 ** attempt)
+                    continue
+                raise
+        raise RuntimeError(f"{name}: exhausted retries")
+
+    OR_HEADERS = {
+        "Authorization": f"Bearer {OPENROUTER_KEY}",
+        "Content-Type":  "application/json",
+        "HTTP-Referer":  "https://coderfact.com",
+        "X-Title":       "CoderFact Content Engine",
+    } if OPENROUTER_KEY else {}
+
+    OR_URL = "https://openrouter.ai/api/v1/chat/completions"
+
     errors = []
 
-    def _call_openai_compat(url, headers, model, prompt, max_tokens, name):
-        r = requests.post(
-            url, headers=headers,
-            json={"model": model,
-                  "messages": [{"role": "user", "content": prompt}],
-                  "temperature": 0.7, "max_tokens": max_tokens},
-            timeout=60,
-        )
-        r.raise_for_status()
-        data = r.json()
-        if "choices" not in data: raise ValueError(f"No choices: {data}")
-        text = data["choices"][0]["message"]["content"].strip()
-        if len(text) < 50: raise ValueError(f"Too short ({len(text)} chars)")
-        print(f"[AI] {name} ✅")
-        return text
-
-    # 1–3. OpenRouter free models
+    # 1. OpenRouter Llama 3.3 70B (fast, reliable free model)
     if OPENROUTER_KEY:
-        or_headers = {
-            "Authorization": f"Bearer {OPENROUTER_KEY}",
-            "Content-Type":  "application/json",
-            "HTTP-Referer":  "https://coderfact.com",
-            "X-Title":       "CoderFact Content Engine",
-        }
-        or_models = [
-            ("meta-llama/llama-3.3-70b-instruct:free", "OpenRouter Llama 3.3 70B"),
-            ("deepseek/deepseek-r1:free",               "OpenRouter DeepSeek R1"),
-            ("google/gemma-3-27b-it:free",              "OpenRouter Gemma 3 27B"),
-        ]
-        for model_id, name in or_models:
-            try:
-                return _call_openai_compat(
-                    "https://openrouter.ai/api/v1/chat/completions",
-                    or_headers, model_id, prompt, max_tokens, name
-                )
-            except Exception as e:
-                errors.append(f"{name}: {e}")
-                print(f"[AI] {name} failed → {e}")
+        try:
+            return _openai_compat(OR_URL, OR_HEADERS,
+                "meta-llama/llama-3.3-70b-instruct:free",
+                prompt, max_tokens, "OR Llama 3.3 70B")
+        except Exception as e:
+            errors.append(str(e)); print(f"[AI] OR Llama failed → {e}")
 
-    # 4. Gemini 2.0 Flash
+    # 2. Gemini 2.0 Flash (interleaved early so 429s on OR don't stall us)
     if GEMINI_KEY:
         try:
             r = requests.post(
@@ -75,22 +88,47 @@ def ask_ai(prompt: str, max_tokens: int = 4000) -> str:
             print("[AI] Gemini 2.0 Flash ✅")
             return text
         except Exception as e:
-            errors.append(f"Gemini: {e}")
-            print(f"[AI] Gemini failed → {e}")
+            errors.append(str(e)); print(f"[AI] Gemini failed → {e}")
 
-    # 5. Groq Llama 3.3 70B (last resort)
+    # 3. OpenRouter DeepSeek R1 0528 (updated model ID — previous one was 404)
+    if OPENROUTER_KEY:
+        try:
+            return _openai_compat(OR_URL, OR_HEADERS,
+                "deepseek/deepseek-r1-0528:free",
+                prompt, max_tokens, "OR DeepSeek R1 0528")
+        except Exception as e:
+            errors.append(str(e)); print(f"[AI] OR DeepSeek failed → {e}")
+
+    # 4. Groq Llama 3.3 70B (fast inference, different rate limit pool)
     if GROQ_KEY:
         try:
-            return _call_openai_compat(
+            return _openai_compat(
                 "https://api.groq.com/openai/v1/chat/completions",
                 {"Authorization": f"Bearer {GROQ_KEY}", "Content-Type": "application/json"},
-                "llama-3.3-70b-versatile", prompt, max_tokens, "Groq Llama 3.3 70B"
-            )
+                "llama-3.3-70b-versatile",
+                prompt, max_tokens, "Groq Llama 3.3 70B")
         except Exception as e:
-            errors.append(f"Groq: {e}")
-            print(f"[AI] Groq failed → {e}")
+            errors.append(str(e)); print(f"[AI] Groq failed → {e}")
 
-    raise RuntimeError("All AI providers failed:\n" + "\n".join(errors))
+    # 5. OpenRouter Gemma 3 27B
+    if OPENROUTER_KEY:
+        try:
+            return _openai_compat(OR_URL, OR_HEADERS,
+                "google/gemma-3-27b-it:free",
+                prompt, max_tokens, "OR Gemma 3 27B")
+        except Exception as e:
+            errors.append(str(e)); print(f"[AI] OR Gemma failed → {e}")
+
+    # 6. OpenRouter Free Router — auto-picks best available free model
+    if OPENROUTER_KEY:
+        try:
+            return _openai_compat(OR_URL, OR_HEADERS,
+                "openrouter/auto",
+                prompt, max_tokens, "OR Auto Free Router")
+        except Exception as e:
+            errors.append(str(e)); print(f"[AI] OR Auto failed → {e}")
+
+    raise RuntimeError("All AI providers failed:\n" + "\n".join(errors[-6:]))
 
 
 # ── State: load / save / commit to GitHub ────────────────────────────────────
@@ -364,83 +402,172 @@ def format_signals(signals: dict) -> str:
 
 # ── PHASE 1: Morning Researcher ───────────────────────────────────────────────
 def research():
-    today  = (datetime.now(timezone.utc) + timedelta(hours=5, minutes=30)).strftime("%B %d, %Y")
-    state  = load_state()
+    today         = (datetime.now(timezone.utc) + timedelta(hours=5, minutes=30)).strftime("%B %d, %Y")
+    state         = load_state()
     title_history = state.get("title_history", [])
 
-    # Gather live trend signals from 4 sources
-    print("[research] Fetching live trends...")
-    signals      = fetch_trends()
-    trend_block  = format_signals(signals)
-    print(f"[research] Trend block:\n{trend_block}")
+    print("[research] Fetching live trends from 8 sources...")
+    signals     = fetch_trends()
+    trend_block = format_signals(signals)
+    print(f"[research] Trend block ready ({len(trend_block)} chars)")
 
     history_block = ""
     if title_history:
-        history_block = "PREVIOUSLY USED TITLES (do NOT repeat or closely paraphrase any of these):\n"
-        history_block += "\n".join(f"- {t}" for t in title_history[-30:])
-        history_block += "\n\n"
+        history_block = (
+            "ALREADY PUBLISHED (do NOT repeat or closely paraphrase these):\n"
+            + "\n".join(f"- {t}" for t in title_history[-30:])
+            + "\n\n"
+        )
 
-    raw = ask_ai(f"""
-You are an SEO strategist for CoderFact — a coding blog by Suman, a frontend developer from Kolkata.
-Target audience: developers and small business owners who use AI/automation to save time.
+    # ── Pass A: Virality scoring ─────────────────────────────────────────────
+    print("[research] Pass A: Scoring virality...")
+    virality_raw = ask_ai(f"""You are a senior content strategist who knows exactly what makes tech articles go viral on Medium in 2026.
 
-Today is {today}. Here are LIVE real-time signals from 4 sources:
+Today is {today}.
 
+WHAT MAKES A CODING/AI ARTICLE GO VIRAL ON MEDIUM (research-backed facts):
+1. CROSS-SOURCE SIGNAL: Topic on GitHub + Reddit + Google Trends = 3x viral multiplier
+2. DEVELOPER PAIN POINT: "I wasted X hours on this" = highest clap rate
+3. ACTIONABLE + CODE: Working code readers can copy = high bookmark + share rate
+4. FRESH ANGLE: First-mover on a new tool (<30 days) = Google SEO advantage
+5. AI + AUTOMATION: Medium tech readers favor these heavily in 2026
+6. PERSONAL STORY: "How I built/fixed/automated X" = highest read-ratio on Medium
+7. SEARCH DEMAND: Low-competition keyword with real search volume = ranks on Google
+8. BOOST-WORTHY: Original insight + expert voice + actionable takeaway = editorial boost
+9. AUDIENCE: CoderFact readers are developers 25-40, practical builders, India + global
+10. SPECIFICITY: Named error messages, specific tools, exact time saved = more trust
+
+LIVE SIGNALS FROM 8 SOURCES (GitHub, HackerNews, Reddit, Dev.to, ProductHunt, Tech RSS, StackOverflow, Google Trends):
 {trend_block}
 
-{history_block}Identify the 3 topics with the highest viral + search potential. Then generate 3 UNIQUE, Google-rankable blog titles.
+{history_block}TASK: Analyze every signal. Score each potential topic 0-100 for Medium virality.
+Pick the TOP 3 with the highest scores.
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-TITLE SEO RULES — ALL MUST APPLY
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-1. INCLUDE SEARCHABLE KEYWORDS — people search for errors, tools, and how-tos:
-   ✓ Name the specific language/tool (Python, Node.js, React, Docker, etc.)
-   ✓ Name the specific problem or error (Timeout, Rate Limit, CORS, Memory Leak, etc.)
-   ✓ Include an action word (Fix, Automate, Build, Stop, Deploy, Debug)
+Return ONLY a valid JSON array — no markdown, no explanation:
+[
+  {{
+    "topic": "specific raw topic e.g. 'Vite 6 HMR breaking changes in React projects'",
+    "virality_score": 88,
+    "virality_reasoning": "2 sentences: WHY this will go viral — evidence from signals + pain level",
+    "cross_source_signals": ["GitHub: vite repo trending", "Reddit r/webdev: 5 posts this week"],
+    "developer_pain": "high",
+    "freshness": "breaking",
+    "suman_angle": "Specific first-person angle: 'How I fixed Vite 6 HMR breaking my React hot reload'",
+    "target_keywords": ["vite 6 hmr not working", "vite react hot reload broken", "vite 6 migration"],
+    "competing_articles": "Few articles exist yet — first-mover advantage"
+  }},
+  {{...}},
+  {{...}}
+]
 
-2. NO DIARY-STYLE TITLES — these don't rank:
-   ✗ "My Experience With X"
-   ✗ "Thoughts on Y"
-   ✗ "Automating My Routines" ← too vague, no keyword
-   ✓ "How I Fixed Claude API Timeouts With a Custom Node.js Script"
-   ✓ "Stop Manual Deployments: Automate Claude API With Node.js in 30 Minutes"
+ONLY pick topics where Suman can write from personal dev experience.
+ONLY tutorials, debugging guides, automation scripts, build-alongs, performance fixes.
+NO think-pieces, opinion articles, Top-N lists, or news summaries.""", max_tokens=2000)
 
-3. FOLLOW THESE HIGH-EARNING FORMULAS:
-   • "How I Fixed [Specific Error] in [Tool] With [Language] (Full Code)"
-   • "Stop [Painful Manual Task] — This [Language] Script Does It in [Time]"
-   • "The [Specific Tool] Setup That Cut My [Task] From [X] to [Y]"
-   • "How to Automate [Specific Workflow] With [Tool] — Step by Step"
-   • "[Number] Ways to Fix [Common Error] in [Framework/Tool]"
+    try:
+        vdata = json.loads(virality_raw.strip().strip("```json").strip("```").strip())
+        if not isinstance(vdata, list): raise ValueError("not a list")
+        vdata = [v for v in vdata if isinstance(v, dict)][:3]
+        if len(vdata) < 1: raise ValueError("empty list")
+        print(f"[research] Scored {len(vdata)} topics")
+        for v in vdata:
+            print(f"  [{v.get('virality_score','?')}] {str(v.get('topic',''))[:60]}")
+    except Exception as e:
+        print(f"[research] Virality parse failed: {e} — using fallback")
+        vdata = [
+            {"topic": "Python asyncio common bugs", "virality_score": 74, "developer_pain": "high",
+             "freshness": "fresh", "suman_angle": "The async mistakes that burned 3 hours of my life",
+             "target_keywords": ["python asyncio bugs", "async await python errors", "asyncio tutorial"],
+             "virality_reasoning": "Consistently high pain topic. Trending on Reddit r/learnpython weekly.",
+             "competing_articles": "Many tutorials but few focus on real bugs from experience."},
+            {"topic": "GitHub Actions silent failures", "virality_score": 71, "developer_pain": "high",
+             "freshness": "established", "suman_angle": "Why my GitHub Action failed with zero error message",
+             "target_keywords": ["github actions not working", "github actions debug", "github actions silent fail"],
+             "virality_reasoning": "Dev pain is extremely high. Stack Overflow top questions weekly.",
+             "competing_articles": "Existing articles are outdated — 2023/2024. Fresh angle wins."},
+            {"topic": "Free AI coding tools 2026", "virality_score": 68, "developer_pain": "medium",
+             "freshness": "fresh", "suman_angle": "I tested 5 free AI coding assistants — here's what actually works",
+             "target_keywords": ["free ai coding tools 2026", "github copilot free alternative", "ai code assistant"],
+             "virality_reasoning": "High search volume. Developers actively comparing free options.",
+             "competing_articles": "Most comparison articles are sponsored. Honest review wins."},
+        ]
 
-4. Under 80 characters. Specific. Actionable. Tool + language + outcome in every title.
+    # ── Pass B: Title crafting ────────────────────────────────────────────────
+    print("[research] Pass B: Crafting titles...")
+    topics_block = "\n\n".join([
+        f"TOPIC {i+1} (virality score: {v.get('virality_score','?')}/100):\n"
+        f"  Raw topic: {v.get('topic','')}\n"
+        f"  Suman's angle: {v.get('suman_angle','')}\n"
+        f"  Primary keywords: {', '.join(v.get('target_keywords',[])[:3]) if isinstance(v.get('target_keywords'), list) else ''}\n"
+        f"  Pain level: {v.get('developer_pain','medium')} | Freshness: {v.get('freshness','fresh')}\n"
+        f"  Why viral: {v.get('virality_reasoning','')}"
+        for i, v in enumerate(vdata)
+    ])
 
-5. NO banned phrases: "game-changer", "revolutionize", "the future of", "unlock", "master"
+    title_raw = ask_ai(f"""You are a headline writer for CoderFact — a coding blog by Suman, a frontend dev from Kolkata.
+Convert these 3 scored topics into PERFECT Medium article titles.
 
-Reply ONLY in this format — no explanations, no quotes:
+{topics_block}
+
+TITLE FORMULA RULES (Medium virality-tested):
+  ✓ "How I Fixed [Specific Error] in [Tool] — Here's the Exact Code"
+  ✓ "Stop [Painful Task] Manually — This [Language] Script Does It in [Time]"
+  ✓ "[N] [Tool] Mistakes That Wasted My [X Hours] (And the Fixes)"
+  ✓ "I Built [Thing] Using [Tool] in [Time] — Full Walkthrough With Code"
+  ✓ "Why [Common Approach] Breaks [Tool] (And What to Do Instead)"
+  ✓ "The [Specific Fix] That Cut My [Metric] From [X] to [Y]"
+
+RULES:
+- Primary keyword must appear in FIRST 4 WORDS of title
+- Name the specific tool OR language OR error — no vague titles
+- Under 80 characters
+- First-person ("I", "My") where natural
+- Each title must be a DIFFERENT topic/angle
+- BANNED: "game-changer", "revolutionize", "unlock", "master", "the future of"
+- BANNED FORMATS: "My Journey With X", "Thoughts on Y", "X Changed Everything"
+
+Reply ONLY in this exact format, nothing else:
 1. [Title]
 2. [Title]
-3. [Title]
-""")
+3. [Title]""")
 
-    titles = [l.split(". ", 1)[1].strip().strip('"')
-              for l in raw.splitlines() if l.strip()[:2] in ("1.", "2.", "3.")][:3]
+    titles = []
+    for line in title_raw.strip().splitlines():
+        s = line.strip()
+        if s[:2] in ("1.", "2.", "3."):
+            titles.append(s.split(". ", 1)[1].strip().strip('"'))
+    titles = titles[:3]
 
-    # Append new titles to history and save (keep last 30)
+    if len(titles) < 3:
+        titles = [v.get("suman_angle", v.get("topic", f"Topic {i+1}")) for i, v in enumerate(vdata)]
+
+    # Save to state
     updated_history = (title_history + titles)[-30:]
-    save_state({**state, "topics": titles, "date": today, "title_history": updated_history})
-    print(f"[research] Generated: {titles}")
-    print(f"[research] Total title history: {len(updated_history)}")
+    save_state({
+        **state,
+        "topics":        titles,
+        "date":          today,
+        "title_history": updated_history,
+        "virality_data": vdata,
+    })
+    print(f"[research] Final titles: {titles}")
 
-    send_tg(
-        f"🔥 *CoderFact — Daily Brief* | _{today}_\n\n"
-        + "\n".join(f"{i+1}. {t}" for i, t in enumerate(titles))
-        + "\n\n"
-        "Reply with your choice:\n"
-        "• `1` `2` or `3` — draft one article\n"
-        "• `1 2` or `1 3` or `2 3` — draft two\n"
-        "• `1 2 3` — draft all three\n"
-        "• `0` — skip today"
+    # Build rich Telegram message with scores
+    tg_lines = [f"🔥 *CoderFact — Daily Brief* | _{today}_\n"]
+    for i, (title, v) in enumerate(zip(titles, vdata), 1):
+        score = v.get("virality_score", "?")
+        pain  = v.get("developer_pain", "")
+        fresh = v.get("freshness", "")
+        pe = "🔥" if pain == "high" else "⚡" if pain == "medium" else "💡"
+        fe = "🆕" if fresh == "breaking" else "✨" if fresh == "fresh" else "📌"
+        tg_lines.append(f"{i}. *{title}*\n   {pe} {pain} pain | {fe} {fresh} | 📊 {score}/100")
+
+    tg_lines.append(
+        "\nReply:\n"
+        "• `1` `2` `3` — draft one  |  `1 2` `2 3` `1 3` — draft two  |  `1 2 3` — all three  |  `0` — skip"
     )
+    send_tg("\n".join(tg_lines))
+
 
 # ── PHASE 2: Drafter ─────────────────────────────────────────────────────────
 def draft_single(title: str, idx: int, total: int):
