@@ -1,14 +1,11 @@
 {
   "topics": [
-    "I Built RuView Human Pose Estimator",
-    "I Automated AI Model Deployment",
-    "I Fixed Claude API Timeouts"
+    "I Fixed Claude API Timeouts",
+    "I Built Human Pose Estimator",
+    "I Debugged CORS Errors React"
   ],
   "date": "April 22, 2026",
   "title_history": [
-    "Fix Claude Timeouts With Python",
-    "Automate Docker Pulls With Node.js",
-    "Debug CORS Errors in React",
     "Fix CORS Errors in React With Node.js",
     "Automate Docker Pulls With Python Script",
     "Debug Claude API Timeouts With TypeScript",
@@ -35,66 +32,66 @@
     "Automate Docker Deploy With TypeScript",
     "I Built RuView Human Pose Estimator",
     "I Automated AI Model Deployment",
-    "I Fixed Claude API Timeouts"
+    "I Fixed Claude API Timeouts",
+    "I Fixed Claude API Timeouts",
+    "I Built Human Pose Estimator",
+    "I Debugged CORS Errors React"
   ],
   "last_update_id": 70323272,
   "virality_data": [
     {
-      "topic": "Building a Real-Time Human Pose Estimator with RuView and WiFi Signals",
+      "topic": "How I Automated Claude API Deploy with TypeScript and Fixed Timeouts",
       "virality_score": 92,
-      "virality_reasoning": "This topic will go viral because it combines a unique and trending technology (RuView) with a practical application (human pose estimation), and the use of WiFi signals adds a fresh angle. The fact that RuView is trending on GitHub and has a low number of existing articles on the topic will give us a first-mover advantage.",
+      "virality_reasoning": "This topic combines a personal story of automating Claude API deploy with a highly sought-after solution for fixing timeouts, leveraging the popularity of TypeScript and the interest in AI and automation. The presence of Claude API on GitHub trending and the lack of existing articles on this specific topic provide a strong signal for virality.",
       "cross_source_signals": [
-        "GitHub: RuView trending",
-        "Hacker News: 199 points for a related topic"
+        "GitHub: zilliztech/claude-context trending",
+        "Reddit r/AI: discussions on Claude API"
       ],
-      "developer_pain": "medium",
+      "developer_pain": "high",
       "freshness": "new",
-      "suman_angle": "How I built a real-time human pose estimator using RuView and WiFi signals",
+      "suman_angle": "Personal story of automating Claude API deploy and fixing timeouts",
       "target_keywords": [
-        "RuView",
-        "human pose estimation",
-        "WiFi signals",
-        "real-time pose tracking"
+        "claude api deploy",
+        "typescript automation",
+        "fixing claude api timeouts"
       ],
       "competing_articles": "Few articles exist yet \u2014 first-mover advantage"
     },
     {
-      "topic": "Automating AI Model Deployment with Thunderbolt and TypeScript",
-      "virality_score": 89,
-      "virality_reasoning": "This topic will go viral because it addresses a common pain point for developers (model deployment) and uses a trending technology (Thunderbolt) with a practical application (automation). The fact that Thunderbolt is trending on GitHub and has a strong community interest on Hacker News will increase its virality. I can write this article from personal experience, having automated model deployments in the past.",
+      "topic": "Building a Real-Time Human Pose Estimator with RuView and WiFi Signals",
+      "virality_score": 90,
+      "virality_reasoning": "This topic offers a unique combination of AI, automation, and a practical use case, leveraging the popularity of RuView on GitHub trending. The lack of existing articles on this specific topic and the interest in human pose estimation provide a strong signal for virality. The personal story of building and troubleshooting the estimator will resonate with developers.",
       "cross_source_signals": [
-        "GitHub: Thunderbolt trending",
-        "Hacker News: 611 points for a related topic"
+        "GitHub: ruvnet/RuView trending",
+        "Reddit r/MachineLearning: discussions on human pose estimation"
       ],
-      "developer_pain": "high",
-      "freshness": "trending",
-      "suman_angle": "How I automated AI model deployment using Thunderbolt and TypeScript",
+      "developer_pain": "medium",
+      "freshness": "new",
+      "suman_angle": "Personal story of building and troubleshooting the human pose estimator",
       "target_keywords": [
-        "Thunderbolt",
-        "AI model deployment",
-        "automation",
-        "TypeScript"
+        "ruview human pose estimation",
+        "wifi signal processing",
+        "real-time pose estimation"
       ],
-      "competing_articles": "Some articles exist, but none with a personal, hands-on approach"
+      "competing_articles": "Few articles exist yet \u2014 first-mover advantage"
     },
     {
-      "topic": "Debugging Claude API Timeouts with TypeScript and Zilliztech's Claude-Context",
-      "virality_score": 85,
-      "virality_reasoning": "This topic will go viral because it addresses a specific pain point for developers (Claude API timeouts) and uses a trending technology (Claude-Context) with a practical application (debugging). The fact that Claude-Context is trending on GitHub and has a strong community interest on Stack Overflow will increase its virality. I can write this article from personal experience, having debugged Claude API timeouts in the past.",
+      "topic": "Debugging CORS Errors in React with AI-Powered Automated Testing",
+      "virality_score": 88,
+      "virality_reasoning": "This topic addresses a common pain point for React developers, CORS errors, and offers a unique solution leveraging AI-powered automated testing. The presence of CORS error discussions on Stack Overflow and the interest in AI and automation provide a strong signal for virality. The personal story of debugging and automating the solution will resonate with developers.",
       "cross_source_signals": [
-        "GitHub: Claude-Context trending",
-        "Stack Overflow: related questions"
+        "Stack Overflow: CORS error discussions",
+        "Reddit r/webdev: AI-powered testing discussions"
       ],
       "developer_pain": "high",
-      "freshness": "existing pain point",
-      "suman_angle": "How I debugged Claude API timeouts using TypeScript and Claude-Context",
+      "freshness": "new",
+      "suman_angle": "Personal story of debugging and automating the CORS error solution",
       "target_keywords": [
-        "Claude API timeouts",
-        "debugging",
-        "TypeScript",
-        "Claude-Context"
+        "cors error react",
+        "ai-powered testing",
+        "automated testing react"
       ],
-      "competing_articles": "Some articles exist, but none with a personal, hands-on approach using Claude-Context"
+      "competing_articles": "Some articles exist, but AI-powered testing angle is new"
     }
   ]
 }
