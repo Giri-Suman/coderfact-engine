@@ -1,14 +1,11 @@
 {
   "topics": [
-    "I Fixed Claude API Timeouts",
-    "I Built Human Pose Estimator",
-    "I Debugged CORS Errors React"
+    "CORS Error React Fix",
+    "Automating Claude API",
+    "AI Timeout Node.js Fix"
   ],
-  "date": "April 22, 2026",
+  "date": "April 23, 2026",
   "title_history": [
-    "Fix CORS Errors in React With Node.js",
-    "Automate Docker Pulls With Python Script",
-    "Debug Claude API Timeouts With TypeScript",
     "Fix AI Timeouts With Node.js",
     "Automate Docker Pulls With Python",
     "Debug CORS Errors in React",
@@ -35,63 +32,66 @@
     "I Fixed Claude API Timeouts",
     "I Fixed Claude API Timeouts",
     "I Built Human Pose Estimator",
-    "I Debugged CORS Errors React"
+    "I Debugged CORS Errors React",
+    "CORS Error React Fix",
+    "Automating Claude API",
+    "AI Timeout Node.js Fix"
   ],
   "last_update_id": 70323273,
   "virality_data": [
     {
-      "topic": "How I Automated Claude API Deploy with TypeScript and Fixed Timeouts",
+      "topic": "Fixing CORS Errors in React with TypeScript and Node.js",
       "virality_score": 92,
-      "virality_reasoning": "This topic combines a personal story of automating Claude API deploy with a highly sought-after solution for fixing timeouts, leveraging the popularity of TypeScript and the interest in AI and automation. The presence of Claude API on GitHub trending and the lack of existing articles on this specific topic provide a strong signal for virality.",
+      "virality_reasoning": "This topic will go viral because it addresses a common pain point for React developers, and the use of TypeScript and Node.js will appeal to the Medium audience. Evidence from GitHub trending repositories and Stack Overflow questions suggests a high demand for solutions to CORS errors.",
       "cross_source_signals": [
-        "GitHub: zilliztech/claude-context trending",
-        "Reddit r/AI: discussions on Claude API"
+        "GitHub: react repo trending",
+        "Stack Overflow: CORS error questions"
       ],
       "developer_pain": "high",
-      "freshness": "new",
-      "suman_angle": "Personal story of automating Claude API deploy and fixing timeouts",
+      "freshness": "established",
+      "suman_angle": "How I fixed CORS errors in my React project using TypeScript and Node.js",
       "target_keywords": [
-        "claude api deploy",
-        "typescript automation",
-        "fixing claude api timeouts"
+        "CORS error React",
+        "TypeScript Node.js CORS",
+        "React CORS fix"
       ],
-      "competing_articles": "Few articles exist yet \u2014 first-mover advantage"
+      "competing_articles": "Several articles exist, but a fresh perspective with personal experience can still stand out"
     },
     {
-      "topic": "Building a Real-Time Human Pose Estimator with RuView and WiFi Signals",
-      "virality_score": 90,
-      "virality_reasoning": "This topic offers a unique combination of AI, automation, and a practical use case, leveraging the popularity of RuView on GitHub trending. The lack of existing articles on this specific topic and the interest in human pose estimation provide a strong signal for virality. The personal story of building and troubleshooting the estimator will resonate with developers.",
+      "topic": "Automating Claude API Deployments with TypeScript and Docker",
+      "virality_score": 95,
+      "virality_reasoning": "This topic will go viral because it combines the popularity of Claude API, TypeScript, and Docker, and addresses a common need for automation. Evidence from GitHub trending repositories and Dev.to challenges suggests a high interest in automation and Claude API.",
       "cross_source_signals": [
-        "GitHub: ruvnet/RuView trending",
-        "Reddit r/MachineLearning: discussions on human pose estimation"
+        "GitHub: claude repo trending",
+        "Dev.to: Claude API challenges"
       ],
       "developer_pain": "medium",
-      "freshness": "new",
-      "suman_angle": "Personal story of building and troubleshooting the human pose estimator",
+      "freshness": "fresh",
+      "suman_angle": "How I automated Claude API deployments using TypeScript and Docker",
       "target_keywords": [
-        "ruview human pose estimation",
-        "wifi signal processing",
-        "real-time pose estimation"
+        "Claude API automation",
+        "TypeScript Docker deployment",
+        "Claude API TypeScript"
       ],
-      "competing_articles": "Few articles exist yet \u2014 first-mover advantage"
+      "competing_articles": "Few articles exist on this specific topic, providing a first-mover advantage"
     },
     {
-      "topic": "Debugging CORS Errors in React with AI-Powered Automated Testing",
-      "virality_score": 88,
-      "virality_reasoning": "This topic addresses a common pain point for React developers, CORS errors, and offers a unique solution leveraging AI-powered automated testing. The presence of CORS error discussions on Stack Overflow and the interest in AI and automation provide a strong signal for virality. The personal story of debugging and automating the solution will resonate with developers.",
+      "topic": "Debugging AI Timeouts with Node.js and TypeScript",
+      "virality_score": 90,
+      "virality_reasoning": "This topic will go viral because it addresses a common issue with AI development, and the use of Node.js and TypeScript will appeal to the Medium audience. Evidence from GitHub trending repositories and Stack Overflow questions suggests a high demand for solutions to AI timeouts.",
       "cross_source_signals": [
-        "Stack Overflow: CORS error discussions",
-        "Reddit r/webdev: AI-powered testing discussions"
+        "GitHub: AI repo trending",
+        "Stack Overflow: AI timeout questions"
       ],
       "developer_pain": "high",
-      "freshness": "new",
-      "suman_angle": "Personal story of debugging and automating the CORS error solution",
+      "freshness": "established",
+      "suman_angle": "How I debugged AI timeouts in my Node.js project using TypeScript",
       "target_keywords": [
-        "cors error react",
-        "ai-powered testing",
-        "automated testing react"
+        "AI timeout Node.js",
+        "TypeScript AI debugging",
+        "AI timeout fix"
       ],
-      "competing_articles": "Some articles exist, but AI-powered testing angle is new"
+      "competing_articles": "Several articles exist, but a fresh perspective with personal experience can still stand out"
     }
   ]
 }
