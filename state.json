@@ -1,14 +1,11 @@
 {
   "topics": [
-    "CORS Error React Fix",
-    "Automating Claude API",
-    "AI Timeout Node.js Fix"
+    "Automate Claude API Deploy",
+    "Fix AI Timeouts with Hugging Face",
+    "Build Human Pose Estimator"
   ],
-  "date": "April 23, 2026",
+  "date": "April 24, 2026",
   "title_history": [
-    "Fix AI Timeouts With Node.js",
-    "Automate Docker Pulls With Python",
-    "Debug CORS Errors in React",
     "Fix AI Timeouts With Python",
     "Automate Docker Deploy With Node.js",
     "Stop CORS Errors in React",
@@ -35,63 +32,66 @@
     "I Debugged CORS Errors React",
     "CORS Error React Fix",
     "Automating Claude API",
-    "AI Timeout Node.js Fix"
+    "AI Timeout Node.js Fix",
+    "Automate Claude API Deploy",
+    "Fix AI Timeouts with Hugging Face",
+    "Build Human Pose Estimator"
   ],
   "last_update_id": 70323275,
   "virality_data": [
     {
-      "topic": "Fixing CORS Errors in React with TypeScript and Node.js",
+      "topic": "Automating Claude API Deploy with Python",
       "virality_score": 92,
-      "virality_reasoning": "This topic will go viral because it addresses a common pain point for React developers, and the use of TypeScript and Node.js will appeal to the Medium audience. Evidence from GitHub trending repositories and Stack Overflow questions suggests a high demand for solutions to CORS errors.",
+      "virality_reasoning": "This topic will go viral because it combines a trending GitHub topic (Claude Context) with a high-demand skill (automating API deployment) and a popular language (Python), as seen on Hacker News and Dev.to. The personal story angle of 'How I automated Claude API deploy' will resonate with developers.",
       "cross_source_signals": [
-        "GitHub: react repo trending",
-        "Stack Overflow: CORS error questions"
+        "GitHub: zilliztech/claude-context trending",
+        "Hacker News: Claude Code quality reports"
       ],
       "developer_pain": "high",
-      "freshness": "established",
-      "suman_angle": "How I fixed CORS errors in my React project using TypeScript and Node.js",
+      "freshness": "new",
+      "suman_angle": "How I automated Claude API deploy with Python",
       "target_keywords": [
-        "CORS error React",
-        "TypeScript Node.js CORS",
-        "React CORS fix"
+        "automate claude api deploy",
+        "claude api python",
+        "claude context automation"
       ],
-      "competing_articles": "Several articles exist, but a fresh perspective with personal experience can still stand out"
+      "competing_articles": "Few articles exist yet \u2014 first-mover advantage"
     },
     {
-      "topic": "Automating Claude API Deployments with TypeScript and Docker",
-      "virality_score": 95,
-      "virality_reasoning": "This topic will go viral because it combines the popularity of Claude API, TypeScript, and Docker, and addresses a common need for automation. Evidence from GitHub trending repositories and Dev.to challenges suggests a high interest in automation and Claude API.",
+      "topic": "Fixing AI Timeouts with Hugging Face ML-Intern",
+      "virality_score": 89,
+      "virality_reasoning": "This topic will go viral because it addresses a common pain point (AI timeouts) with a popular library (Hugging Face) and a trending GitHub topic (ml-intern), as seen on GitHub and TechCrunch. The actionable code and personal story angle of 'How I fixed AI timeouts with Hugging Face' will attract developers.",
       "cross_source_signals": [
-        "GitHub: claude repo trending",
-        "Dev.to: Claude API challenges"
+        "GitHub: huggingface/ml-intern trending",
+        "TechCrunch: OpenAI releases GPT-5.5"
+      ],
+      "developer_pain": "high",
+      "freshness": "new",
+      "suman_angle": "How I fixed AI timeouts with Hugging Face ML-Intern",
+      "target_keywords": [
+        "fix ai timeouts",
+        "hugging face ml-intern",
+        "ai timeout solution"
+      ],
+      "competing_articles": "Some articles exist, but none with Hugging Face ML-Intern"
+    },
+    {
+      "topic": "Building a Human Pose Estimator with RuView and WiFi Signals",
+      "virality_score": 85,
+      "virality_reasoning": "This topic will go viral because it combines a unique concept (human pose estimation with WiFi signals) with a trending GitHub topic (RuView) and a popular language (Rust), as seen on GitHub and Dev.to. The build-along angle of 'How I built a human pose estimator with RuView' will attract developers.",
+      "cross_source_signals": [
+        "GitHub: ruvnet/RuView trending",
+        "Dev.to: If AI Existed in 2011, Would We Still Have the Modern Web?"
       ],
       "developer_pain": "medium",
-      "freshness": "fresh",
-      "suman_angle": "How I automated Claude API deployments using TypeScript and Docker",
+      "freshness": "new",
+      "suman_angle": "How I built a human pose estimator with RuView and WiFi signals",
       "target_keywords": [
-        "Claude API automation",
-        "TypeScript Docker deployment",
-        "Claude API TypeScript"
+        "human pose estimation",
+        "ruview wifi signals",
+        "wifi pose estimator"
       ],
-      "competing_articles": "Few articles exist on this specific topic, providing a first-mover advantage"
-    },
-    {
-      "topic": "Debugging AI Timeouts with Node.js and TypeScript",
-      "virality_score": 90,
-      "virality_reasoning": "This topic will go viral because it addresses a common issue with AI development, and the use of Node.js and TypeScript will appeal to the Medium audience. Evidence from GitHub trending repositories and Stack Overflow questions suggests a high demand for solutions to AI timeouts.",
-      "cross_source_signals": [
-        "GitHub: AI repo trending",
-        "Stack Overflow: AI timeout questions"
-      ],
-      "developer_pain": "high",
-      "freshness": "established",
-      "suman_angle": "How I debugged AI timeouts in my Node.js project using TypeScript",
-      "target_keywords": [
-        "AI timeout Node.js",
-        "TypeScript AI debugging",
-        "AI timeout fix"
-      ],
-      "competing_articles": "Several articles exist, but a fresh perspective with personal experience can still stand out"
+      "competing_articles": "Few articles exist yet \u2014 first-mover advantage"
     }
   ]
 }
