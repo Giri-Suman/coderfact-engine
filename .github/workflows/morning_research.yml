@@ -1,4 +1,4 @@
-name: 1. Morning Topic Researcher
+name: Morning Topic Researcher
 
 on:
   schedule:
@@ -23,11 +23,17 @@ jobs:
 
       - name: Run Morning Researcher
         env:
+          # API Keys
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID:   ${{ secrets.TELEGRAM_CHAT_ID }}
           GEMINI_API_KEY:     ${{ secrets.GEMINI_API_KEY }}
           GROQ_API_KEY:       ${{ secrets.GROQ_API_KEY }}
-          OPENROUTER_API_KEY:  ${{ secrets.OPENROUTER_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           GITHUB_TOKEN:       ${{ secrets.GITHUB_TOKEN }}
           GITHUB_REPOSITORY:  ${{ github.repository }}
+          
+          # Suman Giri Persona Injectors
+          AUTHOR_NAME: ${{ vars.AUTHOR_NAME || 'Suman Giri' }}
+          AUTHOR_CONTEXT: ${{ vars.AUTHOR_CONTEXT || 'a tech automation enthusiast, senior frontend developer and content creator, Kolkata who builds tools for CoderFact' }}
+          AUTHOR_VIBE: ${{ vars.AUTHOR_VIBE || 'figures stuff out late at night, writes about it the next morning' }}
         run: python agent.py research
