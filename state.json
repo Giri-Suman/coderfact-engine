@@ -1,14 +1,11 @@
 {
   "topics": [
-    "Automate Claude API Deploy",
-    "Fix AI Timeouts with Hugging Face",
-    "Build Human Pose Estimator"
+    "Claude API Timeouts Fixed",
+    "Automating ML Model Deployment",
+    "Code Search Engine Built"
   ],
-  "date": "April 24, 2026",
+  "date": "April 25, 2026",
   "title_history": [
-    "Fix AI Timeouts With Python",
-    "Automate Docker Deploy With Node.js",
-    "Stop CORS Errors in React",
     "Fix AI Timeouts With Python",
     "Automate Docker Deploy With Node.js",
     "Stop CORS Errors in React With TypeScript",
@@ -35,61 +32,65 @@
     "AI Timeout Node.js Fix",
     "Automate Claude API Deploy",
     "Fix AI Timeouts with Hugging Face",
-    "Build Human Pose Estimator"
+    "Build Human Pose Estimator",
+    "Claude API Timeouts Fixed",
+    "Automating ML Model Deployment",
+    "Code Search Engine Built"
   ],
   "last_update_id": 70323276,
   "virality_data": [
     {
-      "topic": "Automating Claude API Deploy with Python",
+      "topic": "Fixing Claude API Timeouts with Hugging Face Transformers",
       "virality_score": 92,
-      "virality_reasoning": "This topic will go viral because it combines a trending GitHub topic (Claude Context) with a high-demand skill (automating API deployment) and a popular language (Python), as seen on Hacker News and Dev.to. The personal story angle of 'How I automated Claude API deploy' will resonate with developers.",
+      "virality_reasoning": "This topic will go viral because it solves a specific pain point for developers working with Claude API and Hugging Face Transformers, as evidenced by the trending GitHub repository huggingface/ml-intern and the recent investment in Anthropic. The personal story of fixing API timeouts will resonate with developers who have faced similar issues.",
       "cross_source_signals": [
-        "GitHub: zilliztech/claude-context trending",
-        "Hacker News: Claude Code quality reports"
+        "GitHub: huggingface/ml-intern trending",
+        "Google Trends: increase in searches for 'Claude API timeouts'"
       ],
       "developer_pain": "high",
       "freshness": "new",
-      "suman_angle": "How I automated Claude API deploy with Python",
+      "suman_angle": "How I fixed Claude API timeouts in my project using Hugging Face Transformers",
       "target_keywords": [
-        "automate claude api deploy",
-        "claude api python",
-        "claude context automation"
+        "Claude API timeouts",
+        "Hugging Face Transformers",
+        "API timeout fixes"
       ],
       "competing_articles": "Few articles exist yet \u2014 first-mover advantage"
     },
     {
-      "topic": "Fixing AI Timeouts with Hugging Face ML-Intern",
+      "topic": "Automating ML Model Deployment with OSV Scanner and TypeScript",
       "virality_score": 89,
-      "virality_reasoning": "This topic will go viral because it addresses a common pain point (AI timeouts) with a popular library (Hugging Face) and a trending GitHub topic (ml-intern), as seen on GitHub and TechCrunch. The actionable code and personal story angle of 'How I fixed AI timeouts with Hugging Face' will attract developers.",
+      "virality_reasoning": "This topic will go viral because it provides a practical solution for automating ML model deployment, a task that many developers struggle with, as seen on Hacker News and GitHub. The use of OSV Scanner and TypeScript will appeal to developers looking for a robust and efficient deployment process.",
       "cross_source_signals": [
-        "GitHub: huggingface/ml-intern trending",
-        "TechCrunch: OpenAI releases GPT-5.5"
-      ],
-      "developer_pain": "high",
-      "freshness": "new",
-      "suman_angle": "How I fixed AI timeouts with Hugging Face ML-Intern",
-      "target_keywords": [
-        "fix ai timeouts",
-        "hugging face ml-intern",
-        "ai timeout solution"
-      ],
-      "competing_articles": "Some articles exist, but none with Hugging Face ML-Intern"
-    },
-    {
-      "topic": "Building a Human Pose Estimator with RuView and WiFi Signals",
-      "virality_score": 85,
-      "virality_reasoning": "This topic will go viral because it combines a unique concept (human pose estimation with WiFi signals) with a trending GitHub topic (RuView) and a popular language (Rust), as seen on GitHub and Dev.to. The build-along angle of 'How I built a human pose estimator with RuView' will attract developers.",
-      "cross_source_signals": [
-        "GitHub: ruvnet/RuView trending",
-        "Dev.to: If AI Existed in 2011, Would We Still Have the Modern Web?"
+        "GitHub: google/osv-scanner trending",
+        "Hacker News: discussion on ML model deployment"
       ],
       "developer_pain": "medium",
       "freshness": "new",
-      "suman_angle": "How I built a human pose estimator with RuView and WiFi signals",
+      "suman_angle": "How I automated ML model deployment using OSV Scanner and TypeScript",
       "target_keywords": [
-        "human pose estimation",
-        "ruview wifi signals",
-        "wifi pose estimator"
+        "ML model deployment",
+        "OSV Scanner",
+        "TypeScript automation"
+      ],
+      "competing_articles": "Some articles exist, but few provide a personal, step-by-step guide"
+    },
+    {
+      "topic": "Building a Code Search Engine with Claude Context and OpenMetadata",
+      "virality_score": 85,
+      "virality_score_reasoning": "This topic will go viral because it showcases a unique application of Claude Context and OpenMetadata, as seen on GitHub and Dev.to. The personal story of building a code search engine will appeal to developers interested in innovative uses of these technologies.",
+      "virality_reasoning": "The use of Claude Context and OpenMetadata will appeal to developers looking for new ways to improve their coding workflow. The personal story of building a code search engine will provide a relatable and engaging narrative.",
+      "cross_source_signals": [
+        "GitHub: zilliztech/claude-context trending",
+        "Dev.to: discussion on code search engines"
+      ],
+      "developer_pain": "low",
+      "freshness": "new",
+      "suman_angle": "How I built a code search engine using Claude Context and OpenMetadata",
+      "target_keywords": [
+        "code search engine",
+        "Claude Context",
+        "OpenMetadata"
       ],
       "competing_articles": "Few articles exist yet \u2014 first-mover advantage"
     }
