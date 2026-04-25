@@ -9,6 +9,7 @@ from bs4 import BeautifulSoup
 from datetime import datetime, timezone, timedelta
 
 # ── Environment Variables & API Keys ──────────────────────────────────────────
+DEVTO_KEY      = os.getenv("DEVTO_API_KEY")
 TELEGRAM_BOT   = os.getenv("TELEGRAM_BOT_TOKEN")
 TELEGRAM_CHAT  = os.getenv("TELEGRAM_CHAT_ID")
 GEMINI_KEY     = os.getenv("GEMINI_API_KEY")
@@ -23,7 +24,7 @@ AUTHOR_NAME    = os.getenv("AUTHOR_NAME", "Suman Giri")
 AUTHOR_CONTEXT = os.getenv("AUTHOR_CONTEXT", "a tech automation enthusiast, senior frontend developer and content creator, Kolkata who builds tools for CoderFact")
 AUTHOR_VIBE    = os.getenv("AUTHOR_VIBE", "figures stuff out late at night, writes about it the next morning")
 
-# Helper to prevent Markdown parser breakage
+# Helper to prevent UI Markdown parser breakage
 TICK3 = chr(96) * 3
 
 # ── AI: OpenRouter → Gemini → Groq with retry/backoff ────────────────────────
@@ -145,15 +146,12 @@ def get_reply():
         chat_id = str(msg.get("chat", {}).get("id", ""))
         date    = datetime.fromtimestamp(msg.get("date", 0), tz=timezone.utc).date()
 
-        if chat_id != str(TELEGRAM_CHAT) or date not in (today, today_ist):
-            continue
-        if not text:
-            continue
+        if chat_id != str(TELEGRAM_CHAT) or date not in (today, today_ist): continue
+        if not text: continue
 
         save_state({**state, "last_update_id": u["update_id"]})
 
-        if text.strip() == "0":
-            return {"type": "skip"}
+        if text.strip() == "0": return {"type": "skip"}
 
         clean = text.replace(" ", "")
         if all(c in "0123456789" for c in clean) and len(clean) <= 3:
@@ -161,18 +159,15 @@ def get_reply():
             valid  = [c for c in digits if c in ("1","2","3")]
             if valid: return {"type": "choice", "choices": valid}
 
-        if len(text) >= 10:
-            return {"type": "custom", "topic": text}
+        if len(text) >= 10: return {"type": "custom", "topic": text}
 
     return None
 
 # ── Multi-Source Trend Aggregator (8 sources) ────────────────────────────────
 def fetch_trends():
-    """Pulls real-time signals from 8 sources including GitHub repos and Google Trends."""
     HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; CoderFact-Bot/1.0)"}
     signals = {}
     
-    # 1. GitHub Trending (Viral Repos)
     try:
         r = requests.get("https://github.com/trending", headers=HEADERS, timeout=10)
         soup = BeautifulSoup(r.text, "html.parser")
@@ -190,7 +185,6 @@ def fetch_trends():
         signals["github"] = repos
     except: signals["github"] = []
 
-    # 2. HackerNews top stories
     try:
         top_ids = requests.get("https://hacker-news.firebaseio.com/v0/topstories.json", timeout=8).json()[:15]
         hn = []
@@ -201,7 +195,6 @@ def fetch_trends():
         signals["hackernews"] = sorted(hn, key=lambda x: x["score"], reverse=True)[:8]
     except: signals["hackernews"] = []
 
-    # 3. Reddit (AI/Coding discussions)
     reddit_posts = []
     for sub in ["programming", "MachineLearning", "webdev", "artificial"]:
         try:
@@ -213,13 +206,11 @@ def fetch_trends():
         except: pass
     signals["reddit"] = sorted(reddit_posts, key=lambda x: x["upvotes"], reverse=True)[:12]
 
-    # 4. Dev.to trending
     try:
         articles = requests.get("https://dev.to/api/articles?top=7&per_page=10", headers=HEADERS, timeout=8).json()
         signals["devto"] = [{"title": a.get("title",""), "tags": a.get("tag_list",[])} for a in articles[:8]]
     except: signals["devto"] = []
 
-    # 5. RSS Feeds (Trending AI News)
     rss_items = []
     rss_feeds = [
         ("https://towardsdatascience.com/feed", "Towards Data Science"),
@@ -234,12 +225,11 @@ def fetch_trends():
         except: pass
     signals["rss_news"] = rss_items[:15]
 
-    # 6. Google Trends
     google_rising = []
     try:
         from pytrends.request import TrendReq
         pt = TrendReq(hl="en-US", tz=330, timeout=(10, 25), retries=2, backoff_factor=0.5)
-        for seed in ["python automation", "AI coding", "machine learning", "frontend development"]:
+        for seed in ["python automation", "AI coding", "machine learning"]:
             try:
                 pt.build_payload([seed], timeframe="now 7-d", geo="")
                 related = pt.related_queries()
@@ -356,10 +346,23 @@ def draft_single(title: str, idx: int, total: int):
 
     tg_step(f"⏳ Drafting *\"{title}\"*...")
 
-    # Pass 0: PAA Keyword Research
+    # Step 1: Complexity
+    try:
+        c_raw = ask_ai(f"""Classify this blog post title by complexity: "{title}"
+Reply ONLY with JSON. No markdown backticks:
+{{"complexity": "simple"|"moderate"|"deep", "reason": "one sentence", "target_words": <600-1000>}}""")
+        c_clean = c_raw.replace(f'{TICK3}json', '').replace(TICK3, '').strip()
+        c = json.loads(c_clean)
+        target_words = min(int(c.get("target_words", 800)), 1000)
+        complexity   = _s(c.get("complexity"), "moderate")
+    except Exception as e:
+        target_words, complexity = 800, "moderate"
+        print(f"[draft] Complexity fallback: {e}")
+
+    # Pass 0: Keyword research & PAA
     tg_step("🔍 Pass 0: Scraping PAA & Keywords...")
     try:
-        kw_research_raw = ask_ai(f"""You are an SEO keyword researcher for coding/developer content on Medium.
+        kw_research_raw = ask_ai(f"""You are an SEO keyword researcher for coding/developer content.
 Article title: "{title}"
 
 Return ONLY a JSON object. Do NOT wrap it in markdown backticks:
@@ -371,7 +374,7 @@ Return ONLY a JSON object. Do NOT wrap it in markdown backticks:
     "title": "rewrite title leading with primary keyword",
     "meta_description": "150-char SEO description"
   }},
-  "medium_tags": ["4 existing Medium tags"]
+  "medium_tags": ["4 existing Dev.to/Medium tags"]
 }}""")
         cleaned_json = kw_research_raw.replace(f'{TICK3}json', '').replace(TICK3, '').strip()
         kw_data = json.loads(cleaned_json)
@@ -381,6 +384,7 @@ Return ONLY a JSON object. Do NOT wrap it in markdown backticks:
     primary_kw   = _s(kw_data.get("primary_keyword"), title)
     aeo_headings = _list(kw_data.get("people_also_ask"), ["Why Does This Happen?", "How To Fix It?", "What Is The Code?"])
     seo_title    = _s(kw_data.get("keyword_placement", {}).get("title"), title)
+    seo_meta     = _s(kw_data.get("keyword_placement", {}).get("meta_description"), "")
     tags         = _list(kw_data.get("medium_tags"), ["python", "tutorial", "programming"])[:4]
 
     # Pass 1: Outline
@@ -388,7 +392,7 @@ Return ONLY a JSON object. Do NOT wrap it in markdown backticks:
     try:
         outline_raw = ask_ai(f"""You are helping {AUTHOR_NAME} plan a blog post.
 Title: "{seo_title}"
-Target: ~900 words
+Target: ~{target_words} words
 
 CRITICAL: Return ONLY a JSON object. Do NOT wrap it in markdown backticks.
 {{
@@ -404,6 +408,8 @@ CRITICAL: Return ONLY a JSON object. Do NOT wrap it in markdown backticks.
     except Exception as e:
         tg_err("Outline", e); outline = {}
 
+    hook_scene = _s(outline.get("hook_scene"), "It was late when the error hit.")
+    real_metric = _s(outline.get("real_metric"), "Saved 2 hours")
     snippets_block = "\n".join([f"Snippet: {s.get('purpose')} in section {s.get('section')} ({s.get('language')})" for s in outline.get("snippet_plan", [])])
     diagrams_block = "\n".join([f"Diagram ({d.get('type')}): {d.get('purpose')} in section {d.get('section')}" for d in outline.get("diagram_plan", [])])
 
@@ -429,8 +435,8 @@ PATTERNS TO USE:
 ARTICLE BRIEF
 Title: "{seo_title}"
 Primary Keyword: "{primary_kw}"
-Hook scene: {outline.get('hook_scene', 'It was late when the error hit.')}
-Metric to flaunt: {outline.get('real_metric', 'Saved 2 hours')}
+Hook scene: {hook_scene}
+Metric to flaunt: {real_metric}
 
 AEO H2 HEADINGS TO USE EXACTLY:
 {chr(10).join(f'## {h}' for h in aeo_headings)}
@@ -442,15 +448,119 @@ REQUIREMENTS:
 4. Provide real, working code examples.
 5. End with a question for the comments.
 
-Output ONLY in Markdown.
+Output ONLY in Markdown. Start immediately with the text.
 """)
     except Exception as e:
         tg_err("Article writing", e); raise
 
-    # Pass 3: Visual & Formatting Injection
-    tg_step("🎨 Pass 3: Formatting & Enhancing...")
-    
-    medium_ready_body = convert_mermaid_for_medium(article)
+    # ── Dynamic Image System (Visual Planner) ─────────────────────────────────
+    import re as _re
+
+    def slugify(text, words=16):
+        text = _re.sub(r'[^\w\s]', '', str(text).lower())
+        return "-".join(text.split()[:words])
+
+    def pollinations(prompt, w=1280, h=720, seed=None):
+        seed_part = f"&seed={seed}" if seed else ""
+        return f"https://image.pollinations.ai/prompt/{slugify(prompt)}?width={w}&height={h}&model=flux&nologo=true&enhance=true{seed_part}"
+
+    tg_step("🎨 Pass 3: Deep visual analysis & injection...")
+    article_tech  = _s(outline.get("solution_name"), title)
+    body_headings = [l[3:].strip() for l in article.splitlines() if l.startswith("## ")]
+
+    try:
+        visual_plan_raw = ask_ai(f"""You are a senior technical content designer. Decide WHERE to inject visuals.
+ARTICLE TITLE: "{seo_title}"
+MAIN TECHNOLOGY: "{article_tech}"
+ACTUAL H2 HEADINGS IN ARTICLE:
+{chr(10).join(f'  - "{h}"' for h in body_headings)}
+
+TYPES YOU CAN ADD: image (Pollinations AI), mermaid_flowchart, mermaid_sequence, ascii_diagram, comparison_table, callout.
+
+Return ONLY a valid JSON array. DO NOT wrap in backticks.
+[
+  {{
+    "type": "image",
+    "after": "",
+    "prompt": "{article_tech} {primary_kw} dark terminal professional cinematic 4k",
+    "style": "dark-terminal-code",
+    "size": "hero",
+    "alt": "specific alt text"
+  }},
+  {{
+    "type": "callout",
+    "after": "exact heading from list",
+    "content": "> 💡 **Pro tip:** specific actionable tip from article content",
+    "caption": ""
+  }}
+]""")
+        vplan_raw = visual_plan_raw.replace(f'{TICK3}json', '').replace(TICK3, '').strip()
+        arr_match = _re.search(r'\[.*\]', vplan_raw, _re.DOTALL)
+        visual_plan = json.loads(arr_match.group() if arr_match else vplan_raw)
+        visual_plan = [v for v in visual_plan if isinstance(v, dict) and (v.get("type") != "image" or len(str(v.get("prompt", ""))) > 40)]
+    except Exception as e:
+        print(f"[images] Visual plan failed: {e}")
+        visual_plan = [{"type": "image", "after": "", "prompt": f"{article_tech} {primary_kw} dark terminal professional", "style": "dark-terminal-code", "size": "hero", "alt": seo_title}]
+
+    STYLE_PROMPTS = {
+        "dark-terminal-code": "VS Code dark theme terminal code editor professional screenshot realistic",
+        "architecture-diagram": "clean technical architecture diagram white background boxes arrows labels minimal professional",
+    }
+
+    def build_enriched_body(body: str, visual_plan: list) -> str:
+        lines  = body.splitlines()
+        output = []
+        used_seeds = set()
+
+        def next_seed(base):
+            s = int(base)
+            while s in used_seeds: s += 1
+            used_seeds.add(s)
+            return s
+
+        def render_item(item: dict) -> str:
+            t       = item.get("type", "image")
+            caption = f"\n*{item.get('caption', '')}*\n" if item.get("caption") else "\n"
+            if t == "image":
+                style_kw = STYLE_PROMPTS.get(item.get("style"), "dark neon professional developer")
+                url      = pollinations(f"{item.get('prompt')} {style_kw}", 900, 500, next_seed(abs(hash(item.get("after", ""))) % 1000 + 10))
+                return f"\n![{item.get('alt')}]({url})\n"
+            elif t in ("mermaid_flowchart", "mermaid_sequence"):
+                return f"{caption}{TICK3}mermaid\n{item.get('content')}\n{TICK3}\n"
+            elif t == "ascii_diagram":
+                return f"{caption}{TICK3}\n{item.get('content')}\n{TICK3}\n"
+            elif t == "comparison_table" or t == "callout":
+                return f"{caption}{item.get('content')}\n"
+            return ""
+
+        safe_plan  = [v for v in visual_plan if isinstance(v, dict)]
+        insertions = {}
+        for i, item in enumerate(safe_plan): insertions.setdefault(_s(item.get("after")), []).append((i, item))
+
+        for _, item in insertions.pop("", []):
+            if item.get("type") == "image":
+                url = pollinations(f"{item.get('prompt')} {STYLE_PROMPTS.get(item.get('style'), 'dark background')}", 1280, 720, next_seed(42))
+                output.append(f"![{item.get('alt')}]({url})\n")
+            else:
+                output.append(render_item(item))
+
+        for line in lines:
+            output.append(line)
+            ls = line.strip()
+            for trigger, items in list(insertions.items()):
+                if trigger and ((ls.startswith("## ") and trigger in ls) or ls.startswith(trigger[:40])):
+                    for _, item in items: output.append(render_item(item))
+                    del insertions[trigger]
+        return "\n".join(output)
+
+    try:
+        enriched_body = build_enriched_body(article, visual_plan)
+    except Exception as e:
+        tg_err("Visual injection", e); enriched_body = article
+
+    # ── Final Formats: Mermaid Conversion & Footers ───────────────────────────
+    # Convert Mermaid diagrams to images so they render correctly on Medium/Dev.to
+    medium_ready_body = convert_mermaid_for_medium(enriched_body)
     
     content = (
         f"{medium_ready_body}\n\n"
@@ -458,16 +568,42 @@ Output ONLY in Markdown.
         f"*Tutorial by {AUTHOR_NAME}. Find more tech automation and education resources at [CoderFact](https://coderfact.com).*"
     )
 
-    # ── Export to File System & GitHub ────────────────────────────────────────
-    tg_step("💾 Saving Medium Draft and Remotion Props...")
+    # ── PUBLISH TO DEV.TO (Existing Feature Preserved) ────────────────────────
+    print(f"[draft] Publishing — title='{seo_title}' tags={tags} DEVTO_KEY={bool(DEVTO_KEY)}")
+    devto_url = ""
     try:
-        slug = re.sub(r'[^\w\s]', '', seo_title.lower()).replace(' ', '-')
+        res = requests.post(
+            "https://dev.to/api/articles",
+            headers={"api-key": DEVTO_KEY, "Content-Type": "application/json"} if DEVTO_KEY else {},
+            json={"article": {
+                "title": seo_title,
+                "body_markdown": content,
+                "published": False,
+                "tags": tags,
+                "canonical_url": "https://coderfact.com",
+            }},
+            timeout=20,
+        )
+        if res.status_code == 201:
+            devto_url = res.json().get("url", "https://dev.to/dashboard")
+            print(f"[draft] Dev.to success! URL: {devto_url}")
+        else:
+            print(f"❌ Dev.to error {res.status_code}: {res.text[:300]}")
+    except Exception as e:
+        print(f"❌ Dev.to publish failed: {e}")
+
+    # ── EXPORT TO GITHUB (New Enhanced Feature) ───────────────────────────────
+    tg_step("💾 Saving Medium Draft and Remotion Props to GitHub...")
+    try:
+        slug = _re.sub(r'[^\w\s]', '', seo_title.lower()).replace(' ', '-')
         
+        # 1. Save MD Locally
         os.makedirs("medium_drafts", exist_ok=True)
         md_filename = f"medium_drafts/{slug}.md"
         with open(md_filename, "w", encoding="utf-8") as f:
             f.write(content)
             
+        # 2. Extract code blocks for Remotion Video Automation
         pattern = re.compile(rf'{TICK3}(?:python|bash|json|javascript|ts)\n(.*?)\n{TICK3}', re.DOTALL)
         code_blocks = re.findall(pattern, content)
         remotion_data = {
@@ -479,18 +615,21 @@ Output ONLY in Markdown.
         with open(json_filename, "w", encoding="utf-8") as f:
             json.dump(remotion_data, f, indent=2)
 
+        # 3. Commit to GitHub automatically
         if GITHUB_TOKEN and GITHUB_REPO:
-            api_url = f"https://api.github.com/repos/{GITHUB_REPO}/contents/{md_filename}"
             hdrs = {"Authorization": f"token {GITHUB_TOKEN}"}
             
+            # Markdown File
+            api_url = f"https://api.github.com/repos/{GITHUB_REPO}/contents/{md_filename}"
             sha = requests.get(api_url, headers=hdrs).json().get("sha")
             body = {
-                "message": f"docs: generated medium draft and remotion props for {slug}",
+                "message": f"docs: generated medium draft for {slug}",
                 "content": base64.b64encode(content.encode()).decode()
             }
             if sha: body["sha"] = sha
             requests.put(api_url, headers=hdrs, json=body)
             
+            # JSON File
             api_url_json = f"https://api.github.com/repos/{GITHUB_REPO}/contents/{json_filename}"
             sha_json = requests.get(api_url_json, headers=hdrs).json().get("sha")
             body_json = {
@@ -500,12 +639,14 @@ Output ONLY in Markdown.
             if sha_json: body_json["sha"] = sha_json
             requests.put(api_url_json, headers=hdrs, json=body_json)
 
-        send_tg(
-            f"✅ {progress}*Draft saved to GitHub!*\n\n"
-            f"📝 _{seo_title}_\n"
-            f"🏷 {', '.join(tags)}\n\n"
-            f"The Markdown file and Remotion JSON props are in your repo's `medium_drafts/` folder."
-        )
+        # ── Final Success Notification ────────────────────────────────────────
+        msg = f"✅ {progress}*Draft completely generated!*\n\n📝 _{seo_title}_\n🏷 {', '.join(tags)}\n"
+        if devto_url:
+            msg += f"\n🌐 **Uploaded to Dev.to:** [Open Draft]({devto_url})"
+        msg += f"\n💾 **Exported to GitHub:** `.md` and `_remotion.json` saved in `medium_drafts/` directory."
+        
+        send_tg(msg)
+
     except Exception as e:
         tg_err("File Export & GitHub Push", e)
         raise
@@ -531,7 +672,7 @@ def draft():
     for idx, choice in enumerate(valid, 1):
         try: draft_single(topics[int(choice) - 1], idx, len(valid))
         except Exception as e: print(f"Failed: {e}")
-    send_tg("🎉 All drafts completed and pushed to GitHub `medium_drafts`!")
+    send_tg("🎉 All operations completed!")
 
 if __name__ == "__main__":
     {"research": research, "draft": draft}.get(sys.argv[1] if len(sys.argv) > 1 else "", lambda: print("Usage: python agent.py research | draft"))()
