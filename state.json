@@ -1,29 +1,11 @@
 {
   "topics": [
-    "Fix AI Timeouts With Python Script",
-    "Stop CORS Errors in React With Node.js",
-    "Automate Docker Deploy With TypeScript"
+    "Fixing osv-scanner Vulnerabilities",
+    "Automating Claude Code Optimization",
+    "Fixing Black Box AI Drift"
   ],
-  "date": "April 22, 2026",
+  "date": "April 25, 2026",
   "title_history": [
-    "Fix Claude Timeouts With Python",
-    "Automate Docker Pulls With Node.js",
-    "Debug CORS Errors in React",
-    "Fix Claude Timeouts With Python",
-    "Automate Docker Pulls With Node.js",
-    "Debug CORS Errors in React",
-    "Fix CORS Errors in React With Node.js",
-    "Automate Docker Pulls With Python Script",
-    "Debug Claude API Timeouts With TypeScript",
-    "Fix AI Timeouts With Node.js",
-    "Automate Docker Pulls With Python",
-    "Debug CORS Errors in React",
-    "Fix AI Timeouts With Python",
-    "Automate Docker Deploy With Node.js",
-    "Stop CORS Errors in React",
-    "Fix AI Timeouts With Python",
-    "Automate Docker Deploy With Node.js",
-    "Stop CORS Errors in React With TypeScript",
     "Fix AI Timeouts With Python",
     "Automate Docker Deploy With Node.js",
     "Stop CORS Errors in React With TypeScript",
@@ -35,7 +17,81 @@
     "Stop AI Timeouts With TypeScript",
     "Fix AI Timeouts With Python Script",
     "Stop CORS Errors in React With Node.js",
-    "Automate Docker Deploy With TypeScript"
+    "Automate Docker Deploy With TypeScript",
+    "I Built RuView Human Pose Estimator",
+    "I Automated AI Model Deployment",
+    "I Fixed Claude API Timeouts",
+    "I Fixed Claude API Timeouts",
+    "I Built Human Pose Estimator",
+    "I Debugged CORS Errors React",
+    "CORS Error React Fix",
+    "Automating Claude API",
+    "AI Timeout Node.js Fix",
+    "Automate Claude API Deploy",
+    "Fix AI Timeouts with Hugging Face",
+    "Build Human Pose Estimator",
+    "Claude API Timeouts Fixed",
+    "Automating ML Model Deployment",
+    "Code Search Engine Built",
+    "Fixing osv-scanner Vulnerabilities",
+    "Automating Claude Code Optimization",
+    "Fixing Black Box AI Drift"
   ],
-  "last_update_id": 70323271
+  "last_update_id": 70323279,
+  "virality_data": [
+    {
+      "topic": "Fixing osv-scanner vulnerabilities with Google's osv-scanner tool",
+      "virality_score": 92,
+      "virality_reasoning": "This topic will go viral because it addresses a specific pain point for developers, with evidence from GitHub trending and Google Trends. The osv-scanner tool is a new and relevant topic, with a high potential for search demand and low competition.",
+      "cross_source_signals": [
+        "GitHub: google/osv-scanner trending",
+        "Google Trends: osv-scanner search volume increasing"
+      ],
+      "developer_pain": "high",
+      "freshness": "fresh",
+      "suman_angle": "How I used osv-scanner to fix vulnerabilities in my project",
+      "target_keywords": [
+        "osv-scanner tutorial",
+        "fixing vulnerabilities with osv-scanner",
+        "osv-scanner vs other vulnerability scanners"
+      ],
+      "competing_articles": "Few articles exist yet \u2014 first-mover advantage"
+    },
+    {
+      "topic": "Automating Claude Code performance optimization with Claude Context",
+      "virality_score": 90,
+      "virality_reasoning": "This topic will go viral because it combines the popular Claude Code with automation and performance optimization, two highly relevant topics for Medium's tech audience. The use of Claude Context adds a fresh angle, with evidence from GitHub and Medium publications.",
+      "cross_source_signals": [
+        "GitHub: zilliztech/claude-context trending",
+        "Medium: Towards Data Science publication on Claude Code"
+      ],
+      "developer_pain": "medium",
+      "freshness": "fresh",
+      "suman_angle": "How I automated Claude Code performance optimization with Claude Context",
+      "target_keywords": [
+        "claude code performance optimization",
+        "automating claude code with claude context",
+        "claude context tutorial"
+      ],
+      "competing_articles": "Some articles exist, but none with this specific automation angle"
+    },
+    {
+      "topic": "Debugging and fixing 'Black box AI drift' issues with Hugging Face's ml-intern",
+      "virality_score": 88,
+      "virality_reasoning": "This topic will go viral because it addresses a specific and timely issue, 'Black box AI drift', with evidence from Stack Overflow and Hacker News. The use of Hugging Face's ml-intern adds a relevant and popular tool to the topic, with a high potential for search demand and low competition.",
+      "cross_source_signals": [
+        "Stack Overflow: Black box AI drift post",
+        "Hacker News: Black box AI drift discussion"
+      ],
+      "developer_pain": "high",
+      "freshness": "breaking",
+      "suman_angle": "How I debugged and fixed Black box AI drift issues with ml-intern",
+      "target_keywords": [
+        "black box ai drift fix",
+        "debugging ai drift with ml-intern",
+        "ml-intern tutorial"
+      ],
+      "competing_articles": "Few articles exist yet \u2014 first-mover advantage"
+    }
+  ]
 }
