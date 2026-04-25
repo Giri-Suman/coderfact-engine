@@ -152,9 +152,11 @@ def send_tg(msg):
 
 def get_reply():
     """
-    Returns a list of chosen topic numbers (e.g. ['1'], ['1','3'], ['1','2','3']).
-    Accepts inputs like: '1', '1 2', '1 2 3', '12', '123', '0' (skip).
-    Returns None if no valid reply found today.
+    Returns dict with:
+      {"type": "choice", "choices": ["1","2"]}   — numbered picks
+      {"type": "custom", "topic": "my own topic"} — user's own topic
+      {"type": "skip"}                             — replied 0
+      None if no valid reply found today
     """
     state   = load_state()
     last_id = state.get("last_update_id", 0)
@@ -166,40 +168,45 @@ def get_reply():
     updates = res.get("result", [])
     print(f"[get_reply] {len(updates)} new updates found")
 
-    today = datetime.now(timezone.utc).date()
-    # Also accept IST "today" — Suman is in Kolkata (UTC+5:30)
-    # A reply at 00:30 IST = 19:00 prev UTC, so check both UTC and IST dates
+    today     = datetime.now(timezone.utc).date()
     ist_offset = timedelta(hours=5, minutes=30)
     today_ist  = (datetime.now(timezone.utc) + ist_offset).date()
+
     for u in reversed(updates):
         msg     = u.get("message", {})
         text    = msg.get("text", "").strip()
         chat_id = str(msg.get("chat", {}).get("id", ""))
         date    = datetime.fromtimestamp(msg.get("date", 0), tz=timezone.utc).date()
-        print(f"[get_reply] update_id={u.get('update_id')} chat={chat_id} text='{text}' date={date} today={today}")
+        print(f"[get_reply] update_id={u.get('update_id')} chat={chat_id} text='{text[:60]}' date={date}")
 
         if chat_id != str(TELEGRAM_CHAT) or date not in (today, today_ist):
             continue
+        if not text:
+            continue
 
-        # Parse: "0", "1", "2", "3", "1 2", "1 3", "2 3", "1 2 3", "12", "123" etc.
-        digits = [c for c in text.replace(" ", "") if c in "0123"]
-        if not digits or len(digits) != len(text.replace(" ", "")):
-            continue  # contains invalid characters
+        save_state({**state, "last_update_id": u["update_id"]})
 
-        choices = list(dict.fromkeys(digits))  # deduplicate, preserve order
+        # Skip
+        if text.strip() == "0":
+            return {"type": "skip"}
 
-        if "0" in choices:
-            save_state({**state, "last_update_id": u["update_id"]})
-            return ["0"]
+        # Numbered choice: "1", "2", "1 2", "123" etc.
+        clean = text.replace(" ", "")
+        if all(c in "0123456789" for c in clean) and len(clean) <= 3:
+            digits = list(dict.fromkeys(c for c in clean if c in "1234567890"))
+            valid  = [c for c in digits if c in ("1","2","3")]
+            if valid:
+                print(f"[get_reply] ✅ Numbered choices: {valid}")
+                return {"type": "choice", "choices": valid}
 
-        valid = [c for c in choices if c in ("1", "2", "3")]
-        if valid:
-            print(f"[get_reply] ✅ Valid choices: {valid}")
-            save_state({**state, "last_update_id": u["update_id"]})
-            return valid
+        # Custom topic — anything else with enough content
+        if len(text) >= 10:
+            print(f"[get_reply] ✅ Custom topic: '{text[:60]}'")
+            return {"type": "custom", "topic": text}
 
     print("[get_reply] No valid reply found.")
     return None
+
 
 # ── Multi-Source Trend Aggregator (8 sources) ────────────────────────────────
 def fetch_trends():
@@ -299,22 +306,35 @@ def fetch_trends():
         print(f"[trends] ProductHunt failed: {e}")
         signals["producthunt"] = []
 
-    # 6. Tech/AI RSS feeds — TechCrunch AI + The Verge Tech + MIT Tech Review
+    # 6. Medium publications + top tech blogs RSS (what's already working on Medium)
     rss_items = []
     rss_feeds = [
-        "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "https://www.theverge.com/rss/index.xml",
-        "https://www.technologyreview.com/feed/",
+        # Medium top publications — what's getting reads RIGHT NOW
+        ("https://towardsdatascience.com/feed",                    "Towards Data Science"),
+        ("https://medium.com/feed/better-programming",             "Better Programming"),
+        ("https://medium.com/feed/towards-artificial-intelligence","Towards AI"),
+        ("https://medium.com/feed/hackernoon",                     "HackerNoon"),
+        ("https://medium.com/feed/level-up-coding",                "Level Up Coding"),
+        # Breaking AI/tech news
+        ("https://techcrunch.com/category/artificial-intelligence/feed/", "TechCrunch AI"),
+        ("https://www.technologyreview.com/feed/",                 "MIT Tech Review"),
+        # Developer-focused
+        ("https://freecodecamp.org/news/rss/",                     "freeCodeCamp"),
+        ("https://hnrss.org/frontpage",                            "HN RSS"),
+        # Research
+        ("https://rss.arxiv.org/rss/cs.AI",                        "arXiv CS.AI"),
     ]
-    for url in rss_feeds:
+    for url, source in rss_feeds:
         try:
             feed = feedparser.parse(url)
-            for entry in feed.entries[:4]:
-                rss_items.append(entry.title)
+            for entry in feed.entries[:3]:
+                title = getattr(entry, 'title', '')
+                if title:
+                    rss_items.append({"title": title, "source": source})
         except Exception:
             pass
-    signals["rss_news"] = rss_items[:12]
-    print(f"[trends] RSS news: {len(rss_items)} items")
+    signals["rss_news"] = rss_items[:25]
+    print(f"[trends] RSS (Medium pubs + tech blogs): {len(rss_items)} items")
 
     # 7. Stack Overflow — trending questions via blog RSS
     try:
@@ -382,9 +402,12 @@ def format_signals(signals: dict) -> str:
             lines.append(f"  • {p['title']} — {p['desc'][:70]}")
 
     if signals.get("rss_news"):
-        lines.append("\n📰 TECH/AI NEWS (TechCrunch, The Verge, MIT Tech Review):")
-        for item in signals["rss_news"][:6]:
-            lines.append(f"  • {item}")
+        lines.append("\n📰 MEDIUM PUBLICATIONS + TECH BLOGS (what's already working):")
+        for item in signals["rss_news"][:15]:
+            if isinstance(item, dict):
+                lines.append(f"  • [{item.get('source','')}] {item.get('title','')}")
+            else:
+                lines.append(f"  • {item}")
 
     if signals.get("devto"):
         lines.append("\n📝 DEV.TO TRENDING:")
@@ -424,6 +447,12 @@ def research():
     virality_raw = ask_ai(f"""You are a senior content strategist who knows exactly what makes tech articles go viral on Medium in 2026.
 
 Today is {today}.
+
+CRITICAL DIVERSITY RULES — the 3 topics MUST cover different categories:
+- NO two topics from the same category (e.g. not two "Python tutorial" topics)
+- Cover at least 2 of these angles: [debugging fix, build tutorial, tool comparison, automation script, AI/LLM integration, performance optimization, career/workflow, new tool deep-dive]
+- At least one topic must be "breaking" or "fresh" freshness
+- At least one topic must target a specific named error or tool problem (not a concept)
 
 WHAT MAKES A CODING/AI ARTICLE GO VIRAL ON MEDIUM (research-backed facts):
 1. CROSS-SOURCE SIGNAL: Topic on GitHub + Reddit + Google Trends = 3x viral multiplier
@@ -563,8 +592,11 @@ Reply ONLY in this exact format, nothing else:
         tg_lines.append(f"{i}. *{title}*\n   {pe} {pain} pain | {fe} {fresh} | 📊 {score}/100")
 
     tg_lines.append(
-        "\nReply:\n"
-        "• `1` `2` `3` — draft one  |  `1 2` `2 3` `1 3` — draft two  |  `1 2 3` — all three  |  `0` — skip"
+        "\n*Reply options:*\n"
+        "• `1` `2` `3` — draft one  |  `1 2` `2 3` `1 3` — draft two  |  `1 2 3` — all three\n"
+        "• `0` — skip today\n"
+        "• *Type any topic* — I'll draft your own idea instead\n"
+        "  _e.g._ `How to use Ollama with Python locally`"
     )
     send_tg("\n".join(tg_lines))
 
@@ -1321,32 +1353,55 @@ Return ONLY a valid JSON array — no markdown fences, no explanation:
 
 
 def draft():
-    """Orchestrator: reads reply, loops over chosen topics."""
-    choices = get_reply()
-    if choices is None:
+    """Orchestrator: reads reply, handles numbered choices + custom topics."""
+    reply = get_reply()
+    if reply is None:
         return print("No reply yet.")
-    if choices == ["0"]:
+
+    rtype = reply.get("type")
+
+    # Skip
+    if rtype == "skip":
         return send_tg("👌 Skipping today. See you tomorrow!")
 
-    topics = load_state().get("topics", [])
-    state_date = load_state().get("date", "")
+    # Custom topic from user
+    if rtype == "custom":
+        custom_topic = reply["topic"]
+        send_tg(f"✍️ Got your custom topic:\n*\"{custom_topic}\"*\n\nDrafting now...")
+        try:
+            draft_single(custom_topic, 1, 1)
+        except Exception as e:
+            send_tg(f"❌ Custom draft failed: {str(e)[:300]}")
+        return
+
+    # Numbered choices
+    choices = reply.get("choices", [])
+    if not choices:
+        return send_tg("⚠️ Couldn't parse your reply. Send 1, 2, 3 or type your own topic.")
+
+    state      = load_state()
+    topics     = state.get("topics", [])
+    state_date = state.get("date", "")
     today_str  = (datetime.now(timezone.utc) + timedelta(hours=5, minutes=30)).strftime("%B %d, %Y")
-    print(f"[draft] choices={choices} state_date='{state_date}' today='{today_str}' topics={topics}")
+
+    print(f"[draft] choices={choices} state_date='{state_date}' today='{today_str}'")
 
     if not topics:
-        return send_tg("⚠️ No topics found. Morning researcher hasn't run yet today.")
+        return send_tg("⚠️ No topics found. Run the morning researcher first, or reply with your own topic text.")
     if state_date and state_date != today_str:
-        return send_tg(f"⚠️ Topics in state are from {state_date}, not today ({today_str}). Wait for today's morning brief or run researcher manually.")
+        return send_tg(
+            f"⚠️ Saved topics are from {state_date}. Morning brief not run yet today.\n"
+            f"You can still reply with your own topic as free text to draft it directly."
+        )
 
-    # Validate choices against available topics
-    valid = [c for c in choices if int(c) <= len(topics)]
+    valid = [c for c in choices if c.isdigit() and int(c) <= len(topics)]
     if not valid:
-        return send_tg("⚠️ Invalid choice. Topics 1–3 only.")
+        return send_tg("⚠️ Invalid choice. Topics 1–3 only, or type your own topic.")
 
     total = len(valid)
     if total > 1:
         titles_list = "\n".join(f"{c}. {topics[int(c)-1]}" for c in valid)
-        send_tg(f"📋 Drafting *{total} articles*:\n{titles_list}\n\nThis will take ~{total * 60} seconds.")
+        send_tg(f"📋 Drafting *{total} articles*:\n{titles_list}\n\n~{total * 90}s total...")
 
     for idx, choice in enumerate(valid, 1):
         title = topics[int(choice) - 1]
@@ -1358,6 +1413,7 @@ def draft():
 
     if total > 1:
         send_tg(f"🎉 All {total} drafts done! Check your Dev.to dashboard.")
+
 
 # ── Entry point ───────────────────────────────────────────────────────────────
 if __name__ == "__main__":
