@@ -1,14 +1,11 @@
 {
   "topics": [
-    "I Use Claude Code Free",
+    "I Optimized Pandas",
     "My GitHub Skill Dir",
-    "Causal Inference"
+    "I Tried Z4nzu Tool"
   ],
   "date": "April 26, 2026",
   "title_history": [
-    "Fix CORS Errors in React With Node.js",
-    "Automate Docker Deploy With Python",
-    "Stop AI Timeouts With TypeScript",
     "Fix AI Timeouts With Python Script",
     "Stop CORS Errors in React With Node.js",
     "Automate Docker Deploy With TypeScript",
@@ -35,47 +32,52 @@
     "I Solved Business Problems",
     "I Use Claude Code Free",
     "My GitHub Skill Dir",
-    "Causal Inference"
+    "Causal Inference",
+    "I Optimized Pandas",
+    "My GitHub Skill Dir",
+    "I Tried Z4nzu Tool"
   ],
   "last_update_id": 70323281,
   "virality_data": [
     {
-      "topic": "Using Claude Code for Free: A Step-by-Step Guide",
+      "topic": "Optimizing Pandas Runtime for Business Applications",
       "virality_score": 92,
-      "virality_reasoning": "The GitHub repo alishahryar1/free-claude-code is trending, and the topic of using Claude Code for free is highly relevant to developers who want to leverage AI capabilities without incurring significant costs. The recent publication of articles related to Claude API and AI timeouts also indicates a high level of interest in this area.",
+      "virality_reasoning": "The recent article on Towards Data Science about reducing Pandas runtime by 95% has gained significant attention, and optimizing Pandas for business applications is a common pain point for developers, making this topic highly relevant and viral",
       "developer_pain": "high",
       "freshness": "breaking",
-      "author_angle": "First-person experience of using Claude Code for free and overcoming common challenges",
+      "author_angle": "I optimized Pandas runtime for my business application and achieved significant performance gains",
       "target_keywords": [
-        "Claude Code",
-        "free AI",
-        "cost-effective solutions"
+        "Pandas optimization",
+        "business applications",
+        "performance improvement"
       ]
     },
     {
-      "topic": "Building a Personal Skill Directory with GitHub and AI",
-      "virality_score": 89,
-      "virality_reasoning": "The GitHub repo mattpocock/skills is trending, and the topic of building a personal skill directory is highly relevant to developers who want to showcase their skills and expertise. The recent publication of articles related to skill directories and AI-powered tools also indicates a high level of interest in this area.",
+      "topic": "Building a Personal Skill Directory with GitHub and Claude Code",
+      "virality_score": 90,
+      "virality_reasoning": "The viral GitHub repo mattpocock/skills and the trend of using Claude Code for free, as seen in Alishahryar1/free-claude-code, indicate a growing interest in personal skill directories and AI-powered coding tools, making this topic highly viral",
       "developer_pain": "medium",
       "freshness": "trending",
-      "author_angle": "First-person experience of building a personal skill directory using GitHub and AI-powered tools",
+      "author_angle": "I built a personal skill directory using GitHub and Claude Code, and here's how you can do it too",
       "target_keywords": [
-        "skill directory",
+        "personal skill directory",
         "GitHub",
-        "AI-powered tools"
+        "Claude Code",
+        "AI-powered coding"
       ]
     },
     {
-      "topic": "Introduction to Causal Inference in Business: A Practical Guide",
-      "virality_score": 90,
-      "virality_reasoning": "The article 'Causal Inference Is Different in Business' on Towards Data Science is trending, and the topic of causal inference in business is highly relevant to developers and data scientists who want to make informed decisions. The recent publication of articles related to data science and business applications also indicates a high level of interest in this area.",
-      "developer_pain": "high",
-      "freshness": "breaking",
-      "author_angle": "Practical guide to applying causal inference in business, with real-world examples and case studies",
+      "topic": "All-in-One Hacking Tool for Beginners: A Review of Z4nzu/hackingtool",
+      "virality_score": 88,
+      "virality_reasoning": "The viral GitHub repo Z4nzu/hackingtool indicates a growing interest in all-in-one hacking tools, and a review of this tool from a beginner's perspective could attract a large audience, making this topic viral",
+      "developer_pain": "low",
+      "freshness": "trending",
+      "author_angle": "As a beginner, I reviewed the Z4nzu/hackingtool and here's what I learned",
       "target_keywords": [
-        "causal inference",
-        "business applications",
-        "data science"
+        "all-in-one hacking tool",
+        "beginner-friendly",
+        "Z4nzu/hackingtool",
+        "hacking for beginners"
       ]
     }
   ]
