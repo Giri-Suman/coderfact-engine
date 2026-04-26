@@ -351,6 +351,7 @@ def draft_single(title: str, idx: int, total: int):
     try:
         kw_research_raw = ask_ai(f"""You are an SEO keyword researcher for coding/developer content on Medium.
 Article title: "{title}"
+Audience: developers who search Google when stuck on a problem.
 
 Return ONLY a JSON object. Do NOT wrap it in markdown backticks:
 {{
@@ -469,17 +470,18 @@ Output ONLY in Markdown. Start immediately with the text.
         f"*Tutorial by {AUTHOR_NAME}. Find more tech automation and education resources at [CoderFact](https://coderfact.com).*\n"
     )
 
-    # 3. Create the distinct SEO CUT Block for GitHub/Medium
-    seo_block = f"""---
-✂️ CUT THIS BLOCK BEFORE PUBLISHING TO MEDIUM ✂️
-VIRAL TITLE: {seo_title}
-META DESCRIPTION: {seo_meta}
-TAGS: {', '.join(tags)}
-SEO KEYWORDS: {', '.join(lsi_keywords)}
-THUMBNAIL PROMPT (For Midjourney/Flux): {thumbnail_prompt}
----
+    # 3. Create the distinct SEO CUT Block for GitHub/Medium (Fixing the YAML bug)
+    seo_block = (
+        "---\n"
+        f"VIRAL TITLE: {seo_title}\n"
+        f"META DESCRIPTION: {seo_meta}\n"
+        f"TAGS: {', '.join(tags)}\n"
+        f"SEO KEYWORDS: {', '.join(lsi_keywords)}\n"
+        f"THUMBNAIL PROMPT (For Midjourney/Flux): {thumbnail_prompt}\n"
+        "---\n\n"
+        "✂️ CUT THE ABOVE BLOCK BEFORE PUBLISHING TO MEDIUM ✂️\n\n"
+    )
 
-"""
     # The version we send to GitHub gets the SEO block so you can copy/paste it easily
     github_file_content = seo_block + article_body_with_footer
     
