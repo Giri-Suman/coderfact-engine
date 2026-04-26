@@ -1,0 +1,9 @@
+{
+  "title": "Pandas Optimization: Tips and Tricks for Faster Data Analysis",
+  "author": "Suman Giri",
+  "snippets": [
+    "import pandas as pd\n\n# Create a sample dataframe\ndf = pd.DataFrame({\n    'Name': ['John', 'Mary', 'David', 'Emily'],\n    'Age': [25, 31, 42, 28]\n})\n\n# Use apply() to perform an operation on each row\ndf['Age Group'] = df['Age'].apply(lambda x: 'Young' if x < 30 else 'Old')\n\n# Use groupby() to perform an operation on each group\ndf_grouped = df.groupby('Age Group')['Name'].count()",
+    "import pandas as pd\nimport numpy as np\n\n# Create a sample dataframe\ndf = pd.DataFrame({\n    'Name': ['John', 'Mary', 'David', 'Emily'],\n    'Age': [25, 31, 42, 28]\n})\n\n# Use vectorized operations to perform an operation on each row\ndf['Age Group'] = np.where(df['Age'] < 30, 'Young', 'Old')",
+    "import pandas as pd\n\n# Create a sample dataframe\ndf = pd.DataFrame({\n    'Name': ['John', 'Mary', 'David', 'Emily'],\n    'Age': [25, 31, 42, 28]\n})\n\n# Use categorical data type to reduce memory usage\ndf['Name'] = df['Name'].astype('category')\n\n# Use datetime object to reduce memory usage\ndf['Date'] = pd.to_datetime('2022-01-01')"
+  ]
+}
