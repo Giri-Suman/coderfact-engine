@@ -2,8 +2,8 @@
   "title": "Pandas Optimization: Tips and Tricks for Faster Data Analysis",
   "author": "Suman Giri",
   "snippets": [
-    "import pandas as pd\n\n# Create a sample dataframe\ndf = pd.DataFrame({\n    'Name': ['John', 'Mary', 'David', 'Emily'],\n    'Age': [25, 31, 42, 28]\n})\n\n# Use apply() to perform an operation on each row\ndf['Age Group'] = df['Age'].apply(lambda x: 'Young' if x < 30 else 'Old')\n\n# Use groupby() to perform an operation on each group\ndf_grouped = df.groupby('Age Group')['Name'].count()",
-    "import pandas as pd\nimport numpy as np\n\n# Create a sample dataframe\ndf = pd.DataFrame({\n    'Name': ['John', 'Mary', 'David', 'Emily'],\n    'Age': [25, 31, 42, 28]\n})\n\n# Use vectorized operations to perform an operation on each row\ndf['Age Group'] = np.where(df['Age'] < 30, 'Young', 'Old')",
-    "import pandas as pd\n\n# Create a sample dataframe\ndf = pd.DataFrame({\n    'Name': ['John', 'Mary', 'David', 'Emily'],\n    'Age': [25, 31, 42, 28]\n})\n\n# Use categorical data type to reduce memory usage\ndf['Name'] = df['Name'].astype('category')\n\n# Use datetime object to reduce memory usage\ndf['Date'] = pd.to_datetime('2022-01-01')"
+    "import pandas as pd\n\n# Create a sample dataframe\ndf = pd.DataFrame({'category': ['A', 'B', 'C', 'A', 'B', 'C']})\n\n# Convert the category column to categorical data type\ndf['category'] = df['category'].astype('category')\n\n# Print the memory usage before and after conversion\nprint(\"Memory usage before conversion: \", df.memory_usage(index=True).sum())\nprint(\"Memory usage after conversion: \", df.memory_usage(index=True).sum())",
+    "import pandas as pd\n\n# Create a sample dataframe\ndf = pd.DataFrame({'values': [1, 2, 3, 4, 5]})\n\n# Use vectorized operations to calculate the square of each value\ndf['squared'] = df['values'] ** 2\n\n# Print the result\nprint(df)",
+    "import pandas as pd\n\n# Create a sample dataframe\ndf = pd.DataFrame({'values': [1, 2, 3, 4, 5]})\n\n# Use iterative operations to calculate the square of each value\nfor i in range(len(df)):\n    df.loc[i, 'squared'] = df.loc[i, 'values'] ** 2\n\n# Print the result\nprint(df)"
   ]
 }
