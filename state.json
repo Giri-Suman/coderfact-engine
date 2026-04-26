@@ -1,14 +1,11 @@
 {
   "topics": [
-    "I Spent 30 Days Mastering mattpocock/skills: Here's How I Boosted My Real-World Engineer Applications by 300%",
-    "How I Built an All-in-One Hacking Tool with Z4nzu/hackingtool in Just 10 Hours: A Step-by-Step Guide to Saving 40% of Your Development Time",
-    "Unlocking 25% More Insights: How PostHog/posthog Transformed My DevOps and Product Analytics in Just 2 Weeks with 5 Simple Use Cases"
+    "How I Slashed AI Model Deployment Time by 90%: A Step-by-Step Guide to Optimizing Your ML Workflow",
+    "I Saved 30% of Development Time with free-claude-code: Here's What Worked (And What Didn't)",
+    "From 0 to 100: Building a Custom Code Search Engine that Indexes 10,000 Lines of Code in Under 1 Minute"
   ],
   "date": "April 27, 2026",
   "title_history": [
-    "I Fixed Claude API Timeouts",
-    "I Built Human Pose Estimator",
-    "I Debugged CORS Errors React",
     "CORS Error React Fix",
     "Automating Claude API",
     "AI Timeout Node.js Fix",
@@ -35,27 +32,30 @@
     "Building GitNexus Skill Directory",
     "I Spent 30 Days Mastering mattpocock/skills: Here's How I Boosted My Real-World Engineer Applications by 300%",
     "How I Built an All-in-One Hacking Tool with Z4nzu/hackingtool in Just 10 Hours: A Step-by-Step Guide to Saving 40% of Your Development Time",
-    "Unlocking 25% More Insights: How PostHog/posthog Transformed My DevOps and Product Analytics in Just 2 Weeks with 5 Simple Use Cases"
+    "Unlocking 25% More Insights: How PostHog/posthog Transformed My DevOps and Product Analytics in Just 2 Weeks with 5 Simple Use Cases",
+    "How I Slashed AI Model Deployment Time by 90%: A Step-by-Step Guide to Optimizing Your ML Workflow",
+    "I Saved 30% of Development Time with free-claude-code: Here's What Worked (And What Didn't)",
+    "From 0 to 100: Building a Custom Code Search Engine that Indexes 10,000 Lines of Code in Under 1 Minute"
   ],
   "last_update_id": 70323286,
   "virality_data": [
     {
-      "topic": "I Explored mattpocock/skills for Real-World Engineer Applications",
+      "topic": "I Reduced AI Model Deployment Time by 90% with abhigyanpatwari/GitNexus: A Step-by-Step Guide",
       "virality_score": 95,
-      "developer_pain": "medium",
-      "author_angle": "first-person exploration"
-    },
-    {
-      "topic": "Building an All-in-One Hacking Tool with Z4nzu/hackingtool",
-      "virality_score": 90,
       "developer_pain": "high",
-      "author_angle": "tutorial and walkthrough"
+      "author_angle": "How I optimized my ML workflow..."
     },
     {
-      "topic": "Unlocking the Power of PostHog/posthog for DevOps and Product Analytics",
-      "virality_score": 88,
-      "developer_pain": "low",
-      "author_angle": "technical overview and use cases"
+      "topic": "Review of Alishahryar1/free-claude-code: Does it Really Save 30% of Development Time?",
+      "virality_score": 90,
+      "developer_pain": "medium",
+      "author_angle": "Repo review and comparison"
+    },
+    {
+      "topic": "Building a Custom Code Search Engine with PostHog/posthog: A Tutorial for Beginners",
+      "virality_score": 92,
+      "developer_pain": "high",
+      "author_angle": "Code tutorial for a real-world problem"
     }
   ]
 }
