@@ -1,12 +1,11 @@
 {
   "topics": [
-    "How I Cut My Pandas Processing Time from 47 Minutes to 3 Minutes: A 94% Reduction in Just 5 Simple Steps"
+    "I Spent 30 Days Mastering mattpocock/skills: Here's How I Boosted My Real-World Engineer Applications by 300%",
+    "How I Built an All-in-One Hacking Tool with Z4nzu/hackingtool in Just 10 Hours: A Step-by-Step Guide to Saving 40% of Your Development Time",
+    "Unlocking 25% More Insights: How PostHog/posthog Transformed My DevOps and Product Analytics in Just 2 Weeks with 5 Simple Use Cases"
   ],
   "date": "April 27, 2026",
   "title_history": [
-    "I Built RuView Human Pose Estimator",
-    "I Automated AI Model Deployment",
-    "I Fixed Claude API Timeouts",
     "I Fixed Claude API Timeouts",
     "I Built Human Pose Estimator",
     "I Debugged CORS Errors React",
@@ -33,15 +32,30 @@
     "I Tried Z4nzu Tool",
     "Fixing osv-scanner Vulnerabilities",
     "Automating Claude Code Optimization",
-    "Building GitNexus Skill Directory"
+    "Building GitNexus Skill Directory",
+    "I Spent 30 Days Mastering mattpocock/skills: Here's How I Boosted My Real-World Engineer Applications by 300%",
+    "How I Built an All-in-One Hacking Tool with Z4nzu/hackingtool in Just 10 Hours: A Step-by-Step Guide to Saving 40% of Your Development Time",
+    "Unlocking 25% More Insights: How PostHog/posthog Transformed My DevOps and Product Analytics in Just 2 Weeks with 5 Simple Use Cases"
   ],
   "last_update_id": 70323285,
   "virality_data": [
     {
-      "topic": "Python Pandas Optimization",
-      "virality_score": 92,
+      "topic": "I Explored mattpocock/skills for Real-World Engineer Applications",
+      "virality_score": 95,
+      "developer_pain": "medium",
+      "author_angle": "first-person exploration"
+    },
+    {
+      "topic": "Building an All-in-One Hacking Tool with Z4nzu/hackingtool",
+      "virality_score": 90,
       "developer_pain": "high",
-      "author_angle": "How I cut Pandas processing from 47 mins to 3 mins"
+      "author_angle": "tutorial and walkthrough"
+    },
+    {
+      "topic": "Unlocking the Power of PostHog/posthog for DevOps and Product Analytics",
+      "virality_score": 88,
+      "developer_pain": "low",
+      "author_angle": "technical overview and use cases"
     }
   ]
 }
