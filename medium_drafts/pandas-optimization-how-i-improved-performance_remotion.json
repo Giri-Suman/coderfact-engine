@@ -1,0 +1,9 @@
+{
+  "title": "Pandas Optimization: How I Improved Performance",
+  "author": "Suman Giri",
+  "snippets": [
+    "import pandas as pd\n\n# Create a sample dataframe\ndf = pd.DataFrame({\n    'A': range(1000000),\n    'B': range(1000000)\n})\n\n# Perform a slow operation\nresult = []\nfor index, row in df.iterrows():\n    result.append(row['A'] + row['B'])",
+    "import dask.dataframe as dd\n\n# Create a sample dataframe\ndf = dd.DataFrame({\n    'A': range(1000000),\n    'B': range(1000000)\n})\n\n# Perform an optimized operation\nresult = df['A'] + df['B']",
+    "import pandas as pd\n\n# Create a sample dataframe\ndf = pd.DataFrame({\n    'A': pd.Categorical(['a', 'b', 'c'] * 1000000)\n})\n\n# Perform an optimized operation\nresult = df['A'].cat.codes"
+  ]
+}
