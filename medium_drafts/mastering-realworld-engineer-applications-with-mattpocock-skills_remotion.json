@@ -1,0 +1,7 @@
+{
+  "title": "Mastering Real-World Engineer Applications with mattpocock Skills",
+  "author": "Suman Giri",
+  "snippets": [
+    "import numpy as np\nimport pandas as pd\n\n# Generate a 10 million row dataset\ndata = np.random.randint(1, 100, 10000000)\ndf = pd.DataFrame(data, columns=['Values'])\n\n# Perform data manipulation and analysis\ndf['Values_squared'] = df['Values'] ** 2\ndf['Values_cubed'] = df['Values'] ** 3\n\n# Visualize the data\nimport matplotlib.pyplot as plt\nplt.hist(df['Values'], bins=50)\nplt.show()"
+  ]
+}
