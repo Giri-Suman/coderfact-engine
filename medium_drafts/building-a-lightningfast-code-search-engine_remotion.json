@@ -1,0 +1,7 @@
+{
+  "title": "Building a Lightning-Fast Code Search Engine",
+  "author": "Suman Giri",
+  "snippets": [
+    "import dask.bag as db\n\ncodebase = db.read_text('codebase.txt').map(lambda x: x.split())\ntokenized_codebase = codebase.map(lambda x: [word.lower() for word in x])\nindexed_codebase = tokenized_codebase.map(lambda x: {word: True for word in x})"
+  ]
+}
