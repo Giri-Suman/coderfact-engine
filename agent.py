@@ -29,11 +29,17 @@ TICK3 = chr(96) * 3
 
 # ── AI Routing Engine ─────────────────────────────────────────────────────────
 def ask_ai(prompt: str, max_tokens: int = 4000) -> str:
+    """Robust 6-provider chain with 429 retry + exponential backoff."""
     import time
+    
     def _openai_compat(url, headers, model, prompt, max_tokens, name, retries=2):
         for attempt in range(retries + 1):
             try:
-                r = requests.post(url, headers=headers, json={"model": model, "messages": [{"role": "user", "content": prompt}], "temperature": 0.7, "max_tokens": max_tokens}, timeout=60)
+                r = requests.post(
+                    url, headers=headers, 
+                    json={"model": model, "messages": [{"role": "user", "content": prompt}], "temperature": 0.7, "max_tokens": max_tokens}, 
+                    timeout=60
+                )
                 if r.status_code == 429:
                     time.sleep(2 ** attempt)
                     continue
@@ -49,18 +55,43 @@ def ask_ai(prompt: str, max_tokens: int = 4000) -> str:
     OR_HEADERS = {"Authorization": f"Bearer {OPENROUTER_KEY}", "Content-Type": "application/json", "HTTP-Referer": "https://coderfact.com", "X-Title": "CoderFact"} if OPENROUTER_KEY else {}
     OR_URL = "https://openrouter.ai/api/v1/chat/completions"
     
+    errors = []
+
+    # 1. Primary: Llama 3.3 70B (Fast, extremely capable, free on OR)
     if OPENROUTER_KEY:
         try: return _openai_compat(OR_URL, OR_HEADERS, "meta-llama/llama-3.3-70b-instruct:free", prompt, max_tokens, "OR Llama 3.3 70B")
-        except Exception: pass
+        except Exception as e: errors.append(f"OR Llama failed: {e}")
     
+    # 2. Secondary: Gemini 2.0 Flash (Native Google API - excellent backup if OR is down)
     if GEMINI_KEY:
         try:
             r = requests.post(f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={GEMINI_KEY}", json={"contents": [{"parts": [{"text": prompt}]}], "generationConfig": {"maxOutputTokens": max_tokens, "temperature": 0.7}}, timeout=45)
             r.raise_for_status()
             return r.json()["candidates"][0]["content"]["parts"][0]["text"].strip()
-        except Exception: pass
+        except Exception as e: errors.append(f"Gemini failed: {e}")
 
-    raise RuntimeError("All AI providers failed.")
+    # 3. Tertiary: DeepSeek R1 (Excellent reasoning model on OR)
+    if OPENROUTER_KEY:
+        try: return _openai_compat(OR_URL, OR_HEADERS, "deepseek/deepseek-r1-0528:free", prompt, max_tokens, "OR DeepSeek R1")
+        except Exception as e: errors.append(f"OR DeepSeek failed: {e}")
+
+    # 4. Quaternary: Groq Native Llama (Insanely fast if standard APIs are congested)
+    if GROQ_KEY:
+        try: return _openai_compat("https://api.groq.com/openai/v1/chat/completions", {"Authorization": f"Bearer {GROQ_KEY}", "Content-Type": "application/json"}, "llama-3.3-70b-versatile", prompt, max_tokens, "Groq Llama")
+        except Exception as e: errors.append(f"Groq failed: {e}")
+
+    # 5. Quinary: Gemma 3 27B (Google's open model via OR)
+    if OPENROUTER_KEY:
+        try: return _openai_compat(OR_URL, OR_HEADERS, "google/gemma-3-27b-it:free", prompt, max_tokens, "OR Gemma 3")
+        except Exception as e: errors.append(f"OR Gemma failed: {e}")
+
+    # 6. Last Resort: OpenRouter Auto (Lets OR pick any available free model)
+    if OPENROUTER_KEY:
+        try: return _openai_compat(OR_URL, OR_HEADERS, "openrouter/auto", prompt, max_tokens, "OR Auto Router")
+        except Exception as e: errors.append(f"OR Auto failed: {e}")
+
+    # If we hit this point, something is critically wrong with the keys or network
+    raise RuntimeError(f"All AI providers failed. Error logs:\n" + "\n".join(errors))
 
 # ── State & GitHub ────────────────────────────────────────────────────────────
 def load_state(): return json.load(open(STATE_FILE)) if os.path.exists(STATE_FILE) else {}
@@ -92,7 +123,7 @@ def get_reply():
     return None
 
 # ── Trends Aggregator ─────────────────────────────────────────────────────────
-def fetch_trends(): return {"github": [], "google_trends": []} # Simplified for brevity, use your full fetch_trends here.
+def fetch_trends(): return {"github": [], "google_trends": []} # Keep your existing full implementation here if needed
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
 def convert_mermaid_for_medium(markdown_body: str) -> str:
@@ -193,7 +224,7 @@ def draft_single(title: str, idx: int, total: int):
     tg_step("💾 Exporting to GitHub & Dev.to...")
     slug = re.sub(r'[^\w\s]', '', title.lower()).replace(' ', '-')
     
-    # Save to local/GitHub (Mocked for brevity in this display, keep your existing requests.put logic here)
+    # Save to local/GitHub
     if GITHUB_TOKEN:
         hdrs = {"Authorization": f"token {GITHUB_TOKEN}"}
         requests.put(f"https://api.github.com/repos/{GITHUB_REPO}/contents/medium_drafts/{slug}.md", headers=hdrs, json={"message": f"docs: new draft {slug}", "content": base64.b64encode(github_file_content.encode()).decode()})
