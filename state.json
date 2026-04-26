@@ -1,17 +1,11 @@
 {
   "topics": [
-    "I Built a Skill Directory",
-    "I Stopped Hackers",
-    "I Solved Business Problems"
+    "I Optimized Pandas",
+    "My GitHub Skill Dir",
+    "I Tried Z4nzu Tool"
   ],
   "date": "April 26, 2026",
   "title_history": [
-    "Fix CORS Errors in React With Node.js",
-    "Stop Docker Rate Limits With Python",
-    "Automate Claude API Deploy With TypeScript",
-    "Fix CORS Errors in React With Node.js",
-    "Automate Docker Deploy With Python",
-    "Stop AI Timeouts With TypeScript",
     "Fix AI Timeouts With Python Script",
     "Stop CORS Errors in React With Node.js",
     "Automate Docker Deploy With TypeScript",
@@ -35,50 +29,55 @@
     "Fixing Black Box AI Drift",
     "I Built a Skill Directory",
     "I Stopped Hackers",
-    "I Solved Business Problems"
+    "I Solved Business Problems",
+    "I Use Claude Code Free",
+    "My GitHub Skill Dir",
+    "Causal Inference",
+    "I Optimized Pandas",
+    "My GitHub Skill Dir",
+    "I Tried Z4nzu Tool"
   ],
-  "last_update_id": 70323280,
+  "last_update_id": 70323282,
   "virality_data": [
     {
-      "topic": "Building a Personalized Skill Directory with GitHub and Claude Code",
+      "topic": "Optimizing Pandas Runtime for Business Applications",
       "virality_score": 92,
-      "virality_reasoning": "The trending GitHub repo mattpocock/skills and the availability of free Claude code (Alishahryar1/free-claude-code) indicate a growing interest in personal development and skill tracking. Combining these with the AI capabilities of Claude Code can create a unique and engaging article.",
-      "developer_pain": "medium",
-      "freshness": "trending",
-      "author_angle": "I built a personalized skill directory",
-      "target_keywords": [
-        "GitHub",
-        "Claude Code",
-        "Skill Directory",
-        "Personal Development"
-      ]
-    },
-    {
-      "topic": "Preventing Hacking Attempts with PostHog and HackingTool Analysis",
-      "virality_score": 89,
-      "virality_reasoning": "The viral GitHub repo Z4nzu/hackingtool and the all-in-one dev tool PostHog/posthog indicate a growing concern about security and hacking attempts. Analyzing these tools and providing insights on how to prevent hacking attempts can create a timely and relevant article.",
+      "virality_reasoning": "The recent article on Towards Data Science about reducing Pandas runtime by 95% has gained significant attention, and optimizing Pandas for business applications is a common pain point for developers, making this topic highly relevant and viral",
       "developer_pain": "high",
       "freshness": "breaking",
-      "author_angle": "I analyzed hacking tools to improve security",
+      "author_angle": "I optimized Pandas runtime for my business application and achieved significant performance gains",
       "target_keywords": [
-        "Hacking Tool",
-        "PostHog",
-        "Security",
-        "Prevention"
+        "Pandas optimization",
+        "business applications",
+        "performance improvement"
       ]
     },
     {
-      "topic": "Introduction to Approximate Solution Methods for Business Problems with Causal Inference",
+      "topic": "Building a Personal Skill Directory with GitHub and Claude Code",
       "virality_score": 90,
-      "virality_reasoning": "The AI/coding news article 'Introduction to Approximate Solution Methods' and 'Causal Inference Is Different in Business' on Towards Data Science indicate a growing interest in applying AI and data science to business problems. This topic can create a unique and informative article that combines business and technical aspects.",
+      "virality_reasoning": "The viral GitHub repo mattpocock/skills and the trend of using Claude Code for free, as seen in Alishahryar1/free-claude-code, indicate a growing interest in personal skill directories and AI-powered coding tools, making this topic highly viral",
       "developer_pain": "medium",
       "freshness": "trending",
-      "author_angle": "I applied approximate solution methods to business problems",
+      "author_angle": "I built a personal skill directory using GitHub and Claude Code, and here's how you can do it too",
       "target_keywords": [
-        "Approximate Solution Methods",
-        "Causal Inference",
-        "Business Problems",
-        "Data Science"
+        "personal skill directory",
+        "GitHub",
+        "Claude Code",
+        "AI-powered coding"
+      ]
+    },
+    {
+      "topic": "All-in-One Hacking Tool for Beginners: A Review of Z4nzu/hackingtool",
+      "virality_score": 88,
+      "virality_reasoning": "The viral GitHub repo Z4nzu/hackingtool indicates a growing interest in all-in-one hacking tools, and a review of this tool from a beginner's perspective could attract a large audience, making this topic viral",
+      "developer_pain": "low",
+      "freshness": "trending",
+      "author_angle": "As a beginner, I reviewed the Z4nzu/hackingtool and here's what I learned",
+      "target_keywords": [
+        "all-in-one hacking tool",
+        "beginner-friendly",
+        "Z4nzu/hackingtool",
+        "hacking for beginners"
       ]
     }
   ]

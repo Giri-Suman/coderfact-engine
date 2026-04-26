@@ -1,0 +1,7 @@
+{
+  "title": "GitHub Portfolio: Showcasing My Coding Skills",
+  "author": "Suman Giri",
+  "snippets": [
+    "import os\nimport git\n\n# Create a new repository\nrepo = git.Repo.init(os.getcwd())\n\n# Initialize the repository with a Python project\nrepo.index.add([\"main.py\"])\nrepo.index.commit(\"Initial commit\")"
+  ]
+}

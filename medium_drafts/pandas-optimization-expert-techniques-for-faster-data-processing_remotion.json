@@ -1,0 +1,9 @@
+{
+  "title": "Pandas Optimization: Expert Techniques for Faster Data Processing",
+  "author": "Suman Giri",
+  "snippets": [
+    "import pandas as pd\n\n# Create a sample dataframe\ndata = {'Category': ['A', 'B', 'A', 'C', 'B', 'A'],\n        'Value': [10, 20, 30, 40, 50, 60]}\ndf = pd.DataFrame(data)\n\n# Convert the 'Category' column to categorical\ndf['Category'] = df['Category'].astype('category')\n\nprint(df.dtypes)",
+    "import pandas as pd\n\n# Create a sample dataframe\ndata = {'Date': ['2022-01-01', '2022-01-02', '2022-01-03'],\n        'Value': [10, 20, 30]}\ndf = pd.DataFrame(data)\n\n# Convert the 'Date' column to datetime\ndf['Date'] = pd.to_datetime(df['Date'])\n\nprint(df.dtypes)",
+    "import dask.dataframe as dd\nimport pandas as pd\n\n# Create a sample dataframe\ndata = {'Value': [10, 20, 30, 40, 50, 60]}\ndf = pd.DataFrame(data)\n\n# Convert the dataframe to a Dask dataframe\ndask_df = dd.from_pandas(df, npartitions=2)\n\n# Perform an operation on the Dask dataframe\nresult = dask_df.groupby('Value').count().compute()\n\nprint(result)"
+  ]
+}
