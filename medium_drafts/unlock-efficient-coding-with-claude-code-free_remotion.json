@@ -1,0 +1,8 @@
+{
+  "title": "Unlock Efficient Coding with Claude Code Free",
+  "author": "Suman Giri",
+  "snippets": [
+    "# Before Claude Code Free\ndef greet(name):\n    print(\"Hello, \" + name)\n\n# After Claude Code Free\ndef greet(name):\n    print(f\"Hello, {name}\")",
+    "# Streamlining Code\ndef calculate_area(length, width):\n    return length * width\n\n# Using Claude Code Free\ndef calculate_area(length, width):\n    try:\n        return length * width\n    except TypeError:\n        print(\"Invalid input type\")"
+  ]
+}
