@@ -1,44 +1,39 @@
-name: 2. Telegram Listener & Drafter
+name: Telegram Listener & Drafter
 
 on:
   schedule:
-    - cron: '*/15 * * * *'  # Every 15 min — catches your reply within 15 min
-  workflow_dispatch:         # Manual trigger for testing
-
-# Critical: prevent two drafts running simultaneously on same reply
-concurrency:
-  group: telegram-draft
-  cancel-in-progress: false  # Don't cancel — let the current draft finish
+    - cron: '*/15 * * * *'  # Every 15 min — catches your reply fast
+  workflow_dispatch:      # Manual trigger for testing
 
 jobs:
   draft:
     runs-on: ubuntu-latest
-    timeout-minutes: 20      # Article generation can take ~5 min per article
     permissions:
-      contents: write        # Required to commit state.json (update_id tracking)
+      contents: write     # Needed to commit md/json drafts to the repo
 
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 1
 
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-          cache: 'pip'
 
       - name: Install dependencies
-        # pytrends NOT needed here — only for research phase
-        run: pip install --quiet requests feedparser beautifulsoup4
+        run: pip install requests feedparser beautifulsoup4 pytrends
 
       - name: Check Telegram & Draft Article
         env:
-          TELEGRAM_BOT_TOKEN:  ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHAT_ID:    ${{ secrets.TELEGRAM_CHAT_ID }}
-          GEMINI_API_KEY:      ${{ secrets.GEMINI_API_KEY }}
-          GROQ_API_KEY:        ${{ secrets.GROQ_API_KEY }}
-          DEVTO_API_KEY:       ${{ secrets.DEVTO_API_KEY }}
-          OPENROUTER_API_KEY:  ${{ secrets.OPENROUTER_API_KEY }}
-          GITHUB_TOKEN:        ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_REPOSITORY:   ${{ github.repository }}
+          # API Keys
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID:   ${{ secrets.TELEGRAM_CHAT_ID }}
+          GEMINI_API_KEY:     ${{ secrets.GEMINI_API_KEY }}
+          GROQ_API_KEY:       ${{ secrets.GROQ_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          GITHUB_TOKEN:       ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY:  ${{ github.repository }}
+          
+          # Suman Giri Persona Injectors
+          AUTHOR_NAME: ${{ vars.AUTHOR_NAME || 'Suman Giri' }}
+          AUTHOR_CONTEXT: ${{ vars.AUTHOR_CONTEXT || 'a tech automation enthusiast, senior frontend developer and content creator, Kolkata who builds tools for CoderFact' }}
+          AUTHOR_VIBE: ${{ vars.AUTHOR_VIBE || 'figures stuff out late at night, writes about it the next morning' }}
         run: python agent.py draft
