@@ -351,7 +351,6 @@ def draft_single(title: str, idx: int, total: int):
     try:
         kw_research_raw = ask_ai(f"""You are an SEO keyword researcher for coding/developer content on Medium.
 Article title: "{title}"
-Audience: developers who search Google when stuck on a problem.
 
 Return ONLY a JSON object. Do NOT wrap it in markdown backticks:
 {{
@@ -370,6 +369,7 @@ Return ONLY a JSON object. Do NOT wrap it in markdown backticks:
         tg_err("Keyword research", e); kw_data = {}
 
     primary_kw   = _s(kw_data.get("primary_keyword"), title)
+    lsi_keywords = _list(kw_data.get("lsi_keywords"), [primary_kw])
     aeo_headings = _list(kw_data.get("people_also_ask"), ["Why Does This Happen?", "How To Fix It?", "What Is The Code?"])
     seo_title    = _s(kw_data.get("keyword_placement", {}).get("title"), title)
     seo_meta     = _s(kw_data.get("keyword_placement", {}).get("meta_description"), f"Learn how to optimize {primary_kw} with this technical guide.")
@@ -389,9 +389,10 @@ CRITICAL: Return ONLY a JSON object. Do NOT wrap it in markdown backticks.
   "solution_name": "Exact tool or library used.",
   "best_practice_rule": "The absolute golden rule for this topic (e.g. Vectorization vs Iteration).",
   "real_metric": "Before/after number e.g. 47 min to 3 min.",
+  "thumbnail_prompt": "Cinematic visual prompt for Midjourney/Flux representing this coding challenge.",
   "snippet_plan": [ {{"section":"H2 heading","language":"python","style":"solution","purpose":"what this shows"}} ],
   "diagram_plan": [ {{"section":"H2 heading","type":"mermaid","purpose":"what architecture flow this shows"}} ],
-  "interactive_widget_prompt": "A 2-sentence prompt for a UI Interactive Simulator comparing the slow way vs the fast way."
+  "interactive_widget_prompt": "A precise 3-sentence prompt for a UI Interactive Simulator comparing the slow way vs the fast way. Include inputs and behaviors."
 }}""")
         cleaned_json = outline_raw.replace(f'{TICK3}json', '').replace(TICK3, '').strip()
         outline = json.loads(cleaned_json)
@@ -401,10 +402,11 @@ CRITICAL: Return ONLY a JSON object. Do NOT wrap it in markdown backticks.
     snippets_block = "\n".join([f"Snippet: {s.get('purpose')} in section {s.get('section')} ({s.get('language')})" for s in outline.get("snippet_plan", [])])
     diagrams_block = "\n".join([f"Diagram ({d.get('type')}): {d.get('purpose')} in section {d.get('section')}" for d in outline.get("diagram_plan", [])])
     widget_prompt = _s(outline.get("interactive_widget_prompt"), f"Create an interactive data processing simulator for {primary_kw}")
-    best_practice = _s(outline.get("best_practice_rule"), "Always use vectorization over loops.")
+    best_practice = _s(outline.get("best_practice_rule"), "Always follow core optimization rules.")
+    thumbnail_prompt = _s(outline.get("thumbnail_prompt"), "Developer working late in a dark neon room")
 
     # Pass 2: Write Article
-    tg_step("✍️ Pass 2: Writing article in Persona...")
+    tg_step("✍️ Pass 2: Writing article & injecting UI Widget...")
     try:
         article = ask_ai(f"""
 You are ghostwriting a highly visual, structured blog post for {AUTHOR_NAME} — {AUTHOR_CONTEXT}.
@@ -460,13 +462,29 @@ Output ONLY in Markdown. Start immediately with the text.
     # 1. Convert any generated Mermaid blocks to image links for Medium compatibility
     medium_ready_body = convert_mermaid_for_medium(article)
     
-    # 2. Append standard automated footer, SEO meta, and Tags
-    content = (
+    # 2. Append standard automated footer
+    article_body_with_footer = (
         f"{medium_ready_body}\n\n"
         f"---\n"
-        f"*Tutorial by {AUTHOR_NAME}. Find more tech automation and education resources at [CoderFact](https://coderfact.com).*\n\n"
-        f""
+        f"*Tutorial by {AUTHOR_NAME}. Find more tech automation and education resources at [CoderFact](https://coderfact.com).*\n"
     )
+
+    # 3. Create the distinct SEO CUT Block for GitHub/Medium
+    seo_block = f"""---
+✂️ CUT THIS BLOCK BEFORE PUBLISHING TO MEDIUM ✂️
+VIRAL TITLE: {seo_title}
+META DESCRIPTION: {seo_meta}
+TAGS: {', '.join(tags)}
+SEO KEYWORDS: {', '.join(lsi_keywords)}
+THUMBNAIL PROMPT (For Midjourney/Flux): {thumbnail_prompt}
+---
+
+"""
+    # The version we send to GitHub gets the SEO block so you can copy/paste it easily
+    github_file_content = seo_block + article_body_with_footer
+    
+    # The version we send to Dev.to skips the SEO block so it looks clean immediately
+    devto_payload_content = article_body_with_footer
 
     # ── Export to File System & GitHub ────────────────────────────────────────
     tg_step("💾 Saving Medium Draft and Remotion Props...")
@@ -476,12 +494,11 @@ Output ONLY in Markdown. Start immediately with the text.
         os.makedirs("medium_drafts", exist_ok=True)
         md_filename = f"medium_drafts/{slug}.md"
         with open(md_filename, "w", encoding="utf-8") as f:
-            f.write(content)
+            f.write(github_file_content)
             
+        # Extract code blocks for Remotion Video Automation, excluding the JSON UI Widget
         pattern = re.compile(rf'{TICK3}(?:python|bash|json|javascript|ts)\n(.*?)\n{TICK3}', re.DOTALL)
-        code_blocks = re.findall(pattern, content)
-        
-        # Don't grab the chameleon JSON for the video snippet
+        code_blocks = re.findall(pattern, devto_payload_content)
         code_blocks = [c for c in code_blocks if "LlmGeneratedComponent" not in c]
         
         remotion_data = {
@@ -500,7 +517,7 @@ Output ONLY in Markdown. Start immediately with the text.
             sha = requests.get(api_url, headers=hdrs).json().get("sha")
             body = {
                 "message": f"docs: generated highly visual medium draft for {slug}",
-                "content": base64.b64encode(content.encode()).decode()
+                "content": base64.b64encode(github_file_content.encode()).decode()
             }
             if sha: body["sha"] = sha
             requests.put(api_url, headers=hdrs, json=body)
@@ -527,7 +544,7 @@ Output ONLY in Markdown. Start immediately with the text.
             headers={"api-key": DEVTO_KEY, "Content-Type": "application/json"} if DEVTO_KEY else {},
             json={"article": {
                 "title": seo_title,
-                "body_markdown": content,
+                "body_markdown": devto_payload_content,
                 "published": False,
                 "tags": tags,
                 "canonical_url": "https://coderfact.com",
