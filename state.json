@@ -1,8 +1,6 @@
 {
   "topics": [
-    "Fixing osv-scanner Vulnerabilities",
-    "Automating Claude Code Optimization",
-    "Building GitNexus Skill Directory"
+    "How I Cut My Pandas Processing Time from 47 Minutes to 3 Minutes: A 94% Reduction in Just 5 Simple Steps"
   ],
   "date": "April 27, 2026",
   "title_history": [
@@ -40,58 +38,10 @@
   "last_update_id": 70323285,
   "virality_data": [
     {
-      "topic": "Fixing 'osv-scanner' Vulnerabilities in My GitHub Projects",
+      "topic": "Python Pandas Optimization",
       "virality_score": 92,
-      "virality_reasoning": "This topic will go viral because it addresses a specific pain point that many developers face, as seen on GitHub and Stack Overflow. By sharing a personal experience of fixing 'osv-scanner' vulnerabilities, I can provide actionable code and a step-by-step guide that readers can follow.",
-      "cross_source_signals": [
-        "GitHub: osv-scanner repo trending",
-        "Stack Overflow: questions about osv-scanner vulnerabilities"
-      ],
       "developer_pain": "high",
-      "freshness": "fresh",
-      "suman_angle": "How I fixed 'osv-scanner' vulnerabilities in my GitHub projects",
-      "target_keywords": [
-        "osv-scanner vulnerabilities",
-        "fixing osv-scanner errors",
-        "GitHub security"
-      ],
-      "competing_articles": "Few articles exist yet \u2014 first-mover advantage"
-    },
-    {
-      "topic": "Automating Claude Code Optimization with Python Script",
-      "virality_score": 90,
-      "virality_reasoning": "This topic will go viral because it combines the popularity of Claude Code with the practicality of automation, as seen on GitHub and Towards AI. By sharing a personal experience of automating Claude Code optimization, I can provide working code and a tutorial that readers can follow.",
-      "cross_source_signals": [
-        "GitHub: claude-code repo trending",
-        "Towards AI: articles about Claude Code optimization"
-      ],
-      "developer_pain": "medium",
-      "freshness": "fresh",
-      "suman_angle": "How I automated Claude Code optimization with a Python script",
-      "target_keywords": [
-        "claude code optimization",
-        "automating claude code",
-        "python script"
-      ],
-      "competing_articles": "Some articles exist, but none with a personal, tutorial approach"
-    },
-    {
-      "topic": "Building a Personal Skill Directory with GitNexus and TypeScript",
-      "virality_score": 88,
-      "virality_reasoning": "This topic will go viral because it addresses a specific need that many developers have, as seen on GitHub and DEV.to. By sharing a personal experience of building a skill directory with GitNexus and TypeScript, I can provide a step-by-step guide and working code that readers can follow.",
-      "cross_source_signals": [
-        "GitHub: gitnexus repo trending",
-        "DEV.to: articles about skill directories"
-      ],
-      "developer_pain": "medium",
-      "freshness": "fresh",
-      "suman_angle": "How I built a personal skill directory with GitNexus and TypeScript",
-      "target_keywords": [
-        "gitnexus",
-        "skill directory",
-        "typescript"
-      ],
-      "competing_articles": "Few articles exist yet \u2014 first-mover advantage"
+      "author_angle": "How I cut Pandas processing from 47 mins to 3 mins"
     }
   ]
 }
