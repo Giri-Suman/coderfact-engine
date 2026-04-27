@@ -1,14 +1,11 @@
 {
   "topics": [
-    "I Saved 50% of My Development Time by Automating My Entire ML Workflow with This One GitHub Repo",
-    "How I Caught 30 High-Severity Bugs in Just 2 Hours Using This Game-Changing Security Auditing Tool",
-    "I Boosted My Code Performance by 300% in 5 Days: A Step-by-Step Guide to Building a Real-Time Optimization Tool"
+    "I Increased My Productivity by 300%: How Creating a Personalized Skill Directory with mattpocock/skills Transformed My Career",
+    "From 10 Hours to 1: How Alishahryar1's free-claude-code Reduced My Development Time by 90% and Changed My Workflow Forever",
+    "How I Boosted My Code Performance by 200% in Just 2 Weeks: A Step-by-Step Guide to Mastering Z4nzu's Hackingtool"
   ],
   "date": "April 27, 2026",
   "title_history": [
-    "Automate Claude API Deploy",
-    "Fix AI Timeouts with Hugging Face",
-    "Build Human Pose Estimator",
     "Claude API Timeouts Fixed",
     "Automating ML Model Deployment",
     "Code Search Engine Built",
@@ -35,27 +32,30 @@
     "From 0 to 100: Building a Custom Code Search Engine that Indexes 10,000 Lines of Code in Under 1 Minute",
     "I Saved 50% of My Development Time by Automating My Entire ML Workflow with This One GitHub Repo",
     "How I Caught 30 High-Severity Bugs in Just 2 Hours Using This Game-Changing Security Auditing Tool",
-    "I Boosted My Code Performance by 300% in 5 Days: A Step-by-Step Guide to Building a Real-Time Optimization Tool"
+    "I Boosted My Code Performance by 300% in 5 Days: A Step-by-Step Guide to Building a Real-Time Optimization Tool",
+    "I Increased My Productivity by 300%: How Creating a Personalized Skill Directory with mattpocock/skills Transformed My Career",
+    "From 10 Hours to 1: How Alishahryar1's free-claude-code Reduced My Development Time by 90% and Changed My Workflow Forever",
+    "How I Boosted My Code Performance by 200% in Just 2 Weeks: A Step-by-Step Guide to Mastering Z4nzu's Hackingtool"
   ],
   "last_update_id": 70323288,
   "virality_data": [
     {
-      "topic": "How I Used Alishahryar1/free-claude-code to Automate My Entire ML Workflow and Saved 50% of Development Time",
+      "topic": "Unlocking the Power of mattpocock/skills: A Step-by-Step Guide to Creating a Personalized Skill Directory",
       "virality_score": 95,
-      "developer_pain": "high",
-      "author_angle": "How I solved my ML workflow automation challenges..."
-    },
-    {
-      "topic": "Review of Z4nzu/hackingtool: A Game-Changer for Efficient Bug Hunting and Security Auditing",
-      "virality_score": 90,
       "developer_pain": "medium",
-      "author_angle": "Repo review and tutorial on using Z4nzu/hackingtool for security auditing"
+      "author_angle": "How I built a skill directory that transformed my career"
     },
     {
-      "topic": "Building a Real-Time Code Optimization Tool using mattpocock/skills and abhigyanpatwari/GitNexus: A Step-by-Step Tutorial",
-      "virality_score": 92,
+      "topic": "Repo Review: Uncovering the Secrets of Alishahryar1/free-claude-code",
+      "virality_score": 90,
       "developer_pain": "high",
-      "author_angle": "How I built a real-time code optimization tool using popular GitHub repos"
+      "author_angle": "What I learned from using free-claude-code and how it changed my workflow"
+    },
+    {
+      "topic": "Mastering Code Optimization with Z4nzu/hackingtool: A Tutorial on Boosting Performance by 200%",
+      "virality_score": 98,
+      "developer_pain": "high",
+      "author_angle": "How I used Z4nzu's hackingtool to optimize my code and achieve unprecedented results"
     }
   ]
 }
