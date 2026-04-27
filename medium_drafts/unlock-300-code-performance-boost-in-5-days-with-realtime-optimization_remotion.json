@@ -1,0 +1,7 @@
+{
+  "title": "Unlock 300% Code Performance Boost in 5 Days with Real-Time Optimization",
+  "author": "Suman Giri",
+  "snippets": [
+    "import dask.array as da\n\nx = da.random.random((10000, 10000), chunks=(1000, 1000))\ny = (x + x.T) / 2"
+  ]
+}
