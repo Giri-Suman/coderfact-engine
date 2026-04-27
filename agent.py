@@ -242,14 +242,20 @@ def draft_single(title: str, idx: int, total: int):
     Voice: {AUTHOR_VIBE}. Use "I", mention "1am Kolkata time". 
     
     CRITICAL RULES:
-    1. FORMAT ADAPTABILITY ({detected_format}): 
-       - If 'Tech News': Focus on architectural changes, impact on senior devs, and timelines. The table MUST be a 'Comparison Table' of Old Tech vs New Tech.
-       - If 'Repo Review': Teardown the codebase, highlight senior design patterns, and provide a 'Pros/Cons/Use-Case' table. Include code snippets showing how to implement it.
-       - If 'System Automation': Focus on the technical pipeline, ROI, and provide a 'Before/After' metrics table.
-       - If 'Code Tutorial': Focus on a specific problem-solution, and provide a 'Performance Comparison' table.
-    2. DOMAIN EXPERTISE & CODE AUTHENTICITY: You must write production-grade code. Never use generic 'foo/bar' variables. Use real-world technical contexts (e.g., Zod for TS, Dask for Python, Github Actions YAML for DevOps).
-    3. ARCHITECTURE DIAGRAM: Include a `{TICK3}mermaid` block. It MUST visually map the specific technical concept (e.g., a Dependency Tree, System Architecture, or Workflow Pipeline).
-    4. WIDGET: End the article with this exact block:
+    1. SINGLE DOMAIN LOCK-IN: You MUST pick exactly ONE technology stack for this entire article (e.g., ONLY React/TS, OR ONLY Python/Pandas, OR ONLY DevOps). DO NOT mix Python and TypeScript in the same article. DO NOT hallucinate use-cases.
+    2. SENIOR CODE AUTHENTICITY: Write one massive, production-grade code block (30+ lines) instead of small junior snippets. Include advanced error handling, comments, and realistic data.
+    3. BEAUTIFUL ARCHITECTURE DIAGRAM: Include a `{TICK3}mermaid` block. You MUST use 'graph TD' and include visual styling colors. 
+       Example format:
+       graph TD
+       A[User Input] --> B(Validation)
+       style A fill:#2563eb,color:#fff,stroke:#1e40af,stroke-width:2px
+       style B fill:#059669,color:#fff,stroke:#047857,stroke-width:2px
+    4. FORMAT ADAPTABILITY ({detected_format}): 
+       - Tech News: Focus on architectural changes. Table: Old Tech vs New Tech.
+       - Repo Review: Teardown codebase. Table: Pros/Cons Matrix.
+       - System Automation: Focus on pipelines. Table: Before/After Metrics.
+       - Code Tutorial: Focus on a specific fix. Table: Performance Comparison.
+    5. WIDGET: End the article with this exact block:
     {TICK3}json?chameleon
     {{ "component": "LlmGeneratedComponent", "props": {{ "height": "650px", "prompt": "{outline.get('interactive_widget_prompt', 'An interactive code simulator for this topic')}" }} }}
     {TICK3}
