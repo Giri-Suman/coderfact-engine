@@ -1,14 +1,11 @@
 {
   "topics": [
-    "How I Slashed AI Model Deployment Time by 90%: A Step-by-Step Guide to Optimizing Your ML Workflow",
-    "I Saved 30% of Development Time with free-claude-code: Here's What Worked (And What Didn't)",
-    "From 0 to 100: Building a Custom Code Search Engine that Indexes 10,000 Lines of Code in Under 1 Minute"
+    "I Saved 50% of My Development Time by Automating My Entire ML Workflow with This One GitHub Repo",
+    "How I Caught 30 High-Severity Bugs in Just 2 Hours Using This Game-Changing Security Auditing Tool",
+    "I Boosted My Code Performance by 300% in 5 Days: A Step-by-Step Guide to Building a Real-Time Optimization Tool"
   ],
   "date": "April 27, 2026",
   "title_history": [
-    "CORS Error React Fix",
-    "Automating Claude API",
-    "AI Timeout Node.js Fix",
     "Automate Claude API Deploy",
     "Fix AI Timeouts with Hugging Face",
     "Build Human Pose Estimator",
@@ -35,27 +32,30 @@
     "Unlocking 25% More Insights: How PostHog/posthog Transformed My DevOps and Product Analytics in Just 2 Weeks with 5 Simple Use Cases",
     "How I Slashed AI Model Deployment Time by 90%: A Step-by-Step Guide to Optimizing Your ML Workflow",
     "I Saved 30% of Development Time with free-claude-code: Here's What Worked (And What Didn't)",
-    "From 0 to 100: Building a Custom Code Search Engine that Indexes 10,000 Lines of Code in Under 1 Minute"
+    "From 0 to 100: Building a Custom Code Search Engine that Indexes 10,000 Lines of Code in Under 1 Minute",
+    "I Saved 50% of My Development Time by Automating My Entire ML Workflow with This One GitHub Repo",
+    "How I Caught 30 High-Severity Bugs in Just 2 Hours Using This Game-Changing Security Auditing Tool",
+    "I Boosted My Code Performance by 300% in 5 Days: A Step-by-Step Guide to Building a Real-Time Optimization Tool"
   ],
   "last_update_id": 70323287,
   "virality_data": [
     {
-      "topic": "I Reduced AI Model Deployment Time by 90% with abhigyanpatwari/GitNexus: A Step-by-Step Guide",
+      "topic": "How I Used Alishahryar1/free-claude-code to Automate My Entire ML Workflow and Saved 50% of Development Time",
       "virality_score": 95,
       "developer_pain": "high",
-      "author_angle": "How I optimized my ML workflow..."
+      "author_angle": "How I solved my ML workflow automation challenges..."
     },
     {
-      "topic": "Review of Alishahryar1/free-claude-code: Does it Really Save 30% of Development Time?",
+      "topic": "Review of Z4nzu/hackingtool: A Game-Changer for Efficient Bug Hunting and Security Auditing",
       "virality_score": 90,
       "developer_pain": "medium",
-      "author_angle": "Repo review and comparison"
+      "author_angle": "Repo review and tutorial on using Z4nzu/hackingtool for security auditing"
     },
     {
-      "topic": "Building a Custom Code Search Engine with PostHog/posthog: A Tutorial for Beginners",
+      "topic": "Building a Real-Time Code Optimization Tool using mattpocock/skills and abhigyanpatwari/GitNexus: A Step-by-Step Tutorial",
       "virality_score": 92,
       "developer_pain": "high",
-      "author_angle": "Code tutorial for a real-world problem"
+      "author_angle": "How I built a real-time code optimization tool using popular GitHub repos"
     }
   ]
 }
