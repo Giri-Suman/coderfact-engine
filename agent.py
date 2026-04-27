@@ -239,25 +239,25 @@ def draft_single(title: str, idx: int, total: int):
     tg_step(f"✍️ Pass 2: Writing {detected_format} with Dynamic Domain Intelligence...")
     article = ask_ai(f"""
     Ghostwrite a highly visual, structured blog post for {AUTHOR_NAME} — {AUTHOR_CONTEXT}.
-    Voice: {AUTHOR_VIBE}. Use "I", mention "1am Kolkata time". 
+    Voice: {AUTHOR_VIBE}. Use "I". 
     
     CRITICAL RULES:
-    1. SINGLE DOMAIN LOCK-IN: You MUST pick exactly ONE technology stack for this entire article (e.g., ONLY React/TS, OR ONLY Python/Pandas, OR ONLY DevOps). DO NOT mix Python and TypeScript in the same article. DO NOT hallucinate use-cases.
-    2. SENIOR CODE AUTHENTICITY: Write one massive, production-grade code block (30+ lines) instead of small junior snippets. Include advanced error handling, comments, and realistic data.
-    3. BEAUTIFUL ARCHITECTURE DIAGRAM: Include a `{TICK3}mermaid` block. You MUST use 'graph TD' and include visual styling colors. 
+    1. SINGLE DOMAIN LOCK-IN: You MUST pick exactly ONE technology stack. DO NOT hallucinate use-cases. If referencing a specific developer or repo (e.g., Matt Pocock), you MUST use their actual technical domain (e.g., Advanced TypeScript Type-Level programming). Do not invent fake software tools.
+    2. SENIOR CODE AUTHENTICITY: Write one massive, production-grade code block (30+ lines). Include advanced error handling and realistic data.
+    3. BEAUTIFUL ARCHITECTURE DIAGRAM: Include a `{TICK3}mermaid` block. Use 'graph TD' and include visual styling colors. 
        Example format:
        graph TD
        A[User Input] --> B(Validation)
        style A fill:#2563eb,color:#fff,stroke:#1e40af,stroke-width:2px
-       style B fill:#059669,color:#fff,stroke:#047857,stroke-width:2px
     4. FORMAT ADAPTABILITY ({detected_format}): 
        - Tech News: Focus on architectural changes. Table: Old Tech vs New Tech.
        - Repo Review: Teardown codebase. Table: Pros/Cons Matrix.
-       - System Automation: Focus on pipelines. Table: Before/After Metrics.
        - Code Tutorial: Focus on a specific fix. Table: Performance Comparison.
-    5. WIDGET: End the article with this exact block:
+       - CRITICAL TABLE FORMATTING: NEVER wrap your Markdown tables in backticks (```). Render them directly as raw Markdown text so they display correctly.
+    5. NATURAL VOICE: Weave the "1am Kolkata time" into a realistic, brief opening story about debugging a tough problem or having an "aha" moment. DO NOT just copy/paste the prompt instructions. Be human.
+    6. WIDGET: End the article with this exact block:
     {TICK3}json?chameleon
-    {{ "component": "LlmGeneratedComponent", "props": {{ "height": "650px", "prompt": "{outline.get('interactive_widget_prompt', 'An interactive code simulator for this topic')}" }} }}
+    {{ "component": "LlmGeneratedComponent", "props": {{ "height": "650px", "prompt": "{outline.get('interactive_widget_prompt', 'An interactive code simulator')}" }} }}
     {TICK3}
     
     Title: {seo_title}
