@@ -1,39 +1,45 @@
-name: Morning Topic Researcher
+name: 1. Morning Topic Researcher
 
 on:
   schedule:
     - cron: '30 2 * * *'  # 8:00 AM IST (UTC+5:30)
-  workflow_dispatch:       # Manual trigger for testing
+  workflow_dispatch:
+
+concurrency:
+  group: morning-research
+  cancel-in-progress: true
 
 jobs:
   research:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     permissions:
-      contents: write      # Needed to commit state.json back to repo
+      contents: write
 
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
 
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+          cache: 'pip'
 
       - name: Install dependencies
-        run: pip install requests feedparser beautifulsoup4 pytrends
+        run: pip install --quiet requests feedparser beautifulsoup4 pytrends
 
       - name: Run Morning Researcher
         env:
-          # API Keys
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHAT_ID:   ${{ secrets.TELEGRAM_CHAT_ID }}
-          GEMINI_API_KEY:     ${{ secrets.GEMINI_API_KEY }}
-          GROQ_API_KEY:       ${{ secrets.GROQ_API_KEY }}
-          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
-          GITHUB_TOKEN:       ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_REPOSITORY:  ${{ github.repository }}
-          
-          # Suman Giri Persona Injectors
-          AUTHOR_NAME: ${{ vars.AUTHOR_NAME || 'Suman Giri' }}
-          AUTHOR_CONTEXT: ${{ vars.AUTHOR_CONTEXT || 'a tech automation enthusiast, senior frontend developer and content creator, Kolkata who builds tools for CoderFact' }}
-          AUTHOR_VIBE: ${{ vars.AUTHOR_VIBE || 'figures stuff out late at night, writes about it the next morning' }}
+          TELEGRAM_BOT_TOKEN:  ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID:    ${{ secrets.TELEGRAM_CHAT_ID }}
+          GEMINI_API_KEY:      ${{ secrets.GEMINI_API_KEY }}
+          GROQ_API_KEY:        ${{ secrets.GROQ_API_KEY }}
+          OPENROUTER_API_KEY:  ${{ secrets.OPENROUTER_API_KEY }}
+          GITHUB_TOKEN:        ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY:   ${{ github.repository }}
+          # Persona — override via GitHub Actions Variables (Settings → Variables)
+          AUTHOR_NAME:         ${{ vars.AUTHOR_NAME || 'Suman Giri' }}
+          AUTHOR_CONTEXT:      ${{ vars.AUTHOR_CONTEXT || 'a tech automation enthusiast, senior frontend developer from Kolkata who builds tools for CoderFact' }}
+          AUTHOR_VIBE:         ${{ vars.AUTHOR_VIBE || 'figures stuff out at 1am, writes about it next morning, still mildly annoyed it took so long' }}
         run: python agent.py research
