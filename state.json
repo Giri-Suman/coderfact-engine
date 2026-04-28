@@ -1,14 +1,11 @@
 {
   "topics": [
-    "I Boosted My Real-World Engineer Applications by 300% Using These 5 Essential mattpocock/skills - Here's How",
-    "How I Used Abhigyanpatwari/GitNexus to Optimize My Code in Real-Time and Reduce Errors by 25%",
-    "The 30% Productivity Hack: How ComposioHQ/awesome-codex-skills Transformed My Team's Workflow in Just 6 Weeks"
+    "Claude.ai API Fix Saved My Project",
+    "GitNexus Code Optimization Tool Built",
+    "Claude Code Optimization Automated Fast"
   ],
-  "date": "April 28, 2026",
+  "date": "April 29, 2026",
   "title_history": [
-    "I Built a Skill Directory",
-    "I Stopped Hackers",
-    "I Solved Business Problems",
     "I Use Claude Code Free",
     "My GitHub Skill Dir",
     "Causal Inference",
@@ -35,27 +32,66 @@
     "How I Built a Real-Time Code Optimization Tool with Abhigyanpatwari's GitNexus, Reducing Bugs by 42% in Just 3 Months",
     "I Boosted My Real-World Engineer Applications by 300% Using These 5 Essential mattpocock/skills - Here's How",
     "How I Used Abhigyanpatwari/GitNexus to Optimize My Code in Real-Time and Reduce Errors by 25%",
-    "The 30% Productivity Hack: How ComposioHQ/awesome-codex-skills Transformed My Team's Workflow in Just 6 Weeks"
+    "The 30% Productivity Hack: How ComposioHQ/awesome-codex-skills Transformed My Team's Workflow in Just 6 Weeks",
+    "Claude.ai API Fix Saved My Project",
+    "GitNexus Code Optimization Tool Built",
+    "Claude Code Optimization Automated Fast"
   ],
   "last_update_id": 70323290,
   "virality_data": [
     {
-      "topic": "Mastering mattpocock/skills for Enhanced Real-World Engineer Applications",
-      "virality_score": 95,
+      "topic": "Fixing Claude.ai API Unavailability and Elevated Errors",
+      "virality_score": 92,
+      "virality_reasoning": "This topic will go viral because it addresses a specific pain point that many developers are currently experiencing, as evidenced by the 212 points and 174 comments on Hacker News. By providing a step-by-step guide to fixing the issue, I can offer a valuable solution that will resonate with the developer community.",
+      "cross_source_signals": [
+        "Hacker News: 212pts, 174 comments",
+        "GitHub: davila7/claude-code-templates trending"
+      ],
       "developer_pain": "high",
-      "author_angle": "How I Boosted My Real-World Engineer Applications by 300% with mattpocock/skills"
+      "freshness": "breaking",
+      "suman_angle": "How I Fixed Claude.ai API Errors and Got My Project Back on Track",
+      "target_keywords": [
+        "claude.ai api unavailable",
+        "claude.ai elevated errors",
+        "claude.ai api fix"
+      ],
+      "competing_articles": "Few articles exist yet \u2014 first-mover advantage"
     },
     {
-      "topic": "Unlocking the Power of Abhigyanpatwari/GitNexus for Real-Time Code Optimization",
-      "virality_score": 90,
+      "topic": "Building a Real-Time Code Optimization Tool with Abhigyanpatwari's GitNexus",
+      "virality_score": 89,
+      "virality_reasoning": "This topic will go viral because it combines a popular GitHub trending repository with a valuable solution for developers, as evidenced by the GitHub trending page. By providing a step-by-step guide to building a real-time code optimization tool, I can offer a unique and actionable solution that will appeal to the developer community.",
+      "cross_source_signals": [
+        "GitHub: Abhigyanpatwari/GitNexus trending",
+        "Hacker News: 599pts, 323 comments"
+      ],
       "developer_pain": "medium",
-      "author_angle": "A Step-by-Step Guide to Building a Real-Time Code Optimization Tool with GitNexus"
+      "freshness": "fresh",
+      "suman_angle": "How I Built a Real-Time Code Optimization Tool with GitNexus and Reduced Bugs by 25%",
+      "target_keywords": [
+        "gitnexus code optimization",
+        "real-time code optimization",
+        "abhigyanpatwari gitnexus"
+      ],
+      "competing_articles": "Some articles exist, but none with a personal, step-by-step approach"
     },
     {
-      "topic": "A Comprehensive Review of ComposioHQ/awesome-codex-skills: Enhancing Team Productivity",
-      "virality_score": 88,
-      "developer_pain": "low",
-      "author_angle": "How ComposioHQ's awesome-codex-skills Boosted My Team's Productivity by 30%"
+      "topic": "Automating Claude Code Optimization with ComposioHQ's Awesome Codex Skills",
+      "virality_score": 85,
+      "virality_reasoning": "This topic will go viral because it addresses a specific need for automation and optimization in the developer community, as evidenced by the ComposioHQ/awesome-codex-skills repository. By providing a step-by-step guide to automating Claude Code optimization, I can offer a valuable solution that will resonate with developers looking to streamline their workflow.",
+      "cross_source_signals": [
+        "GitHub: ComposioHQ/awesome-codex-skills trending",
+        "Dev.to: 159\u2764\ufe0f for AI and automation topics"
+      ],
+      "developer_pain": "medium",
+      "freshness": "fresh",
+      "suman_angle": "How I Automated Claude Code Optimization with Awesome Codex Skills and Saved 30% of My Development Time",
+      "target_keywords": [
+        "claude code optimization",
+        "automating claude code",
+        "composiohq awesome codex skills"
+      ],
+      "competing_articles": "Some articles exist, but none with a personal, step-by-step approach"
     }
   ]
 }
