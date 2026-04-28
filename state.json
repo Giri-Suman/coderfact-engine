@@ -1,14 +1,11 @@
 {
   "topics": [
-    "I Simplified 85% of My Complex Data Structures Using Gastownhall's Beads: Here's My 5-Step Process",
-    "I Spent 2 Weeks Reviewing ComposioHQ's Codex Skills: Here's How It Boosted My Team's Productivity by 30%",
-    "How I Built a Real-Time Code Optimization Tool with Abhigyanpatwari's GitNexus, Reducing Bugs by 42% in Just 3 Months"
+    "I Boosted My Real-World Engineer Applications by 300% Using These 5 Essential mattpocock/skills - Here's How",
+    "How I Used Abhigyanpatwari/GitNexus to Optimize My Code in Real-Time and Reduce Errors by 25%",
+    "The 30% Productivity Hack: How ComposioHQ/awesome-codex-skills Transformed My Team's Workflow in Just 6 Weeks"
   ],
-  "date": "April 27, 2026",
+  "date": "April 28, 2026",
   "title_history": [
-    "Fixing osv-scanner Vulnerabilities",
-    "Automating Claude Code Optimization",
-    "Fixing Black Box AI Drift",
     "I Built a Skill Directory",
     "I Stopped Hackers",
     "I Solved Business Problems",
@@ -35,27 +32,30 @@
     "How I Boosted My Code Performance by 200% in Just 2 Weeks: A Step-by-Step Guide to Mastering Z4nzu's Hackingtool",
     "I Simplified 85% of My Complex Data Structures Using Gastownhall's Beads: Here's My 5-Step Process",
     "I Spent 2 Weeks Reviewing ComposioHQ's Codex Skills: Here's How It Boosted My Team's Productivity by 30%",
-    "How I Built a Real-Time Code Optimization Tool with Abhigyanpatwari's GitNexus, Reducing Bugs by 42% in Just 3 Months"
+    "How I Built a Real-Time Code Optimization Tool with Abhigyanpatwari's GitNexus, Reducing Bugs by 42% in Just 3 Months",
+    "I Boosted My Real-World Engineer Applications by 300% Using These 5 Essential mattpocock/skills - Here's How",
+    "How I Used Abhigyanpatwari/GitNexus to Optimize My Code in Real-Time and Reduce Errors by 25%",
+    "The 30% Productivity Hack: How ComposioHQ/awesome-codex-skills Transformed My Team's Workflow in Just 6 Weeks"
   ],
   "last_update_id": 70323290,
   "virality_data": [
     {
-      "topic": "Unlocking the Power of Gastownhall's Beads: A Step-by-Step Guide to Simplifying Complex Data Structures",
+      "topic": "Mastering mattpocock/skills for Enhanced Real-World Engineer Applications",
       "virality_score": 95,
       "developer_pain": "high",
-      "author_angle": "How I simplified my data structures..."
+      "author_angle": "How I Boosted My Real-World Engineer Applications by 300% with mattpocock/skills"
     },
     {
-      "topic": "Review of ComposioHQ's Awesome Codex Skills: A Game-Changer for Skill Directories?",
+      "topic": "Unlocking the Power of Abhigyanpatwari/GitNexus for Real-Time Code Optimization",
       "virality_score": 90,
       "developer_pain": "medium",
-      "author_angle": "I reviewed ComposioHQ's awesome codex skills..."
+      "author_angle": "A Step-by-Step Guide to Building a Real-Time Code Optimization Tool with GitNexus"
     },
     {
-      "topic": "Building a Real-Time Code Optimization Tool with Abhigyanpatwari's GitNexus: A Tutorial",
-      "virality_score": 92,
-      "developer_pain": "high",
-      "author_angle": "How I built a real-time code optimization tool..."
+      "topic": "A Comprehensive Review of ComposioHQ/awesome-codex-skills: Enhancing Team Productivity",
+      "virality_score": 88,
+      "developer_pain": "low",
+      "author_angle": "How ComposioHQ's awesome-codex-skills Boosted My Team's Productivity by 30%"
     }
   ]
 }
