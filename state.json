@@ -1,14 +1,11 @@
 {
   "topics": [
-    "Claude.ai API Errors Fixed",
-    "GitNexus Code Optimization Tool",
-    "Codex Skills Automation Script"
+    "Fixing CVE-2026-3854 GitHub RCE Vulnerability",
+    "Automating Claude Code Optimization Fast",
+    "Building Custom Code Search Engine"
   ],
   "date": "April 29, 2026",
   "title_history": [
-    "I Optimized Pandas",
-    "My GitHub Skill Dir",
-    "I Tried Z4nzu Tool",
     "Fixing osv-scanner Vulnerabilities",
     "Automating Claude Code Optimization",
     "Building GitNexus Skill Directory",
@@ -35,66 +32,66 @@
     "Claude Code Optimization Automated Fast",
     "Claude.ai API Errors Fixed",
     "GitNexus Code Optimization Tool",
-    "Codex Skills Automation Script"
+    "Codex Skills Automation Script",
+    "Fixing CVE-2026-3854 GitHub RCE Vulnerability",
+    "Automating Claude Code Optimization Fast",
+    "Building Custom Code Search Engine"
   ],
   "last_update_id": 70323292,
   "virality_data": [
     {
-      "topic": "Fixing Claude.ai API Elevated Errors with a Simple Automation Script",
+      "topic": "Fixing CVE-2026-3854 GitHub RCE Vulnerability in My Projects",
       "virality_score": 92,
-      "virality_reasoning": "This topic will go viral because it addresses a specific pain point that many developers are currently experiencing, as seen on Hacker News with 221 points and 184 comments. By providing a personal, first-hand account of fixing the issue with a simple automation script, the article will resonate with developers who have wasted hours trying to resolve the issue.",
+      "virality_reasoning": "This topic will go viral because it addresses a critical security issue that has been trending on Hacker News and GitHub, with many developers likely struggling to fix the vulnerability. By providing a step-by-step guide on how to fix the issue, I can help developers save time and avoid potential security risks.",
       "cross_source_signals": [
-        "Hacker News: Claude.ai API issues",
-        "GitHub: davila7/claude-code-templates",
-        "Reddit: r/ClaudeAI"
+        "Hacker News: 297pts, 71 comments",
+        "GitHub: trending vulnerability discussion"
       ],
       "developer_pain": "high",
       "freshness": "breaking",
-      "suman_angle": "How I Fixed Claude.ai API Elevated Errors and Saved 5 Hours of Development Time",
+      "suman_angle": "How I Fixed the GitHub RCE Vulnerability in My Projects and Saved 10 Hours of Debugging Time",
       "target_keywords": [
-        "Claude.ai API errors",
-        "elevated errors fix",
-        "Claude.ai automation script"
+        "CVE-2026-3854",
+        "GitHub RCE vulnerability",
+        "fixing GitHub security issues"
       ],
       "competing_articles": "Few articles exist yet \u2014 first-mover advantage"
     },
     {
-      "topic": "Building a Real-Time Code Optimization Tool with Abhigyanpatwari's GitNexus",
+      "topic": "Automating Claude Code Optimization with Abhigyanpatwari's GitNexus",
       "virality_score": 89,
-      "virality_reasoning": "This topic will go viral because it combines a popular tool (GitNexus) with a highly sought-after outcome (real-time code optimization). By providing a step-by-step guide on how to build the tool, the article will appeal to developers who want to improve their workflow and reduce errors. The topic is also supported by GitHub trends and the popularity of GitNexus.",
+      "virality_reasoning": "This topic will go viral because it combines the popularity of Claude Code and GitNexus, with many developers likely interested in optimizing their code and automating their workflows. By providing a tutorial on how to use GitNexus for Claude Code optimization, I can help developers improve their productivity and code quality.",
       "cross_source_signals": [
-        "GitHub: Abhigyanpatwari/GitNexus",
-        "Dev.to: GitNexus discussions",
-        "Stack Overflow: code optimization questions"
+        "GitHub: Abhigyanpatwari/GitNexus trending",
+        "Reddit: r/webdev discussion on code optimization"
       ],
       "developer_pain": "medium",
       "freshness": "fresh",
-      "suman_angle": "How I Built a Real-Time Code Optimization Tool with GitNexus and Reduced Errors by 25%",
+      "suman_angle": "How I Automated Claude Code Optimization with GitNexus and Boosted My Productivity by 25%",
       "target_keywords": [
-        "GitNexus code optimization",
-        "real-time code optimization",
-        "Abhigyanpatwari GitNexus"
+        "Claude Code optimization",
+        "GitNexus tutorial",
+        "automating code optimization"
       ],
-      "competing_articles": "Some articles exist, but a personal, step-by-step guide will stand out"
+      "competing_articles": "Some articles exist, but none with a personal, hands-on approach"
     },
     {
-      "topic": "Automating Codex Skills with ComposioHQ's awesome-codex-skills and Reducing Workflow Time by 30%",
-      "virality_score": 90,
-      "virality_reasoning": "This topic will go viral because it addresses a specific pain point that many developers face (workflow optimization) and provides a concrete solution using a popular tool (ComposioHQ's awesome-codex-skills). By sharing a personal experience of automating Codex skills and reducing workflow time, the article will resonate with developers who want to improve their productivity.",
+      "topic": "Building a Custom Code Search Engine with ComposioHQ's awesome-codex-skills",
+      "virality_score": 85,
+      "virality_reasoning": "This topic will go viral because it addresses a common pain point for developers, which is searching and finding relevant code snippets. By providing a build-along guide on how to use ComposioHQ's awesome-codex-skills to build a custom code search engine, I can help developers save time and improve their workflow.",
       "cross_source_signals": [
-        "GitHub: ComposioHQ/awesome-codex-skills",
-        "Dev.to: Codex skills discussions",
-        "Reddit: r/Codex"
+        "GitHub: ComposioHQ/awesome-codex-skills trending",
+        "Dev.to: discussion on code search engines"
       ],
       "developer_pain": "medium",
       "freshness": "fresh",
-      "suman_angle": "How I Automated Codex Skills with awesome-codex-skills and Saved 30% of My Development Time",
+      "suman_angle": "How I Built a Custom Code Search Engine with awesome-codex-skills and Reduced My Development Time by 30%",
       "target_keywords": [
-        "Codex skills automation",
-        "awesome-codex-skills",
-        "ComposioHQ Codex"
+        "custom code search engine",
+        "ComposioHQ's awesome-codex-skills",
+        "code search tutorial"
       ],
-      "competing_articles": "Few articles exist yet \u2014 first-mover advantage"
+      "competing_articles": "Few articles exist, and none with a hands-on, build-along approach"
     }
   ]
 }
