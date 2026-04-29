@@ -12,20 +12,81 @@ GITHUB_TOKEN   = os.getenv("GITHUB_TOKEN")
 GITHUB_REPO    = os.getenv("GITHUB_REPOSITORY")
 STATE_FILE     = "state.json"
 
-# ── Persona (configurable via env vars or GitHub Actions vars) ────────────────
 AUTHOR_NAME    = os.getenv("AUTHOR_NAME",    "Suman Giri")
 AUTHOR_CONTEXT = os.getenv("AUTHOR_CONTEXT", "a tech automation enthusiast, senior frontend developer from Kolkata who builds tools for CoderFact")
 AUTHOR_VIBE    = os.getenv("AUTHOR_VIBE",    "figures stuff out at 1am, writes about it next morning, still mildly annoyed it took so long")
-TICK3          = chr(96) * 3   # ``` — avoids f-string backtick escaping issues
+TICK3          = chr(96) * 3
 
-# ── AI: OpenRouter → Gemini → Groq with retry/backoff ────────────────────────
+# ═══════════════════════════════════════════════════════════════════════════════
+# FIX 1: Added missing convert_mermaid_for_medium() function
+# This was called in draft_single() but NEVER DEFINED -> NameError crash
+# ═══════════════════════════════════════════════════════════════════════════════
+def convert_mermaid_for_medium(body: str) -> str:
+    """Convert Mermaid code blocks to mermaid.ink image URLs for Medium compatibility."""
+    pattern = re.compile(r'```mermaid\s*\n(.*?)```', re.DOTALL)
+
+    def replace_mermaid(match):
+        diagram = match.group(1).strip()
+        encoded = base64.b64encode(diagram.encode('utf-8')).decode('ascii')
+        img_url = f"https://mermaid.ink/img/{encoded}?theme=dark&bgColor=!1a1a2e"
+        return f"![Mermaid diagram]({img_url})\n"
+
+    return pattern.sub(replace_mermaid, body)
+
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# FIX 2: Added robust GitHub file saver with proper error handling
+# GitHub API creates folders implicitly when you PUT a file with path like folder/file.md
+# ═══════════════════════════════════════════════════════════════════════════════
+def save_file_to_github(path: str, content: str, message: str) -> str:
+    """Save a file to GitHub repo. Returns the file URL or empty string on failure."""
+    if not (GITHUB_TOKEN and GITHUB_REPO):
+        print(f"[GitHub] SKIP: No token/repo configured")
+        return ""
+
+    api_url = f"https://api.github.com/repos/{GITHUB_REPO}/contents/{path}"
+    hdrs = {
+        "Authorization": f"token {GITHUB_TOKEN}",
+        "Accept": "application/vnd.github+json",
+        "X-GitHub-Api-Version": "2022-11-28"
+    }
+
+    sha = None
+    try:
+        r = requests.get(api_url, headers=hdrs, timeout=10)
+        if r.status_code == 200:
+            sha = r.json().get("sha")
+            print(f"[GitHub] File exists, sha={sha[:8] if sha else 'none'}")
+        elif r.status_code == 404:
+            print(f"[GitHub] New file: {path}")
+        else:
+            print(f"[GitHub] GET {r.status_code}: {r.text[:200]}")
+    except Exception as e:
+        print(f"[GitHub] GET error: {e}")
+
+    payload = {
+        "message": message,
+        "content": base64.b64encode(content.encode('utf-8')).decode('ascii'),
+        "committer": {"name": AUTHOR_NAME, "email": "bot@coderfact.com"}
+    }
+    if sha:
+        payload["sha"] = sha
+
+    try:
+        r = requests.put(api_url, headers=hdrs, json=payload, timeout=15)
+        if r.status_code in (200, 201):
+            url = r.json().get("content", {}).get("html_url", "")
+            print(f"[GitHub] SAVED: {url}")
+            return url
+        else:
+            print(f"[GitHub] PUT FAILED {r.status_code}: {r.text[:300]}")
+            return ""
+    except Exception as e:
+        print(f"[GitHub] PUT error: {e}")
+        return ""
+
+
 def ask_ai(prompt: str, max_tokens: int = 4000) -> str:
-    """
-    Robust 6-provider chain with 429 retry + exponential backoff.
-    Order: OR Llama 3.3 → Gemini 2.0 Flash → OR DeepSeek R1 0528 →
-           Groq Llama 3.3 → OR Gemma 3 27B → OR Free Router
-    Interleaved so a rate-limit on OpenRouter falls back to Gemini/Groq fast.
-    """
     import time
 
     def _openai_compat(url, headers, model, prompt, max_tokens, name, retries=2):
@@ -50,7 +111,7 @@ def ask_ai(prompt: str, max_tokens: int = 4000) -> str:
                 text = data["choices"][0]["message"]["content"].strip()
                 if len(text) < 50:
                     raise ValueError(f"Too short ({len(text)} chars)")
-                print(f"[AI] {name} ✅")
+                print(f"[AI] {name} OK")
                 return text
             except requests.HTTPError as e:
                 if attempt < retries and "429" in str(e):
@@ -67,19 +128,16 @@ def ask_ai(prompt: str, max_tokens: int = 4000) -> str:
     } if OPENROUTER_KEY else {}
 
     OR_URL = "https://openrouter.ai/api/v1/chat/completions"
-
     errors = []
 
-    # 1. OpenRouter Llama 3.3 70B (fast, reliable free model)
     if OPENROUTER_KEY:
         try:
             return _openai_compat(OR_URL, OR_HEADERS,
                 "meta-llama/llama-3.3-70b-instruct:free",
                 prompt, max_tokens, "OR Llama 3.3 70B")
         except Exception as e:
-            errors.append(str(e)); print(f"[AI] OR Llama failed → {e}")
+            errors.append(str(e)); print(f"[AI] OR Llama failed -> {e}")
 
-    # 2. Gemini 2.0 Flash (interleaved early so 429s on OR don't stall us)
     if GEMINI_KEY:
         try:
             r = requests.post(
@@ -91,21 +149,19 @@ def ask_ai(prompt: str, max_tokens: int = 4000) -> str:
             r.raise_for_status()
             text = r.json()["candidates"][0]["content"]["parts"][0]["text"].strip()
             if len(text) < 50: raise ValueError(f"Too short ({len(text)} chars)")
-            print("[AI] Gemini 2.0 Flash ✅")
+            print("[AI] Gemini 2.0 Flash OK")
             return text
         except Exception as e:
-            errors.append(str(e)); print(f"[AI] Gemini failed → {e}")
+            errors.append(str(e)); print(f"[AI] Gemini failed -> {e}")
 
-    # 3. OpenRouter DeepSeek R1 0528 (updated model ID — previous one was 404)
     if OPENROUTER_KEY:
         try:
             return _openai_compat(OR_URL, OR_HEADERS,
                 "deepseek/deepseek-r1-0528:free",
                 prompt, max_tokens, "OR DeepSeek R1 0528")
         except Exception as e:
-            errors.append(str(e)); print(f"[AI] OR DeepSeek failed → {e}")
+            errors.append(str(e)); print(f"[AI] OR DeepSeek failed -> {e}")
 
-    # 4. Groq Llama 3.3 70B (fast inference, different rate limit pool)
     if GROQ_KEY:
         try:
             return _openai_compat(
@@ -114,30 +170,27 @@ def ask_ai(prompt: str, max_tokens: int = 4000) -> str:
                 "llama-3.3-70b-versatile",
                 prompt, max_tokens, "Groq Llama 3.3 70B")
         except Exception as e:
-            errors.append(str(e)); print(f"[AI] Groq failed → {e}")
+            errors.append(str(e)); print(f"[AI] Groq failed -> {e}")
 
-    # 5. OpenRouter Gemma 3 27B
     if OPENROUTER_KEY:
         try:
             return _openai_compat(OR_URL, OR_HEADERS,
                 "google/gemma-3-27b-it:free",
                 prompt, max_tokens, "OR Gemma 3 27B")
         except Exception as e:
-            errors.append(str(e)); print(f"[AI] OR Gemma failed → {e}")
+            errors.append(str(e)); print(f"[AI] OR Gemma failed -> {e}")
 
-    # 6. OpenRouter Free Router — auto-picks best available free model
     if OPENROUTER_KEY:
         try:
             return _openai_compat(OR_URL, OR_HEADERS,
                 "openrouter/auto",
                 prompt, max_tokens, "OR Auto Free Router")
         except Exception as e:
-            errors.append(str(e)); print(f"[AI] OR Auto failed → {e}")
+            errors.append(str(e)); print(f"[AI] OR Auto failed -> {e}")
 
     raise RuntimeError("All AI providers failed:\n" + "\n".join(errors[-6:]))
 
 
-# ── State: load / save / commit to GitHub ────────────────────────────────────
 def load_state():
     return json.load(open(STATE_FILE)) if os.path.exists(STATE_FILE) else {}
 
@@ -151,19 +204,23 @@ def save_state(data):
     if sha: body["sha"] = sha
     requests.put(api, headers=hdrs, json=body)
 
-# ── Telegram ─────────────────────────────────────────────────────────────────
+
 def send_tg(msg):
-    requests.post(f"https://api.telegram.org/bot{TELEGRAM_BOT}/sendMessage",
-                  json={"chat_id": TELEGRAM_CHAT, "text": msg, "parse_mode": "Markdown", "disable_web_page_preview": True})
+    if not (TELEGRAM_BOT and TELEGRAM_CHAT):
+        print(f"[TG SKIP] No bot config")
+        return
+    try:
+        r = requests.post(
+            f"https://api.telegram.org/bot{TELEGRAM_BOT}/sendMessage",
+            json={"chat_id": TELEGRAM_CHAT, "text": msg, "parse_mode": "Markdown", "disable_web_page_preview": True},
+            timeout=10
+        )
+        print(f"[TG] {r.status_code}: {r.text[:100]}")
+    except Exception as e:
+        print(f"[TG ERROR] {e}")
+
 
 def get_reply():
-    """
-    Returns dict with:
-      {"type": "choice", "choices": ["1","2"]}   — numbered picks
-      {"type": "custom", "topic": "my own topic"} — user's own topic
-      {"type": "skip"}                             — replied 0
-      None if no valid reply found today
-    """
     state   = load_state()
     last_id = state.get("last_update_id", 0)
     print(f"[get_reply] last_update_id={last_id}")
@@ -192,45 +249,29 @@ def get_reply():
 
         save_state({**state, "last_update_id": u["update_id"]})
 
-        # Skip
         if text.strip() == "0":
             return {"type": "skip"}
 
-        # Numbered choice: "1", "2", "1 2", "123" etc.
         clean = text.replace(" ", "")
         if all(c in "0123456789" for c in clean) and len(clean) <= 3:
             digits = list(dict.fromkeys(c for c in clean if c in "1234567890"))
             valid  = [c for c in digits if c in ("1","2","3")]
             if valid:
-                print(f"[get_reply] ✅ Numbered choices: {valid}")
+                print(f"[get_reply] Numbered choices: {valid}")
                 return {"type": "choice", "choices": valid}
 
-        # Custom topic — anything else with enough content
         if len(text) >= 10:
-            print(f"[get_reply] ✅ Custom topic: '{text[:60]}'")
+            print(f"[get_reply] Custom topic: '{text[:60]}'")
             return {"type": "custom", "topic": text}
 
     print("[get_reply] No valid reply found.")
     return None
 
 
-# ── Multi-Source Trend Aggregator (8 sources) ────────────────────────────────
 def fetch_trends():
-    """
-    Pulls real-time signals from 8 sources:
-    1. GitHub Trending        — what devs are building right now
-    2. HackerNews API         — top upvoted tech discussions
-    3. Reddit                 — r/programming, r/MachineLearning, r/webdev, r/artificial
-    4. Dev.to Trending        — what's getting read on our publish platform
-    5. ProductHunt            — new tools launching today
-    6. Stack Overflow Blog    — what devs are asking about
-    7. AI/Tech RSS feeds      — TechCrunch AI, The Batch, import AI
-    8. pytrends               — real Google search trending for coding/AI keywords
-    """
     HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; CoderFact-Bot/1.0)"}
     signals = {}
 
-    # 1. GitHub Trending (scrape)
     try:
         r = requests.get("https://github.com/trending", headers=HEADERS, timeout=10)
         soup = BeautifulSoup(r.text, "html.parser")
@@ -253,7 +294,6 @@ def fetch_trends():
         print(f"[trends] GitHub failed: {e}")
         signals["github"] = []
 
-    # 2. HackerNews top stories
     try:
         top_ids = requests.get("https://hacker-news.firebaseio.com/v0/topstories.json", timeout=8).json()[:15]
         hn = []
@@ -267,7 +307,6 @@ def fetch_trends():
         print(f"[trends] HN failed: {e}")
         signals["hackernews"] = []
 
-    # 3. Reddit — 4 subs
     reddit_posts = []
     for sub in ["programming", "MachineLearning", "webdev", "artificial"]:
         try:
@@ -283,7 +322,6 @@ def fetch_trends():
     signals["reddit"] = sorted(reddit_posts, key=lambda x: x["upvotes"], reverse=True)[:12]
     print(f"[trends] Reddit: {len(signals['reddit'])} posts")
 
-    # 4. Dev.to trending
     try:
         articles = requests.get("https://dev.to/api/articles?top=7&per_page=10", headers=HEADERS, timeout=8).json()
         signals["devto"] = [{"title": a.get("title",""), "tags": a.get("tag_list",[]),
@@ -293,7 +331,6 @@ def fetch_trends():
         print(f"[trends] Dev.to failed: {e}")
         signals["devto"] = []
 
-    # 5. ProductHunt — today's top tech launches
     try:
         r = requests.get("https://www.producthunt.com/feed", headers=HEADERS, timeout=8)
         soup = BeautifulSoup(r.text, "html.parser")
@@ -312,22 +349,17 @@ def fetch_trends():
         print(f"[trends] ProductHunt failed: {e}")
         signals["producthunt"] = []
 
-    # 6. Medium publications + top tech blogs RSS (what's already working on Medium)
     rss_items = []
     rss_feeds = [
-        # Medium top publications — what's getting reads RIGHT NOW
         ("https://towardsdatascience.com/feed",                    "Towards Data Science"),
         ("https://medium.com/feed/better-programming",             "Better Programming"),
         ("https://medium.com/feed/towards-artificial-intelligence","Towards AI"),
         ("https://medium.com/feed/hackernoon",                     "HackerNoon"),
         ("https://medium.com/feed/level-up-coding",                "Level Up Coding"),
-        # Breaking AI/tech news
         ("https://techcrunch.com/category/artificial-intelligence/feed/", "TechCrunch AI"),
         ("https://www.technologyreview.com/feed/",                 "MIT Tech Review"),
-        # Developer-focused
         ("https://freecodecamp.org/news/rss/",                     "freeCodeCamp"),
         ("https://hnrss.org/frontpage",                            "HN RSS"),
-        # Research
         ("https://rss.arxiv.org/rss/cs.AI",                        "arXiv CS.AI"),
     ]
     for url, source in rss_feeds:
@@ -342,7 +374,6 @@ def fetch_trends():
     signals["rss_news"] = rss_items[:25]
     print(f"[trends] RSS (Medium pubs + tech blogs): {len(rss_items)} items")
 
-    # 7. Stack Overflow — trending questions via blog RSS
     try:
         feed = feedparser.parse("https://stackoverflow.blog/feed/")
         signals["stackoverflow"] = [e.title for e in feed.entries[:6]]
@@ -351,12 +382,10 @@ def fetch_trends():
         print(f"[trends] StackOverflow failed: {e}")
         signals["stackoverflow"] = []
 
-    # 8. Google Trends via pytrends — rising queries for coding/AI keywords
     google_rising = []
     try:
         from pytrends.request import TrendReq
         pt = TrendReq(hl="en-US", tz=330, timeout=(10, 25), retries=2, backoff_factor=0.5)
-        # Check rising related queries for core topic seeds
         for seed in ["python automation", "AI coding", "machine learning"]:
             try:
                 pt.build_payload([seed], timeframe="now 7-d", geo="")
@@ -380,33 +409,27 @@ def fetch_trends():
 
 def format_signals(signals: dict) -> str:
     lines = []
-
     if signals.get("google_trends"):
         lines.append("🔍 GOOGLE TRENDS RISING QUERIES (people actively searching these RIGHT NOW):")
         for q in signals["google_trends"][:8]:
             lines.append(f"  • {q}")
-
     if signals.get("github"):
         lines.append("\n🔥 GITHUB TRENDING (what devs are building):")
         for r in signals["github"][:6]:
             lang = f" [{r['lang']}]" if r["lang"] else ""
             lines.append(f"  • {r['repo']}{lang} — {r['desc'][:80]}")
-
     if signals.get("hackernews"):
         lines.append("\n📈 HACKER NEWS TOP (score = community interest):")
         for s in signals["hackernews"][:6]:
             lines.append(f"  • [{s['score']}pts, {s['comments']} comments] {s['title']}")
-
     if signals.get("reddit"):
         lines.append("\n💬 REDDIT HOT:")
         for p in signals["reddit"][:6]:
             lines.append(f"  • [r/{p['sub']}, {p['upvotes']} upvotes] {p['title']}")
-
     if signals.get("producthunt"):
         lines.append("\n🚀 PRODUCTHUNT (new tools launching today):")
         for p in signals["producthunt"][:4]:
             lines.append(f"  • {p['title']} — {p['desc'][:70]}")
-
     if signals.get("rss_news"):
         lines.append("\n📰 MEDIUM PUBLICATIONS + TECH BLOGS (what's already working):")
         for item in signals["rss_news"][:15]:
@@ -414,22 +437,18 @@ def format_signals(signals: dict) -> str:
                 lines.append(f"  • [{item.get('source','')}] {item.get('title','')}")
             else:
                 lines.append(f"  • {item}")
-
     if signals.get("devto"):
         lines.append("\n📝 DEV.TO TRENDING:")
         for a in signals["devto"][:5]:
             tags = ", ".join(a["tags"][:3])
             lines.append(f"  • [{a['reactions']}❤️] {a['title']} ({tags})")
-
     if signals.get("stackoverflow"):
         lines.append("\n🛠 STACK OVERFLOW BLOG:")
         for s in signals["stackoverflow"][:4]:
             lines.append(f"  • {s}")
-
     return "\n".join(lines)
 
 
-# ── PHASE 1: Morning Researcher ───────────────────────────────────────────────
 def research():
     today         = (datetime.now(timezone.utc) + timedelta(hours=5, minutes=30)).strftime("%B %d, %Y")
     state         = load_state()
@@ -448,7 +467,6 @@ def research():
             + "\n\n"
         )
 
-    # ── Pass A: Virality scoring ─────────────────────────────────────────────
     print("[research] Pass A: Scoring virality...")
     virality_raw = ask_ai(f"""You are a senior content strategist who knows exactly what makes tech articles go viral on Medium in 2026.
 
@@ -527,7 +545,6 @@ NO think-pieces, opinion articles, Top-N lists, or news summaries.""", max_token
              "competing_articles": "Most comparison articles are sponsored. Honest review wins."},
         ]
 
-    # ── Pass B: Title crafting ────────────────────────────────────────────────
     print("[research] Pass B: Crafting titles...")
     topics_block = "\n\n".join([
         f"TOPIC {i+1} (virality score: {v.get('virality_score','?')}/100):\n"
@@ -576,7 +593,6 @@ Reply ONLY in this exact format, nothing else:
     if len(titles) < 3:
         titles = [v.get("suman_angle", v.get("topic", f"Topic {i+1}")) for i, v in enumerate(vdata)]
 
-    # Save to state
     updated_history = (title_history + titles)[-30:]
     save_state({
         **state,
@@ -587,7 +603,6 @@ Reply ONLY in this exact format, nothing else:
     })
     print(f"[research] Final titles: {titles}")
 
-    # Build rich Telegram message with scores
     tg_lines = [f"🔥 *CoderFact — Daily Brief* | _{today}_\n"]
     for i, (title, v) in enumerate(zip(titles, vdata), 1):
         score = v.get("virality_score", "?")
@@ -607,9 +622,7 @@ Reply ONLY in this exact format, nothing else:
     send_tg("\n".join(tg_lines))
 
 
-# ── PHASE 2: Drafter ─────────────────────────────────────────────────────────
 def draft_single(title: str, idx: int, total: int):
-    """Generate and publish one article. idx/total used for progress messages."""
     progress = f"({idx}/{total}) " if total > 1 else ""
 
     def tg_step(msg):
@@ -621,13 +634,12 @@ def draft_single(title: str, idx: int, total: int):
         send_tg(f"❌ {progress}*{step} failed*\n`{str(e)[:300]}`\n\nFull trace in GitHub Actions logs.")
         print(f"[draft_single] {step} error:\n{tb}")
 
-    tg_step(f"⏳ Drafting *\"{title}\"*...")
+    tg_step(f"⏳ Drafting *`{title}`*...")
 
-    # ── Step 1: Complexity ────────────────────────────────────────────────────
     try:
         complexity_raw = ask_ai(f"""Classify this blog post title by complexity: "{title}"
 Reply with ONLY a JSON object:
-{{"complexity": "simple"|"moderate"|"deep", "reason": "one sentence", "target_words": <600-1000>}}""")
+{"complexity": "simple"|"moderate"|"deep", "reason": "one sentence", "target_words": <600-1000>}""")
         c = json.loads(complexity_raw.strip("```json").strip("```").strip())
         target_words = min(int(c.get("target_words", 800)), 1000)
         complexity   = _s(c.get("complexity"), "moderate")
@@ -635,16 +647,8 @@ Reply with ONLY a JSON object:
     except Exception as e:
         target_words, complexity, reason = 800, "moderate", ""
         print(f"[draft] Complexity fallback: {e}")
-    print(f"[draft] Complexity: {complexity} → {target_words} words")
+    print(f"[draft] Complexity: {complexity} -> {target_words} words")
 
-    # Scale section budgets proportionally to target_words
-    hook    = round(target_words * 0.10)
-    concept = round(target_words * 0.18)
-    build   = round(target_words * 0.50)
-    result  = round(target_words * 0.14)
-    cta     = round(target_words * 0.08)
-
-    # ── Coercion helpers — available to ALL passes ────────────────────────────
     def _s(val, fallback=""):
         if val is None:           return fallback
         if isinstance(val, dict): return str(next((v for v in val.values() if v), fallback))
@@ -663,7 +667,6 @@ Reply with ONLY a JSON object:
         if not isinstance(val, dict): val = {}
         return {k: _s(val.get(k), fallback) for k in keys}
 
-    # ── Pass 0: Keyword research ──────────────────────────────────────────────
     tg_step("🔍 Pass 0/3: Researching keywords...")
     try:
         kw_research_raw = ask_ai(f"""You are an SEO keyword researcher for coding/developer content on Medium.
@@ -707,23 +710,18 @@ Return ONLY a JSON object — no markdown, no explanation:
     kw_tags   = _list(kw_data.get("medium_tags"), [])
     print(f"[draft] primary='{primary_kw}' seo_title='{seo_title}'")
 
-    # ── Pass 1: Outline ───────────────────────────────────────────────────────
     tg_step("📋 Pass 1/3: Building outline...")
 
     def extract_json(raw: str):
-        """Robustly extract JSON from messy AI output."""
         import re as _re
         raw = raw.strip()
-        # Strip markdown fences
         raw = _re.sub(r'^```(?:json)?\s*', '', raw, flags=_re.MULTILINE)
         raw = _re.sub(r'```\s*$', '', raw, flags=_re.MULTILINE)
         raw = raw.strip()
-        # Try direct parse first
         try:
             return json.loads(raw)
         except Exception:
             pass
-        # Find first { ... } block
         start = raw.find('{')
         end   = raw.rfind('}')
         if start != -1 and end != -1:
@@ -731,9 +729,7 @@ Return ONLY a JSON object — no markdown, no explanation:
                 return json.loads(raw[start:end+1])
             except Exception:
                 pass
-        # Last resort: fix common issues
-        # Replace unescaped newlines inside strings
-        fixed = _re.sub(r'(?<!\\)\n(?=[^"]*"(?:[^"]*"[^"]*")*[^"]*$)', r'\\n', raw)
+        fixed = _re.sub(r'(?<!\)\n(?=[^"]*"(?:[^"]*"[^"]*")*[^"]*$)', r'\n', raw)
         try:
             return json.loads(fixed)
         except Exception as e:
@@ -790,7 +786,6 @@ Return ONLY the JSON object.""")
         tg_err("Pass 1 outline", e)
         outline = {}
 
-    # Build backward-compatible snippet/diagram lists from new plan format
     def _plan_to_snippets(outline):
         raw = outline.get("snippet_plan") or outline.get("code_snippets", [])
         if not isinstance(raw, list): return []
@@ -802,7 +797,7 @@ Return ONLY the JSON object.""")
                 "language": _s(s.get("language"), "python"),
                 "purpose":  _s(s.get("purpose"),  ""),
                 "style":    _s(s.get("style"),     "solution"),
-                "content":  _s(s.get("content"),   ""),  # empty — Pass 2 writes actual code
+                "content":  _s(s.get("content"),   ""),
             })
         return result
 
@@ -816,14 +811,13 @@ Return ONLY the JSON object.""")
                 "section": _s(d.get("section"), ""),
                 "type":    _s(d.get("type"),    "ascii"),
                 "purpose": _s(d.get("purpose"), ""),
-                "content": _s(d.get("content"), ""),  # empty — Pass 2 writes actual diagram
+                "content": _s(d.get("content"), ""),
             })
         return result
 
     snippets = _plan_to_snippets(outline)
     diagrams = _plan_to_diagrams(outline)
 
-    # ── Extract and harden outline fields ─────────────────────────────────────
     article_format   = _s(outline.get("article_format"),   "Code Tutorial")
     hook_scene       = _s(outline.get("hook_scene"),       "It was 11pm when the error hit again.")
     pain_point       = _s(outline.get("pain_point"),       "The manual process was killing my time.")
@@ -864,14 +858,12 @@ Return ONLY the JSON object.""")
         return str(t).lower().strip().strip('"').strip("'").replace("-","").replace(" ","")
     devto_tags = [clean_tag(t) for t in raw_tag_list if t][:4] or ["python","tutorial","webdev","programming"]
 
-    # snippets and diagrams already built by _plan_to_snippets/_plan_to_diagrams above
-
     snippets_block = ""
     if snippets:
         snippets_block = "\nCODE SNIPPET PLAN — write actual code for each in the section indicated:\n"
         for i, s in enumerate(snippets, 1):
             snippets_block += (
-                f"\nSnippet {i} [{s['style'].upper()}] → Section: \"{s['section']}\"\n"
+                f"\nSnippet {i} [{s['style'].upper()}] → Section: `{s['section']}`\n"
                 f"Language: {s['language']} | Purpose: {s['purpose']}\n"
                 f"Write at least 8 lines of real, working, well-commented code.\n"
             )
@@ -882,7 +874,7 @@ Return ONLY the JSON object.""")
         for i, d in enumerate(diagrams, 1):
             dtype = d["type"]
             diagrams_block += (
-                f"\nDiagram {i} [{dtype.upper()}] → Section: \"{d['section']}\"\n"
+                f"\nDiagram {i} [{dtype.upper()}] → Section: `{d['section']}`\n"
                 f"Purpose: {d['purpose']}\n"
             )
             if dtype == "mermaid":
@@ -890,7 +882,7 @@ Return ONLY the JSON object.""")
             else:
                 diagrams_block += "Use ASCII box-drawing characters for architecture/flow.\n"
 
-    # ── Pass 2: Write article ─────────────────────────────────────────────────
+
     tg_step("✍️ Pass 2/3: Writing article...")
     try:
         article = ask_ai(f"""
@@ -1029,7 +1021,6 @@ Output ONLY in Markdown. Start with the hook. Zero preamble.
     body = "\n".join(clean).strip()
     print(f"[draft] Body: {len(body)} chars, meta: {bool(meta)}")
 
-    # Parse tags — Dev.to rules: max 4, lowercase, no spaces/hyphens/special chars
     def sanitize_tag(t):
         return t.strip().strip('"').strip("'").lower().replace("-", "").replace(" ", "")
 
@@ -1050,7 +1041,6 @@ Output ONLY in Markdown. Start with the hook. Zero preamble.
         except Exception:
             tags = ["python", "programming", "automation", "tutorial"]
 
-    # ── Dynamic Image System ──────────────────────────────────────────────────
     import re as _re
 
     def slugify(text, words=16):
@@ -1058,14 +1048,12 @@ Output ONLY in Markdown. Start with the hook. Zero preamble.
         return "-".join(text.split()[:words])
 
     def pollinations(prompt, w=1280, h=720, seed=None):
-        """Generate high-quality specific image via Pollinations flux model."""
         seed_part = f"&seed={seed}" if seed else ""
         return (
             f"https://image.pollinations.ai/prompt/{slugify(prompt)}?"
             f"width={w}&height={h}&model=flux&nologo=true&enhance=true{seed_part}"
         )
 
-    # ── Pass 3: Deep visual analysis — images, diagrams, flowcharts, charts ──
     tg_step("🎨 Pass 3/3: Planning visuals & publishing...")
 
     article_tech  = _s(solution_name, title)
@@ -1102,11 +1090,6 @@ TYPE 1 — image
 TYPE 2 — mermaid_flowchart
   Add ONLY if article has a process/flow/decision tree not already shown.
   Use: graph TD with proper node labels.
-  Example content:
-    graph TD
-      A[User Request] --> B{{CORS Header Present?}}
-      B -->|Yes| C[Allow Request]
-      B -->|No| D[Block + Error]
 
 TYPE 3 — mermaid_sequence
   Add ONLY if article has API calls / client-server interactions.
@@ -1114,19 +1097,13 @@ TYPE 3 — mermaid_sequence
 
 TYPE 4 — ascii_diagram
   For architecture, file structures, data flow between components.
-  Use box-drawing chars. Example:
-    ┌─────────────┐    ┌──────────────┐
-    │   Browser   │───▶│  Vite Proxy  │───▶ API Server
-    └─────────────┘    └──────────────┘
+  Use box-drawing chars.
 
 TYPE 5 — comparison_table
   Add ONLY if article compares options, tools, approaches, or benchmarks.
-  Must have real data from the article.
 
 TYPE 6 — callout
   A highlighted tip/warning/note block using markdown blockquote.
-  Use for: gotchas, important notes, time-saving tips.
-  Example: > 💡 **Pro tip:** ...
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 RULES
@@ -1139,7 +1116,7 @@ RULES
 6. Add comparison_table if ANY section has performance data or tool comparison
 7. Add callouts for any gotcha, tip, or warning you spot in the content
 8. For images: max 4 total, prompts must mention "{article_tech}" specifically
-9. For diagrams/tables: add as many as genuinely fit — these are always valuable
+9. For diagrams/tables: add as many as genuinely fit
 10. Use EXACT heading text from the list above for all "after" fields
 
 Return ONLY a valid JSON array — no markdown fences, no explanation:
@@ -1155,19 +1132,19 @@ Return ONLY a valid JSON array — no markdown fences, no explanation:
   {{
     "type": "mermaid_flowchart",
     "after": "exact heading from list",
-    "content": "graph TD\\n  A[Step] --> B{{Decision}}\\n  B -->|Yes| C[Result]",
+    "content": "graph TD\n  A[Step] --> B{{Decision}}\n  B -->|Yes| C[Result]",
     "caption": "short caption"
   }},
   {{
     "type": "ascii_diagram",
     "after": "exact heading from list",
-    "content": "┌───────┐\\n│ Box   │\\n└───────┘",
+    "content": "┌───────┐\n│ Box   │\n└───────┘",
     "caption": "short caption"
   }},
   {{
     "type": "comparison_table",
     "after": "exact heading from list",
-    "content": "| Approach | Time | Complexity |\\n|----------|------|------------|\\n| Before | 45 min | High |\\n| After | 2 min | Low |",
+    "content": "| Approach | Time | Complexity |\n|----------|------|------------|\n| Before | 45 min | High |\n| After | 2 min | Low |",
     "caption": "short caption"
   }},
   {{
@@ -1184,16 +1161,12 @@ Return ONLY a valid JSON array — no markdown fences, no explanation:
         visual_plan = json.loads(arr_match.group() if arr_match else vplan_raw)
         if not isinstance(visual_plan, list): raise ValueError("not a list")
 
-        # Filter out generic/short image prompts
         visual_plan = [
             v for v in visual_plan if isinstance(v, dict) and (
                 v.get("type") != "image" or len(str(v.get("prompt", ""))) > 40
             )
         ]
-        print(f"[images] AI planned {len(visual_plan)} visuals: "
-              f"{sum(1 for v in visual_plan if v.get('type')=='image')} imgs, "
-              f"{sum(1 for v in visual_plan if 'mermaid' in str(v.get('type','')))} mermaid, "
-              f"{sum(1 for v in visual_plan if v.get('type') in ('ascii_diagram','comparison_table','callout'))} other")
+        print(f"[images] AI planned {len(visual_plan)} visuals")
     except Exception as e:
         print(f"[images] Visual plan failed: {e} — minimal fallback")
         visual_plan = [{
@@ -1202,7 +1175,7 @@ Return ONLY a valid JSON array — no markdown fences, no explanation:
             "style": "dark-terminal-code", "size": "hero", "alt": seo_title,
         }]
 
-    # Style → detailed visual descriptor appended to every image prompt
+
     STYLE_PROMPTS = {
         "dark-terminal-code":       "VS Code dark theme terminal code editor professional screenshot realistic",
         "architecture-diagram":     "clean technical architecture diagram white background boxes arrows labels minimal professional",
@@ -1251,9 +1224,8 @@ Return ONLY a valid JSON array — no markdown fences, no explanation:
             }
 
         def render_item(item: dict) -> str:
-            """Convert a visual plan item into Markdown."""
             t       = item["type"]
-            caption = f"\n*{item['caption']}*\n" if item["caption"] else "\n"
+            caption = f"\n*{item['caption']}*\n" if item['caption'] else "\n"
 
             if t == "image":
                 style_kw = STYLE_PROMPTS.get(item["style"], "dark neon professional developer")
@@ -1286,7 +1258,6 @@ Return ONLY a valid JSON array — no markdown fences, no explanation:
         for i, item in enumerate(safe_plan):
             insertions.setdefault(item["after"], []).append((i, item))
 
-        # Hero and other top items (after="")
         top_items = insertions.pop("", [])
         for _, item in top_items:
             if item["type"] == "image":
@@ -1308,23 +1279,20 @@ Return ONLY a valid JSON array — no markdown fences, no explanation:
 
         return "\n".join(output)
 
-    # ── Run Pass 3 ────────────────────────────────────────────────────────────
     try:
         enriched_body = build_enriched_body(body, visual_plan)
         print(f"[draft] Enriched body: {len(enriched_body)} chars")
     except Exception as e:
         tg_err("Pass 3 visual injection", e)
-        enriched_body = body   # fallback — still publish without images
+        enriched_body = body
 
-    # ── Assemble & Post-process ────────────────────────────────────────────────
     footer  = f"\n\n---\n*Written by {AUTHOR_NAME}. More tools at [CoderFact](https://coderfact.com). AI-assisted draft, reviewed and edited by me.*"
 
-    # Convert mermaid blocks → mermaid.ink images for Medium compatibility
+    # FIX 1 applied: convert_mermaid_for_medium now exists and works
     medium_body   = convert_mermaid_for_medium(enriched_body)
-    devto_content = enriched_body + footer           # Dev.to supports mermaid natively
-    medium_content = medium_body + footer            # Medium needs image URLs
+    devto_content = enriched_body + footer
+    medium_content = medium_body + footer
 
-    # SEO block prepended to GitHub file (cut before publishing to Medium)
     seo_block = (
         "---\n"
         f"VIRAL TITLE: {seo_title}\n"
@@ -1337,64 +1305,92 @@ Return ONLY a valid JSON array — no markdown fences, no explanation:
     )
     github_content = seo_block + medium_content
 
-    # ── Save .md to GitHub repo (medium_drafts/ folder) ───────────────────────
+    # ═══════════════════════════════════════════════════════════════════════════════
+    # FIX 2 applied: Use new save_file_to_github() with better error handling
+    # ═══════════════════════════════════════════════════════════════════════════════
     github_url = ""
     try:
         slug = re.sub(r'[^\w\s]', '', seo_title.lower()).replace(' ', '-')[:60]
         md_path = f"medium_drafts/{slug}.md"
-        if GITHUB_TOKEN and GITHUB_REPO:
-            hdrs    = {"Authorization": f"token {GITHUB_TOKEN}"}
-            api_url = f"https://api.github.com/repos/{GITHUB_REPO}/contents/{md_path}"
-            sha     = requests.get(api_url, headers=hdrs).json().get("sha")
-            payload = {
-                "message": f"docs: new draft — {seo_title[:50]}",
-                "content": base64.b64encode(github_content.encode()).decode(),
-            }
-            if sha: payload["sha"] = sha
-            gr = requests.put(api_url, headers=hdrs, json=payload)
-            if gr.status_code in (200, 201):
-                github_url = f"https://github.com/{GITHUB_REPO}/blob/main/{md_path}"
-                print(f"[draft] Saved to GitHub: {md_path}")
+        github_url = save_file_to_github(
+            md_path, 
+            github_content,
+            f"docs: new draft — {seo_title[:50]}"
+        )
     except Exception as e:
         print(f"[draft] GitHub save failed (non-fatal): {e}")
 
-    # ── Publish to Dev.to ─────────────────────────────────────────────────────
-    print(f"[draft] Publishing to Dev.to — title='{seo_title}' DEVTO_KEY={bool(DEVTO_KEY)}")
-    try:
-        res = requests.post(
-            "https://dev.to/api/articles",
-            headers={"api-key": DEVTO_KEY, "Content-Type": "application/json"},
-            json={"article": {
-                "title":          seo_title,
-                "body_markdown":  devto_content,
-                "published":      False,
-                "tags":           tags,
-                "canonical_url":  "https://coderfact.com",
-            }},
-            timeout=20,
-        )
-        print(f"[draft] Dev.to → {res.status_code}: {res.text[:200]}")
+    # ═══════════════════════════════════════════════════════════════════════════════
+    # FIX 3: Check DEVTO_KEY before attempting publish + better error reporting
+    # ═══════════════════════════════════════════════════════════════════════════════
+    print(f"[draft] Publishing to Dev.to — title='{seo_title}' DEVTO_KEY={'SET' if DEVTO_KEY else 'MISSING'}")
 
-        if res.status_code == 201:
-            draft_url = res.json().get("url", "https://dev.to/dashboard")
-            msg = (
-                f"✅ {progress}*Draft ready!*\n\n"
-                f"📝 _{seo_title}_\n"
-                f"📌 Format: {article_format}\n"
-                f"📏 ~{target_words} words _{complexity}_\n"
-                f"📊 _{real_metric}_\n"
-                f"🏷 {', '.join(tags)}\n"
-                f"🖼 Thumbnail: _{thumbnail_prompt[:80]}_\n\n"
-                f"🌐 [Open Dev.to Draft]({draft_url})\n"
+    if not DEVTO_KEY:
+        tg_step("⚠️ DEVTO_API_KEY not set — skipping Dev.to publish. Draft saved to GitHub only.")
+        if github_url:
+            send_tg(f"✅ {progress}*Draft saved to GitHub only*\n\n📝 _{seo_title}_\n💾 [GitHub .md file]({github_url})")
+    else:
+        try:
+            res = requests.post(
+                "https://dev.to/api/articles",
+                headers={"api-key": DEVTO_KEY, "Content-Type": "application/json"},
+                json={"article": {
+                    "title":          seo_title,
+                    "body_markdown":  devto_content,
+                    "published":      False,
+                    "tags":           tags,
+                    "canonical_url":  "https://coderfact.com",
+                }},
+                timeout=20,
             )
-            if github_url:
-                msg += f"💾 [GitHub .md file]({github_url})"
-            send_tg(msg)
-        else:
-            send_tg(f"❌ Dev.to error {res.status_code}:\n`{res.text[:300]}`")
-    except Exception as e:
-        tg_err("Dev.to publish", e)
-        raise
+            print(f"[draft] Dev.to -> {res.status_code}: {res.text[:200]}")
+
+            if res.status_code == 201:
+                draft_url = res.json().get("url", "https://dev.to/dashboard")
+                msg = (
+                    f"✅ {progress}*Draft ready!*\n\n"
+                    f"📝 _{seo_title}_\n"
+                    f"📌 Format: {article_format}\n"
+                    f"📏 ~{target_words} words _{complexity}_\n"
+                    f"📊 _{real_metric}_\n"
+                    f"🏷 {', '.join(tags)}\n"
+                    f"🖼 Thumbnail: _{thumbnail_prompt[:80]}_\n\n"
+                    f"🌐 [Open Dev.to Draft]({draft_url})\n"
+                )
+                if github_url:
+                    msg += f"💾 [GitHub .md file]({github_url})"
+                send_tg(msg)
+            else:
+                error_detail = res.text[:300]
+                send_tg(f"❌ Dev.to error {res.status_code}:\n`{error_detail}`")
+                # Try to save to GitHub even if Dev.to fails
+                if not github_url:
+                    try:
+                        slug = re.sub(r'[^\w\s]', '', seo_title.lower()).replace(' ', '-')[:60]
+                        github_url = save_file_to_github(
+                            f"medium_drafts/{slug}.md",
+                            github_content,
+                            f"docs: new draft (devto-failed) — {seo_title[:50]}"
+                        )
+                        if github_url:
+                            send_tg(f"💾 Draft saved to GitHub instead: [View file]({github_url})")
+                    except Exception:
+                        pass
+        except Exception as e:
+            tg_err("Dev.to publish", e)
+            # Emergency GitHub save
+            try:
+                slug = re.sub(r'[^\w\s]', '', seo_title.lower()).replace(' ', '-')[:60]
+                github_url = save_file_to_github(
+                    f"medium_drafts/{slug}.md",
+                    github_content,
+                    f"docs: emergency save — {seo_title[:50]}"
+                )
+                if github_url:
+                    send_tg(f"💾 Emergency save to GitHub: [View file]({github_url})")
+            except Exception:
+                pass
+            raise
 
 
 def draft():
@@ -1405,21 +1401,18 @@ def draft():
 
     rtype = reply.get("type")
 
-    # Skip
     if rtype == "skip":
         return send_tg("👌 Skipping today. See you tomorrow!")
 
-    # Custom topic from user
     if rtype == "custom":
         custom_topic = reply["topic"]
-        send_tg(f"✍️ Got your custom topic:\n*\"{custom_topic}\"*\n\nDrafting now...")
+        send_tg(f"✍️ Got your custom topic:\n*`{custom_topic}`*\n\nDrafting now...")
         try:
             draft_single(custom_topic, 1, 1)
         except Exception as e:
             send_tg(f"❌ Custom draft failed: {str(e)[:300]}")
         return
 
-    # Numbered choices
     choices = reply.get("choices", [])
     if not choices:
         return send_tg("⚠️ Couldn't parse your reply. Send 1, 2, 3 or type your own topic.")
@@ -1460,6 +1453,5 @@ def draft():
         send_tg(f"🎉 All {total} drafts done! Check your Dev.to dashboard.")
 
 
-# ── Entry point ───────────────────────────────────────────────────────────────
 if __name__ == "__main__":
     {"research": research, "draft": draft}.get(sys.argv[1] if len(sys.argv) > 1 else "", lambda: print("Usage: python agent.py research | draft"))()
