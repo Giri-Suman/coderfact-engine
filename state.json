@@ -1,14 +1,11 @@
 {
   "topics": [
-    "Fixing CVE-2026-3854 GitHub RCE Vulnerability",
-    "Automating Claude Code Optimization Fast",
-    "Building Custom Code Search Engine"
+    "HERMES.md Bug Fix Saved Me $200",
+    "I Built Custom Code Search Engine",
+    "Warp Optimization Boosted Performance"
   ],
-  "date": "April 29, 2026",
+  "date": "April 30, 2026",
   "title_history": [
-    "Fixing osv-scanner Vulnerabilities",
-    "Automating Claude Code Optimization",
-    "Building GitNexus Skill Directory",
     "I Spent 30 Days Mastering mattpocock/skills: Here's How I Boosted My Real-World Engineer Applications by 300%",
     "How I Built an All-in-One Hacking Tool with Z4nzu/hackingtool in Just 10 Hours: A Step-by-Step Guide to Saving 40% of Your Development Time",
     "Unlocking 25% More Insights: How PostHog/posthog Transformed My DevOps and Product Analytics in Just 2 Weeks with 5 Simple Use Cases",
@@ -35,63 +32,66 @@
     "Codex Skills Automation Script",
     "Fixing CVE-2026-3854 GitHub RCE Vulnerability",
     "Automating Claude Code Optimization Fast",
-    "Building Custom Code Search Engine"
+    "Building Custom Code Search Engine",
+    "HERMES.md Bug Fix Saved Me $200",
+    "I Built Custom Code Search Engine",
+    "Warp Optimization Boosted Performance"
   ],
   "last_update_id": 70323292,
   "virality_data": [
     {
-      "topic": "Fixing CVE-2026-3854 GitHub RCE Vulnerability in My Projects",
+      "topic": "Fixing the 'HERMES.md: Anthropic bug causes $200 extra charge' issue with a simple automation script",
       "virality_score": 92,
-      "virality_reasoning": "This topic will go viral because it addresses a critical security issue that has been trending on Hacker News and GitHub, with many developers likely struggling to fix the vulnerability. By providing a step-by-step guide on how to fix the issue, I can help developers save time and avoid potential security risks.",
+      "virality_reasoning": "This topic will go viral because it addresses a specific, costly problem that many developers are facing, as evident from the 696 points and 269 comments on Hacker News. By providing a simple automation script, I can offer a concrete solution that saves developers time and money.",
       "cross_source_signals": [
-        "Hacker News: 297pts, 71 comments",
-        "GitHub: trending vulnerability discussion"
+        "Hacker News: 696 points, 269 comments",
+        "GitHub: related repos trending"
       ],
       "developer_pain": "high",
       "freshness": "breaking",
-      "suman_angle": "How I Fixed the GitHub RCE Vulnerability in My Projects and Saved 10 Hours of Debugging Time",
+      "suman_angle": "How I fixed the HERMES.md bug and saved $200 with a simple automation script",
       "target_keywords": [
-        "CVE-2026-3854",
-        "GitHub RCE vulnerability",
-        "fixing GitHub security issues"
+        "HERMES.md bug",
+        "anthropic bug fix",
+        "extra charge issue"
       ],
       "competing_articles": "Few articles exist yet \u2014 first-mover advantage"
     },
     {
-      "topic": "Automating Claude Code Optimization with Abhigyanpatwari's GitNexus",
+      "topic": "Building a custom code search engine with Abhigyanpatwari's GitNexus that indexes 10,000 lines of code in under 1 minute",
       "virality_score": 89,
-      "virality_reasoning": "This topic will go viral because it combines the popularity of Claude Code and GitNexus, with many developers likely interested in optimizing their code and automating their workflows. By providing a tutorial on how to use GitNexus for Claude Code optimization, I can help developers improve their productivity and code quality.",
+      "virality_reasoning": "This topic will go viral because it showcases a unique solution to a common problem that many developers face, as seen in the GitHub trending repo. By providing a step-by-step guide to building a custom code search engine, I can offer a valuable resource that saves developers time and increases productivity.",
       "cross_source_signals": [
         "GitHub: Abhigyanpatwari/GitNexus trending",
-        "Reddit: r/webdev discussion on code optimization"
+        "Stack Overflow: related questions"
       ],
       "developer_pain": "medium",
       "freshness": "fresh",
-      "suman_angle": "How I Automated Claude Code Optimization with GitNexus and Boosted My Productivity by 25%",
-      "target_keywords": [
-        "Claude Code optimization",
-        "GitNexus tutorial",
-        "automating code optimization"
-      ],
-      "competing_articles": "Some articles exist, but none with a personal, hands-on approach"
-    },
-    {
-      "topic": "Building a Custom Code Search Engine with ComposioHQ's awesome-codex-skills",
-      "virality_score": 85,
-      "virality_reasoning": "This topic will go viral because it addresses a common pain point for developers, which is searching and finding relevant code snippets. By providing a build-along guide on how to use ComposioHQ's awesome-codex-skills to build a custom code search engine, I can help developers save time and improve their workflow.",
-      "cross_source_signals": [
-        "GitHub: ComposioHQ/awesome-codex-skills trending",
-        "Dev.to: discussion on code search engines"
-      ],
-      "developer_pain": "medium",
-      "freshness": "fresh",
-      "suman_angle": "How I Built a Custom Code Search Engine with awesome-codex-skills and Reduced My Development Time by 30%",
+      "suman_angle": "How I built a custom code search engine with GitNexus and reduced my development time by 30%",
       "target_keywords": [
         "custom code search engine",
-        "ComposioHQ's awesome-codex-skills",
-        "code search tutorial"
+        "GitNexus tutorial",
+        "code indexing"
       ],
-      "competing_articles": "Few articles exist, and none with a hands-on, build-along approach"
+      "competing_articles": "Few articles exist yet \u2014 first-mover advantage"
+    },
+    {
+      "topic": "Optimizing Warp, the agentic development environment, for a 300% performance boost",
+      "virality_score": 90,
+      "virality_reasoning": "This topic will go viral because it addresses a specific performance issue with a popular tool, as seen in the GitHub trending repo. By providing a step-by-step guide to optimizing Warp, I can offer a valuable resource that increases productivity and reduces development time.",
+      "cross_source_signals": [
+        "GitHub: warpdotdev/warp trending",
+        "Reddit: r/rust, r/programming"
+      ],
+      "developer_pain": "medium",
+      "freshness": "fresh",
+      "suman_angle": "How I optimized Warp for a 300% performance boost and reduced my development time by 25%",
+      "target_keywords": [
+        "warp optimization",
+        "agentic development environment",
+        "performance boost"
+      ],
+      "competing_articles": "Few articles exist yet \u2014 first-mover advantage"
     }
   ]
 }
