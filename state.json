@@ -1,14 +1,11 @@
 {
   "topics": [
-    "HERMES.md Bug Fix Saved Me $200",
-    "I Built Custom Code Search Engine",
-    "Warp Optimization Boosted Performance"
+    "Warp Terminal Errors Fixed",
+    "Automating Codex Skills Fast",
+    "Gitnexus Optimization Hacks"
   ],
   "date": "April 30, 2026",
   "title_history": [
-    "I Spent 30 Days Mastering mattpocock/skills: Here's How I Boosted My Real-World Engineer Applications by 300%",
-    "How I Built an All-in-One Hacking Tool with Z4nzu/hackingtool in Just 10 Hours: A Step-by-Step Guide to Saving 40% of Your Development Time",
-    "Unlocking 25% More Insights: How PostHog/posthog Transformed My DevOps and Product Analytics in Just 2 Weeks with 5 Simple Use Cases",
     "How I Slashed AI Model Deployment Time by 90%: A Step-by-Step Guide to Optimizing Your ML Workflow",
     "I Saved 30% of Development Time with free-claude-code: Here's What Worked (And What Didn't)",
     "From 0 to 100: Building a Custom Code Search Engine that Indexes 10,000 Lines of Code in Under 1 Minute",
@@ -35,63 +32,66 @@
     "Building Custom Code Search Engine",
     "HERMES.md Bug Fix Saved Me $200",
     "I Built Custom Code Search Engine",
-    "Warp Optimization Boosted Performance"
+    "Warp Optimization Boosted Performance",
+    "Warp Terminal Errors Fixed",
+    "Automating Codex Skills Fast",
+    "Gitnexus Optimization Hacks"
   ],
   "last_update_id": 70323293,
   "virality_data": [
     {
-      "topic": "Fixing the 'HERMES.md: Anthropic bug causes $200 extra charge' issue with a simple automation script",
+      "topic": "Fixing Warp Agentic Development Environment Terminal Errors",
       "virality_score": 92,
-      "virality_reasoning": "This topic will go viral because it addresses a specific, costly problem that many developers are facing, as evident from the 696 points and 269 comments on Hacker News. By providing a simple automation script, I can offer a concrete solution that saves developers time and money.",
+      "virality_reasoning": "This topic will go viral because it addresses a specific pain point for developers using the Warp agentic development environment, which is currently trending on GitHub. By providing a step-by-step guide on how to fix terminal errors, this article will resonate with developers who have wasted hours trying to troubleshoot the issue.",
       "cross_source_signals": [
-        "Hacker News: 696 points, 269 comments",
-        "GitHub: related repos trending"
+        "GitHub: warpdotdev/warp trending",
+        "Reddit r/webdev: 3 posts this week about Warp issues"
       ],
       "developer_pain": "high",
       "freshness": "breaking",
-      "suman_angle": "How I fixed the HERMES.md bug and saved $200 with a simple automation script",
+      "suman_angle": "How I Fixed Warp Terminal Errors and Boosted My Development Speed",
       "target_keywords": [
-        "HERMES.md bug",
-        "anthropic bug fix",
-        "extra charge issue"
+        "warp terminal errors",
+        "warp agentic development environment issues",
+        "warp debugging"
       ],
       "competing_articles": "Few articles exist yet \u2014 first-mover advantage"
     },
     {
-      "topic": "Building a custom code search engine with Abhigyanpatwari's GitNexus that indexes 10,000 lines of code in under 1 minute",
-      "virality_score": 89,
-      "virality_reasoning": "This topic will go viral because it showcases a unique solution to a common problem that many developers face, as seen in the GitHub trending repo. By providing a step-by-step guide to building a custom code search engine, I can offer a valuable resource that saves developers time and increases productivity.",
-      "cross_source_signals": [
-        "GitHub: Abhigyanpatwari/GitNexus trending",
-        "Stack Overflow: related questions"
-      ],
-      "developer_pain": "medium",
-      "freshness": "fresh",
-      "suman_angle": "How I built a custom code search engine with GitNexus and reduced my development time by 30%",
-      "target_keywords": [
-        "custom code search engine",
-        "GitNexus tutorial",
-        "code indexing"
-      ],
-      "competing_articles": "Few articles exist yet \u2014 first-mover advantage"
-    },
-    {
-      "topic": "Optimizing Warp, the agentic development environment, for a 300% performance boost",
+      "topic": "Automating Codex Skills with ComposioHQ's awesome-codex-skills Repository",
       "virality_score": 90,
-      "virality_reasoning": "This topic will go viral because it addresses a specific performance issue with a popular tool, as seen in the GitHub trending repo. By providing a step-by-step guide to optimizing Warp, I can offer a valuable resource that increases productivity and reduces development time.",
+      "virality_reasoning": "This topic will go viral because it showcases a practical application of automating Codex skills using a popular GitHub repository. By providing an automation script and a step-by-step guide, this article will appeal to developers looking to streamline their workflows and boost productivity.",
       "cross_source_signals": [
-        "GitHub: warpdotdev/warp trending",
-        "Reddit: r/rust, r/programming"
+        "GitHub: ComposioHQ/awesome-codex-skills trending",
+        "Dev.to: 111\u2764\ufe0f post about Codex skills automation"
       ],
       "developer_pain": "medium",
       "freshness": "fresh",
-      "suman_angle": "How I optimized Warp for a 300% performance boost and reduced my development time by 25%",
+      "suman_angle": "How I Automated My Codex Skills and Saved 30% of My Development Time",
       "target_keywords": [
-        "warp optimization",
-        "agentic development environment",
-        "performance boost"
+        "codex skills automation",
+        "composiohq awesome-codex-skills",
+        "codex workflow optimization"
       ],
-      "competing_articles": "Few articles exist yet \u2014 first-mover advantage"
+      "competing_articles": "Some articles exist, but none provide a comprehensive automation script"
+    },
+    {
+      "topic": "Optimizing GitNexus Code Intelligence Engine for Faster Code Analysis",
+      "virality_score": 89,
+      "virality_reasoning": "This topic will go viral because it addresses a specific need for developers using the GitNexus code intelligence engine. By providing a step-by-step guide on how to optimize GitNexus for faster code analysis, this article will resonate with developers looking to improve their development speed and efficiency.",
+      "cross_source_signals": [
+        "GitHub: abhigyanpatwari/GitNexus trending",
+        "Stack Overflow: questions about GitNexus optimization"
+      ],
+      "developer_pain": "medium",
+      "freshness": "fresh",
+      "suman_angle": "How I Optimized GitNexus and Reduced My Code Analysis Time by 25%",
+      "target_keywords": [
+        "gitnexus optimization",
+        "gitnexus code analysis",
+        "gitnexus performance improvement"
+      ],
+      "competing_articles": "Few articles exist, and none provide a comprehensive optimization guide"
     }
   ]
 }
