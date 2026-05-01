@@ -1,14 +1,11 @@
 {
   "topics": [
-    "Warp Terminal Errors Fixed",
-    "Automating Codex Skills Fast",
-    "Gitnexus Optimization Hacks"
+    "I Fixed Warp Terminal Errors",
+    "I Built Trading Bot with TauricResearch",
+    "I Optimized Public APIs with Cache"
   ],
-  "date": "April 30, 2026",
+  "date": "May 01, 2026",
   "title_history": [
-    "How I Slashed AI Model Deployment Time by 90%: A Step-by-Step Guide to Optimizing Your ML Workflow",
-    "I Saved 30% of Development Time with free-claude-code: Here's What Worked (And What Didn't)",
-    "From 0 to 100: Building a Custom Code Search Engine that Indexes 10,000 Lines of Code in Under 1 Minute",
     "I Saved 50% of My Development Time by Automating My Entire ML Workflow with This One GitHub Repo",
     "How I Caught 30 High-Severity Bugs in Just 2 Hours Using This Game-Changing Security Auditing Tool",
     "I Boosted My Code Performance by 300% in 5 Days: A Step-by-Step Guide to Building a Real-Time Optimization Tool",
@@ -35,63 +32,66 @@
     "Warp Optimization Boosted Performance",
     "Warp Terminal Errors Fixed",
     "Automating Codex Skills Fast",
-    "Gitnexus Optimization Hacks"
+    "Gitnexus Optimization Hacks",
+    "I Fixed Warp Terminal Errors",
+    "I Built Trading Bot with TauricResearch",
+    "I Optimized Public APIs with Cache"
   ],
   "last_update_id": 70323293,
   "virality_data": [
     {
-      "topic": "Fixing Warp Agentic Development Environment Terminal Errors",
+      "topic": "Fixing Warp Terminal Errors with a Custom Automation Script",
       "virality_score": 92,
-      "virality_reasoning": "This topic will go viral because it addresses a specific pain point for developers using the Warp agentic development environment, which is currently trending on GitHub. By providing a step-by-step guide on how to fix terminal errors, this article will resonate with developers who have wasted hours trying to troubleshoot the issue.",
+      "virality_reasoning": "This topic will go viral because it addresses a specific pain point for developers using Warp, a trending GitHub repository, and provides a actionable solution with a custom automation script. The fact that it's a first-person account of fixing a frustrating error will resonate with readers and encourage sharing.",
       "cross_source_signals": [
         "GitHub: warpdotdev/warp trending",
-        "Reddit r/webdev: 3 posts this week about Warp issues"
+        "Reddit: r/learnprogramming discussions about Warp"
       ],
       "developer_pain": "high",
-      "freshness": "breaking",
-      "suman_angle": "How I Fixed Warp Terminal Errors and Boosted My Development Speed",
+      "freshness": "fresh",
+      "suman_angle": "How I fixed Warp terminal errors and boosted my productivity with a custom automation script",
       "target_keywords": [
         "warp terminal errors",
-        "warp agentic development environment issues",
+        "warp automation script",
         "warp debugging"
       ],
-      "competing_articles": "Few articles exist yet \u2014 first-mover advantage"
+      "competing_articles": "Few articles exist on this specific topic, providing a first-mover advantage"
     },
     {
-      "topic": "Automating Codex Skills with ComposioHQ's awesome-codex-skills Repository",
-      "virality_score": 90,
-      "virality_reasoning": "This topic will go viral because it showcases a practical application of automating Codex skills using a popular GitHub repository. By providing an automation script and a step-by-step guide, this article will appeal to developers looking to streamline their workflows and boost productivity.",
-      "cross_source_signals": [
-        "GitHub: ComposioHQ/awesome-codex-skills trending",
-        "Dev.to: 111\u2764\ufe0f post about Codex skills automation"
-      ],
-      "developer_pain": "medium",
-      "freshness": "fresh",
-      "suman_angle": "How I Automated My Codex Skills and Saved 30% of My Development Time",
-      "target_keywords": [
-        "codex skills automation",
-        "composiohq awesome-codex-skills",
-        "codex workflow optimization"
-      ],
-      "competing_articles": "Some articles exist, but none provide a comprehensive automation script"
-    },
-    {
-      "topic": "Optimizing GitNexus Code Intelligence Engine for Faster Code Analysis",
+      "topic": "Building a Trading Bot with TauricResearch/TradingAgents and Claude Code",
       "virality_score": 89,
-      "virality_reasoning": "This topic will go viral because it addresses a specific need for developers using the GitNexus code intelligence engine. By providing a step-by-step guide on how to optimize GitNexus for faster code analysis, this article will resonate with developers looking to improve their development speed and efficiency.",
+      "virality_reasoning": "This topic will go viral because it combines two trending technologies, TradingAgents and Claude Code, and provides a step-by-step guide on building a trading bot. The use of AI and automation will appeal to Medium's tech-savvy readers, and the personal story of building a trading bot will add a relatable touch.",
       "cross_source_signals": [
-        "GitHub: abhigyanpatwari/GitNexus trending",
-        "Stack Overflow: questions about GitNexus optimization"
+        "GitHub: TauricResearch/TradingAgents trending",
+        "Reddit: r/trading discussions about AI-powered trading bots"
       ],
       "developer_pain": "medium",
       "freshness": "fresh",
-      "suman_angle": "How I Optimized GitNexus and Reduced My Code Analysis Time by 25%",
+      "suman_angle": "How I built a trading bot with TradingAgents and Claude Code, and what I learned along the way",
       "target_keywords": [
-        "gitnexus optimization",
-        "gitnexus code analysis",
-        "gitnexus performance improvement"
+        "trading bot tutorial",
+        "tauricresearch tradingagents",
+        "claude code trading bot"
       ],
-      "competing_articles": "Few articles exist, and none provide a comprehensive optimization guide"
+      "competing_articles": "Some articles exist on building trading bots, but few focus on the specific combination of TradingAgents and Claude Code"
+    },
+    {
+      "topic": "Optimizing Public APIs with a Custom Cache Layer and Automation Script",
+      "virality_score": 85,
+      "virability_reasoning": "This topic will go viral because it addresses a common pain point for developers working with public APIs, providing a step-by-step guide on optimizing API performance with a custom cache layer and automation script. The use of a personal story and actionable code will encourage readers to try out the solution and share it with others.",
+      "cross_source_signals": [
+        "GitHub: public-apis/public-apis trending",
+        "Reddit: r/webdev discussions about API optimization"
+      ],
+      "developer_pain": "medium",
+      "freshness": "fresh",
+      "suman_angle": "How I optimized public APIs with a custom cache layer and automation script, and reduced my API latency by 50%",
+      "target_keywords": [
+        "public api optimization",
+        "api cache layer",
+        "automation script for api optimization"
+      ],
+      "competing_articles": "Some articles exist on API optimization, but few focus on the specific combination of a custom cache layer and automation script"
     }
   ]
 }
