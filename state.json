@@ -1,14 +1,11 @@
 {
   "topics": [
-    "I Fixed Warp Terminal Errors",
-    "I Built Trading Bot with TauricResearch",
-    "I Optimized Public APIs with Cache"
+    "Warp Terminal Errors Fixed",
+    "I Built Trading Bot",
+    "Claude Code Optimized Fast"
   ],
-  "date": "May 01, 2026",
+  "date": "May 02, 2026",
   "title_history": [
-    "I Saved 50% of My Development Time by Automating My Entire ML Workflow with This One GitHub Repo",
-    "How I Caught 30 High-Severity Bugs in Just 2 Hours Using This Game-Changing Security Auditing Tool",
-    "I Boosted My Code Performance by 300% in 5 Days: A Step-by-Step Guide to Building a Real-Time Optimization Tool",
     "I Increased My Productivity by 300%: How Creating a Personalized Skill Directory with mattpocock/skills Transformed My Career",
     "From 10 Hours to 1: How Alishahryar1's free-claude-code Reduced My Development Time by 90% and Changed My Workflow Forever",
     "How I Boosted My Code Performance by 200% in Just 2 Weeks: A Step-by-Step Guide to Mastering Z4nzu's Hackingtool",
@@ -35,63 +32,66 @@
     "Gitnexus Optimization Hacks",
     "I Fixed Warp Terminal Errors",
     "I Built Trading Bot with TauricResearch",
-    "I Optimized Public APIs with Cache"
+    "I Optimized Public APIs with Cache",
+    "Warp Terminal Errors Fixed",
+    "I Built Trading Bot",
+    "Claude Code Optimized Fast"
   ],
   "last_update_id": 70323293,
   "virality_data": [
     {
       "topic": "Fixing Warp Terminal Errors with a Custom Automation Script",
       "virality_score": 92,
-      "virality_reasoning": "This topic will go viral because it addresses a specific pain point for developers using Warp, a trending GitHub repository, and provides a actionable solution with a custom automation script. The fact that it's a first-person account of fixing a frustrating error will resonate with readers and encourage sharing.",
+      "virality_reasoning": "This topic will go viral because it addresses a specific pain point that many developers are facing with Warp Terminal, and the solution is a custom automation script that can be easily implemented. Evidence from GitHub trending and Stack Overflow blog suggests that Warp Terminal is a popular tool, and fixing its errors is a high-priority task for many developers.",
       "cross_source_signals": [
         "GitHub: warpdotdev/warp trending",
-        "Reddit: r/learnprogramming discussions about Warp"
+        "Stack Overflow blog: Time is a construct but it can still break your software"
       ],
       "developer_pain": "high",
       "freshness": "fresh",
-      "suman_angle": "How I fixed Warp terminal errors and boosted my productivity with a custom automation script",
+      "suman_angle": "How I fixed Warp Terminal errors and boosted my productivity with a custom automation script",
       "target_keywords": [
         "warp terminal errors",
-        "warp automation script",
-        "warp debugging"
+        "warp terminal automation script",
+        "warp terminal fix"
       ],
-      "competing_articles": "Few articles exist on this specific topic, providing a first-mover advantage"
+      "competing_articles": "Few articles exist yet \u2014 first-mover advantage"
     },
     {
-      "topic": "Building a Trading Bot with TauricResearch/TradingAgents and Claude Code",
-      "virality_score": 89,
-      "virality_reasoning": "This topic will go viral because it combines two trending technologies, TradingAgents and Claude Code, and provides a step-by-step guide on building a trading bot. The use of AI and automation will appeal to Medium's tech-savvy readers, and the personal story of building a trading bot will add a relatable touch.",
+      "topic": "Building a Trading Bot with TauricResearch TradingAgents and Claude AI",
+      "virality_score": 90,
+      "virality_reasoning": "This topic will go viral because it combines two popular technologies, TradingAgents and Claude AI, to build a trading bot, which is a high-interest topic for many developers. Evidence from GitHub trending and Hacker News suggests that TradingAgents and Claude AI are popular tools, and building a trading bot is a challenging task that many developers are trying to accomplish.",
       "cross_source_signals": [
         "GitHub: TauricResearch/TradingAgents trending",
-        "Reddit: r/trading discussions about AI-powered trading bots"
+        "Hacker News: Ti-84 Evo"
       ],
       "developer_pain": "medium",
-      "freshness": "fresh",
-      "suman_angle": "How I built a trading bot with TradingAgents and Claude Code, and what I learned along the way",
+      "freshness": "breaking",
+      "suman_angle": "How I built a trading bot with TauricResearch TradingAgents and Claude AI, and what I learned from the process",
       "target_keywords": [
         "trading bot tutorial",
-        "tauricresearch tradingagents",
-        "claude code trading bot"
+        "tradingagents claude ai",
+        "trading bot development"
       ],
-      "competing_articles": "Some articles exist on building trading bots, but few focus on the specific combination of TradingAgents and Claude Code"
+      "competing_articles": "Few articles exist yet \u2014 first-mover advantage"
     },
     {
-      "topic": "Optimizing Public APIs with a Custom Cache Layer and Automation Script",
-      "virality_score": 85,
-      "virability_reasoning": "This topic will go viral because it addresses a common pain point for developers working with public APIs, providing a step-by-step guide on optimizing API performance with a custom cache layer and automation script. The use of a personal story and actionable code will encourage readers to try out the solution and share it with others.",
+      "topic": "Automating Claude Code Optimization with a Custom Script and GitNexus",
+      "virality_score": 88,
+      "virality_reasoning": "This topic will go viral because it addresses a specific pain point that many developers are facing with Claude code optimization, and the solution is a custom script that can be easily implemented with GitNexus. Evidence from GitHub trending and Dev.to suggests that Claude code optimization is a popular topic, and automating it is a high-priority task for many developers.",
       "cross_source_signals": [
-        "GitHub: public-apis/public-apis trending",
-        "Reddit: r/webdev discussions about API optimization"
+        "GitHub: Abhigyanpatwari/GitNexus trending",
+        "Dev.to: Fine-Tuning Gemma 4 with Cloud Run Jobs"
       ],
-      "developer_pain": "medium",
+      "developer_pain": "high",
       "freshness": "fresh",
-      "suman_angle": "How I optimized public APIs with a custom cache layer and automation script, and reduced my API latency by 50%",
+      "suman_angle": "How I automated Claude code optimization with a custom script and GitNexus, and what I learned from the process",
       "target_keywords": [
-        "public api optimization",
-        "api cache layer",
-        "automation script for api optimization"
+        "claude code optimization automation",
+        "gitnexus claude ai",
+        "claude code optimization script"
       ],
-      "competing_articles": "Some articles exist on API optimization, but few focus on the specific combination of a custom cache layer and automation script"
+      "competing_articles": "Few articles exist yet \u2014 first-mover advantage"
     }
   ]
 }
