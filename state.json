@@ -1,26 +1,11 @@
 {
   "topics": [
-    "Fixing CVE-2026-3854 GitHub RCE Vulnerability",
-    "Automating Claude Code Optimization Fast",
-    "Building Custom Code Search Engine"
+    "VS Code Copilot Commits Fix",
+    "TauricResearch Trading Bot Tutorial",
+    "Claude Code Optimization RuVnet Ruflo"
   ],
-  "date": "April 29, 2026",
+  "date": "May 03, 2026",
   "title_history": [
-    "Fixing osv-scanner Vulnerabilities",
-    "Automating Claude Code Optimization",
-    "Building GitNexus Skill Directory",
-    "I Spent 30 Days Mastering mattpocock/skills: Here's How I Boosted My Real-World Engineer Applications by 300%",
-    "How I Built an All-in-One Hacking Tool with Z4nzu/hackingtool in Just 10 Hours: A Step-by-Step Guide to Saving 40% of Your Development Time",
-    "Unlocking 25% More Insights: How PostHog/posthog Transformed My DevOps and Product Analytics in Just 2 Weeks with 5 Simple Use Cases",
-    "How I Slashed AI Model Deployment Time by 90%: A Step-by-Step Guide to Optimizing Your ML Workflow",
-    "I Saved 30% of Development Time with free-claude-code: Here's What Worked (And What Didn't)",
-    "From 0 to 100: Building a Custom Code Search Engine that Indexes 10,000 Lines of Code in Under 1 Minute",
-    "I Saved 50% of My Development Time by Automating My Entire ML Workflow with This One GitHub Repo",
-    "How I Caught 30 High-Severity Bugs in Just 2 Hours Using This Game-Changing Security Auditing Tool",
-    "I Boosted My Code Performance by 300% in 5 Days: A Step-by-Step Guide to Building a Real-Time Optimization Tool",
-    "I Increased My Productivity by 300%: How Creating a Personalized Skill Directory with mattpocock/skills Transformed My Career",
-    "From 10 Hours to 1: How Alishahryar1's free-claude-code Reduced My Development Time by 90% and Changed My Workflow Forever",
-    "How I Boosted My Code Performance by 200% in Just 2 Weeks: A Step-by-Step Guide to Mastering Z4nzu's Hackingtool",
     "I Simplified 85% of My Complex Data Structures Using Gastownhall's Beads: Here's My 5-Step Process",
     "I Spent 2 Weeks Reviewing ComposioHQ's Codex Skills: Here's How It Boosted My Team's Productivity by 30%",
     "How I Built a Real-Time Code Optimization Tool with Abhigyanpatwari's GitNexus, Reducing Bugs by 42% in Just 3 Months",
@@ -35,63 +20,78 @@
     "Codex Skills Automation Script",
     "Fixing CVE-2026-3854 GitHub RCE Vulnerability",
     "Automating Claude Code Optimization Fast",
-    "Building Custom Code Search Engine"
+    "Building Custom Code Search Engine",
+    "HERMES.md Bug Fix Saved Me $200",
+    "I Built Custom Code Search Engine",
+    "Warp Optimization Boosted Performance",
+    "Warp Terminal Errors Fixed",
+    "Automating Codex Skills Fast",
+    "Gitnexus Optimization Hacks",
+    "I Fixed Warp Terminal Errors",
+    "I Built Trading Bot with TauricResearch",
+    "I Optimized Public APIs with Cache",
+    "Warp Terminal Errors Fixed",
+    "I Built Trading Bot",
+    "Claude Code Optimized Fast",
+    "VS Code Copilot Commits Fix",
+    "TauricResearch Trading Bot Tutorial",
+    "Claude Code Optimization RuVnet Ruflo"
   ],
-  "last_update_id": 70323292,
+  "last_update_id": 70323293,
   "virality_data": [
     {
-      "topic": "Fixing CVE-2026-3854 GitHub RCE Vulnerability in My Projects",
+      "topic": "Fixing 'Co-Authored-by Copilot' Commits in VS Code",
       "virality_score": 92,
-      "virality_reasoning": "This topic will go viral because it addresses a critical security issue that has been trending on Hacker News and GitHub, with many developers likely struggling to fix the vulnerability. By providing a step-by-step guide on how to fix the issue, I can help developers save time and avoid potential security risks.",
+      "virality_reasoning": "This topic will go viral because it addresses a specific pain point for many developers who use VS Code and Copilot, as seen in the 1000pt Hacker News post. The solution will provide a clear, actionable fix, making it highly shareable and bookmarkable.",
       "cross_source_signals": [
-        "Hacker News: 297pts, 71 comments",
-        "GitHub: trending vulnerability discussion"
+        "Hacker News: 1000pts, 482 comments",
+        "GitHub: VS Code issues trending"
       ],
       "developer_pain": "high",
       "freshness": "breaking",
-      "suman_angle": "How I Fixed the GitHub RCE Vulnerability in My Projects and Saved 10 Hours of Debugging Time",
+      "suman_angle": "How I fixed 'Co-Authored-by Copilot' commits breaking my Git workflow",
       "target_keywords": [
-        "CVE-2026-3854",
-        "GitHub RCE vulnerability",
-        "fixing GitHub security issues"
+        "vs code copilot commits",
+        "co-authored-by copilot fix",
+        "vs code git issues"
       ],
       "competing_articles": "Few articles exist yet \u2014 first-mover advantage"
     },
     {
-      "topic": "Automating Claude Code Optimization with Abhigyanpatwari's GitNexus",
+      "topic": "Building a Trading Bot with TauricResearch/TradingAgents",
       "virality_score": 89,
-      "virality_reasoning": "This topic will go viral because it combines the popularity of Claude Code and GitNexus, with many developers likely interested in optimizing their code and automating their workflows. By providing a tutorial on how to use GitNexus for Claude Code optimization, I can help developers improve their productivity and code quality.",
+      "virality_reasoning": "This topic will go viral because it combines a popular GitHub trend with a personal story of building a trading bot, providing a unique and actionable tutorial. The use of TradingAgents will also attract AI and automation enthusiasts, as seen in the Medium publications and GitHub trending repos.",
       "cross_source_signals": [
-        "GitHub: Abhigyanpatwari/GitNexus trending",
-        "Reddit: r/webdev discussion on code optimization"
+        "GitHub: TauricResearch/TradingAgents trending",
+        "Medium: AI and automation publications"
       ],
       "developer_pain": "medium",
       "freshness": "fresh",
-      "suman_angle": "How I Automated Claude Code Optimization with GitNexus and Boosted My Productivity by 25%",
+      "suman_angle": "How I built a trading bot with TauricResearch/TradingAgents and learned to automate trading",
       "target_keywords": [
-        "Claude Code optimization",
-        "GitNexus tutorial",
-        "automating code optimization"
+        "trading bot tutorial",
+        "tauricresearch tradingagents",
+        "automated trading bot"
       ],
-      "competing_articles": "Some articles exist, but none with a personal, hands-on approach"
+      "competing_articles": "Some articles exist, but a personal and detailed tutorial will stand out"
     },
     {
-      "topic": "Building a Custom Code Search Engine with ComposioHQ's awesome-codex-skills",
-      "virality_score": 85,
-      "virality_reasoning": "This topic will go viral because it addresses a common pain point for developers, which is searching and finding relevant code snippets. By providing a build-along guide on how to use ComposioHQ's awesome-codex-skills to build a custom code search engine, I can help developers save time and improve their workflow.",
+      "topic": "Automating Claude Code Optimization with ruvnet/ruflo",
+      "virality_score": 90,
+      "virality_reasoning": "This topic will go viral because it addresses a specific pain point for developers who use Claude and want to optimize their code, as seen in the DEV.to and HackerNoon publications. The use of ruvnet/ruflo will also attract AI and automation enthusiasts, providing a unique and actionable automation script.",
       "cross_source_signals": [
-        "GitHub: ComposioHQ/awesome-codex-skills trending",
-        "Dev.to: discussion on code search engines"
+        "DEV.to: Claude and automation publications",
+        "GitHub: ruvnet/ruflo trending"
       ],
       "developer_pain": "medium",
       "freshness": "fresh",
-      "suman_angle": "How I Built a Custom Code Search Engine with awesome-codex-skills and Reduced My Development Time by 30%",
+      "suman_angle": "How I automated Claude code optimization with ruvnet/ruflo and improved my workflow",
       "target_keywords": [
-        "custom code search engine",
-        "ComposioHQ's awesome-codex-skills",
-        "code search tutorial"
+        "claude code optimization",
+        "ruvnet ruflo tutorial",
+        "automated code optimization"
       ],
-      "competing_articles": "Few articles exist, and none with a hands-on, build-along approach"
+      "competing_articles": "Some articles exist, but a personal and detailed automation script will stand out"
     }
   ]
 }
