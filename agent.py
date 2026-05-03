@@ -35,6 +35,101 @@ def convert_mermaid_for_medium(body: str) -> str:
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
+# QuickChart.io — render real data charts as PNG URLs (no API key required)
+# Pass a Chart.js config dict; get back a Markdown image string.
+# ═══════════════════════════════════════════════════════════════════════════════
+def quickchart_url(config: dict, w: int = 700, h: int = 400, bg: str = "#1a1a2e") -> str:
+    try:
+        import urllib.parse as _u
+        cfg_json = json.dumps(config, separators=(",", ":"))
+        return (
+            "https://quickchart.io/chart"
+            f"?w={w}&h={h}&bkg={_u.quote(bg)}&c={_u.quote(cfg_json)}"
+        )
+    except Exception as e:
+        print(f"[chart] QuickChart URL build failed: {e}")
+        return ""
+
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# Pull-quote card — large blockquote with attribution, renders well on Medium.
+# ═══════════════════════════════════════════════════════════════════════════════
+def render_quote_card(quote: str, attribution: str = "") -> str:
+    quote = quote.strip().strip('"').strip("'")
+    if not quote:
+        return ""
+    if attribution:
+        return f"\n> ## {quote}\n>\n> — *{attribution.strip()}*\n"
+    return f"\n> ## {quote}\n"
+
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# HUMANIZATION — anti-AI-detection rewrite pass.
+# Runs after the article is written. Different model, different prompt.
+# Goal: kill "AI tells" without losing technical accuracy.
+# ═══════════════════════════════════════════════════════════════════════════════
+HUMAN_BANNED = [
+    "delve", "navigate", "leverage", "landscape", "robust", "seamless", "unleash",
+    "utilize", "empower", "groundbreaking", "revolutionize", "game-changer",
+    "synergy", "cutting-edge", "supercharge", "spearhead", "foster", "facilitate",
+    "paradigm", "holistic", "it is worth noting", "furthermore", "moreover",
+    "additionally", "in conclusion", "in summary", "to summarize", "in essence",
+    "at the end of the day", "tapestry", "elevate", "embark", "unparalleled",
+    "transformative", "noteworthy", "comprehensive", "intricate", "myriad",
+    "plethora", "ever-evolving", "rapidly evolving",
+]
+
+def humanize_pass(article_md: str, voice_context: str, target_words: int) -> str:
+    """Rewrite an AI-drafted article to read like a human dev wrote it."""
+    if not article_md or len(article_md) < 200:
+        return article_md
+    banned_block = ", ".join(HUMAN_BANNED)
+    try:
+        rewritten = ask_ai(f"""You are a brutal copy editor. The draft below was AI-written.
+Your job: rewrite it so it reads like a real developer wrote it at 1am, after fixing the actual bug.
+Keep ALL code blocks, tables, images, mermaid blocks, blockquotes, and JSON widget blocks EXACTLY as-is.
+Keep ALL ## H2 headings EXACTLY as-is (the SEO depends on them).
+Rewrite ONLY prose paragraphs.
+
+VOICE: {voice_context}
+
+HARD RULES — every single one matters:
+1. Use contractions everywhere — don't, can't, it's, you'll, I've, that's, here's, won't, didn't.
+2. Use em-dashes mid-sentence the way humans actually do — like this — at least 6 times across the article.
+3. Add casual asides in parens (yeah, like this) — at least 4 times.
+4. Open at least 2 paragraphs with a single short fragment. Like this. One sentence. Punchy.
+5. Use "I" obsessively. Personal experience, never "one might" or "developers can".
+6. Drop in 1-2 honest admissions: "I should have checked the docs. I didn't." or "This took me embarrassingly long."
+7. At least one "wait — let me back up" or "okay, quick detour" mid-paragraph.
+8. Use specific numbers: "47 minutes", "1:14am", "the third try", not "a while" or "several attempts".
+9. Drop the formal voice markers. No "Furthermore". No "In conclusion". No "It is worth noting".
+10. Reference Kolkata, chai, 1am, or local context naturally — once, not three times.
+11. Use one mild rhetorical question to the reader: "Sound familiar?" / "Yeah. Me too." / "Annoying, right?"
+12. Vary sentence length aggressively. Short. Then a long one that snakes through the actual mechanism. Then short again.
+13. Banned words (DELETE every instance, rewrite the sentence): {banned_block}
+14. Do NOT add a "Conclusion" or "Summary" heading. Last paragraph is just two human sentences.
+15. Word count target: ~{target_words}. Never add filler to hit it — cut instead.
+
+OUTPUT: the rewritten Markdown, nothing else. No preamble like "Here is the rewritten...".
+
+DRAFT TO REWRITE:
+{article_md}
+""", max_tokens=int(target_words * 2.2) + 500)
+        if not rewritten or len(rewritten) < int(len(article_md) * 0.5):
+            print(f"[humanize] Output too short ({len(rewritten) if rewritten else 0} vs draft {len(article_md)}) — keeping original")
+            return article_md
+        # Strip any preamble accidentally added
+        for prefix in ("Here is the rewritten", "Here's the rewritten", "Rewritten:", "REWRITTEN:"):
+            if rewritten.lstrip().startswith(prefix):
+                rewritten = rewritten.split("\n", 1)[1] if "\n" in rewritten else rewritten
+        print(f"[humanize] OK — rewrote {len(article_md)} -> {len(rewritten)} chars")
+        return rewritten.strip()
+    except Exception as e:
+        print(f"[humanize] Failed: {e} — keeping AI draft")
+        return article_md
+
+
+# ═══════════════════════════════════════════════════════════════════════════════
 # FIX 2: Added robust GitHub file saver with proper error handling
 # GitHub API creates folders implicitly when you PUT a file with path like folder/file.md
 # ═══════════════════════════════════════════════════════════════════════════════
@@ -472,50 +567,96 @@ def research():
 
 Today is {today}.
 
-CRITICAL DIVERSITY RULES — the 3 topics MUST cover different categories:
-- NO two topics from the same category (e.g. not two "Python tutorial" topics)
-- Cover at least 2 of these angles: [debugging fix, build tutorial, tool comparison, automation script, AI/LLM integration, performance optimization, career/workflow, new tool deep-dive]
-- At least one topic must be "breaking" or "fresh" freshness
-- At least one topic must target a specific named error or tool problem (not a concept)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+CONTENT CATEGORIES — the 3 topics MUST come from 3 DIFFERENT categories below.
+Rotate aggressively across these — readers are bored of "another debugging fix" every day.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-WHAT MAKES A CODING/AI ARTICLE GO VIRAL ON MEDIUM (research-backed facts):
-1. CROSS-SOURCE SIGNAL: Topic on GitHub + Reddit + Google Trends = 3x viral multiplier
+CATEGORY A — Developer Success Story
+   "How I shipped X in Y days as a solo dev" / "From zero users to N in N months"
+   Hook: real journey, specific numbers, what worked, what failed.
+   Why viral: Medium readers love builder narratives. High read-ratio.
+
+CATEGORY B — Vibe Coding / AI-Assisted Workflow
+   "I built a full app in one afternoon using Cursor + Claude" / "Vibe coding a SaaS in a weekend"
+   Hook: shows the modern AI-augmented dev loop. Real prompts, real diffs.
+   Why viral: this is the dominant 2026 dev trend — high search volume + curiosity.
+
+CATEGORY C — AI Agents & Multi-Agent Workflows
+   "Building a research agent with LangGraph in 80 lines" / "My 4-agent system that writes my newsletter"
+   Hook: actual architecture diagram, message-passing, working orchestration code.
+   Why viral: every dev wants to build agents but most posts are theoretical. Be concrete.
+
+CATEGORY D — AI Automation Across Domains
+   Pick a non-coding domain (sales / finance / content / customer support / hiring / ops)
+   and show a working automation. e.g. "Auto-categorizing 1000 invoices a day with Gemini".
+   Why viral: bridges devs into business value — much wider audience than coding-only posts.
+
+CATEGORY E — Money / Income Story
+   "How I made $X/month from a 200-line script" / "Why my $9 SaaS beats my $90k job"
+   Real numbers, real Stripe/Gumroad screenshots referenced, honest about failures.
+   Why viral: highest engagement category on Medium. Be specific, not aspirational.
+
+CATEGORY F — Debugging / Fix With Code (the only "old" category — keep, but cap at 1 of 3)
+   Named error, named tool version, exact root cause, working fix.
+
+CATEGORY G — Software Architecture Insight
+   "Why I rewrote our queue from Celery to Redis Streams" / "The 3 trade-offs nobody warns you about with microservices"
+   Real production decision, alternatives considered, honest trade-offs.
+
+CATEGORY H — Tips & Tricks / Real Workflow
+   "7 git aliases I use every day" / "My terminal setup as a senior dev (with config files)"
+   Practical, copyable, specific. Each tip has a tiny proof — command, screenshot, or config snippet.
+
+DIVERSITY CONSTRAINT (HARD):
+- 3 topics from 3 DIFFERENT categories
+- At most 1 of the 3 may be Category F (debugging fix)
+- At least 1 must be from {{B, C, D, E}} (the AI/automation/income cluster)
+- No category should appear in 2 consecutive days — check title_history below
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+WHAT MAKES A CODING/AI ARTICLE GO VIRAL ON MEDIUM (research-backed):
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1. CROSS-SOURCE SIGNAL: Topic surfacing on GitHub + Reddit + Google Trends = 3x multiplier
 2. DEVELOPER PAIN POINT: "I wasted X hours on this" = highest clap rate
 3. ACTIONABLE + CODE: Working code readers can copy = high bookmark + share rate
 4. FRESH ANGLE: First-mover on a new tool (<30 days) = Google SEO advantage
 5. AI + AUTOMATION: Medium tech readers favor these heavily in 2026
-6. PERSONAL STORY: "How I built/fixed/automated X" = highest read-ratio on Medium
+6. PERSONAL STORY with NUMBERS: "$3k MRR in 4 months" out-performs "I built an app"
 7. SEARCH DEMAND: Low-competition keyword with real search volume = ranks on Google
 8. BOOST-WORTHY: Original insight + expert voice + actionable takeaway = editorial boost
-9. AUDIENCE: CoderFact readers are developers 25-40, practical builders, India + global
-10. SPECIFICITY: Named error messages, specific tools, exact time saved = more trust
+9. AUDIENCE: CoderFact readers are devs 25-40, practical builders, India + global
+10. SPECIFICITY: Named errors, specific tools, exact time saved = more trust
 
 LIVE SIGNALS FROM 8 SOURCES (GitHub, HackerNews, Reddit, Dev.to, ProductHunt, Tech RSS, StackOverflow, Google Trends):
 {trend_block}
 
-{history_block}TASK: Analyze every signal. Score each potential topic 0-100 for Medium virality.
-Pick the TOP 3 with the highest scores.
+{history_block}TASK: Analyze every signal. Pick 3 topics from 3 DIFFERENT categories above.
+Score each 0-100 for Medium virality. Be honest — don't inflate scores.
 
 Return ONLY a valid JSON array — no markdown, no explanation:
 [
   {{
-    "topic": "specific raw topic e.g. 'Vite 6 HMR breaking changes in React projects'",
+    "topic": "specific raw topic e.g. 'How I built a research agent that runs my morning brief'",
+    "category": "C",
+    "category_name": "AI Agents & Multi-Agent Workflows",
     "virality_score": 88,
-    "virality_reasoning": "2 sentences: WHY this will go viral — evidence from signals + pain level",
-    "cross_source_signals": ["GitHub: vite repo trending", "Reddit r/webdev: 5 posts this week"],
+    "analysis": "3 sentences: WHY this will rank on Medium THIS WEEK, what the cross-source evidence is, and what makes it different from existing posts on the topic.",
+    "cross_source_signals": ["GitHub: langgraph repo trending", "Reddit r/MachineLearning: 4 posts this week", "Google Trends: 'ai agent tutorial' rising"],
     "developer_pain": "high",
     "freshness": "breaking",
-    "suman_angle": "Specific first-person angle: 'How I fixed Vite 6 HMR breaking my React hot reload'",
-    "target_keywords": ["vite 6 hmr not working", "vite react hot reload broken", "vite 6 migration"],
-    "competing_articles": "Few articles exist yet — first-mover advantage"
+    "money_angle": "Optional: monetization or income angle if relevant — empty string if not",
+    "story_angle": "First-person hook in 1 sentence — what specifically happened to Suman that triggered this",
+    "suman_angle": "Specific first-person rewrite: 'How I built a 3-agent newsletter pipeline in one weekend (full code)'",
+    "target_keywords": ["langgraph tutorial", "build ai agent python", "multi agent workflow"],
+    "competing_articles": "Most existing posts are abstract — Suman shows working orchestration code with a real result"
   }},
   {{...}},
   {{...}}
 ]
 
-ONLY pick topics where Suman can write from personal dev experience.
-ONLY tutorials, debugging guides, automation scripts, build-alongs, performance fixes.
-NO think-pieces, opinion articles, Top-N lists, or news summaries.""", max_tokens=2000)
+PICK topics Suman can write from personal experience (frontend dev, automation tinkerer, builds in Python + JS).
+NO think-pieces, NO opinion articles, NO listicles longer than 7 items, NO news summaries.""", max_tokens=2500)
 
     try:
         vdata = json.loads(virality_raw.strip().strip("```json").strip("```").strip())
@@ -528,21 +669,31 @@ NO think-pieces, opinion articles, Top-N lists, or news summaries.""", max_token
     except Exception as e:
         print(f"[research] Virality parse failed: {e} — using fallback")
         vdata = [
-            {"topic": "Python asyncio common bugs", "virality_score": 74, "developer_pain": "high",
-             "freshness": "fresh", "suman_angle": "The async mistakes that burned 3 hours of my life",
-             "target_keywords": ["python asyncio bugs", "async await python errors", "asyncio tutorial"],
-             "virality_reasoning": "Consistently high pain topic. Trending on Reddit r/learnpython weekly.",
-             "competing_articles": "Many tutorials but few focus on real bugs from experience."},
-            {"topic": "GitHub Actions silent failures", "virality_score": 71, "developer_pain": "high",
-             "freshness": "established", "suman_angle": "Why my GitHub Action failed with zero error message",
+            {"topic": "Vibe coding a small SaaS in one weekend", "category": "B",
+             "category_name": "Vibe Coding / AI-Assisted Workflow",
+             "virality_score": 78, "developer_pain": "medium", "freshness": "fresh",
+             "suman_angle": "Vibe coding a $19 SaaS in 11 hours — full prompts, full code, full Stripe screenshot",
+             "target_keywords": ["vibe coding tutorial", "build saas with cursor", "ai assisted coding"],
+             "money_angle": "Real Gumroad/Stripe revenue from a one-weekend build",
+             "story_angle": "Closed the laptop Friday at 9pm with an idea, opened it Sunday with a paying customer",
+             "analysis": "Vibe coding is the dominant 2026 dev meme. Real numbers + working code beats every theoretical post.",
+             "competing_articles": "Most posts show the workflow but skip the money / honest failures — Suman shows both."},
+            {"topic": "Building a research AI agent in 80 lines", "category": "C",
+             "category_name": "AI Agents & Multi-Agent Workflows",
+             "virality_score": 76, "developer_pain": "high", "freshness": "breaking",
+             "suman_angle": "I replaced my morning news scroll with a 4-agent pipeline (full code)",
+             "target_keywords": ["ai agent tutorial", "langgraph python", "multi agent workflow"],
+             "money_angle": "", "story_angle": "Tired of the morning doom-scroll, built a personal news agent over chai",
+             "analysis": "Agent-building tutorials have huge search demand and most are abstract. Concrete code wins.",
+             "competing_articles": "Existing posts are diagrams without working orchestration."},
+            {"topic": "GitHub Actions silent failures", "category": "F",
+             "category_name": "Debugging / Fix With Code",
+             "virality_score": 70, "developer_pain": "high", "freshness": "established",
+             "suman_angle": "Why my GitHub Action failed with zero error message — the 3-hour root cause",
              "target_keywords": ["github actions not working", "github actions debug", "github actions silent fail"],
-             "virality_reasoning": "Dev pain is extremely high. Stack Overflow top questions weekly.",
-             "competing_articles": "Existing articles are outdated — 2023/2024. Fresh angle wins."},
-            {"topic": "Free AI coding tools 2026", "virality_score": 68, "developer_pain": "medium",
-             "freshness": "fresh", "suman_angle": "I tested 5 free AI coding assistants — here's what actually works",
-             "target_keywords": ["free ai coding tools 2026", "github copilot free alternative", "ai code assistant"],
-             "virality_reasoning": "High search volume. Developers actively comparing free options.",
-             "competing_articles": "Most comparison articles are sponsored. Honest review wins."},
+             "money_angle": "", "story_angle": "Pipeline went green, repo did nothing — chased it for three hours",
+             "analysis": "Persistent pain on Stack Overflow weekly. Existing posts are outdated. Fresh root-cause wins.",
+             "competing_articles": "Existing articles are 2023/2024 — runner image and syntax both moved on."},
         ]
 
     print("[research] Pass B: Crafting titles...")
@@ -605,19 +756,31 @@ Reply ONLY in this exact format, nothing else:
 
     tg_lines = [f"🔥 *CoderFact — Daily Brief* | _{today}_\n"]
     for i, (title, v) in enumerate(zip(titles, vdata), 1):
-        score = v.get("virality_score", "?")
-        pain  = v.get("developer_pain", "")
-        fresh = v.get("freshness", "")
+        score    = v.get("virality_score", "?")
+        pain     = v.get("developer_pain", "")
+        fresh    = v.get("freshness", "")
+        category = v.get("category_name") or v.get("category", "")
+        analysis = (v.get("analysis") or v.get("virality_reasoning") or "").strip()
+        money    = (v.get("money_angle") or "").strip()
         pe = "🔥" if pain == "high" else "⚡" if pain == "medium" else "💡"
         fe = "🆕" if fresh == "breaking" else "✨" if fresh == "fresh" else "📌"
-        tg_lines.append(f"{i}. *{title}*\n   {pe} {pain} pain | {fe} {fresh} | 📊 {score}/100")
+        block = f"{i}. *{title}*\n   {pe} {pain} pain | {fe} {fresh} | 📊 {score}/100"
+        if category:
+            block += f"\n   🗂 _{category}_"
+        if analysis:
+            block += f"\n   💬 _{analysis[:240]}_"
+        if money:
+            block += f"\n   💰 _{money[:160]}_"
+        tg_lines.append(block)
 
     tg_lines.append(
         "\n*Reply options:*\n"
         "• `1` `2` `3` — draft one  |  `1 2` `2 3` `1 3` — draft two  |  `1 2 3` — all three\n"
         "• `0` — skip today\n"
         "• *Type any topic* — I'll draft your own idea instead\n"
-        "  _e.g._ `How to use Ollama with Python locally`"
+        "  _e.g._ `How to use Ollama with Python locally`\n"
+        "• Prefix with `edu:` for short-form (hooks + tips + steps)\n"
+        "  _e.g._ `edu: building your first AI agent`"
     )
     send_tg("\n".join(tg_lines))
 
@@ -636,19 +799,6 @@ def draft_single(title: str, idx: int, total: int):
 
     tg_step(f"⏳ Drafting *`{title}`*...")
 
-    try:
-        complexity_raw = ask_ai(f"""Classify this blog post title by complexity: "{title}"
-Reply with ONLY a JSON object:
-{"complexity": "simple"|"moderate"|"deep", "reason": "one sentence", "target_words": <600-1000>}""")
-        c = json.loads(complexity_raw.strip("```json").strip("```").strip())
-        target_words = min(int(c.get("target_words", 800)), 1000)
-        complexity   = _s(c.get("complexity"), "moderate")
-        reason       = _s(c.get("reason"), "")
-    except Exception as e:
-        target_words, complexity, reason = 800, "moderate", ""
-        print(f"[draft] Complexity fallback: {e}")
-    print(f"[draft] Complexity: {complexity} -> {target_words} words")
-
     def _s(val, fallback=""):
         if val is None:           return fallback
         if isinstance(val, dict): return str(next((v for v in val.values() if v), fallback))
@@ -666,6 +816,19 @@ Reply with ONLY a JSON object:
     def _dict(val, keys, fallback=""):
         if not isinstance(val, dict): val = {}
         return {k: _s(val.get(k), fallback) for k in keys}
+
+    try:
+        complexity_raw = ask_ai(f'''Classify this blog post title by complexity: "{title}"
+Reply with ONLY a JSON object:
+{{"complexity": "simple"|"moderate"|"deep", "reason": "one sentence", "target_words": <800-1400>}}''')
+        c = json.loads(complexity_raw.strip("```json").strip("```").strip())
+        target_words = min(max(int(c.get("target_words", 1100)), 800), 1400)
+        complexity   = _s(c.get("complexity"), "moderate")
+        reason       = _s(c.get("reason"), "")
+    except Exception as e:
+        target_words, complexity, reason = 1100, "moderate", ""
+        print(f"[draft] Complexity fallback: {e}")
+    print(f"[draft] Complexity: {complexity} -> {target_words} words")
 
     tg_step("🔍 Pass 0/3: Researching keywords...")
     try:
@@ -725,15 +888,16 @@ Return ONLY a JSON object — no markdown, no explanation:
         start = raw.find('{')
         end   = raw.rfind('}')
         if start != -1 and end != -1:
+            blob = raw[start:end+1]
             try:
-                return json.loads(raw[start:end+1])
+                return json.loads(blob)
             except Exception:
                 pass
-        fixed = _re.sub(r'(?<!\)\n(?=[^"]*"(?:[^"]*"[^"]*")*[^"]*$)', r'\n', raw)
-        try:
-            return json.loads(fixed)
-        except Exception as e:
-            raise ValueError(f"JSON extraction failed: {e}\nRaw (first 200): {raw[:200]}")
+            try:
+                return json.loads(_re.sub(r',(\s*[}\]])', r'\1', blob))
+            except Exception as e:
+                raise ValueError(f"JSON extraction failed: {e}\nRaw (first 200): {raw[:200]}")
+        raise ValueError(f"No JSON object in response: {raw[:200]}")
 
     try:
         outline_raw = ask_ai(f"""You are helping {AUTHOR_NAME} — {AUTHOR_CONTEXT} — plan a blog post.
@@ -1008,6 +1172,10 @@ Output ONLY in Markdown. Start with the hook. Zero preamble.
         tg_err("Pass 2 article writing", e)
         raise
 
+    tg_step("🧬 Pass 2.5/3: Humanizing voice (anti-AI rewrite)...")
+    voice_ctx = f"{AUTHOR_NAME} — {AUTHOR_CONTEXT}. Vibe: {AUTHOR_VIBE}"
+    article = humanize_pass(article, voice_ctx, target_words)
+
     meta  = ""
     tags_line = ""
     clean = []
@@ -1105,6 +1273,29 @@ TYPE 5 — comparison_table
 TYPE 6 — callout
   A highlighted tip/warning/note block using markdown blockquote.
 
+TYPE 7 — chart
+  Real data chart rendered via QuickChart.io — bar, line, pie, doughnut, radar.
+  Use ONLY when the article cites real numbers (timings, throughput, error rates,
+  cost comparisons, growth, % of users). Set "chart_config" to a Chart.js v4 config:
+    {{ "type": "bar", "data": {{ "labels": ["A","B"], "datasets": [{{ "label": "ms", "data": [120, 18] }}] }} }}
+  Use dark-friendly colors. Keep it under 6 data points so it reads on mobile.
+
+TYPE 8 — quote_card
+  A pull-quote — single sentence in a styled blockquote with attribution.
+  Use ONLY for a sharp, tweetable line that already exists in the body.
+  Set "content" to the quote and "caption" to attribution (e.g. author, source).
+
+TYPE 9 — infographic
+  Pollinations AI image styled as a flat infographic — labeled steps, icons,
+  numbered flow. Use for "5 steps to X" or "anatomy of Y" sections. Prompt
+  MUST mention "{article_tech}" + "infographic flat design numbered labeled".
+
+TYPE 10 — meme
+  Pollinations image generated to look like a programmer meme — one frame,
+  caption baked into the prompt. Add at MOST one meme per article, only if
+  the section has a relatable "every dev knows this pain" moment.
+  Prompt MUST describe the meme scene, not just say "meme".
+
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 RULES
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -1114,10 +1305,14 @@ RULES
 4. Add mermaid_sequence if ANY section shows request/response flow
 5. Add ascii_diagram if ANY section describes components/architecture
 6. Add comparison_table if ANY section has performance data or tool comparison
-7. Add callouts for any gotcha, tip, or warning you spot in the content
-8. For images: max 4 total, prompts must mention "{article_tech}" specifically
-9. For diagrams/tables: add as many as genuinely fit
-10. Use EXACT heading text from the list above for all "after" fields
+7. Add chart if ANY section cites multiple numerical data points
+8. Add infographic if ANY section is a numbered process or anatomy breakdown
+9. Add quote_card for the single sharpest line in the article
+10. Add at most ONE meme — only if a section has clear shared-pain humor
+11. Add callouts for any gotcha, tip, or warning you spot in the content
+12. For images/infographics/memes: max 4 total Pollinations calls
+13. For diagrams/tables/charts/quotes/callouts: add as many as genuinely fit
+14. Use EXACT heading text from the list above for all "after" fields
 
 Return ONLY a valid JSON array — no markdown fences, no explanation:
 [
@@ -1134,6 +1329,32 @@ Return ONLY a valid JSON array — no markdown fences, no explanation:
     "after": "exact heading from list",
     "content": "graph TD\n  A[Step] --> B{{Decision}}\n  B -->|Yes| C[Result]",
     "caption": "short caption"
+  }},
+  {{
+    "type": "chart",
+    "after": "exact heading from list",
+    "chart_config": {{ "type": "bar", "data": {{ "labels": ["Before","After"], "datasets": [{{ "label": "Time (sec)", "data": [180, 12], "backgroundColor": ["#ef4444","#22c55e"] }}] }}, "options": {{ "plugins": {{ "legend": {{ "labels": {{ "color": "#fff" }} }} }}, "scales": {{ "x": {{ "ticks": {{ "color": "#fff" }} }}, "y": {{ "ticks": {{ "color": "#fff" }} }} }} }} }},
+    "caption": "Before vs after"
+  }},
+  {{
+    "type": "quote_card",
+    "after": "exact heading from list",
+    "content": "The fastest way to learn a tool is to ship something tiny with it.",
+    "caption": "Suman Giri"
+  }},
+  {{
+    "type": "infographic",
+    "after": "exact heading from list",
+    "prompt": "{article_tech} 5 step process numbered icons flat infographic dark background",
+    "size": "wide",
+    "alt": "Step-by-step infographic"
+  }},
+  {{
+    "type": "meme",
+    "after": "exact heading from list",
+    "prompt": "developer meme single frame frustrated dev at three monitors caption it works on my machine",
+    "size": "inline",
+    "alt": "Programmer meme"
   }},
   {{
     "type": "ascii_diagram",
@@ -1153,7 +1374,7 @@ Return ONLY a valid JSON array — no markdown fences, no explanation:
     "content": "> 💡 **Pro tip:** specific actionable tip from article content",
     "caption": ""
   }}
-]""", max_tokens=3000)
+]""", max_tokens=3500)
 
         import re as _re2
         vplan_raw  = visual_plan_raw.strip().strip("```json").strip("```").strip()
@@ -1185,6 +1406,8 @@ Return ONLY a valid JSON array — no markdown fences, no explanation:
         "concept-illustration":     "clean technical concept illustration flat design dark background labeled components",
         "frustrated-dev-at-screen": "cinematic developer frustrated at laptop multiple error screens dark office 4k realistic",
         "tool-screenshot-ui":       "clean modern dark UI dashboard screenshot professional tool interface realistic",
+        "infographic-flat":         "flat design infographic dark background numbered steps clear icons modern typography editorial",
+        "meme-format":              "single frame programmer meme bold caption dark background expressive face cinematic lighting",
     }
     SIZE_MAP = {
         "hero":   (1280, 720),
@@ -1212,15 +1435,16 @@ Return ONLY a valid JSON array — no markdown fences, no explanation:
         def sanitize_item(item):
             t = _ts(item.get("type"), "image")
             return {
-                "type":     t,
-                "after":    _ts(item.get("after"),    ""),
-                "prompt":   _ts(item.get("prompt"),   title),
-                "style":    _ts(item.get("style"),    "dark-terminal-code"),
-                "size":     _ts(item.get("size"),     "wide"),
-                "alt":      _ts(item.get("alt"),      title),
-                "language": _ts(item.get("language"), "python"),
-                "content":  _ts(item.get("content"),  ""),
-                "caption":  _ts(item.get("caption"),  ""),
+                "type":         t,
+                "after":        _ts(item.get("after"),    ""),
+                "prompt":       _ts(item.get("prompt"),   title),
+                "style":        _ts(item.get("style"),    "dark-terminal-code"),
+                "size":         _ts(item.get("size"),     "wide"),
+                "alt":          _ts(item.get("alt"),      title),
+                "language":     _ts(item.get("language"), "python"),
+                "content":      _ts(item.get("content"),  ""),
+                "caption":      _ts(item.get("caption"),  ""),
+                "chart_config": item.get("chart_config")  if isinstance(item.get("chart_config"), dict) else None,
             }
 
         def render_item(item: dict) -> str:
@@ -1233,6 +1457,34 @@ Return ONLY a valid JSON array — no markdown fences, no explanation:
                 seed     = next_seed(abs(hash(item["after"])) % 1000 + 10)
                 url      = pollinations(f"{item['prompt']} {style_kw}", w, h, seed)
                 return f"\n![{item['alt']}]({url})\n"
+
+            elif t == "infographic":
+                style_kw = STYLE_PROMPTS["infographic-flat"]
+                w, h     = SIZE_MAP.get(item["size"], (900, 600))
+                seed     = next_seed(abs(hash(item["after"] + "infographic")) % 1000 + 100)
+                url      = pollinations(f"{item['prompt']} {style_kw}", w, h, seed)
+                cap      = f"\n*{item['caption']}*\n" if item['caption'] else "\n"
+                return f"\n![{item['alt'] or 'Infographic'}]({url}){cap}"
+
+            elif t == "meme":
+                style_kw = STYLE_PROMPTS["meme-format"]
+                w, h     = SIZE_MAP.get(item["size"], (700, 500))
+                seed     = next_seed(abs(hash(item["after"] + "meme")) % 1000 + 200)
+                url      = pollinations(f"{item['prompt']} {style_kw}", w, h, seed)
+                return f"\n![{item['alt'] or 'Programmer meme'}]({url})\n"
+
+            elif t == "chart":
+                cfg = item.get("chart_config")
+                if not isinstance(cfg, dict):
+                    return ""
+                w, h = SIZE_MAP.get(item["size"], (700, 400))
+                url  = quickchart_url(cfg, w=w, h=h)
+                if not url:
+                    return ""
+                return f"\n![{item['alt'] or item['caption'] or 'Chart'}]({url}){caption}"
+
+            elif t == "quote_card":
+                return render_quote_card(item["content"], item["caption"])
 
             elif t == "mermaid_flowchart" or t == "mermaid_sequence":
                 fence = "mermaid"
@@ -1393,6 +1645,185 @@ Return ONLY a valid JSON array — no markdown fences, no explanation:
             raise
 
 
+# ═══════════════════════════════════════════════════════════════════════════════
+# EDUCATIONAL DROP — short-form: hooks + tips + step-by-step.
+# Output is one Markdown file ready to paste into Twitter / LinkedIn / Notes.
+# Invoked via CLI: `python agent.py educational <topic>`
+# Or via Telegram by prefixing your message with `edu:`
+# ═══════════════════════════════════════════════════════════════════════════════
+def educational_single(topic: str) -> str:
+    print(f"[educational] Topic: {topic}")
+    send_tg(f"📚 *Educational drop incoming*\n_{topic}_\nGenerating hooks + tips + steps...")
+
+    try:
+        raw = ask_ai(f"""You are creating a short-form educational drop for {AUTHOR_NAME} — {AUTHOR_CONTEXT}.
+Voice: {AUTHOR_VIBE}
+
+TOPIC: "{topic}"
+
+Output ONLY a JSON object with this exact shape — no markdown fences, no preamble:
+
+{{
+  "title": "punchy title under 70 chars, no buzzwords, leads with the topic keyword",
+  "subtitle": "one-line teaser, max 120 chars",
+  "hooks": [
+    "5 distinct hook openers — each 1-2 sentences, scroll-stopping, written like a real dev would post on X. No emojis at the start. No 'Did you know'."
+  ],
+  "tips": [
+    {{ "tip": "actionable specific tip — name a tool, command, or pattern", "why": "one-sentence reason it matters", "example": "tiny code snippet OR concrete example, max 3 lines" }}
+  ],
+  "steps": [
+    {{ "step": "Step 1 imperative title", "detail": "1-2 sentences on what to do", "code": "optional code, leave empty string if not needed" }}
+  ],
+  "common_mistake": "one specific gotcha most people hit when trying this, and the fix",
+  "tweet_thread": [
+    "Tweet 1 — hook + promise (1 line)",
+    "Tweet 2 — context (1-2 lines)",
+    "Tweet 3 — first concrete tip",
+    "Tweet 4 — second concrete tip",
+    "Tweet 5 — third concrete tip",
+    "Tweet 6 — payoff line + soft CTA"
+  ],
+  "linkedin_post": "5-paragraph LinkedIn post version with line breaks. Story-driven. No hashtags inside, list 3-5 hashtags at the end on their own line.",
+  "tags": ["4 lowercase tags, no spaces, no hashes"]
+}}
+
+RULES:
+- Exactly 5 hooks, 7 tips, 5-7 steps
+- Every tip names a real tool/library/command — no abstract advice
+- Every example must be runnable or directly copyable
+- No banned words: delve, leverage, robust, seamless, unleash, empower, game-changer, revolutionize, master, unlock
+- Use contractions, em-dashes, and a casual dev voice
+- Steps build progressively — Step 5 should be a concrete result the reader can verify
+""", max_tokens=3500)
+    except Exception as e:
+        send_tg(f"❌ Educational generation failed: {str(e)[:300]}")
+        raise
+
+    try:
+        data = json.loads(raw.strip().strip("```json").strip("```").strip())
+        if not isinstance(data, dict):
+            raise ValueError("not a dict")
+    except Exception as e:
+        print(f"[educational] JSON parse failed: {e} — raw start: {raw[:200]}")
+        send_tg(f"❌ Educational JSON parse failed:\n`{str(e)[:200]}`")
+        raise
+
+    def _g(k, fallback=""):
+        v = data.get(k)
+        if isinstance(v, str): return v.strip()
+        return fallback
+
+    title    = _g("title", topic)
+    subtitle = _g("subtitle", "")
+    hooks    = data.get("hooks") or []
+    tips     = data.get("tips") or []
+    steps    = data.get("steps") or []
+    mistake  = _g("common_mistake", "")
+    thread   = data.get("tweet_thread") or []
+    linkedin = _g("linkedin_post", "")
+    tags     = data.get("tags") or ["python", "tutorial", "ai", "developer"]
+    if isinstance(tags, list):
+        tags = [str(t).lower().replace("#", "").replace(" ", "").replace("-", "")[:25] for t in tags if t][:6]
+
+    md_lines = [f"# {title}", ""]
+    if subtitle:
+        md_lines += [f"_{subtitle}_", ""]
+
+    md_lines += ["## Scroll-stopping hooks", ""]
+    for i, h in enumerate(hooks[:5], 1):
+        md_lines.append(f"**Hook {i}.** {str(h).strip()}")
+        md_lines.append("")
+
+    md_lines += ["## 7 tips that actually move the needle", ""]
+    for i, t in enumerate(tips[:7], 1):
+        if isinstance(t, dict):
+            tip = str(t.get("tip", "")).strip()
+            why = str(t.get("why", "")).strip()
+            ex  = str(t.get("example", "")).strip()
+            md_lines.append(f"### Tip {i}. {tip}")
+            if why:
+                md_lines.append(f"_Why it matters:_ {why}")
+            if ex:
+                fence_lang = "python" if any(k in ex for k in ("def ", "import ", "print(")) else ""
+                md_lines.append("")
+                md_lines.append(f"```{fence_lang}")
+                md_lines.append(ex)
+                md_lines.append("```")
+            md_lines.append("")
+        else:
+            md_lines.append(f"### Tip {i}. {str(t).strip()}")
+            md_lines.append("")
+
+    md_lines += ["## Step-by-step procedure", ""]
+    for i, s in enumerate(steps, 1):
+        if isinstance(s, dict):
+            step   = str(s.get("step", f"Step {i}")).strip()
+            detail = str(s.get("detail", "")).strip()
+            code   = str(s.get("code", "")).strip()
+            md_lines.append(f"### {i}. {step}")
+            if detail:
+                md_lines.append(detail)
+            if code:
+                fence_lang = "python" if any(k in code for k in ("def ", "import ", "print(", "pip ")) else ("bash" if code.startswith(("$", "git ", "npm ", "pip ", "curl ")) else "")
+                md_lines.append("")
+                md_lines.append(f"```{fence_lang}")
+                md_lines.append(code)
+                md_lines.append("```")
+            md_lines.append("")
+        else:
+            md_lines.append(f"### {i}. {str(s).strip()}")
+            md_lines.append("")
+
+    if mistake:
+        md_lines += ["## The mistake almost everyone makes", "", f"> ⚠️  {mistake}", ""]
+
+    if thread:
+        md_lines += ["## X / Twitter thread (copy-paste ready)", ""]
+        for i, tw in enumerate(thread, 1):
+            md_lines.append(f"**{i}/** {str(tw).strip()}")
+            md_lines.append("")
+
+    if linkedin:
+        md_lines += ["## LinkedIn version", "", linkedin, ""]
+
+    md_lines += [f"_Tags: {', '.join(tags)}_", ""]
+    md_lines += ["---", f"*By {AUTHOR_NAME} — built with the CoderFact engine.*"]
+
+    md = "\n".join(md_lines)
+
+    slug    = re.sub(r'[^\w\s]', '', title.lower()).replace(' ', '-')[:60] or "drop"
+    md_path = f"educational/{slug}.md"
+    url     = save_file_to_github(md_path, md, f"docs: educational drop — {title[:50]}")
+
+    preview = "\n".join(md_lines[:14])
+    msg = (
+        f"✅ *Educational drop ready*\n\n"
+        f"📝 _{title}_\n"
+        f"🪝 {len(hooks[:5])} hooks · 💡 {len(tips[:7])} tips · 🪜 {len(steps)} steps\n"
+    )
+    if url:
+        msg += f"💾 [GitHub .md file]({url})\n"
+    msg += f"\n_Preview:_\n```\n{preview[:500]}\n```"
+    send_tg(msg)
+    print(f"[educational] Saved {md_path} ({len(md)} chars)")
+    return md
+
+
+def educational():
+    """CLI entrypoint: python agent.py educational <topic>"""
+    topic = " ".join(sys.argv[2:]).strip()
+    if not topic:
+        # Pull from telegram reply if no CLI arg
+        reply = get_reply()
+        if reply and reply.get("type") == "custom":
+            topic = reply["topic"]
+        else:
+            topic = "Building your first AI agent in Python"
+            print(f"[educational] No topic provided — defaulting to '{topic}'")
+    educational_single(topic)
+
+
 def draft():
     """Orchestrator: reads reply, handles numbered choices + custom topics."""
     reply = get_reply()
@@ -1406,6 +1837,16 @@ def draft():
 
     if rtype == "custom":
         custom_topic = reply["topic"]
+        # `edu: <topic>` triggers educational drop instead of full article
+        if custom_topic.lower().startswith("edu:"):
+            edu_topic = custom_topic.split(":", 1)[1].strip()
+            if not edu_topic:
+                return send_tg("⚠️ `edu:` prefix needs a topic. Try `edu: building your first AI agent`.")
+            try:
+                educational_single(edu_topic)
+            except Exception as e:
+                send_tg(f"❌ Educational drop failed: {str(e)[:300]}")
+            return
         send_tg(f"✍️ Got your custom topic:\n*`{custom_topic}`*\n\nDrafting now...")
         try:
             draft_single(custom_topic, 1, 1)
@@ -1454,4 +1895,7 @@ def draft():
 
 
 if __name__ == "__main__":
-    {"research": research, "draft": draft}.get(sys.argv[1] if len(sys.argv) > 1 else "", lambda: print("Usage: python agent.py research | draft"))()
+    {"research": research, "draft": draft, "educational": educational}.get(
+        sys.argv[1] if len(sys.argv) > 1 else "",
+        lambda: print("Usage: python agent.py research | draft | educational <topic>")
+    )()
