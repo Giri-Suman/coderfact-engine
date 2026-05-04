@@ -1700,12 +1700,27 @@ RULES:
         send_tg(f"❌ Educational generation failed: {str(e)[:300]}")
         raise
 
+    def _parse_edu_json(s: str):
+        import re as _re
+        s = s.strip()
+        s = _re.sub(r'^```(?:json)?\s*', '', s, flags=_re.MULTILINE)
+        s = _re.sub(r'```\s*$',          '', s, flags=_re.MULTILINE).strip()
+        start, end = s.find('{'), s.rfind('}')
+        if start != -1 and end != -1:
+            s = s[start:end + 1]
+        # strict=False allows literal \n / \t inside string values (LLMs love putting raw newlines in code fields)
+        try:
+            return json.loads(s, strict=False)
+        except json.JSONDecodeError:
+            # Trailing-comma cleanup, then retry
+            return json.loads(_re.sub(r',(\s*[}\]])', r'\1', s), strict=False)
+
     try:
-        data = json.loads(raw.strip().strip("```json").strip("```").strip())
+        data = _parse_edu_json(raw)
         if not isinstance(data, dict):
             raise ValueError("not a dict")
     except Exception as e:
-        print(f"[educational] JSON parse failed: {e} — raw start: {raw[:200]}")
+        print(f"[educational] JSON parse failed: {e} — raw start: {raw[:300]}")
         send_tg(f"❌ Educational JSON parse failed:\n`{str(e)[:200]}`")
         raise
 
