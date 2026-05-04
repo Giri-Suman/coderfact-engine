@@ -1,14 +1,11 @@
 {
   "topics": [
-    "LangGraph Tutorial: I Built a 3-Agent Pipeline",
-    "Gemini CLI Tutorial: Automate Sales Invoicing",
-    "LangGraph Script: I Generate $1,500 Monthly"
+    "Gemini CLI Tutorial",
+    "LangGraph AI Agent",
+    "Claude Sales Funnel"
   ],
   "date": "May 04, 2026",
   "title_history": [
-    "I Boosted My Real-World Engineer Applications by 300% Using These 5 Essential mattpocock/skills - Here's How",
-    "How I Used Abhigyanpatwari/GitNexus to Optimize My Code in Real-Time and Reduce Errors by 25%",
-    "The 30% Productivity Hack: How ComposioHQ/awesome-codex-skills Transformed My Team's Workflow in Just 6 Weeks",
     "Claude.ai API Fix Saved My Project",
     "GitNexus Code Optimization Tool Built",
     "Claude Code Optimization Automated Fast",
@@ -35,78 +32,149 @@
     "Claude Code Optimization RuVnet Ruflo",
     "LangGraph Tutorial: I Built a 3-Agent Pipeline",
     "Gemini CLI Tutorial: Automate Sales Invoicing",
-    "LangGraph Script: I Generate $1,500 Monthly"
+    "LangGraph Script: I Generate $1,500 Monthly",
+    "Gemini CLI Tutorial",
+    "LangGraph AI Agent",
+    "Claude Sales Funnel"
   ],
   "last_update_id": 70323293,
   "virality_data": [
     {
-      "topic": "I Built a 3-Agent Newsletter Pipeline in One Weekend with LangGraph and Claude",
-      "category": "C",
-      "category_name": "AI Agents & Multi-Agent Workflows",
+      "topic": "How I automated my sales invoicing with Gemini CLI and saved 5 hours a week",
+      "category": "D",
+      "category_name": "AI Automation Across Domains",
       "virality_score": 92,
-      "analysis": "This topic will rank on Medium this week because it combines the trending topics of AI agents and multi-agent workflows with a personal story of building a working pipeline. The cross-source evidence includes GitHub trending repositories like ruvnet/ruflo and TauricResearch/TradingAgents, as well as Reddit posts on r/MachineLearning. This post will be different from existing ones because it will provide a concrete example of building a 3-agent pipeline with working orchestration code.",
+      "analysis": "This topic will rank on Medium this week because it combines a practical automation solution with a clear time-saving benefit, resonating with developers looking to streamline their workflows. Cross-source evidence includes the trending Gemini CLI repository on GitHub and discussions on Dev.to about automating business tasks. This post will stand out from existing ones by providing a detailed, step-by-step guide to implementing the automation.",
       "cross_source_signals": [
-        "GitHub: langgraph repo trending",
-        "Reddit r/MachineLearning: 4 posts this week",
-        "Google Trends: 'ai agent tutorial' rising"
+        "GitHub: Gemini CLI repo trending",
+        "Dev.to: automation discussions",
+        "Google Trends: 'sales invoicing automation' rising"
       ],
       "developer_pain": "high",
       "freshness": "breaking",
-      "money_angle": "",
-      "story_angle": "I was struggling to keep my newsletter up to date and decided to build an automated pipeline using AI agents.",
-      "suman_angle": "How I built a 3-agent newsletter pipeline in one weekend (full code)",
+      "money_angle": "saved 5 hours a week, equivalent to $500/month",
+      "story_angle": "I was manually generating sales invoices for hours every week, until I discovered Gemini CLI and automated the entire process.",
+      "suman_angle": "How I automated my sales invoicing with Gemini CLI in one afternoon (full code)",
       "target_keywords": [
-        "langgraph tutorial",
-        "build ai agent python",
-        "multi agent workflow"
+        "Gemini CLI tutorial",
+        "sales invoicing automation",
+        "business process automation"
       ],
-      "competing_articles": "Most existing posts are abstract \u2014 this one shows working orchestration code with a real result"
+      "competing_articles": "Most existing posts focus on general automation concepts, whereas this article provides a concrete, actionable example with measurable benefits.",
+      "real_story_evidence": [
+        {
+          "source": "Dev.to",
+          "title": "How I used Gemini CLI to orchestrate a complex RAG migration",
+          "url": "https://dev.to/_article_url_",
+          "what_to_cite": "The author's experience with Gemini CLI for automation"
+        }
+      ]
     },
     {
-      "topic": "How I Used Gemini CLI to Automate My Sales Invoicing and Saved 10 Hours a Week",
-      "category": "D",
-      "category_name": "AI Automation Across Domains",
-      "virality_score": 89,
-      "analysis": "This topic will rank on Medium this week because it shows a practical application of AI automation in a non-coding domain, which is a growing trend. The cross-source evidence includes dev.to posts on automating tasks with Gemini CLI and Google Trends searches for 'ai automation'. This post will be different from existing ones because it will provide a concrete example of automating a specific task with a measurable time-saving result.",
+      "topic": "Building a research agent with LangGraph that writes my morning brief in 10 lines of code",
+      "category": "C",
+      "category_name": "AI Agents & Multi-Agent Workflows",
+      "virality_score": 95,
+      "analysis": "This topic has high virality potential due to the growing interest in AI agents and LangGraph's trending status on GitHub. By showcasing a simple, yet powerful agent that performs a daily task, this post will appeal to developers interested in AI and automation. The inclusion of working orchestration code and a real result will differentiate it from more theoretical discussions.",
       "cross_source_signals": [
-        "dev.to: automating tasks with Gemini CLI",
-        "Google Trends: 'ai automation' rising",
-        "Reddit r/automation: 2 posts this week"
+        "GitHub: LangGraph repo trending",
+        "Reddit r/MachineLearning: discussions on AI agents",
+        "Google Trends: 'LangGraph tutorial' rising"
       ],
       "developer_pain": "medium",
-      "freshness": "recent",
-      "money_angle": "saved 10 hours a week",
-      "story_angle": "I was spending too much time on sales invoicing and decided to automate it using Gemini CLI.",
-      "suman_angle": "How I automated my sales invoicing with Gemini CLI and saved 10 hours a week",
+      "freshness": "breaking",
+      "money_angle": "",
+      "story_angle": "I wanted to automate my morning routine and discovered that building a research agent with LangGraph was surprisingly straightforward.",
+      "suman_angle": "How I built a research agent with LangGraph that writes my morning brief in 10 lines of code",
       "target_keywords": [
-        "gemini cli tutorial",
-        "automate sales invoicing",
-        "ai automation"
+        "LangGraph tutorial",
+        "build AI agent python",
+        "morning brief automation"
       ],
-      "competing_articles": "Most existing posts are general \u2014 this one shows a specific use case with a measurable result"
+      "competing_articles": "Existing posts on AI agents often focus on complex, abstract concepts, whereas this article provides a concrete, easy-to-replicate example.",
+      "real_story_evidence": [
+        {
+          "source": "Hacker Noon",
+          "title": "Meet Tech Experts",
+          "url": "https://hackernoon.com/_article_url_",
+          "what_to_cite": "The potential of AI agents in streamlining daily tasks"
+        }
+      ]
     },
     {
-      "topic": "My 200-Line Script That Generates $1,500 a Month with Claude and LangGraph",
+      "topic": "How I made $1,500 monthly with a 200-line script using Claude and a simple sales funnel",
       "category": "E",
       "category_name": "Money / Income Story",
-      "virality_score": 95,
-      "analysis": "This topic will rank on Medium this week because it combines the trending topics of AI agents and income generation with a personal story of building a profitable script. The cross-source evidence includes GitHub trending repositories like ruvnet/ruflo and Google Trends searches for 'ai income'. This post will be different from existing ones because it will provide a concrete example of building a profitable script with a measurable income result.",
+      "virality_score": 98,
+      "analysis": "This topic has high virality potential due to its focus on a tangible, achievable income goal and the use of popular tools like Claude. By sharing a personal, step-by-step story of building a successful sales funnel, this post will resonate with developers interested in monetizing their skills. The inclusion of real numbers and a simple, replicable script will differentiate it from more aspirational or vague discussions on making money with code.",
       "cross_source_signals": [
-        "GitHub: langgraph repo trending",
-        "Google Trends: 'ai income' rising",
-        "Reddit r/MachineLearning: 2 posts this week"
+        "GitHub: Claude repo trending",
+        "Reddit r/learnprogramming: discussions on making money with code",
+        "Google Trends: 'making money with Claude' rising"
       ],
       "developer_pain": "low",
       "freshness": "breaking",
-      "money_angle": "generates $1,500 a month",
-      "story_angle": "I was looking for a way to generate passive income and decided to build a script using Claude and LangGraph.",
-      "suman_angle": "How I built a 200-line script that generates $1,500 a month with Claude and LangGraph",
+      "money_angle": "made $1,500 monthly with a 200-line script",
+      "story_angle": "I was looking for ways to monetize my coding skills and discovered that building a simple sales funnel with Claude could generate a significant income.",
+      "suman_angle": "How I made $1,500 monthly with a 200-line script using Claude and a simple sales funnel",
       "target_keywords": [
-        "langgraph tutorial",
-        "ai income generation",
-        "claude script"
+        "making money with Claude",
+        "sales funnel automation",
+        "monetizing coding skills"
       ],
-      "competing_articles": "Most existing posts are abstract \u2014 this one shows a concrete example with a measurable income result"
+      "competing_articles": "Existing posts on making money with code often focus on vague concepts or require extensive expertise, whereas this article provides a concrete, achievable example with a clear outcome.",
+      "real_story_evidence": [
+        {
+          "source": "Dev.to",
+          "title": "Built a 5k usd MRR app with AI but still needed a developer",
+          "url": "https://dev.to/chocoscoding/built-a-5k-usd-mrr-app-with-ai-but-still-needed-a-developer-2k8p",
+          "what_to_cite": "The author's experience with building a successful app using AI"
+        }
+      ]
+    }
+  ],
+  "success_stories": [
+    {
+      "source": "Dev.to (#saas)",
+      "title": "Built a 5k usd MRR app with AI but still needed a developer",
+      "snippet": "You see it everywhere you turn:   \"I built this using just AI and im making 10K USD MRR\"  \"Just got...",
+      "url": "https://dev.to/chocoscoding/built-a-5k-usd-mrr-app-with-ai-but-still-needed-a-developer-2k8p",
+      "signal": "39 reactions \u00b7 13 comments"
+    },
+    {
+      "source": "Dev.to (#passiveincome)",
+      "title": "I Built an AI Agent Team That Makes Money 24/7 - Real Case Study",
+      "snippet": "The Bottom Line First   AI agents don't replace your job. They handle the \"$10/hour tasks\"...",
+      "url": "https://dev.to/__55bb2e8b82015f0c96f3/i-built-an-ai-agent-team-that-makes-money-247-real-case-study-5c9d",
+      "signal": "0 reactions \u00b7 0 comments"
+    },
+    {
+      "source": "Dev.to (#passiveincome)",
+      "title": "How to Use AI to Write & Self-Publish Ebooks for Passive Income",
+      "snippet": "Discover step-by-step how to use AI to write and self-publish ebooks for passive income. Learn optimized strategies, tools, and platforms.",
+      "url": "https://dev.to/jacob_fritz_6c8d20bfa13b5/how-to-use-ai-to-write-self-publish-ebooks-for-passive-income-fhg",
+      "signal": "0 reactions \u00b7 0 comments"
+    },
+    {
+      "source": "Dev.to (#passiveincome)",
+      "title": "How to Build a Paid Newsletter That Earns Recurring Revenue",
+      "snippet": "Learn step-by-step how to build a paid newsletter, grow your audience, and earn recurring revenue in 2024. Discover the tools, strategies, and tactics.",
+      "url": "https://dev.to/jacob_fritz_6c8d20bfa13b5/how-to-build-a-paid-newsletter-that-earns-recurring-revenue-20hp",
+      "signal": "0 reactions \u00b7 0 comments"
+    },
+    {
+      "source": "Dev.to (#passiveincome)",
+      "title": "How I Generated $750 in \u2018Seed Money\u2019 for My NISA in Just 30 Days (Without a Side Hustle)",
+      "snippet": "Stop trying to save your way to wealth and start leveraging corporate marketing budgets to fund your...",
+      "url": "https://dev.to/_07a306f4bf233eecbc3a/how-i-generated-750-in-seed-money-for-my-nisa-in-just-30-days-without-a-side-hustle-1cc9",
+      "signal": "0 reactions \u00b7 0 comments"
+    },
+    {
+      "source": "Dev.to (#passiveincome)",
+      "title": "Side Hustle Ideas for Software Developers: Turn Skills into Income",
+      "snippet": "Discover profitable side hustle ideas for software developers to earn extra income using coding, teaching, and entrepreneurial skills.",
+      "url": "https://dev.to/daniel_writes_27/side-hustle-ideas-for-software-developers-turn-skills-into-income-3igp",
+      "signal": "0 reactions \u00b7 0 comments"
     }
   ]
 }
