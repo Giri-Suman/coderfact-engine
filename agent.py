@@ -502,6 +502,123 @@ def fetch_trends():
     return signals
 
 
+# ═══════════════════════════════════════════════════════════════════════════════
+# REAL SUCCESS STORIES — scrape actual indie-dev income/launch posts
+# Sources: Hacker News (Show HN via Algolia), income-focused subreddits, Dev.to
+# Returns a list of {source, title, snippet, url, signal} dicts with REAL URLs
+# so the article writer can cite them instead of fabricating numbers.
+# ═══════════════════════════════════════════════════════════════════════════════
+def fetch_success_stories() -> list:
+    HEADERS  = {"User-Agent": "Mozilla/5.0 (compatible; CoderFact-Bot/1.0)"}
+    income_kw = ("$", " mrr", " arr", "revenue", "made $", "earned", "passive income",
+                 "side project", "side hustle", "launched", "shipped", "first sale",
+                 "first user", "first customer", "indie hacker", "solo founder",
+                 "ai automation", "ai agent", "vibe coding", "built with cursor")
+    stories = []
+
+    # 1) Hacker News — Show HN posts via Algolia, sorted by points
+    try:
+        r = requests.get(
+            "https://hn.algolia.com/api/v1/search",
+            params={"tags": "show_hn", "hitsPerPage": 30,
+                    "numericFilters": "points>20"},
+            timeout=10
+        )
+        for hit in r.json().get("hits", []):
+            title = (hit.get("title") or "").strip()
+            if not title: continue
+            tl = title.lower()
+            if not any(k in tl for k in income_kw + ("ai ", "agent", "automation", "saas")):
+                continue
+            stories.append({
+                "source": "Hacker News (Show HN)",
+                "title":   title,
+                "snippet": (hit.get("story_text") or "")[:200],
+                "url":     hit.get("url") or f"https://news.ycombinator.com/item?id={hit.get('objectID','')}",
+                "signal":  f"{hit.get('points',0)} points · {hit.get('num_comments',0)} comments",
+            })
+        print(f"[stories] HN Show HN: {len([s for s in stories if 'Hacker News' in s['source']])} hits")
+    except Exception as e:
+        print(f"[stories] HN failed: {e}")
+
+    # 2) Reddit — income/builder subs, look for income or launch signal in title/body
+    income_subs = ["indiehackers", "SideProject", "EntrepreneurRideAlong",
+                   "passive_income", "Entrepreneur", "SaaS"]
+    for sub in income_subs:
+        try:
+            r = requests.get(
+                f"https://www.reddit.com/r/{sub}/top.json?t=month&limit=15",
+                headers={**HEADERS, "Accept": "application/json"}, timeout=8
+            )
+            for p in r.json().get("data", {}).get("children", []):
+                d = p.get("data", {})
+                if d.get("stickied"): continue
+                title    = (d.get("title") or "").strip()
+                selftext = (d.get("selftext") or "")
+                combined = (title + " " + selftext[:400]).lower()
+                if not any(k in combined for k in income_kw):
+                    continue
+                ups = d.get("ups", 0)
+                if ups < 30: continue   # noise filter
+                stories.append({
+                    "source":  f"Reddit r/{sub}",
+                    "title":   title,
+                    "snippet": selftext[:240].replace("\n", " ").strip(),
+                    "url":     "https://www.reddit.com" + (d.get("permalink") or ""),
+                    "signal":  f"{ups} upvotes · {d.get('num_comments',0)} comments",
+                })
+        except Exception as e:
+            print(f"[stories] Reddit r/{sub} failed: {e}")
+    print(f"[stories] Reddit income subs: {len([s for s in stories if 'Reddit' in s['source']])} hits")
+
+    # 3) Dev.to — articles tagged for indie / side-project / passive-income content
+    for tag in ("indiehackers", "sideproject", "passiveincome", "saas"):
+        try:
+            r = requests.get(f"https://dev.to/api/articles?tag={tag}&top=30&per_page=10",
+                             headers=HEADERS, timeout=8)
+            for a in r.json():
+                title = (a.get("title") or "").strip()
+                if not title: continue
+                tl = title.lower()
+                if not any(k in tl for k in income_kw):
+                    continue
+                stories.append({
+                    "source":  f"Dev.to (#{tag})",
+                    "title":   title,
+                    "snippet": (a.get("description") or "")[:240],
+                    "url":     a.get("url") or "",
+                    "signal":  f"{a.get('positive_reactions_count',0)} reactions · {a.get('comments_count',0)} comments",
+                })
+        except Exception as e:
+            print(f"[stories] Dev.to #{tag} failed: {e}")
+    print(f"[stories] Dev.to tags: {len([s for s in stories if 'Dev.to' in s['source']])} hits")
+
+    # Dedup by title (lowercased), keep highest-signal version
+    def _signal_num(s):
+        digits = re.findall(r'\d+', s.get("signal", ""))
+        return int(digits[0]) if digits else 0
+    seen = {}
+    for s in sorted(stories, key=_signal_num, reverse=True):
+        key = s["title"].lower()[:80]
+        if key not in seen:
+            seen[key] = s
+    final = list(seen.values())[:20]
+    print(f"[stories] FINAL (deduped, top 20): {len(final)}")
+    return final
+
+
+def format_success_stories(stories: list) -> str:
+    if not stories:
+        return ""
+    lines = ["\n💎 REAL DEVELOPER SUCCESS STORIES (use these as REAL evidence — cite the URL):"]
+    for s in stories[:15]:
+        lines.append(f"  • [{s['source']}] {s['title'][:110]}")
+        if s.get("snippet"):
+            lines.append(f"      _{s['snippet'][:140]}_")
+        lines.append(f"      Signal: {s['signal']}  |  URL: {s['url']}")
+    return "\n".join(lines)
+
+
 def format_signals(signals: dict) -> str:
     lines = []
     if signals.get("google_trends"):
@@ -553,6 +670,11 @@ def research():
     signals     = fetch_trends()
     trend_block = format_signals(signals)
     print(f"[research] Trend block ready ({len(trend_block)} chars)")
+
+    print("[research] Fetching real developer success stories...")
+    success_stories = fetch_success_stories()
+    stories_block   = format_success_stories(success_stories)
+    print(f"[research] Stories block ready ({len(stories_block)} chars)")
 
     history_block = ""
     if title_history:
@@ -631,7 +753,11 @@ WHAT MAKES A CODING/AI ARTICLE GO VIRAL ON MEDIUM (research-backed):
 LIVE SIGNALS FROM 8 SOURCES (GitHub, HackerNews, Reddit, Dev.to, ProductHunt, Tech RSS, StackOverflow, Google Trends):
 {trend_block}
 
-{history_block}TASK: Analyze every signal. Pick 3 topics from 3 DIFFERENT categories above.
+{stories_block}
+
+{history_block}TASK: Analyze every signal AND every real success story above.
+For Category A / B / E topics, you MUST anchor the topic in 1-2 of the REAL stories from the list above (cite the source URL in `real_story_evidence`).
+Pick 3 topics from 3 DIFFERENT categories above.
 Score each 0-100 for Medium virality. Be honest — don't inflate scores.
 
 Return ONLY a valid JSON array — no markdown, no explanation:
@@ -649,7 +775,10 @@ Return ONLY a valid JSON array — no markdown, no explanation:
     "story_angle": "First-person hook in 1 sentence — what specifically happened to Suman that triggered this",
     "suman_angle": "Specific first-person rewrite: 'How I built a 3-agent newsletter pipeline in one weekend (full code)'",
     "target_keywords": ["langgraph tutorial", "build ai agent python", "multi agent workflow"],
-    "competing_articles": "Most existing posts are abstract — Suman shows working orchestration code with a real result"
+    "competing_articles": "Most existing posts are abstract — Suman shows working orchestration code with a real result",
+    "real_story_evidence": [
+      {{ "source": "Hacker News (Show HN)", "title": "exact title from list", "url": "exact URL from list", "what_to_cite": "1 line on what number/quote/fact to reference in the article" }}
+    ]
   }},
   {{...}},
   {{...}}
@@ -747,10 +876,11 @@ Reply ONLY in this exact format, nothing else:
     updated_history = (title_history + titles)[-30:]
     save_state({
         **state,
-        "topics":        titles,
-        "date":          today,
-        "title_history": updated_history,
-        "virality_data": vdata,
+        "topics":          titles,
+        "date":            today,
+        "title_history":   updated_history,
+        "virality_data":   vdata,
+        "success_stories": success_stories,
     })
     print(f"[research] Final titles: {titles}")
 
@@ -798,6 +928,35 @@ def draft_single(title: str, idx: int, total: int):
         print(f"[draft_single] {step} error:\n{tb}")
 
     tg_step(f"⏳ Drafting *`{title}`*...")
+
+    # Pull real success stories from state — used by article prompt for evidence-backed citations.
+    _state_for_stories  = load_state()
+    _all_stories        = _state_for_stories.get("success_stories", []) or []
+    _virality_data      = _state_for_stories.get("virality_data", []) or []
+    _per_topic_evidence = []
+    for v in _virality_data:
+        if isinstance(v, dict) and (v.get("suman_angle") == title or v.get("topic") == title):
+            ev = v.get("real_story_evidence", [])
+            if isinstance(ev, list):
+                _per_topic_evidence = [e for e in ev if isinstance(e, dict) and e.get("url")]
+            break
+    _kw_terms = [w.lower() for w in re.findall(r'[A-Za-z][A-Za-z0-9]+', title) if len(w) > 3][:6]
+    def _story_relevance(s):
+        t = (s.get("title","") + " " + s.get("snippet","")).lower()
+        return sum(1 for k in _kw_terms if k in t)
+    _ranked = sorted(_all_stories, key=_story_relevance, reverse=True)
+    _relevant_stories = [s for s in _ranked if _story_relevance(s) > 0][:5] or _ranked[:3]
+
+    real_stories_block = ""
+    if _per_topic_evidence:
+        real_stories_block = "\n\nREAL STORIES TO CITE (the researcher already matched these to this topic — cite ALL of them):\n"
+        for e in _per_topic_evidence:
+            real_stories_block += f"  • {e.get('source','')} — {e.get('title','')}\n    URL: {e.get('url','')}\n    What to cite: {e.get('what_to_cite','')}\n"
+    if _relevant_stories:
+        real_stories_block += "\nADDITIONAL REAL STORIES AVAILABLE (use 1-2 if they fit naturally):\n"
+        for s in _relevant_stories[:5]:
+            real_stories_block += f"  • [{s.get('source','')}] {s.get('title','')[:110]}\n    URL: {s.get('url','')}  |  Signal: {s.get('signal','')}\n"
+    print(f"[draft] Real-story citations available: {len(_per_topic_evidence)} matched + {len(_relevant_stories)} relevant")
 
     def _s(val, fallback=""):
         if val is None:           return fallback
@@ -1122,6 +1281,25 @@ STRUCTURE — exact AEO H2 headings (do NOT rewrite these)
 {chr(10).join(f'## {h}' for h in aeo_headings)}
 
 These are phrased as questions so Google's Answer Engine indexes them as direct answers.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ANTI-FABRICATION RULES — these matter more than anything else
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+A. NEVER invent specific dollar amounts, MRR, user counts, follower counts,
+   or company revenue. If you don't have a real source, DON'T cite a number.
+B. The ONLY specific numbers you may invent are Suman's OWN technical metrics:
+   timing (47 minutes vs 3), error counts, API response times, lines of code,
+   memory usage. Anything personal/financial requires a real source.
+C. If a section needs a real-world example or income story, use the REAL STORIES
+   block below. Quote the title, attribute the source, link the URL.
+   Format: "[Founder's product name] hit [number from source] — [link]" or
+           "as @handle wrote on [Source]: '[short paraphrase]' ([link])".
+D. If no real story matches, write the section in Suman's own first-person voice
+   without specific external numbers. "A founder I follow" / "I've seen builders
+   ship X in a weekend" is OK if vague. Don't fabricate names or dollars.
+E. Never say "according to a study" or "research shows" without a real URL.
+
+{real_stories_block}
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 MANDATORY STRUCTURE RULES
