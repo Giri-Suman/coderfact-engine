@@ -93,6 +93,12 @@ Rewrite ONLY prose paragraphs.
 
 VOICE: {voice_context}
 
+WRITE STYLE NOTES:
+• Write like a tired frontend dev in Kolkata who just shipped a fix, not a polished marketing blog.
+• Keep it human, honest, imperfect — the voice should feel handwritten, not generated.
+• Avoid any AI-sounding phrasing, including: "As an AI", "AI-generated", "language model", "machine wrote", "copywriter".
+• Preserve the original structure and formatting exactly. Do not invent new headings or sections.
+
 HARD RULES — every single one matters:
 1. Use contractions everywhere — don't, can't, it's, you'll, I've, that's, here's, won't, didn't.
 2. Use em-dashes mid-sentence the way humans actually do — like this — at least 6 times across the article.
@@ -1225,6 +1231,8 @@ PATTERNS TO USE:
 • Contrast for punch: "The wrong way takes 40 mins. The right way? 90 seconds."
 • Short reader questions: "Sound familiar?" / "Yeah. Me too."
 • References Kolkata naturally: "My client was calling at 9am. It was 1am. Kolkata time."
+• VISUALS RULE: Include at least one flowchart/diagram/table and one full working code block.
+• Make visuals feel deliberate — flowchart for process, chart/table for results, meme only for real shared pain.
 
 BANNED WORDS: delve, navigate, leverage, landscape, robust, seamless, unleash, utilize,
 empower, groundbreaking, revolutionize, game-changer, synergy, cutting-edge, supercharge,
@@ -1244,6 +1252,9 @@ CRITICAL TABLE RULE: NEVER wrap Markdown tables in backticks. Render them as raw
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 SEO REQUIREMENTS — DYNAMIC, NOT GENERIC
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Write this article as a Medium-ready post in clean Markdown. No HTML, no unsupported syntax, no markdown fences around tables.
+Use real code fences, images, blockquotes, tables, mermaid diagrams, and charts when they add clarity.
+Tone: practical, unvarnished, human. No corporate copy, no AI-speak, no overly polished puffery.
 Primary keyword (MUST appear in: first paragraph, at least 2 H2s, last paragraph):
   → "{primary_kw}"
 
@@ -1430,12 +1441,12 @@ VISUAL TYPES YOU CAN ADD
 
 TYPE 1 — image
   Pollinations AI image. Use for: hero banner, tool screenshots, architecture
-  visualization, result dashboards, concept illustrations.
+  visualization, result dashboards, concept illustrations, or topology maps.
   Prompt MUST be specific to "{article_tech}" — never generic.
 
 TYPE 2 — mermaid_flowchart
-  Add ONLY if article has a process/flow/decision tree not already shown.
-  Use: graph TD with proper node labels.
+  Add if the article has a process, pipeline, step-by-step flow, or decision tree.
+  Use: graph TD with proper node labels, arrows, and clear step names.
 
 TYPE 3 — mermaid_sequence
   Add ONLY if article has API calls / client-server interactions.
@@ -2003,6 +2014,173 @@ RULES:
     return md
 
 
+def social_media_single(topic: str) -> str:
+    print(f"[social] Topic: {topic}")
+    send_tg(f"📣 *Social media pack incoming*\n_{topic}_\nGenerating viral posts for Instagram, LinkedIn, Twitter, Facebook, and YouTube...")
+
+    try:
+        raw = ask_ai(f"""You are a senior social media growth writer for developer content.
+Your client is Suman Giri — a Kolkata-based frontend developer and automation tinkerer.
+Write platform-specific short-form content for the topic below.
+
+TOPIC: "{topic}"
+
+Return ONLY a JSON object with this exact shape — no markdown fences, no explanation:
+{{
+  "instagram": {{
+    "caption": "Instagram caption under 2200 chars, hook first, includes 3 strong hashtags, one carousel text hint, and one visual prompt.",
+    "carousel": [
+      "5 carousel slide captions. Each slide is 1-2 sentences, easy to skim, one slide may include a tiny code snippet or tech tip."
+    ],
+    "hashtags": ["#topic"],
+    "visual_prompt": "short image prompt for a carousel or single Instagram post that matches the topic"
+  }},
+  "linkedin": {{
+    "post": "LinkedIn post with 4-5 short paragraphs, first-person story, clear developer lesson, and a final soft CTA.",
+    "hashtags": ["developer", "python", "automation"],
+    "visual_prompt": "image prompt for a LinkedIn post graphic or diagram"
+  }},
+  "twitter": {{
+    "thread": [
+      "6 tweets. Tweet 1 is a hook, Tweet 2 gives the problem, Tweets 3-5 share micro-value or code snippet, Tweet 6 is a wrap + CTA."
+    ],
+    "visual_prompt": "image prompt for a Twitter graphic or code screenshot",
+    "hashtags": ["dev", "ai", "automation"]
+  }},
+  "facebook": {{
+    "post": "Facebook post with a strong opening, result-oriented bullet list, and a shareable question at the end.",
+    "visual_prompt": "image prompt for a Facebook post or story",
+    "hashtags": ["developer", "coding", "tech"]
+  }},
+  "youtube": {{
+    "title": "YouTube video title under 70 chars, SEO-optimized, not clickbait.",
+    "description": "SEO-friendly description with 2 hashtags, 2 short paragraphs, and a clear watch/learn CTA.",
+    "script_outline": [
+      "5 bullet points for a short video script — hook, problem, solution, demo, CTA."
+    ],
+    "thumbnail_prompt": "thumbnail prompt for a dark tech video thumbnail with code, laptop, and developer energy"
+  }}
+}}
+
+REQUIREMENTS:
+- Analyze the platform rules and write each section to feel native to that platform.
+- Instagram: visual, carousel-ready, snackable, share-worthy.
+- LinkedIn: story + lesson + credibility, no long marketing copy.
+- Twitter: thread format, use code snippet text if technical, end with one strong CTA.
+- Facebook: conversational, digestible, with a clear question or share prompt.
+- YouTube: title + description + script bullets + thumbnail prompt.
+- Include visuals, animations, or image ideas in every platform section.
+- Use a real developer voice, not marketing hype.
+- Use the topic naturally and keep the content viral-ready.
+""", max_tokens=3600)
+    except Exception as e:
+        send_tg(f"❌ Social media generation failed: {str(e)[:300]}")
+        raise
+
+    def _parse_json(s: str):
+        import re as _re
+        s = s.strip()
+        s = _re.sub(r'^```(?:json)?\s*', '', s, flags=_re.MULTILINE)
+        s = _re.sub(r'```\s*$', '', s, flags=_re.MULTILINE).strip()
+        start, end = s.find('{'), s.rfind('}')
+        if start != -1 and end != -1:
+            s = s[start:end + 1]
+        try:
+            return json.loads(s)
+        except json.JSONDecodeError:
+            return json.loads(_re.sub(r',(?=\s*[}\]])', '', s), strict=False)
+
+    try:
+        data = _parse_json(raw)
+        if not isinstance(data, dict):
+            raise ValueError("not a dict")
+    except Exception as e:
+        print(f"[social] JSON parse failed: {e} — raw start: {raw[:300]}")
+        send_tg(f"❌ Social JSON parse failed:\n`{str(e)[:200]}`")
+        raise
+
+    def _s(val, fallback=""):
+        if isinstance(val, str):
+            return val.strip()
+        return fallback
+
+    def _seq(val):
+        return [str(x).strip() for x in (val or []) if isinstance(x, (list, tuple))] if isinstance(val, list) else []
+
+    instagram = data.get("instagram", {}) or {}
+    linkedin = data.get("linkedin", {}) or {}
+    twitter = data.get("twitter", {}) or {}
+    facebook = data.get("facebook", {}) or {}
+    youtube = data.get("youtube", {}) or {}
+
+    md_lines = [f"# Social media content pack — {topic}", ""]
+    md_lines += ["## Instagram", "", f"**Caption:** {instagram.get('caption','')}", ""]
+    for i, slide in enumerate(instagram.get('carousel', [])[:5], 1):
+        md_lines += [f"**Slide {i}:** {slide}", ""]
+    if instagram.get('hashtags'):
+        md_lines += [f"**Hashtags:** {' '.join(instagram.get('hashtags', []))}", ""]
+    if instagram.get('visual_prompt'):
+        md_lines += [f"**Visual prompt:** {instagram.get('visual_prompt')}", ""]
+
+    md_lines += ["## LinkedIn", "", linkedin.get('post', ''), ""]
+    if linkedin.get('hashtags'):
+        md_lines += [f"**Hashtags:** {' '.join(linkedin.get('hashtags', []))}", ""]
+    if linkedin.get('visual_prompt'):
+        md_lines += [f"**Visual prompt:** {linkedin.get('visual_prompt')}", ""]
+
+    md_lines += ["## Twitter thread", ""]
+    for i, tweet in enumerate(twitter.get('thread', [])[:6], 1):
+        md_lines += [f"**Tweet {i}:** {tweet}", ""]
+    if twitter.get('hashtags'):
+        md_lines += [f"**Hashtags:** {' '.join(twitter.get('hashtags', []))}", ""]
+    if twitter.get('visual_prompt'):
+        md_lines += [f"**Visual prompt:** {twitter.get('visual_prompt')}", ""]
+
+    md_lines += ["## Facebook", "", facebook.get('post', ''), ""]
+    if facebook.get('hashtags'):
+        md_lines += [f"**Hashtags:** {' '.join(facebook.get('hashtags', []))}", ""]
+    if facebook.get('visual_prompt'):
+        md_lines += [f"**Visual prompt:** {facebook.get('visual_prompt')}", ""]
+
+    md_lines += ["## YouTube", "", f"**Title:** {youtube.get('title', '')}", "", f"**Description:** {youtube.get('description', '')}", ""]
+    for i, point in enumerate(youtube.get('script_outline', [])[:5], 1):
+        md_lines += [f"**Bullet {i}:** {point}", ""]
+    if youtube.get('thumbnail_prompt'):
+        md_lines += [f"**Thumbnail prompt:** {youtube.get('thumbnail_prompt')}", ""]
+
+    md_lines += ["---", f"*By {AUTHOR_NAME} — social pack generated by the CoderFact engine.*"]
+
+    md = "\n".join(md_lines)
+    slug = re.sub(r'[^\w\s]', '', topic.lower()).replace(' ', '-')[:60] or "social-pack"
+    md_path = f"social/{slug}.md"
+    url = save_file_to_github(md_path, md, f"docs: social content pack — {topic[:50]}")
+
+    preview = "\n".join(md_lines[:18])
+    msg = (
+        f"✅ *Social media pack ready*\n\n"
+        f"📝 _{topic}_\n"
+    )
+    if url:
+        msg += f"💾 [GitHub .md file]({url})\n"
+    msg += f"\n_Preview:_\n```\n{preview[:500]}\n```"
+    send_tg(msg)
+    print(f"[social] Saved {md_path} ({len(md)} chars)")
+    return md
+
+
+def social():
+    """CLI entrypoint: python agent.py social <topic>"""
+    topic = " ".join(sys.argv[2:]).strip()
+    if not topic:
+        reply = get_reply()
+        if reply and reply.get("type") == "custom":
+            topic = reply["topic"]
+        else:
+            topic = "Building a viral AI developer social post pack"
+            print(f"[social] No topic provided — defaulting to '{topic}'")
+    social_media_single(topic)
+
+
 def educational():
     """CLI entrypoint: python agent.py educational <topic>"""
     topic = " ".join(sys.argv[2:]).strip()
@@ -2040,6 +2218,15 @@ def draft():
             except Exception as e:
                 send_tg(f"❌ Educational drop failed: {str(e)[:300]}")
             return
+        if custom_topic.lower().startswith("social:"):
+            social_topic = custom_topic.split(":", 1)[1].strip()
+            if not social_topic:
+                return send_tg("⚠️ `social:` prefix needs a topic. Try `social: building an AI agent promo`.")
+            try:
+                social_media_single(social_topic)
+            except Exception as e:
+                send_tg(f"❌ Social pack failed: {str(e)[:300]}")
+            return
         send_tg(f"✍️ Got your custom topic:\n*`{custom_topic}`*\n\nDrafting now...")
         try:
             draft_single(custom_topic, 1, 1)
@@ -2048,13 +2235,10 @@ def draft():
         return
 
     choices = reply.get("choices", [])
-    if not choices:
-        return send_tg("⚠️ Couldn't parse your reply. Send 1, 2, 3 or type your own topic.")
-
-    state      = load_state()
-    topics     = state.get("topics", [])
+    state = load_state()
+    topics = state.get("topics", [])
     state_date = state.get("date", "")
-    today_str  = (datetime.now(timezone.utc) + timedelta(hours=5, minutes=30)).strftime("%B %d, %Y")
+    today_str = (datetime.now(timezone.utc) + timedelta(hours=5, minutes=30)).strftime("%B %d, %Y")
 
     print(f"[draft] choices={choices} state_date='{state_date}' today='{today_str}'")
 
@@ -2088,7 +2272,7 @@ def draft():
 
 
 if __name__ == "__main__":
-    {"research": research, "draft": draft, "educational": educational}.get(
+    {"research": research, "draft": draft, "educational": educational, "social": social}.get(
         sys.argv[1] if len(sys.argv) > 1 else "",
-        lambda: print("Usage: python agent.py research | draft | educational <topic>")
+        lambda: print("Usage: python agent.py research | draft | educational <topic> | social <topic>")
     )()
