@@ -85,42 +85,55 @@ def humanize_pass(article_md: str, voice_context: str, target_words: int) -> str
         return article_md
     banned_block = ", ".join(HUMAN_BANNED)
     try:
-        rewritten = ask_ai(f"""You are a brutal copy editor. The draft below was AI-written.
-Your job: rewrite it so it reads like a real developer wrote it at 1am, after fixing the actual bug.
-Keep ALL code blocks, tables, images, mermaid blocks, blockquotes, and JSON widget blocks EXACTLY as-is.
-Keep ALL ## H2 headings EXACTLY as-is (the SEO depends on them).
-Rewrite ONLY prose paragraphs.
+        rewritten = ask_ai(f"""You are an editor at a tech magazine, not a writer. You are looking at a draft and your only job is to make it sound less like a generated post.
 
-VOICE: {voice_context}
-
-WRITE STYLE NOTES:
-• Write like a tired frontend dev in Kolkata who just shipped a fix, not a polished marketing blog.
-• Keep it human, honest, imperfect — the voice should feel handwritten, not generated.
-• Avoid any AI-sounding phrasing, including: "As an AI", "AI-generated", "language model", "machine wrote", "copywriter".
-• Preserve the original structure and formatting exactly. Do not invent new headings or sections.
-
-HARD RULES — every single one matters:
-1. Use contractions everywhere — don't, can't, it's, you'll, I've, that's, here's, won't, didn't.
-2. Use em-dashes mid-sentence the way humans actually do — like this — at least 6 times across the article.
-3. Add casual asides in parens (yeah, like this) — at least 4 times.
-4. Open at least 2 paragraphs with a single short fragment. Like this. One sentence. Punchy.
-5. Use "I" obsessively. Personal experience, never "one might" or "developers can".
-6. Drop in 1-2 honest admissions: "I should have checked the docs. I didn't." or "This took me embarrassingly long."
-7. At least one "wait — let me back up" or "okay, quick detour" mid-paragraph.
-8. Use specific numbers: "47 minutes", "1:14am", "the third try", not "a while" or "several attempts".
-9. Drop the formal voice markers. No "Furthermore". No "In conclusion". No "It is worth noting".
-10. Reference Kolkata, chai, 1am, or local context naturally — once, not three times.
-11. Use one mild rhetorical question to the reader: "Sound familiar?" / "Yeah. Me too." / "Annoying, right?"
-12. Vary sentence length aggressively. Short. Then a long one that snakes through the actual mechanism. Then short again.
-13. Banned words (DELETE every instance, rewrite the sentence): {banned_block}
-14. Do NOT add a "Conclusion" or "Summary" heading. Last paragraph is just two human sentences.
-15. Word count target: ~{target_words}. Never add filler to hit it — cut instead.
-
-OUTPUT: the rewritten Markdown, nothing else. No preamble like "Here is the rewritten...".
-
-DRAFT TO REWRITE:
+DRAFT:
+---
 {article_md}
-""", max_tokens=int(target_words * 2.2) + 500)
+---
+
+Output the rewritten article only. No preamble, no "Here is the rewritten version".
+
+WHAT TO PRESERVE EXACTLY (do not touch a single character):
+- All ## H2 headings (SEO depends on them)
+- All ```code``` fences and their contents
+- All ```mermaid``` blocks
+- All pipe-tables
+- All blockquotes (lines starting with >)
+- All image markdown (![alt](url))
+- All TAGS: and META: lines
+- All JSON widget blocks (```json?chameleon)
+
+WHAT TO REWRITE: only the prose paragraphs between these elements.
+
+HOW TO REWRITE — these are observations about real writing, not techniques to insert:
+
+1. Real writers repeat themselves accidentally and then move on. They don't catch every redundancy. Leave one or two in.
+
+2. Real writers have one verbal tic per piece. Pick ONE for this article — could be parentheticals, could be em-dashes, could be sentence fragments — and use only that one. Do not mix tics. The previous version of this engine alternated four different "human tells" mechanically; that's a pattern, kill it.
+
+3. Real writers don't ask the reader rhetorical questions more than once per long article. If the draft has multiple "Sound familiar?" / "Right?" / "See where this is going?" — delete all but one, and rewrite that one to be specific to the topic.
+
+4. Real writers rarely say "I". They show I by what they noticed. "The error log was empty" is more I than "I noticed the error log was empty". Where you see "I [verb]ed", try cutting the I and the verb.
+
+5. Real writers fail to be funny most of the time. If the draft has a wisecrack that sounds polished — chai metaphor, 1am joke, "developer pain" gag — cut it. Leave one tired observation that isn't trying to be funny.
+
+6. Real writers commit to verbs. "It really is" → "it is". "Actually started" → "started". "Pretty much works" → "works". Cut hedges.
+
+7. Real writers don't conclude. The last paragraph just stops. Don't add wrap-up lines.
+
+VOICE CONTEXT: {voice_context}
+
+WHAT TO DELETE ON SIGHT (these are AI tells from the previous draft):
+- Any sentence containing: {banned_block}
+- Any sentence starting with: Furthermore, Moreover, Additionally, In conclusion, In summary, To summarize, In essence, At the end of the day, It is worth noting, As we can see, As mentioned, As discussed.
+- The phrases "the clap button", "tap that clap", "drop a comment below", "share this article", "let me know in the comments" — replace with one specific, non-cliché ask if a CTA is needed.
+- Any sentence that sounds like a LinkedIn post (motivational, declarative, no specific noun).
+- Verbatim repeats of "Yeah. Me too.", "Sound familiar?", "I spent three hours on this. THREE hours.", "It was 1am" — these are template phrases from the previous prompt that the model copied. Strip them.
+
+WORD TARGET: ~{target_words}. If under, do NOT pad — output as-is. Padding is worse than short.
+
+SANITY CHECK BEFORE YOU OUTPUT: read your rewrite. If you can hear it being said by a real tired person, ship it. If it sounds like a podcast intro, rewrite it again.""", max_tokens=int(target_words * 2.2) + 500)
         if not rewritten or len(rewritten) < int(len(article_md) * 0.5):
             print(f"[humanize] Output too short ({len(rewritten) if rewritten else 0} vs draft {len(article_md)}) — keeping original")
             return article_md
@@ -133,6 +146,89 @@ DRAFT TO REWRITE:
     except Exception as e:
         print(f"[humanize] Failed: {e} — keeping AI draft")
         return article_md
+
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# AI-LINT — final pass to catch tells the model snuck back in.
+# Returns (fixed_article, list_of_warnings). Auto-fixes safe patterns,
+# logs warnings for unsafe ones. Runs AFTER humanize_pass.
+# ═══════════════════════════════════════════════════════════════════════════════
+def ai_lint(article_md: str) -> tuple:
+    warnings = []
+    fixed = article_md
+
+    # 1. Hard banned phrases — these are template phrases from the previous prompt
+    #    that the model copies verbatim. Each instance is a strong AI-detection signal.
+    HARD_BANS = [
+        r"\bI spent three hours on this\b",
+        r"\bTHREE hours\b",
+        r"\bSound familiar\??",
+        r"\bYeah\.\s*Me too\.",
+        r"\bIt was 1am\b",
+        r"\bthe clap button is right there\b",
+        r"\btap that clap\b",
+        r"\bIn conclusion\b",
+        r"\bIn summary\b",
+        r"\bTo summarize\b",
+        r"\bFurthermore,",
+        r"\bMoreover,",
+        r"\bAdditionally,",
+        r"\bIt is worth noting\b",
+        r"\bAs we can see\b",
+        r"\bWithout further ado\b",
+        r"\bBuckle up\b",
+        r"\bLet's dive in\b",
+    ]
+    for pattern in HARD_BANS:
+        if re.search(pattern, fixed, re.IGNORECASE):
+            warnings.append(f"AI-tell present: {pattern}")
+
+    # 2. Banned vocab — sentence-level offenders
+    BANNED_VOCAB = [
+        "delve", "leverage", "robust", "seamless", "unleash",
+        "empower", "groundbreaking", "revolutionize", "game-changer",
+        "synergy", "cutting-edge", "supercharge", "paradigm",
+        "tapestry", "myriad", "plethora", "ever-evolving",
+        "transformative", "comprehensive", "noteworthy",
+        "elevate", "embark", "unparalleled", "intricate",
+    ]
+    for word in BANNED_VOCAB:
+        if re.search(rf"\b{word}\b", fixed, re.IGNORECASE):
+            warnings.append(f"Banned word still present: {word}")
+
+    # 3. Repeated identical short paragraphs (e.g. "Yeah. Me too." appearing twice)
+    paragraphs = [p.strip() for p in re.split(r"\n\n+", fixed) if p.strip()]
+    seen = set()
+    for p in paragraphs:
+        if len(p) < 200 and p in seen:
+            warnings.append(f"Duplicate short paragraph: {p[:60]}")
+        seen.add(p)
+
+    # 4. Three+ short fragments in a row — formulaic humanization signature
+    if re.search(r"(?:^|\n)([A-Z][^.\n]{1,40}\.\s+){3,}", fixed):
+        warnings.append("Three+ short fragments in a row (formulaic humanization)")
+
+    # 5. Auto-fix: collapse em-dash overload (4+ em-dashes in one paragraph)
+    def fix_emdash_overload(match):
+        para = match.group(0)
+        if para.count("—") >= 4:
+            parts = para.split("—")
+            rebuilt = parts[0]
+            for i, part in enumerate(parts[1:], 1):
+                if i % 2 == 1:
+                    stripped = part.lstrip()
+                    if stripped:
+                        rebuilt += ". " + stripped[0].upper() + stripped[1:]
+                    else:
+                        rebuilt += "—" + part
+                else:
+                    rebuilt += "—" + part
+            return rebuilt
+        return para
+
+    fixed = re.sub(r"[^\n]+", fix_emdash_overload, fixed)
+
+    return fixed, warnings
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
@@ -1152,7 +1248,10 @@ Return ONLY the JSON object.""")
     pain_point       = _s(outline.get("pain_point"),       "The manual process was killing my time.")
     failed_attempts  = _s(outline.get("failed_attempts"),  "The obvious fixes didn't work.")
     solution_name    = _s(outline.get("solution_name"),    "a custom script")
-    real_metric      = _s(outline.get("real_metric"),      "cut time from 45 mins to under 3")
+    real_metric      = _s(outline.get("real_metric"),      "")
+    if not real_metric or "47" in real_metric or "45 min" in real_metric or "minutes to" in real_metric.lower():
+        # Don't lift the placeholder — make the article prompt invent a topic-fitting number
+        real_metric = f"a measurable improvement specific to {primary_kw or solution_name}"
     surprise_finding = _s(outline.get("surprise_finding"), "The hardest part wasn't the code.")
     reader_benefit   = _s(outline.get("reader_benefit"),   "build this in under an hour")
     meta_desc        = _s(outline.get("meta_description"), f"How to fix {title.lower()} with working code.")
@@ -1214,146 +1313,126 @@ Return ONLY the JSON object.""")
 
     tg_step("✍️ Pass 2/3: Writing article...")
     try:
-        article = ask_ai(f"""
-You are ghostwriting a blog post for {AUTHOR_NAME} — {AUTHOR_CONTEXT}.
-Voice: {AUTHOR_VIBE}
+        article = ask_ai(f"""You are ghostwriting for {AUTHOR_NAME}: {AUTHOR_CONTEXT}. Vibe: {AUTHOR_VIBE}.
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-AUTHOR VOICE — READ TWICE BEFORE WRITING
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Real developer. Not a blogger. Not a content marketer. {AUTHOR_VIBE.capitalize()}.
+Today is {datetime.now().strftime('%B %Y')}. Write the post in past tense — something that already happened to {AUTHOR_NAME.split()[0]} this week.
 
-PATTERNS TO USE:
-• Opens mid-frustration: "I spent three hours on this. THREE hours. For a config change."
-• Uses "I" obsessively — personal experience, not a generic tutorial
-• Admits mistakes casually: "I should've checked the docs first. I didn't."
-• Bracket asides: "(which, by the way, is not documented anywhere)"
-• Contrast for punch: "The wrong way takes 40 mins. The right way? 90 seconds."
-• Short reader questions: "Sound familiar?" / "Yeah. Me too."
-• References Kolkata naturally: "My client was calling at 9am. It was 1am. Kolkata time."
-• VISUALS RULE: Include at least one flowchart/diagram/table and one full working code block.
-• Make visuals feel deliberate — flowchart for process, chart/table for results, meme only for real shared pain.
+▌READ THIS FIRST — HOW THIS PROMPT WORKS
+Examples below show *patterns*, not text to copy. If a phrase from this prompt appears in your output, you have failed.
+Do not echo my instructions back. Do not write meta-commentary. Start with the story.
 
-BANNED WORDS: delve, navigate, leverage, landscape, robust, seamless, unleash, utilize,
-empower, groundbreaking, revolutionize, game-changer, synergy, cutting-edge, supercharge,
-spearhead, foster, facilitate, paradigm, holistic, it is worth noting, furthermore,
-moreover, additionally, in conclusion, in summary, to summarize
+▌AUDIENCE
+A working developer hits Google with a frustrated query at 11pm. They land on this article. They have 90 seconds before they bounce. Earn the bounce-back by being specific in the first 50 words.
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-FORMAT ADAPTABILITY — {article_format.upper()}
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Adapt structure based on format:
-- Tech News:      Focus on architectural impact. Include Old vs New comparison table.
-- Repo Review:    Teardown the codebase. Include Pros/Cons matrix table.
-- System Automation: Show full pipeline. Include before/after performance table.
-- Code Tutorial:  Step-by-step with working code. Include benchmark table.
-CRITICAL TABLE RULE: NEVER wrap Markdown tables in backticks. Render them as raw Markdown.
+▌NON-NEGOTIABLE FACTS — these come from the brief, do NOT change them
+Title:           {seo_title}
+Primary keyword: {primary_kw}   ← must appear in first paragraph + 2 H2s + last paragraph
+Pain point:      {pain_point}
+Solution:        {solution_name}
+The metric:      {real_metric}  ← if this looks like a placeholder, invent a *different* believable number that fits the topic. Do NOT use my example numbers literally.
+Surprise:        {surprise_finding}
+Article format:  {article_format}
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-SEO REQUIREMENTS — DYNAMIC, NOT GENERIC
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Write this article as a Medium-ready post in clean Markdown. No HTML, no unsupported syntax, no markdown fences around tables.
-Use real code fences, images, blockquotes, tables, mermaid diagrams, and charts when they add clarity.
-Tone: practical, unvarnished, human. No corporate copy, no AI-speak, no overly polished puffery.
-Primary keyword (MUST appear in: first paragraph, at least 2 H2s, last paragraph):
-  → "{primary_kw}"
+▌FORMAT ADAPTATION ({article_format.upper()})
+- Tech News:         Lead with the architectural shift. Include an Old vs New comparison table.
+- Repo Review:       Teardown the codebase. Include a Pros/Cons matrix.
+- System Automation: Show the full pipeline. Include a before/after performance table.
+- Code Tutorial:     Step-by-step with working code. Include a benchmark table.
+NEVER wrap markdown tables in backticks — render them as raw markdown.
 
+▌VOICE — three rules, applied throughout
+1. Every paragraph passes the "would I say this out loud?" test. If it sounds like a LinkedIn post, rewrite it.
+2. One specific noun per paragraph: a tool version, a file path, a command flag, a port number, an exact timestamp, a CLI output line. No vague nouns ("the tool", "my setup", "various approaches").
+3. Vary opener length. Don't start three paragraphs in a row with "I". Don't start two in a row with the same word.
+
+▌SEO REQUIREMENTS
+Primary keyword "{primary_kw}" appears in: first paragraph, ≥2 H2s, last paragraph.
 Secondary keywords (use 2-3 times each, naturally):
   → {_ks(secondary_kws, 'use related terms naturally')}
-
-Long-tail keywords (work these into H2 headings and paragraph text):
+Long-tail keywords (work into H2 headings + paragraph text):
   → {_ks(longtail_kws, 'use specific question phrases')}
-
-LSI keywords (Google expects these in an article on this topic — use naturally):
+LSI keywords (Google expects these — use naturally):
   → {_ks(lsi_kws, 'use semantically related terms')}
-
-SEO meta description to use (append at end as META: line):
-  → {seo_meta if seo_meta else f'How to fix {primary_kw} with working code and real examples.'}
-
-Competitor angle — what makes this article DIFFERENT:
+Competitor angle (what makes this DIFFERENT):
   → {competitor_angle}
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-ARTICLE BRIEF
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Title: "{seo_title}"
-Target: ~{target_words} words MAX — cut ruthlessly, no padding
-Hook scene (open with this, no heading): {hook_scene}
-Pain point: {pain_point}
-What failed first: {failed_attempts}
-The solution: {solution_name}
-Real metric to use: {real_metric}
-Surprising finding: {surprise_finding}
-What reader can do after: {reader_benefit}
+▌STRUCTURE (markdown, no HTML)
+1. HOOK — 2 sentences max. A specific moment. No headline, no "Introduction".
+   Hint, not template: a real timestamp + a real error string + what was at stake.
+   The primary keyword "{primary_kw}" appears in this opening, naturally.
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-STRUCTURE — exact AEO H2 headings (do NOT rewrite these)
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-{chr(10).join(f'## {h}' for h in aeo_headings)}
-
-These are phrased as questions so Google's Answer Engine indexes them as direct answers.
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-ANTI-FABRICATION RULES — these matter more than anything else
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-A. NEVER invent specific dollar amounts, MRR, user counts, follower counts,
-   or company revenue. If you don't have a real source, DON'T cite a number.
-B. The ONLY specific numbers you may invent are Suman's OWN technical metrics:
-   timing (47 minutes vs 3), error counts, API response times, lines of code,
-   memory usage. Anything personal/financial requires a real source.
-C. If a section needs a real-world example or income story, use the REAL STORIES
-   block below. Quote the title, attribute the source, link the URL.
-   Format: "[Founder's product name] hit [number from source] — [link]" or
-           "as @handle wrote on [Source]: '[short paraphrase]' ([link])".
-D. If no real story matches, write the section in Suman's own first-person voice
-   without specific external numbers. "A founder I follow" / "I've seen builders
-   ship X in a weekend" is OK if vague. Don't fabricate names or dollars.
-E. Never say "according to a study" or "research shows" without a real URL.
-
-{real_stories_block}
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-MANDATORY STRUCTURE RULES
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-1. OPEN with hook scene — no title, no "Introduction". Jump in mid-story.
-   Primary keyword "{primary_kw}" must appear in the first 50 words naturally.
-
-2. IMMEDIATELY after hook, before first H2, insert TL;DR:
+2. TL;DR (immediately after hook, before any H2):
    **TL;DR**
    - **Problem:** {tldr.get('problem', pain_point)}
-   - **Solution:** {tldr.get('solution', solution_name)}
+   - **Fix:** {tldr.get('solution', solution_name)}
    - **Result:** {tldr.get('result', real_metric)}
 
-3. EVERY H2 section MUST contain at least one of: code block, diagram, or table.
-   No section can be text-only.
+3. H2 SECTIONS — use these exact headings, in order (these are AEO question-form headings so Google's Answer Engine indexes them as direct answers):
+{chr(10).join(f'   ## {h}' for h in aeo_headings)}
 
-4. USE ALL pre-planned code snippets (place in section indicated):
-{snippets_block}
+4. Each H2 contains ALL THREE of: prose (2-4 paragraphs), one concrete artifact (code OR diagram OR table OR chart), one specific named detail (version, error message, command).
 
-5. USE ALL pre-planned diagrams (place in section indicated):
-{diagrams_block}
+5. CODE — when you write a code block:
+   - Real imports with real package names + version comment: `import requests  # 2.31.0`
+   - At least one comment that says *why*, not *what*: `# retry — flaky on cold start`
+   - At least one realistic value: a real-looking API key prefix (sk-proj-...), a real port (:8787), an actual error message
+   - Show CLI output where relevant, fenced as a separate block
 
-6. RESULTS section must include a before/after table:
-   | Metric | Before | After |
-   |--------|--------|-------|
-   (fill with real numbers from: {real_metric})
+6. DIAGRAMS — only mermaid or pipe-tables. Mermaid blocks must use `graph TD` or `sequenceDiagram` with at least 5 nodes/messages.
 
-7. END with:
-   — 2 sentences of genuine close (no "In conclusion")
-   — This blockquote: > {engagement_cta}
-   — "Found this useful? The clap button is right there 👇 It takes one tap and it tells me what to build next."
+7. RESULTS section — required pipe-table comparing 2-3 real metrics before/after. No placeholder round numbers (avoid 100, 1000, 10x). Use {real_metric} as one row, invent two more believable ones that fit the topic — response time, lines of code, error rate, memory, API calls — pick what makes sense.
 
-8. INTERACTIVE WIDGET — add this exact block at the very end:
+8. CLOSING — 3 lines, that's it:
+   - One honest line about what you'd do differently
+   - This blockquote on its own line: > {engagement_cta}
+   - One CTA line, written fresh — do NOT say "the clap button is right there"
+
+9. INTERACTIVE WIDGET — add this exact block at the very end:
 {TICK3}json?chameleon
 {{ "component": "LlmGeneratedComponent", "props": {{ "height": "650px", "prompt": "{widget_prompt}" }} }}
 {TICK3}
 
-9. After article body, on separate lines:
-   TAGS: {json.dumps(kw_tags if kw_tags else devto_tags)}
-   META: {seo_meta if seo_meta else meta_desc}
+10. After the body, on separate lines:
+    TAGS: {json.dumps(kw_tags if kw_tags else devto_tags)}
+    META: {seo_meta if seo_meta else meta_desc}
 
-Output ONLY in Markdown. Start with the hook. Zero preamble.
-""")
+▌HARD BANS (exact strings — these will be checked by a regex linter)
+"I spent three hours on this", "THREE hours", "Sound familiar", "Yeah. Me too",
+"It was 1am", "the clap button is right there", "tap that clap",
+"In conclusion", "In summary", "To summarize", "It is worth noting",
+"Furthermore", "Moreover", "Additionally", "delve", "leverage", "robust",
+"seamless", "unleash", "empower", "groundbreaking", "revolutionize",
+"game-changer", "synergy", "cutting-edge", "supercharge", "paradigm",
+"In this article we will", "Let's dive in", "Buckle up", "Without further ado".
+
+▌HARD BANS (patterns)
+- Same sentence structure two paragraphs in a row
+- Two short fragments back-to-back (e.g. "Yeah. Me too.")
+- Em-dash + parenthetical aside in the same sentence
+- Any "rhetorical question to reader?" pattern more than twice in the article
+- Any number that ends in two zeros and is not a real benchmark (no "100x faster", no "1000 users")
+
+▌LENGTH
+~{target_words} words. If you need to cut, cut adjectives and the second sentence of every paragraph that has three sentences. Never cut code or diagrams.
+
+▌ANTI-FABRICATION
+A. NEVER invent specific dollar amounts, MRR, user counts, follower counts, or company revenue without a real source.
+B. The ONLY specific numbers you may invent are technical metrics: timing, error counts, API response times, lines of code, memory usage.
+C. If a section needs a real example, cite from the REAL STORIES block below — title, source, URL.
+D. If no real story fits, write in first-person voice without specific external numbers. Vague is OK ("a founder I follow"). Fabricated names + dollars is not.
+E. Never say "according to a study" or "research shows" without a real URL.
+
+▌SOURCES — when you cite, use one of these (no inventions):
+{real_stories_block if real_stories_block else '(No external sources available — write entirely from first-person experience. Do not cite anyone.)'}
+
+▌SNIPPET PLAN (write actual code for each):
+{snippets_block}
+
+▌DIAGRAM PLAN (write actual diagram for each):
+{diagrams_block}
+
+Output: clean Markdown only. Start with the hook scene. No preamble.
+""", max_tokens=int(target_words * 2.4) + 600)
         if not article or len(article) < 200:
             raise ValueError(f"Article too short ({len(article)} chars)")
         print(f"[draft] Article generated: {len(article)} chars")
@@ -1364,6 +1443,18 @@ Output ONLY in Markdown. Start with the hook. Zero preamble.
     tg_step("🧬 Pass 2.5/3: Humanizing voice (anti-AI rewrite)...")
     voice_ctx = f"{AUTHOR_NAME} — {AUTHOR_CONTEXT}. Vibe: {AUTHOR_VIBE}"
     article = humanize_pass(article, voice_ctx, target_words)
+
+    # FIX 4: AI-tell linter — final safety net
+    article, lint_warnings = ai_lint(article)
+    if lint_warnings:
+        print(f"[lint] {len(lint_warnings)} AI-tell(s) detected:")
+        for w in lint_warnings[:8]:
+            print(f"  - {w}")
+        if len(lint_warnings) >= 8:
+            try:
+                send_tg(f"⚠️ Article has {len(lint_warnings)} AI-detection warnings — review carefully before publishing")
+            except Exception:
+                pass
 
     meta  = ""
     tags_line = ""
@@ -1420,147 +1511,108 @@ Output ONLY in Markdown. Start with the hook. Zero preamble.
     has_table     = "| ---" in body or "|---" in body
 
     try:
-        visual_plan_raw = ask_ai(f"""You are a senior technical content designer for CoderFact.
-Your job: make this article VISUALLY STUNNING and maximally useful by deciding WHERE to inject each type of visual.
+        visual_plan_raw = ask_ai(f"""You are designing visuals for a Medium-quality technical post. Cap is 6 visuals total. Quality > quantity. A bad meme costs more reader trust than no meme.
 
 ARTICLE TITLE: "{seo_title}"
-MAIN TECHNOLOGY: "{article_tech}"
-PRIMARY KEYWORD: "{article_kw}"
-ARTICLE ALREADY HAS MERMAID: {has_mermaid}
-ARTICLE ALREADY HAS TABLES: {has_table}
+PRIMARY TECH: "{article_tech}"
+PRIMARY KW:   "{article_kw}"
 
-ACTUAL H2 HEADINGS IN ARTICLE:
+ARTICLE H2 HEADINGS (use these exact strings in 'after'):
 {chr(10).join(f'  - "{h}"' for h in body_headings)}
 
-ARTICLE BODY:
+ARTICLE BODY (first 4000 chars):
 {body[:4000]}
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-VISUAL TYPES YOU CAN ADD
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+▌RULES OF SELECTION
+You will pick a maximum of 6 visuals. Score each candidate against the body. Skip visuals that don't earn their slot.
 
-TYPE 1 — image
-  Pollinations AI image. Use for: hero banner, tool screenshots, architecture
-  visualization, result dashboards, concept illustrations, or topology maps.
-  Prompt MUST be specific to "{article_tech}" — never generic.
+▌MANDATORY: 1 hero image (after = "")
+The hero image is a banner. Pollinations prompt must contain BOTH "{article_tech}" AND a specific noun from the article (an error name, a tool version, a config file, a CLI command). Generic = wasted slot.
 
-TYPE 2 — mermaid_flowchart
-  Add if the article has a process, pipeline, step-by-step flow, or decision tree.
-  Use: graph TD with proper node labels, arrows, and clear step names.
+▌STRONGLY RECOMMENDED (pick 2-3):
+- mermaid_flowchart — only if article has a >=4-step process. Diagram MUST have 5+ nodes including at least one decision diamond ({{ }}).
+- chart — only if article cites >=3 numerical data points. Use real numbers from the body, not placeholders. Format as Chart.js v4 with dark colors (#22c55e for good, #ef4444 for bad, #3b82f6 for neutral).
+- comparison_table — only if there's a real before/after or A vs B in the body.
 
-TYPE 3 — mermaid_sequence
-  Add ONLY if article has API calls / client-server interactions.
-  Use: sequenceDiagram with realistic actor names from the article.
+▌OPTIONAL (pick at most 2):
+- ascii_diagram — for file structures or component layout. Must use box-drawing characters.
+- callout — only for a non-obvious gotcha mentioned in the body. Format: > ⚠️ **Gotcha:** [specific thing]
+- quote_card — only for an existing sharp line in the body. Don't invent quotes.
 
-TYPE 4 — ascii_diagram
-  For architecture, file structures, data flow between components.
-  Use box-drawing chars.
+▌FORBIDDEN UNLESS THE BODY DEMANDS IT:
+- meme — only if the body has a clear shared-pain moment. Default = no meme. A weak meme tanks the article's credibility.
+- infographic — Pollinations renders infographics badly with text. Skip unless absolutely needed.
+- mermaid_sequence — only if article has actual client/server message flow with >=4 messages.
 
-TYPE 5 — comparison_table
-  Add ONLY if article compares options, tools, approaches, or benchmarks.
+▌PROMPT QUALITY BAR (for image / infographic / meme types)
+Bad:  "python automation dark professional"
+Good: "VS Code terminal showing pytest output green dots, Python 3.11 logo bottom right, dark background, code visible behind, cinematic 4k"
 
-TYPE 6 — callout
-  A highlighted tip/warning/note block using markdown blockquote.
+The Pollinations prompt MUST name:
+1. The specific tool (with version if reasonable)
+2. What's on screen (terminal output? UI? error?)
+3. The visual frame (split-panel? single-screen? close-up?)
+4. The mood (dark cinematic / clean editorial / glitchy)
 
-TYPE 7 — chart
-  Real data chart rendered via QuickChart.io — bar, line, pie, doughnut, radar.
-  Use ONLY when the article cites real numbers (timings, throughput, error rates,
-  cost comparisons, growth, % of users). Set "chart_config" to a Chart.js v4 config:
-    {{ "type": "bar", "data": {{ "labels": ["A","B"], "datasets": [{{ "label": "ms", "data": [120, 18] }}] }} }}
-  Use dark-friendly colors. Keep it under 6 data points so it reads on mobile.
+▌CHART CONFIG QUALITY BAR
+Bad:  "data": [100, 50, 25]   ← round numbers = obvious placeholder
+Good: "data": [847, 312, 91]  ← if these are pulled from the body
 
-TYPE 8 — quote_card
-  A pull-quote — single sentence in a styled blockquote with attribution.
-  Use ONLY for a sharp, tweetable line that already exists in the body.
-  Set "content" to the quote and "caption" to attribution (e.g. author, source).
+If you can't find real numbers in the body, do NOT include a chart. Return nothing for that slot.
 
-TYPE 9 — infographic
-  Pollinations AI image styled as a flat infographic — labeled steps, icons,
-  numbered flow. Use for "5 steps to X" or "anatomy of Y" sections. Prompt
-  MUST mention "{article_tech}" + "infographic flat design numbered labeled".
+▌PLACEMENT
+"after" must match an H2 string from the list above EXACTLY (case-sensitive). If unsure, leave "after" empty (places at top).
 
-TYPE 10 — meme
-  Pollinations image generated to look like a programmer meme — one frame,
-  caption baked into the prompt. Add at MOST one meme per article, only if
-  the section has a relatable "every dev knows this pain" moment.
-  Prompt MUST describe the meme scene, not just say "meme".
+Return ONLY a JSON array with 3-6 objects. No markdown fences. Schema:
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-RULES
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-1. Hero image (after="") is MANDATORY — always add it first
-2. Read EVERY section. Add a visual wherever it helps understanding
-3. Add mermaid_flowchart if ANY section describes a process/pipeline
-4. Add mermaid_sequence if ANY section shows request/response flow
-5. Add ascii_diagram if ANY section describes components/architecture
-6. Add comparison_table if ANY section has performance data or tool comparison
-7. Add chart if ANY section cites multiple numerical data points
-8. Add infographic if ANY section is a numbered process or anatomy breakdown
-9. Add quote_card for the single sharpest line in the article
-10. Add at most ONE meme — only if a section has clear shared-pain humor
-11. Add callouts for any gotcha, tip, or warning you spot in the content
-12. For images/infographics/memes: max 4 total Pollinations calls
-13. For diagrams/tables/charts/quotes/callouts: add as many as genuinely fit
-14. Use EXACT heading text from the list above for all "after" fields
-
-Return ONLY a valid JSON array — no markdown fences, no explanation:
 [
   {{
     "type": "image",
     "after": "",
-    "prompt": "{article_tech} {article_kw} dark terminal professional cinematic 4k",
+    "prompt": "specific multi-noun prompt per quality bar above mentioning {article_tech}",
     "style": "dark-terminal-code",
     "size": "hero",
-    "alt": "specific alt text"
+    "alt": "descriptive alt under 80 chars"
   }},
   {{
     "type": "mermaid_flowchart",
-    "after": "exact heading from list",
-    "content": "graph TD\n  A[Step] --> B{{Decision}}\n  B -->|Yes| C[Result]",
-    "caption": "short caption"
+    "after": "exact H2 string",
+    "content": "graph TD\\n  A[Specific Step Name] --> B{{Decision: condition}}\\n  B -->|yes| C[Outcome]\\n  B -->|no| D[Other outcome]\\n  C --> E[Final state]",
+    "caption": "one-line caption naming what the flow shows"
   }},
   {{
     "type": "chart",
-    "after": "exact heading from list",
-    "chart_config": {{ "type": "bar", "data": {{ "labels": ["Before","After"], "datasets": [{{ "label": "Time (sec)", "data": [180, 12], "backgroundColor": ["#ef4444","#22c55e"] }}] }}, "options": {{ "plugins": {{ "legend": {{ "labels": {{ "color": "#fff" }} }} }}, "scales": {{ "x": {{ "ticks": {{ "color": "#fff" }} }}, "y": {{ "ticks": {{ "color": "#fff" }} }} }} }} }},
-    "caption": "Before vs after"
-  }},
-  {{
-    "type": "quote_card",
-    "after": "exact heading from list",
-    "content": "The fastest way to learn a tool is to ship something tiny with it.",
-    "caption": "Suman Giri"
-  }},
-  {{
-    "type": "infographic",
-    "after": "exact heading from list",
-    "prompt": "{article_tech} 5 step process numbered icons flat infographic dark background",
-    "size": "wide",
-    "alt": "Step-by-step infographic"
-  }},
-  {{
-    "type": "meme",
-    "after": "exact heading from list",
-    "prompt": "developer meme single frame frustrated dev at three monitors caption it works on my machine",
-    "size": "inline",
-    "alt": "Programmer meme"
-  }},
-  {{
-    "type": "ascii_diagram",
-    "after": "exact heading from list",
-    "content": "┌───────┐\n│ Box   │\n└───────┘",
-    "caption": "short caption"
+    "after": "exact H2 string",
+    "chart_config": {{
+      "type": "bar",
+      "data": {{
+        "labels": ["label from body", "label from body"],
+        "datasets": [{{
+          "label": "metric name with unit",
+          "data": [123, 456],
+          "backgroundColor": ["#ef4444", "#22c55e"]
+        }}]
+      }},
+      "options": {{
+        "plugins": {{ "legend": {{ "labels": {{ "color": "#fff" }} }} }},
+        "scales": {{
+          "x": {{ "ticks": {{ "color": "#fff" }} }},
+          "y": {{ "ticks": {{ "color": "#fff" }} }}
+        }}
+      }}
+    }},
+    "caption": "caption with the actual delta — e.g. '4.2x faster after caching'"
   }},
   {{
     "type": "comparison_table",
-    "after": "exact heading from list",
-    "content": "| Approach | Time | Complexity |\n|----------|------|------------|\n| Before | 45 min | High |\n| After | 2 min | Low |",
+    "after": "exact H2 string",
+    "content": "| Approach | Time | Complexity |\\n|----------|------|------------|\\n| Before | real number | High |\\n| After | real number | Low |",
     "caption": "short caption"
   }},
   {{
     "type": "callout",
-    "after": "exact heading from list",
-    "content": "> 💡 **Pro tip:** specific actionable tip from article content",
+    "after": "exact H2 string",
+    "content": "> ⚠️ **Gotcha:** specific non-obvious thing from the article body",
     "caption": ""
   }}
 ]""", max_tokens=3500)

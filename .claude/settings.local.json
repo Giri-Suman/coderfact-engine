@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "Bash(python -c \"import ast, sys; ast.parse\\(open\\('agent.py', encoding='utf-8'\\).read\\(\\)\\); print\\('OK: agent.py parses cleanly'\\)\")"
+      "Bash(python -c \"import ast, sys; ast.parse\\(open\\('agent.py', encoding='utf-8'\\).read\\(\\)\\); print\\('OK: agent.py parses cleanly'\\)\")",
+      "Bash(python -c \"import ast; ast.parse\\(open\\('agent.py', encoding='utf-8'\\).read\\(\\)\\); print\\('OK: agent.py parses cleanly'\\)\")"
     ]
   }
 }
