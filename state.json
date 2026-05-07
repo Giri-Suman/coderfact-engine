@@ -1,14 +1,11 @@
 {
   "topics": [
-    "LangGraph Tutorial: I Built 3-Agent Pipeline",
-    "Gemini CLI Tutorial: Automate Sales Invoicing",
-    "LangGraph Tutorial: I Built $1,500 Stream"
+    "LangGraph Tutorial: I Built a 3-Agent Pipeline",
+    "Vibe Coding Tutorial: 3 Features in 3 Days",
+    "LangGraph Automation: I Built a $1,500 Stream"
   ],
   "date": "May 07, 2026",
   "title_history": [
-    "HERMES.md Bug Fix Saved Me $200",
-    "I Built Custom Code Search Engine",
-    "Warp Optimization Boosted Performance",
     "Warp Terminal Errors Fixed",
     "Automating Codex Skills Fast",
     "Gitnexus Optimization Hacks",
@@ -35,7 +32,10 @@
     "AI Affiliate Marketing Script",
     "LangGraph Tutorial: I Built 3-Agent Pipeline",
     "Gemini CLI Tutorial: Automate Sales Invoicing",
-    "LangGraph Tutorial: I Built $1,500 Stream"
+    "LangGraph Tutorial: I Built $1,500 Stream",
+    "LangGraph Tutorial: I Built a 3-Agent Pipeline",
+    "Vibe Coding Tutorial: 3 Features in 3 Days",
+    "LangGraph Automation: I Built a $1,500 Stream"
   ],
   "last_update_id": 70323295,
   "virality_data": [
@@ -44,7 +44,7 @@
       "category": "C",
       "category_name": "AI Agents & Multi-Agent Workflows",
       "virality_score": 92,
-      "analysis": "This topic will rank on Medium due to its relevance to the current trend of AI-assisted workflows and multi-agent systems. The cross-source evidence from GitHub and Reddit shows a high interest in LangGraph and AI agents. This post will be different from existing ones as it provides a concrete example of a working pipeline with a real result.",
+      "analysis": "This topic will rank on Medium this week because it showcases a concrete example of building a multi-agent workflow, which is a highly sought-after skill in the dev community. The cross-source evidence includes GitHub trending repositories like LangGraph and addyosmani/agent-skills, as well as Reddit posts on r/MachineLearning. This topic differs from existing posts because it provides a first-person account of building a working pipeline with a real result.",
       "cross_source_signals": [
         "GitHub: langgraph repo trending",
         "Reddit r/MachineLearning: 4 posts this week",
@@ -53,7 +53,7 @@
       "developer_pain": "high",
       "freshness": "breaking",
       "money_angle": "",
-      "story_angle": "I was struggling to keep up with my newsletter's content creation until I built a 3-agent pipeline to automate it.",
+      "story_angle": "I was tired of manually curating my weekly newsletter and wanted to automate the process using AI agents.",
       "suman_angle": "How I built a 3-agent newsletter pipeline in one weekend (full code)",
       "target_keywords": [
         "langgraph tutorial",
@@ -66,69 +66,68 @@
           "source": "Dev.to",
           "title": "I Built an AI Agent Team That Makes Money 24/7 - Real Case Study",
           "url": "https://dev.to/__55bb2e8b82015f0c96f3/i-built-an-ai-agent-team-that-makes-money-247-real-case-study-5c9d",
-          "what_to_cite": "The author's experience with building an AI agent team that generates passive income"
+          "what_to_cite": "The author's experience with building an AI agent team that handles '$10/hour tasks'"
         }
       ]
     },
     {
-      "topic": "Automating Sales Invoicing with Gemini CLI: A Step-by-Step Guide",
-      "category": "D",
-      "category_name": "AI Automation Across Domains",
-      "virality_score": 85,
-      "analysis": "This topic will rank on Medium due to its relevance to the current trend of AI automation across various domains. The cross-source evidence from GitHub and Reddit shows a high interest in Gemini CLI and automation. This post will provide a concrete example of automating sales invoicing with a step-by-step guide.",
+      "topic": "I Shipped 3 Major Features in 3 Days Using Vibe Coding and Agentic Engineering",
+      "category": "B",
+      "category_name": "Vibe Coding / AI-Assisted Workflow",
+      "virality_score": 89,
+      "analysis": "This topic will resonate with the Medium audience because it highlights the power of vibe coding and agentic engineering in shipping features quickly. The cross-source evidence includes Hacker News posts on vibe coding and agentic engineering, as well as GitHub repositories like addyosmani/agent-skills. This topic differs from existing posts because it provides a concrete example of using these techniques to ship major features in a short amount of time.",
       "cross_source_signals": [
-        "GitHub: gemini-cli repo trending",
-        "Reddit r/automation: 2 posts this week",
-        "Google Trends: 'automation in sales' rising"
+        "Hacker News: vibe coding and agentic engineering posts",
+        "GitHub: addyosmani/agent-skills repo trending"
       ],
       "developer_pain": "medium",
-      "freshness": "established",
-      "money_angle": "saving time and increasing efficiency in sales invoicing",
-      "story_angle": "I was spending too much time on sales invoicing until I automated it with Gemini CLI.",
-      "suman_angle": "How I automated sales invoicing with Gemini CLI in one hour (full code)",
+      "freshness": "recent",
+      "money_angle": "",
+      "story_angle": "I was struggling to keep up with the demand for new features and wanted to explore alternative development workflows.",
+      "suman_angle": "How I used vibe coding and agentic engineering to ship 3 major features in 3 days",
       "target_keywords": [
-        "gemini cli tutorial",
-        "automation in sales",
-        "sales invoicing automation"
+        "vibe coding tutorial",
+        "agentic engineering example",
+        "ai-assisted workflow"
       ],
-      "competing_articles": "Most existing posts are outdated \u2014 I provide a step-by-step guide with the latest features",
+      "competing_articles": "Most existing posts are theoretical \u2014 I provide a real-world example of using these techniques",
       "real_story_evidence": [
         {
           "source": "Dev.to",
-          "title": "Gemini CLI Tutorial: Automate Sales Invoicing",
-          "url": "https://dev.to/jacob_fritz_6c8d20bfa13b5/gemini-cli-tutorial-automate-sales-invoicing-37h2",
-          "what_to_cite": "The author's experience with automating sales invoicing using Gemini CLI"
+          "title": "I Shipped 3 Major Features in 3 Days \u2014 Keyword Search, MCP Server, Monthly Magazine",
+          "url": "https://dev.to/lazydev_oh/i-shipped-3-major-features-in-3-days-keyword-search-mcp-server-monthly-magazine-5dm5",
+          "what_to_cite": "The author's experience with shipping 3 major features in 3 days using phase slicing and tight Claude loops"
         }
       ]
     },
     {
-      "topic": "From Zero to $1,500 Monthly: How I Built a Passive Income Stream with LangGraph",
+      "topic": "How I Built a $1,500 Monthly Stream Using LangGraph and Automation",
       "category": "E",
       "category_name": "Money / Income Story",
       "virality_score": 95,
-      "analysis": "This topic will rank on Medium due to its relevance to the current trend of passive income and LangGraph. The cross-source evidence from GitHub and Reddit shows a high interest in LangGraph and passive income. This post will provide a concrete example of building a passive income stream with LangGraph.",
+      "analysis": "This topic will resonate with the Medium audience because it provides a concrete example of building a lucrative stream using LangGraph and automation. The cross-source evidence includes GitHub trending repositories like LangGraph and Reddit posts on r/MachineLearning. This topic differs from existing posts because it provides a first-person account of building a working stream with a real result.",
       "cross_source_signals": [
         "GitHub: langgraph repo trending",
-        "Reddit r/passiveincome: 5 posts this week",
-        "Google Trends: 'passive income with langgraph' rising"
+        "Reddit r/MachineLearning: 4 posts this week",
+        "Google Trends: 'ai agent tutorial' rising"
       ],
       "developer_pain": "high",
       "freshness": "breaking",
-      "money_angle": "building a passive income stream with LangGraph",
-      "story_angle": "I was struggling to make a living as a developer until I built a passive income stream with LangGraph.",
-      "suman_angle": "How I built a passive income stream with LangGraph in 3 months (full code)",
+      "money_angle": "$1,500 monthly stream",
+      "story_angle": "I was looking for ways to monetize my automation skills and stumbled upon LangGraph.",
+      "suman_angle": "How I built a $1,500 monthly stream using LangGraph and automation (full code)",
       "target_keywords": [
         "langgraph tutorial",
-        "passive income with langgraph",
-        "build ai agent python"
+        "build ai agent python",
+        "automation stream"
       ],
-      "competing_articles": "Most existing posts are abstract \u2014 I show a concrete example with a real result",
+      "competing_articles": "Most existing posts are abstract \u2014 I show working orchestration code with a real result",
       "real_story_evidence": [
         {
           "source": "Dev.to",
-          "title": "LangGraph Script: I Generate $1,500 Monthly",
-          "url": "https://dev.to/jacob_fritz_6c8d20bfa13b5/langgraph-script-i-generate-1500-monthly-fhg",
-          "what_to_cite": "The author's experience with generating passive income using LangGraph"
+          "title": "LangGraph Tutorial: I Built a 3-Agent Pipeline",
+          "url": "https://dev.to/__55bb2e8b82015f0c96f3/langgraph-tutorial-i-built-a-3-agent-pipeline-5c9d",
+          "what_to_cite": "The author's experience with building a 3-agent pipeline using LangGraph"
         }
       ]
     }
