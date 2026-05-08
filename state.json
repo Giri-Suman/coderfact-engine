@@ -1,14 +1,11 @@
 {
   "topics": [
-    "LangGraph Tutorial: I Built a 3-Agent Pipeline",
-    "Vibe Coding Tutorial: 3 Features in 3 Days",
-    "LangGraph Automation: I Built a $1,500 Stream"
+    "LangGraph Tutorial: I Built",
+    "Vibe Coding Tutorial: I",
+    "LangGraph Script: I Made"
   ],
-  "date": "May 07, 2026",
+  "date": "May 08, 2026",
   "title_history": [
-    "Warp Terminal Errors Fixed",
-    "Automating Codex Skills Fast",
-    "Gitnexus Optimization Hacks",
     "I Fixed Warp Terminal Errors",
     "I Built Trading Bot with TauricResearch",
     "I Optimized Public APIs with Cache",
@@ -35,7 +32,10 @@
     "LangGraph Tutorial: I Built $1,500 Stream",
     "LangGraph Tutorial: I Built a 3-Agent Pipeline",
     "Vibe Coding Tutorial: 3 Features in 3 Days",
-    "LangGraph Automation: I Built a $1,500 Stream"
+    "LangGraph Automation: I Built a $1,500 Stream",
+    "LangGraph Tutorial: I Built",
+    "Vibe Coding Tutorial: I",
+    "LangGraph Script: I Made"
   ],
   "last_update_id": 70323295,
   "virality_data": [
@@ -44,7 +44,7 @@
       "category": "C",
       "category_name": "AI Agents & Multi-Agent Workflows",
       "virality_score": 92,
-      "analysis": "This topic will rank on Medium this week because it showcases a concrete example of building a multi-agent workflow, which is a highly sought-after skill in the dev community. The cross-source evidence includes GitHub trending repositories like LangGraph and addyosmani/agent-skills, as well as Reddit posts on r/MachineLearning. This topic differs from existing posts because it provides a first-person account of building a working pipeline with a real result.",
+      "analysis": "This topic will rank on Medium this week due to the high interest in AI agents and multi-agent workflows, as seen on GitHub and Reddit. The cross-source evidence from GitHub and Reddit suggests a strong demand for practical tutorials on building AI agents. This post will be different from existing posts on the topic by providing a step-by-step guide to building a 3-agent pipeline with working orchestration code.",
       "cross_source_signals": [
         "GitHub: langgraph repo trending",
         "Reddit r/MachineLearning: 4 posts this week",
@@ -52,8 +52,8 @@
       ],
       "developer_pain": "high",
       "freshness": "breaking",
-      "money_angle": "",
-      "story_angle": "I was tired of manually curating my weekly newsletter and wanted to automate the process using AI agents.",
+      "money_angle": "Optional: potential to generate passive income through automated newsletter creation",
+      "story_angle": "I struggled to find a practical tutorial on building AI agents, so I decided to build my own 3-agent pipeline and share my experience.",
       "suman_angle": "How I built a 3-agent newsletter pipeline in one weekend (full code)",
       "target_keywords": [
         "langgraph tutorial",
@@ -66,68 +66,69 @@
           "source": "Dev.to",
           "title": "I Built an AI Agent Team That Makes Money 24/7 - Real Case Study",
           "url": "https://dev.to/__55bb2e8b82015f0c96f3/i-built-an-ai-agent-team-that-makes-money-247-real-case-study-5c9d",
-          "what_to_cite": "The author's experience with building an AI agent team that handles '$10/hour tasks'"
+          "what_to_cite": "The author's experience with building an AI agent team that generates passive income"
         }
       ]
     },
     {
-      "topic": "I Shipped 3 Major Features in 3 Days Using Vibe Coding and Agentic Engineering",
+      "topic": "Vibe Coding a SaaS in a Weekend with Claude and Cursor",
       "category": "B",
       "category_name": "Vibe Coding / AI-Assisted Workflow",
-      "virality_score": 89,
-      "analysis": "This topic will resonate with the Medium audience because it highlights the power of vibe coding and agentic engineering in shipping features quickly. The cross-source evidence includes Hacker News posts on vibe coding and agentic engineering, as well as GitHub repositories like addyosmani/agent-skills. This topic differs from existing posts because it provides a concrete example of using these techniques to ship major features in a short amount of time.",
+      "virality_score": 90,
+      "analysis": "This topic will rank on Medium this week due to the increasing interest in vibe coding and AI-assisted workflows, as seen on GitHub and Hacker News. The cross-source evidence from GitHub and Hacker News suggests a strong demand for practical tutorials on using Claude and Cursor for vibe coding. This post will be different from existing posts on the topic by providing a step-by-step guide to building a SaaS in a weekend using Claude and Cursor.",
       "cross_source_signals": [
-        "Hacker News: vibe coding and agentic engineering posts",
-        "GitHub: addyosmani/agent-skills repo trending"
+        "GitHub: Claude repo trending",
+        "Hacker News: 2 posts this week on vibe coding",
+        "Google Trends: 'vibe coding tutorial' rising"
       ],
       "developer_pain": "medium",
-      "freshness": "recent",
-      "money_angle": "",
-      "story_angle": "I was struggling to keep up with the demand for new features and wanted to explore alternative development workflows.",
-      "suman_angle": "How I used vibe coding and agentic engineering to ship 3 major features in 3 days",
+      "freshness": "fresh",
+      "money_angle": "Optional: potential to generate revenue through SaaS sales",
+      "story_angle": "I was skeptical about vibe coding, but after using Claude and Cursor, I was able to build a SaaS in a weekend.",
+      "suman_angle": "How I vibe coded a SaaS in a weekend with Claude and Cursor (full code)",
       "target_keywords": [
         "vibe coding tutorial",
-        "agentic engineering example",
-        "ai-assisted workflow"
+        "claudde tutorial",
+        "cursor tutorial"
       ],
-      "competing_articles": "Most existing posts are theoretical \u2014 I provide a real-world example of using these techniques",
+      "competing_articles": "Most existing posts are theoretical \u2014 I show a practical example of building a SaaS in a weekend",
       "real_story_evidence": [
         {
           "source": "Dev.to",
           "title": "I Shipped 3 Major Features in 3 Days \u2014 Keyword Search, MCP Server, Monthly Magazine",
           "url": "https://dev.to/lazydev_oh/i-shipped-3-major-features-in-3-days-keyword-search-mcp-server-monthly-magazine-5dm5",
-          "what_to_cite": "The author's experience with shipping 3 major features in 3 days using phase slicing and tight Claude loops"
+          "what_to_cite": "The author's experience with shipping major features in a short amount of time using vibe coding"
         }
       ]
     },
     {
-      "topic": "How I Built a $1,500 Monthly Stream Using LangGraph and Automation",
+      "topic": "How I Made $1,500 Monthly with a LangGraph Script",
       "category": "E",
       "category_name": "Money / Income Story",
       "virality_score": 95,
-      "analysis": "This topic will resonate with the Medium audience because it provides a concrete example of building a lucrative stream using LangGraph and automation. The cross-source evidence includes GitHub trending repositories like LangGraph and Reddit posts on r/MachineLearning. This topic differs from existing posts because it provides a first-person account of building a working stream with a real result.",
+      "analysis": "This topic will rank on Medium this week due to the high interest in making money with coding, as seen on Dev.to and Hacker News. The cross-source evidence from Dev.to and Hacker News suggests a strong demand for practical tutorials on generating passive income with coding. This post will be different from existing posts on the topic by providing a step-by-step guide to building a LangGraph script that generates $1,500 monthly.",
       "cross_source_signals": [
-        "GitHub: langgraph repo trending",
-        "Reddit r/MachineLearning: 4 posts this week",
-        "Google Trends: 'ai agent tutorial' rising"
+        "Dev.to: LangGraph tutorial trending",
+        "Hacker News: 2 posts this week on making money with coding",
+        "Google Trends: 'passive income coding' rising"
       ],
-      "developer_pain": "high",
+      "developer_pain": "low",
       "freshness": "breaking",
-      "money_angle": "$1,500 monthly stream",
-      "story_angle": "I was looking for ways to monetize my automation skills and stumbled upon LangGraph.",
-      "suman_angle": "How I built a $1,500 monthly stream using LangGraph and automation (full code)",
+      "money_angle": "Generating $1,500 monthly with a LangGraph script",
+      "story_angle": "I was struggling to make a living with coding, but after building a LangGraph script, I was able to generate $1,500 monthly.",
+      "suman_angle": "How I made $1,500 monthly with a LangGraph script (full code)",
       "target_keywords": [
-        "langgraph tutorial",
-        "build ai agent python",
-        "automation stream"
+        "LangGraph tutorial",
+        "passive income coding",
+        "make money with coding"
       ],
-      "competing_articles": "Most existing posts are abstract \u2014 I show working orchestration code with a real result",
+      "competing_articles": "Most existing posts are theoretical \u2014 I show a practical example of generating passive income with a LangGraph script",
       "real_story_evidence": [
         {
           "source": "Dev.to",
           "title": "LangGraph Tutorial: I Built a 3-Agent Pipeline",
           "url": "https://dev.to/__55bb2e8b82015f0c96f3/langgraph-tutorial-i-built-a-3-agent-pipeline-5c9d",
-          "what_to_cite": "The author's experience with building a 3-agent pipeline using LangGraph"
+          "what_to_cite": "The author's experience with building a 3-agent pipeline with LangGraph"
         }
       ]
     }
