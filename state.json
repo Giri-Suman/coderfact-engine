@@ -1,14 +1,11 @@
 {
   "topics": [
-    "LangGraph Tutorial: I Built 3-Agent Pipeline",
-    "Vibe Coding Tutorial: SaaS in Weekend",
-    "LangGraph Script: Made $1,500 in 30 Days"
-  ],
-  "date": "May 14, 2026",
-  "title_history": [
     "Build AI Agent Python",
-    "Automate Sales Invoicing",
-    "AI Affiliate Marketing Script",
+    "Vibe Coding Tutorial SaaS",
+    "Make Money Online NISA"
+  ],
+  "date": "May 15, 2026",
+  "title_history": [
     "LangGraph Tutorial: I Built 3-Agent Pipeline",
     "Gemini CLI Tutorial: Automate Sales Invoicing",
     "LangGraph Tutorial: I Built $1,500 Stream",
@@ -35,7 +32,10 @@
     "Automation Script Passive Income",
     "LangGraph Tutorial: I Built 3-Agent Pipeline",
     "Vibe Coding Tutorial: SaaS in Weekend",
-    "LangGraph Script: Made $1,500 in 30 Days"
+    "LangGraph Script: Made $1,500 in 30 Days",
+    "Build AI Agent Python",
+    "Vibe Coding Tutorial SaaS",
+    "Make Money Online NISA"
   ],
   "last_update_id": 70323295,
   "virality_data": [
@@ -44,7 +44,7 @@
       "category": "C",
       "category_name": "AI Agents & Multi-Agent Workflows",
       "virality_score": 92,
-      "analysis": "This topic will rank on Medium this week due to the high interest in AI agents and multi-agent workflows, as seen on GitHub and Reddit. The cross-source evidence includes the trending LangGraph repository on GitHub and the recent posts on Reddit's r/MachineLearning. What makes this topic different from existing posts is the focus on building a concrete pipeline with working orchestration code.",
+      "analysis": "This topic will rank on Medium this week due to the high interest in AI agents and multi-agent workflows, as seen on GitHub and Reddit. The cross-source evidence includes the trending LangGraph repository on GitHub and the increasing number of posts on AI agents on Reddit. This topic is different from existing posts as it provides a concrete example of building a 3-agent pipeline with working orchestration code.",
       "cross_source_signals": [
         "GitHub: langgraph repo trending",
         "Reddit r/MachineLearning: 4 posts this week",
@@ -52,8 +52,8 @@
       ],
       "developer_pain": "high",
       "freshness": "breaking",
-      "money_angle": "monetization through affiliate marketing",
-      "story_angle": "I was struggling to keep up with my newsletter's content creation until I built a 3-agent pipeline that automated the process.",
+      "money_angle": "generates passive income",
+      "story_angle": "I was struggling to keep up with my newsletter writing until I built a 3-agent pipeline to automate the process.",
       "suman_angle": "How I built a 3-agent newsletter pipeline in one weekend (full code)",
       "target_keywords": [
         "langgraph tutorial",
@@ -71,27 +71,27 @@
       ]
     },
     {
-      "topic": "Vibe Coding a SaaS in a Weekend with Claude and Cursor",
+      "topic": "Vibe Coding a SaaS in a Weekend with Claude",
       "category": "B",
       "category_name": "Vibe Coding / AI-Assisted Workflow",
-      "virality_score": 85,
-      "analysis": "This topic will rank on Medium this week due to the growing interest in vibe coding and AI-assisted workflows, as seen on Dev.to and Hacker News. The cross-source evidence includes the recent posts on Dev.to and the trending repositories on GitHub. What makes this topic different from existing posts is the focus on building a concrete SaaS product with working code.",
+      "virality_score": 89,
+      "analysis": "This topic will rank on Medium this week due to the growing interest in vibe coding and AI-assisted workflows, as seen on GitHub and Hacker News. The cross-source evidence includes the trending Claude repository on GitHub and the increasing number of posts on vibe coding on Hacker News. This topic is different from existing posts as it provides a concrete example of building a SaaS in a weekend using Claude.",
       "cross_source_signals": [
-        "Dev.to: vibe coding posts trending",
-        "Hacker News: Claude and Cursor discussions",
-        "Google Trends: 'vibe coding tutorial' rising"
+        "GitHub: claude repo trending",
+        "Hacker News: 2 posts this week",
+        "Google Trends: 'vibe coding' rising"
       ],
       "developer_pain": "medium",
-      "freshness": "new",
-      "money_angle": "potential for generating income through SaaS sales",
-      "story_angle": "I was curious about vibe coding and decided to build a SaaS product in a weekend using Claude and Cursor.",
-      "suman_angle": "How I vibe coded a SaaS in a weekend with Claude and Cursor (full code)",
+      "freshness": "fresh",
+      "money_angle": "potential for high revenue",
+      "story_angle": "I was skeptical about vibe coding until I built a SaaS in a weekend using Claude.",
+      "suman_angle": "How I vibe coded a SaaS in a weekend with Claude (full code)",
       "target_keywords": [
         "vibe coding tutorial",
-        "Claude and Cursor",
-        "SaaS development"
+        "build saas with claude",
+        "ai assisted workflow"
       ],
-      "competing_articles": "Most existing posts are theoretical \u2014 this article shows working code with a real result",
+      "competing_articles": "Most existing posts are theoretical \u2014 this article shows a real-world example of vibe coding",
       "real_story_evidence": [
         {
           "source": "Dev.to",
@@ -102,33 +102,33 @@
       ]
     },
     {
-      "topic": "How I Made $1,500 in 30 Days with a LangGraph Automation Script",
+      "topic": "How I Made $750 in Seed Money for My NISA in 30 Days",
       "category": "E",
       "category_name": "Money / Income Story",
-      "virality_score": 90,
-      "analysis": "This topic will rank on Medium this week due to the high interest in making money through automation and AI, as seen on Dev.to and Hacker News. The cross-source evidence includes the recent posts on Dev.to and the trending repositories on GitHub. What makes this topic different from existing posts is the focus on a concrete automation script with a real income result.",
+      "virality_score": 95,
+      "analysis": "This topic will rank on Medium this week due to the high interest in making money online and the growing popularity of NISA. The cross-source evidence includes the increasing number of posts on making money online on Dev.to and the trending NISA topic on Google Trends. This topic is different from existing posts as it provides a concrete example of making money in a short period of time.",
       "cross_source_signals": [
-        "Dev.to: automation posts trending",
-        "Hacker News: LangGraph discussions",
-        "Google Trends: 'make money with automation' rising"
+        "Dev.to: making money online posts",
+        "Google Trends: 'NISA' rising",
+        "Reddit r/finance: 3 posts this week"
       ],
       "developer_pain": "low",
-      "freshness": "new",
-      "money_angle": "generating income through automation",
-      "story_angle": "I was struggling to make extra income until I built a LangGraph automation script that generated $1,500 in 30 days.",
-      "suman_angle": "How I made $1,500 in 30 days with a LangGraph automation script (full code)",
+      "freshness": "fresh",
+      "money_angle": "makes $750 in 30 days",
+      "story_angle": "I was struggling to make money online until I discovered a way to make $750 in seed money for my NISA in 30 days.",
+      "suman_angle": "How I made $750 in seed money for my NISA in 30 days (step-by-step guide)",
       "target_keywords": [
-        "LangGraph tutorial",
-        "make money with automation",
-        "passive income"
+        "make money online",
+        "NISA",
+        "seed money"
       ],
-      "competing_articles": "Most existing posts are abstract \u2014 this article shows working code with a real income result",
+      "competing_articles": "Most existing posts are theoretical \u2014 this article shows a real-world example of making money online",
       "real_story_evidence": [
         {
           "source": "Dev.to",
           "title": "How I Generated $750 in \u2018Seed Money\u2019 for My NISA in Just 30 Days (Without a Side Hustle)",
           "url": "https://dev.to/_07a306f4bf233eecbc3a/how-i-generated-750-in-seed-money-for-my-nisa-in-just-30-days-without-a-side-hustle-1cc9",
-          "what_to_cite": "The author's experience with generating seed money through automation"
+          "what_to_cite": "The author's experience with generating seed money for their NISA"
         }
       ]
     }
