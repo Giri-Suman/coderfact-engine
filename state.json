@@ -1,14 +1,11 @@
 {
   "topics": [
     "Build AI Agent Python",
-    "Vibe Coding Tutorial Claude",
-    "Make Money Online NISA"
+    "Vibe Coding Tutorial SaaS",
+    "Solo Dev Success Story"
   ],
-  "date": "May 17, 2026",
+  "date": "May 18, 2026",
   "title_history": [
-    "LangGraph Tutorial: I Built",
-    "Vibe Coding Tutorial: I",
-    "LangGraph Script: I Made",
     "LangGraph Tutorial: I Built 3-Agent Pipeline",
     "Vibe Coding Tutorial: Sales Funnel Automation",
     "Gemini CLI Tutorial: Automated Sales Invoicing",
@@ -35,7 +32,10 @@
     "Make Money Online Automation",
     "Build AI Agent Python",
     "Vibe Coding Tutorial Claude",
-    "Make Money Online NISA"
+    "Make Money Online NISA",
+    "Build AI Agent Python",
+    "Vibe Coding Tutorial SaaS",
+    "Solo Dev Success Story"
   ],
   "last_update_id": 70323295,
   "virality_data": [
@@ -44,7 +44,7 @@
       "category": "C",
       "category_name": "AI Agents & Multi-Agent Workflows",
       "virality_score": 92,
-      "analysis": "This topic will rank on Medium this week due to the current interest in AI agents and multi-agent workflows, as seen on GitHub and Reddit. The cross-source evidence from GitHub and Reddit shows a high level of interest in this topic. This post will be different from existing posts on the topic because it will show working orchestration code with a real result.",
+      "analysis": "This topic will rank on Medium this week due to the rising interest in AI agents and multi-agent workflows, as seen on GitHub and Reddit. The cross-source evidence includes the trending langgraph repo on GitHub and the increasing number of posts on Reddit's r/MachineLearning. This topic is different from existing posts as it provides a concrete example of building a 3-agent pipeline with working orchestration code.",
       "cross_source_signals": [
         "GitHub: langgraph repo trending",
         "Reddit r/MachineLearning: 4 posts this week",
@@ -52,15 +52,15 @@
       ],
       "developer_pain": "high",
       "freshness": "breaking",
-      "money_angle": "monetization through affiliate marketing",
-      "story_angle": "I was struggling to keep up with my daily newsletter until I built a 3-agent pipeline to automate the process",
+      "money_angle": "monetization through affiliate marketing and sponsored content",
+      "story_angle": "I was struggling to keep my newsletter up-to-date and decided to build a 3-agent pipeline to automate the process.",
       "suman_angle": "How I built a 3-agent newsletter pipeline in one weekend (full code)",
       "target_keywords": [
         "langgraph tutorial",
         "build ai agent python",
         "multi agent workflow"
       ],
-      "competing_articles": "Most existing posts are abstract \u2014 this post shows working orchestration code with a real result",
+      "competing_articles": "Most existing posts are abstract \u2014 I show working orchestration code with a real result",
       "real_story_evidence": [
         {
           "source": "Dev.to",
@@ -71,27 +71,27 @@
       ]
     },
     {
-      "topic": "Vibe Coding a SaaS in a Weekend with Claude",
+      "topic": "Vibe Coding a SaaS in a Weekend with Claude and Cursor",
       "category": "B",
       "category_name": "Vibe Coding / AI-Assisted Workflow",
       "virality_score": 88,
-      "analysis": "This topic will rank on Medium this week due to the current interest in vibe coding and AI-assisted workflows, as seen on GitHub and Reddit. The cross-source evidence from GitHub and Reddit shows a high level of interest in this topic. This post will be different from existing posts on the topic because it will show a real example of building a SaaS in a weekend using Claude.",
+      "analysis": "This topic will rank on Medium this week due to the growing interest in vibe coding and AI-assisted workflows. The cross-source evidence includes the increasing number of posts on Reddit's r/learnprogramming and the trending cursor repo on GitHub. This topic is different from existing posts as it provides a concrete example of building a SaaS in a weekend using Claude and Cursor.",
       "cross_source_signals": [
-        "GitHub: vibe coding repo trending",
-        "Reddit r/learnprogramming: 2 posts this week",
+        "Reddit r/learnprogramming: 3 posts this week",
+        "GitHub: cursor repo trending",
         "Google Trends: 'vibe coding tutorial' rising"
       ],
       "developer_pain": "medium",
       "freshness": "new",
-      "money_angle": "potential for monetization through SaaS sales",
-      "story_angle": "I was curious about vibe coding and decided to build a SaaS in a weekend using Claude",
-      "suman_angle": "How I vibe coded a SaaS in a weekend with Claude (full code)",
+      "money_angle": "potential for revenue generation through SaaS sales",
+      "story_angle": "I was curious about vibe coding and decided to build a SaaS in a weekend using Claude and Cursor.",
+      "suman_angle": "How I vibe coded a SaaS in a weekend with Claude and Cursor (full code)",
       "target_keywords": [
         "vibe coding tutorial",
         "build saas with claude",
-        "ai assisted workflow"
+        "cursor tutorial"
       ],
-      "competing_articles": "Most existing posts are theoretical \u2014 this post shows a real example of building a SaaS in a weekend",
+      "competing_articles": "Most existing posts are outdated \u2014 I show the latest vibe coding techniques with Claude and Cursor",
       "real_story_evidence": [
         {
           "source": "Dev.to",
@@ -102,33 +102,33 @@
       ]
     },
     {
-      "topic": "How I Made $750 in Seed Money for My NISA in 30 Days",
-      "category": "E",
-      "category_name": "Money / Income Story",
+      "topic": "From Zero to $1,000 MRR in 3 Months: My Journey as a Solo Dev",
+      "category": "A",
+      "category_name": "Developer Success Story",
       "virality_score": 95,
-      "analysis": "This topic will rank on Medium this week due to the current interest in making money online and seed money for NISA, as seen on Dev.to and Reddit. The cross-source evidence from Dev.to and Reddit shows a high level of interest in this topic. This post will be different from existing posts on the topic because it will show a real example of making seed money in 30 days.",
+      "analysis": "This topic will rank on Medium this week due to the high interest in developer success stories and the growing demand for solo dev experiences. The cross-source evidence includes the increasing number of posts on Reddit's r/solodev and the trending solo dev repo on GitHub. This topic is different from existing posts as it provides a concrete example of a solo dev's journey to $1,000 MRR in 3 months.",
       "cross_source_signals": [
-        "Dev.to: post on making seed money trending",
-        "Reddit r/passiveincome: 3 posts this week",
-        "Google Trends: 'make money online' rising"
+        "Reddit r/solodev: 5 posts this week",
+        "GitHub: solo dev repo trending",
+        "Google Trends: 'solo dev success story' rising"
       ],
-      "developer_pain": "low",
-      "freshness": "new",
-      "money_angle": "making seed money for NISA",
-      "story_angle": "I was struggling to make seed money for my NISA until I discovered a way to make $750 in 30 days",
-      "suman_angle": "How I made $750 in seed money for my NISA in 30 days (full story)",
+      "developer_pain": "high",
+      "freshness": "breaking",
+      "money_angle": "revenue generation through MRR",
+      "story_angle": "I was struggling to make a living as a solo dev and decided to share my journey to $1,000 MRR in 3 months.",
+      "suman_angle": "How I went from zero to $1,000 MRR in 3 months as a solo dev (full story)",
       "target_keywords": [
-        "make money online",
-        "seed money for nisa",
-        "passive income"
+        "solo dev success story",
+        "1000 mrr in 3 months",
+        "developer journey"
       ],
-      "competing_articles": "Most existing posts are theoretical \u2014 this post shows a real example of making seed money in 30 days",
+      "competing_articles": "Most existing posts are superficial \u2014 I show a detailed and honest account of my journey",
       "real_story_evidence": [
         {
           "source": "Dev.to",
-          "title": "How I Generated $750 in \u2018Seed Money\u2019 for My NISA in Just 30 Days (Without a Side Hustle)",
-          "url": "https://dev.to/_07a306f4bf233eecbc3a/how-i-generated-750-in-seed-money-for-my-nisa-in-just-30-days-without-a-side-hustle-1cc9",
-          "what_to_cite": "The author's experience with generating seed money for NISA"
+          "title": "How to Build a Paid Newsletter That Earns Recurring Revenue",
+          "url": "https://dev.to/jacob_fritz_6c8d20bfa13b5/how-to-build-a-paid-newsletter-that-earns-recurring-revenue-20hp",
+          "what_to_cite": "The author's experience with building a paid newsletter that generates revenue"
         }
       ]
     }
