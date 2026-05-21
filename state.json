@@ -1,14 +1,11 @@
 {
   "topics": [
-    "LangGraph Tutorial: 3-Agent Pipeline",
-    "Build SaaS with Claude Fast",
-    "LangGraph Automation Script Profit"
+    "LangGraph Tutorial: I Built",
+    "Vibe Coding Tutorial:",
+    "LangGraph Automation Script"
   ],
-  "date": "May 20, 2026",
+  "date": "May 21, 2026",
   "title_history": [
-    "Build AI Agent Python",
-    "Vibe Coding Tutorial SaaS",
-    "Python Automation Morning Routine",
     "LangGraph Tutorial: 3-Agent Pipeline",
     "Vibe Coding SaaS Fast",
     "LangGraph Automation Script",
@@ -35,7 +32,10 @@
     "LangGraph Script: Made $1,500",
     "LangGraph Tutorial: 3-Agent Pipeline",
     "Build SaaS with Claude Fast",
-    "LangGraph Automation Script Profit"
+    "LangGraph Automation Script Profit",
+    "LangGraph Tutorial: I Built",
+    "Vibe Coding Tutorial:",
+    "LangGraph Automation Script"
   ],
   "last_update_id": 70323295,
   "virality_data": [
@@ -44,7 +44,7 @@
       "category": "C",
       "category_name": "AI Agents & Multi-Agent Workflows",
       "virality_score": 92,
-      "analysis": "This topic will rank on Medium this week because it combines the trending topics of AI agents and multi-agent workflows with a personal story of building a working pipeline. The cross-source evidence includes GitHub trending repositories like langgraph and anthropics/claude-plugins-official, as well as Reddit posts on r/MachineLearning. What makes this different from existing posts is the focus on a specific, working example of a 3-agent pipeline.",
+      "analysis": "This topic will rank on Medium due to its relevance to the current AI trend, with cross-source evidence from GitHub's LangGraph repo and Reddit's r/MachineLearning. The post will stand out from existing ones by providing working orchestration code and a real result. The topic's freshness and the author's personal experience will also contribute to its virality.",
       "cross_source_signals": [
         "GitHub: langgraph repo trending",
         "Reddit r/MachineLearning: 4 posts this week",
@@ -52,52 +52,52 @@
       ],
       "developer_pain": "high",
       "freshness": "breaking",
-      "money_angle": "",
-      "story_angle": "I was struggling to keep up with my newsletter writing until I built a 3-agent pipeline to automate the process.",
+      "money_angle": "Potential to increase newsletter engagement and revenue",
+      "story_angle": "I struggled to find a scalable solution for my newsletter until I built a 3-agent pipeline",
       "suman_angle": "How I built a 3-agent newsletter pipeline in one weekend (full code)",
       "target_keywords": [
         "langgraph tutorial",
         "build ai agent python",
         "multi agent workflow"
       ],
-      "competing_articles": "Most existing posts are abstract \u2014 I show working orchestration code with a real result",
+      "competing_articles": "Most existing posts are abstract \u2014 this post shows working orchestration code with a real result",
       "real_story_evidence": [
         {
           "source": "Dev.to",
-          "title": "I Built an AI Agent Team That Makes Money 24/7 - Real Case Study",
-          "url": "https://dev.to/__55bb2e8b82015f0c96f3/i-built-an-ai-agent-team-that-makes-money-247-real-case-study-5c9d",
-          "what_to_cite": "The author's experience with building an AI agent team that generates income"
+          "title": "How to Build a Paid Newsletter That Earns Recurring Revenue",
+          "url": "https://dev.to/jacob_fritz_6c8d20bfa13b5/how-to-build-a-paid-newsletter-that-earns-recurring-revenue-20hp",
+          "what_to_cite": "The importance of automation in increasing newsletter engagement"
         }
       ]
     },
     {
-      "topic": "Vibe Coding a SaaS in a Weekend with Claude",
+      "topic": "Vibe Coding a SaaS in a Weekend with Claude and Cursor",
       "category": "B",
       "category_name": "Vibe Coding / AI-Assisted Workflow",
-      "virality_score": 89,
-      "analysis": "This topic will rank on Medium this week because it combines the trending topic of vibe coding with a personal story of building a SaaS in a weekend. The cross-source evidence includes GitHub trending repositories like anthropics/claude-plugins-official and HKUDS/CLI-Anything. What makes this different from existing posts is the focus on a specific, working example of vibe coding a SaaS.",
+      "virality_score": 90,
+      "analysis": "This topic will rank on Medium due to its relevance to the current vibe coding trend, with cross-source evidence from GitHub's Claude and Cursor repos. The post will stand out from existing ones by providing a personal experience and a real result. The topic's freshness and the author's expertise in frontend development will also contribute to its virality.",
       "cross_source_signals": [
-        "GitHub: claude-plugins-official repo trending",
-        "Reddit r/LearnProgramming: 2 posts this week",
-        "Google Trends: 'vibe coding' rising"
+        "GitHub: claude repo trending",
+        "Reddit r/webdev: 2 posts this week",
+        "Google Trends: 'vibe coding tutorial' rising"
       ],
       "developer_pain": "medium",
       "freshness": "trending",
-      "money_angle": "potential for generating income through SaaS sales",
-      "story_angle": "I was struggling to build a SaaS until I discovered vibe coding with Claude.",
-      "suman_angle": "How I vibe coded a SaaS in a weekend with Claude (full code)",
+      "money_angle": "Potential to increase SaaS revenue",
+      "story_angle": "I was skeptical about vibe coding until I built a SaaS in a weekend with Claude and Cursor",
+      "suman_angle": "How I vibe coded a SaaS in a weekend with Claude and Cursor (full code)",
       "target_keywords": [
         "vibe coding tutorial",
         "build saas with claude",
         "ai assisted workflow"
       ],
-      "competing_articles": "Most existing posts are theoretical \u2014 I show a working example of vibe coding a SaaS",
+      "competing_articles": "Most existing posts are theoretical \u2014 this post shows a real implementation",
       "real_story_evidence": [
         {
           "source": "Dev.to",
           "title": "Built a 5k usd MRR app with AI but still needed a developer",
           "url": "https://dev.to/chocoscoding/built-a-5k-usd-mrr-app-with-ai-but-still-needed-a-developer-2k8p",
-          "what_to_cite": "The author's experience with building a high-revenue app with AI"
+          "what_to_cite": "The importance of human developers in AI-powered projects"
         }
       ]
     },
@@ -106,29 +106,29 @@
       "category": "E",
       "category_name": "Money / Income Story",
       "virality_score": 95,
-      "analysis": "This topic will rank on Medium this week because it combines the trending topic of LangGraph automation with a personal story of generating income. The cross-source evidence includes GitHub trending repositories like langgraph and obra/superpowers. What makes this different from existing posts is the focus on a specific, working example of a LangGraph automation script that generates income.",
+      "analysis": "This topic will rank on Medium due to its relevance to the current AI trend and its potential for monetization, with cross-source evidence from GitHub's LangGraph repo and Reddit's r/MachineLearning. The post will stand out from existing ones by providing a personal experience and a real result. The topic's freshness and the author's expertise in automation will also contribute to its virality.",
       "cross_source_signals": [
         "GitHub: langgraph repo trending",
         "Reddit r/MachineLearning: 4 posts this week",
         "Google Trends: 'langgraph tutorial' rising"
       ],
-      "developer_pain": "high",
+      "developer_pain": "low",
       "freshness": "breaking",
-      "money_angle": "generated $1,500 in 30 days",
-      "story_angle": "I was struggling to make a living until I built a LangGraph automation script that generates income.",
+      "money_angle": "The script generated $1,500 in 30 days",
+      "story_angle": "I was struggling to find a side hustle until I built a LangGraph automation script",
       "suman_angle": "How I made $1,500 in 30 days with a LangGraph automation script (full code)",
       "target_keywords": [
         "langgraph tutorial",
         "automation script",
-        "generate income"
+        "passive income"
       ],
-      "competing_articles": "Most existing posts are abstract \u2014 I show a working example of a LangGraph automation script that generates income",
+      "competing_articles": "Most existing posts are theoretical \u2014 this post shows a real implementation with a real result",
       "real_story_evidence": [
         {
           "source": "Dev.to",
-          "title": "LangGraph Tutorial: I Built 3-Agent Pipeline",
-          "url": "https://dev.to/__55bb2e8b82015f0c96f3/langgraph-tutorial-i-built-3-agent-pipeline-5c9d",
-          "what_to_cite": "The author's experience with building a LangGraph pipeline"
+          "title": "How I Generated $750 in \u2018Seed Money\u2019 for My NISA in Just 30 Days (Without a Side Hustle)",
+          "url": "https://dev.to/_07a306f4bf233eecbc3a/how-i-generated-750-in-seed-money-for-my-nisa-in-just-30-days-without-a-side-hustle-1cc9",
+          "what_to_cite": "The importance of finding alternative sources of income"
         }
       ]
     }
@@ -154,13 +154,6 @@
       "snippet": "At 11:47 PM on a Sunday, I deleted the last import Alamofire from my Xcode project. I replaced eight...",
       "url": "https://dev.to/simple_memo/i-shipped-an-ios-app-with-zero-third-party-dependencies-2jpd",
       "signal": "1 reactions \u00b7 1 comments"
-    },
-    {
-      "source": "Dev.to (#passiveincome)",
-      "title": "I Built an AI Agent Team That Makes Money 24/7 - Real Case Study",
-      "snippet": "The Bottom Line First   AI agents don't replace your job. They handle the \"$10/hour tasks\"...",
-      "url": "https://dev.to/__55bb2e8b82015f0c96f3/i-built-an-ai-agent-team-that-makes-money-247-real-case-study-5c9d",
-      "signal": "0 reactions \u00b7 0 comments"
     },
     {
       "source": "Dev.to (#passiveincome)",
@@ -195,6 +188,13 @@
       "title": "Webull vs Robinhood: Best App for Passive Income Investors 2025",
       "snippet": "Discover if Webull or Robinhood is better for passive income investors in 2025. Compare features, fees, and strategies to grow your portfolio.",
       "url": "https://dev.to/jacob_fritz_6c8d20bfa13b5/webull-vs-robinhood-best-app-for-passive-income-investors-2025-37h2",
+      "signal": "0 reactions \u00b7 0 comments"
+    },
+    {
+      "source": "Dev.to (#passiveincome)",
+      "title": "How to Make Passive Income With Dividend Stocks in 2025: A Complete Guide",
+      "snippet": "Discover actionable strategies in 2025 to earn passive income from dividend stocks. Learn, invest, and grow your wealth today.",
+      "url": "https://dev.to/jacob_fritz_6c8d20bfa13b5/how-to-make-passive-income-with-dividend-stocks-in-2025-a-complete-guide-15gn",
       "signal": "0 reactions \u00b7 0 comments"
     }
   ]
