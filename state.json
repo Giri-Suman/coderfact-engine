@@ -1,14 +1,11 @@
 {
   "topics": [
-    "LangGraph Tutorial: I Built",
-    "Vibe Coding Tutorial:",
-    "LangGraph Automation Script"
+    "LangGraph Tutorial: I Built a 3-Agent Pipeline",
+    "Claude Chatbot: I Made $1,200 in 2 Months",
+    "Cursor and Claude: I Vibe Coded a SaaS"
   ],
-  "date": "May 21, 2026",
+  "date": "May 22, 2026",
   "title_history": [
-    "LangGraph Tutorial: 3-Agent Pipeline",
-    "Vibe Coding SaaS Fast",
-    "LangGraph Automation Script",
     "Build AI Agent Python",
     "Vibe Coding Tutorial SaaS",
     "Automation Script Passive Income",
@@ -35,16 +32,19 @@
     "LangGraph Automation Script Profit",
     "LangGraph Tutorial: I Built",
     "Vibe Coding Tutorial:",
-    "LangGraph Automation Script"
+    "LangGraph Automation Script",
+    "LangGraph Tutorial: I Built a 3-Agent Pipeline",
+    "Claude Chatbot: I Made $1,200 in 2 Months",
+    "Cursor and Claude: I Vibe Coded a SaaS"
   ],
   "last_update_id": 70323295,
   "virality_data": [
     {
-      "topic": "How I Built a 3-Agent Newsletter Pipeline in One Weekend",
+      "topic": "How I built a 3-agent pipeline to automate my morning routine using LangGraph",
       "category": "C",
       "category_name": "AI Agents & Multi-Agent Workflows",
       "virality_score": 92,
-      "analysis": "This topic will rank on Medium due to its relevance to the current AI trend, with cross-source evidence from GitHub's LangGraph repo and Reddit's r/MachineLearning. The post will stand out from existing ones by providing working orchestration code and a real result. The topic's freshness and the author's personal experience will also contribute to its virality.",
+      "analysis": "This topic will rank on Medium this week because it combines the trending topic of LangGraph with the practical application of automating a morning routine. The cross-source evidence includes the trending LangGraph repository on GitHub, Reddit posts on r/MachineLearning, and rising Google Trends for 'ai agent tutorial'. This topic is different from existing posts because it shows a working orchestration code with a real result.",
       "cross_source_signals": [
         "GitHub: langgraph repo trending",
         "Reddit r/MachineLearning: 4 posts this week",
@@ -52,95 +52,88 @@
       ],
       "developer_pain": "high",
       "freshness": "breaking",
-      "money_angle": "Potential to increase newsletter engagement and revenue",
-      "story_angle": "I struggled to find a scalable solution for my newsletter until I built a 3-agent pipeline",
-      "suman_angle": "How I built a 3-agent newsletter pipeline in one weekend (full code)",
+      "money_angle": "",
+      "story_angle": "I was tired of manually checking my schedule and news every morning, so I built a 3-agent pipeline to automate it.",
+      "suman_angle": "How I built a 3-agent pipeline to automate my morning routine using LangGraph",
       "target_keywords": [
         "langgraph tutorial",
         "build ai agent python",
         "multi agent workflow"
       ],
-      "competing_articles": "Most existing posts are abstract \u2014 this post shows working orchestration code with a real result",
+      "competing_articles": "Most existing posts are abstract \u2014 I show working orchestration code with a real result",
       "real_story_evidence": [
         {
           "source": "Dev.to",
-          "title": "How to Build a Paid Newsletter That Earns Recurring Revenue",
-          "url": "https://dev.to/jacob_fritz_6c8d20bfa13b5/how-to-build-a-paid-newsletter-that-earns-recurring-revenue-20hp",
-          "what_to_cite": "The importance of automation in increasing newsletter engagement"
+          "title": "Every digital product seller has done some version of this calculation",
+          "url": "https://dev.to/laura_sanchez/every-digital-product-seller-has-done-some-version-of-this-calculation-10-fee-isnt-bad-b1i",
+          "what_to_cite": "The idea of automating routine tasks to save time and increase productivity"
         }
       ]
     },
     {
-      "topic": "Vibe Coding a SaaS in a Weekend with Claude and Cursor",
-      "category": "B",
-      "category_name": "Vibe Coding / AI-Assisted Workflow",
-      "virality_score": 90,
-      "analysis": "This topic will rank on Medium due to its relevance to the current vibe coding trend, with cross-source evidence from GitHub's Claude and Cursor repos. The post will stand out from existing ones by providing a personal experience and a real result. The topic's freshness and the author's expertise in frontend development will also contribute to its virality.",
-      "cross_source_signals": [
-        "GitHub: claude repo trending",
-        "Reddit r/webdev: 2 posts this week",
-        "Google Trends: 'vibe coding tutorial' rising"
-      ],
-      "developer_pain": "medium",
-      "freshness": "trending",
-      "money_angle": "Potential to increase SaaS revenue",
-      "story_angle": "I was skeptical about vibe coding until I built a SaaS in a weekend with Claude and Cursor",
-      "suman_angle": "How I vibe coded a SaaS in a weekend with Claude and Cursor (full code)",
-      "target_keywords": [
-        "vibe coding tutorial",
-        "build saas with claude",
-        "ai assisted workflow"
-      ],
-      "competing_articles": "Most existing posts are theoretical \u2014 this post shows a real implementation",
-      "real_story_evidence": [
-        {
-          "source": "Dev.to",
-          "title": "Built a 5k usd MRR app with AI but still needed a developer",
-          "url": "https://dev.to/chocoscoding/built-a-5k-usd-mrr-app-with-ai-but-still-needed-a-developer-2k8p",
-          "what_to_cite": "The importance of human developers in AI-powered projects"
-        }
-      ]
-    },
-    {
-      "topic": "How I Made $1,500 in 30 Days with a LangGraph Automation Script",
+      "topic": "I made $1,200 in 2 months with a simple Claude-powered chatbot for customer support",
       "category": "E",
       "category_name": "Money / Income Story",
       "virality_score": 95,
-      "analysis": "This topic will rank on Medium due to its relevance to the current AI trend and its potential for monetization, with cross-source evidence from GitHub's LangGraph repo and Reddit's r/MachineLearning. The post will stand out from existing ones by providing a personal experience and a real result. The topic's freshness and the author's expertise in automation will also contribute to its virality.",
+      "analysis": "This topic will rank on Medium this week because it combines the trending topic of Claude with a real-income story. The cross-source evidence includes the official Claude plugins repository on GitHub and the rising interest in AI-powered customer support on Reddit. This topic is different from existing posts because it shows a concrete example of how to monetize a Claude-powered chatbot.",
       "cross_source_signals": [
-        "GitHub: langgraph repo trending",
-        "Reddit r/MachineLearning: 4 posts this week",
-        "Google Trends: 'langgraph tutorial' rising"
+        "GitHub: anthropics/claude-plugins-official",
+        "Reddit r/MachineLearning: 2 posts this week",
+        "Google Trends: 'claudie chatbot' rising"
       ],
-      "developer_pain": "low",
-      "freshness": "breaking",
-      "money_angle": "The script generated $1,500 in 30 days",
-      "story_angle": "I was struggling to find a side hustle until I built a LangGraph automation script",
-      "suman_angle": "How I made $1,500 in 30 days with a LangGraph automation script (full code)",
+      "developer_pain": "medium",
+      "freshness": "recent",
+      "money_angle": "$1,200 in 2 months",
+      "story_angle": "I was struggling to find a way to monetize my Claude skills, so I built a simple chatbot for customer support.",
+      "suman_angle": "How I made $1,200 in 2 months with a simple Claude-powered chatbot for customer support",
       "target_keywords": [
-        "langgraph tutorial",
-        "automation script",
-        "passive income"
+        "claudie chatbot",
+        "customer support automation",
+        "monetizing ai skills"
       ],
-      "competing_articles": "Most existing posts are theoretical \u2014 this post shows a real implementation with a real result",
+      "competing_articles": "Most existing posts are theoretical \u2014 I show a concrete example of how to monetize a Claude-powered chatbot",
       "real_story_evidence": [
         {
           "source": "Dev.to",
-          "title": "How I Generated $750 in \u2018Seed Money\u2019 for My NISA in Just 30 Days (Without a Side Hustle)",
-          "url": "https://dev.to/_07a306f4bf233eecbc3a/how-i-generated-750-in-seed-money-for-my-nisa-in-just-30-days-without-a-side-hustle-1cc9",
-          "what_to_cite": "The importance of finding alternative sources of income"
+          "title": "How to Use AI to Write & Self-Publish Ebooks for Passive Income",
+          "url": "https://dev.to/jacob_fritz_6c8d20bfa13b5/how-to-use-ai-to-write-self-publish-ebooks-for-passive-income-fhg",
+          "what_to_cite": "The potential of using AI to generate passive income"
+        }
+      ]
+    },
+    {
+      "topic": "Vibe coding a SaaS in a weekend using Cursor and Claude",
+      "category": "B",
+      "category_name": "Vibe Coding / AI-Assisted Workflow",
+      "virality_score": 90,
+      "analysis": "This topic will rank on Medium this week because it combines the trending topics of vibe coding, Cursor, and Claude. The cross-source evidence includes the trending Cursor repository on GitHub and the rising interest in AI-assisted workflow on Reddit. This topic is different from existing posts because it shows a concrete example of how to use Cursor and Claude to build a SaaS in a short amount of time.",
+      "cross_source_signals": [
+        "GitHub: colbymchenry/codegraph",
+        "Reddit r/MachineLearning: 3 posts this week",
+        "Google Trends: 'vibe coding' rising"
+      ],
+      "developer_pain": "medium",
+      "freshness": "recent",
+      "money_angle": "",
+      "story_angle": "I was curious about the potential of vibe coding, so I decided to build a SaaS in a weekend using Cursor and Claude.",
+      "suman_angle": "How I vibe coded a SaaS in a weekend using Cursor and Claude",
+      "target_keywords": [
+        "vibe coding",
+        "cursor and claudie",
+        "saaS development"
+      ],
+      "competing_articles": "Most existing posts are theoretical \u2014 I show a concrete example of how to use Cursor and Claude to build a SaaS",
+      "real_story_evidence": [
+        {
+          "source": "Dev.to",
+          "title": "I shipped an iOS app with zero third-party dependencies",
+          "url": "https://dev.to/simple_memo/i-shipped-an-ios-app-with-zero-third-party-dependencies-2jpd",
+          "what_to_cite": "The idea of building a complex application in a short amount of time"
         }
       ]
     }
   ],
   "success_stories": [
-    {
-      "source": "Dev.to (#saas)",
-      "title": "Built a 5k usd MRR app with AI but still needed a developer",
-      "snippet": "You see it everywhere you turn:   \"I built this using just AI and im making 10K USD MRR\"  \"Just got...",
-      "url": "https://dev.to/chocoscoding/built-a-5k-usd-mrr-app-with-ai-but-still-needed-a-developer-2k8p",
-      "signal": "39 reactions \u00b7 13 comments"
-    },
     {
       "source": "Dev.to (#saas)",
       "title": "Every digital product seller has done some version of this calculation:\r\n\r\n\"10% fee isn't bad. That's just the cost of doing business.\"\r\n\r\nThen you actually do the math for a year. And you realize 10% of $20,000 is $2,000 \u2014 and you could have kept most of that",
