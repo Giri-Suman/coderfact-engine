@@ -4,147 +4,153 @@ _Build your first AI agent in Python_
 
 ## Scroll-stopping hooks
 
-**Hook 1.** I was stuck on this AI agent thing for hours - it wasn't till 1am that I figured out the issue. Writing this now, I'm still kinda annoyed it took so long.
+**Hook 1.** I was up till 1am trying to figure out how to get my AI agent to work - it was frustrating, but I learned a lot. Now I'm sharing my experience with you.
 
-**Hook 2.** I've been playing around with Python and machine learning - and I just built my first AI agent. It's actually pretty cool.
+**Hook 2.** I've spent countless hours building tools for CoderFact, but nothing's been as challenging as building my first AI agent in Python.
 
-**Hook 3.** So I was trying to get this AI agent working - and I realized I'd been overcomplicating things. Sometimes it's the simple stuff that gets you.
+**Hook 3.** It took me a while to wrap my head around it, but building an AI agent in Python is actually pretty straightforward once you get the basics down.
 
-**Hook 4.** If you're like me, you've probably tried to build an AI agent before - only to get stuck on some tiny issue. I've been there too.
+**Hook 4.** If you're like me and you're interested in tech automation, you'll love building your first AI agent in Python - it's a great way to get started with the field.
 
-**Hook 5.** I just spent the last 12 hours building an AI agent in Python - and I learned a ton. Here's what I found out.
+**Hook 5.** I'm still annoyed it took me so long to figure out how to build my first AI agent in Python, but at least I can share my knowledge with you now.
 
 ## 7 tips that actually move the needle
 
-### Tip 1. Use scikit-learn for machine learning tasks
-_Why it matters:_ it's a well-maintained library with a lot of built-in functionality
+### Tip 1. Use the scikit-learn library to simplify the machine learning process
+_Why it matters:_ it provides a wide range of algorithms to choose from
 
 ```python
 from sklearn import svm
 ```
 
-### Tip 2. Install the required libraries with pip
-_Why it matters:_ it's the easiest way to get started
+### Tip 2. Install the TensorFlow library using pip
+_Why it matters:_ it's a popular open-source machine learning library
 
 ```
-pip install scikit-learn
+pip install tensorflow
 ```
 
-### Tip 3. Use the Keras library for building neural networks
-_Why it matters:_ it's a high-level library that's easy to use
+### Tip 3. Use the Keras API to build neural networks
+_Why it matters:_ it's a high-level API that's easy to use
 
 ```python
 from keras.models import Sequential
 ```
 
-### Tip 4. Use TensorFlow as your backend
-_Why it matters:_ it's a popular and well-maintained library
+### Tip 4. Use the NLTK library to preprocess text data
+_Why it matters:_ it provides tools for tokenizing and stemming text
 
 ```python
-import tensorflow as tf
+import nltk
 ```
 
-### Tip 5. Use the Python debugger to step through your code
-_Why it matters:_ it's a great way to figure out what's going on
+### Tip 5. Use the pandas library to handle data
+_Why it matters:_ it provides data structures and functions to efficiently handle structured data
 
 ```python
-import pdb; pdb.set_trace()
+import pandas as pd
 ```
 
-### Tip 6. Use a Jupyter notebook for development
-_Why it matters:_ it's a great way to experiment and visualize your results
-
-```
-jupyter notebook
-```
-
-### Tip 7. Use the Python logging library to log errors
-_Why it matters:_ it's a good way to keep track of what's going on
+### Tip 6. Use the Matplotlib library to visualize data
+_Why it matters:_ it provides a comprehensive set of tools for creating high-quality 2D and 3D plots
 
 ```python
-import logging
+import matplotlib.pyplot as plt
+```
+
+### Tip 7. Use the NumPy library to perform numerical computations
+_Why it matters:_ it provides support for large, multi-dimensional arrays and matrices
+
+```python
+import numpy as np
 ```
 
 ## Step-by-step procedure
 
 ### 1. Step 1: Install the required libraries
-You'll need to install scikit-learn, TensorFlow, and Keras. You can do this with pip.
+You'll need to install the scikit-learn, TensorFlow, and Keras libraries to get started. You can do this using pip.
 
 ```python
 pip install scikit-learn tensorflow keras
 ```
 
 ### 2. Step 2: Import the required libraries
-You'll need to import scikit-learn, TensorFlow, and Keras. You can do this at the top of your Python file.
+You'll need to import the required libraries in your Python script. You can do this using the import statement.
 
 ```python
+import numpy as np
+import pandas as pd
 from sklearn import svm
-import tensorflow as tf
-from keras.models import Sequential
 ```
 
-### 3. Step 3: Load your data
-You'll need to load your data into a format that can be used by your AI agent. This might involve reading in a CSV file or loading a dataset from a library.
+### 3. Step 3: Load the data
+You'll need to load the data you want to use to train your AI agent. You can use the pandas library to read in a CSV file.
 
-```python
-import pandas as pd
+```
 data = pd.read_csv('data.csv')
 ```
 
-### 4. Step 4: Train your model
-You'll need to train your model using your data. This might involve using a library like scikit-learn or Keras.
+### 4. Step 4: Preprocess the data
+You'll need to preprocess the data to prepare it for training. You can use the NLTK library to tokenize and stem the text data.
 
-```
-model = svm.SVC()
-model.fit(data)
-```
-
-### 5. Step 5: Test your model
-You'll need to test your model using some test data. This will give you an idea of how well your model is working.
-
-```
-test_data = pd.read_csv('test_data.csv')
-model.predict(test_data)
+```python
+from nltk.tokenize import word_tokenize
+tokens = word_tokenize(data['text'])
 ```
 
-### 6. Step 6: Refine your model
-You may need to refine your model by adjusting its parameters or trying out different algorithms.
+### 5. Step 5: Train the model
+You can now train the model using the preprocessed data. You can use the scikit-learn library to train a support vector machine.
 
-### 7. Step 7: Deploy your model
-Once you're happy with your model, you can deploy it in a real-world application.
+```
+svm_model = svm.SVC()
+svm_model.fit(X, y)
+```
+
+### 6. Step 6: Test the model
+You can now test the model using a test dataset. You can use the scikit-learn library to evaluate the model's performance.
+
+```python
+accuracy = svm_model.score(X_test, y_test)
+print('Accuracy:', accuracy)
+```
+
+### 7. Step 7: Deploy the model
+You can now deploy the model in your application. You can use the Keras API to save the model to a file.
+
+```
+svm_model.save('model.h5')
+```
 
 ## The mistake almost everyone makes
 
-> ⚠️  One common mistake people make when building an AI agent is not properly preprocessing their data - this can lead to poor performance or even crashes. To fix this, make sure you're handling missing values and scaling your data correctly.
+> ⚠️  One common mistake people make when building their first AI agent in Python is not preprocessing the data correctly - this can lead to poor model performance. To fix this, make sure to use the NLTK library to tokenize and stem the text data.
 
 ## X / Twitter thread (copy-paste ready)
 
-**1/** Just spent 12 hours building an AI agent in Python - and I learned a ton. Here's what I found out.
+**1/** I just spent all night building my first AI agent in Python - and it was worth it. Here's how you can do it too.
 
-**2/** I started by installing the required libraries - scikit-learn, TensorFlow, and Keras. Then I imported them in my Python file.
+**2/** I've been working with tech automation for a while now, but building an AI agent was a new challenge. I had to learn about machine learning and data preprocessing.
 
-**3/** Next, I loaded my data into a format that could be used by my AI agent. I used pandas to read in a CSV file.
+**3/** Tip 1: Use the scikit-learn library to simplify the machine learning process. It provides a wide range of algorithms to choose from.
 
-**4/** After that, I trained my model using scikit-learn's SVM class. I fit the model to my data and then used it to make predictions.
+**4/** Tip 2: Install the TensorFlow library using pip. It's a popular open-source machine learning library.
 
-**5/** Finally, I tested my model using some test data. I was surprised at how well it worked - but I also learned a lot about what I did wrong.
+**5/** Tip 3: Use the Keras API to build neural networks. It's a high-level API that's easy to use.
 
-**6/** If you're interested in building your own AI agent, I'd be happy to help. Just send me a message - I'd love to chat about it.
+**6/** Now that you've built your first AI agent in Python, you can start exploring more advanced topics - like deep learning and natural language processing. What will you build next?
 
 ## LinkedIn version
 
-I just spent the last 12 hours building an AI agent in Python - and I learned a ton. 
-I started by installing the required libraries - scikit-learn, TensorFlow, and Keras. 
-Then I imported them in my Python file. 
-Next, I loaded my data into a format that could be used by my AI agent. 
-I used pandas to read in a CSV file. 
-After that, I trained my model using scikit-learn's SVM class. 
-I fit the model to my data and then used it to make predictions. 
-Finally, I tested my model using some test data. 
-I was surprised at how well it worked - but I also learned a lot about what I did wrong.
-#ai #machinelearning #python #artificialintelligence
+I recently spent all night building my first AI agent in Python - and it was worth it. 
+I've been working with tech automation for a while now, but building an AI agent was a new challenge. 
+I had to learn about machine learning and data preprocessing - it wasn't easy, but it was worth it. 
+One of the biggest challenges I faced was preprocessing the data correctly. 
+I used the NLTK library to tokenize and stem the text data - it made a big difference in the model's performance. 
+If you're interested in building your first AI agent in Python, I recommend starting with the scikit-learn library. 
+It provides a wide range of algorithms to choose from - and it's easy to use.
+#ai #python #machinelearning #techautomation
 
-_Tags: ai, ml, python, dev_
+_Tags: ai, python, ml, automation_
 
 ---
 *By Suman Giri — built with the CoderFact engine.*
