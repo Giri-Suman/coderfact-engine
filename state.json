@@ -1,14 +1,11 @@
 {
   "topics": [
-    "LangGraph Tutorial: I Built a 3-Agent Pipeline",
-    "Claude Chatbot: I Made $1,200 in 2 Months",
-    "Cursor and Claude: I Vibe Coded a SaaS"
-  ],
-  "date": "May 22, 2026",
-  "title_history": [
     "Build AI Agent Python",
     "Vibe Coding Tutorial SaaS",
-    "Automation Script Passive Income",
+    "Make Money with Claude"
+  ],
+  "date": "May 23, 2026",
+  "title_history": [
     "LangGraph Tutorial: I Built 3-Agent Pipeline",
     "Vibe Coding Tutorial: SaaS in Weekend",
     "LangGraph Script: Made $1,500 in 30 Days",
@@ -35,16 +32,19 @@
     "LangGraph Automation Script",
     "LangGraph Tutorial: I Built a 3-Agent Pipeline",
     "Claude Chatbot: I Made $1,200 in 2 Months",
-    "Cursor and Claude: I Vibe Coded a SaaS"
+    "Cursor and Claude: I Vibe Coded a SaaS",
+    "Build AI Agent Python",
+    "Vibe Coding Tutorial SaaS",
+    "Make Money with Claude"
   ],
   "last_update_id": 70323295,
   "virality_data": [
     {
-      "topic": "How I built a 3-agent pipeline to automate my morning routine using LangGraph",
+      "topic": "How I Built a 3-Agent Newsletter Pipeline in One Weekend",
       "category": "C",
       "category_name": "AI Agents & Multi-Agent Workflows",
       "virality_score": 92,
-      "analysis": "This topic will rank on Medium this week because it combines the trending topic of LangGraph with the practical application of automating a morning routine. The cross-source evidence includes the trending LangGraph repository on GitHub, Reddit posts on r/MachineLearning, and rising Google Trends for 'ai agent tutorial'. This topic is different from existing posts because it shows a working orchestration code with a real result.",
+      "analysis": "This topic will rank on Medium this week because it combines the trending topics of AI agents and multi-agent workflows with a personal story of building a working pipeline. The cross-source evidence from GitHub, Reddit, and Google Trends shows a high interest in AI agent tutorials and multi-agent workflows. This post will be different from existing posts on the topic because it will include working orchestration code and a real result.",
       "cross_source_signals": [
         "GitHub: langgraph repo trending",
         "Reddit r/MachineLearning: 4 posts this week",
@@ -52,83 +52,82 @@
       ],
       "developer_pain": "high",
       "freshness": "breaking",
-      "money_angle": "",
-      "story_angle": "I was tired of manually checking my schedule and news every morning, so I built a 3-agent pipeline to automate it.",
-      "suman_angle": "How I built a 3-agent pipeline to automate my morning routine using LangGraph",
+      "money_angle": "monetizing the newsletter through affiliate marketing",
+      "story_angle": "I was struggling to keep up with the latest news and trends in the industry, so I built a 3-agent pipeline to automate my newsletter",
+      "suman_angle": "How I built a 3-agent newsletter pipeline in one weekend (full code)",
       "target_keywords": [
         "langgraph tutorial",
         "build ai agent python",
         "multi agent workflow"
       ],
-      "competing_articles": "Most existing posts are abstract \u2014 I show working orchestration code with a real result",
+      "competing_articles": "Most existing posts are abstract \u2014 I will show working orchestration code with a real result",
       "real_story_evidence": [
         {
           "source": "Dev.to",
-          "title": "Every digital product seller has done some version of this calculation",
-          "url": "https://dev.to/laura_sanchez/every-digital-product-seller-has-done-some-version-of-this-calculation-10-fee-isnt-bad-b1i",
-          "what_to_cite": "The idea of automating routine tasks to save time and increase productivity"
+          "title": "How to Build a Paid Newsletter That Earns Recurring Revenue",
+          "url": "https://dev.to/jacob_fritz_6c8d20bfa13b5/how-to-build-a-paid-newsletter-that-earns-recurring-revenue-20hp",
+          "what_to_cite": "The importance of automation in building a successful newsletter"
         }
       ]
     },
     {
-      "topic": "I made $1,200 in 2 months with a simple Claude-powered chatbot for customer support",
-      "category": "E",
-      "category_name": "Money / Income Story",
-      "virality_score": 95,
-      "analysis": "This topic will rank on Medium this week because it combines the trending topic of Claude with a real-income story. The cross-source evidence includes the official Claude plugins repository on GitHub and the rising interest in AI-powered customer support on Reddit. This topic is different from existing posts because it shows a concrete example of how to monetize a Claude-powered chatbot.",
-      "cross_source_signals": [
-        "GitHub: anthropics/claude-plugins-official",
-        "Reddit r/MachineLearning: 2 posts this week",
-        "Google Trends: 'claudie chatbot' rising"
-      ],
-      "developer_pain": "medium",
-      "freshness": "recent",
-      "money_angle": "$1,200 in 2 months",
-      "story_angle": "I was struggling to find a way to monetize my Claude skills, so I built a simple chatbot for customer support.",
-      "suman_angle": "How I made $1,200 in 2 months with a simple Claude-powered chatbot for customer support",
-      "target_keywords": [
-        "claudie chatbot",
-        "customer support automation",
-        "monetizing ai skills"
-      ],
-      "competing_articles": "Most existing posts are theoretical \u2014 I show a concrete example of how to monetize a Claude-powered chatbot",
-      "real_story_evidence": [
-        {
-          "source": "Dev.to",
-          "title": "How to Use AI to Write & Self-Publish Ebooks for Passive Income",
-          "url": "https://dev.to/jacob_fritz_6c8d20bfa13b5/how-to-use-ai-to-write-self-publish-ebooks-for-passive-income-fhg",
-          "what_to_cite": "The potential of using AI to generate passive income"
-        }
-      ]
-    },
-    {
-      "topic": "Vibe coding a SaaS in a weekend using Cursor and Claude",
+      "topic": "Vibe Coding a SaaS in a Weekend with Claude and Cursor",
       "category": "B",
       "category_name": "Vibe Coding / AI-Assisted Workflow",
-      "virality_score": 90,
-      "analysis": "This topic will rank on Medium this week because it combines the trending topics of vibe coding, Cursor, and Claude. The cross-source evidence includes the trending Cursor repository on GitHub and the rising interest in AI-assisted workflow on Reddit. This topic is different from existing posts because it shows a concrete example of how to use Cursor and Claude to build a SaaS in a short amount of time.",
+      "virality_score": 88,
+      "analysis": "This topic will rank on Medium this week because it combines the trending topics of vibe coding and AI-assisted workflows with a personal story of building a SaaS in a weekend. The cross-source evidence from GitHub, Reddit, and Hacker News shows a high interest in Claude and Cursor. This post will be different from existing posts on the topic because it will include real prompts, real diffs, and a working SaaS.",
       "cross_source_signals": [
-        "GitHub: colbymchenry/codegraph",
-        "Reddit r/MachineLearning: 3 posts this week",
-        "Google Trends: 'vibe coding' rising"
+        "GitHub: anthropics/claude-plugins-official trending",
+        "Reddit r/vibecoding: 2 posts this week",
+        "Hacker News: Claude and Cursor discussion"
       ],
       "developer_pain": "medium",
-      "freshness": "recent",
-      "money_angle": "",
-      "story_angle": "I was curious about the potential of vibe coding, so I decided to build a SaaS in a weekend using Cursor and Claude.",
-      "suman_angle": "How I vibe coded a SaaS in a weekend using Cursor and Claude",
+      "freshness": "new",
+      "money_angle": "potential for monetizing the SaaS through subscription fees",
+      "story_angle": "I was curious about the potential of vibe coding, so I built a SaaS in a weekend with Claude and Cursor",
+      "suman_angle": "How I vibe coded a SaaS in a weekend with Claude and Cursor (full code)",
       "target_keywords": [
-        "vibe coding",
-        "cursor and claudie",
-        "saaS development"
+        "vibe coding tutorial",
+        "Claude and Cursor",
+        "SaaS in a weekend"
       ],
-      "competing_articles": "Most existing posts are theoretical \u2014 I show a concrete example of how to use Cursor and Claude to build a SaaS",
+      "competing_articles": "Most existing posts are theoretical \u2014 I will show a working SaaS with real prompts and diffs",
       "real_story_evidence": [
         {
           "source": "Dev.to",
           "title": "I shipped an iOS app with zero third-party dependencies",
           "url": "https://dev.to/simple_memo/i-shipped-an-ios-app-with-zero-third-party-dependencies-2jpd",
-          "what_to_cite": "The idea of building a complex application in a short amount of time"
+          "what_to_cite": "The importance of experimenting with new technologies and workflows"
+        }
+      ]
+    },
+    {
+      "topic": "How I Made $1,200 in 2 Months with a Claude Chatbot",
+      "category": "E",
+      "category_name": "Money / Income Story",
+      "virality_score": 95,
+      "analysis": "This topic will rank on Medium this week because it combines the trending topic of AI chatbots with a personal story of making money. The cross-source evidence from Google Trends and Reddit shows a high interest in making money with AI. This post will be different from existing posts on the topic because it will include real numbers, real Stripe/Gumroad screenshots, and honest failures.",
+      "cross_source_signals": [
+        "Google Trends: 'make money with AI' rising",
+        "Reddit r/make money online: 3 posts this week"
+      ],
+      "developer_pain": "low",
+      "freshness": "breaking",
+      "money_angle": "making money with a Claude chatbot",
+      "story_angle": "I was struggling to make money online, so I built a Claude chatbot that generated $1,200 in 2 months",
+      "suman_angle": "How I made $1,200 in 2 months with a Claude chatbot (full story)",
+      "target_keywords": [
+        "make money with AI",
+        "Claude chatbot",
+        "passive income"
+      ],
+      "competing_articles": "Most existing posts are aspirational \u2014 I will show real numbers and honest failures",
+      "real_story_evidence": [
+        {
+          "source": "Dev.to",
+          "title": "How to Use AI to Write & Self-Publish Ebooks for Passive Income",
+          "url": "https://dev.to/jacob_fritz_6c8d20bfa13b5/how-to-use-ai-to-write-self-publish-ebooks-for-passive-income-fhg",
+          "what_to_cite": "The potential for making money with AI-generated content"
         }
       ]
     }
