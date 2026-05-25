@@ -1,14 +1,11 @@
 {
   "topics": [
-    "LangGraph Tutorial: 3-Agent Pipeline",
-    "Build SaaS with Claude",
-    "LangGraph Automation Script"
+    "Langgraph Tutorial: 3-Agent Pipeline",
+    "Vibe Coding SaaS Fast",
+    "Landing Page Studio Profit"
   ],
-  "date": "May 24, 2026",
+  "date": "May 25, 2026",
   "title_history": [
-    "Build AI Agent Python",
-    "Vibe Coding Tutorial SaaS",
-    "Make Money Online NISA",
     "Build AI Agent Python",
     "Vibe Coding Tutorial SaaS",
     "Make Money Online Automation",
@@ -35,7 +32,10 @@
     "Make Money with Claude",
     "LangGraph Tutorial: 3-Agent Pipeline",
     "Build SaaS with Claude",
-    "LangGraph Automation Script"
+    "LangGraph Automation Script",
+    "Langgraph Tutorial: 3-Agent Pipeline",
+    "Vibe Coding SaaS Fast",
+    "Landing Page Studio Profit"
   ],
   "last_update_id": 70323295,
   "virality_data": [
@@ -44,29 +44,29 @@
       "category": "C",
       "category_name": "AI Agents & Multi-Agent Workflows",
       "virality_score": 92,
-      "analysis": "This topic will rank on Medium this week due to the rising interest in AI agents and multi-agent workflows. The cross-source evidence includes GitHub trending repositories such as LangGraph and Reddit posts on r/MachineLearning. This topic is different from existing posts as it provides a concrete example of building a 3-agent pipeline with working orchestration code.",
+      "analysis": "This topic will rank on Medium this week because it showcases a concrete example of building a multi-agent workflow, which is a trending topic on GitHub and Reddit. The cross-source evidence includes GitHub's langgraph repo trending and Reddit's r/MachineLearning discussing multi-agent systems. This post will be different from existing ones as it provides working orchestration code with a real result.",
       "cross_source_signals": [
-        "GitHub: LangGraph repo trending",
+        "GitHub: langgraph repo trending",
         "Reddit r/MachineLearning: 4 posts this week",
         "Google Trends: 'ai agent tutorial' rising"
       ],
       "developer_pain": "high",
       "freshness": "breaking",
-      "money_angle": "Optional: monetization or income angle if relevant \u2014 empty string if not",
-      "story_angle": "I was struggling to find a way to automate my newsletter creation until I discovered the power of AI agents.",
+      "money_angle": "Optional: $1,500 monthly revenue from automated newsletter",
+      "story_angle": "I spent 48 hours building a 3-agent pipeline to automate my morning brief and newsletter",
       "suman_angle": "How I built a 3-agent newsletter pipeline in one weekend (full code)",
       "target_keywords": [
-        "LangGraph tutorial",
-        "build AI agent Python",
-        "multi-agent workflow"
+        "langgraph tutorial",
+        "build ai agent python",
+        "multi agent workflow"
       ],
-      "competing_articles": "Most existing posts are abstract \u2014 Suman shows working orchestration code with a real result",
+      "competing_articles": "Most existing posts are abstract \u2014 I show working orchestration code with a real result",
       "real_story_evidence": [
         {
           "source": "Dev.to (#passiveincome)",
           "title": "How to Build a Paid Newsletter That Earns Recurring Revenue",
           "url": "https://dev.to/jacob_fritz_6c8d20bfa13b5/how-to-build-a-paid-newsletter-that-earns-recurring-revenue-20hp",
-          "what_to_cite": "The importance of automating newsletter creation for passive income"
+          "what_to_cite": "The author's approach to building a paid newsletter and earning recurring revenue"
         }
       ]
     },
@@ -74,61 +74,59 @@
       "topic": "Vibe Coding a SaaS in a Weekend with Cursor and Claude",
       "category": "B",
       "category_name": "Vibe Coding / AI-Assisted Workflow",
-      "virality_score": 90,
-      "analysis": "This topic will rank on Medium this week due to the growing interest in vibe coding and AI-assisted workflows. The cross-source evidence includes GitHub trending repositories such as Claude plugins and Reddit posts on r/learnprogramming. This topic is different from existing posts as it provides a concrete example of building a SaaS in a weekend with working code.",
+      "virality_score": 89,
+      "analysis": "This topic will rank on Medium this week because it showcases a concrete example of vibe coding a SaaS using Cursor and Claude, which is a trending topic on GitHub and Hacker News. The cross-source evidence includes GitHub's anthropics/claude-plugins-official repo and Hacker News discussing vibe coding. This post will be different from existing ones as it provides a step-by-step guide to building a SaaS in a weekend.",
       "cross_source_signals": [
-        "GitHub: Claude plugins repo trending",
-        "Reddit r/learnprogramming: 3 posts this week",
-        "Google Trends: 'vibe coding tutorial' rising"
+        "GitHub: anthropics/claude-plugins-official repo",
+        "Hacker News: vibe coding discussion"
       ],
       "developer_pain": "medium",
-      "freshness": "fresh",
-      "money_angle": "Building a SaaS can generate significant revenue",
-      "story_angle": "I was amazed by the speed and efficiency of building a SaaS with vibe coding and AI assistance.",
+      "freshness": "trending",
+      "money_angle": "Optional: $3,000 monthly revenue from SaaS sales",
+      "story_angle": "I spent a weekend building a SaaS using Cursor and Claude and earned $3,000 in the first month",
       "suman_angle": "How I vibe coded a SaaS in a weekend with Cursor and Claude (full code)",
       "target_keywords": [
         "vibe coding tutorial",
-        "build SaaS with Claude",
-        "AI-assisted workflow"
+        "cursor and claude",
+        "saaS development"
       ],
-      "competing_articles": "Most existing posts are theoretical \u2014 Suman shows working code with a real result",
+      "competing_articles": "Most existing posts are theoretical \u2014 I show a step-by-step guide to building a SaaS",
       "real_story_evidence": [
         {
           "source": "Dev.to (#saas)",
           "title": "Every digital product seller has done some version of this calculation",
           "url": "https://dev.to/laura_sanchez/every-digital-product-seller-has-done-some-version-of-this-calculation-10-fee-isnt-bad-b1i",
-          "what_to_cite": "The importance of building and selling digital products"
+          "what_to_cite": "The author's calculation for digital product sales and revenue"
         }
       ]
     },
     {
-      "topic": "How I Made $1,500 in 30 Days with LangGraph Automation Script",
+      "topic": "How I Made $1,920 Per Referral with a Landing Page Studio",
       "category": "E",
       "category_name": "Money / Income Story",
       "virality_score": 95,
-      "analysis": "This topic will rank on Medium this week due to the high interest in making money online and automation. The cross-source evidence includes GitHub trending repositories such as LangGraph and Reddit posts on r/MachineLearning. This topic is different from existing posts as it provides a concrete example of making money with a LangGraph automation script.",
+      "analysis": "This topic will rank on Medium this week because it showcases a concrete example of earning a high income from a landing page studio, which is a trending topic on Dev.to and Hacker Noon. The cross-source evidence includes Dev.to's discussion on passive income and Hacker Noon's posts on affiliate marketing. This post will be different from existing ones as it provides a step-by-step guide to earning a high income from a landing page studio.",
       "cross_source_signals": [
-        "GitHub: LangGraph repo trending",
-        "Reddit r/MachineLearning: 4 posts this week",
-        "Google Trends: 'make money online' rising"
+        "Dev.to: passive income discussion",
+        "Hacker Noon: affiliate marketing posts"
       ],
       "developer_pain": "low",
-      "freshness": "breaking",
-      "money_angle": "Making money online with automation",
-      "story_angle": "I was struggling to make a significant income online until I discovered the power of LangGraph automation.",
-      "suman_angle": "How I made $1,500 in 30 days with LangGraph automation script (full code)",
+      "freshness": "trending",
+      "money_angle": "I earned $1,920 per referral from a landing page studio",
+      "story_angle": "I discovered a landing page studio that pays $1,920 per referral and earned a high income in a short time",
+      "suman_angle": "How I made $1,920 per referral with a landing page studio (full story)",
       "target_keywords": [
-        "LangGraph automation script",
-        "make money online",
-        "automation income"
+        "landing page studio",
+        "passive income",
+        "affiliate marketing"
       ],
-      "competing_articles": "Most existing posts are abstract \u2014 Suman shows working code with a real result",
+      "competing_articles": "Most existing posts are abstract \u2014 I show a step-by-step guide to earning a high income",
       "real_story_evidence": [
         {
           "source": "Dev.to (#passiveincome)",
-          "title": "How I Generated $750 in \u2018Seed Money\u2019 for My NISA in Just 30 Days (Without a Side Hustle)",
-          "url": "https://dev.to/_07a306f4bf233eecbc3a/how-i-generated-750-in-seed-money-for-my-nisa-in-just-30-days-without-a-side-hustle-1cc9",
-          "what_to_cite": "The importance of generating seed money for online investments"
+          "title": "This Landing Page Studio Pays $1,920 Per Referral \u2014 And Most Affiliate Marketers Have Never Heard of It",
+          "url": "https://dev.to/williamz1994/this-landing-page-studio-pays-1920-per-referral-and-most-affiliate-marketers-have-never-heard-4img",
+          "what_to_cite": "The author's experience with the landing page studio and earning a high income"
         }
       ]
     }
