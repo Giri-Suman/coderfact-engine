@@ -1,14 +1,11 @@
 {
   "topics": [
-    "LangGraph Tutorial: I Built 3-Agent Pipeline",
-    "Build SaaS with Claude: Vibe Coding",
-    "LangGraph Automation Script: Made $1,500"
+    "LangGraph Tutorial: I Built a 3-Agent Newsletter Pipeline in One Weekend",
+    "Claude Chatbot Passive Income: How I Made $1,200 in 2 Months",
+    "Vibe Coding a SaaS: I Used Cursor and Claude to Build It in 48 Hours"
   ],
-  "date": "May 28, 2026",
+  "date": "May 29, 2026",
   "title_history": [
-    "LangGraph Tutorial: Automated Morning",
-    "Vibe Coding Tutorial: Sales Funnel",
-    "LangGraph Script: Made $1,500",
     "LangGraph Tutorial: 3-Agent Pipeline",
     "Build SaaS with Claude Fast",
     "LangGraph Automation Script Profit",
@@ -35,16 +32,19 @@
     "Vibe Coding with Cursor",
     "LangGraph Tutorial: I Built 3-Agent Pipeline",
     "Build SaaS with Claude: Vibe Coding",
-    "LangGraph Automation Script: Made $1,500"
+    "LangGraph Automation Script: Made $1,500",
+    "LangGraph Tutorial: I Built a 3-Agent Newsletter Pipeline in One Weekend",
+    "Claude Chatbot Passive Income: How I Made $1,200 in 2 Months",
+    "Vibe Coding a SaaS: I Used Cursor and Claude to Build It in 48 Hours"
   ],
   "last_update_id": 70323295,
   "virality_data": [
     {
-      "topic": "How I Built a 3-Agent Newsletter Pipeline in One Weekend (Full Code)",
+      "topic": "How I Built a 3-Agent Newsletter Pipeline in One Weekend",
       "category": "C",
       "category_name": "AI Agents & Multi-Agent Workflows",
       "virality_score": 92,
-      "analysis": "This topic will rank on Medium this week because it combines the trending AI agent topic with a personal success story, providing a unique angle with working orchestration code. Cross-source evidence includes GitHub trending repositories like LangGraph and Reddit discussions on MachineLearning. The post will stand out from existing theoretical posts by showcasing a concrete, achievable result.",
+      "analysis": "This topic will rank on Medium due to the high interest in AI agents and multi-agent workflows, as seen on GitHub and Reddit. The cross-source evidence includes GitHub trending repositories like harry0703/MoneyPrinterTurbo and affaan-m/ECC, as well as Reddit posts on r/MachineLearning. This topic is different from existing posts as it provides a concrete example of building a 3-agent pipeline with working orchestration code.",
       "cross_source_signals": [
         "GitHub: langgraph repo trending",
         "Reddit r/MachineLearning: 4 posts this week",
@@ -52,21 +52,52 @@
       ],
       "developer_pain": "high",
       "freshness": "breaking",
-      "money_angle": "potential for automation of newsletter creation",
-      "story_angle": "I was tired of manually curating my newsletter content and wanted to automate the process using AI agents.",
+      "money_angle": "Optional: potential for monetization through automated newsletter generation",
+      "story_angle": "I was struggling to keep up with my morning brief, so I built a 3-agent pipeline to automate it",
       "suman_angle": "How I built a 3-agent newsletter pipeline in one weekend (full code)",
       "target_keywords": [
         "langgraph tutorial",
         "build ai agent python",
         "multi agent workflow"
       ],
-      "competing_articles": "Most existing posts are abstract \u2014 this post shows working orchestration code with a real result",
+      "competing_articles": "Most existing posts are abstract \u2014 this article shows working orchestration code with a real result",
       "real_story_evidence": [
         {
           "source": "Dev.to",
-          "title": "How to Build a Paid Newsletter That Earns Recurring Revenue",
-          "url": "https://dev.to/jacob_fritz_6c8d20bfa13b5/how-to-build-a-paid-newsletter-that-earns-recurring-revenue-20hp",
-          "what_to_cite": "The importance of automating newsletter content creation for scalability"
+          "title": "Stop Building for Everyone: The $4K/Month Micro-Niche AI Content Model",
+          "url": "https://dev.to/binky_6ad02e76335bf0ce709/stop-building-for-everyone-the-4kmonth-micro-niche-ai-content-model-295f",
+          "what_to_cite": "The potential for monetization through automated content generation"
+        }
+      ]
+    },
+    {
+      "topic": "I Made $1,200 in 2 Months with a Claude Chatbot",
+      "category": "E",
+      "category_name": "Money / Income Story",
+      "virality_score": 95,
+      "analysis": "This topic will rank on Medium due to the high interest in making money with AI and automation, as seen on Dev.to and Hacker News. The cross-source evidence includes Dev.to posts on passive income and Hacker News posts on making money with AI. This topic is different from existing posts as it provides a concrete example of making money with a Claude chatbot.",
+      "cross_source_signals": [
+        "Dev.to: passive income posts trending",
+        "Hacker News: making money with AI posts trending",
+        "Google Trends: 'make money with ai' rising"
+      ],
+      "developer_pain": "medium",
+      "freshness": "recent",
+      "money_angle": "Making $1,200 in 2 months with a Claude chatbot",
+      "story_angle": "I was struggling to make money with my automation projects, but then I built a Claude chatbot that changed everything",
+      "suman_angle": "How I made $1,200 in 2 months with a Claude chatbot (full story)",
+      "target_keywords": [
+        "make money with ai",
+        "claude chatbot",
+        "passive income"
+      ],
+      "competing_articles": "Most existing posts are vague \u2014 this article provides a concrete example with real numbers",
+      "real_story_evidence": [
+        {
+          "source": "Dev.to",
+          "title": "How to Earn Passive Income with Polymarket Prediction Markets",
+          "url": "https://dev.to/eganai/how-to-earn-passive-income-with-polymarket-prediction-markets-1253",
+          "what_to_cite": "The potential for passive income with AI and automation"
         }
       ]
     },
@@ -75,58 +106,29 @@
       "category": "B",
       "category_name": "Vibe Coding / AI-Assisted Workflow",
       "virality_score": 90,
-      "analysis": "This topic is highly relevant this week due to the popularity of vibe coding and AI-assisted workflows, with cross-source signals from GitHub trending repositories and Hacker News discussions. The post will provide a unique, hands-on approach to building a SaaS quickly, showcasing real prompts and diffs. It will stand out by focusing on the practical application of vibe coding.",
+      "analysis": "This topic will rank on Medium due to the high interest in vibe coding and AI-assisted workflows, as seen on GitHub and Hacker News. The cross-source evidence includes GitHub trending repositories like twentyhq/twenty and Hacker News posts on vibe coding. This topic is different from existing posts as it provides a concrete example of vibe coding a SaaS in a weekend with Cursor and Claude.",
       "cross_source_signals": [
         "GitHub: vibe coding repositories trending",
-        "Hacker News: discussions on AI-assisted workflows"
+        "Hacker News: vibe coding posts trending",
+        "Google Trends: 'vibe coding' rising"
       ],
       "developer_pain": "medium",
-      "freshness": "trending",
-      "money_angle": "potential for rapid SaaS development",
-      "story_angle": "I wanted to test the limits of vibe coding and see if I could build a fully functional SaaS in just a weekend.",
-      "suman_angle": "How I vibe coded a SaaS in a weekend with Cursor and Claude (step-by-step guide)",
+      "freshness": "recent",
+      "money_angle": "Optional: potential for monetization through SaaS sales",
+      "story_angle": "I was struggling to build a SaaS, but then I discovered vibe coding with Cursor and Claude",
+      "suman_angle": "How I vibe coded a SaaS in a weekend with Cursor and Claude (full code)",
       "target_keywords": [
-        "vibe coding tutorial",
-        "build saas with claude",
-        "ai-assisted workflow"
+        "vibe coding",
+        "cursor and claude",
+        "saaS development"
       ],
-      "competing_articles": "Existing posts often lack hands-on guidance \u2014 this post provides a step-by-step guide to vibe coding a SaaS",
+      "competing_articles": "Most existing posts are abstract \u2014 this article shows working code with a real result",
       "real_story_evidence": [
         {
           "source": "Dev.to",
-          "title": "Stop Building for Everyone: The $4K/Month Micro-Niche AI Content Model",
-          "url": "https://dev.to/binky_6ad02e76335bf0ce709/stop-building-for-everyone-the-4kmonth-micro-niche-ai-content-model-295f",
-          "what_to_cite": "The potential for micro-niche SaaS products to generate significant revenue"
-        }
-      ]
-    },
-    {
-      "topic": "How I Made $1,500 with a LangGraph Automation Script",
-      "category": "E",
-      "category_name": "Money / Income Story",
-      "virality_score": 95,
-      "analysis": "This topic will perform well on Medium due to its focus on a personal, monetary success story achieved through automation, aligning with the high interest in AI and automation. Cross-source signals include discussions on Dev.to about passive income and automation. The post will stand out by providing a detailed, firsthand account of creating and profiting from an automation script.",
-      "cross_source_signals": [
-        "Dev.to: discussions on passive income and automation",
-        "Google Trends: 'automation script' rising"
-      ],
-      "developer_pain": "low",
-      "freshness": "recent success",
-      "money_angle": "Made $1,500 with a LangGraph automation script",
-      "story_angle": "I was experimenting with LangGraph and discovered a way to automate a task that could generate income.",
-      "suman_angle": "How I made $1,500 with a LangGraph automation script (full script and lessons learned)",
-      "target_keywords": [
-        "langgraph automation script",
-        "make money with automation",
-        "passive income"
-      ],
-      "competing_articles": "Most posts discuss theoretical income potential \u2014 this post shares a real, achieved income through automation",
-      "real_story_evidence": [
-        {
-          "source": "Dev.to",
-          "title": "How I Generated $750 in \u2018Seed Money\u2019 for My NISA in Just 30 Days (Without a Side Hustle)",
-          "url": "https://dev.to/_07a306f4bf233eecbc3a/how-i-generated-750-in-seed-money-for-my-nisa-in-just-30-days-without-a-side-hustle-1cc9",
-          "what_to_cite": "The feasibility of generating significant income through targeted automation and investment"
+          "title": "How to Build a Paid Newsletter That Earns Recurring Revenue",
+          "url": "https://dev.to/jacob_fritz_6c8d20bfa13b5/how-to-build-a-paid-newsletter-that-earns-recurring-revenue-20hp",
+          "what_to_cite": "The potential for monetization through SaaS sales"
         }
       ]
     }
