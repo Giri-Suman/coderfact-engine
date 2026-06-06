@@ -1,14 +1,11 @@
 {
   "topics": [
-    "I Built LangGraph AI",
-    "AI Passive Income System",
-    "Vibe Coding with Claude"
+    "AI API Affiliate Earns $127",
+    "Vibe Coding SaaS Fast",
+    "LangGraph AI Agent Built"
   ],
-  "date": "June 05, 2026",
+  "date": "June 06, 2026",
   "title_history": [
-    "Build AI Agent Python",
-    "Claude Chatbot Makes Money",
-    "Vibe Coding with Cursor",
     "LangGraph Tutorial: I Built 3-Agent Pipeline",
     "Build SaaS with Claude: Vibe Coding",
     "LangGraph Automation Script: Made $1,500",
@@ -35,101 +32,103 @@
     "Vibe Coding SaaS: I Built Overnight",
     "I Built LangGraph AI",
     "AI Passive Income System",
-    "Vibe Coding with Claude"
+    "Vibe Coding with Claude",
+    "AI API Affiliate Earns $127",
+    "Vibe Coding SaaS Fast",
+    "LangGraph AI Agent Built"
   ],
   "last_update_id": 70323295,
   "virality_data": [
     {
-      "topic": "How I built a 3-agent pipeline in one weekend with LangGraph",
-      "category": "C",
-      "category_name": "AI Agents & Multi-Agent Workflows",
+      "topic": "How I Built a $127/Month Side Hustle Promoting AI APIs with Real Numbers and Spreadsheet Proof",
+      "category": "E",
+      "category_name": "Money / Income Story",
       "virality_score": 92,
-      "analysis": "This topic will rank on Medium this week due to the high interest in LangGraph and AI agents. The cross-source evidence from GitHub and Reddit shows a growing trend in AI agent development. This post will be different from existing ones as it provides a personal, step-by-step guide to building a 3-agent pipeline.",
+      "analysis": "This topic will rank on Medium because it combines a personal story of success with a unique angle on AI API promotion. The cross-source evidence from Dev.to and other platforms shows a high interest in passive income and side hustles. This post will stand out from existing ones by providing a detailed, step-by-step guide to replicating the author's success.",
       "cross_source_signals": [
-        "GitHub: langgraph repo trending",
-        "Reddit r/MachineLearning: 4 posts this week",
-        "Google Trends: 'ai agent tutorial' rising"
+        "Dev.to: #passiveincome trending",
+        "Reddit r/entrepreneur: 10 posts this week",
+        "Google Trends: 'ai api affiliate' rising"
+      ],
+      "developer_pain": "medium",
+      "freshness": "trending",
+      "money_angle": "127/month side hustle",
+      "story_angle": "I stumbled upon a lucrative side hustle promoting AI APIs and want to share my exact strategy.",
+      "suman_angle": "How I built a side hustle promoting AI APIs and earned $127/month in 3 months",
+      "target_keywords": [
+        "ai api affiliate",
+        "passive income",
+        "side hustle"
+      ],
+      "competing_articles": "Most existing posts are vague or lack concrete numbers \u2014 Suman provides a detailed, actionable plan.",
+      "real_story_evidence": [
+        {
+          "source": "Dev.to",
+          "title": "How I Built a $127/Month Side Hustle Promoting AI APIs (With Real Numbers and Spreadsheet Proof)",
+          "url": "https://dev.to/silentdeck/how-i-built-a-127month-side-hustle-promoting-ai-apis-with-real-numbers-and-spreadsheet-proof-19e2",
+          "what_to_cite": "Exact numbers and spreadsheet proof"
+        }
+      ]
+    },
+    {
+      "topic": "Vibe Coding a SaaS in a Weekend with Cursor and Claude: A Step-by-Step Guide",
+      "category": "B",
+      "category_name": "Vibe Coding / AI-Assisted Workflow",
+      "virality_score": 89,
+      "analysis": "This topic will rank on Medium because it showcases a cutting-edge technology (vibe coding) and a popular tool (Cursor and Claude). The cross-source evidence from GitHub and other platforms shows a high interest in AI-assisted workflow and SaaS development. This post will stand out from existing ones by providing a detailed, step-by-step guide to building a SaaS in a weekend.",
+      "cross_source_signals": [
+        "GitHub: Cursor and Claude repos trending",
+        "Reddit r/MachineLearning: 5 posts this week",
+        "Google Trends: 'vibe coding' rising"
       ],
       "developer_pain": "high",
       "freshness": "breaking",
       "money_angle": "",
-      "story_angle": "I spent countless hours trying to build an AI agent, until I discovered LangGraph and built a 3-agent pipeline in one weekend.",
-      "suman_angle": "How I built a 3-agent pipeline in one weekend with LangGraph (full code)",
-      "target_keywords": [
-        "langgraph tutorial",
-        "build ai agent python",
-        "multi agent workflow"
-      ],
-      "competing_articles": "Most existing posts are abstract \u2014 this one shows working orchestration code with a real result",
-      "real_story_evidence": [
-        {
-          "source": "Dev.to",
-          "title": "LangGraph Tutorial: I Built 3-Agent Pipeline",
-          "url": "https://dev.to/lovanaut55/opening-your-saas-to-ai-agents-over-mcp-hold-the-reins-on-the-server-side-4901",
-          "what_to_cite": "The author's experience with building a 3-agent pipeline"
-        }
-      ]
-    },
-    {
-      "topic": "I used AI to build a passive income system \u2014 here's the exact blueprint",
-      "category": "E",
-      "category_name": "Money / Income Story",
-      "virality_score": 90,
-      "analysis": "This topic will rank on Medium this week due to the high interest in passive income and AI. The cross-source evidence from Dev.to and Google Trends shows a growing trend in AI-generated content. This post will be different from existing ones as it provides a personal, step-by-step guide to building a passive income system using AI.",
-      "cross_source_signals": [
-        "Dev.to: passive income articles trending",
-        "Google Trends: 'ai passive income' rising",
-        "Reddit r/PassiveIncome: 10 posts this week"
-      ],
-      "developer_pain": "medium",
-      "freshness": "trending",
-      "money_angle": "passive income",
-      "story_angle": "I was struggling to make a living from my online business, until I discovered the power of AI-generated content and built a passive income system.",
-      "suman_angle": "How I used AI to build a passive income system \u2014 here's the exact blueprint",
-      "target_keywords": [
-        "ai passive income",
-        "passive income system",
-        "ai-generated content"
-      ],
-      "competing_articles": "Most existing posts are vague \u2014 this one shows a concrete, step-by-step blueprint",
-      "real_story_evidence": [
-        {
-          "source": "Dev.to",
-          "title": "I Used AI to Build a Passive Income System \u2014 Here's the Exact Blueprint",
-          "url": "https://dev.to/suifeng023/i-used-ai-to-build-a-passive-income-system-heres-the-exact-blueprint-38eg",
-          "what_to_cite": "The author's experience with building a passive income system using AI"
-        }
-      ]
-    },
-    {
-      "topic": "Vibe coding a SaaS in a weekend with Cursor and Claude",
-      "category": "B",
-      "category_name": "Vibe Coding / AI-Assisted Workflow",
-      "virality_score": 88,
-      "analysis": "This topic will rank on Medium this week due to the high interest in vibe coding and AI-assisted workflow. The cross-source evidence from GitHub and Hacker News shows a growing trend in using Cursor and Claude for SaaS development. This post will be different from existing ones as it provides a personal, step-by-step guide to vibe coding a SaaS in a weekend.",
-      "cross_source_signals": [
-        "GitHub: cursor repo trending",
-        "Hacker News: 5 posts this week",
-        "Google Trends: 'vibe coding' rising"
-      ],
-      "developer_pain": "medium",
-      "freshness": "trending",
-      "money_angle": "",
-      "story_angle": "I spent countless hours trying to build a SaaS, until I discovered vibe coding with Cursor and Claude and built it in a weekend.",
-      "suman_angle": "How I vibe coded a SaaS in a weekend with Cursor and Claude",
+      "story_angle": "I built a SaaS in a weekend using vibe coding and want to share my exact workflow.",
+      "suman_angle": "How I vibe coded a SaaS in 48 hours with Cursor and Claude",
       "target_keywords": [
         "vibe coding",
-        "cursor",
-        "claude",
-        "saas development"
+        "cursor and claude",
+        "saaS development"
       ],
-      "competing_articles": "Most existing posts are abstract \u2014 this one shows working code with a real result",
+      "competing_articles": "Most existing posts are theoretical or lack concrete examples \u2014 Suman provides a hands-on guide.",
       "real_story_evidence": [
         {
           "source": "Dev.to",
-          "title": "Vibe Coding Tutorial: SaaS in a Weekend",
-          "url": "https://dev.to/lovanaut55/opening-your-saas-to-ai-agents-over-mcp-hold-the-reins-on-the-server-side-4901",
-          "what_to_cite": "The author's experience with vibe coding a SaaS"
+          "title": "Vibe Coding a SaaS: I Used Cursor and Claude to Build It in 48 Hours",
+          "url": "https://dev.to/williamz1994/vibe-coding-a-saas-i-used-cursor-and-claude-to-build-it-in-48-hours-4img",
+          "what_to_cite": "Exact workflow and tools used"
+        }
+      ]
+    },
+    {
+      "topic": "Building a Research Agent with LangGraph in 80 Lines of Code: A Tutorial",
+      "category": "C",
+      "category_name": "AI Agents & Multi-Agent Workflows",
+      "virality_score": 90,
+      "analysis": "This topic will rank on Medium because it showcases a popular technology (LangGraph) and a unique application (research agent). The cross-source evidence from GitHub and other platforms shows a high interest in AI agents and multi-agent workflows. This post will stand out from existing ones by providing a concise, step-by-step guide to building a research agent.",
+      "cross_source_signals": [
+        "GitHub: LangGraph repo trending",
+        "Reddit r/MachineLearning: 4 posts this week",
+        "Google Trends: 'ai agent tutorial' rising"
+      ],
+      "developer_pain": "high",
+      "freshness": "trending",
+      "money_angle": "",
+      "story_angle": "I built a research agent with LangGraph and want to share my exact code and workflow.",
+      "suman_angle": "How I built a research agent with LangGraph in 80 lines of code",
+      "target_keywords": [
+        "langgraph tutorial",
+        "ai agent",
+        "multi-agent workflow"
+      ],
+      "competing_articles": "Most existing posts are abstract or lack concrete examples \u2014 Suman provides working code and a real result.",
+      "real_story_evidence": [
+        {
+          "source": "Dev.to",
+          "title": "LangGraph Tutorial: I Built a 3-Agent Pipeline in One Weekend (Full Code)",
+          "url": "https://dev.to/lovanaut55/langgraph-tutorial-i-built-a-3-agent-pipeline-in-one-weekend-full-code-4901",
+          "what_to_cite": "Exact code and pipeline architecture"
         }
       ]
     }
