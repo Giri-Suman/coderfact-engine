@@ -4,62 +4,62 @@ _Build your first AI agent in Python_
 
 ## Scroll-stopping hooks
 
-**Hook 1.** I was stuck on building an AI agent at 1am - it wasn't until I figured out the basics that I could move forward. Now I'm passing on what I've learned.
+**Hook 1.** I was stuck on building an AI agent till 1am - then it clicked. Now I'm writing this to save you the trouble
 
-**Hook 2.** When it comes to building AI agents, most tutorials are overly complicated - but it doesn't have to be that way.
+**Hook 2.** What's the point of machine learning if you can't build something that learns on its own? I've been working on an AI agent and I'm excited to share my progress
 
-**Hook 3.** I've spent countless hours trying to get my AI agent to work - and I've learned a thing or two about what not to do.
+**Hook 3.** Sometimes I think the hardest part of building an AI agent is just getting started - there are so many options and it's hard to know what to choose
 
-**Hook 4.** Building an AI agent can seem daunting - but with the right tools, it's actually pretty straightforward.
+**Hook 4.** I've been experimenting with different machine learning libraries and I think I've found the perfect one for building an AI agent
 
-**Hook 5.** I've built my fair share of AI agents - and I've found that the key to success lies in the details.
+**Hook 5.** Building an AI agent isn't as hard as you think - I've broken it down into simple steps and I'm going to walk you through them
 
 ## 7 tips that actually move the needle
 
-### Tip 1. Use the scikit-learn library to simplify the machine learning process
-_Why it matters:_ it provides a wide range of algorithms to choose from
+### Tip 1. Use the scikit-learn library to handle machine learning tasks
+_Why it matters:_ it's easy to use and has a lot of built-in functionality
 
 ```python
 from sklearn import linear_model
 ```
 
-### Tip 2. Utilize the NLTK library for natural language processing tasks
-_Why it matters:_ it provides tools for tokenization and sentiment analysis
-
-```python
-import nltk; nltk.download('vader_lexicon')
-```
-
-### Tip 3. Take advantage of the TensorFlow library for building neural networks
-_Why it matters:_ it provides a wide range of tools for building and training neural networks
+### Tip 2. Utilize the TensorFlow library for building neural networks
+_Why it matters:_ it's a popular and powerful library for deep learning
 
 ```python
 import tensorflow as tf
 ```
 
-### Tip 4. Use the pandas library to handle and manipulate data
-_Why it matters:_ it provides data structures and functions to efficiently handle data
-
-```python
-import pandas as pd
-```
-
-### Tip 5. Implement the Keras API to build deep learning models
-_Why it matters:_ it provides a high-level interface for building neural networks
+### Tip 3. Try out the Keras library for building neural networks
+_Why it matters:_ it's easy to use and runs on top of TensorFlow
 
 ```python
 from keras.models import Sequential
 ```
 
-### Tip 6. Utilize the Matplotlib library to visualize data and results
-_Why it matters:_ it provides a wide range of tools for creating high-quality 2D and 3D plots
+### Tip 4. Use the NLTK library for natural language processing tasks
+_Why it matters:_ it's a comprehensive library with a lot of built-in functionality
 
 ```python
-import matplotlib.pyplot as plt
+import nltk
 ```
 
-### Tip 7. Use the NumPy library to efficiently handle numerical computations
-_Why it matters:_ it provides support for large, multi-dimensional arrays and matrices
+### Tip 5. Experiment with the PyTorch library for building neural networks
+_Why it matters:_ it's a dynamic computation graph and has a lot of built-in functionality
+
+```python
+import torch
+```
+
+### Tip 6. Use the pandas library to handle data manipulation tasks
+_Why it matters:_ it's easy to use and has a lot of built-in functionality
+
+```python
+import pandas as pd
+```
+
+### Tip 7. Utilize the NumPy library for numerical computations
+_Why it matters:_ it's a powerful library with a lot of built-in functionality
 
 ```python
 import numpy as np
@@ -67,81 +67,88 @@ import numpy as np
 
 ## Step-by-step procedure
 
-### 1. Step 1: Install the required libraries
-Use pip to install the necessary libraries, including scikit-learn, NLTK, and TensorFlow
+### 1. Step 1: Install the necessary libraries
+You'll need to install scikit-learn, TensorFlow, and Keras to get started. Use pip to install them.
 
 ```python
-pip install scikit-learn nltk tensorflow
+pip install scikit-learn tensorflow keras
 ```
 
 ### 2. Step 2: Import the necessary libraries
-Import the libraries you just installed, including scikit-learn, NLTK, and TensorFlow
+You'll need to import the libraries you just installed. Use import statements to do this.
 
 ```python
-import sklearn; import nltk; import tensorflow as tf
+import numpy as np
+import pandas as pd
+from sklearn import linear_model
 ```
 
-### 3. Step 3: Prepare your data
-Use the pandas library to load and manipulate your data
+### 3. Step 3: Load your data
+You'll need to load your data into a pandas dataframe. Use the read_csv function to do this.
+
+```
+data = pd.read_csv('data.csv')
+```
+
+### 4. Step 4: Preprocess your data
+You'll need to preprocess your data before you can use it to train your AI agent. Use the drop function to remove any unnecessary columns.
+
+```
+data = data.drop('unnecessary_column', axis=1)
+```
+
+### 5. Step 5: Train your AI agent
+You can now use your preprocessed data to train your AI agent. Use the fit function to do this.
+
+```
+model = linear_model.LinearRegression()
+model.fit(data[['input_column']], data['output_column'])
+```
+
+### 6. Step 6: Test your AI agent
+You can now use your trained AI agent to make predictions. Use the predict function to do this.
+
+```
+predictions = model.predict(data[['input_column']])
+```
+
+### 7. Step 7: Evaluate your AI agent
+You can now evaluate your AI agent to see how well it's performing. Use the mean_squared_error function to do this.
 
 ```python
-import pandas as pd; data = pd.read_csv('data.csv')
+from sklearn.metrics import mean_squared_error
+mse = mean_squared_error(data['output_column'], predictions)
 ```
-
-### 4. Step 4: Build your AI agent
-Use the scikit-learn library to build a simple machine learning model
-
-```python
-from sklearn import linear_model; model = linear_model.LinearRegression()
-```
-
-### 5. Step 5: Train and test your AI agent
-Use the scikit-learn library to train and test your machine learning model
-
-```
-model.fit(X, y); predictions = model.predict(X_test)
-```
-
-### 6. Step 6: Evaluate your AI agent
-Use the Matplotlib library to visualize the results of your AI agent
-
-```python
-import matplotlib.pyplot as plt; plt.plot(predictions)
-```
-
-### 7. Step 7: Refine your AI agent
-Use the results of your evaluation to refine and improve your AI agent
 
 ## The mistake almost everyone makes
 
-> ⚠️  One common mistake people make when building AI agents is not properly preparing their data - this can lead to poor performance and inaccurate results. To fix this, make sure to properly clean and preprocess your data before training your model.
+> ⚠️  One common mistake people make when building an AI agent is not preprocessing their data properly. This can lead to poor performance and inaccurate predictions. To fix this, make sure to remove any unnecessary columns and handle any missing values.
 
 ## X / Twitter thread (copy-paste ready)
 
-**1/** Building an AI agent can seem daunting - but with the right tools, it's actually pretty straightforward. I'll show you how to get started.
+**1/** I just built my first AI agent in Python and I'm excited to share my progress with you
 
-**2/** First, you'll need to install the necessary libraries - including scikit-learn, NLTK, and TensorFlow. Then, you can start building your AI agent.
+**2/** I've been working on building an AI agent for a while now and I've learned a lot along the way. One of the most important things I've learned is the importance of preprocessing your data
 
-**3/** Use the scikit-learn library to simplify the machine learning process - it provides a wide range of algorithms to choose from.
+**3/** Use the pandas library to handle data manipulation tasks - it's easy to use and has a lot of built-in functionality
 
-**4/** Take advantage of the NLTK library for natural language processing tasks - it provides tools for tokenization and sentiment analysis.
+**4/** Utilize the scikit-learn library to handle machine learning tasks - it's easy to use and has a lot of built-in functionality
 
-**5/** Implement the Keras API to build deep learning models - it provides a high-level interface for building neural networks.
+**5/** Experiment with different machine learning libraries to see what works best for your project - you might be surprised at what you can accomplish
 
-**6/** By following these steps, you can build a functional AI agent - and start seeing real results. So what are you waiting for?
+**6/** Building an AI agent isn't as hard as you think - start with the basics and work your way up. You got this!
 
 ## LinkedIn version
 
-I've spent countless hours trying to get my AI agent to work - and I've learned a thing or two about what not to do. 
-One of the biggest mistakes I made was not properly preparing my data - this can lead to poor performance and inaccurate results. 
-But with the right tools and techniques, building an AI agent can be relatively straightforward. 
-I've found that using the scikit-learn library to simplify the machine learning process has been a game-changer. 
-I've also taken advantage of the NLTK library for natural language processing tasks - it's been a huge help. 
-By following these steps and using the right tools, you can build a functional AI agent - and start seeing real results.
-
+I've been working on building an AI agent in Python and I'm excited to share my progress with you. 
+One of the most important things I've learned is the importance of preprocessing your data. 
+I've been using the pandas library to handle data manipulation tasks - it's easy to use and has a lot of built-in functionality. 
+I've also been utilizing the scikit-learn library to handle machine learning tasks - it's easy to use and has a lot of built-in functionality. 
+Building an AI agent isn't as hard as you think - start with the basics and work your way up. 
+You can accomplish a lot with the right tools and a little bit of practice. 
 #ai #machinelearning #python #artificialintelligence
 
-_Tags: ai, machinelearning, python, automation_
+_Tags: ai, ml, python, agent_
 
 ---
 *By Suman Giri — built with the CoderFact engine.*
