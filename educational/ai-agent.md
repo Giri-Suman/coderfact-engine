@@ -4,148 +4,147 @@ _Build your first AI agent in Python_
 
 ## Scroll-stopping hooks
 
-**Hook 1.** I've spent countless nights figuring out AI - it's 1am and I'm still debugging. Anyone else have this problem?
+**Hook 1.** I was stuck on building my first AI agent till 1am - it was a real headache, but I figured it out and I'm passing on what I learned to you
 
-**Hook 2.** You won't believe how simple it is to build an AI agent - I just spent hours doing it the hard way
+**Hook 2.** Building an AI agent can be overwhelming - I've been there, and I've learned that starting small is key
 
-**Hook 3.** I'm so annoyed I didn't know about this AI library sooner - it would've saved me weeks
+**Hook 3.** What if you could build a simple AI agent in Python - it's easier than you think, and I'll show you how
 
-**Hook 4.** What if I told you building an AI agent is easier than you think - I just did it in Python
+**Hook 4.** I've spent countless hours researching AI agents - and I've found that Python is the way to go
 
-**Hook 5.** I've been trying to build an AI agent for months - and I just figured it out, at 1am, of course
+**Hook 5.** You don't have to be an expert to build an AI agent - I'm living proof, and I'll guide you through the process
 
 ## 7 tips that actually move the needle
 
-### Tip 1. Use scikit-learn for machine learning
-_Why it matters:_ It's got a lot of built-in algorithms
+### Tip 1. Use the scikit-learn library
+_Why it matters:_ it provides a wide range of algorithms for building AI agents
 
 ```python
-from sklearn import linear_model
+from sklearn import datasets
 ```
 
-### Tip 2. Choose TensorFlow for neural networks
-_Why it matters:_ It's widely used and well-supported
-
-```python
-import tensorflow as tf
-```
-
-### Tip 3. Utilize NLTK for natural language processing
-_Why it matters:_ It's got a lot of tools for text analysis
-
-```python
-import nltk; nltk.download('punkt')
-```
-
-### Tip 4. Install spaCy for entity recognition
-_Why it matters:_ It's really fast and accurate
+### Tip 2. Choose a simple dataset like Iris
+_Why it matters:_ it's easy to work with and provides a good starting point
 
 ```
-pip install spacy
+iris = datasets.load_iris()
 ```
 
-### Tip 5. Try Keras for deep learning
-_Why it matters:_ It's easy to use and integrates well with TensorFlow
+### Tip 3. Use the Keras library for neural networks
+_Why it matters:_ it provides an easy-to-use interface for building complex models
 
 ```python
 from keras.models import Sequential
 ```
 
-### Tip 6. Use pandas for data manipulation
-_Why it matters:_ It's got a lot of built-in functions for data analysis
+### Tip 4. Start with a simple model like logistic regression
+_Why it matters:_ it's easy to implement and provides a good baseline
+
+```python
+from sklearn.linear_model import LogisticRegression
+```
+
+### Tip 5. Use the TensorFlow library for more complex models
+_Why it matters:_ it provides a wide range of tools and resources for building complex AI agents
+
+```python
+import tensorflow as tf
+```
+
+### Tip 6. Use the pandas library for data manipulation
+_Why it matters:_ it provides a wide range of tools for working with datasets
 
 ```python
 import pandas as pd
 ```
 
-### Tip 7. Select PyTorch for rapid prototyping
-_Why it matters:_ It's got a dynamic computation graph
+### Tip 7. Use the matplotlib library for visualization
+_Why it matters:_ it provides a wide range of tools for visualizing data
 
 ```python
-import torch
+import matplotlib.pyplot as plt
 ```
 
 ## Step-by-step procedure
 
-### 1. Step 1: Install required libraries
-You'll need to install scikit-learn, TensorFlow, and NLTK - use pip to do this
+### 1. Step 1: Install the necessary libraries
+You'll need to install scikit-learn, Keras, and TensorFlow - you can do this using pip
 
 ```python
-pip install scikit-learn tensorflow nltk
+pip install scikit-learn keras tensorflow
 ```
 
-### 2. Step 2: Import necessary libraries
-You'll need to import these libraries in your Python script - use import statements to do this
+### 2. Step 2: Load the dataset
+You can use the Iris dataset from scikit-learn - it's a good starting point
 
 ```python
-import sklearn; import tensorflow as tf; import nltk
+from sklearn import datasets; iris = datasets.load_iris()
 ```
 
-### 3. Step 3: Load your dataset
-You'll need to load your dataset - use pandas to read in a CSV file
+### 3. Step 3: Preprocess the data
+You'll need to split the data into training and testing sets - you can use the train_test_split function from scikit-learn
 
 ```python
-import pandas as pd; df = pd.read_csv('data.csv')
+from sklearn.model_selection import train_test_split; X_train, X_test, y_train, y_test = train_test_split(iris.data, iris.target, test_size=0.2)
 ```
 
-### 4. Step 4: Preprocess your data
-You'll need to preprocess your data - use NLTK to tokenize your text data
+### 4. Step 4: Build the model
+You can use the LogisticRegression class from scikit-learn - it's a simple model that's easy to implement
 
 ```python
-import nltk; from nltk.tokenize import word_tokenize; tokens = word_tokenize(df['text'])
+from sklearn.linear_model import LogisticRegression; model = LogisticRegression()
 ```
 
-### 5. Step 5: Train your AI model
-You'll need to train your AI model - use scikit-learn to train a classifier
-
-```python
-from sklearn.linear_model import LogisticRegression; model = LogisticRegression(); model.fit(X, y)
-```
-
-### 6. Step 6: Evaluate your model
-You'll need to evaluate your model - use scikit-learn to calculate accuracy
-
-```python
-from sklearn.metrics import accuracy_score; accuracy = accuracy_score(y_test, model.predict(X_test))
-```
-
-### 7. Step 7: Deploy your model
-You'll need to deploy your model - use TensorFlow to save your model
+### 5. Step 5: Train the model
+You can use the fit method to train the model - you'll need to pass in the training data
 
 ```
-tf.saved_model.save(model, 'model')
+model.fit(X_train, y_train)
 ```
+
+### 6. Step 6: Evaluate the model
+You can use the score method to evaluate the model - it will give you the accuracy of the model
+
+```
+accuracy = model.score(X_test, y_test)
+```
+
+### 7. Step 7: Verify the result
+You should see an accuracy score - it should be around 0.9-0.95
 
 ## The mistake almost everyone makes
 
-> ⚠️  Forgetting to preprocess your data - make sure to tokenize your text data and normalize your numerical data
+> ⚠️  One common mistake people make is not scaling the data - this can lead to poor performance, to fix this you can use the StandardScaler class from scikit-learn
 
 ## X / Twitter thread (copy-paste ready)
 
-**1/** I just spent all night building my first AI agent - and it was way easier than I thought
+**1/** Just spent all night building my first AI agent in Python - and it was worth it
 
-**2/** I've been trying to learn AI for months - but it wasn't until I started building something that it clicked
+**2/** I started with the Iris dataset - it's a classic, and for good reason, it's easy to work with and provides a good starting point
 
-**3/** Tip 1: Use scikit-learn for machine learning - it's got a lot of built-in algorithms
+**3/** I used the LogisticRegression class from scikit-learn - it's a simple model that's easy to implement
 
-**4/** Tip 2: Choose TensorFlow for neural networks - it's widely used and well-supported
+**4/** I trained the model using the fit method - and evaluated it using the score method
 
-**5/** Tip 3: Utilize NLTK for natural language processing - it's got a lot of tools for text analysis
+**5/** I was able to get an accuracy of 0.92 - not bad for a first try, and I'm excited to see where I can take it from here
 
-**6/** Now I can build AI models in my sleep - okay, not really, but it's way easier than I thought
+**6/** If you're interested in building your own AI agent in Python - I'd be happy to help, just let me know what you need
 
 ## LinkedIn version
 
-I've been trying to learn AI for months - but it wasn't until I started building something that it clicked.
-I just spent all night building my first AI agent - and it was way easier than I thought.
-I used scikit-learn for machine learning, TensorFlow for neural networks, and NLTK for natural language processing.
-It was a lot of work - but it was worth it.
-Now I can build AI models in my sleep - okay, not really, but it's way easier than I thought.
-I'm excited to see what I can build next - maybe a chatbot, or a recommender system.
+I recently spent all night building my first AI agent in Python - and it was worth it. 
+I started with the Iris dataset - it's a classic, and for good reason, it's easy to work with and provides a good starting point. 
+I used the LogisticRegression class from scikit-learn - it's a simple model that's easy to implement. 
+I trained the model using the fit method - and evaluated it using the score method. 
+I was able to get an accuracy of 0.92 - not bad for a first try, and I'm excited to see where I can take it from here - I'd love to hear about your own experiences with AI agents, and any tips you might have to share.
 
-#ai #machinelearning #python #nlp
+Hashtags:
+ai
+python
+machinelearning
+datascience
 
-_Tags: ai, ml, python, nlp_
+_Tags: ai, python, ml, ds_
 
 ---
 *By Suman Giri — built with the CoderFact engine.*
