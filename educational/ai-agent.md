@@ -1,65 +1,65 @@
 # AI Agent
 
-_Build your first AI agent in Python_
+_Build one in Python_
 
 ## Scroll-stopping hooks
 
-**Hook 1.** I was stuck on building my first AI agent till 1am - it was a real headache, but I figured it out and I'm passing on what I learned to you
+**Hook 1.** I was stuck on building my first AI agent till 1am - it was a real pain, but I figured it out and I'm writing about it now
 
-**Hook 2.** Building an AI agent can be overwhelming - I've been there, and I've learned that starting small is key
+**Hook 2.** You're probably like me - tired of tutorials that don't work, so I'll show you what actually does
 
-**Hook 3.** What if you could build a simple AI agent in Python - it's easier than you think, and I'll show you how
+**Hook 3.** I've built a bunch of tools for CoderFact, but this one was tricky - here's how I did it
 
-**Hook 4.** I've spent countless hours researching AI agents - and I've found that Python is the way to go
+**Hook 4.** It turns out building an AI agent isn't that hard - you just need to know where to start
 
-**Hook 5.** You don't have to be an expert to build an AI agent - I'm living proof, and I'll guide you through the process
+**Hook 5.** I'm still annoyed it took me so long to get this working, but hopefully this will save you some time
 
 ## 7 tips that actually move the needle
 
 ### Tip 1. Use the scikit-learn library
-_Why it matters:_ it provides a wide range of algorithms for building AI agents
+_Why it matters:_ it's easy to use and has a lot of built-in functionality
 
 ```python
-from sklearn import datasets
+from sklearn import svm
 ```
 
-### Tip 2. Choose a simple dataset like Iris
-_Why it matters:_ it's easy to work with and provides a good starting point
-
-```
-iris = datasets.load_iris()
-```
-
-### Tip 3. Use the Keras library for neural networks
-_Why it matters:_ it provides an easy-to-use interface for building complex models
+### Tip 2. Choose a good dataset
+_Why it matters:_ your AI agent is only as good as the data it's trained on
 
 ```python
-from keras.models import Sequential
+from sklearn.datasets import load_iris
 ```
 
-### Tip 4. Start with a simple model like logistic regression
-_Why it matters:_ it's easy to implement and provides a good baseline
-
-```python
-from sklearn.linear_model import LogisticRegression
-```
-
-### Tip 5. Use the TensorFlow library for more complex models
-_Why it matters:_ it provides a wide range of tools and resources for building complex AI agents
+### Tip 3. Use the TensorFlow library
+_Why it matters:_ it's a popular choice for building AI models
 
 ```python
 import tensorflow as tf
 ```
 
-### Tip 6. Use the pandas library for data manipulation
-_Why it matters:_ it provides a wide range of tools for working with datasets
+### Tip 4. Try the Keras API
+_Why it matters:_ it's a high-level API that's easy to use
+
+```python
+from tensorflow import keras
+```
+
+### Tip 5. Use the pandas library
+_Why it matters:_ it's great for data manipulation
 
 ```python
 import pandas as pd
 ```
 
-### Tip 7. Use the matplotlib library for visualization
-_Why it matters:_ it provides a wide range of tools for visualizing data
+### Tip 6. Use the NumPy library
+_Why it matters:_ it's great for numerical computations
+
+```python
+import numpy as np
+```
+
+### Tip 7. Use the Matplotlib library
+_Why it matters:_ it's great for visualizing data
 
 ```python
 import matplotlib.pyplot as plt
@@ -68,83 +68,84 @@ import matplotlib.pyplot as plt
 ## Step-by-step procedure
 
 ### 1. Step 1: Install the necessary libraries
-You'll need to install scikit-learn, Keras, and TensorFlow - you can do this using pip
+You'll need to install scikit-learn, TensorFlow, and Keras - you can do this with pip
 
 ```python
-pip install scikit-learn keras tensorflow
+pip install scikit-learn tensorflow keras
 ```
 
-### 2. Step 2: Load the dataset
-You can use the Iris dataset from scikit-learn - it's a good starting point
+### 2. Step 2: Load your dataset
+You can use the load_iris function from scikit-learn to load a sample dataset
 
 ```python
-from sklearn import datasets; iris = datasets.load_iris()
+from sklearn.datasets import load_iris; iris = load_iris()
 ```
 
-### 3. Step 3: Preprocess the data
-You'll need to split the data into training and testing sets - you can use the train_test_split function from scikit-learn
+### 3. Step 3: Preprocess your data
+You'll need to split your data into training and testing sets - you can use the train_test_split function from scikit-learn
 
 ```python
 from sklearn.model_selection import train_test_split; X_train, X_test, y_train, y_test = train_test_split(iris.data, iris.target, test_size=0.2)
 ```
 
-### 4. Step 4: Build the model
-You can use the LogisticRegression class from scikit-learn - it's a simple model that's easy to implement
+### 4. Step 4: Train your model
+You can use the SVC function from scikit-learn to train a support vector machine
 
 ```python
-from sklearn.linear_model import LogisticRegression; model = LogisticRegression()
+from sklearn import svm; clf = svm.SVC(); clf.fit(X_train, y_train)
 ```
 
-### 5. Step 5: Train the model
-You can use the fit method to train the model - you'll need to pass in the training data
+### 5. Step 5: Test your model
+You can use the predict function to test your model on the testing set
 
-```
-model.fit(X_train, y_train)
-```
-
-### 6. Step 6: Evaluate the model
-You can use the score method to evaluate the model - it will give you the accuracy of the model
-
-```
-accuracy = model.score(X_test, y_test)
+```python
+y_pred = clf.predict(X_test); print(y_pred)
 ```
 
-### 7. Step 7: Verify the result
-You should see an accuracy score - it should be around 0.9-0.95
+### 6. Step 6: Evaluate your model
+You can use the accuracy_score function from scikit-learn to evaluate the accuracy of your model
+
+```python
+from sklearn.metrics import accuracy_score; accuracy = accuracy_score(y_test, y_pred); print(accuracy)
+```
+
+### 7. Step 7: Visualize your results
+You can use the matplotlib library to visualize your results
+
+```python
+import matplotlib.pyplot as plt; plt.scatter(X_test[:, 0], X_test[:, 1], c=y_pred); plt.show()
+```
 
 ## The mistake almost everyone makes
 
-> ⚠️  One common mistake people make is not scaling the data - this can lead to poor performance, to fix this you can use the StandardScaler class from scikit-learn
+> ⚠️  One common mistake people make is not scaling their data before training their model - you can use the StandardScaler from scikit-learn to fix this
 
 ## X / Twitter thread (copy-paste ready)
 
-**1/** Just spent all night building my first AI agent in Python - and it was worth it
+**1/** I finally figured out how to build my first AI agent in Python - it wasn't easy, but it was worth it
 
-**2/** I started with the Iris dataset - it's a classic, and for good reason, it's easy to work with and provides a good starting point
+**2/** I was stuck for hours, but then I realized I just needed to use the right libraries - scikit-learn and TensorFlow are a great combo
 
-**3/** I used the LogisticRegression class from scikit-learn - it's a simple model that's easy to implement
+**3/** Tip 1: use the scikit-learn library to load a sample dataset - it's easy and it works
 
-**4/** I trained the model using the fit method - and evaluated it using the score method
+**4/** Tip 2: use the Keras API to build your model - it's high-level and easy to use
 
-**5/** I was able to get an accuracy of 0.92 - not bad for a first try, and I'm excited to see where I can take it from here
+**5/** Tip 3: use the Matplotlib library to visualize your results - it's great for making sense of your data
 
-**6/** If you're interested in building your own AI agent in Python - I'd be happy to help, just let me know what you need
+**6/** Now you can build your own AI agent in Python - it's not that hard, I promise
 
 ## LinkedIn version
 
-I recently spent all night building my first AI agent in Python - and it was worth it. 
-I started with the Iris dataset - it's a classic, and for good reason, it's easy to work with and provides a good starting point. 
-I used the LogisticRegression class from scikit-learn - it's a simple model that's easy to implement. 
-I trained the model using the fit method - and evaluated it using the score method. 
-I was able to get an accuracy of 0.92 - not bad for a first try, and I'm excited to see where I can take it from here - I'd love to hear about your own experiences with AI agents, and any tips you might have to share.
+I've been working on building my first AI agent in Python, and I have to say - it's been a challenge.
+But I finally figured it out, and I'm excited to share what I learned with you.
+The first step is to install the necessary libraries - you'll need scikit-learn, TensorFlow, and Keras.
+Next, you'll need to load your dataset - you can use the load_iris function from scikit-learn to load a sample dataset.
+Then, you'll need to preprocess your data - you can use the train_test_split function from scikit-learn to split your data into training and testing sets.
+After that, you can train your model - you can use the SVC function from scikit-learn to train a support vector machine.
+Finally, you can test and evaluate your model - you can use the predict function to test your model on the testing set, and the accuracy_score function to evaluate the accuracy of your model.
+#ai #python #machinelearning #datascience
 
-Hashtags:
-ai
-python
-machinelearning
-datascience
-
-_Tags: ai, python, ml, ds_
+_Tags: ai, python, machinelearning, datascience_
 
 ---
 *By Suman Giri — built with the CoderFact engine.*
