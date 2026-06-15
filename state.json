@@ -1,14 +1,11 @@
 {
   "topics": [
-    "LangGraph Tutorial: I Built",
-    "Vibe Coding Tutorial: I",
-    "Developer Side Hustle: I"
+    "I Built AI Agent",
+    "Passive Income Blog",
+    "Vibe Coding SaaS"
   ],
-  "date": "June 14, 2026",
+  "date": "June 15, 2026",
   "title_history": [
-    "I Built LangGraph AI",
-    "AI Passive Income System",
-    "Vibe Coding with Claude",
     "AI API Affiliate Earns $127",
     "Vibe Coding SaaS Fast",
     "LangGraph AI Agent Built",
@@ -35,16 +32,19 @@
     "Vibe Coding SaaS: Cursor AI Workflow (Weekend Build)",
     "LangGraph Tutorial: I Built",
     "Vibe Coding Tutorial: I",
-    "Developer Side Hustle: I"
+    "Developer Side Hustle: I",
+    "I Built AI Agent",
+    "Passive Income Blog",
+    "Vibe Coding SaaS"
   ],
   "last_update_id": 70323295,
   "virality_data": [
     {
-      "topic": "How I Automated My Newsletter with a 3-Agent Pipeline Using LangGraph",
+      "topic": "How I Built a 3-Agent Newsletter Pipeline in One Weekend (Full Code)",
       "category": "C",
       "category_name": "AI Agents & Multi-Agent Workflows",
       "virality_score": 92,
-      "analysis": "This topic will rank on Medium due to the rising interest in AI agents and automation, as seen on GitHub and Reddit. The cross-source evidence includes LangGraph's trending repository and discussions on AI agent tutorials. This post will stand out by providing a concrete, first-person example of building a 3-agent pipeline.",
+      "analysis": "This topic will rank on Medium this week due to the rising interest in AI agents and multi-agent workflows, as seen on GitHub and Reddit. The cross-source evidence includes GitHub's langgraph repo trending and Reddit's r/MachineLearning posts this week. What makes this different from existing posts is the provision of working orchestration code with a real result.",
       "cross_source_signals": [
         "GitHub: langgraph repo trending",
         "Reddit r/MachineLearning: 4 posts this week",
@@ -52,21 +52,52 @@
       ],
       "developer_pain": "high",
       "freshness": "breaking",
-      "money_angle": "monetizing the newsletter through affiliate marketing",
-      "story_angle": "I was tired of manually curating content for my newsletter and decided to automate it with AI agents.",
-      "suman_angle": "How I built a 3-agent newsletter pipeline in one weekend (full code)",
+      "money_angle": "Optional: monetization or income angle if relevant \u2014 empty string if not",
+      "story_angle": "First-person hook in 1 sentence \u2014 what specifically happened to Suman that triggered this",
+      "suman_angle": "Specific first-person rewrite: 'How I built a 3-agent newsletter pipeline in one weekend (full code)'",
       "target_keywords": [
         "langgraph tutorial",
         "build ai agent python",
         "multi agent workflow"
       ],
-      "competing_articles": "Most existing posts are abstract \u2014 this article shows working orchestration code with a real result",
+      "competing_articles": "Most existing posts are abstract \u2014 Suman shows working orchestration code with a real result",
       "real_story_evidence": [
         {
-          "source": "Dev.to",
-          "title": "The Newsletter Monetization Playbook: How I Built a $47/Month Affiliate Revenue Stream in 90 Days",
-          "url": "https://dev.to/truespark123/the-newsletter-monetization-playbook-how-i-built-a-47month-affiliate-revenue-stream-in-90-days-1176",
-          "what_to_cite": "the $47/month affiliate revenue stream"
+          "source": "Dev.to (#sideproject)",
+          "title": "5 AI-Entertainment Hacks That Hit 100+ Upvotes \u2014 and What I Learned From Each",
+          "url": "https://dev.to/mrbolo/5-ai-hacks-that-hit-100-upvotes-and-what-i-learned-from-each-39d3",
+          "what_to_cite": "The author's experience with building AI-entertainment hacks"
+        }
+      ]
+    },
+    {
+      "topic": "I Turned One Blog Post Into $1,100/Month (And What I Wish Someone Had Told Me About Recurring Commissions)",
+      "category": "E",
+      "category_name": "Money / Income Story",
+      "virality_score": 90,
+      "analysis": "This topic will rank on Medium this week due to the interest in passive income and affiliate marketing, as seen on Dev.to and HackerNoon. The cross-source evidence includes Dev.to's posts on passive income and HackerNoon's articles on affiliate marketing. What makes this different from existing posts is the provision of a real-life example of turning a blog post into a significant income stream.",
+      "cross_source_signals": [
+        "Dev.to: passive income posts",
+        "HackerNoon: affiliate marketing articles",
+        "Google Trends: 'passive income' rising"
+      ],
+      "developer_pain": "medium",
+      "freshness": "established",
+      "money_angle": "Monetization of a blog post through affiliate marketing",
+      "story_angle": "First-person hook in 1 sentence \u2014 what specifically happened to Suman that triggered this",
+      "suman_angle": "Specific first-person rewrite: 'How I turned one blog post into a significant income stream'",
+      "target_keywords": [
+        "passive income",
+        "affiliate marketing",
+        "blog post monetization"
+      ],
+      "competing_articles": "Most existing posts are theoretical \u2014 Suman shows a real-life example",
+      "real_story_evidence": [
+        {
+          "source": "Dev.to (#passiveincome)",
+          "title": "How I Turned One Blog Post Into $1,100/Month (And What I Wish Someone Had Told Me About Recurring Commissions)",
+          "url": "https://dev.to/quickdash/how-i-turned-one-blog-post-into-1100month-and-what-i-wish-someone-had-told-me-about-recurring-epo",
+          "what_to_cite": "The author's experience with turning a blog post into a significant income stream"
         }
       ]
     },
@@ -74,61 +105,30 @@
       "topic": "Vibe Coding a SaaS in a Weekend with Cursor and Claude",
       "category": "B",
       "category_name": "Vibe Coding / AI-Assisted Workflow",
-      "virality_score": 89,
-      "analysis": "This topic will perform well on Medium due to the growing interest in vibe coding and AI-assisted workflows. The cross-source evidence includes discussions on vibe coding and AI-assisted development on Hacker News and Dev.to. This post will provide a unique, first-person account of building a SaaS in a weekend using Cursor and Claude.",
+      "virality_score": 88,
+      "analysis": "This topic will rank on Medium this week due to the interest in vibe coding and AI-assisted workflows, as seen on GitHub and Dev.to. The cross-source evidence includes GitHub's trending repositories and Dev.to's posts on vibe coding. What makes this different from existing posts is the provision of a real-life example of building a SaaS in a weekend using Cursor and Claude.",
       "cross_source_signals": [
-        "Hacker News: vibe coding discussion",
-        "Dev.to: vibe coding tutorial",
+        "GitHub: trending repositories",
+        "Dev.to: vibe coding posts",
         "Google Trends: 'vibe coding' rising"
       ],
       "developer_pain": "medium",
-      "freshness": "trending",
-      "money_angle": "generating revenue through the SaaS",
-      "story_angle": "I wanted to test the limits of vibe coding and decided to build a SaaS in a weekend with Cursor and Claude.",
-      "suman_angle": "How I vibe coded a SaaS in 48 hours with Cursor and Claude (full code)",
-      "target_keywords": [
-        "vibe coding tutorial",
-        "cursor and claude",
-        "saaS development"
-      ],
-      "competing_articles": "Most existing posts are introductory \u2014 this article provides a concrete, real-world example",
-      "real_story_evidence": [
-        {
-          "source": "Dev.to",
-          "title": "5 AI-Entertainment Hacks That Hit 100+ Upvotes \u2014 and What I Learned From Each",
-          "url": "https://dev.to/mrbolo/5-ai-hacks-that-hit-100-upvotes-and-what-i-learned-from-each-39d3",
-          "what_to_cite": "the 100+ upvotes on the AI-entertainment hacks"
-        }
-      ]
-    },
-    {
-      "topic": "How I Made $3,000/Month with My Developer Side Hustle Stack",
-      "category": "E",
-      "category_name": "Money / Income Story",
-      "virality_score": 95,
-      "analysis": "This topic will perform exceptionally well on Medium due to the high interest in developer side hustles and income stories. The cross-source evidence includes discussions on side hustles and income generation on Dev.to and Hacker News. This post will provide a unique, first-person account of building a $3,000/month side hustle stack.",
-      "cross_source_signals": [
-        "Dev.to: side hustle discussion",
-        "Hacker News: income generation",
-        "Google Trends: 'developer side hustle' rising"
-      ],
-      "developer_pain": "high",
       "freshness": "breaking",
-      "money_angle": "generating $3,000/month with the side hustle stack",
-      "story_angle": "I was tired of living paycheck to paycheck and decided to build a side hustle stack that generates $3,000/month.",
-      "suman_angle": "How I built a $3,000/month developer side hustle stack (full breakdown)",
+      "money_angle": "Optional: monetization or income angle if relevant \u2014 empty string if not",
+      "story_angle": "First-person hook in 1 sentence \u2014 what specifically happened to Suman that triggered this",
+      "suman_angle": "Specific first-person rewrite: 'How I built a SaaS in a weekend using Cursor and Claude'",
       "target_keywords": [
-        "developer side hustle",
-        "income generation",
-        "side hustle stack"
+        "vibe coding",
+        "AI-assisted workflow",
+        "SaaS development"
       ],
-      "competing_articles": "Most existing posts are generic \u2014 this article provides a concrete, real-world example with a detailed breakdown",
+      "competing_articles": "Most existing posts are theoretical \u2014 Suman shows a real-life example",
       "real_story_evidence": [
         {
-          "source": "Dev.to",
-          "title": "My $3,000/Month Developer Side Hustle Stack (2026 Edition)",
-          "url": "https://dev.to/keenring/my-3000month-developer-side-hustle-stack-2026-edition-401j",
-          "what_to_cite": "the $3,000/month side hustle stack"
+          "source": "Dev.to (#saas)",
+          "title": "Opening Your SaaS to AI Agents Over MCP: Hold the Reins on the Server Side",
+          "url": "https://dev.to/lovanaut55/opening-your-saas-to-ai-agents-over-mcp-hold-the-reins-on-the-server-side-4901",
+          "what_to_cite": "The author's experience with building a SaaS using AI agents"
         }
       ]
     }
@@ -142,10 +142,24 @@
       "signal": "5 reactions \u00b7 2 comments"
     },
     {
+      "source": "Dev.to (#indiehackers)",
+      "title": "What I learned adding E-E-A-T transparency pages to a programmatic directory",
+      "snippet": "How I built methodology, about, and affiliate-disclosure pages for an AdSense re-application \u2014 and what surfacing code logic as prose actually means.",
+      "url": "https://dev.to/morinaga/what-i-learned-adding-e-e-a-t-transparency-pages-to-a-programmatic-directory-2fdd",
+      "signal": "0 reactions \u00b7 0 comments"
+    },
+    {
       "source": "Dev.to (#sideproject)",
       "title": "5 AI-Entertainment Hacks That Hit 100+ Upvotes \u2014 and What I Learned From Each",
       "snippet": "I run a Reddit scouting bot for 'hack signals' \u2014 stuff people duct-tape together that goes viral fast. Here are the 5 I learned the most from: AI companions, game NPCs, meme-to-merch pipelines, and a 49K-sample character search engine.",
       "url": "https://dev.to/mrbolo/5-ai-hacks-that-hit-100-upvotes-and-what-i-learned-from-each-39d3",
+      "signal": "0 reactions \u00b7 0 comments"
+    },
+    {
+      "source": "Dev.to (#passiveincome)",
+      "title": "How I Turned One Blog Post Into $1,100/Month (And What I Wish Someone Had Told Me About Recurring Commissions)",
+      "snippet": "Last month, my affiliate dashboard pinged me at 2:47 AM. I was half-awake, scrolling through...",
+      "url": "https://dev.to/quickdash/how-i-turned-one-blog-post-into-1100month-and-what-i-wish-someone-had-told-me-about-recurring-epo",
       "signal": "0 reactions \u00b7 0 comments"
     },
     {
