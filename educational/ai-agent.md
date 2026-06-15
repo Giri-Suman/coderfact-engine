@@ -1,151 +1,161 @@
 # AI Agent
 
-_Build one in Python_
+_Build your first AI agent in Python_
 
 ## Scroll-stopping hooks
 
-**Hook 1.** I was stuck on building my first AI agent till 1am - it was a real pain, but I figured it out and I'm writing about it now
+**Hook 1.** I was stuck at 1am trying to figure out how to build an AI agent in Python - it wasn't easy, but I got it working
 
-**Hook 2.** You're probably like me - tired of tutorials that don't work, so I'll show you what actually does
+**Hook 2.** So you wanna build an AI agent - I did too, and I learned a lot along the way
 
-**Hook 3.** I've built a bunch of tools for CoderFact, but this one was tricky - here's how I did it
+**Hook 3.** Building an AI agent in Python sounds like a daunting task - it's not as hard as you think
 
-**Hook 4.** It turns out building an AI agent isn't that hard - you just need to know where to start
+**Hook 4.** I spent hours searching for a simple guide to building an AI agent in Python - now I've written one
 
-**Hook 5.** I'm still annoyed it took me so long to get this working, but hopefully this will save you some time
+**Hook 5.** What if you could build an AI agent that learns from its environment - it's possible with Python
 
 ## 7 tips that actually move the needle
 
-### Tip 1. Use the scikit-learn library
-_Why it matters:_ it's easy to use and has a lot of built-in functionality
+### Tip 1. Use scikit-learn for machine learning tasks
+_Why it matters:_ It's a powerful library with many tools
 
 ```python
-from sklearn import svm
+from sklearn import neural_network
 ```
 
-### Tip 2. Choose a good dataset
-_Why it matters:_ your AI agent is only as good as the data it's trained on
+### Tip 2. Implement a Q-learning algorithm
+_Why it matters:_ It's a popular method for reinforcement learning
+
+```
+q_values = {}
+```
+
+### Tip 3. Utilize the Keras library for building neural networks
+_Why it matters:_ It's a high-level library with easy-to-use APIs
 
 ```python
-from sklearn.datasets import load_iris
+from keras.models import Sequential
 ```
 
-### Tip 3. Use the TensorFlow library
-_Why it matters:_ it's a popular choice for building AI models
+### Tip 4. Use the Gym library for simulation environments
+_Why it matters:_ It provides a wide range of environments for testing
+
+```python
+import gym
+```
+
+### Tip 5. Optimize your model with TensorFlow
+_Why it matters:_ It's a powerful library for machine learning optimization
 
 ```python
 import tensorflow as tf
 ```
 
-### Tip 4. Try the Keras API
-_Why it matters:_ it's a high-level API that's easy to use
-
-```python
-from tensorflow import keras
-```
-
-### Tip 5. Use the pandas library
-_Why it matters:_ it's great for data manipulation
-
-```python
-import pandas as pd
-```
-
-### Tip 6. Use the NumPy library
-_Why it matters:_ it's great for numerical computations
-
-```python
-import numpy as np
-```
-
-### Tip 7. Use the Matplotlib library
-_Why it matters:_ it's great for visualizing data
+### Tip 6. Visualize your results with Matplotlib
+_Why it matters:_ It's a popular library for data visualization
 
 ```python
 import matplotlib.pyplot as plt
 ```
 
+### Tip 7. Debug your code with PDB
+_Why it matters:_ It's a built-in Python debugger
+
+```python
+import pdb; pdb.set_trace()
+```
+
 ## Step-by-step procedure
 
-### 1. Step 1: Install the necessary libraries
-You'll need to install scikit-learn, TensorFlow, and Keras - you can do this with pip
+### 1. Step 1: Install required libraries
+You'll need to install scikit-learn, Keras, and other libraries - use pip to install them
 
 ```python
-pip install scikit-learn tensorflow keras
+pip install scikit-learn keras
 ```
 
-### 2. Step 2: Load your dataset
-You can use the load_iris function from scikit-learn to load a sample dataset
+### 2. Step 2: Set up your environment
+Create a new Python file and import the required libraries - make sure you have the correct versions
 
 ```python
-from sklearn.datasets import load_iris; iris = load_iris()
+import numpy as np
 ```
 
-### 3. Step 3: Preprocess your data
-You'll need to split your data into training and testing sets - you can use the train_test_split function from scikit-learn
+### 3. Step 3: Define your Q-learning algorithm
+Implement the Q-learning algorithm using a dictionary to store Q-values
 
-```python
-from sklearn.model_selection import train_test_split; X_train, X_test, y_train, y_test = train_test_split(iris.data, iris.target, test_size=0.2)
+```
+q_values = {}
 ```
 
-### 4. Step 4: Train your model
-You can use the SVC function from scikit-learn to train a support vector machine
+### 4. Step 4: Build your neural network
+Use Keras to build a neural network that learns from the environment
 
-```python
-from sklearn import svm; clf = svm.SVC(); clf.fit(X_train, y_train)
+```
+model = Sequential()
 ```
 
-### 5. Step 5: Test your model
-You can use the predict function to test your model on the testing set
+### 5. Step 5: Test your AI agent
+Use the Gym library to simulate an environment and test your AI agent - verify that it's working correctly
 
-```python
-y_pred = clf.predict(X_test); print(y_pred)
+```
+env = gym.make('CartPole-v1')
 ```
 
-### 6. Step 6: Evaluate your model
-You can use the accuracy_score function from scikit-learn to evaluate the accuracy of your model
+### 6. Step 6: Optimize your model
+Use TensorFlow to optimize your model and improve its performance
 
-```python
-from sklearn.metrics import accuracy_score; accuracy = accuracy_score(y_test, y_pred); print(accuracy)
+```
+optimizer = tf.keras.optimizers.Adam()
 ```
 
 ### 7. Step 7: Visualize your results
-You can use the matplotlib library to visualize your results
+Use Matplotlib to visualize your results and see how your AI agent is performing
 
-```python
-import matplotlib.pyplot as plt; plt.scatter(X_test[:, 0], X_test[:, 1], c=y_pred); plt.show()
+```
+plt.plot(rewards)
 ```
 
 ## The mistake almost everyone makes
 
-> ⚠️  One common mistake people make is not scaling their data before training their model - you can use the StandardScaler from scikit-learn to fix this
+> ⚠️  A common mistake people make is not initializing the Q-values correctly - make sure to initialize them with a default value
 
 ## X / Twitter thread (copy-paste ready)
 
-**1/** I finally figured out how to build my first AI agent in Python - it wasn't easy, but it was worth it
+**1/** Just spent all night building my first AI agent in Python - and it was worth it
 
-**2/** I was stuck for hours, but then I realized I just needed to use the right libraries - scikit-learn and TensorFlow are a great combo
+**2/** I was trying to figure out how to use Q-learning and neural networks - it's not as hard as you think
 
-**3/** Tip 1: use the scikit-learn library to load a sample dataset - it's easy and it works
+**3/** Tip: use scikit-learn for machine learning tasks - it's a powerful library
 
-**4/** Tip 2: use the Keras API to build your model - it's high-level and easy to use
+**4/** Tip: implement a Q-learning algorithm using a dictionary to store Q-values - it's a popular method
 
-**5/** Tip 3: use the Matplotlib library to visualize your results - it's great for making sense of your data
+**5/** Tip: use Keras to build a neural network that learns from the environment - it's a high-level library
 
-**6/** Now you can build your own AI agent in Python - it's not that hard, I promise
+**6/** Now you can build your own AI agent in Python - and see the results for yourself
 
 ## LinkedIn version
 
-I've been working on building my first AI agent in Python, and I have to say - it's been a challenge.
-But I finally figured it out, and I'm excited to share what I learned with you.
-The first step is to install the necessary libraries - you'll need scikit-learn, TensorFlow, and Keras.
-Next, you'll need to load your dataset - you can use the load_iris function from scikit-learn to load a sample dataset.
-Then, you'll need to preprocess your data - you can use the train_test_split function from scikit-learn to split your data into training and testing sets.
-After that, you can train your model - you can use the SVC function from scikit-learn to train a support vector machine.
-Finally, you can test and evaluate your model - you can use the predict function to test your model on the testing set, and the accuracy_score function to evaluate the accuracy of your model.
-#ai #python #machinelearning #datascience
+I'll never forget the night I spent trying to build my first AI agent in Python. 
+It was 1am and I was stuck - but I didn't give up. 
+I kept searching for a simple guide, but everything I found was too complex. 
+So I decided to write my own guide - and now I'm sharing it with you. 
+Building an AI agent in Python is not as hard as you think - and I'm here to show you how.
 
-_Tags: ai, python, machinelearning, datascience_
+You'll need to install some libraries, set up your environment, and define your Q-learning algorithm. 
+Then you can build your neural network and test your AI agent. 
+It's a lot of work, but it's worth it - and I'm happy to share my knowledge with you.
+
+I've learned a lot from this experience - and I'm excited to share it with you. 
+So if you're interested in building your own AI agent in Python, let's get started. 
+We'll go through the steps together - and I'll show you how to avoid common mistakes.
+
+Let's build something amazing - and see the results for ourselves. 
+We can do this - and I'm here to help you every step of the way.
+
+#ai #python #machinelearning #artificialintelligence
+
+_Tags: ai, python, ml, agent_
 
 ---
 *By Suman Giri — built with the CoderFact engine.*
