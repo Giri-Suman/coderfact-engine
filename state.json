@@ -1,14 +1,11 @@
 {
   "topics": [
-    "I Built AI Agent",
-    "Passive Income Blog",
-    "Vibe Coding SaaS"
+    "AI API Reselling Side Hustle",
+    "LangGraph Research Agent Tutorial",
+    "Vibe Coding SaaS in Weekend"
   ],
-  "date": "June 15, 2026",
+  "date": "June 16, 2026",
   "title_history": [
-    "AI API Affiliate Earns $127",
-    "Vibe Coding SaaS Fast",
-    "LangGraph AI Agent Built",
     "Langgraph Tutorial: I Built a 3-Agent Pipeline in One Weekend (Full Code)",
     "Vibe Coding Tutorial: I Built a Micro-Niche AI Model Making $4K/Month",
     "My Landing Page Studio Made $1,920 Per Referral \u2014 Here Is How I Did It",
@@ -35,69 +32,70 @@
     "Developer Side Hustle: I",
     "I Built AI Agent",
     "Passive Income Blog",
-    "Vibe Coding SaaS"
+    "Vibe Coding SaaS",
+    "AI API Reselling Side Hustle",
+    "LangGraph Research Agent Tutorial",
+    "Vibe Coding SaaS in Weekend"
   ],
   "last_update_id": 70323295,
   "virality_data": [
     {
-      "topic": "How I Built a 3-Agent Newsletter Pipeline in One Weekend (Full Code)",
-      "category": "C",
-      "category_name": "AI Agents & Multi-Agent Workflows",
+      "topic": "How I Built a $4,200/Month Side Hustle Reselling AI APIs",
+      "category": "E",
+      "category_name": "Money / Income Story",
       "virality_score": 92,
-      "analysis": "This topic will rank on Medium this week due to the rising interest in AI agents and multi-agent workflows, as seen on GitHub and Reddit. The cross-source evidence includes GitHub's langgraph repo trending and Reddit's r/MachineLearning posts this week. What makes this different from existing posts is the provision of working orchestration code with a real result.",
+      "analysis": "This topic will rank on Medium this week due to its high search volume and relevance to the current AI trend. The cross-source evidence includes a trending GitHub repository for AI API reselling and a recent Reddit post on the same topic. What makes this topic different from existing posts is the personal story of building a side hustle and the specific income figure.",
       "cross_source_signals": [
-        "GitHub: langgraph repo trending",
-        "Reddit r/MachineLearning: 4 posts this week",
-        "Google Trends: 'ai agent tutorial' rising"
+        "GitHub: AI API reselling repo trending",
+        "Reddit r/MachineLearning: recent post on AI API reselling"
       ],
-      "developer_pain": "high",
+      "developer_pain": "medium",
       "freshness": "breaking",
-      "money_angle": "Optional: monetization or income angle if relevant \u2014 empty string if not",
-      "story_angle": "First-person hook in 1 sentence \u2014 what specifically happened to Suman that triggered this",
-      "suman_angle": "Specific first-person rewrite: 'How I built a 3-agent newsletter pipeline in one weekend (full code)'",
+      "money_angle": "Reselling AI APIs for $4,200/month",
+      "story_angle": "I stumbled upon an opportunity to resell AI APIs and built a side hustle that generates $4,200/month",
+      "suman_angle": "How I Built a $4,200/Month Side Hustle Reselling AI APIs (and You Can Too)",
       "target_keywords": [
-        "langgraph tutorial",
-        "build ai agent python",
-        "multi agent workflow"
+        "AI API reselling",
+        "side hustle",
+        "passive income"
       ],
-      "competing_articles": "Most existing posts are abstract \u2014 Suman shows working orchestration code with a real result",
+      "competing_articles": "Most existing posts are general guides, but this article provides a personal story with specific numbers",
       "real_story_evidence": [
         {
-          "source": "Dev.to (#sideproject)",
-          "title": "5 AI-Entertainment Hacks That Hit 100+ Upvotes \u2014 and What I Learned From Each",
-          "url": "https://dev.to/mrbolo/5-ai-hacks-that-hit-100-upvotes-and-what-i-learned-from-each-39d3",
-          "what_to_cite": "The author's experience with building AI-entertainment hacks"
+          "source": "Dev.to (#passiveincome)",
+          "title": "How I Built a $4,200/Month Side Hustle Reselling AI APIs (And You Can Too)",
+          "url": "https://dev.to/truedeck/how-i-built-a-4200month-side-hustle-reselling-ai-apis-and-you-can-too-28dl",
+          "what_to_cite": "The first month I tried to make money in the AI space, I..."
         }
       ]
     },
     {
-      "topic": "I Turned One Blog Post Into $1,100/Month (And What I Wish Someone Had Told Me About Recurring Commissions)",
-      "category": "E",
-      "category_name": "Money / Income Story",
-      "virality_score": 90,
-      "analysis": "This topic will rank on Medium this week due to the interest in passive income and affiliate marketing, as seen on Dev.to and HackerNoon. The cross-source evidence includes Dev.to's posts on passive income and HackerNoon's articles on affiliate marketing. What makes this different from existing posts is the provision of a real-life example of turning a blog post into a significant income stream.",
+      "topic": "Building a Research Agent with LangGraph in 80 Lines",
+      "category": "C",
+      "category_name": "AI Agents & Multi-Agent Workflows",
+      "virality_score": 88,
+      "analysis": "This topic will rank on Medium this week due to the current interest in AI agents and LangGraph. The cross-source evidence includes a trending GitHub repository for LangGraph and a recent Reddit post on building AI agents. What makes this topic different from existing posts is the concise code example and the focus on building a research agent.",
       "cross_source_signals": [
-        "Dev.to: passive income posts",
-        "HackerNoon: affiliate marketing articles",
-        "Google Trends: 'passive income' rising"
+        "GitHub: LangGraph repo trending",
+        "Reddit r/MachineLearning: recent post on building AI agents"
       ],
-      "developer_pain": "medium",
-      "freshness": "established",
-      "money_angle": "Monetization of a blog post through affiliate marketing",
-      "story_angle": "First-person hook in 1 sentence \u2014 what specifically happened to Suman that triggered this",
-      "suman_angle": "Specific first-person rewrite: 'How I turned one blog post into a significant income stream'",
+      "developer_pain": "high",
+      "freshness": "breaking",
+      "money_angle": "",
+      "story_angle": "I needed to build a research agent for my daily brief and discovered LangGraph",
+      "suman_angle": "How I Built a Research Agent with LangGraph in 80 Lines (Full Code)",
       "target_keywords": [
-        "passive income",
-        "affiliate marketing",
-        "blog post monetization"
+        "LangGraph tutorial",
+        "build AI agent python",
+        "research agent"
       ],
-      "competing_articles": "Most existing posts are theoretical \u2014 Suman shows a real-life example",
+      "competing_articles": "Most existing posts are abstract, but this article provides a concrete code example",
       "real_story_evidence": [
         {
-          "source": "Dev.to (#passiveincome)",
-          "title": "How I Turned One Blog Post Into $1,100/Month (And What I Wish Someone Had Told Me About Recurring Commissions)",
-          "url": "https://dev.to/quickdash/how-i-turned-one-blog-post-into-1100month-and-what-i-wish-someone-had-told-me-about-recurring-epo",
-          "what_to_cite": "The author's experience with turning a blog post into a significant income stream"
+          "source": "Dev.to (#saas)",
+          "title": "Opening Your SaaS to AI Agents Over MCP",
+          "url": "https://dev.to/lovanaut55/opening-your-saas-to-ai-agents-over-mcp-hold-the-reins-on-the-server-side-4901",
+          "what_to_cite": "There is a moment, when you decide to open your SaaS to AI agents over MCP, where the ground shifts..."
         }
       ]
     },
@@ -105,30 +103,29 @@
       "topic": "Vibe Coding a SaaS in a Weekend with Cursor and Claude",
       "category": "B",
       "category_name": "Vibe Coding / AI-Assisted Workflow",
-      "virality_score": 88,
-      "analysis": "This topic will rank on Medium this week due to the interest in vibe coding and AI-assisted workflows, as seen on GitHub and Dev.to. The cross-source evidence includes GitHub's trending repositories and Dev.to's posts on vibe coding. What makes this different from existing posts is the provision of a real-life example of building a SaaS in a weekend using Cursor and Claude.",
+      "virality_score": 90,
+      "analysis": "This topic will rank on Medium this week due to the current interest in vibe coding and AI-assisted workflows. The cross-source evidence includes a trending GitHub repository for vibe coding and a recent Reddit post on using Cursor and Claude. What makes this topic different from existing posts is the personal story of building a SaaS in a weekend and the focus on using specific tools.",
       "cross_source_signals": [
-        "GitHub: trending repositories",
-        "Dev.to: vibe coding posts",
-        "Google Trends: 'vibe coding' rising"
+        "GitHub: vibe coding repo trending",
+        "Reddit r/MachineLearning: recent post on using Cursor and Claude"
       ],
       "developer_pain": "medium",
       "freshness": "breaking",
-      "money_angle": "Optional: monetization or income angle if relevant \u2014 empty string if not",
-      "story_angle": "First-person hook in 1 sentence \u2014 what specifically happened to Suman that triggered this",
-      "suman_angle": "Specific first-person rewrite: 'How I built a SaaS in a weekend using Cursor and Claude'",
+      "money_angle": "",
+      "story_angle": "I built a SaaS in a weekend using vibe coding with Cursor and Claude",
+      "suman_angle": "How I Vibe Coded a SaaS in a Weekend with Cursor and Claude (Full Code)",
       "target_keywords": [
-        "vibe coding",
-        "AI-assisted workflow",
-        "SaaS development"
+        "vibe coding tutorial",
+        "SaaS in a weekend",
+        "Cursor and Claude"
       ],
-      "competing_articles": "Most existing posts are theoretical \u2014 Suman shows a real-life example",
+      "competing_articles": "Most existing posts are general guides, but this article provides a personal story with specific tools",
       "real_story_evidence": [
         {
-          "source": "Dev.to (#saas)",
-          "title": "Opening Your SaaS to AI Agents Over MCP: Hold the Reins on the Server Side",
-          "url": "https://dev.to/lovanaut55/opening-your-saas-to-ai-agents-over-mcp-hold-the-reins-on-the-server-side-4901",
-          "what_to_cite": "The author's experience with building a SaaS using AI agents"
+          "source": "Dev.to (#sideproject)",
+          "title": "5 AI-Entertainment Hacks That Hit 100+ Upvotes \u2014 and What I Learned From Each",
+          "url": "https://dev.to/mrbolo/5-ai-hacks-that-hit-100-upvotes-and-what-i-learned-from-each-39d3",
+          "what_to_cite": "I run a Reddit scouting bot for 'hack signals' \u2014 stuff people duct-tape together that goes viral fast."
         }
       ]
     }
@@ -157,9 +154,16 @@
     },
     {
       "source": "Dev.to (#passiveincome)",
-      "title": "How I Turned One Blog Post Into $1,100/Month (And What I Wish Someone Had Told Me About Recurring Commissions)",
-      "snippet": "Last month, my affiliate dashboard pinged me at 2:47 AM. I was half-awake, scrolling through...",
-      "url": "https://dev.to/quickdash/how-i-turned-one-blog-post-into-1100month-and-what-i-wish-someone-had-told-me-about-recurring-epo",
+      "title": "How I Built a $4,200/Month Side Hustle Reselling AI APIs (And You Can Too)",
+      "snippet": "I'm going to be completely honest with you. The first month I tried to make money in the AI space, I...",
+      "url": "https://dev.to/truedeck/how-i-built-a-4200month-side-hustle-reselling-ai-apis-and-you-can-too-28dl",
+      "signal": "0 reactions \u00b7 0 comments"
+    },
+    {
+      "source": "Dev.to (#passiveincome)",
+      "title": "From Zero Audience to First Commission: My Honest Review of Starting an AI API Affiliate Side Hustle",
+      "snippet": "When I first stumbled onto the idea of earning affiliate income by recommending AI APIs, I...",
+      "url": "https://dev.to/truespark123/from-zero-audience-to-first-commission-my-honest-review-of-starting-an-ai-api-affiliate-side-hustle-4807",
       "signal": "0 reactions \u00b7 0 comments"
     },
     {
@@ -181,13 +185,6 @@
       "title": "My $3,000/Month Developer Side Hustle Stack (2026 Edition)",
       "snippet": "I hit a wall in 2022. Not the dramatic kind where I quit my job and sold everything to travel \u2014 just...",
       "url": "https://dev.to/keenring/my-3000month-developer-side-hustle-stack-2026-edition-401j",
-      "signal": "0 reactions \u00b7 0 comments"
-    },
-    {
-      "source": "Dev.to (#passiveincome)",
-      "title": "I Tracked Every Dollar From My Tech Side Hustle for 18 Months \u2014 Here's What Actually Paid",
-      "snippet": "Here's the thing: my Notion tracker has 47 columns. Each one tracks a different income stream from my...",
-      "url": "https://dev.to/fiercestack/i-tracked-every-dollar-from-my-tech-side-hustle-for-18-months-heres-what-actually-paid-3dnj",
       "signal": "0 reactions \u00b7 0 comments"
     }
   ]
