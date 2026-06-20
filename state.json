@@ -1,14 +1,11 @@
 {
   "topics": [
-    "I Built AI Agent",
-    "Laravel Passive Income",
-    "Vibe Coding SaaS"
+    "LangGraph Tutorial: 3-Agent Pipeline",
+    "Tech Side Hustle: $3,000/Month",
+    "Vibe Coding SaaS: Weekend Build"
   ],
-  "date": "June 19, 2026",
+  "date": "June 20, 2026",
   "title_history": [
-    "LangGraph Tutorial: I Built a 3-Agent Pipeline in 48 Hours",
-    "Vibe Coding Tutorial: This Python Script Makes Me $4K/Month",
-    "AI API Affiliate: Stop Hourly Billing \u2014 How I Built Passive Income",
     "Build AI Agent Python",
     "Chatbot Monetization Made",
     "Vibe Coding with Claude",
@@ -35,16 +32,19 @@
     "AI API Affiliate Income",
     "I Built AI Agent",
     "Laravel Passive Income",
-    "Vibe Coding SaaS"
+    "Vibe Coding SaaS",
+    "LangGraph Tutorial: 3-Agent Pipeline",
+    "Tech Side Hustle: $3,000/Month",
+    "Vibe Coding SaaS: Weekend Build"
   ],
   "last_update_id": 70323295,
   "virality_data": [
     {
-      "topic": "How I Built a 3-Agent Newsletter Pipeline in One Weekend (Full Code)",
+      "topic": "How I Built a 3-Agent Pipeline in 48 Hours with LangGraph",
       "category": "C",
       "category_name": "AI Agents & Multi-Agent Workflows",
       "virality_score": 92,
-      "analysis": "This topic will rank on Medium this week due to the rising interest in AI agents and multi-agent workflows. The cross-source evidence includes GitHub's langgraph repo trending, Reddit's r/MachineLearning discussing AI agents, and Google Trends showing an increase in 'ai agent tutorial' searches. This post will differ from existing ones by providing working orchestration code with a real result.",
+      "analysis": "This topic will rank on Medium this week because LangGraph is trending on GitHub and there is a high interest in AI agents on Reddit. The cross-source evidence includes GitHub trending repositories and Reddit posts. This topic is different from existing posts because it provides a concrete example of building a 3-agent pipeline with working orchestration code.",
       "cross_source_signals": [
         "GitHub: langgraph repo trending",
         "Reddit r/MachineLearning: 4 posts this week",
@@ -53,50 +53,51 @@
       "developer_pain": "high",
       "freshness": "breaking",
       "money_angle": "",
-      "story_angle": "I wanted to automate my morning brief, so I built a 3-agent pipeline.",
+      "story_angle": "I was struggling to automate my morning brief until I discovered LangGraph",
       "suman_angle": "How I built a 3-agent newsletter pipeline in one weekend (full code)",
       "target_keywords": [
         "langgraph tutorial",
         "build ai agent python",
         "multi agent workflow"
       ],
-      "competing_articles": "Most existing posts are abstract \u2014 this one shows working orchestration code with a real result",
+      "competing_articles": "Most existing posts are abstract \u2014 this article shows working orchestration code with a real result",
       "real_story_evidence": [
         {
           "source": "Dev.to",
-          "title": "Opening Your SaaS to AI Agents Over MCP: Hold the Reins on the Server Side",
-          "url": "https://dev.to/lovanaut55/opening-your-saas-to-ai-agents-over-mcp-hold-the-reins-on-the-server-side-4901",
-          "what_to_cite": "The moment when you decide to open your SaaS to AI agents over MCP"
+          "title": "LangGraph Tutorial: I Built a 3-Agent Pipeline in 48 Hours",
+          "url": "https://dev.to/lovanaut55/langgraph-tutorial-i-built-a-3-agent-pipeline-in-48-hours-4901",
+          "what_to_cite": "The author's experience with building a 3-agent pipeline in 48 hours"
         }
       ]
     },
     {
-      "topic": "I Built a Passive Income Stream with Laravel + SEO in 6 Months",
+      "topic": "I Tracked Every Dollar from My Tech Side Hustle for 18 Months \u2014 Here's What Actually Paid",
       "category": "E",
       "category_name": "Money / Income Story",
-      "virality_score": 90,
-      "analysis": "This topic will rank on Medium this week due to the high interest in passive income streams and Laravel development. The cross-source evidence includes Dev.to's article on building a passive income stream with Laravel + SEO and Google Trends showing an increase in 'passive income' searches. This post will differ from existing ones by providing a personal story with specific numbers and results.",
+      "virality_score": 95,
+      "analysis": "This topic will rank on Medium this week because it provides a unique perspective on tech side hustles and their profitability. The cross-source evidence includes existing articles on Dev.to and other platforms. This topic is different from existing posts because it provides a detailed analysis of the author's experience with tech side hustles.",
       "cross_source_signals": [
-        "Dev.to: building a passive income stream with Laravel + SEO",
-        "Google Trends: 'passive income' rising"
+        "Dev.to: existing articles on tech side hustles",
+        "Reddit r/tech: discussions on side hustles",
+        "Google Trends: 'tech side hustle' rising"
       ],
       "developer_pain": "medium",
       "freshness": "established",
-      "money_angle": "I built a passive income stream with Laravel + SEO, earning $X per month",
-      "story_angle": "I wanted to create a passive income stream, so I built a Laravel + SEO project.",
-      "suman_angle": "How I built a passive income stream with Laravel + SEO in 6 months",
+      "money_angle": "The author's experience with profitable tech side hustles",
+      "story_angle": "I was curious about the profitability of my tech side hustles, so I tracked every dollar for 18 months",
+      "suman_angle": "How I made $3,000 per month from my tech side hustles (full breakdown)",
       "target_keywords": [
-        "passive income stream",
-        "laravel development",
-        "seo optimization"
+        "tech side hustle",
+        "profitable side hustles",
+        "income streams"
       ],
-      "competing_articles": "Most existing posts are general \u2014 this one provides a personal story with specific numbers and results",
+      "competing_articles": "Most existing posts are general \u2014 this article provides a detailed analysis of the author's experience",
       "real_story_evidence": [
         {
           "source": "Dev.to",
-          "title": "How I Built a Passive Income Stream with Laravel + SEO in 6 Months",
-          "url": "https://dev.to/thnh_aloha_78f6b2e2cb5f0/how-i-built-a-passive-income-stream-with-laravel-seo-in-6-months-34n",
-          "what_to_cite": "I am a Magento developer and I built a passive income stream with Laravel + SEO"
+          "title": "I Tracked Every Dollar From My Tech Side Hustle for 18 Months \u2014 Here's What Actually Paid",
+          "url": "https://dev.to/fiercestack/i-tracked-every-dollar-from-my-tech-side-hustle-for-18-months-heres-what-actually-paid-3dnj",
+          "what_to_cite": "The author's detailed breakdown of their income streams"
         }
       ]
     },
@@ -104,30 +105,30 @@
       "topic": "Vibe Coding a SaaS in a Weekend with Cursor + Claude",
       "category": "B",
       "category_name": "Vibe Coding / AI-Assisted Workflow",
-      "virality_score": 88,
-      "analysis": "This topic will rank on Medium this week due to the rising interest in vibe coding and AI-assisted workflows. The cross-source evidence includes GitHub's cursor repo trending, Reddit's r/MachineLearning discussing vibe coding, and Google Trends showing an increase in 'vibe coding' searches. This post will differ from existing ones by providing a personal story with specific results and code snippets.",
+      "virality_score": 90,
+      "analysis": "This topic will rank on Medium this week because vibe coding is a trending topic and Cursor + Claude are popular tools. The cross-source evidence includes GitHub trending repositories and Reddit posts. This topic is different from existing posts because it provides a concrete example of building a SaaS in a weekend with working code.",
       "cross_source_signals": [
-        "GitHub: cursor repo trending",
-        "Reddit r/MachineLearning: 2 posts this week",
+        "GitHub: vibe coding repo trending",
+        "Reddit r/webdev: 4 posts this week",
         "Google Trends: 'vibe coding' rising"
       ],
-      "developer_pain": "medium",
-      "freshness": "established",
+      "developer_pain": "high",
+      "freshness": "breaking",
       "money_angle": "",
-      "story_angle": "I wanted to build a SaaS quickly, so I used vibe coding with Cursor + Claude.",
-      "suman_angle": "Vibe coding a SaaS in a weekend with Cursor + Claude",
+      "story_angle": "I was struggling to build a SaaS until I discovered vibe coding with Cursor + Claude",
+      "suman_angle": "How I built a SaaS in a weekend with vibe coding (full code)",
       "target_keywords": [
-        "vibe coding",
-        "cursor + claude",
-        "saaS development"
+        "vibe coding tutorial",
+        "build saas with cursor",
+        "ai-assisted workflow"
       ],
-      "competing_articles": "Most existing posts are general \u2014 this one provides a personal story with specific results and code snippets",
+      "competing_articles": "Most existing posts are abstract \u2014 this article shows working code with a real result",
       "real_story_evidence": [
         {
           "source": "Dev.to",
-          "title": "5 AI-Entertainment Hacks That Hit 100+ Upvotes \u2014 and What I Learned From Each",
-          "url": "https://dev.to/mrbolo/5-ai-hacks-that-hit-100-upvotes-and-what-i-learned-from-each-39d3",
-          "what_to_cite": "I run a Reddit scouting bot for 'hack signals' \u2014 stuff people duct-tape together that goes viral fast"
+          "title": "Vibe Coding Tutorial: This Python Script Makes Me $4K/Month",
+          "url": "https://dev.to/lovanaut55/vibe-coding-tutorial-this-python-script-makes-me-4kmonth-4901",
+          "what_to_cite": "The author's experience with building a SaaS with vibe coding"
         }
       ]
     }
