@@ -1,152 +1,148 @@
 # AI Agent
 
-_Build your first Python AI agent_
+_Build your first AI agent in Python_
 
 ## Scroll-stopping hooks
 
-**Hook 1.** I was up till 1am trying to figure out why my AI agent wouldn't train - it turned out I'd forgotten to preprocess my data. Now I know what to do next time
+**Hook 1.** I spent all night figuring out how to build an AI agent in Python - and I'm still a bit annoyed it took me so long
 
-**Hook 2.** You can build your first AI agent in Python - and it's not as hard as you think. I've done it, and I'm not exactly a machine learning expert
+**Hook 2.** I've been working on a project that involves building tools for CoderFact, and I realized I needed to create an AI agent to automate some tasks
 
-**Hook 3.** I spent hours trying to get my AI agent to work - and it was all because of one stupid mistake. Don't make the same mistake I did
+**Hook 3.** If you're like me, you've probably wondered how to get started with building AI agents in Python - it's not as hard as you think
 
-**Hook 4.** Building an AI agent in Python is a great way to learn about machine learning - and it's a lot of fun too. You get to see your agent learn and improve
+**Hook 4.** I was stuck on this one problem for hours, but then I stumbled upon a solution that made everything click
 
-**Hook 5.** My AI agent can now play tic-tac-toe - and it's actually pretty good. I'm excited to see what else I can teach it to do
+**Hook 5.** Building an AI agent in Python can be a daunting task, but it's definitely doable with the right tools and resources
 
 ## 7 tips that actually move the needle
 
-### Tip 1. Use scikit-learn for data preprocessing
-_Why it matters:_ it's a lot faster than doing it by hand
+### Tip 1. Use the scikit-learn library to simplify the machine learning process
+_Why it matters:_ It provides a wide range of algorithms for classification, regression, and clustering
 
 ```python
-from sklearn.preprocessing import StandardScaler
+from sklearn import svm
 ```
 
-### Tip 2. Choose the right algorithm with TensorFlow
-_Why it matters:_ it's got a lot of built-in tools for machine learning
+### Tip 2. Utilize the NLTK library for natural language processing tasks
+_Why it matters:_ It provides tools for text processing, tokenization, and sentiment analysis
+
+```python
+import nltk; nltk.download('vader_lexicon')
+```
+
+### Tip 3. Take advantage of the Keras library for building neural networks
+_Why it matters:_ It provides an easy-to-use interface for building and training neural networks
+
+```python
+from keras.models import Sequential
+```
+
+### Tip 4. Use the TensorFlow library as the backend for Keras
+_Why it matters:_ It provides a wide range of tools and resources for building and training neural networks
 
 ```python
 import tensorflow as tf
 ```
 
-### Tip 3. Use Keras for building neural networks
-_Why it matters:_ it's a lot easier to use than TensorFlow on its own
-
-```python
-from keras.models import Sequential
-```
-
-### Tip 4. Preprocess your data with Pandas
-_Why it matters:_ it's a lot faster than using Python's built-in data structures
+### Tip 5. Use the pandas library for data manipulation and analysis
+_Why it matters:_ It provides data structures and functions for efficiently handling structured data
 
 ```python
 import pandas as pd
 ```
 
-### Tip 5. Visualize your data with Matplotlib
-_Why it matters:_ it's a lot easier to understand what's going on
+### Tip 6. Use the Matplotlib library for visualizing data
+_Why it matters:_ It provides a wide range of tools and resources for creating high-quality 2D and 3D plots
 
 ```python
 import matplotlib.pyplot as plt
 ```
 
-### Tip 6. Use scikit-learn's GridSearchCV for hyperparameter tuning
-_Why it matters:_ it's a lot faster than trying all the combinations by hand
+### Tip 7. Use the numpy library for numerical computations
+_Why it matters:_ It provides support for large, multi-dimensional arrays and matrices
 
 ```python
-from sklearn.model_selection import GridSearchCV
-```
-
-### Tip 7. Test your agent with a simple game like tic-tac-toe
-_Why it matters:_ it's a lot easier to see what's going on
-
-```python
-print('You win!')
+import numpy as np
 ```
 
 ## Step-by-step procedure
 
 ### 1. Step 1: Install the necessary libraries
-You'll need to install scikit-learn, TensorFlow, and Keras - you can do this with pip. Make sure you've got the latest version of Python installed
+You'll need to install the scikit-learn, NLTK, Keras, TensorFlow, pandas, Matplotlib, and numpy libraries - you can do this using pip
 
 ```python
-pip install scikit-learn tensorflow keras
+pip install scikit-learn nltk keras tensorflow pandas matplotlib numpy
 ```
 
-### 2. Step 2: Import the libraries and load your data
-You'll need to import the libraries and load your data - you can use Pandas for this. Make sure your data is in a format that can be used by scikit-learn
+### 2. Step 2: Import the necessary libraries
+You'll need to import the libraries you just installed - this will make them available for use in your code
 
 ```python
-import pandas as pd
+import nltk; import pandas as pd; import numpy as np
 ```
 
-### 3. Step 3: Preprocess your data
-You'll need to preprocess your data - you can use scikit-learn's StandardScaler for this. Make sure you're scaling your data correctly
+### 3. Step 3: Load your data
+You'll need to load the data you want to use to train your AI agent - this could be a CSV file, a dataset from a database, or something else entirely
+
+```
+data = pd.read_csv('data.csv')
+```
+
+### 4. Step 4: Preprocess your data
+You'll need to preprocess your data to get it ready for training - this could involve tokenizing text, scaling numerical values, or something else
 
 ```python
-from sklearn.preprocessing import StandardScaler
+from sklearn.preprocessing import StandardScaler; scaler = StandardScaler(); scaled_data = scaler.fit_transform(data)
 ```
 
-### 4. Step 4: Choose and train your model
-You'll need to choose a model and train it - you can use Keras for this. Make sure you're using the right algorithm for your problem
+### 5. Step 5: Train your AI agent
+You'll need to train your AI agent using the preprocessed data - this could involve using a machine learning algorithm, a neural network, or something else
 
 ```python
-from keras.models import Sequential
+from sklearn.svm import SVC; clf = SVC(); clf.fit(scaled_data)
 ```
 
-### 5. Step 5: Test your agent
-You'll need to test your agent - you can use a simple game like tic-tac-toe for this. Make sure you're testing it correctly
+### 6. Step 6: Test your AI agent
+You'll need to test your AI agent to see how well it performs - this could involve using a separate test dataset, or evaluating its performance on a specific task
 
 ```python
-print('You win!')
+from sklearn.metrics import accuracy_score; predictions = clf.predict(test_data); print(accuracy_score(test_labels, predictions))
 ```
 
-### 6. Step 6: Visualize your results
-You'll need to visualize your results - you can use Matplotlib for this. Make sure you're visualizing the right data
-
-```python
-import matplotlib.pyplot as plt
-```
-
-### 7. Step 7: Refine your agent
-You'll need to refine your agent - you can use scikit-learn's GridSearchCV for this. Make sure you're refining it correctly
-
-```python
-from sklearn.model_selection import GridSearchCV
-```
+### 7. Step 7: Deploy your AI agent
+You'll need to deploy your AI agent in a production environment - this could involve creating a web application, a mobile app, or something else
 
 ## The mistake almost everyone makes
 
-> ⚠️  Forgetting to preprocess your data - this can cause your model to fail. To fix this, make sure you're using scikit-learn's StandardScaler to scale your data correctly
+> ⚠️  One common mistake people make when building AI agents is not properly preprocessing their data - this can lead to poor performance, or even cause the agent to fail entirely. To fix this, make sure to properly scale and normalize your data before training your agent
 
 ## X / Twitter thread (copy-paste ready)
 
-**1/** I just built my first AI agent in Python - and it was a lot easier than I thought. I'll show you how I did it
+**1/** I just spent all night building my first AI agent in Python - and it was way easier than I thought
 
-**2/** I started by installing the necessary libraries - scikit-learn, TensorFlow, and Keras. I used pip to install them
+**2/** I've been working on a project that involves building tools for CoderFact, and I realized I needed to create an AI agent to automate some tasks
 
-**3/** I used scikit-learn's StandardScaler to preprocess my data - this made a huge difference in my model's performance
+**3/** Tip 1: Use the scikit-learn library to simplify the machine learning process - it provides a wide range of algorithms for classification, regression, and clustering
 
-**4/** I chose a simple algorithm to start with - Keras' Sequential model. This made it easy to build and train my model
+**4/** Tip 2: Utilize the NLTK library for natural language processing tasks - it provides tools for text processing, tokenization, and sentiment analysis
 
-**5/** I tested my agent with a simple game - tic-tac-toe. This showed me that my agent was working correctly
+**5/** Tip 3: Take advantage of the Keras library for building neural networks - it provides an easy-to-use interface for building and training neural networks
 
-**6/** Now I'm refining my agent - using scikit-learn's GridSearchCV to tune my hyperparameters. This is making my model even better
+**6/** If you're interested in building your own AI agent in Python, I'd be happy to help - just send me a message and I'll do my best to guide you through the process
 
 ## LinkedIn version
 
-I just built my first AI agent in Python - and it was a lot easier than I thought. 
-I started by installing the necessary libraries - scikit-learn, TensorFlow, and Keras. 
-I used pip to install them - it was a lot faster than I expected. 
-I then used scikit-learn's StandardScaler to preprocess my data - this made a huge difference in my model's performance. 
-I chose a simple algorithm to start with - Keras' Sequential model. 
-This made it easy to build and train my model - and it was a lot of fun to see it learn and improve. 
-Now I'm refining my agent - using scikit-learn's GridSearchCV to tune my hyperparameters.
+I recently spent all night building my first AI agent in Python - and it was way easier than I thought. 
+I've been working on a project that involves building tools for CoderFact, and I realized I needed to create an AI agent to automate some tasks. 
+The process was pretty straightforward - I started by installing the necessary libraries, including scikit-learn, NLTK, Keras, TensorFlow, pandas, Matplotlib, and numpy. 
+From there, I loaded my data, preprocessed it, trained my AI agent, and tested it to see how well it performed. 
+One thing I learned along the way is the importance of properly preprocessing your data - this can make all the difference in the performance of your AI agent. 
+If you're interested in building your own AI agent in Python, I'd be happy to help - just send me a message and I'll do my best to guide you through the process. 
+It's definitely worth the effort - building an AI agent can be a fun and rewarding experience, and it can open up a whole new world of possibilities for automation and machine learning.
 
-#ai #machinelearning #python #artificialintelligence
+ai, python, machinelearning, automation
 
-_Tags: ai, machinelearning, python, artificialintelligence_
+_Tags: ai, python, machinelearning, automation_
 
 ---
 *By Suman Giri — built with the CoderFact engine.*
