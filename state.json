@@ -1,14 +1,11 @@
 {
   "topics": [
-    "LangGraph Tutorial: 3-Agent Pipeline",
-    "Tech Side Hustle: $3,000/Month",
-    "Vibe Coding SaaS: Weekend Build"
+    "LangGraph Tutorial: Build AI Agents in Python (Weekend!)",
+    "Vibe Coding a SaaS w/ Cursor & Claude (Full Code)",
+    "Developer Side Hustle: $3K/Month Stack Revealed"
   ],
-  "date": "June 20, 2026",
+  "date": "June 21, 2026",
   "title_history": [
-    "Build AI Agent Python",
-    "Chatbot Monetization Made",
-    "Vibe Coding with Claude",
     "LangGraph Tutorial: 3-Agent Pipeline",
     "Landing Page Studio: $1,920 Referral",
     "Vibe Coding SaaS with Cursor",
@@ -35,16 +32,19 @@
     "Vibe Coding SaaS",
     "LangGraph Tutorial: 3-Agent Pipeline",
     "Tech Side Hustle: $3,000/Month",
-    "Vibe Coding SaaS: Weekend Build"
+    "Vibe Coding SaaS: Weekend Build",
+    "LangGraph Tutorial: Build AI Agents in Python (Weekend!)",
+    "Vibe Coding a SaaS w/ Cursor & Claude (Full Code)",
+    "Developer Side Hustle: $3K/Month Stack Revealed"
   ],
   "last_update_id": 70323295,
   "virality_data": [
     {
-      "topic": "How I Built a 3-Agent Pipeline in 48 Hours with LangGraph",
+      "topic": "How I Built a 3-Agent Newsletter Pipeline in One Weekend",
       "category": "C",
       "category_name": "AI Agents & Multi-Agent Workflows",
       "virality_score": 92,
-      "analysis": "This topic will rank on Medium this week because LangGraph is trending on GitHub and there is a high interest in AI agents on Reddit. The cross-source evidence includes GitHub trending repositories and Reddit posts. This topic is different from existing posts because it provides a concrete example of building a 3-agent pipeline with working orchestration code.",
+      "analysis": "This topic will rank on Medium this week due to the rising interest in AI agents and multi-agent workflows, as seen on GitHub and Reddit. The cross-source evidence includes GitHub trending repositories like langgraph and penpot, and Reddit posts on r/MachineLearning. This topic is different from existing posts as it provides a personal and hands-on approach to building a 3-agent pipeline.",
       "cross_source_signals": [
         "GitHub: langgraph repo trending",
         "Reddit r/MachineLearning: 4 posts this week",
@@ -52,83 +52,83 @@
       ],
       "developer_pain": "high",
       "freshness": "breaking",
-      "money_angle": "",
-      "story_angle": "I was struggling to automate my morning brief until I discovered LangGraph",
+      "money_angle": "monetization through affiliate marketing",
+      "story_angle": "I struggled to find a comprehensive guide on building a 3-agent pipeline, so I decided to build one myself.",
       "suman_angle": "How I built a 3-agent newsletter pipeline in one weekend (full code)",
       "target_keywords": [
         "langgraph tutorial",
         "build ai agent python",
         "multi agent workflow"
       ],
-      "competing_articles": "Most existing posts are abstract \u2014 this article shows working orchestration code with a real result",
+      "competing_articles": "Most existing posts are abstract \u2014 I show working orchestration code with a real result",
       "real_story_evidence": [
         {
           "source": "Dev.to",
-          "title": "LangGraph Tutorial: I Built a 3-Agent Pipeline in 48 Hours",
-          "url": "https://dev.to/lovanaut55/langgraph-tutorial-i-built-a-3-agent-pipeline-in-48-hours-4901",
-          "what_to_cite": "The author's experience with building a 3-agent pipeline in 48 hours"
+          "title": "Opening Your SaaS to AI Agents Over MCP: Hold the Reins on the Server Side",
+          "url": "https://dev.to/lovanaut55/opening-your-saas-to-ai-agents-over-mcp-hold-the-reins-on-the-server-side-4901",
+          "what_to_cite": "The moment when you decide to open your SaaS to AI agents over MCP, where the ground shifts"
         }
       ]
     },
     {
-      "topic": "I Tracked Every Dollar from My Tech Side Hustle for 18 Months \u2014 Here's What Actually Paid",
+      "topic": "Vibe Coding a SaaS in a Weekend with Cursor and Claude",
+      "category": "B",
+      "category_name": "Vibe Coding / AI-Assisted Workflow",
+      "virality_score": 88,
+      "analysis": "This topic will rank on Medium this week due to the growing interest in vibe coding and AI-assisted workflows, as seen on GitHub and Dev.to. The cross-source evidence includes GitHub trending repositories like palmier-pro and penpot, and Dev.to posts on vibe coding. This topic is different from existing posts as it provides a hands-on approach to building a SaaS in a weekend using Cursor and Claude.",
+      "cross_source_signals": [
+        "GitHub: palmier-pro repo trending",
+        "Dev.to: vibe coding posts",
+        "Google Trends: 'vibe coding' rising"
+      ],
+      "developer_pain": "medium",
+      "freshness": "fresh",
+      "money_angle": "building a SaaS can generate revenue",
+      "story_angle": "I wanted to build a SaaS quickly and efficiently, so I tried vibe coding with Cursor and Claude.",
+      "suman_angle": "How I vibe coded a SaaS in a weekend with Cursor and Claude (full code)",
+      "target_keywords": [
+        "vibe coding tutorial",
+        "build saas in a weekend",
+        "cursor and claude"
+      ],
+      "competing_articles": "Most existing posts are theoretical \u2014 I show a real-world example of building a SaaS",
+      "real_story_evidence": [
+        {
+          "source": "Dev.to",
+          "title": "5 AI-Entertainment Hacks That Hit 100+ Upvotes \u2014 and What I Learned From Each",
+          "url": "https://dev.to/mrbolo/5-ai-hacks-that-hit-100-upvotes-and-what-i-learned-from-each-39d3",
+          "what_to_cite": "The 5 AI-entertainment hacks that hit 100+ upvotes"
+        }
+      ]
+    },
+    {
+      "topic": "How I Built a $3,000/Month Developer Side Hustle Stack",
       "category": "E",
       "category_name": "Money / Income Story",
       "virality_score": 95,
-      "analysis": "This topic will rank on Medium this week because it provides a unique perspective on tech side hustles and their profitability. The cross-source evidence includes existing articles on Dev.to and other platforms. This topic is different from existing posts because it provides a detailed analysis of the author's experience with tech side hustles.",
+      "analysis": "This topic will rank on Medium this week due to the high interest in developer side hustles and income stories, as seen on Dev.to and Hacker News. The cross-source evidence includes Dev.to posts on side hustles and Hacker News discussions on passive income. This topic is different from existing posts as it provides a personal and detailed approach to building a $3,000/month side hustle stack.",
       "cross_source_signals": [
-        "Dev.to: existing articles on tech side hustles",
-        "Reddit r/tech: discussions on side hustles",
-        "Google Trends: 'tech side hustle' rising"
-      ],
-      "developer_pain": "medium",
-      "freshness": "established",
-      "money_angle": "The author's experience with profitable tech side hustles",
-      "story_angle": "I was curious about the profitability of my tech side hustles, so I tracked every dollar for 18 months",
-      "suman_angle": "How I made $3,000 per month from my tech side hustles (full breakdown)",
-      "target_keywords": [
-        "tech side hustle",
-        "profitable side hustles",
-        "income streams"
-      ],
-      "competing_articles": "Most existing posts are general \u2014 this article provides a detailed analysis of the author's experience",
-      "real_story_evidence": [
-        {
-          "source": "Dev.to",
-          "title": "I Tracked Every Dollar From My Tech Side Hustle for 18 Months \u2014 Here's What Actually Paid",
-          "url": "https://dev.to/fiercestack/i-tracked-every-dollar-from-my-tech-side-hustle-for-18-months-heres-what-actually-paid-3dnj",
-          "what_to_cite": "The author's detailed breakdown of their income streams"
-        }
-      ]
-    },
-    {
-      "topic": "Vibe Coding a SaaS in a Weekend with Cursor + Claude",
-      "category": "B",
-      "category_name": "Vibe Coding / AI-Assisted Workflow",
-      "virality_score": 90,
-      "analysis": "This topic will rank on Medium this week because vibe coding is a trending topic and Cursor + Claude are popular tools. The cross-source evidence includes GitHub trending repositories and Reddit posts. This topic is different from existing posts because it provides a concrete example of building a SaaS in a weekend with working code.",
-      "cross_source_signals": [
-        "GitHub: vibe coding repo trending",
-        "Reddit r/webdev: 4 posts this week",
-        "Google Trends: 'vibe coding' rising"
+        "Dev.to: side hustle posts",
+        "Hacker News: passive income discussions",
+        "Google Trends: 'developer side hustle' rising"
       ],
       "developer_pain": "high",
       "freshness": "breaking",
-      "money_angle": "",
-      "story_angle": "I was struggling to build a SaaS until I discovered vibe coding with Cursor + Claude",
-      "suman_angle": "How I built a SaaS in a weekend with vibe coding (full code)",
+      "money_angle": "building a $3,000/month side hustle",
+      "story_angle": "I struggled to find a consistent and profitable side hustle, so I decided to build my own stack.",
+      "suman_angle": "How I built a $3,000/month developer side hustle stack (full breakdown)",
       "target_keywords": [
-        "vibe coding tutorial",
-        "build saas with cursor",
-        "ai-assisted workflow"
+        "developer side hustle",
+        "passive income",
+        "side hustle stack"
       ],
-      "competing_articles": "Most existing posts are abstract \u2014 this article shows working code with a real result",
+      "competing_articles": "Most existing posts are vague \u2014 I show a detailed and actionable approach to building a side hustle",
       "real_story_evidence": [
         {
           "source": "Dev.to",
-          "title": "Vibe Coding Tutorial: This Python Script Makes Me $4K/Month",
-          "url": "https://dev.to/lovanaut55/vibe-coding-tutorial-this-python-script-makes-me-4kmonth-4901",
-          "what_to_cite": "The author's experience with building a SaaS with vibe coding"
+          "title": "My $3,000/Month Developer Side Hustle Stack (2026 Edition)",
+          "url": "https://dev.to/keenring/my-3000month-developer-side-hustle-stack-2026-edition-401j",
+          "what_to_cite": "The $3,000/month side hustle stack that I built"
         }
       ]
     }
@@ -140,13 +140,6 @@
       "snippet": "There is a moment, when you decide to open your SaaS to AI agents over MCP, where the ground shifts...",
       "url": "https://dev.to/lovanaut55/opening-your-saas-to-ai-agents-over-mcp-hold-the-reins-on-the-server-side-4901",
       "signal": "5 reactions \u00b7 2 comments"
-    },
-    {
-      "source": "Dev.to (#indiehackers)",
-      "title": "PWYW vs $99 lifetime \u2014 a back-of-envelope answer to @tokidigital's pricing question",
-      "snippet": "PWYW vs $99 lifetime \u2014 a back-of-envelope answer to @tokidigital's pricing question   Two...",
-      "url": "https://dev.to/foxck016077/pwyw-vs-99-lifetime-a-back-of-envelope-answer-to-tokidigitals-pricing-question-5ebl",
-      "signal": "0 reactions \u00b7 2 comments"
     },
     {
       "source": "Dev.to (#sideproject)",
