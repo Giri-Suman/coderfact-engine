@@ -1,14 +1,11 @@
 {
   "topics": [
-    "LangGraph Tutorial: Build AI Agents in Python (Weekend!)",
-    "Vibe Coding a SaaS w/ Cursor & Claude (Full Code)",
-    "Developer Side Hustle: $3K/Month Stack Revealed"
+    "LangGraph: Build 3 AI Agents in a Weekend (Full Code)",
+    "AI-Assisted Workflow: 86 Browser Tools in 1 Day",
+    "Developer Side Hustle: $3K/Month Stack (2026)"
   ],
-  "date": "June 21, 2026",
+  "date": "June 22, 2026",
   "title_history": [
-    "LangGraph Tutorial: 3-Agent Pipeline",
-    "Landing Page Studio: $1,920 Referral",
-    "Vibe Coding SaaS with Cursor",
     "LangGraph Tutorial: Build 3 AI Agents, Automate Routine",
     "Affiliate Marketing: $1920/Referral Landing Page Studio",
     "Vibe Coding SaaS: Cursor AI Workflow (Weekend Build)",
@@ -35,16 +32,19 @@
     "Vibe Coding SaaS: Weekend Build",
     "LangGraph Tutorial: Build AI Agents in Python (Weekend!)",
     "Vibe Coding a SaaS w/ Cursor & Claude (Full Code)",
-    "Developer Side Hustle: $3K/Month Stack Revealed"
+    "Developer Side Hustle: $3K/Month Stack Revealed",
+    "LangGraph: Build 3 AI Agents in a Weekend (Full Code)",
+    "AI-Assisted Workflow: 86 Browser Tools in 1 Day",
+    "Developer Side Hustle: $3K/Month Stack (2026)"
   ],
   "last_update_id": 70323295,
   "virality_data": [
     {
-      "topic": "How I Built a 3-Agent Newsletter Pipeline in One Weekend",
+      "topic": "How I Built a 3-Agent Newsletter Pipeline in One Weekend (Full Code)",
       "category": "C",
       "category_name": "AI Agents & Multi-Agent Workflows",
       "virality_score": 92,
-      "analysis": "This topic will rank on Medium this week due to the rising interest in AI agents and multi-agent workflows, as seen on GitHub and Reddit. The cross-source evidence includes GitHub trending repositories like langgraph and penpot, and Reddit posts on r/MachineLearning. This topic is different from existing posts as it provides a personal and hands-on approach to building a 3-agent pipeline.",
+      "analysis": "This topic will rank on Medium this week due to the high interest in AI agents and multi-agent workflows, as seen on GitHub and Reddit. The cross-source evidence includes the trending LangGraph repository on GitHub and the recent posts on Reddit's r/MachineLearning. What makes this post different from existing ones is the provision of full code and a real result, making it a valuable resource for developers.",
       "cross_source_signals": [
         "GitHub: langgraph repo trending",
         "Reddit r/MachineLearning: 4 posts this week",
@@ -52,15 +52,15 @@
       ],
       "developer_pain": "high",
       "freshness": "breaking",
-      "money_angle": "monetization through affiliate marketing",
-      "story_angle": "I struggled to find a comprehensive guide on building a 3-agent pipeline, so I decided to build one myself.",
+      "money_angle": "",
+      "story_angle": "I was struggling to keep up with my morning brief until I built a 3-agent pipeline to automate it.",
       "suman_angle": "How I built a 3-agent newsletter pipeline in one weekend (full code)",
       "target_keywords": [
         "langgraph tutorial",
         "build ai agent python",
         "multi agent workflow"
       ],
-      "competing_articles": "Most existing posts are abstract \u2014 I show working orchestration code with a real result",
+      "competing_articles": "Most existing posts are abstract \u2014 this one shows working orchestration code with a real result",
       "real_story_evidence": [
         {
           "source": "Dev.to",
@@ -71,64 +71,64 @@
       ]
     },
     {
-      "topic": "Vibe Coding a SaaS in a Weekend with Cursor and Claude",
+      "topic": "I Spent $200 in One Day on AI Tokens to Build 86 Browser Tools \u2014 A Solo Founder's Complete Build Log",
       "category": "B",
       "category_name": "Vibe Coding / AI-Assisted Workflow",
-      "virality_score": 88,
-      "analysis": "This topic will rank on Medium this week due to the growing interest in vibe coding and AI-assisted workflows, as seen on GitHub and Dev.to. The cross-source evidence includes GitHub trending repositories like palmier-pro and penpot, and Dev.to posts on vibe coding. This topic is different from existing posts as it provides a hands-on approach to building a SaaS in a weekend using Cursor and Claude.",
+      "virality_score": 90,
+      "analysis": "This topic will rank on Medium this week due to the high interest in vibe coding and AI-assisted workflows, as seen on Dev.to and Hacker News. The cross-source evidence includes the recent posts on Dev.to and the trending repositories on GitHub. What makes this post different from existing ones is the personal story of building 86 browser tools in one day, making it a relatable and engaging read.",
       "cross_source_signals": [
-        "GitHub: palmier-pro repo trending",
-        "Dev.to: vibe coding posts",
-        "Google Trends: 'vibe coding' rising"
+        "Dev.to: vibe coding posts trending",
+        "Hacker News: AI-assisted workflow posts trending",
+        "GitHub: repositories using AI tokens trending"
       ],
       "developer_pain": "medium",
-      "freshness": "fresh",
-      "money_angle": "building a SaaS can generate revenue",
-      "story_angle": "I wanted to build a SaaS quickly and efficiently, so I tried vibe coding with Cursor and Claude.",
-      "suman_angle": "How I vibe coded a SaaS in a weekend with Cursor and Claude (full code)",
+      "freshness": "recent",
+      "money_angle": "$200 spent on AI tokens",
+      "story_angle": "I was curious about the potential of AI tokens and decided to spend $200 in one day to build 86 browser tools.",
+      "suman_angle": "How I built 86 browser tools in one day using AI tokens (complete build log)",
       "target_keywords": [
-        "vibe coding tutorial",
-        "build saas in a weekend",
-        "cursor and claude"
+        "vibe coding",
+        "ai-assisted workflow",
+        "browser tools"
       ],
-      "competing_articles": "Most existing posts are theoretical \u2014 I show a real-world example of building a SaaS",
+      "competing_articles": "Most existing posts are theoretical \u2014 this one shows a real build log with a personal story",
       "real_story_evidence": [
         {
           "source": "Dev.to",
-          "title": "5 AI-Entertainment Hacks That Hit 100+ Upvotes \u2014 and What I Learned From Each",
-          "url": "https://dev.to/mrbolo/5-ai-hacks-that-hit-100-upvotes-and-what-i-learned-from-each-39d3",
-          "what_to_cite": "The 5 AI-entertainment hacks that hit 100+ upvotes"
+          "title": "I Spent $200 in One Day on AI Tokens to Build 86 Browser Tools \u2014 A Solo Founder's Complete Build Log",
+          "url": "https://dev.to/dngzihng114379/i-spent-200-in-one-day-on-ai-tokens-to-build-86-browser-tools-a-solo-founders-complete-build-log-52j4",
+          "what_to_cite": "86 tools built in one day using AI tokens"
         }
       ]
     },
     {
-      "topic": "How I Built a $3,000/Month Developer Side Hustle Stack",
+      "topic": "My $3,000/Month Developer Side Hustle Stack (2026 Edition)",
       "category": "E",
       "category_name": "Money / Income Story",
       "virality_score": 95,
-      "analysis": "This topic will rank on Medium this week due to the high interest in developer side hustles and income stories, as seen on Dev.to and Hacker News. The cross-source evidence includes Dev.to posts on side hustles and Hacker News discussions on passive income. This topic is different from existing posts as it provides a personal and detailed approach to building a $3,000/month side hustle stack.",
+      "analysis": "This topic will rank on Medium this week due to the high interest in developer side hustles and income stories, as seen on Dev.to and Hacker News. The cross-source evidence includes the recent posts on Dev.to and the trending repositories on GitHub. What makes this post different from existing ones is the personal story of building a $3,000/month side hustle, making it a relatable and engaging read.",
       "cross_source_signals": [
-        "Dev.to: side hustle posts",
-        "Hacker News: passive income discussions",
-        "Google Trends: 'developer side hustle' rising"
+        "Dev.to: side hustle posts trending",
+        "Hacker News: income story posts trending",
+        "GitHub: repositories using side hustle tools trending"
       ],
-      "developer_pain": "high",
-      "freshness": "breaking",
-      "money_angle": "building a $3,000/month side hustle",
-      "story_angle": "I struggled to find a consistent and profitable side hustle, so I decided to build my own stack.",
-      "suman_angle": "How I built a $3,000/month developer side hustle stack (full breakdown)",
+      "developer_pain": "low",
+      "freshness": "recent",
+      "money_angle": "$3,000/month side hustle",
+      "story_angle": "I was struggling to make a living as a developer until I built a side hustle that generates $3,000/month.",
+      "suman_angle": "How I built a $3,000/month side hustle as a developer (2026 edition)",
       "target_keywords": [
         "developer side hustle",
-        "passive income",
-        "side hustle stack"
+        "income story",
+        "passive income"
       ],
-      "competing_articles": "Most existing posts are vague \u2014 I show a detailed and actionable approach to building a side hustle",
+      "competing_articles": "Most existing posts are abstract \u2014 this one shows a real side hustle with a personal story",
       "real_story_evidence": [
         {
           "source": "Dev.to",
           "title": "My $3,000/Month Developer Side Hustle Stack (2026 Edition)",
           "url": "https://dev.to/keenring/my-3000month-developer-side-hustle-stack-2026-edition-401j",
-          "what_to_cite": "The $3,000/month side hustle stack that I built"
+          "what_to_cite": "The stack that generates $3,000/month"
         }
       ]
     }
@@ -142,17 +142,24 @@
       "signal": "5 reactions \u00b7 2 comments"
     },
     {
+      "source": "Dev.to (#indiehackers)",
+      "title": "I shipped a SaaS in 5 days at 19 with Next.js 16, Supabase, and Paddle - here's the whole stack",
+      "snippet": "\ud83c\udfa5 Prefer watching? 90-second product demo on YouTube   I'm a 19-year-old solo developer who just...",
+      "url": "https://dev.to/bountydesk/i-shipped-a-saas-in-5-days-at-19-with-nextjs-16-supabase-and-paddle-heres-the-whole-stack-g6j",
+      "signal": "1 reactions \u00b7 0 comments"
+    },
+    {
+      "source": "Dev.to (#indiehackers)",
+      "title": "I Spent $200 in One Day on AI Tokens to Build 86 Browser Tools \u2014 A Solo Founder's Complete Build Log",
+      "snippet": "86 tools. Zero backend. One person. Two hospital visits. $200 in tokens in 24 hours. This is what...",
+      "url": "https://dev.to/dngzihng114379/i-spent-200-in-one-day-on-ai-tokens-to-build-86-browser-tools-a-solo-founders-complete-build-log-52j4",
+      "signal": "0 reactions \u00b7 0 comments"
+    },
+    {
       "source": "Dev.to (#sideproject)",
       "title": "5 AI-Entertainment Hacks That Hit 100+ Upvotes \u2014 and What I Learned From Each",
       "snippet": "I run a Reddit scouting bot for 'hack signals' \u2014 stuff people duct-tape together that goes viral fast. Here are the 5 I learned the most from: AI companions, game NPCs, meme-to-merch pipelines, and a 49K-sample character search engine.",
       "url": "https://dev.to/mrbolo/5-ai-hacks-that-hit-100-upvotes-and-what-i-learned-from-each-39d3",
-      "signal": "0 reactions \u00b7 0 comments"
-    },
-    {
-      "source": "Dev.to (#passiveincome)",
-      "title": "10 Side Projects That Actually Make Money for Developers in 2026",
-      "snippet": "10 Side Projects That Actually Make Money for Developers in 2026   I tested 10 different...",
-      "url": "https://dev.to/thnh_aloha_78f6b2e2cb5f0/10-side-projects-that-actually-make-money-for-developers-in-2026-5bp9",
       "signal": "0 reactions \u00b7 0 comments"
     },
     {
@@ -164,9 +171,9 @@
     },
     {
       "source": "Dev.to (#passiveincome)",
-      "title": "This Landing Page Studio Pays $1,920 Per Referral \u2014 And Most Affiliate Marketers Have Never Heard of It",
-      "snippet": "If you've been in affiliate marketing for more than five minutes, you know the frustration. Endless...",
-      "url": "https://dev.to/williamz1994/this-landing-page-studio-pays-1920-per-referral-and-most-affiliate-marketers-have-never-heard-4img",
+      "title": "10 Side Projects That Actually Make Money for Developers in 2026",
+      "snippet": "10 Side Projects That Actually Make Money for Developers in 2026   I tested 10 different...",
+      "url": "https://dev.to/thnh_aloha_78f6b2e2cb5f0/10-side-projects-that-actually-make-money-for-developers-in-2026-5bp9",
       "signal": "0 reactions \u00b7 0 comments"
     },
     {
@@ -181,6 +188,13 @@
       "title": "I Tracked Every Dollar From My Tech Side Hustle for 18 Months \u2014 Here's What Actually Paid",
       "snippet": "Here's the thing: my Notion tracker has 47 columns. Each one tracks a different income stream from my...",
       "url": "https://dev.to/fiercestack/i-tracked-every-dollar-from-my-tech-side-hustle-for-18-months-heres-what-actually-paid-3dnj",
+      "signal": "0 reactions \u00b7 0 comments"
+    },
+    {
+      "source": "Dev.to (#passiveincome)",
+      "title": "Build in Public: My Honest AI API Affiliate Revenue Report (Months 1\u20133)",
+      "snippet": "I'm going to be radically transparent with you here. Every number, every mistake, every \"oh wow, that...",
+      "url": "https://dev.to/truedeck/build-in-public-my-honest-ai-api-affiliate-revenue-report-months-1-3-38e1",
       "signal": "0 reactions \u00b7 0 comments"
     },
     {
