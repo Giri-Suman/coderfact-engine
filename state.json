@@ -1,14 +1,11 @@
 {
   "topics": [
-    "LangGraph: Build 3 AI Agents in a Weekend (Full Code)",
-    "AI-Assisted Workflow: 86 Browser Tools in 1 Day",
-    "Developer Side Hustle: $3K/Month Stack (2026)"
+    "Build AI Agent Python",
+    "Vibe Coding Tutorial SaaS",
+    "Developer Side Hustle Stack"
   ],
-  "date": "June 22, 2026",
+  "date": "June 23, 2026",
   "title_history": [
-    "LangGraph Tutorial: Build 3 AI Agents, Automate Routine",
-    "Affiliate Marketing: $1920/Referral Landing Page Studio",
-    "Vibe Coding SaaS: Cursor AI Workflow (Weekend Build)",
     "LangGraph Tutorial: I Built",
     "Vibe Coding Tutorial: I",
     "Developer Side Hustle: I",
@@ -35,7 +32,10 @@
     "Developer Side Hustle: $3K/Month Stack Revealed",
     "LangGraph: Build 3 AI Agents in a Weekend (Full Code)",
     "AI-Assisted Workflow: 86 Browser Tools in 1 Day",
-    "Developer Side Hustle: $3K/Month Stack (2026)"
+    "Developer Side Hustle: $3K/Month Stack (2026)",
+    "Build AI Agent Python",
+    "Vibe Coding Tutorial SaaS",
+    "Developer Side Hustle Stack"
   ],
   "last_update_id": 70323295,
   "virality_data": [
@@ -43,8 +43,8 @@
       "topic": "How I Built a 3-Agent Newsletter Pipeline in One Weekend (Full Code)",
       "category": "C",
       "category_name": "AI Agents & Multi-Agent Workflows",
-      "virality_score": 92,
-      "analysis": "This topic will rank on Medium this week due to the high interest in AI agents and multi-agent workflows, as seen on GitHub and Reddit. The cross-source evidence includes the trending LangGraph repository on GitHub and the recent posts on Reddit's r/MachineLearning. What makes this post different from existing ones is the provision of full code and a real result, making it a valuable resource for developers.",
+      "virality_score": 88,
+      "analysis": "This topic will rank on Medium this week due to the rising interest in AI agents and multi-agent workflows. The cross-source evidence includes GitHub trending repositories like LangGraph and Reddit posts on r/MachineLearning. What makes this different from existing posts is the focus on a specific, working example of a 3-agent pipeline.",
       "cross_source_signals": [
         "GitHub: langgraph repo trending",
         "Reddit r/MachineLearning: 4 posts this week",
@@ -53,51 +53,51 @@
       "developer_pain": "high",
       "freshness": "breaking",
       "money_angle": "",
-      "story_angle": "I was struggling to keep up with my morning brief until I built a 3-agent pipeline to automate it.",
+      "story_angle": "I spent countless hours trying to automate my morning brief, until I discovered the power of AI agents.",
       "suman_angle": "How I built a 3-agent newsletter pipeline in one weekend (full code)",
       "target_keywords": [
         "langgraph tutorial",
         "build ai agent python",
         "multi agent workflow"
       ],
-      "competing_articles": "Most existing posts are abstract \u2014 this one shows working orchestration code with a real result",
-      "real_story_evidence": [
-        {
-          "source": "Dev.to",
-          "title": "Opening Your SaaS to AI Agents Over MCP: Hold the Reins on the Server Side",
-          "url": "https://dev.to/lovanaut55/opening-your-saas-to-ai-agents-over-mcp-hold-the-reins-on-the-server-side-4901",
-          "what_to_cite": "The moment when you decide to open your SaaS to AI agents over MCP, where the ground shifts"
-        }
-      ]
-    },
-    {
-      "topic": "I Spent $200 in One Day on AI Tokens to Build 86 Browser Tools \u2014 A Solo Founder's Complete Build Log",
-      "category": "B",
-      "category_name": "Vibe Coding / AI-Assisted Workflow",
-      "virality_score": 90,
-      "analysis": "This topic will rank on Medium this week due to the high interest in vibe coding and AI-assisted workflows, as seen on Dev.to and Hacker News. The cross-source evidence includes the recent posts on Dev.to and the trending repositories on GitHub. What makes this post different from existing ones is the personal story of building 86 browser tools in one day, making it a relatable and engaging read.",
-      "cross_source_signals": [
-        "Dev.to: vibe coding posts trending",
-        "Hacker News: AI-assisted workflow posts trending",
-        "GitHub: repositories using AI tokens trending"
-      ],
-      "developer_pain": "medium",
-      "freshness": "recent",
-      "money_angle": "$200 spent on AI tokens",
-      "story_angle": "I was curious about the potential of AI tokens and decided to spend $200 in one day to build 86 browser tools.",
-      "suman_angle": "How I built 86 browser tools in one day using AI tokens (complete build log)",
-      "target_keywords": [
-        "vibe coding",
-        "ai-assisted workflow",
-        "browser tools"
-      ],
-      "competing_articles": "Most existing posts are theoretical \u2014 this one shows a real build log with a personal story",
+      "competing_articles": "Most existing posts are abstract \u2014 I show working orchestration code with a real result",
       "real_story_evidence": [
         {
           "source": "Dev.to",
           "title": "I Spent $200 in One Day on AI Tokens to Build 86 Browser Tools \u2014 A Solo Founder's Complete Build Log",
           "url": "https://dev.to/dngzihng114379/i-spent-200-in-one-day-on-ai-tokens-to-build-86-browser-tools-a-solo-founders-complete-build-log-52j4",
-          "what_to_cite": "86 tools built in one day using AI tokens"
+          "what_to_cite": "The author's experience with building 86 browser tools using AI tokens"
+        }
+      ]
+    },
+    {
+      "topic": "Vibe Coding a SaaS in a Weekend: My Experience with Cursor and Claude",
+      "category": "B",
+      "category_name": "Vibe Coding / AI-Assisted Workflow",
+      "virality_score": 85,
+      "analysis": "This topic will rank on Medium this week due to the growing interest in vibe coding and AI-assisted workflows. The cross-source evidence includes GitHub trending repositories like Cursor and Claude, and Reddit posts on r/webdev. What makes this different from existing posts is the focus on a specific, working example of building a SaaS in a weekend.",
+      "cross_source_signals": [
+        "GitHub: cursor repo trending",
+        "Reddit r/webdev: 3 posts this week",
+        "Google Trends: 'vibe coding' rising"
+      ],
+      "developer_pain": "medium",
+      "freshness": "recent",
+      "money_angle": "",
+      "story_angle": "I was skeptical about vibe coding, until I built a SaaS in a weekend using Cursor and Claude.",
+      "suman_angle": "How I vibe coded a SaaS in a weekend with Cursor and Claude",
+      "target_keywords": [
+        "vibe coding tutorial",
+        "cursor ai workflow",
+        "saaS in a weekend"
+      ],
+      "competing_articles": "Most existing posts are theoretical \u2014 I show a working example of building a SaaS",
+      "real_story_evidence": [
+        {
+          "source": "Dev.to",
+          "title": "I shipped a SaaS in 5 days at 19 with Next.js 16, Supabase, and Paddle - here's the whole stack",
+          "url": "https://dev.to/bountydesk/i-shipped-a-saas-in-5-days-at-19-with-nextjs-16-supabase-and-paddle-heres-the-whole-stack-g6j",
+          "what_to_cite": "The author's experience with shipping a SaaS in 5 days"
         }
       ]
     },
@@ -105,30 +105,29 @@
       "topic": "My $3,000/Month Developer Side Hustle Stack (2026 Edition)",
       "category": "E",
       "category_name": "Money / Income Story",
-      "virality_score": 95,
-      "analysis": "This topic will rank on Medium this week due to the high interest in developer side hustles and income stories, as seen on Dev.to and Hacker News. The cross-source evidence includes the recent posts on Dev.to and the trending repositories on GitHub. What makes this post different from existing ones is the personal story of building a $3,000/month side hustle, making it a relatable and engaging read.",
+      "virality_score": 90,
+      "analysis": "This topic will rank on Medium this week due to the high interest in developer side hustles and income stories. The cross-source evidence includes Reddit posts on r/indiehackers and Google Trends. What makes this different from existing posts is the focus on a specific, working example of a side hustle stack.",
       "cross_source_signals": [
-        "Dev.to: side hustle posts trending",
-        "Hacker News: income story posts trending",
-        "GitHub: repositories using side hustle tools trending"
+        "Reddit r/indiehackers: 5 posts this week",
+        "Google Trends: 'developer side hustle' rising"
       ],
-      "developer_pain": "low",
-      "freshness": "recent",
-      "money_angle": "$3,000/month side hustle",
-      "story_angle": "I was struggling to make a living as a developer until I built a side hustle that generates $3,000/month.",
-      "suman_angle": "How I built a $3,000/month side hustle as a developer (2026 edition)",
+      "developer_pain": "high",
+      "freshness": "breaking",
+      "money_angle": "$3,000/month",
+      "story_angle": "I struggled to make a living as a developer, until I built a side hustle stack that generates $3,000/month.",
+      "suman_angle": "My $3,000/month developer side hustle stack (2026 edition)",
       "target_keywords": [
         "developer side hustle",
-        "income story",
-        "passive income"
+        "passive income",
+        "side hustle stack"
       ],
-      "competing_articles": "Most existing posts are abstract \u2014 this one shows a real side hustle with a personal story",
+      "competing_articles": "Most existing posts are abstract \u2014 I show a working example of a side hustle stack",
       "real_story_evidence": [
         {
           "source": "Dev.to",
           "title": "My $3,000/Month Developer Side Hustle Stack (2026 Edition)",
           "url": "https://dev.to/keenring/my-3000month-developer-side-hustle-stack-2026-edition-401j",
-          "what_to_cite": "The stack that generates $3,000/month"
+          "what_to_cite": "The author's experience with building a side hustle stack"
         }
       ]
     }
