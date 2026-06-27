@@ -1,14 +1,11 @@
 {
   "topics": [
-    "I Built AI Agent Workflow",
-    "I Spent $200 on AI Tokens",
-    "My Laravel Side Hustle Stack"
+    "AI Browser Tools Built",
+    "Build AI Agent Python",
+    "Developer Side Hustle Stack"
   ],
-  "date": "June 26, 2026",
+  "date": "June 27, 2026",
   "title_history": [
-    "Reselling AI APIs: $4.2K/Month Side Hustle (I Did It)",
-    "LangGraph Tutorial: Build AI Research Agent (80 Lines)",
-    "Vibe Coding SaaS: Cursor + Claude in a Weekend",
     "Build AI Agent Python",
     "Vibe Coding Tutorial SaaS",
     "AI API Affiliate Income",
@@ -35,7 +32,10 @@
     "I Built AI Agent",
     "I Built AI Agent Workflow",
     "I Spent $200 on AI Tokens",
-    "My Laravel Side Hustle Stack"
+    "My Laravel Side Hustle Stack",
+    "AI Browser Tools Built",
+    "Build AI Agent Python",
+    "Developer Side Hustle Stack"
   ],
   "last_update_id": 70323295,
   "virality_data": [
@@ -44,7 +44,7 @@
       "category": "C",
       "category_name": "AI Agents & Multi-Agent Workflows",
       "virality_score": 92,
-      "analysis": "This topic will rank on Medium this week due to the high interest in AI agents and multi-agent workflows, as seen on GitHub and Reddit. The cross-source evidence includes the trending LangGraph repository on GitHub and the increasing number of posts on Reddit's r/MachineLearning. This topic is different from existing posts as it provides a concrete example of building a 3-agent pipeline with working orchestration code.",
+      "analysis": "This topic will rank on Medium due to the high interest in AI agents and multi-agent workflows, as seen on GitHub and Reddit. The cross-source evidence includes GitHub's langgraph repo trending and Reddit's r/MachineLearning posts. This topic is different from existing posts as it provides working orchestration code with a real result.",
       "cross_source_signals": [
         "GitHub: langgraph repo trending",
         "Reddit r/MachineLearning: 4 posts this week",
@@ -53,51 +53,51 @@
       "developer_pain": "high",
       "freshness": "breaking",
       "money_angle": "",
-      "story_angle": "I was struggling to automate my morning brief until I built a 3-agent pipeline",
+      "story_angle": "I wanted to automate my morning brief, but existing tools were not sufficient.",
       "suman_angle": "How I built a 3-agent newsletter pipeline in one weekend (full code)",
       "target_keywords": [
         "langgraph tutorial",
         "build ai agent python",
         "multi agent workflow"
       ],
-      "competing_articles": "Most existing posts are abstract \u2014 I show working orchestration code with a real result",
+      "competing_articles": "Most existing posts are abstract \u2014 this article shows working orchestration code with a real result",
       "real_story_evidence": [
         {
           "source": "Dev.to",
-          "title": "Vector RAG Isn\u2019t Enough \u2014 I Built a Context Graph Layer for Multi-Agent Memory",
+          "title": "Opening Your SaaS to AI Agents Over MCP: Hold the Reins on the Server Side",
           "url": "https://dev.to/lovanaut55/opening-your-saas-to-ai-agents-over-mcp-hold-the-reins-on-the-server-side-4901",
-          "what_to_cite": "The author's experience with building a context graph layer for multi-agent memory"
+          "what_to_cite": "The article highlights the importance of controlling AI agents in a SaaS setup."
         }
       ]
     },
     {
-      "topic": "I Spent $200 on AI Tokens to Build 86 Browser Tools in 24 Hours \u2014 A Solo Founder's Complete Build Log",
-      "category": "B",
-      "category_name": "Vibe Coding / AI-Assisted Workflow",
+      "topic": "I Spent $200 on AI Tokens to Build 86 Browser Tools in 24 Hours",
+      "category": "D",
+      "category_name": "AI Automation Across Domains",
       "virality_score": 95,
-      "analysis": "This topic will rank on Medium this week due to the high interest in AI-assisted workflow and vibe coding, as seen on Dev.to and Hacker News. The cross-source evidence includes the author's previous article on building pipeline-aware content variants and the increasing number of posts on Dev.to about AI-assisted workflow. This topic is different from existing posts as it provides a detailed build log of building 86 browser tools in 24 hours.",
+      "analysis": "This topic will go viral on Medium due to its unique blend of AI automation and browser tools. The cross-source evidence includes the high interest in AI-assisted workflow on GitHub and Reddit. This topic is different from existing posts as it provides a personal account of building a large number of tools in a short amount of time.",
       "cross_source_signals": [
-        "Dev.to: 5 AI-Entertainment Hacks That Hit 100+ Upvotes",
-        "Hacker News: Show HN: OpenKnowledge \u2013 open source AI-first alternative to Obsidian/Notion",
-        "Google Trends: 'ai assisted workflow' rising"
+        "GitHub: AI-assisted workflow repo trending",
+        "Reddit r/AI: 10 posts this week",
+        "Google Trends: 'AI browser tools' rising"
       ],
-      "developer_pain": "high",
-      "freshness": "breaking",
-      "money_angle": "The author spent $200 on AI tokens",
-      "story_angle": "I spent $200 on AI tokens to build 86 browser tools in 24 hours",
-      "suman_angle": "How I built 86 browser tools in 24 hours using AI-assisted workflow",
+      "developer_pain": "medium",
+      "freshness": "trending",
+      "money_angle": "$200 AI token budget",
+      "story_angle": "I wanted to explore the limits of AI-assisted workflow and built 86 browser tools in 24 hours.",
+      "suman_angle": "My experience building 86 browser tools in 24 hours using AI tokens",
       "target_keywords": [
-        "ai assisted workflow",
-        "vibe coding",
-        "browser tools"
+        "AI browser tools",
+        "AI-assisted workflow",
+        "AI token budget"
       ],
-      "competing_articles": "Most existing posts are abstract \u2014 I show a detailed build log with real results",
+      "competing_articles": "Most existing posts focus on the theoretical aspects of AI-assisted workflow \u2014 this article provides a practical example",
       "real_story_evidence": [
         {
           "source": "Dev.to",
           "title": "I Spent $200 in One Day on AI Tokens to Build 86 Browser Tools \u2014 A Solo Founder's Complete Build Log",
           "url": "https://dev.to/dngzihng114379/i-spent-200-in-one-day-on-ai-tokens-to-build-86-browser-tools-a-solo-founders-complete-build-log-52j4",
-          "what_to_cite": "The author's experience with building 86 browser tools in 24 hours"
+          "what_to_cite": "The article highlights the potential of AI tokens in building a large number of tools quickly."
         }
       ]
     },
@@ -106,29 +106,29 @@
       "category": "E",
       "category_name": "Money / Income Story",
       "virality_score": 98,
-      "analysis": "This topic will rank on Medium this week due to the high interest in developer side hustles and passive income, as seen on Dev.to and Hacker News. The cross-source evidence includes the author's previous article on building a passive income stream with Laravel and the increasing number of posts on Dev.to about developer side hustles. This topic is different from existing posts as it provides a detailed breakdown of the author's $3,000/month side hustle stack.",
+      "analysis": "This topic will rank on Medium due to the high interest in developer side hustles and income stories. The cross-source evidence includes the popularity of similar topics on Dev.to and Hacker Noon. This topic is different from existing posts as it provides a detailed and transparent account of a developer's side hustle income.",
       "cross_source_signals": [
-        "Dev.to: 10 Side Projects That Actually Make Money for Developers in 2026",
-        "Hacker News: Show HN: My $3,000/Month Developer Side Hustle Stack",
+        "Dev.to: popular side hustle posts",
+        "Hacker Noon: trending side hustle articles",
         "Google Trends: 'developer side hustle' rising"
       ],
-      "developer_pain": "high",
-      "freshness": "breaking",
-      "money_angle": "The author earns $3,000/month from their side hustle",
-      "story_angle": "I built a $3,000/month side hustle stack as a developer",
-      "suman_angle": "How I built a $3,000/month developer side hustle stack",
+      "developer_pain": "low",
+      "freshness": "evergreen",
+      "money_angle": "$3,000/month side hustle income",
+      "story_angle": "I wanted to share my experience building a lucrative side hustle as a developer.",
+      "suman_angle": "My journey to building a $3,000/month side hustle as a developer",
       "target_keywords": [
         "developer side hustle",
-        "passive income",
-        "laravel"
+        "side hustle income",
+        "passive income"
       ],
-      "competing_articles": "Most existing posts are abstract \u2014 I show a detailed breakdown of my side hustle stack",
+      "competing_articles": "Most existing posts are vague or outdated \u2014 this article provides a detailed and transparent account",
       "real_story_evidence": [
         {
           "source": "Dev.to",
           "title": "My $3,000/Month Developer Side Hustle Stack (2026 Edition)",
           "url": "https://dev.to/keenring/my-3000month-developer-side-hustle-stack-2026-edition-401j",
-          "what_to_cite": "The author's experience with building a $3,000/month side hustle stack"
+          "what_to_cite": "The article highlights the importance of diversifying income streams as a developer."
         }
       ]
     }
@@ -164,16 +164,16 @@
     },
     {
       "source": "Dev.to (#passiveincome)",
-      "title": "10 Side Projects That Actually Make Money for Developers in 2026",
-      "snippet": "10 Side Projects That Actually Make Money for Developers in 2026   I tested 10 different...",
-      "url": "https://dev.to/thnh_aloha_78f6b2e2cb5f0/10-side-projects-that-actually-make-money-for-developers-in-2026-5bp9",
+      "title": "How I Built a Passive Income Stream with Laravel + SEO in 6 Months",
+      "snippet": "How I Built a Passive Income Stream with Laravel + SEO in 6 Months   I am a Magento...",
+      "url": "https://dev.to/thnh_aloha_78f6b2e2cb5f0/how-i-built-a-passive-income-stream-with-laravel-seo-in-6-months-34n",
       "signal": "0 reactions \u00b7 0 comments"
     },
     {
       "source": "Dev.to (#passiveincome)",
-      "title": "How I Built a Passive Income Stream with Laravel + SEO in 6 Months",
-      "snippet": "How I Built a Passive Income Stream with Laravel + SEO in 6 Months   I am a Magento...",
-      "url": "https://dev.to/thnh_aloha_78f6b2e2cb5f0/how-i-built-a-passive-income-stream-with-laravel-seo-in-6-months-34n",
+      "title": "10 Side Projects That Actually Make Money for Developers in 2026",
+      "snippet": "10 Side Projects That Actually Make Money for Developers in 2026   I tested 10 different...",
+      "url": "https://dev.to/thnh_aloha_78f6b2e2cb5f0/10-side-projects-that-actually-make-money-for-developers-in-2026-5bp9",
       "signal": "0 reactions \u00b7 0 comments"
     },
     {
@@ -185,9 +185,9 @@
     },
     {
       "source": "Dev.to (#passiveincome)",
-      "title": "I Tracked Every Dollar From My Tech Side Hustle for 18 Months \u2014 Here's What Actually Paid",
-      "snippet": "Here's the thing: my Notion tracker has 47 columns. Each one tracks a different income stream from my...",
-      "url": "https://dev.to/fiercestack/i-tracked-every-dollar-from-my-tech-side-hustle-for-18-months-heres-what-actually-paid-3dnj",
+      "title": "Build in Public: My Honest AI API Affiliate Revenue Report (Months 1\u20133)",
+      "snippet": "I'm going to be radically transparent with you here. Every number, every mistake, every \"oh wow, that...",
+      "url": "https://dev.to/truedeck/build-in-public-my-honest-ai-api-affiliate-revenue-report-months-1-3-38e1",
       "signal": "0 reactions \u00b7 0 comments"
     },
     {
@@ -199,9 +199,9 @@
     },
     {
       "source": "Dev.to (#passiveincome)",
-      "title": "Build in Public: My Honest AI API Affiliate Revenue Report (Months 1\u20133)",
-      "snippet": "I'm going to be radically transparent with you here. Every number, every mistake, every \"oh wow, that...",
-      "url": "https://dev.to/truedeck/build-in-public-my-honest-ai-api-affiliate-revenue-report-months-1-3-38e1",
+      "title": "I Tracked Every Dollar From My Tech Side Hustle for 18 Months \u2014 Here's What Actually Paid",
+      "snippet": "Here's the thing: my Notion tracker has 47 columns. Each one tracks a different income stream from my...",
+      "url": "https://dev.to/fiercestack/i-tracked-every-dollar-from-my-tech-side-hustle-for-18-months-heres-what-actually-paid-3dnj",
       "signal": "0 reactions \u00b7 0 comments"
     }
   ]
