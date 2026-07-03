@@ -1,146 +1,147 @@
 # AI Agent in Python
 
-_Build your first AI agent with ease_
+_Build a simple AI agent with Python_
 
 ## Scroll-stopping hooks
 
-**Hook 1.** I was stuck on building my first AI agent in Python till 1am - it was a real pain, but I figured it out. Now I'll show you how to do it in minutes, not hours.
+**Hook 1.** I was stuck on building an AI agent in Python - it took me way too long to figure it out. Now I'm sharing my process so you don't have to go through the same thing.
 
-**Hook 2.** So you wanna build an AI agent in Python, but don't know where to start - I've been there, and it's frustrating. Let's get started with the basics.
+**Hook 2.** I've been working on a project that involves building AI agents - it's been a wild ride, but I've learned a lot.
 
-**Hook 3.** Building an AI agent can seem daunting, but it's actually pretty straightforward - you just need to know the right tools and techniques.
+**Hook 3.** If you're like me, you've probably tried to build an AI agent in Python before, but it didn't quite work out - let's try again.
 
-**Hook 4.** I spent hours trying to get my AI agent to work, but it just wouldn't - then I realized I was missing one simple thing. Don't make the same mistake I did.
+**Hook 4.** Building an AI agent in Python can be tough, but it's worth it - you can use it to automate all sorts of tasks.
 
-**Hook 5.** You don't have to be an expert in machine learning to build an AI agent in Python - just follow these simple steps and you'll be up and running in no time.
+**Hook 5.** I'm not gonna lie, building an AI agent in Python can be frustrating - but with the right tools, it's doable.
 
 ## 7 tips that actually move the needle
 
-### Tip 1. Use the scikit-learn library to simplify the machine learning process
-_Why it matters:_ it provides a wide range of algorithms and tools to make building an AI agent easier
+### Tip 1. Use the `python -m pip install scikit-learn` command to install scikit-learn
+_Why it matters:_ scikit-learn is a powerful library for building AI agents
 
 ```python
-from sklearn import svm
+import sklearn
 ```
 
-### Tip 2. Choose a suitable dataset for your AI agent using pandas
-_Why it matters:_ it's essential for training and testing your agent
+### Tip 2. Use the `from sklearn.ensemble import RandomForestClassifier` import to use random forests
+_Why it matters:_ random forests are a great algorithm for building AI agents
 
-```python
-import pandas as pd; data = pd.read_csv('data.csv')
+```
+clf = RandomForestClassifier()
 ```
 
-### Tip 3. Utilize the TensorFlow library for building neural networks
-_Why it matters:_ it's a popular and powerful tool for machine learning
+### Tip 3. Use the `pandas` library to handle data
+_Why it matters:_ pandas is great for data manipulation
 
 ```python
-import tensorflow as tf; model = tf.keras.models.Sequential()
+import pandas as pd
 ```
 
-### Tip 4. Use the NLTK library for natural language processing tasks
-_Why it matters:_ it provides a wide range of tools and resources for text processing
+### Tip 4. Use the `numpy` library for numerical computations
+_Why it matters:_ numpy is fast and efficient
 
 ```python
-import nltk; nltk.download('punkt')
+import numpy as np
 ```
 
-### Tip 5. Implement a feedback loop using the matplotlib library
-_Why it matters:_ it helps to visualize and improve your AI agent's performance
+### Tip 5. Use the `matplotlib` library to visualize data
+_Why it matters:_ visualizing data is important for understanding AI agents
 
 ```python
-import matplotlib.pyplot as plt; plt.plot(losses)
+import matplotlib.pyplot as plt
 ```
 
-### Tip 6. Optimize your AI agent's performance using the hyperopt library
-_Why it matters:_ it provides a simple way to tune hyperparameters
+### Tip 6. Use the `sklearn.model_selection.train_test_split` function to split data
+_Why it matters:_ splitting data is important for training AI agents
 
-```python
-from hyperopt import hp; space = {'x': hp.uniform('x', 0, 1)}
+```
+X_train, X_test, y_train, y_test = train_test_split(X, y)
 ```
 
-### Tip 7. Test and evaluate your AI agent using the pytest library
-_Why it matters:_ it's essential for ensuring your agent works as expected
+### Tip 7. Use the `sklearn.metrics.accuracy_score` function to evaluate AI agents
+_Why it matters:_ evaluating AI agents is important for understanding their performance
 
-```python
-import pytest; def test_agent(): assert agent.predict([1, 2, 3]) == 1
+```
+accuracy = accuracy_score(y_test, y_pred)
 ```
 
 ## Step-by-step procedure
 
-### 1. Step 1: Install the required libraries
-You'll need to install scikit-learn, pandas, TensorFlow, NLTK, matplotlib, hyperopt, and pytest. You can do this using pip.
+### 1. Step 1: Install necessary libraries
+Install scikit-learn, pandas, numpy, and matplotlib using pip
 
 ```python
-pip install scikit-learn pandas tensorflow nltk matplotlib hyperopt pytest
+python -m pip install scikit-learn pandas numpy matplotlib
 ```
 
-### 2. Step 2: Prepare your dataset
-Choose a suitable dataset for your AI agent and load it into a pandas dataframe. Make sure to preprocess the data as needed.
+### 2. Step 2: Import necessary libraries
+Import scikit-learn, pandas, numpy, and matplotlib in your Python script
 
 ```python
-import pandas as pd; data = pd.read_csv('data.csv')
+import sklearn
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
 ```
 
-### 3. Step 3: Build a simple machine learning model
-Use scikit-learn to build a simple machine learning model, such as a support vector machine. Train the model on your dataset.
+### 3. Step 3: Load and preprocess data
+Load your data into a pandas dataframe and preprocess it as necessary
+
+```
+df = pd.read_csv('data.csv')
+df = df.dropna()
+```
+
+### 4. Step 4: Split data into training and testing sets
+Split your data into training and testing sets using the train_test_split function
 
 ```python
-from sklearn import svm; model = svm.SVC(); model.fit(X, y)
+from sklearn.model_selection import train_test_split
+X_train, X_test, y_train, y_test = train_test_split(X, y)
 ```
 
-### 4. Step 4: Implement a neural network using TensorFlow
-Use TensorFlow to build a neural network. Define the model architecture and compile the model.
+### 5. Step 5: Train and evaluate an AI agent
+Train an AI agent using the training data and evaluate its performance using the testing data
 
 ```python
-import tensorflow as tf; model = tf.keras.models.Sequential(); model.compile(optimizer='adam', loss='sparse_categorical_crossentropy', metrics=['accuracy'])
+from sklearn.ensemble import RandomForestClassifier
+clf = RandomForestClassifier()
+clf.fit(X_train, y_train)
+y_pred = clf.predict(X_test)
+accuracy = accuracy_score(y_test, y_pred)
+print('Accuracy:', accuracy)
 ```
-
-### 5. Step 5: Train and evaluate your AI agent
-Train your AI agent on your dataset and evaluate its performance. Use matplotlib to visualize the results and hyperopt to tune hyperparameters.
-
-```python
-model.fit(X, y); losses = model.history; import matplotlib.pyplot as plt; plt.plot(losses)
-```
-
-### 6. Step 6: Test and refine your AI agent
-Test your AI agent on a separate test dataset and refine its performance as needed. Use pytest to ensure the agent works as expected.
-
-```python
-import pytest; def test_agent(): assert agent.predict([1, 2, 3]) == 1
-```
-
-### 7. Step 7: Deploy your AI agent
-Once you're satisfied with your AI agent's performance, you can deploy it in a production environment. You can use a framework like Flask or Django to build a web interface.
 
 ## The mistake almost everyone makes
 
-> ⚠️  One common mistake people make when building an AI agent is not preprocessing their data properly - this can lead to poor performance and inaccurate results. To fix this, make sure to handle missing values, normalize the data, and encode categorical variables.
+> ⚠️  Forgetting to split data into training and testing sets - this can lead to overfitting and poor performance on new data. To fix this, use the train_test_split function to split your data.
 
 ## X / Twitter thread (copy-paste ready)
 
-**1/** Building an AI agent in Python can seem daunting, but it's actually pretty straightforward - just follow these simple steps and you'll be up and running in no time.
+**1/** I just built my first AI agent in Python - and it was way harder than I thought it'd be.
 
-**2/** The first step in building an AI agent is to install the required libraries - you'll need scikit-learn, pandas, TensorFlow, NLTK, matplotlib, hyperopt, and pytest.
+**2/** I've been working on a project that involves building AI agents - it's been a wild ride, but I've learned a lot. The key is to start small and build from there.
 
-**3/** Use scikit-learn to build a simple machine learning model, such as a support vector machine - it's a great way to get started with machine learning.
+**3/** Tip: use scikit-learn to build your AI agent - it's a powerful library with a lot of tools and resources.
 
-**4/** Once you've built a simple model, you can move on to more complex models like neural networks - use TensorFlow to build and train your model.
+**4/** Tip: don't forget to split your data into training and testing sets - this is crucial for getting good performance.
 
-**5/** Don't forget to test and evaluate your AI agent - use matplotlib to visualize the results and hyperopt to tune hyperparameters.
+**5/** Tip: use random forests - they're a great algorithm for building AI agents.
 
-**6/** With these steps, you can build a powerful AI agent in Python - so what are you waiting for? Get started today and see what you can create!
+**6/** I just got my AI agent working - and it's amazing. If you're interested in building your own, send me a message and I'll share my process.
 
 ## LinkedIn version
 
-I'll never forget the first time I built an AI agent in Python - it was a real challenge, but it was also incredibly rewarding. 
-I spent hours trying to get it to work, but it just wouldn't - then I realized I was missing one simple thing. 
-Don't make the same mistake I did - follow these simple steps and you'll be up and running in no time. 
-First, you'll need to install the required libraries - you'll need scikit-learn, pandas, TensorFlow, NLTK, matplotlib, hyperopt, and pytest. 
-Once you've got the libraries installed, you can start building your AI agent - use scikit-learn to build a simple machine learning model, and then move on to more complex models like neural networks.
-
+I recently built my first AI agent in Python - and it was way harder than I thought it'd be. 
+I've been working on a project that involves building AI agents - it's been a wild ride, but I've learned a lot. 
+The key is to start small and build from there. 
+I used scikit-learn to build my AI agent - it's a powerful library with a lot of tools and resources. 
+I also learned the importance of splitting my data into training and testing sets - this is crucial for getting good performance. 
+If you're interested in building your own AI agent, I'd be happy to share my process - just send me a message.
+I'm excited to see where this technology takes us - the possibilities are endless.
 #ai #python #machinelearning #artificialintelligence
 
-_Tags: python, ai, ml, agent_
+_Tags: ai, python, machinelearning, artificialintelligence_
 
 ---
 *By Suman Giri — built with the CoderFact engine.*
