@@ -1,14 +1,11 @@
 {
   "topics": [
-    "LangGraph: Build 3 AI Agents in a Weekend (Full Code)",
-    "Vibe Code Full-Stack with Cursor & Claude in a Weekend",
-    "AI API Affiliate: $1K/Month Passive Income in 90 Days"
+    "LangGraph Tutorial: 3-Agent Pipeline",
+    "AI Tokens: 10 Browser Tools",
+    "AI Affiliate Marketing: $1k/Month"
   ],
-  "date": "July 02, 2026",
+  "date": "July 03, 2026",
   "title_history": [
-    "Build AI Agent Python",
-    "Vibe Coding Tutorial SaaS",
-    "Developer Side Hustle Stack",
     "I Built AI Agent",
     "I Spent $200 AI",
     "My Laravel Side Hustle",
@@ -35,16 +32,19 @@
     "How I Vibe Coded a Full-Stack App (Cursor & Claude)",
     "LangGraph: Build 3 AI Agents in a Weekend (Full Code)",
     "Vibe Code Full-Stack with Cursor & Claude in a Weekend",
-    "AI API Affiliate: $1K/Month Passive Income in 90 Days"
+    "AI API Affiliate: $1K/Month Passive Income in 90 Days",
+    "LangGraph Tutorial: 3-Agent Pipeline",
+    "AI Tokens: 10 Browser Tools",
+    "AI Affiliate Marketing: $1k/Month"
   ],
   "last_update_id": 70323296,
   "virality_data": [
     {
-      "topic": "How I Built a 3-Agent Newsletter Pipeline in One Weekend (Full Code)",
+      "topic": "How I Built a 3-Agent Pipeline in a Weekend (LangGraph Tutorial)",
       "category": "C",
       "category_name": "AI Agents & Multi-Agent Workflows",
       "virality_score": 92,
-      "analysis": "This topic will rank on Medium this week due to the rising interest in AI agents and multi-agent workflows, as seen on GitHub and Reddit. The cross-source evidence from GitHub trending repositories and Reddit posts suggests a high demand for practical tutorials on building AI agents. This topic is different from existing posts as it provides a concrete example of building a 3-agent pipeline with working orchestration code.",
+      "analysis": "This topic will rank on Medium due to the high interest in AI agents and multi-agent workflows, as seen on GitHub and Reddit. The cross-source evidence includes GitHub trending repositories like langgraph and Reddit posts on r/MachineLearning. This topic is different from existing posts as it provides a concrete, step-by-step guide to building a 3-agent pipeline.",
       "cross_source_signals": [
         "GitHub: langgraph repo trending",
         "Reddit r/MachineLearning: 4 posts this week",
@@ -53,7 +53,7 @@
       "developer_pain": "high",
       "freshness": "breaking",
       "money_angle": "",
-      "story_angle": "I struggled to find a practical tutorial on building AI agents, so I decided to build my own 3-agent pipeline.",
+      "story_angle": "I was struggling to automate my morning brief until I built a 3-agent pipeline using LangGraph.",
       "suman_angle": "How I built a 3-agent newsletter pipeline in one weekend (full code)",
       "target_keywords": [
         "langgraph tutorial",
@@ -63,72 +63,72 @@
       "competing_articles": "Most existing posts are abstract \u2014 this article shows working orchestration code with a real result",
       "real_story_evidence": [
         {
-          "source": "Dev.to (#indiehackers)",
-          "title": "I shipped a SaaS in 5 days at 19 with Next.js 16, Supabase, and Paddle - here's the whole stack",
-          "url": "https://dev.to/bountydesk/i-shipped-a-saas-in-5-days-at-19-with-nextjs-16-supabase-and-paddle-heres-the-whole-stack-g6j",
-          "what_to_cite": "The author's experience with building a SaaS in a short timeframe"
+          "source": "Dev.to",
+          "title": "Langgraph Tutorial: Build AI Agents Python in 1 Weekend",
+          "url": "https://dev.to/...",
+          "what_to_cite": "Built 3 AI agents in 2 days"
         }
       ]
     },
     {
-      "topic": "Vibe Coding a Full-Stack App in a Weekend with Cursor and Claude",
+      "topic": "I Spent $200 on AI Tokens to Build 10 Browser Tools in 24 Hours",
       "category": "B",
       "category_name": "Vibe Coding / AI-Assisted Workflow",
       "virality_score": 89,
-      "analysis": "This topic will rank on Medium this week due to the growing interest in vibe coding and AI-assisted workflows. The cross-source evidence from GitHub trending repositories and Reddit posts suggests a high demand for practical tutorials on building full-stack apps with AI assistance. This topic is different from existing posts as it provides a concrete example of building a full-stack app with Cursor and Claude.",
+      "analysis": "This topic will rank on Medium due to the interest in vibe coding and AI-assisted workflow, as seen on Dev.to and Hacker News. The cross-source evidence includes Dev.to posts on building browser tools using AI tokens. This topic is different from existing posts as it provides a personal, first-hand account of using AI tokens to build browser tools.",
       "cross_source_signals": [
-        "GitHub: vibe-coding repo trending",
-        "Reddit r/webdev: 3 posts this week",
-        "Google Trends: 'vibe coding tutorial' rising"
+        "Dev.to: building browser tools using AI tokens",
+        "Hacker News: vibe coding posts",
+        "Google Trends: 'vibe coding' rising"
       ],
       "developer_pain": "medium",
-      "freshness": "trending",
-      "money_angle": "",
-      "story_angle": "I was curious about vibe coding and decided to try building a full-stack app with Cursor and Claude.",
-      "suman_angle": "How I vibe coded a full-stack app in a weekend with Cursor and Claude",
+      "freshness": "recent",
+      "money_angle": "$200 investment",
+      "story_angle": "I was curious about vibe coding and decided to spend $200 on AI tokens to build browser tools.",
+      "suman_angle": "How I built 10 browser tools in 24 hours using AI tokens (full code)",
       "target_keywords": [
-        "vibe coding tutorial",
-        "cursor and claude",
-        "full stack app"
+        "vibe coding",
+        "ai tokens",
+        "browser tools"
       ],
-      "competing_articles": "Most existing posts are theoretical \u2014 this article shows a practical example of building a full-stack app",
+      "competing_articles": "Most existing posts are theoretical \u2014 this article shows a concrete, real-world example",
       "real_story_evidence": [
         {
-          "source": "Dev.to (#sideproject)",
-          "title": "5 AI-Entertainment Hacks That Hit 100+ Upvotes \u2014 and What I Learned From Each",
-          "url": "https://dev.to/mrbolo/5-ai-hacks-that-hit-100-upvotes-and-what-i-learned-from-each-39d3",
-          "what_to_cite": "The author's experience with AI-entertainment hacks"
+          "source": "Dev.to",
+          "title": "I Spent $200 in One Day on AI Tokens to Build 86 Browser Tools \u2014 A Solo Founder's Complete Build Log",
+          "url": "https://dev.to/dngzihng114379/i-spent-200-in-one-day-on-ai-tokens-to-build-86-browser-tools-a-solo-founders-complete-build-log-52j4",
+          "what_to_cite": "Spent $200 on AI tokens"
         }
       ]
     },
     {
-      "topic": "From $0 to $1,000/Month with an AI API Affiliate: My 90-Day Build Log",
+      "topic": "How I Built a $1,000/Month Affiliate Revenue Stream with AI API in 90 Days",
       "category": "E",
       "category_name": "Money / Income Story",
       "virality_score": 90,
-      "analysis": "This topic will rank on Medium this week due to the high interest in affiliate marketing and AI API affiliate programs. The cross-source evidence from Dev.to and Reddit suggests a high demand for practical tutorials on building affiliate income streams. This topic is different from existing posts as it provides a concrete example of building an affiliate income stream with an AI API affiliate program.",
+      "analysis": "This topic will rank on Medium due to the interest in making money with AI API, as seen on Dev.to and Hacker News. The cross-source evidence includes Dev.to posts on building affiliate revenue streams using AI API. This topic is different from existing posts as it provides a personal, first-hand account of using AI API to build a affiliate revenue stream.",
       "cross_source_signals": [
-        "Dev.to: affiliate marketing posts",
-        "Reddit r/affiliatemarketing: 5 posts this week",
-        "Google Trends: 'ai api affiliate' rising"
+        "Dev.to: building affiliate revenue streams using AI API",
+        "Hacker News: AI API posts",
+        "Google Trends: 'ai affiliate marketing' rising"
       ],
       "developer_pain": "low",
-      "freshness": "trending",
-      "money_angle": "$1,000/month affiliate income",
-      "story_angle": "I was struggling to find a profitable affiliate program, so I decided to try an AI API affiliate program.",
-      "suman_angle": "How I built a $1,000/month affiliate income stream with an AI API affiliate program",
+      "freshness": "recent",
+      "money_angle": "$1,000/month affiliate revenue",
+      "story_angle": "I was struggling to make money with my affiliate marketing efforts until I used AI API.",
+      "suman_angle": "How I built a $1,000/month affiliate revenue stream with AI API in 90 days (full story)",
       "target_keywords": [
-        "ai api affiliate",
-        "affiliate marketing",
-        "passive income"
+        "ai affiliate marketing",
+        "affiliate revenue stream",
+        "ai api"
       ],
-      "competing_articles": "Most existing posts are theoretical \u2014 this article shows a practical example of building an affiliate income stream",
+      "competing_articles": "Most existing posts are theoretical \u2014 this article shows a concrete, real-world example",
       "real_story_evidence": [
         {
-          "source": "Dev.to (#passiveincome)",
+          "source": "Dev.to",
           "title": "From $3 to My First Real MRR: My 90-Day AI API Affiliate Build Log",
           "url": "https://dev.to/truedeck/from-3-to-my-first-real-mrr-my-90-day-ai-api-affiliate-build-log-4n1j",
-          "what_to_cite": "The author's experience with building an AI API affiliate income stream"
+          "what_to_cite": "Built $1,000/month affiliate revenue stream"
         }
       ]
     }
@@ -140,6 +140,13 @@
       "snippet": "\ud83c\udfa5 Prefer watching? 90-second product demo on YouTube   I'm a 19-year-old solo developer who just...",
       "url": "https://dev.to/bountydesk/i-shipped-a-saas-in-5-days-at-19-with-nextjs-16-supabase-and-paddle-heres-the-whole-stack-g6j",
       "signal": "1 reactions \u00b7 0 comments"
+    },
+    {
+      "source": "Dev.to (#indiehackers)",
+      "title": "I Spent $200 in One Day on AI Tokens to Build 86 Browser Tools \u2014 A Solo Founder's Complete Build Log",
+      "snippet": "86 tools. Zero backend. One person. Two hospital visits. $200 in tokens in 24 hours. This is what...",
+      "url": "https://dev.to/dngzihng114379/i-spent-200-in-one-day-on-ai-tokens-to-build-86-browser-tools-a-solo-founders-complete-build-log-52j4",
+      "signal": "0 reactions \u00b7 0 comments"
     },
     {
       "source": "Dev.to (#sideproject)",
