@@ -1,14 +1,11 @@
 {
   "topics": [
-    "LangGraph Tutorial: 3-Agent Pipeline",
-    "AI Tokens: 10 Browser Tools",
-    "AI Affiliate Marketing: $1k/Month"
+    "LangGraph Tutorial: Build AI Agents in Python This Weekend",
+    "Vibe Coding: Full Stack App with Cursor & Claude, Fast",
+    "Affiliate Marketing: Triple Revenue with Recurring Commissions"
   ],
-  "date": "July 03, 2026",
+  "date": "July 04, 2026",
   "title_history": [
-    "I Built AI Agent",
-    "I Spent $200 AI",
-    "My Laravel Side Hustle",
     "I Built 86 Browser Tools",
     "My $3,000/Month Developer Side",
     "I Built AI Agent",
@@ -35,16 +32,19 @@
     "AI API Affiliate: $1K/Month Passive Income in 90 Days",
     "LangGraph Tutorial: 3-Agent Pipeline",
     "AI Tokens: 10 Browser Tools",
-    "AI Affiliate Marketing: $1k/Month"
+    "AI Affiliate Marketing: $1k/Month",
+    "LangGraph Tutorial: Build AI Agents in Python This Weekend",
+    "Vibe Coding: Full Stack App with Cursor & Claude, Fast",
+    "Affiliate Marketing: Triple Revenue with Recurring Commissions"
   ],
   "last_update_id": 70323296,
   "virality_data": [
     {
-      "topic": "How I Built a 3-Agent Pipeline in a Weekend (LangGraph Tutorial)",
+      "topic": "How I Built a 3-Agent Newsletter Pipeline in One Weekend (Full Code)",
       "category": "C",
       "category_name": "AI Agents & Multi-Agent Workflows",
       "virality_score": 92,
-      "analysis": "This topic will rank on Medium due to the high interest in AI agents and multi-agent workflows, as seen on GitHub and Reddit. The cross-source evidence includes GitHub trending repositories like langgraph and Reddit posts on r/MachineLearning. This topic is different from existing posts as it provides a concrete, step-by-step guide to building a 3-agent pipeline.",
+      "analysis": "This topic will rank on Medium this week due to the rising interest in AI agents and multi-agent workflows. The cross-source evidence includes GitHub's langgraph repo trending, Reddit's r/MachineLearning discussing AI agents, and Google Trends showing an increase in 'ai agent tutorial' searches. This post will differ from existing ones by providing working orchestration code with a real result.",
       "cross_source_signals": [
         "GitHub: langgraph repo trending",
         "Reddit r/MachineLearning: 4 posts this week",
@@ -53,82 +53,82 @@
       "developer_pain": "high",
       "freshness": "breaking",
       "money_angle": "",
-      "story_angle": "I was struggling to automate my morning brief until I built a 3-agent pipeline using LangGraph.",
+      "story_angle": "I wanted to automate my morning brief, so I built a 3-agent pipeline using LangGraph.",
       "suman_angle": "How I built a 3-agent newsletter pipeline in one weekend (full code)",
       "target_keywords": [
         "langgraph tutorial",
         "build ai agent python",
         "multi agent workflow"
       ],
-      "competing_articles": "Most existing posts are abstract \u2014 this article shows working orchestration code with a real result",
+      "competing_articles": "Most existing posts are abstract \u2014 this one shows working orchestration code with a real result",
       "real_story_evidence": [
         {
-          "source": "Dev.to",
-          "title": "Langgraph Tutorial: Build AI Agents Python in 1 Weekend",
-          "url": "https://dev.to/...",
-          "what_to_cite": "Built 3 AI agents in 2 days"
+          "source": "Dev.to (#indiehackers)",
+          "title": "I shipped a SaaS in 5 days at 19 with Next.js 16, Supabase, and Paddle - here's the whole stack",
+          "url": "https://dev.to/bountydesk/i-shipped-a-saas-in-5-days-at-19-with-nextjs-16-supabase-and-paddle-heres-the-whole-stack-g6j",
+          "what_to_cite": "Building a SaaS in 5 days"
         }
       ]
     },
     {
-      "topic": "I Spent $200 on AI Tokens to Build 10 Browser Tools in 24 Hours",
+      "topic": "Vibe Coding a Full-Stack App with Cursor and Claude in a Weekend",
       "category": "B",
       "category_name": "Vibe Coding / AI-Assisted Workflow",
       "virality_score": 89,
-      "analysis": "This topic will rank on Medium due to the interest in vibe coding and AI-assisted workflow, as seen on Dev.to and Hacker News. The cross-source evidence includes Dev.to posts on building browser tools using AI tokens. This topic is different from existing posts as it provides a personal, first-hand account of using AI tokens to build browser tools.",
+      "analysis": "This topic will rank on Medium this week due to the increasing interest in vibe coding and AI-assisted workflows. The cross-source evidence includes GitHub's cursor repo trending, Reddit's r/webdev discussing vibe coding, and Google Trends showing an increase in 'vibe coding tutorial' searches. This post will differ from existing ones by providing a step-by-step guide to building a full-stack app using Cursor and Claude.",
       "cross_source_signals": [
-        "Dev.to: building browser tools using AI tokens",
-        "Hacker News: vibe coding posts",
-        "Google Trends: 'vibe coding' rising"
+        "GitHub: cursor repo trending",
+        "Reddit r/webdev: 3 posts this week",
+        "Google Trends: 'vibe coding tutorial' rising"
       ],
       "developer_pain": "medium",
-      "freshness": "recent",
-      "money_angle": "$200 investment",
-      "story_angle": "I was curious about vibe coding and decided to spend $200 on AI tokens to build browser tools.",
-      "suman_angle": "How I built 10 browser tools in 24 hours using AI tokens (full code)",
+      "freshness": "new",
+      "money_angle": "",
+      "story_angle": "I wanted to build a full-stack app quickly, so I used Cursor and Claude to vibe code it in a weekend.",
+      "suman_angle": "How I vibe coded a full-stack app with Cursor and Claude in a weekend",
       "target_keywords": [
-        "vibe coding",
-        "ai tokens",
-        "browser tools"
+        "vibe coding tutorial",
+        "cursor and claude",
+        "full stack app"
       ],
-      "competing_articles": "Most existing posts are theoretical \u2014 this article shows a concrete, real-world example",
+      "competing_articles": "Most existing posts are theoretical \u2014 this one provides a step-by-step guide",
       "real_story_evidence": [
         {
-          "source": "Dev.to",
+          "source": "Dev.to (#indiehackers)",
           "title": "I Spent $200 in One Day on AI Tokens to Build 86 Browser Tools \u2014 A Solo Founder's Complete Build Log",
           "url": "https://dev.to/dngzihng114379/i-spent-200-in-one-day-on-ai-tokens-to-build-86-browser-tools-a-solo-founders-complete-build-log-52j4",
-          "what_to_cite": "Spent $200 on AI tokens"
+          "what_to_cite": "Building 86 browser tools in one day"
         }
       ]
     },
     {
-      "topic": "How I Built a $1,000/Month Affiliate Revenue Stream with AI API in 90 Days",
+      "topic": "How I Tripled My Newsletter Revenue by Switching to Recurring Commission Affiliate Programs",
       "category": "E",
       "category_name": "Money / Income Story",
       "virality_score": 90,
-      "analysis": "This topic will rank on Medium due to the interest in making money with AI API, as seen on Dev.to and Hacker News. The cross-source evidence includes Dev.to posts on building affiliate revenue streams using AI API. This topic is different from existing posts as it provides a personal, first-hand account of using AI API to build a affiliate revenue stream.",
+      "analysis": "This topic will rank on Medium this week due to the interest in affiliate marketing and income generation. The cross-source evidence includes Reddit's r/affiliatemarketing discussing recurring commission programs, Google Trends showing an increase in 'affiliate marketing tutorial' searches, and Dev.to posts about passive income. This post will differ from existing ones by providing a personal story of tripling newsletter revenue.",
       "cross_source_signals": [
-        "Dev.to: building affiliate revenue streams using AI API",
-        "Hacker News: AI API posts",
-        "Google Trends: 'ai affiliate marketing' rising"
+        "Reddit r/affiliatemarketing: 5 posts this week",
+        "Google Trends: 'affiliate marketing tutorial' rising",
+        "Dev.to: passive income posts"
       ],
       "developer_pain": "low",
-      "freshness": "recent",
-      "money_angle": "$1,000/month affiliate revenue",
-      "story_angle": "I was struggling to make money with my affiliate marketing efforts until I used AI API.",
-      "suman_angle": "How I built a $1,000/month affiliate revenue stream with AI API in 90 days (full story)",
+      "freshness": "new",
+      "money_angle": "Tripling newsletter revenue",
+      "story_angle": "I wanted to increase my newsletter revenue, so I switched to recurring commission affiliate programs.",
+      "suman_angle": "How I tripled my newsletter revenue by switching to recurring commission affiliate programs",
       "target_keywords": [
-        "ai affiliate marketing",
-        "affiliate revenue stream",
-        "ai api"
+        "affiliate marketing tutorial",
+        "recurring commission programs",
+        "passive income"
       ],
-      "competing_articles": "Most existing posts are theoretical \u2014 this article shows a concrete, real-world example",
+      "competing_articles": "Most existing posts are general \u2014 this one provides a personal story with specific numbers",
       "real_story_evidence": [
         {
-          "source": "Dev.to",
-          "title": "From $3 to My First Real MRR: My 90-Day AI API Affiliate Build Log",
-          "url": "https://dev.to/truedeck/from-3-to-my-first-real-mrr-my-90-day-ai-api-affiliate-build-log-4n1j",
-          "what_to_cite": "Built $1,000/month affiliate revenue stream"
+          "source": "Dev.to (#passiveincome)",
+          "title": "How I Tripled My Newsletter Revenue by Switching to Recurring Commission Affiliate Programs",
+          "url": "https://dev.to/truespark123/how-i-tripled-my-newsletter-revenue-by-switching-to-recurring-commission-affiliate-programs-253n",
+          "what_to_cite": "Tripling newsletter revenue"
         }
       ]
     }
@@ -164,13 +164,6 @@
     },
     {
       "source": "Dev.to (#passiveincome)",
-      "title": "10 Side Projects That Actually Make Money for Developers in 2026",
-      "snippet": "10 Side Projects That Actually Make Money for Developers in 2026   I tested 10 different...",
-      "url": "https://dev.to/thnh_aloha_78f6b2e2cb5f0/10-side-projects-that-actually-make-money-for-developers-in-2026-5bp9",
-      "signal": "0 reactions \u00b7 0 comments"
-    },
-    {
-      "source": "Dev.to (#passiveincome)",
       "title": "How I Built a Passive Income Stream with Laravel + SEO in 6 Months",
       "snippet": "How I Built a Passive Income Stream with Laravel + SEO in 6 Months   I am a Magento...",
       "url": "https://dev.to/thnh_aloha_78f6b2e2cb5f0/how-i-built-a-passive-income-stream-with-laravel-seo-in-6-months-34n",
@@ -178,16 +171,23 @@
     },
     {
       "source": "Dev.to (#passiveincome)",
-      "title": "The Newsletter Monetization Playbook: How I Built a $47/Month Affiliate Revenue Stream in 90 Days",
-      "snippet": "Here's the thing: three months ago, I sat down with a spreadsheet and asked myself a question that...",
-      "url": "https://dev.to/truespark123/the-newsletter-monetization-playbook-how-i-built-a-47month-affiliate-revenue-stream-in-90-days-1176",
+      "title": "10 Side Projects That Actually Make Money for Developers in 2026",
+      "snippet": "10 Side Projects That Actually Make Money for Developers in 2026   I tested 10 different...",
+      "url": "https://dev.to/thnh_aloha_78f6b2e2cb5f0/10-side-projects-that-actually-make-money-for-developers-in-2026-5bp9",
       "signal": "0 reactions \u00b7 0 comments"
     },
     {
       "source": "Dev.to (#passiveincome)",
-      "title": "My $3,000/Month Developer Side Hustle Stack (2026 Edition)",
-      "snippet": "I hit a wall in 2022. Not the dramatic kind where I quit my job and sold everything to travel \u2014 just...",
-      "url": "https://dev.to/keenring/my-3000month-developer-side-hustle-stack-2026-edition-401j",
+      "title": "How I Tripled My Newsletter Revenue by Switching to Recurring Commission Affiliate Programs",
+      "snippet": "Two years ago, my tech newsletter was bleeding money. Not in the \"I can't pay rent\" sense \u2014 more like...",
+      "url": "https://dev.to/truespark123/how-i-tripled-my-newsletter-revenue-by-switching-to-recurring-commission-affiliate-programs-253n",
+      "signal": "0 reactions \u00b7 0 comments"
+    },
+    {
+      "source": "Dev.to (#passiveincome)",
+      "title": "The Newsletter Monetization Playbook: How I Built a $47/Month Affiliate Revenue Stream in 90 Days",
+      "snippet": "Here's the thing: three months ago, I sat down with a spreadsheet and asked myself a question that...",
+      "url": "https://dev.to/truespark123/the-newsletter-monetization-playbook-how-i-built-a-47month-affiliate-revenue-stream-in-90-days-1176",
       "signal": "0 reactions \u00b7 0 comments"
     }
   ]
