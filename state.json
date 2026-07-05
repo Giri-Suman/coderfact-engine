@@ -1,14 +1,11 @@
 {
   "topics": [
-    "LangGraph Tutorial: Build AI Agents in Python This Weekend",
-    "Vibe Coding: Full Stack App with Cursor & Claude, Fast",
-    "Affiliate Marketing: Triple Revenue with Recurring Commissions"
+    "LangGraph Tutorial: Build AI Agents in Python (Weekend Project)",
+    "Vibe Coding a Full-Stack App with Cursor & Claude",
+    "Passive Income: AI API & Affiliate Marketing ($0-$1000/Mo)"
   ],
-  "date": "July 04, 2026",
+  "date": "July 05, 2026",
   "title_history": [
-    "I Built 86 Browser Tools",
-    "My $3,000/Month Developer Side",
-    "I Built AI Agent",
     "I Built AI Agent Workflow",
     "I Spent $200 on AI Tokens",
     "My Laravel Side Hustle Stack",
@@ -35,16 +32,19 @@
     "AI Affiliate Marketing: $1k/Month",
     "LangGraph Tutorial: Build AI Agents in Python This Weekend",
     "Vibe Coding: Full Stack App with Cursor & Claude, Fast",
-    "Affiliate Marketing: Triple Revenue with Recurring Commissions"
+    "Affiliate Marketing: Triple Revenue with Recurring Commissions",
+    "LangGraph Tutorial: Build AI Agents in Python (Weekend Project)",
+    "Vibe Coding a Full-Stack App with Cursor & Claude",
+    "Passive Income: AI API & Affiliate Marketing ($0-$1000/Mo)"
   ],
   "last_update_id": 70323296,
   "virality_data": [
     {
-      "topic": "How I Built a 3-Agent Newsletter Pipeline in One Weekend (Full Code)",
+      "topic": "How I built a 3-agent newsletter pipeline in one weekend (full code)",
       "category": "C",
       "category_name": "AI Agents & Multi-Agent Workflows",
-      "virality_score": 92,
-      "analysis": "This topic will rank on Medium this week due to the rising interest in AI agents and multi-agent workflows. The cross-source evidence includes GitHub's langgraph repo trending, Reddit's r/MachineLearning discussing AI agents, and Google Trends showing an increase in 'ai agent tutorial' searches. This post will differ from existing ones by providing working orchestration code with a real result.",
+      "virality_score": 88,
+      "analysis": "This topic will rank on Medium this week due to the rising interest in AI agents and multi-agent workflows, as seen on GitHub and Reddit. The cross-source evidence includes the trending langgraph repo on GitHub and multiple posts on Reddit's r/MachineLearning. What makes this different from existing posts is the provision of working orchestration code with a real result.",
       "cross_source_signals": [
         "GitHub: langgraph repo trending",
         "Reddit r/MachineLearning: 4 posts this week",
@@ -53,82 +53,82 @@
       "developer_pain": "high",
       "freshness": "breaking",
       "money_angle": "",
-      "story_angle": "I wanted to automate my morning brief, so I built a 3-agent pipeline using LangGraph.",
+      "story_angle": "I struggled to find a comprehensive guide on building a multi-agent pipeline, so I decided to build one myself.",
       "suman_angle": "How I built a 3-agent newsletter pipeline in one weekend (full code)",
       "target_keywords": [
         "langgraph tutorial",
         "build ai agent python",
         "multi agent workflow"
       ],
-      "competing_articles": "Most existing posts are abstract \u2014 this one shows working orchestration code with a real result",
-      "real_story_evidence": [
-        {
-          "source": "Dev.to (#indiehackers)",
-          "title": "I shipped a SaaS in 5 days at 19 with Next.js 16, Supabase, and Paddle - here's the whole stack",
-          "url": "https://dev.to/bountydesk/i-shipped-a-saas-in-5-days-at-19-with-nextjs-16-supabase-and-paddle-heres-the-whole-stack-g6j",
-          "what_to_cite": "Building a SaaS in 5 days"
-        }
-      ]
-    },
-    {
-      "topic": "Vibe Coding a Full-Stack App with Cursor and Claude in a Weekend",
-      "category": "B",
-      "category_name": "Vibe Coding / AI-Assisted Workflow",
-      "virality_score": 89,
-      "analysis": "This topic will rank on Medium this week due to the increasing interest in vibe coding and AI-assisted workflows. The cross-source evidence includes GitHub's cursor repo trending, Reddit's r/webdev discussing vibe coding, and Google Trends showing an increase in 'vibe coding tutorial' searches. This post will differ from existing ones by providing a step-by-step guide to building a full-stack app using Cursor and Claude.",
-      "cross_source_signals": [
-        "GitHub: cursor repo trending",
-        "Reddit r/webdev: 3 posts this week",
-        "Google Trends: 'vibe coding tutorial' rising"
-      ],
-      "developer_pain": "medium",
-      "freshness": "new",
-      "money_angle": "",
-      "story_angle": "I wanted to build a full-stack app quickly, so I used Cursor and Claude to vibe code it in a weekend.",
-      "suman_angle": "How I vibe coded a full-stack app with Cursor and Claude in a weekend",
-      "target_keywords": [
-        "vibe coding tutorial",
-        "cursor and claude",
-        "full stack app"
-      ],
-      "competing_articles": "Most existing posts are theoretical \u2014 this one provides a step-by-step guide",
-      "real_story_evidence": [
-        {
-          "source": "Dev.to (#indiehackers)",
-          "title": "I Spent $200 in One Day on AI Tokens to Build 86 Browser Tools \u2014 A Solo Founder's Complete Build Log",
-          "url": "https://dev.to/dngzihng114379/i-spent-200-in-one-day-on-ai-tokens-to-build-86-browser-tools-a-solo-founders-complete-build-log-52j4",
-          "what_to_cite": "Building 86 browser tools in one day"
-        }
-      ]
-    },
-    {
-      "topic": "How I Tripled My Newsletter Revenue by Switching to Recurring Commission Affiliate Programs",
-      "category": "E",
-      "category_name": "Money / Income Story",
-      "virality_score": 90,
-      "analysis": "This topic will rank on Medium this week due to the interest in affiliate marketing and income generation. The cross-source evidence includes Reddit's r/affiliatemarketing discussing recurring commission programs, Google Trends showing an increase in 'affiliate marketing tutorial' searches, and Dev.to posts about passive income. This post will differ from existing ones by providing a personal story of tripling newsletter revenue.",
-      "cross_source_signals": [
-        "Reddit r/affiliatemarketing: 5 posts this week",
-        "Google Trends: 'affiliate marketing tutorial' rising",
-        "Dev.to: passive income posts"
-      ],
-      "developer_pain": "low",
-      "freshness": "new",
-      "money_angle": "Tripling newsletter revenue",
-      "story_angle": "I wanted to increase my newsletter revenue, so I switched to recurring commission affiliate programs.",
-      "suman_angle": "How I tripled my newsletter revenue by switching to recurring commission affiliate programs",
-      "target_keywords": [
-        "affiliate marketing tutorial",
-        "recurring commission programs",
-        "passive income"
-      ],
-      "competing_articles": "Most existing posts are general \u2014 this one provides a personal story with specific numbers",
+      "competing_articles": "Most existing posts are abstract \u2014 this article shows working orchestration code with a real result",
       "real_story_evidence": [
         {
           "source": "Dev.to (#passiveincome)",
-          "title": "How I Tripled My Newsletter Revenue by Switching to Recurring Commission Affiliate Programs",
-          "url": "https://dev.to/truespark123/how-i-tripled-my-newsletter-revenue-by-switching-to-recurring-commission-affiliate-programs-253n",
-          "what_to_cite": "Tripling newsletter revenue"
+          "title": "The Newsletter Monetization Playbook: How I Built a $47/Month Affiliate Revenue Stream in 90 Days",
+          "url": "https://dev.to/truespark123/the-newsletter-monetization-playbook-how-i-built-a-47month-affiliate-revenue-stream-in-90-days-1176",
+          "what_to_cite": "The importance of automation in newsletter monetization"
+        }
+      ]
+    },
+    {
+      "topic": "Vibe coding a full-stack app with Cursor and Claude in a weekend",
+      "category": "B",
+      "category_name": "Vibe Coding / AI-Assisted Workflow",
+      "virality_score": 82,
+      "analysis": "This topic will rank on Medium this week due to the growing interest in vibe coding and AI-assisted workflows. The cross-source evidence includes the trending openai/codex-plugin-cc repo on GitHub and multiple posts on Dev.to. What makes this different from existing posts is the focus on building a full-stack app with Cursor and Claude.",
+      "cross_source_signals": [
+        "GitHub: openai/codex-plugin-cc trending",
+        "Dev.to: vibe coding posts",
+        "Google Trends: 'vibe coding' rising"
+      ],
+      "developer_pain": "medium",
+      "freshness": "trending",
+      "money_angle": "",
+      "story_angle": "I was fascinated by the potential of vibe coding and decided to try building a full-stack app with Cursor and Claude.",
+      "suman_angle": "Vibe coding a full-stack app with Cursor and Claude in a weekend",
+      "target_keywords": [
+        "vibe coding",
+        "cursor and claude",
+        "full-stack app"
+      ],
+      "competing_articles": "Most existing posts focus on individual components \u2014 this article shows a comprehensive example",
+      "real_story_evidence": [
+        {
+          "source": "Dev.to (#indiehackers)",
+          "title": "I Built an AI Idea Machine \u2014 7 Shipped Products in 6 Days",
+          "url": "https://dev.to/scot_gardner_7fd0617670bb/i-built-an-ai-idea-machine-7-shipped-products-in-6-days-11b2",
+          "what_to_cite": "The potential of AI-assisted workflows in rapid prototyping"
+        }
+      ]
+    },
+    {
+      "topic": "From $0 to $1000/Month: How I built a passive income stream with affiliate marketing and AI API",
+      "category": "E",
+      "category_name": "Money / Income Story",
+      "virality_score": 90,
+      "analysis": "This topic will rank on Medium this week due to the high interest in passive income streams and affiliate marketing. The cross-source evidence includes the trending affiliate marketing posts on Dev.to and multiple success stories on Reddit. What makes this different from existing posts is the focus on using AI API to build a passive income stream.",
+      "cross_source_signals": [
+        "Dev.to: affiliate marketing posts",
+        "Reddit: r/affiliatemarketing",
+        "Google Trends: 'passive income' rising"
+      ],
+      "developer_pain": "high",
+      "freshness": "breaking",
+      "money_angle": "passive income stream",
+      "story_angle": "I struggled to find a reliable way to build a passive income stream, so I decided to try affiliate marketing with AI API.",
+      "suman_angle": "From $0 to $1000/Month: How I built a passive income stream with affiliate marketing and AI API",
+      "target_keywords": [
+        "passive income stream",
+        "affiliate marketing",
+        "AI API"
+      ],
+      "competing_articles": "Most existing posts focus on individual strategies \u2014 this article shows a comprehensive example",
+      "real_story_evidence": [
+        {
+          "source": "Dev.to (#passiveincome)",
+          "title": "From $3 to My First Real MRR: My 90-Day AI API Affiliate Build Log",
+          "url": "https://dev.to/truedeck/from-3-to-my-first-real-mrr-my-90-day-ai-api-affiliate-build-log-4n1j",
+          "what_to_cite": "The potential of AI API affiliate marketing in building a passive income stream"
         }
       ]
     }
@@ -136,10 +136,10 @@
   "success_stories": [
     {
       "source": "Dev.to (#indiehackers)",
-      "title": "I shipped a SaaS in 5 days at 19 with Next.js 16, Supabase, and Paddle - here's the whole stack",
-      "snippet": "\ud83c\udfa5 Prefer watching? 90-second product demo on YouTube   I'm a 19-year-old solo developer who just...",
-      "url": "https://dev.to/bountydesk/i-shipped-a-saas-in-5-days-at-19-with-nextjs-16-supabase-and-paddle-heres-the-whole-stack-g6j",
-      "signal": "1 reactions \u00b7 0 comments"
+      "title": "I Built an AI Idea Machine \u2014 7 Shipped Products in 6 Days",
+      "snippet": "Six days ago I woke up with the same problem I've had for years: I love building things but stumble...",
+      "url": "https://dev.to/scot_gardner_7fd0617670bb/i-built-an-ai-idea-machine-7-shipped-products-in-6-days-11b2",
+      "signal": "1 reactions \u00b7 1 comments"
     },
     {
       "source": "Dev.to (#indiehackers)",
