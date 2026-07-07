@@ -1,14 +1,11 @@
 {
   "topics": [
-    "AI API Affiliate Made $1000/Month",
-    "Build Multi Agent Workflow Python",
-    "Vibe Coding Full Stack App"
+    "LangGraph: Build 3 AI Agents in One Weekend (Full Code)",
+    "Vibe Coding: Full-Stack App with Cursor & Claude",
+    "AI API Affiliate Marketing: $0 to $1000/Month"
   ],
-  "date": "July 06, 2026",
+  "date": "July 07, 2026",
   "title_history": [
-    "AI Browser Tools Built",
-    "Build AI Agent Python",
-    "Developer Side Hustle Stack",
     "Langgraph Tutorial: Build AI Agents Python in 1 Weekend",
     "Vibe Coding: 86 Browser Tools in 24 Hours (AI Tokens)",
     "Developer Side Hustle: $3K/Month Stack in 2026",
@@ -35,7 +32,10 @@
     "Passive Income: AI API & Affiliate Marketing ($0-$1000/Mo)",
     "AI API Affiliate Made $1000/Month",
     "Build Multi Agent Workflow Python",
-    "Vibe Coding Full Stack App"
+    "Vibe Coding Full Stack App",
+    "LangGraph: Build 3 AI Agents in One Weekend (Full Code)",
+    "Vibe Coding: Full-Stack App with Cursor & Claude",
+    "AI API Affiliate Marketing: $0 to $1000/Month"
   ],
   "last_update_id": 70323296,
   "virality_data": [
@@ -44,7 +44,7 @@
       "category": "C",
       "category_name": "AI Agents & Multi-Agent Workflows",
       "virality_score": 92,
-      "analysis": "This topic will rank on Medium due to the current trend of AI agent workflows, as seen on GitHub and Reddit. The cross-source evidence includes GitHub's langgraph repo trending and Reddit's r/MachineLearning discussing AI agents. This topic is different from existing posts as it provides working orchestration code with a real result.",
+      "analysis": "This topic will rank on Medium this week due to the trending interest in AI agents and multi-agent workflows. The cross-source evidence from GitHub, Reddit, and Google Trends indicates a high demand for practical tutorials on building AI agents. This post will be different from existing ones as it provides working orchestration code with a real result.",
       "cross_source_signals": [
         "GitHub: langgraph repo trending",
         "Reddit r/MachineLearning: 4 posts this week",
@@ -53,20 +53,20 @@
       "developer_pain": "high",
       "freshness": "breaking",
       "money_angle": "",
-      "story_angle": "I spent a weekend building a 3-agent pipeline to automate my newsletter and was surprised by the results.",
+      "story_angle": "I was struggling to keep up with my morning brief until I built a 3-agent pipeline to automate it",
       "suman_angle": "How I built a 3-agent newsletter pipeline in one weekend (full code)",
       "target_keywords": [
         "langgraph tutorial",
         "build ai agent python",
         "multi agent workflow"
       ],
-      "competing_articles": "Most existing posts are abstract \u2014 this article shows working orchestration code with a real result",
+      "competing_articles": "Most existing posts are abstract \u2014 this one shows working orchestration code with a real result",
       "real_story_evidence": [
         {
-          "source": "Dev.to",
-          "title": "Build in Public: My Honest AI API Affiliate Revenue Report (Months 1\u20133)",
-          "url": "https://dev.to/truedeck/build-in-public-my-honest-ai-api-affiliate-revenue-report-months-1-3-38e1",
-          "what_to_cite": "The author's experience with building and automating a newsletter"
+          "source": "Dev.to (#indiehackers)",
+          "title": "I Built an AI Idea Machine \u2014 7 Shipped Products in 6 Days",
+          "url": "https://dev.to/scot_gardner_7fd0617670bb/i-built-an-ai-idea-machine-7-shipped-products-in-6-days-11b2",
+          "what_to_cite": "The use of AI to automate tasks and increase productivity"
         }
       ]
     },
@@ -74,61 +74,59 @@
       "topic": "Vibe Coding a Full-Stack App with Cursor & Claude in a Weekend",
       "category": "B",
       "category_name": "Vibe Coding / AI-Assisted Workflow",
-      "virality_score": 90,
-      "analysis": "This topic will rank on Medium due to the current interest in vibe coding and AI-assisted workflows. The cross-source evidence includes GitHub's openai/codex-plugin-cc repo and Reddit's r/learnprogramming discussing vibe coding. This topic is different from existing posts as it provides a step-by-step guide to building a full-stack app with Cursor & Claude.",
+      "virality_score": 89,
+      "analysis": "This topic will resonate with developers due to the growing interest in vibe coding and AI-assisted workflows. The cross-source signals from Hacker News and GitHub indicate a high demand for practical tutorials on building full-stack apps quickly. This post will be different from existing ones as it provides a step-by-step guide on using Cursor & Claude for vibe coding.",
       "cross_source_signals": [
-        "GitHub: openai/codex-plugin-cc repo",
-        "Reddit r/learnprogramming: 2 posts this week",
-        "Google Trends: 'vibe coding' rising"
+        "Hacker News: vibe coding posts trending",
+        "GitHub: cursor repo trending"
       ],
       "developer_pain": "medium",
       "freshness": "trending",
       "money_angle": "",
-      "story_angle": "I spent a weekend vibe coding a full-stack app with Cursor & Claude and was impressed by the results.",
+      "story_angle": "I was able to build a full-stack app in a weekend using vibe coding with Cursor & Claude",
       "suman_angle": "How I vibe coded a full-stack app with Cursor & Claude in a weekend",
       "target_keywords": [
         "vibe coding tutorial",
-        "cursor & claude",
-        "full stack app"
+        "cursor claude tutorial",
+        "full stack app in a weekend"
       ],
-      "competing_articles": "Most existing posts are theoretical \u2014 this article provides a practical guide to vibe coding",
+      "competing_articles": "Most existing posts are either too theoretical or too focused on a specific tool \u2014 this one provides a practical guide",
       "real_story_evidence": [
         {
-          "source": "Dev.to",
-          "title": "I Built an AI Idea Machine \u2014 7 Shipped Products in 6 Days",
-          "url": "https://dev.to/scot_gardner_7fd0617670bb/i-built-an-ai-idea-machine-7-shipped-products-in-6-days-11b2",
-          "what_to_cite": "The author's experience with building multiple products in a short timeframe"
+          "source": "Dev.to (#indiehackers)",
+          "title": "I Spent $200 in One Day on AI Tokens to Build 86 Browser Tools \u2014 A Solo Founder's Complete Build Log",
+          "url": "https://dev.to/dngzihng114379/i-spent-200-in-one-day-on-ai-tokens-to-build-86-browser-tools-a-solo-founders-complete-build-log-52j4",
+          "what_to_cite": "The use of AI tokens to build multiple tools quickly"
         }
       ]
     },
     {
-      "topic": "How I Made $1000/Month with My AI API Affiliate Side Hustle",
+      "topic": "From $0 to $1000/Month: How I Built a Passive Income Stream with AI API Affiliate Marketing",
       "category": "E",
       "category_name": "Money / Income Story",
       "virality_score": 95,
-      "analysis": "This topic will rank on Medium due to the current interest in making money with AI API affiliates. The cross-source evidence includes Dev.to's articles on passive income and affiliate marketing. This topic is different from existing posts as it provides a detailed and honest account of the author's experience with making money with AI API affiliates.",
+      "analysis": "This topic will resonate with developers due to the high demand for passive income streams and affiliate marketing. The cross-source signals from Dev.to and Google Trends indicate a high interest in AI API affiliate marketing. This post will be different from existing ones as it provides a step-by-step guide on building a passive income stream with AI API affiliate marketing.",
       "cross_source_signals": [
-        "Dev.to: passive income articles",
-        "Reddit r/affiliatemarketing: 5 posts this week",
-        "Google Trends: 'ai api affiliate' rising"
+        "Dev.to: AI API affiliate marketing posts trending",
+        "Google Trends: 'AI API affiliate marketing' rising"
       ],
-      "developer_pain": "low",
-      "freshness": "trending",
-      "money_angle": "$1000/month",
-      "story_angle": "I made $1000/month with my AI API affiliate side hustle and want to share my experience.",
-      "suman_angle": "How I made $1000/month with my AI API affiliate side hustle",
+      "developer_pain": "high",
+      "freshness": "breaking",
+      "money_angle": "passive income stream",
+      "story_angle": "I was able to build a passive income stream with AI API affiliate marketing and increased my income by $1000/month",
+      "suman_angle": "From $0 to $1000/month: how I built a passive income stream with AI API affiliate marketing",
       "target_keywords": [
-        "ai api affiliate",
-        "passive income",
-        "side hustle"
+        "AI API affiliate marketing",
+        "passive income stream",
+        "affiliate marketing tutorial"
       ],
-      "competing_articles": "Most existing posts are vague \u2014 this article provides a detailed and honest account of the author's experience",
+      "competing_articles": "Most existing posts are either too general or too focused on a specific tool \u2014 this one provides a practical guide",
       "real_story_evidence": [
         {
-          "source": "Dev.to",
+          "source": "Dev.to (#passiveincome)",
           "title": "Build in Public: My Honest AI API Affiliate Revenue Report (Months 1\u20133)",
           "url": "https://dev.to/truedeck/build-in-public-my-honest-ai-api-affiliate-revenue-report-months-1-3-38e1",
-          "what_to_cite": "The author's experience with making money with AI API affiliates"
+          "what_to_cite": "The use of AI API affiliate marketing to build a passive income stream"
         }
       ]
     }
@@ -146,13 +144,6 @@
       "title": "I Spent $200 in One Day on AI Tokens to Build 86 Browser Tools \u2014 A Solo Founder's Complete Build Log",
       "snippet": "86 tools. Zero backend. One person. Two hospital visits. $200 in tokens in 24 hours. This is what...",
       "url": "https://dev.to/dngzihng114379/i-spent-200-in-one-day-on-ai-tokens-to-build-86-browser-tools-a-solo-founders-complete-build-log-52j4",
-      "signal": "0 reactions \u00b7 0 comments"
-    },
-    {
-      "source": "Dev.to (#sideproject)",
-      "title": "5 AI-Entertainment Hacks That Hit 100+ Upvotes \u2014 and What I Learned From Each",
-      "snippet": "I run a Reddit scouting bot for 'hack signals' \u2014 stuff people duct-tape together that goes viral fast. Here are the 5 I learned the most from: AI companions, game NPCs, meme-to-merch pipelines, and a 49K-sample character search engine.",
-      "url": "https://dev.to/mrbolo/5-ai-hacks-that-hit-100-upvotes-and-what-i-learned-from-each-39d3",
       "signal": "0 reactions \u00b7 0 comments"
     },
     {
