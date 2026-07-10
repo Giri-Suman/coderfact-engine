@@ -4,147 +4,148 @@ _Build your first AI agent in Python_
 
 ## Scroll-stopping hooks
 
-**Hook 1.** I was up till 1am trying to figure out how to get my AI agent to work - it was frustrating, but I finally got it. Now I'm sharing my process so you don't have to go through the same thing.
+**Hook 1.** I was stuck on building my first AI agent - it took me hours to figure out where to start, but it was worth it. Now I can build them in no time.
 
-**Hook 2.** If you're like me, you've probably tried to build an AI agent before, but it didn't quite work out - let's try again, and this time, let's get it right.
+**Hook 2.** I've been working on a project that involves building an AI agent - it's been a challenge, but I've learned a lot. The key is to start small.
 
-**Hook 3.** What if I told you that building an AI agent in Python is actually pretty straightforward - you just need to know where to start.
+**Hook 3.** Building an AI agent can be overwhelming - there are so many libraries and tools to choose from. I've found that Python is the way to go.
 
-**Hook 4.** I've been working on building tools for CoderFact, and one of the most interesting projects I've worked on is an AI agent - it's been a wild ride, but I've learned a lot.
+**Hook 4.** I've been experimenting with different AI libraries - some are better than others. The one that's worked best for me is scikit-learn.
 
-**Hook 5.** Building an AI agent in Python can seem daunting, but trust me, it's worth it - you can use it to automate all sorts of tasks, and it's pretty cool to see it in action.
+**Hook 5.** I was amazed at how easy it was to build a simple AI agent using Python - it's opened up a whole new world of possibilities. I can build tools that actually work.
 
 ## 7 tips that actually move the needle
 
-### Tip 1. Use the scikit-learn library
-_Why it matters:_ it's one of the most popular and well-maintained machine learning libraries out there
+### Tip 1. Use the scikit-learn library to build your AI agent
+_Why it matters:_ It's one of the most popular and well-maintained libraries for machine learning
 
 ```python
-from sklearn import datasets
+from sklearn import svm
 ```
 
-### Tip 2. Start with a simple dataset like Iris
-_Why it matters:_ it's easy to work with and will help you get a feel for how the library works
-
-```
-iris = datasets.load_iris()
-```
-
-### Tip 3. Use the KNeighborsClassifier
-_Why it matters:_ it's a simple and effective classifier that's easy to use
+### Tip 2. Start with a simple dataset - like the Iris dataset
+_Why it matters:_ It's easy to work with and will help you get started quickly
 
 ```python
-from sklearn.neighbors import KNeighborsClassifier
+from sklearn.datasets import load_iris
 ```
 
-### Tip 4. Use the train_test_split function
-_Why it matters:_ it'll help you split your data into training and testing sets
+### Tip 3. Use the svm library from scikit-learn to build your model
+_Why it matters:_ It's a great library for building support vector machines
+
+```
+svm = svm.SVC()
+```
+
+### Tip 4. Use the pickle library to save your model
+_Why it matters:_ It's a great way to save and load your models
 
 ```python
-from sklearn.model_selection import train_test_split
+import pickle; pickle.dump(svm, open('model.pkl', 'wb'))
 ```
 
-### Tip 5. Use the accuracy_score function
-_Why it matters:_ it'll help you evaluate the performance of your model
+### Tip 5. Use the pandas library to work with your data
+_Why it matters:_ It's a great library for data manipulation and analysis
 
 ```python
-from sklearn.metrics import accuracy_score
+import pandas as pd
 ```
 
-### Tip 6. Use the pickle library
-_Why it matters:_ it'll help you save and load your model
-
-```python
-import pickle
-```
-
-### Tip 7. Use the numpy library
-_Why it matters:_ it'll help you with numerical computations
+### Tip 6. Use the numpy library to work with arrays
+_Why it matters:_ It's a great library for numerical computing
 
 ```python
 import numpy as np
 ```
 
+### Tip 7. Use the matplotlib library to visualize your data
+_Why it matters:_ It's a great library for creating visualizations
+
+```python
+import matplotlib.pyplot as plt
+```
+
 ## Step-by-step procedure
 
 ### 1. Step 1: Install the necessary libraries
-You'll need to install scikit-learn, numpy, and pickle - you can do this using pip
+You'll need to install scikit-learn, pandas, numpy, and matplotlib. You can do this using pip - just run 'pip install scikit-learn pandas numpy matplotlib' in your terminal.
 
 ```python
-pip install scikit-learn numpy
+pip install scikit-learn pandas numpy matplotlib
 ```
 
-### 2. Step 2: Load the Iris dataset
-You can use the load_iris function from scikit-learn to load the dataset
+### 2. Step 2: Load your dataset
+You can use the load_iris function from scikit-learn to load the Iris dataset. This is a great dataset to start with because it's easy to work with and will help you get started quickly.
 
-```
-iris = datasets.load_iris()
-```
-
-### 3. Step 3: Split the data into training and testing sets
-You can use the train_test_split function to split the data
-
-```
-X_train, X_test, y_train, y_test = train_test_split(iris.data, iris.target, test_size=0.2)
+```python
+from sklearn.datasets import load_iris; iris = load_iris()
 ```
 
-### 4. Step 4: Train the model
-You can use the KNeighborsClassifier to train the model
+### 3. Step 3: Build your model
+You can use the svm library from scikit-learn to build your model. This is a great library for building support vector machines - it's easy to use and will give you great results.
 
-```
-knn = KNeighborsClassifier(n_neighbors=5)
-```
-
-### 5. Step 5: Evaluate the model
-You can use the accuracy_score function to evaluate the performance of the model
-
-```
-accuracy = accuracy_score(y_test, knn.predict(X_test))
+```python
+from sklearn import svm; svm = svm.SVC()
 ```
 
-### 6. Step 6: Save the model
-You can use the pickle library to save the model
+### 4. Step 4: Train your model
+You can use the fit function from scikit-learn to train your model. This is where the magic happens - your model will start to learn from your data.
 
 ```
-with open('model.pkl', 'wb') as f: pickle.dump(knn, f)
+svm.fit(iris.data, iris.target)
 ```
 
-### 7. Step 7: Load the model and make predictions
-You can use the pickle library to load the model and make predictions
+### 5. Step 5: Test your model
+You can use the predict function from scikit-learn to test your model. This is where you'll see the results of your hard work - your model will start to make predictions.
 
 ```
-with open('model.pkl', 'rb') as f: knn = pickle.load(f)
+predictions = svm.predict(iris.data)
+```
+
+### 6. Step 6: Visualize your results
+You can use the matplotlib library to visualize your results. This is a great way to see how well your model is performing - you can create visualizations that will help you understand your data.
+
+```python
+import matplotlib.pyplot as plt; plt.scatter(iris.data[:, 0], iris.data[:, 1], c=predictions)
+```
+
+### 7. Step 7: Save your model
+You can use the pickle library to save your model. This is a great way to save and load your models - you can use them later to make predictions.
+
+```python
+import pickle; pickle.dump(svm, open('model.pkl', 'wb'))
 ```
 
 ## The mistake almost everyone makes
 
-> ⚠️  One common mistake people make when building an AI agent is not splitting their data into training and testing sets - this can lead to overfitting, and your model won't perform well on new data. To fix this, make sure to use the train_test_split function to split your data.
+> ⚠️  One common mistake people make when building their first AI agent is not saving their model - this can cause you to lose all of your hard work. To fix this, just use the pickle library to save your model.
 
 ## X / Twitter thread (copy-paste ready)
 
-**1/** I just spent all night building my first AI agent in Python - it was a wild ride, but I finally got it working.
+**1/** I just built my first AI agent using Python - it was easier than I thought. I'm excited to share my journey with you.
 
-**2/** I started with the Iris dataset, and used the KNeighborsClassifier to train the model - it's a simple and effective classifier that's easy to use.
+**2/** I started by loading the Iris dataset - it's a great dataset to start with because it's easy to work with. Then I built my model using scikit-learn.
 
-**3/** One of the most important things I learned is the importance of splitting your data into training and testing sets - this can help prevent overfitting, and ensure your model performs well on new data.
+**3/** I used the svm library from scikit-learn to build my model - it's a great library for building support vector machines. I was amazed at how easy it was to use.
 
-**4/** I also learned that using the accuracy_score function can help you evaluate the performance of your model - it's a simple and effective way to see how well your model is doing.
+**4/** I trained my model using the fit function from scikit-learn - this is where the magic happens. My model started to learn from my data.
 
-**5/** If you're interested in building your own AI agent in Python, I'd be happy to share my code and walk you through the process - just let me know.
+**5/** I tested my model using the predict function from scikit-learn - this is where you'll see the results of your hard work. My model started to make predictions.
 
-**6/** Building an AI agent in Python can seem daunting, but trust me, it's worth it - you can use it to automate all sorts of tasks, and it's pretty cool to see it in action. Let me know if you have any questions, and I'll do my best to help.
+**6/** The payoff is huge - building an AI agent can open up a whole new world of possibilities. You can build tools that actually work - it's an amazing feeling.
 
 ## LinkedIn version
 
-I just spent all night building my first AI agent in Python - it was a wild ride, but I finally got it working.
-I started with the Iris dataset, and used the KNeighborsClassifier to train the model - it's a simple and effective classifier that's easy to use.
-One of the most important things I learned is the importance of splitting your data into training and testing sets - this can help prevent overfitting, and ensure your model performs well on new data.
-I also learned that using the accuracy_score function can help you evaluate the performance of your model - it's a simple and effective way to see how well your model is doing.
-If you're interested in building your own AI agent in Python, I'd be happy to share my code and walk you through the process - just let me know.
+I just built my first AI agent using Python - it was easier than I thought. I'm excited to share my journey with you. 
+I started by loading the Iris dataset - it's a great dataset to start with because it's easy to work with. 
+Then I built my model using scikit-learn. 
+I used the svm library from scikit-learn to build my model - it's a great library for building support vector machines. 
+I was amazed at how easy it was to use - my model started to learn from my data. 
+The payoff is huge - building an AI agent can open up a whole new world of possibilities. 
+You can build tools that actually work - it's an amazing feeling.
+#ai #python #machinelearning #scikitlearn
 
-#machinelearning #python #ai #artificialintelligence
-
-_Tags: python, ai, ml, agent_
+_Tags: ai, python, ml, sklearn_
 
 ---
 *By Suman Giri — built with the CoderFact engine.*
