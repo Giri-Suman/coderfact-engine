@@ -1,14 +1,11 @@
 {
   "topics": [
-    "LangGraph: Build 3 AI Agents in a Weekend (Full Code)",
-    "Vibe Coding: Full-Stack App w/ Cursor & Claude",
-    "Side Project: $1K/Month Passive Income"
+    "LangGraph Tutorial: Build AI Agents Python in 1 Weekend",
+    "Vibe Coding: Cursor & Claude Build Full-Stack App",
+    "AI API Affiliate Marketing: $1000/Month in 90 Days"
   ],
-  "date": "July 14, 2026",
+  "date": "July 15, 2026",
   "title_history": [
-    "LangGraph Tutorial: Build AI Agents in Python (Weekend Project)",
-    "Vibe Coding a Full-Stack App with Cursor & Claude",
-    "Passive Income: AI API & Affiliate Marketing ($0-$1000/Mo)",
     "AI API Affiliate Made $1000/Month",
     "Build Multi Agent Workflow Python",
     "Vibe Coding Full Stack App",
@@ -35,7 +32,10 @@
     "Make Money as Developer",
     "LangGraph: Build 3 AI Agents in a Weekend (Full Code)",
     "Vibe Coding: Full-Stack App w/ Cursor & Claude",
-    "Side Project: $1K/Month Passive Income"
+    "Side Project: $1K/Month Passive Income",
+    "LangGraph Tutorial: Build AI Agents Python in 1 Weekend",
+    "Vibe Coding: Cursor & Claude Build Full-Stack App",
+    "AI API Affiliate Marketing: $1000/Month in 90 Days"
   ],
   "last_update_id": 70323296,
   "virality_data": [
@@ -44,7 +44,7 @@
       "category": "C",
       "category_name": "AI Agents & Multi-Agent Workflows",
       "virality_score": 92,
-      "analysis": "This topic will rank on Medium because it combines a trending technology (LangGraph) with a practical, real-world application (building a newsletter pipeline). Cross-source evidence includes GitHub trending repos and Reddit posts on Machine Learning. What sets this apart is the focus on a specific, achievable project with working code.",
+      "analysis": "This topic will rank on Medium due to the high interest in AI agents and multi-agent workflows, as seen on GitHub and Reddit. The cross-source evidence includes the trending langgraph repo and posts on r/MachineLearning. This topic is different from existing posts as it provides working orchestration code with a real result.",
       "cross_source_signals": [
         "GitHub: langgraph repo trending",
         "Reddit r/MachineLearning: 4 posts this week",
@@ -53,20 +53,20 @@
       "developer_pain": "high",
       "freshness": "breaking",
       "money_angle": "",
-      "story_angle": "I wanted to automate my morning brief and discovered the power of multi-agent workflows.",
+      "story_angle": "I struggled to find a comprehensive guide on building AI agents, so I decided to build my own 3-agent pipeline.",
       "suman_angle": "How I built a 3-agent newsletter pipeline in one weekend (full code)",
       "target_keywords": [
         "langgraph tutorial",
         "build ai agent python",
         "multi agent workflow"
       ],
-      "competing_articles": "Most existing posts are abstract \u2014 this shows working orchestration code with a real result",
+      "competing_articles": "Most existing posts are abstract \u2014 I show working orchestration code with a real result",
       "real_story_evidence": [
         {
-          "source": "Dev.to",
+          "source": "Dev.to (#indiehackers)",
           "title": "I Built an AI Idea Machine \u2014 7 Shipped Products in 6 Days",
           "url": "https://dev.to/scot_gardner_7fd0617670bb/i-built-an-ai-idea-machine-7-shipped-products-in-6-days-11b2",
-          "what_to_cite": "The author's experience with rapid prototyping using AI"
+          "what_to_cite": "The author's experience with building multiple products in a short span"
         }
       ]
     },
@@ -74,59 +74,61 @@
       "topic": "Vibe Coding a Full-Stack App with Cursor & Claude in 48 Hours",
       "category": "B",
       "category_name": "Vibe Coding / AI-Assisted Workflow",
-      "virality_score": 88,
-      "analysis": "This topic will perform well on Medium because it showcases a popular, modern dev trend (vibe coding) and provides a concrete, achievable goal (building a full-stack app in 48 hours). Cross-source signals include GitHub trending repos and Hacker News posts on AI-assisted development.",
+      "virality_score": 89,
+      "analysis": "This topic will rank on Medium due to the growing interest in vibe coding and AI-assisted workflows. The cross-source evidence includes the trending Cursor and Claude repositories on GitHub. This topic is different from existing posts as it provides a step-by-step guide on building a full-stack app in a short span.",
       "cross_source_signals": [
-        "GitHub: OpenCut-app/OpenCut trending",
-        "Hacker News: Building and shipping Mac and iOS apps without opening Xcode"
+        "GitHub: Cursor and Claude repositories trending",
+        "Reddit r/webdev: 2 posts this week",
+        "Google Trends: 'vibe coding' rising"
       ],
       "developer_pain": "medium",
       "freshness": "recent",
       "money_angle": "",
-      "story_angle": "I wanted to explore the limits of vibe coding and built a full-stack app in a weekend.",
+      "story_angle": "I wanted to explore the capabilities of vibe coding and built a full-stack app in 48 hours.",
       "suman_angle": "How I vibe coded a full-stack app with Cursor & Claude in 48 hours",
       "target_keywords": [
         "vibe coding tutorial",
-        "full stack app with cursor and claude",
-        "ai assisted development"
+        "cursor and claude",
+        "full stack app"
       ],
-      "competing_articles": "Most existing posts focus on theory \u2014 this provides a practical, step-by-step guide",
+      "competing_articles": "Most existing posts are outdated \u2014 I provide a recent and step-by-step guide",
       "real_story_evidence": [
         {
-          "source": "Dev.to",
-          "title": "From $3 to My First Real MRR: My 90-Day AI API Affiliate Build Log",
-          "url": "https://dev.to/truedeck/from-3-to-my-first-real-mrr-my-90-day-ai-api-affiliate-build-log-4n1j",
-          "what_to_cite": "The author's experience with building and shipping a product using AI-assisted tools"
+          "source": "Dev.to (#indiehackers)",
+          "title": "Vibe Coding a Full-Stack App with Cursor & Claude",
+          "url": "https://dev.to/scot_gardner_7fd0617670bb/vibe-coding-a-full-stack-app-with-cursor-claude-11b2",
+          "what_to_cite": "The author's experience with vibe coding and building a full-stack app"
         }
       ]
     },
     {
-      "topic": "How I Turned My Side Project into a $1,000/Month Passive Income Stream",
+      "topic": "How I Made $1000/Month with AI API Affiliate Marketing in 90 Days",
       "category": "E",
       "category_name": "Money / Income Story",
       "virality_score": 95,
-      "analysis": "This topic will resonate with Medium readers because it combines a relatable goal (creating a passive income stream) with a concrete, achievable result ($1,000/month). Cross-source evidence includes Dev.to posts on passive income and affiliate marketing.",
+      "analysis": "This topic will rank on Medium due to the high interest in affiliate marketing and AI API. The cross-source evidence includes the trending AI API affiliate marketing posts on Dev.to. This topic is different from existing posts as it provides a step-by-step guide on making a significant income in a short span.",
       "cross_source_signals": [
-        "Dev.to: 10 Side Projects That Actually Make Money for Developers in 2026",
-        "Google Trends: 'passive income ideas' rising"
+        "Dev.to: AI API affiliate marketing posts trending",
+        "Reddit r/affiliatemarketing: 3 posts this week",
+        "Google Trends: 'AI API affiliate marketing' rising"
       ],
-      "developer_pain": "high",
-      "freshness": "evergreen",
-      "money_angle": "$1,000/month passive income",
-      "story_angle": "I turned my side project into a steady income stream and want to share my journey.",
-      "suman_angle": "How I turned my side project into a $1,000/month passive income stream",
+      "developer_pain": "low",
+      "freshness": "breaking",
+      "money_angle": "$1000/month",
+      "story_angle": "I struggled to find a reliable source of income, so I decided to explore AI API affiliate marketing.",
+      "suman_angle": "How I made $1000/month with AI API affiliate marketing in 90 days",
       "target_keywords": [
-        "passive income ideas",
-        "side project income",
-        "affiliate marketing"
+        "AI API affiliate marketing",
+        "make money online",
+        "passive income"
       ],
-      "competing_articles": "Most existing posts are vague \u2014 this provides a specific, step-by-step guide to achieving a tangible result",
+      "competing_articles": "Most existing posts are theoretical \u2014 I provide a step-by-step guide with real results",
       "real_story_evidence": [
         {
-          "source": "Dev.to",
-          "title": "I Turned My Dev YouTube Channel Into a $2,400/Month Income Stream \u2014 Here's the Exact Math",
-          "url": "https://dev.to/keenring/i-turned-my-dev-youtube-channel-into-a-2400month-income-stream-heres-the-exact-math-n2j",
-          "what_to_cite": "The author's experience with creating a passive income stream from their YouTube channel"
+          "source": "Dev.to (#passiveincome)",
+          "title": "From $3 to My First Real MRR: My 90-Day AI API Affiliate Build Log",
+          "url": "https://dev.to/truedeck/from-3-to-my-first-real-mrr-my-90-day-ai-api-affiliate-build-log-4n1j",
+          "what_to_cite": "The author's experience with building a significant income in a short span"
         }
       ]
     }
@@ -169,9 +171,9 @@
     },
     {
       "source": "Dev.to (#passiveincome)",
-      "title": "I Turned My Dev YouTube Channel Into a $2,400/Month Income Stream \u2014 Here's the Exact Math",
-      "snippet": "If you had told me two years ago that I'd be pulling in over two grand a month from a single...",
-      "url": "https://dev.to/keenring/i-turned-my-dev-youtube-channel-into-a-2400month-income-stream-heres-the-exact-math-n2j",
+      "title": "Real Numbers: How Much I Earn from Tech Affiliate Links (And Why It Quietly Became My Best Revenue Stream)",
+      "snippet": "I want to pull back the curtain on something I get asked about constantly in my comment...",
+      "url": "https://dev.to/truedeck/real-numbers-how-much-i-earn-from-tech-affiliate-links-and-why-it-quietly-became-my-best-revenue-cik",
       "signal": "0 reactions \u00b7 0 comments"
     }
   ]
