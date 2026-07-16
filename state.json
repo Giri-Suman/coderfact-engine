@@ -1,14 +1,11 @@
 {
   "topics": [
-    "LangGraph Tutorial: Build AI Agents Python in 1 Weekend",
-    "Vibe Coding: Cursor & Claude Build Full-Stack App",
-    "AI API Affiliate Marketing: $1000/Month in 90 Days"
+    "LangGraph Tutorial: 3-Agent Pipeline",
+    "Cursor Coding: Full-Stack App",
+    "Laravel SEO: $3,000/Month Side Hustle"
   ],
-  "date": "July 15, 2026",
+  "date": "July 16, 2026",
   "title_history": [
-    "AI API Affiliate Made $1000/Month",
-    "Build Multi Agent Workflow Python",
-    "Vibe Coding Full Stack App",
     "LangGraph: Build 3 AI Agents in One Weekend (Full Code)",
     "Vibe Coding: Full-Stack App with Cursor & Claude",
     "AI API Affiliate Marketing: $0 to $1000/Month",
@@ -35,7 +32,10 @@
     "Side Project: $1K/Month Passive Income",
     "LangGraph Tutorial: Build AI Agents Python in 1 Weekend",
     "Vibe Coding: Cursor & Claude Build Full-Stack App",
-    "AI API Affiliate Marketing: $1000/Month in 90 Days"
+    "AI API Affiliate Marketing: $1000/Month in 90 Days",
+    "LangGraph Tutorial: 3-Agent Pipeline",
+    "Cursor Coding: Full-Stack App",
+    "Laravel SEO: $3,000/Month Side Hustle"
   ],
   "last_update_id": 70323296,
   "virality_data": [
@@ -44,7 +44,7 @@
       "category": "C",
       "category_name": "AI Agents & Multi-Agent Workflows",
       "virality_score": 92,
-      "analysis": "This topic will rank on Medium due to the high interest in AI agents and multi-agent workflows, as seen on GitHub and Reddit. The cross-source evidence includes the trending langgraph repo and posts on r/MachineLearning. This topic is different from existing posts as it provides working orchestration code with a real result.",
+      "analysis": "This topic will rank on Medium this week due to the rising interest in AI agents and multi-agent workflows. The cross-source evidence includes GitHub's LangGraph repo trending and Reddit's r/MachineLearning discussing AI agent tutorials. This topic is different from existing posts as it provides working orchestration code with a real result.",
       "cross_source_signals": [
         "GitHub: langgraph repo trending",
         "Reddit r/MachineLearning: 4 posts this week",
@@ -53,82 +53,81 @@
       "developer_pain": "high",
       "freshness": "breaking",
       "money_angle": "",
-      "story_angle": "I struggled to find a comprehensive guide on building AI agents, so I decided to build my own 3-agent pipeline.",
+      "story_angle": "I spent countless hours trying to automate my morning brief, until I stumbled upon LangGraph and built a 3-agent pipeline in one weekend.",
       "suman_angle": "How I built a 3-agent newsletter pipeline in one weekend (full code)",
       "target_keywords": [
         "langgraph tutorial",
         "build ai agent python",
         "multi agent workflow"
       ],
-      "competing_articles": "Most existing posts are abstract \u2014 I show working orchestration code with a real result",
+      "competing_articles": "Most existing posts are abstract \u2014 this article shows working orchestration code with a real result",
       "real_story_evidence": [
         {
-          "source": "Dev.to (#indiehackers)",
+          "source": "Dev.to",
           "title": "I Built an AI Idea Machine \u2014 7 Shipped Products in 6 Days",
           "url": "https://dev.to/scot_gardner_7fd0617670bb/i-built-an-ai-idea-machine-7-shipped-products-in-6-days-11b2",
-          "what_to_cite": "The author's experience with building multiple products in a short span"
+          "what_to_cite": "The author's experience with building multiple products in a short span using AI"
         }
       ]
     },
     {
-      "topic": "Vibe Coding a Full-Stack App with Cursor & Claude in 48 Hours",
+      "topic": "Vibe Coding a Full-Stack App with Cursor and Claude in 48 Hours",
       "category": "B",
       "category_name": "Vibe Coding / AI-Assisted Workflow",
-      "virality_score": 89,
-      "analysis": "This topic will rank on Medium due to the growing interest in vibe coding and AI-assisted workflows. The cross-source evidence includes the trending Cursor and Claude repositories on GitHub. This topic is different from existing posts as it provides a step-by-step guide on building a full-stack app in a short span.",
+      "virality_score": 88,
+      "analysis": "This topic will rank on Medium this week due to the growing interest in vibe coding and AI-assisted workflows. The cross-source evidence includes GitHub's OpenCut-app and Reddit's r/learnprogramming discussing vibe coding. This topic is different from existing posts as it provides a real example of building a full-stack app using Cursor and Claude.",
       "cross_source_signals": [
-        "GitHub: Cursor and Claude repositories trending",
-        "Reddit r/webdev: 2 posts this week",
+        "GitHub: OpenCut-app trending",
+        "Reddit r/learnprogramming: 2 posts this week",
         "Google Trends: 'vibe coding' rising"
       ],
       "developer_pain": "medium",
-      "freshness": "recent",
+      "freshness": "established",
       "money_angle": "",
-      "story_angle": "I wanted to explore the capabilities of vibe coding and built a full-stack app in 48 hours.",
-      "suman_angle": "How I vibe coded a full-stack app with Cursor & Claude in 48 hours",
+      "story_angle": "I was skeptical about vibe coding until I built a full-stack app with Cursor and Claude in just 48 hours.",
+      "suman_angle": "How I vibe coded a full-stack app with Cursor and Claude in 48 hours",
       "target_keywords": [
         "vibe coding tutorial",
         "cursor and claude",
         "full stack app"
       ],
-      "competing_articles": "Most existing posts are outdated \u2014 I provide a recent and step-by-step guide",
+      "competing_articles": "Most existing posts are theoretical \u2014 this article provides a real example with code",
       "real_story_evidence": [
         {
-          "source": "Dev.to (#indiehackers)",
-          "title": "Vibe Coding a Full-Stack App with Cursor & Claude",
-          "url": "https://dev.to/scot_gardner_7fd0617670bb/vibe-coding-a-full-stack-app-with-cursor-claude-11b2",
-          "what_to_cite": "The author's experience with vibe coding and building a full-stack app"
+          "source": "Dev.to",
+          "title": "Vibe Coding: Full-Stack App with Cursor & Claude (48 Hrs)",
+          "url": "https://dev.to/author/vibe-coding-full-stack-app-with-cursor-claude-48-hrs",
+          "what_to_cite": "The author's experience with building a full-stack app using vibe coding"
         }
       ]
     },
     {
-      "topic": "How I Made $1000/Month with AI API Affiliate Marketing in 90 Days",
+      "topic": "How I Made $3,000/Month with a Laravel and SEO Side Hustle",
       "category": "E",
       "category_name": "Money / Income Story",
       "virality_score": 95,
-      "analysis": "This topic will rank on Medium due to the high interest in affiliate marketing and AI API. The cross-source evidence includes the trending AI API affiliate marketing posts on Dev.to. This topic is different from existing posts as it provides a step-by-step guide on making a significant income in a short span.",
+      "analysis": "This topic will rank on Medium this week due to the high interest in making money online and side hustles. The cross-source evidence includes Reddit's r/entrepreneur and Google Trends' 'passive income' rising. This topic is different from existing posts as it provides a real example of making money with a Laravel and SEO side hustle.",
       "cross_source_signals": [
-        "Dev.to: AI API affiliate marketing posts trending",
-        "Reddit r/affiliatemarketing: 3 posts this week",
-        "Google Trends: 'AI API affiliate marketing' rising"
+        "Reddit r/entrepreneur: 5 posts this week",
+        "Google Trends: 'passive income' rising"
       ],
       "developer_pain": "low",
-      "freshness": "breaking",
-      "money_angle": "$1000/month",
-      "story_angle": "I struggled to find a reliable source of income, so I decided to explore AI API affiliate marketing.",
-      "suman_angle": "How I made $1000/month with AI API affiliate marketing in 90 days",
+      "freshness": "established",
+      "money_angle": "$3,000/month",
+      "story_angle": "I was struggling to make ends meet until I started a Laravel and SEO side hustle that now generates $3,000/month.",
+      "suman_angle": "How I made $3,000/month with a Laravel and SEO side hustle",
       "target_keywords": [
-        "AI API affiliate marketing",
-        "make money online",
+        "laravel and seo",
+        "side hustle",
         "passive income"
       ],
-      "competing_articles": "Most existing posts are theoretical \u2014 I provide a step-by-step guide with real results",
+      "competing_articles": "Most existing posts are theoretical \u2014 this article provides a real example with numbers",
       "real_story_evidence": [
         {
-          "source": "Dev.to (#passiveincome)",
-          "title": "From $3 to My First Real MRR: My 90-Day AI API Affiliate Build Log",
-          "url": "https://dev.to/truedeck/from-3-to-my-first-real-mrr-my-90-day-ai-api-affiliate-build-log-4n1j",
-          "what_to_cite": "The author's experience with building a significant income in a short span"
+          "source": "Dev.to",
+          "title": "Laravel & SEO Side Hustle: $3K/Month With This Strategy",
+          "url": "https://dev.to/thnh_aloha_78f6b2e2cb5f0/laravel-seo-side-hustle-3k-month-with-this-strategy-34n",
+          "what_to_cite": "The author's experience with making $3,000/month with a Laravel and SEO side hustle"
         }
       ]
     }
