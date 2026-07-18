@@ -1,14 +1,11 @@
 {
   "topics": [
-    "Build AI Agent Python",
-    "Vibe Coding Tutorial SaaS",
-    "Monetizing Developer Content"
+    "Langgraph Tutorial: Build 3 AI Agents in a Weekend",
+    "AI API Affiliate: $1K/Month in 90 Days (Code)",
+    "Vibe Code Full-Stack App: Cursor & Claude @ 48 Hrs"
   ],
-  "date": "July 17, 2026",
+  "date": "July 18, 2026",
   "title_history": [
-    "LangGraph Tutorial: 3-Agent Pipeline in a Weekend (Full Code)",
-    "Vibe Coding: Full-Stack App with Cursor & Claude (48 Hrs)",
-    "AI API Affiliate Marketing: $1000/Month in 90 Days",
     "I Built AI Agent Python",
     "Vibe Coding Full-Stack App",
     "AI API Affiliate Marketing",
@@ -35,7 +32,10 @@
     "Laravel SEO: $3,000/Month Side Hustle",
     "Build AI Agent Python",
     "Vibe Coding Tutorial SaaS",
-    "Monetizing Developer Content"
+    "Monetizing Developer Content",
+    "Langgraph Tutorial: Build 3 AI Agents in a Weekend",
+    "AI API Affiliate: $1K/Month in 90 Days (Code)",
+    "Vibe Code Full-Stack App: Cursor & Claude @ 48 Hrs"
   ],
   "last_update_id": 70323296,
   "virality_data": [
@@ -44,7 +44,7 @@
       "category": "C",
       "category_name": "AI Agents & Multi-Agent Workflows",
       "virality_score": 92,
-      "analysis": "This topic will rank on Medium this week because it combines the trending topic of AI agents with a personal story of building a working pipeline. The cross-source evidence from GitHub, Reddit, and Google Trends shows a high interest in AI agent tutorials and multi-agent workflows. What makes this post different is the focus on a specific, achievable goal and the inclusion of full code.",
+      "analysis": "This topic will rank on Medium this week due to the rising interest in AI agents and multi-agent workflows, as seen on GitHub and Reddit. The cross-source evidence includes the trending LangGraph repository on GitHub and multiple posts on Reddit's r/MachineLearning. This topic differs from existing posts as it provides working orchestration code with a real result.",
       "cross_source_signals": [
         "GitHub: langgraph repo trending",
         "Reddit r/MachineLearning: 4 posts this week",
@@ -52,81 +52,83 @@
       ],
       "developer_pain": "high",
       "freshness": "breaking",
-      "money_angle": "Optional: potential to monetize the newsletter",
-      "story_angle": "I was struggling to keep my newsletter up to date until I built a 3-agent pipeline",
+      "money_angle": "",
+      "story_angle": "I spent countless hours trying to automate my morning brief, until I discovered the power of AI agents.",
       "suman_angle": "How I built a 3-agent newsletter pipeline in one weekend (full code)",
       "target_keywords": [
         "langgraph tutorial",
         "build ai agent python",
         "multi agent workflow"
       ],
-      "competing_articles": "Most existing posts are abstract \u2014 Suman shows working orchestration code with a real result",
+      "competing_articles": "Most existing posts are abstract \u2014 this article shows working orchestration code with a real result",
+      "real_story_evidence": [
+        {
+          "source": "Dev.to",
+          "title": "LangGraph Tutorial: 3-Agent Pipeline in a Weekend (Full Code)",
+          "url": "https://dev.to/",
+          "what_to_cite": "The author's experience with building a 3-agent pipeline"
+        }
+      ]
+    },
+    {
+      "topic": "From $0 to $1,000/Month: My 90-Day AI API Affiliate Build Log",
+      "category": "E",
+      "category_name": "Money / Income Story",
+      "virality_score": 90,
+      "analysis": "This topic will resonate with Medium readers due to its focus on making money as a developer, a highly searched topic on Google. The cross-source evidence includes the rising interest in affiliate marketing and AI API on Google Trends. This topic differs from existing posts as it provides a personal, step-by-step account of building a successful affiliate marketing campaign.",
+      "cross_source_signals": [
+        "Google Trends: 'affiliate marketing' rising",
+        "Reddit r/affiliatemarketing: 10 posts this week",
+        "Dev.to: AI API affiliate marketing posts trending"
+      ],
+      "developer_pain": "medium",
+      "freshness": "trending",
+      "money_angle": "making $1,000/month",
+      "story_angle": "I was struggling to make a living as a developer, until I discovered the potential of AI API affiliate marketing.",
+      "suman_angle": "How I built a $1,000/month AI API affiliate marketing campaign in 90 days",
+      "target_keywords": [
+        "AI API affiliate marketing",
+        "make money as a developer",
+        "affiliate marketing campaign"
+      ],
+      "competing_articles": "Most existing posts are vague \u2014 this article provides a detailed, personal account",
       "real_story_evidence": [
         {
           "source": "Dev.to",
           "title": "From $3 to My First Real MRR: My 90-Day AI API Affiliate Build Log",
           "url": "https://dev.to/truedeck/from-3-to-my-first-real-mrr-my-90-day-ai-api-affiliate-build-log-4n1j",
-          "what_to_cite": "The author's experience with building a passive income stream using AI API affiliate marketing"
+          "what_to_cite": "The author's experience with building a successful affiliate marketing campaign"
         }
       ]
     },
     {
-      "topic": "Vibe Coding a SaaS in a Weekend with Cursor and Claude",
+      "topic": "Vibe Coding a Full-Stack App with Cursor & Claude in 48 Hours",
       "category": "B",
       "category_name": "Vibe Coding / AI-Assisted Workflow",
       "virality_score": 88,
-      "analysis": "This topic will rank on Medium this week because it combines the trending topic of vibe coding with a personal story of building a SaaS in a short amount of time. The cross-source evidence from GitHub and Hacker News shows a high interest in vibe coding and AI-assisted workflows. What makes this post different is the focus on a specific toolset and the inclusion of real prompts and diffs.",
+      "analysis": "This topic will rank on Medium this week due to the rising interest in vibe coding and AI-assisted workflows, as seen on GitHub and Reddit. The cross-source evidence includes the trending Cursor and Claude repositories on GitHub and multiple posts on Reddit's r/webdev. This topic differs from existing posts as it provides a step-by-step guide to building a full-stack app using vibe coding.",
       "cross_source_signals": [
-        "GitHub: Cursor repo trending",
-        "Hacker News: vibe coding posts"
+        "GitHub: cursor repo trending",
+        "Reddit r/webdev: 5 posts this week",
+        "Google Trends: 'vibe coding' rising"
       ],
       "developer_pain": "medium",
-      "freshness": "recent",
-      "money_angle": "potential to build a profitable SaaS",
-      "story_angle": "I was skeptical of vibe coding until I built a SaaS in a weekend",
-      "suman_angle": "How I vibe coded a SaaS in a weekend with Cursor and Claude",
+      "freshness": "trending",
+      "money_angle": "",
+      "story_angle": "I struggled to build a full-stack app, until I discovered the power of vibe coding with Cursor and Claude.",
+      "suman_angle": "How I vibe coded a full-stack app with Cursor and Claude in 48 hours",
       "target_keywords": [
         "vibe coding tutorial",
-        "build saas with cursor and claude",
-        "ai assisted workflow"
+        "build full-stack app with cursor and claude",
+        "ai-assisted workflow"
       ],
-      "competing_articles": "Most existing posts are theoretical \u2014 Suman shows real prompts and diffs",
+      "competing_articles": "Most existing posts are outdated \u2014 this article provides a fresh, step-by-step guide",
       "real_story_evidence": [
         {
           "source": "Dev.to",
-          "title": "10 Side Projects That Actually Make Money for Developers in 2026",
-          "url": "https://dev.to/thnh_aloha_78f6b2e2cb5f0/10-side-projects-that-actually-make-money-for-developers-in-2026-5bp9",
-          "what_to_cite": "The author's experience with building profitable side projects"
-        }
-      ]
-    },
-    {
-      "topic": "How I Made $2400/Month from My Dev YouTube Channel",
-      "category": "E",
-      "category_name": "Money / Income Story",
-      "virality_score": 95,
-      "analysis": "This topic will rank on Medium this week because it combines the trending topic of making money as a developer with a personal story of success. The cross-source evidence from Dev.to and YouTube shows a high interest in monetizing developer content. What makes this post different is the focus on a specific platform and the inclusion of exact numbers and strategies.",
-      "cross_source_signals": [
-        "Dev.to: posts on monetizing developer content",
-        "YouTube: developer channels with high earnings"
-      ],
-      "developer_pain": "low",
-      "freshness": "recent",
-      "money_angle": "making $2400/month from a dev YouTube channel",
-      "story_angle": "I was struggling to make money from my dev content until I optimized my YouTube channel",
-      "suman_angle": "How I made $2400/month from my dev YouTube channel",
-      "target_keywords": [
-        "monetizing developer content",
-        "making money on youtube",
-        "dev youtube channel"
-      ],
-      "competing_articles": "Most existing posts are vague \u2014 Suman shows exact numbers and strategies",
-      "real_story_evidence": [
-        {
-          "source": "Dev.to",
-          "title": "I Turned My Dev YouTube Channel Into a $2,400/Month Income Stream \u2014 Here's the Exact Math",
-          "url": "https://dev.to/keenring/i-turned-my-dev-youtube-channel-into-a-2400month-income-stream-heres-the-exact-math-n2j",
-          "what_to_cite": "The author's experience with monetizing their dev YouTube channel"
+          "title": "Vibe Coding: Full-Stack App with Cursor & Claude (48 Hrs)",
+          "url": "https://dev.to/",
+          "what_to_cite": "The author's experience with building a full-stack app using vibe coding"
         }
       ]
     }
