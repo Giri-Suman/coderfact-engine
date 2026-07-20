@@ -1,14 +1,11 @@
 {
   "topics": [
-    "Build AI Agent Python",
-    "Cursor and Claude Tutorial",
-    "Make Money Online Automation"
+    "LangGraph Tutorial: 3 AI Agents Built in One Weekend",
+    "Vibe Coding: Full-Stack App with Cursor & Claude",
+    "Automation Script: $1200/Month Passive Income"
   ],
-  "date": "July 19, 2026",
+  "date": "July 20, 2026",
   "title_history": [
-    "Build AI Agent Python",
-    "Vibe Coding Tutorial Full",
-    "AI API Affiliate Marketing",
     "LangGraph Tutorial: Build AI Agents in Python This Weekend",
     "Vibe Coding: Full-Stack App with Cursor & Claude (48 Hrs)",
     "Laravel & SEO Side Hustle: $3K/Month With This Strategy",
@@ -35,7 +32,10 @@
     "Vibe Code Full-Stack App: Cursor & Claude @ 48 Hrs",
     "Build AI Agent Python",
     "Cursor and Claude Tutorial",
-    "Make Money Online Automation"
+    "Make Money Online Automation",
+    "LangGraph Tutorial: 3 AI Agents Built in One Weekend",
+    "Vibe Coding: Full-Stack App with Cursor & Claude",
+    "Automation Script: $1200/Month Passive Income"
   ],
   "last_update_id": 70323296,
   "virality_data": [
@@ -44,7 +44,7 @@
       "category": "C",
       "category_name": "AI Agents & Multi-Agent Workflows",
       "virality_score": 92,
-      "analysis": "This topic will rank on Medium due to the rising interest in AI agents and multi-agent workflows, as seen on GitHub and Reddit. The cross-source evidence includes the langgraph repo trending on GitHub and multiple posts on Reddit's r/MachineLearning. This topic differs from existing posts by providing working orchestration code with a real result.",
+      "analysis": "This topic will rank on Medium due to the rising interest in AI agents and multi-agent workflows, as seen on GitHub and Reddit. The cross-source evidence includes the trending LangGraph repository on GitHub and multiple posts on Reddit's r/MachineLearning. This topic differs from existing posts by providing working orchestration code and a real result.",
       "cross_source_signals": [
         "GitHub: langgraph repo trending",
         "Reddit r/MachineLearning: 4 posts this week",
@@ -52,21 +52,21 @@
       ],
       "developer_pain": "high",
       "freshness": "breaking",
-      "money_angle": "Optional: monetization or income angle if relevant \u2014 empty string if not",
-      "story_angle": "I spent countless hours trying to automate my morning brief, until I built a 3-agent pipeline",
+      "money_angle": "",
+      "story_angle": "I struggled to find a comprehensive guide on building AI agents, so I decided to create my own pipeline.",
       "suman_angle": "How I built a 3-agent newsletter pipeline in one weekend (full code)",
       "target_keywords": [
         "langgraph tutorial",
         "build ai agent python",
         "multi agent workflow"
       ],
-      "competing_articles": "Most existing posts are abstract \u2014 Suman shows working orchestration code with a real result",
+      "competing_articles": "Most existing posts are abstract \u2014 I show working orchestration code with a real result",
       "real_story_evidence": [
         {
-          "source": "Dev.to",
-          "title": "From $3 to My First Real MRR: My 90-Day AI API Affiliate Build Log",
-          "url": "https://dev.to/truedeck/from-3-to-my-first-real-mrr-my-90-day-ai-api-affiliate-build-log-4n1j",
-          "what_to_cite": "The author's 90-day experiment and its results"
+          "source": "Dev.to (#passiveincome)",
+          "title": "From Zero to $47 MRR in 90 Days: My AI API Affiliate Side Hustle Experiment",
+          "url": "https://dev.to/quickdash/from-zero-to-47-mrr-in-90-days-my-ai-api-affiliate-side-hustle-experiment-5986",
+          "what_to_cite": "The author's experience with AI API affiliate marketing"
         }
       ]
     },
@@ -75,65 +75,78 @@
       "category": "B",
       "category_name": "Vibe Coding / AI-Assisted Workflow",
       "virality_score": 88,
-      "analysis": "This topic will rank on Medium due to the growing interest in vibe coding and AI-assisted workflows. The cross-source evidence includes the Cursor and Claude repos trending on GitHub and multiple posts on Reddit's r/learnprogramming. This topic differs from existing posts by providing a detailed, step-by-step guide to building a full-stack app in 48 hours.",
+      "analysis": "This topic will rank on Medium due to the growing interest in vibe coding and AI-assisted workflows. The cross-source evidence includes the trending Cursor and Claude repositories on GitHub and multiple posts on Reddit's r/learnprogramming. This topic differs from existing posts by providing a step-by-step guide on building a full-stack app using vibe coding.",
       "cross_source_signals": [
-        "GitHub: Cursor and Claude repos trending",
+        "GitHub: cursor repo trending",
         "Reddit r/learnprogramming: 3 posts this week",
-        "Google Trends: 'vibe coding' rising"
+        "Google Trends: 'vibe coding tutorial' rising"
       ],
       "developer_pain": "medium",
-      "freshness": "trending",
-      "money_angle": "Optional: monetization or income angle if relevant \u2014 empty string if not",
-      "story_angle": "I was skeptical of vibe coding until I built a full-stack app in 48 hours with Cursor and Claude",
-      "suman_angle": "How I vibe coded a full-stack app with Cursor and Claude in 48 hours (step-by-step guide)",
+      "freshness": "recent",
+      "money_angle": "",
+      "story_angle": "I was impressed by the potential of vibe coding and decided to build a full-stack app using Cursor and Claude.",
+      "suman_angle": "How I vibe coded a full-stack app with Cursor and Claude in 48 hours",
       "target_keywords": [
         "vibe coding tutorial",
         "cursor and claude",
-        "full-stack app"
+        "full stack app"
       ],
-      "competing_articles": "Most existing posts are outdated or lack a step-by-step guide \u2014 Suman provides a detailed, easy-to-follow tutorial",
+      "competing_articles": "Most existing posts are outdated \u2014 I provide a recent and comprehensive guide",
       "real_story_evidence": [
         {
-          "source": "Dev.to",
-          "title": "I Turned My Dev YouTube Channel Into a $2,400/Month Income Stream \u2014 Here's the Exact Math",
-          "url": "https://dev.to/keenring/i-turned-my-dev-youtube-channel-into-a-2400month-income-stream-heres-the-exact-math-n2j",
-          "what_to_cite": "The author's experience with building and monetizing a YouTube channel"
+          "source": "Hacker News (Show HN)",
+          "title": "Show HN: I replaced a $120k bowling center system with $1,600 in ESP32s",
+          "url": "https://news.ycombinator.com/item?id=48968606",
+          "what_to_cite": "The author's experience with building a cost-effective solution using ESP32s"
         }
       ]
     },
     {
-      "topic": "How I Made $1,000/Month with a Simple Automation Script",
+      "topic": "How I Made $1,200/Month with a Simple Automation Script",
       "category": "E",
       "category_name": "Money / Income Story",
-      "virality_score": 95,
-      "analysis": "This topic will rank on Medium due to the high interest in making money as a developer and the growing trend of automation. The cross-source evidence includes multiple posts on Reddit's r/automation and r/make money online. This topic differs from existing posts by providing a simple, yet effective automation script that generates a significant income.",
+      "virality_score": 90,
+      "analysis": "This topic will rank on Medium due to the high interest in making money through automation. The cross-source evidence includes multiple posts on Reddit's r/automation and r/make money online. This topic differs from existing posts by providing a simple and replicable automation script.",
       "cross_source_signals": [
         "Reddit r/automation: 5 posts this week",
-        "Google Trends: 'make money online' rising",
-        "Stack Overflow: automation questions trending"
+        "Google Trends: 'make money with automation' rising"
       ],
       "developer_pain": "low",
-      "freshness": "evergreen",
-      "money_angle": "$1,000/month with a simple automation script",
-      "story_angle": "I was struggling to make a living as a developer until I discovered the power of automation",
-      "suman_angle": "How I made $1,000/month with a simple automation script (step-by-step guide)",
+      "freshness": "recent",
+      "money_angle": "$1,200/month",
+      "story_angle": "I created a simple automation script that generated a significant income, and I want to share my experience.",
+      "suman_angle": "How I made $1,200/month with a simple automation script",
       "target_keywords": [
-        "make money online",
+        "make money with automation",
         "automation script",
-        "developer income"
+        "passive income"
       ],
-      "competing_articles": "Most existing posts are either too complex or lack a clear, step-by-step guide \u2014 Suman provides a simple, easy-to-follow tutorial",
+      "competing_articles": "Most existing posts are complex \u2014 I provide a simple and easy-to-follow guide",
       "real_story_evidence": [
         {
-          "source": "Dev.to",
-          "title": "From Zero to $47 MRR in 90 Days: My AI API Affiliate Side Hustle Experiment",
-          "url": "https://dev.to/quickdash/from-zero-to-47-mrr-in-90-days-my-ai-api-affiliate-side-hustle-experiment-5986",
-          "what_to_cite": "The author's 90-day experiment and its results"
+          "source": "Dev.to (#passiveincome)",
+          "title": "I Turned My Dev YouTube Channel Into a $2,400/Month Income Stream \u2014 Here's the Exact Math",
+          "url": "https://dev.to/keenring/i-turned-my-dev-youtube-channel-into-a-2400month-income-stream-heres-the-exact-math-n2j",
+          "what_to_cite": "The author's experience with creating a passive income stream"
         }
       ]
     }
   ],
   "success_stories": [
+    {
+      "source": "Hacker News (Show HN)",
+      "title": "Show HN: I replaced a $120k bowling center system with $1,600 in ESP32s",
+      "snippet": "I might be the only SRE on Earth with his own bowling center. It&#x27;s a more in-depth gig than you&#x27;d think.<p>My family and I bought an abandoned 8-lane bowling center in the rural mid-west. In",
+      "url": "https://news.ycombinator.com/item?id=48968606",
+      "signal": "1944 points \u00b7 202 comments"
+    },
+    {
+      "source": "Dev.to (#indiehackers)",
+      "title": "I Built an AI Idea Machine \u2014 7 Shipped Products in 6 Days",
+      "snippet": "Six days ago I woke up with the same problem I've had for years: I love building things but stumble...",
+      "url": "https://dev.to/scot_gardner_7fd0617670bb/i-built-an-ai-idea-machine-7-shipped-products-in-6-days-11b2",
+      "signal": "1 reactions \u00b7 2 comments"
+    },
     {
       "source": "Dev.to (#passiveincome)",
       "title": "From $3 to My First Real MRR: My 90-Day AI API Affiliate Build Log",
