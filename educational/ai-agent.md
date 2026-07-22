@@ -4,147 +4,160 @@ _Build your first AI agent in Python_
 
 ## Scroll-stopping hooks
 
-**Hook 1.** I was up at 1am trying to figure out how to build an AI agent - it wasn't easy, but I got it working. Here's what I learned
+**Hook 1.** I was up till 1am trying to figure out how to build a basic AI agent in Python - it wasn't easy, but I finally got it working. Here's what I learned
 
-**Hook 2.** Building an AI agent from scratch can be daunting - I've been there, and I've got the scars to prove it
+**Hook 2.** So you want to build an AI agent - where do you even start? I've been there, and I've got some tips to share
 
-**Hook 3.** You don't need a PhD in machine learning to build an AI agent - just some patience and Python skills
+**Hook 3.** I've been playing around with Python's AI libraries, and I'm excited to share my findings with you - it's easier than you think
 
-**Hook 4.** I spent hours trying to get my AI agent to work - but it was all worth it in the end
+**Hook 4.** Building an AI agent from scratch can be daunting, but it's worth it - trust me, I've been through the struggle
 
-**Hook 5.** If you're like me, you're curious about AI agents - but don't know where to start
+**Hook 5.** What if I told you that building an AI agent in Python can be done in just a few hours - sounds crazy, but it's true
 
 ## 7 tips that actually move the needle
 
-### Tip 1. Use the scikit-learn library to simplify your machine learning workflow
-_Why it matters:_ It's a popular and well-maintained library
+### Tip 1. Use the scikit-learn library to simplify the machine learning process
+_Why it matters:_ it provides a wide range of algorithms to choose from
 
 ```python
 from sklearn import datasets
 ```
 
-### Tip 2. Install the TensorFlow library using pip
-_Why it matters:_ It's a powerful library for building AI models
+### Tip 2. Utilize the TensorFlow library for building and training AI models
+_Why it matters:_ it's one of the most popular and well-maintained AI libraries out there
 
-```
-pip install tensorflow
+```python
+import tensorflow as tf
 ```
 
-### Tip 3. Use the Keras API to build neural networks
-_Why it matters:_ It's a high-level API that's easy to use
+### Tip 3. Take advantage of the Keras API for building neural networks
+_Why it matters:_ it's easy to use and provides a high-level interface
 
 ```python
 from keras.models import Sequential
 ```
 
-### Tip 4. Use the NLTK library to process natural language data
-_Why it matters:_ It's a popular library for NLP tasks
+### Tip 4. Use the NLTK library for natural language processing tasks
+_Why it matters:_ it provides a wide range of tools and resources for text processing
 
 ```python
 import nltk
 ```
 
-### Tip 5. Use the Matplotlib library to visualize your data
-_Why it matters:_ It's a popular library for creating plots
+### Tip 5. Utilize the PyTorch library for building and training AI models
+_Why it matters:_ it provides a dynamic computation graph and is easy to use
 
 ```python
-import matplotlib.pyplot as plt
+import torch
 ```
 
-### Tip 6. Use the Pandas library to manipulate your data
-_Why it matters:_ It's a popular library for data analysis
+### Tip 6. Use the OpenCV library for computer vision tasks
+_Why it matters:_ it provides a wide range of tools and resources for image and video processing
+
+```python
+import cv2
+```
+
+### Tip 7. Take advantage of the pandas library for data manipulation and analysis
+_Why it matters:_ it provides a powerful and flexible data structure
 
 ```python
 import pandas as pd
 ```
 
-### Tip 7. Use the Scipy library to optimize your AI model
-_Why it matters:_ It's a popular library for scientific computing
-
-```python
-from scipy import optimize
-```
-
 ## Step-by-step procedure
 
 ### 1. Step 1: Install the required libraries
-You'll need to install scikit-learn, TensorFlow, and Keras - use pip to install them
+You'll need to install the scikit-learn, TensorFlow, and Keras libraries - you can do this using pip
 
 ```python
 pip install scikit-learn tensorflow keras
 ```
 
 ### 2. Step 2: Import the required libraries
-You'll need to import the libraries you just installed - use the import statement to do this
+You'll need to import the libraries you just installed - this will make them available for use in your code
 
 ```python
-import sklearn, tensorflow, keras
+import sklearn
+import tensorflow as tf
+from keras.models import Sequential
 ```
 
-### 3. Step 3: Load your data
-You'll need to load your data into a Pandas dataframe - use the read_csv function to do this
-
-```
-data = pd.read_csv('data.csv')
-```
-
-### 4. Step 4: Preprocess your data
-You'll need to preprocess your data - use the NLTK library to tokenize your text data
+### 3. Step 3: Load the dataset
+You'll need to load a dataset to train your AI agent - you can use a dataset from the scikit-learn library or load your own
 
 ```python
-from nltk.tokenize import word_tokenize
+from sklearn import datasets
+iris = datasets.load_iris()
 ```
 
-### 5. Step 5: Train your AI model
-You'll need to train your AI model - use the Keras API to build a neural network
+### 4. Step 4: Build the AI model
+You'll need to build a neural network using the Keras API - this will involve defining the layers and compiling the model
 
 ```
-model = Sequential(); model.add(Dense(64, activation='relu', input_shape=(784,)))
+model = Sequential()
+model.add(tf.keras.layers.Dense(10, input_shape=(4,)))
+model.add(tf.keras.layers.Dense(3))
+model.compile(optimizer='adam', loss='sparse_categorical_crossentropy', metrics=['accuracy'])
 ```
 
-### 6. Step 6: Evaluate your AI model
-You'll need to evaluate your AI model - use the Matplotlib library to visualize your results
+### 5. Step 5: Train the AI model
+You'll need to train the AI model using the dataset you loaded - this will involve calling the fit method on the model
+
+```
+model.fit(iris.data, iris.target, epochs=10)
+```
+
+### 6. Step 6: Evaluate the AI model
+You'll need to evaluate the AI model using a test dataset - this will involve calling the evaluate method on the model
 
 ```python
-import matplotlib.pyplot as plt; plt.plot(history.history['accuracy'])
+test_loss, test_acc = model.evaluate(iris.data, iris.target)
+print('Test accuracy:', test_acc)
 ```
 
-### 7. Step 7: Deploy your AI model
-You'll need to deploy your AI model - use the TensorFlow library to save your model
+### 7. Step 7: Use the AI model
+You can now use the AI model to make predictions - this will involve calling the predict method on the model
 
-```
-model.save('model.h5')
+```python
+predictions = model.predict(iris.data)
+print(predictions)
 ```
 
 ## The mistake almost everyone makes
 
-> ⚠️  One common mistake people make when building an AI agent is not preprocessing their data properly - make sure to tokenize your text data and normalize your numerical data
+> ⚠️  One common mistake people make when building an AI agent is not scaling the data before training the model - this can lead to poor performance and inaccurate results. To fix this, you can use the StandardScaler from the scikit-learn library to scale the data
 
 ## X / Twitter thread (copy-paste ready)
 
-**1/** I just spent all night building my first AI agent - and it was worth it
+**1/** Just spent the last 5 hours building my first AI agent in Python - and it was worth it
 
-**2/** I started by installing the required libraries - scikit-learn, TensorFlow, and Keras
+**2/** I started by installing the required libraries - scikit-learn, TensorFlow, and Keras. Then I loaded the iris dataset from scikit-learn
 
-**3/** Then I loaded my data into a Pandas dataframe - and preprocessed it using NLTK
+**3/** Next, I built a neural network using the Keras API - it was surprisingly easy. I defined the layers and compiled the model
 
-**4/** Next I built a neural network using the Keras API - and trained it on my data
+**4/** After that, I trained the AI model using the dataset - it took a few minutes, but it was worth it. I evaluated the model using a test dataset
 
-**5/** Finally I evaluated my model using Matplotlib - and deployed it using TensorFlow
+**5/** Finally, I used the AI model to make predictions - and it worked like a charm. I'm excited to build more AI agents in the future
 
-**6/** If you're interested in building your own AI agent - I'd be happy to help you get started
+**6/** If you're interested in building your own AI agent, I'd be happy to help - just let me know what you need help with
 
 ## LinkedIn version
 
-I recently spent all night building my first AI agent - and it was a wild ride. 
+I recently spent the last 5 hours building my first AI agent in Python - and it was worth it. 
 I started by installing the required libraries - scikit-learn, TensorFlow, and Keras. 
-Then I loaded my data into a Pandas dataframe - and preprocessed it using NLTK. 
-Next I built a neural network using the Keras API - and trained it on my data. 
-Finally I evaluated my model using Matplotlib - and deployed it using TensorFlow. 
-If you're interested in building your own AI agent - I'd be happy to help you get started. 
-ai, machinelearning, python, tensorflow
+Then I loaded the iris dataset from scikit-learn. 
+Next, I built a neural network using the Keras API - it was surprisingly easy. 
+After that, I trained the AI model using the dataset - it took a few minutes, but it was worth it. 
+I evaluated the model using a test dataset, and finally, I used the AI model to make predictions - and it worked like a charm.
 
-_Tags: ai, machinelearning, python, tensorflow_
+I'm excited to build more AI agents in the future, and I'd be happy to help anyone who's interested in doing the same. 
+Just let me know what you need help with - whether it's installing the required libraries, loading the dataset, building the neural network, or something else.
+
+I'm looking forward to hearing from you, and I'm excited to see what you build.
+#ai #python #machinelearning #artificialintelligence
+
+_Tags: python, ai, ml, keras_
 
 ---
 *By Suman Giri — built with the CoderFact engine.*
