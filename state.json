@@ -1,14 +1,11 @@
 {
   "topics": [
-    "Build AI Agent Python: 3-Agent Newsletter Pipeline in 1 Weekend",
-    "AI API Affiliate Marketing: From $3 to MRR in 90 Days",
-    "Vibe Coding: Full-Stack App with Cursor & Claude"
+    "Build AI Agent Python",
+    "Vibe Coding Tutorial",
+    "AI API Affiliate Marketing"
   ],
-  "date": "July 24, 2026",
+  "date": "July 25, 2026",
   "title_history": [
-    "LangGraph Tutorial: Build AI Agents Python in 1 Weekend",
-    "Vibe Coding: Cursor & Claude Build Full-Stack App",
-    "AI API Affiliate Marketing: $1000/Month in 90 Days",
     "LangGraph Tutorial: 3-Agent Pipeline",
     "Cursor Coding: Full-Stack App",
     "Laravel SEO: $3,000/Month Side Hustle",
@@ -35,7 +32,10 @@
     "Automation Scripts Passive Income",
     "Build AI Agent Python: 3-Agent Newsletter Pipeline in 1 Weekend",
     "AI API Affiliate Marketing: From $3 to MRR in 90 Days",
-    "Vibe Coding: Full-Stack App with Cursor & Claude"
+    "Vibe Coding: Full-Stack App with Cursor & Claude",
+    "Build AI Agent Python",
+    "Vibe Coding Tutorial",
+    "AI API Affiliate Marketing"
   ],
   "last_update_id": 70323296,
   "virality_data": [
@@ -44,7 +44,7 @@
       "category": "C",
       "category_name": "AI Agents & Multi-Agent Workflows",
       "virality_score": 92,
-      "analysis": "This topic will rank on Medium this week due to the rising interest in AI agents and multi-agent workflows, as seen on GitHub and Reddit. The cross-source evidence from GitHub and Reddit indicates a high demand for practical tutorials on building AI agents. This post will be different from existing ones as it provides working orchestration code with a real result.",
+      "analysis": "This topic will rank on Medium this week because it combines the trending topic of AI agents with a personal story of building a working pipeline. The cross-source evidence includes GitHub trending repositories like LangGraph and Reddit posts on r/MachineLearning. What makes it different from existing posts is the focus on a real-world application and the inclusion of full code.",
       "cross_source_signals": [
         "GitHub: langgraph repo trending",
         "Reddit r/MachineLearning: 4 posts this week",
@@ -52,51 +52,21 @@
       ],
       "developer_pain": "high",
       "freshness": "breaking",
-      "money_angle": "",
-      "story_angle": "I wanted to automate my morning brief, but existing solutions were too expensive or complicated.",
+      "money_angle": "monetization through affiliate marketing",
+      "story_angle": "I built a 3-agent pipeline to automate my morning brief and discovered the power of AI agents",
       "suman_angle": "How I built a 3-agent newsletter pipeline in one weekend (full code)",
       "target_keywords": [
         "langgraph tutorial",
         "build ai agent python",
         "multi agent workflow"
       ],
-      "competing_articles": "Most existing posts are abstract \u2014 I show working orchestration code with a real result",
+      "competing_articles": "Most existing posts are abstract \u2014 Suman shows working orchestration code with a real result",
       "real_story_evidence": [
         {
           "source": "Dev.to (#indiehackers)",
           "title": "I Built an AI-Powered Education Platform as a Solo Founder - Here's My Full Stack",
           "url": "https://dev.to/jackhan312/i-built-an-ai-powered-education-platform-as-a-solo-founder-heres-my-full-stack-3557",
-          "what_to_cite": "The author's experience with building an AI-powered platform"
-        }
-      ]
-    },
-    {
-      "topic": "From $3 to My First Real MRR: My 90-Day AI API Affiliate Build Log",
-      "category": "E",
-      "category_name": "Money / Income Story",
-      "virality_score": 90,
-      "analysis": "This topic will rank on Medium this week due to the interest in affiliate marketing and AI API. The cross-source evidence from Dev.to and Google Trends indicates a high demand for practical build logs. This post will be different from existing ones as it provides a detailed, step-by-step guide to building an AI API affiliate marketing business.",
-      "cross_source_signals": [
-        "Dev.to: affiliate marketing posts trending",
-        "Google Trends: 'ai api affiliate marketing' rising"
-      ],
-      "developer_pain": "medium",
-      "freshness": "recent",
-      "money_angle": "$1,000/month passive income",
-      "story_angle": "I struggled to make my first dollar online, but then I discovered AI API affiliate marketing.",
-      "suman_angle": "How I went from $3 to my first real MRR with AI API affiliate marketing",
-      "target_keywords": [
-        "ai api affiliate marketing",
-        "passive income",
-        "build log"
-      ],
-      "competing_articles": "Most existing posts are vague \u2014 I provide a detailed, step-by-step guide",
-      "real_story_evidence": [
-        {
-          "source": "Dev.to (#passiveincome)",
-          "title": "From $3 to My First Real MRR: My 90-Day AI API Affiliate Build Log",
-          "url": "https://dev.to/truedeck/from-3-to-my-first-real-mrr-my-90-day-ai-api-affiliate-build-log-4n1j",
-          "what_to_cite": "The author's 90-day build log and results"
+          "what_to_cite": "The use of AI agents in automating workflows"
         }
       ]
     },
@@ -105,28 +75,59 @@
       "category": "B",
       "category_name": "Vibe Coding / AI-Assisted Workflow",
       "virality_score": 88,
-      "analysis": "This topic will rank on Medium this week due to the interest in vibe coding and AI-assisted workflows. The cross-source evidence from GitHub and Hacker News indicates a high demand for practical tutorials on building full-stack apps with Cursor and Claude. This post will be different from existing ones as it provides a step-by-step guide to building a full-stack app in 48 hours.",
+      "analysis": "This topic will rank on Medium this week because it combines the trending topic of vibe coding with a personal story of building a full-stack app quickly. The cross-source evidence includes GitHub trending repositories like Cursor and Reddit posts on r/webdev. What makes it different from existing posts is the focus on a real-world application and the inclusion of a step-by-step guide.",
       "cross_source_signals": [
-        "GitHub: Cursor and Claude repos trending",
-        "Hacker News: vibe coding posts trending"
+        "GitHub: cursor repo trending",
+        "Reddit r/webdev: 2 posts this week",
+        "Google Trends: 'vibe coding tutorial' rising"
       ],
       "developer_pain": "medium",
-      "freshness": "recent",
+      "freshness": "trending",
       "money_angle": "",
-      "story_angle": "I wanted to build a full-stack app quickly, but didn't know where to start.",
+      "story_angle": "I built a full-stack app in 48 hours using vibe coding and discovered the power of AI-assisted workflow",
       "suman_angle": "How I vibe coded a full-stack app with Cursor and Claude in 48 hours",
       "target_keywords": [
-        "vibe coding",
+        "vibe coding tutorial",
         "cursor and claude",
-        "full-stack app"
+        "full stack app"
       ],
-      "competing_articles": "Most existing posts are abstract \u2014 I provide a step-by-step guide",
+      "competing_articles": "Most existing posts are theoretical \u2014 Suman shows a step-by-step guide with real code",
       "real_story_evidence": [
         {
-          "source": "Hacker News (Show HN)",
-          "title": "Show HN: I replaced a $120k bowling center system with $1,600 in ESP32s",
-          "url": "https://news.ycombinator.com/item?id=48968606",
-          "what_to_cite": "The author's experience with building a complex system with limited resources"
+          "source": "Dev.to (#saas)",
+          "title": "Orphaned AI agents: the SaaS AI agent security risk nobody tests for",
+          "url": "https://dev.to/albernaz_/orphaned-ai-agents-the-saas-ai-agent-security-risk-nobody-tests-for-336d",
+          "what_to_cite": "The importance of testing for AI agent security risks"
+        }
+      ]
+    },
+    {
+      "topic": "From $3 to My First Real MRR: My 90-Day AI API Affiliate Build Log",
+      "category": "E",
+      "category_name": "Money / Income Story",
+      "virality_score": 90,
+      "analysis": "This topic will rank on Medium this week because it combines the trending topic of AI API affiliate marketing with a personal story of building a successful income stream. The cross-source evidence includes Reddit posts on r/affiliatemarketing and Google Trends. What makes it different from existing posts is the focus on a real-world application and the inclusion of a step-by-step guide.",
+      "cross_source_signals": [
+        "Reddit r/affiliatemarketing: 3 posts this week",
+        "Google Trends: 'ai api affiliate marketing' rising"
+      ],
+      "developer_pain": "low",
+      "freshness": "trending",
+      "money_angle": "monetization through affiliate marketing",
+      "story_angle": "I built a successful AI API affiliate income stream from scratch and discovered the power of affiliate marketing",
+      "suman_angle": "From $3 to my first real MRR: my 90-day AI API affiliate build log",
+      "target_keywords": [
+        "ai api affiliate marketing",
+        "income stream",
+        "affiliate marketing"
+      ],
+      "competing_articles": "Most existing posts are theoretical \u2014 Suman shows a step-by-step guide with real numbers",
+      "real_story_evidence": [
+        {
+          "source": "Dev.to (#passiveincome)",
+          "title": "From $3 to My First Real MRR: My 90-Day AI API Affiliate Build Log",
+          "url": "https://dev.to/truedeck/from-3-to-my-first-real-mrr-my-90-day-ai-api-affiliate-build-log-4n1j",
+          "what_to_cite": "The use of AI API affiliate marketing in building a passive income stream"
         }
       ]
     }
@@ -137,7 +138,7 @@
       "title": "Show HN: I replaced a $120k bowling center system with $1,600 in ESP32s",
       "snippet": "I might be the only SRE on Earth with his own bowling center. It&#x27;s a more in-depth gig than you&#x27;d think.<p>My family and I bought an abandoned 8-lane bowling center in the rural mid-west. In",
       "url": "https://news.ycombinator.com/item?id=48968606",
-      "signal": "2926 points \u00b7 353 comments"
+      "signal": "2928 points \u00b7 355 comments"
     },
     {
       "source": "Dev.to (#saas)",
