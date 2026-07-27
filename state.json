@@ -1,14 +1,11 @@
 {
   "topics": [
-    "LangGraph Tutorial: Build AI Agents in Python This Weekend",
-    "Vibe Coding a Full-Stack App with Cursor & Claude",
-    "Automation Scripts for $1,200/Month Passive Income"
+    "LangGraph: Build 3-Agent Newsletter Pipeline in a Weekend",
+    "Vibe Code Full-Stack App: Cursor & Claude in 48 Hours",
+    "Automation Scripts: $1,200/Month Passive Income"
   ],
-  "date": "July 26, 2026",
+  "date": "July 27, 2026",
   "title_history": [
-    "Build AI Agent Python",
-    "Vibe Coding Tutorial SaaS",
-    "Monetizing Developer Content",
     "Langgraph Tutorial: Build 3 AI Agents in a Weekend",
     "AI API Affiliate: $1K/Month in 90 Days (Code)",
     "Vibe Code Full-Stack App: Cursor & Claude @ 48 Hrs",
@@ -35,16 +32,19 @@
     "AI API Affiliate Marketing",
     "LangGraph Tutorial: Build AI Agents in Python This Weekend",
     "Vibe Coding a Full-Stack App with Cursor & Claude",
-    "Automation Scripts for $1,200/Month Passive Income"
+    "Automation Scripts for $1,200/Month Passive Income",
+    "LangGraph: Build 3-Agent Newsletter Pipeline in a Weekend",
+    "Vibe Code Full-Stack App: Cursor & Claude in 48 Hours",
+    "Automation Scripts: $1,200/Month Passive Income"
   ],
   "last_update_id": 70323296,
   "virality_data": [
     {
-      "topic": "How I Built a 3-Agent Newsletter Pipeline in One Weekend (Full Code)",
+      "topic": "How I Built a 3-Agent Newsletter Pipeline in One Weekend",
       "category": "C",
       "category_name": "AI Agents & Multi-Agent Workflows",
       "virality_score": 92,
-      "analysis": "This topic will rank on Medium due to the high interest in AI agents and multi-agent workflows, as seen on GitHub and Reddit. The cross-source evidence includes trending repositories and posts on these platforms. This post will be different from existing ones as it provides working orchestration code with a real result.",
+      "analysis": "This topic will rank on Medium this week because it combines the trending AI agent topic with a personal story of building a useful application. The cross-source evidence includes GitHub trending repositories like langgraph and permissionlesstech/bitchat, as well as Reddit posts on r/MachineLearning. What makes this different from existing posts is the focus on building a concrete, working pipeline with a real result.",
       "cross_source_signals": [
         "GitHub: langgraph repo trending",
         "Reddit r/MachineLearning: 4 posts this week",
@@ -53,20 +53,20 @@
       "developer_pain": "high",
       "freshness": "breaking",
       "money_angle": "",
-      "story_angle": "I struggled to find a comprehensive guide on building AI agents, so I decided to create my own pipeline.",
+      "story_angle": "I wanted to automate my morning brief and discovered the power of AI agents.",
       "suman_angle": "How I built a 3-agent newsletter pipeline in one weekend (full code)",
       "target_keywords": [
         "langgraph tutorial",
         "build ai agent python",
         "multi agent workflow"
       ],
-      "competing_articles": "Most existing posts are abstract \u2014 this one shows working orchestration code with a real result",
+      "competing_articles": "Most existing posts are abstract \u2014 this shows working orchestration code with a real result",
       "real_story_evidence": [
         {
           "source": "Dev.to (#indiehackers)",
-          "title": "I'm building a $19 rank tracker in public \u2014 the stack, and why 'daily' is harder than it sounds",
-          "url": "https://dev.to/rankloop/im-building-a-19-rank-tracker-in-public-the-stack-and-why-daily-is-harder-than-it-sounds-43fc",
-          "what_to_cite": "The author's experience with building a rank tracker and the challenges they faced"
+          "title": "I Built an AI-Powered Education Platform as a Solo Founder - Here's My Full Stack",
+          "url": "https://dev.to/jackhan312/i-built-an-ai-powered-education-platform-as-a-solo-founder-heres-my-full-stack-3557",
+          "what_to_cite": "The use of AI agents in automating tasks"
         }
       ]
     },
@@ -74,30 +74,30 @@
       "topic": "Vibe Coding a Full-Stack App with Cursor and Claude in 48 Hours",
       "category": "B",
       "category_name": "Vibe Coding / AI-Assisted Workflow",
-      "virality_score": 88,
-      "analysis": "This topic will rank on Medium due to the growing interest in vibe coding and AI-assisted workflows. The cross-source evidence includes GitHub repositories and posts on Reddit. This post will be different from existing ones as it provides a step-by-step guide on building a full-stack app using Cursor and Claude.",
+      "virality_score": 89,
+      "analysis": "This topic will rank on Medium this week because it showcases the power of vibe coding with Cursor and Claude. The cross-source evidence includes GitHub trending repositories like citrolabs/ego-lite and pingdotgg/t3code, as well as Hacker News posts on vibe coding. What makes this different from existing posts is the focus on building a full-stack app in a short amount of time.",
       "cross_source_signals": [
-        "GitHub: cursor repo trending",
-        "Reddit r/webdev: 2 posts this week",
-        "Google Trends: 'vibe coding' rising"
+        "GitHub: citrolabs/ego-lite repo trending",
+        "Hacker News: vibe coding posts",
+        "Google Trends: 'vibe coding tutorial' rising"
       ],
       "developer_pain": "medium",
       "freshness": "trending",
       "money_angle": "",
-      "story_angle": "I was amazed by the potential of vibe coding and decided to try it out by building a full-stack app.",
+      "story_angle": "I wanted to see if I could build a full-stack app quickly using vibe coding tools.",
       "suman_angle": "How I vibe coded a full-stack app with Cursor and Claude in 48 hours",
       "target_keywords": [
         "vibe coding tutorial",
         "cursor and claude",
-        "full-stack app"
+        "full stack app"
       ],
-      "competing_articles": "Most existing posts are introductory \u2014 this one provides a hands-on guide",
+      "competing_articles": "Most existing posts are tutorials \u2014 this shows a real-world application",
       "real_story_evidence": [
         {
           "source": "Dev.to (#saas)",
           "title": "Orphaned AI agents: the SaaS AI agent security risk nobody tests for",
           "url": "https://dev.to/albernaz_/orphaned-ai-agents-the-saas-ai-agent-security-risk-nobody-tests-for-336d",
-          "what_to_cite": "The author's experience with AI agents and the security risks associated with them"
+          "what_to_cite": "The use of AI agents in SaaS applications"
         }
       ]
     },
@@ -106,29 +106,28 @@
       "category": "E",
       "category_name": "Money / Income Story",
       "virality_score": 95,
-      "analysis": "This topic will rank on Medium due to the high interest in passive income and automation. The cross-source evidence includes success stories on Dev.to and Hacker News. This post will be different from existing ones as it provides a step-by-step guide on creating automation scripts for passive income.",
+      "analysis": "This topic will rank on Medium this week because it combines the trending passive income topic with a personal story of building a successful automation script. The cross-source evidence includes Dev.to posts on passive income and automation scripts. What makes this different from existing posts is the focus on building a concrete, working script with a real result.",
       "cross_source_signals": [
-        "Dev.to: automation scripts for passive income",
-        "Hacker News: $1,200/month passive income story",
-        "Google Trends: 'passive income' rising"
+        "Dev.to: passive income posts",
+        "Google Trends: 'passive income ideas' rising"
       ],
       "developer_pain": "low",
       "freshness": "evergreen",
-      "money_angle": "$1,200/month passive income",
-      "story_angle": "I was struggling to make a living as a developer, so I decided to create automation scripts to generate passive income.",
-      "suman_angle": "How I created automation scripts to generate $1,200/month passive income",
+      "money_angle": "passive income",
+      "story_angle": "I wanted to create a passive income stream and discovered the power of automation scripts.",
+      "suman_angle": "How I built an automation script that generates $1,200/month passive income",
       "target_keywords": [
-        "passive income",
+        "passive income ideas",
         "automation scripts",
         "make money online"
       ],
-      "competing_articles": "Most existing posts are theoretical \u2014 this one provides a practical guide",
+      "competing_articles": "Most existing posts are theoretical \u2014 this shows a real-world application",
       "real_story_evidence": [
         {
-          "source": "Hacker News (Show HN)",
-          "title": "Show HN: I replaced a $120k bowling center system with $1,600 in ESP32s",
-          "url": "https://news.ycombinator.com/item?id=48968606",
-          "what_to_cite": "The author's experience with replacing a expensive system with a cheaper alternative"
+          "source": "Dev.to (#passiveincome)",
+          "title": "From $3 to My First Real MRR: My 90-Day AI API Affiliate Build Log",
+          "url": "https://dev.to/truedeck/from-3-to-my-first-real-mrr-my-90-day-ai-api-affiliate-build-log-4n1j",
+          "what_to_cite": "The use of automation scripts in generating passive income"
         }
       ]
     }
@@ -139,7 +138,7 @@
       "title": "Show HN: I replaced a $120k bowling center system with $1,600 in ESP32s",
       "snippet": "I might be the only SRE on Earth with his own bowling center. It&#x27;s a more in-depth gig than you&#x27;d think.<p>My family and I bought an abandoned 8-lane bowling center in the rural mid-west. In",
       "url": "https://news.ycombinator.com/item?id=48968606",
-      "signal": "2932 points \u00b7 355 comments"
+      "signal": "2933 points \u00b7 355 comments"
     },
     {
       "source": "Dev.to (#saas)",
@@ -154,6 +153,13 @@
       "snippet": "I do SEO for my own side projects, and for years I bounced between rank trackers. The expensive ones...",
       "url": "https://dev.to/rankloop/im-building-a-19-rank-tracker-in-public-the-stack-and-why-daily-is-harder-than-it-sounds-43fc",
       "signal": "0 reactions \u00b7 2 comments"
+    },
+    {
+      "source": "Dev.to (#indiehackers)",
+      "title": "I Built an AI-Powered Education Platform as a Solo Founder - Here's My Full Stack",
+      "snippet": "I Built an AI-Powered Education Platform as a Solo Founder - Here's My Full Stack   After 6...",
+      "url": "https://dev.to/jackhan312/i-built-an-ai-powered-education-platform-as-a-solo-founder-heres-my-full-stack-3557",
+      "signal": "0 reactions \u00b7 0 comments"
     },
     {
       "source": "Dev.to (#passiveincome)",
