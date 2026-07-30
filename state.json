@@ -1,14 +1,11 @@
 {
   "topics": [
-    "Dev YouTube Channel Monetization: My $2.4K Strategy",
-    "Vibe Coding a Full-Stack App: Cursor & Claude in 48 Hrs",
-    "Build AI Agent Python: LangGraph Morning Brief"
+    "Dev YouTube Automation: My Script Boosted Income 20%",
+    "Build AI Research Agent with LangGraph: Full Code",
+    "Vibe Code SaaS in a Weekend: Cursor & Claude"
   ],
-  "date": "July 29, 2026",
+  "date": "July 30, 2026",
   "title_history": [
-    "LangGraph Tutorial: 3 AI Agents Built in One Weekend",
-    "Vibe Coding: Full-Stack App with Cursor & Claude",
-    "Automation Script: $1200/Month Passive Income",
     "Langgraph Tutorial: 3 AI Agents in a Weekend (Full Code)",
     "Vibe Coding SaaS with Cursor & Claude in a Weekend",
     "$2,400/Month Dev YouTube Channel: My Monetization",
@@ -35,96 +32,103 @@
     "Automation Scripts: $0 to $1200/Month in 90 Days",
     "Dev YouTube Channel Monetization: My $2.4K Strategy",
     "Vibe Coding a Full-Stack App: Cursor & Claude in 48 Hrs",
-    "Build AI Agent Python: LangGraph Morning Brief"
+    "Build AI Agent Python: LangGraph Morning Brief",
+    "Dev YouTube Automation: My Script Boosted Income 20%",
+    "Build AI Research Agent with LangGraph: Full Code",
+    "Vibe Code SaaS in a Weekend: Cursor & Claude"
   ],
   "last_update_id": 70323296,
   "virality_data": [
     {
-      "topic": "How I Built a $2,400/Month Dev YouTube Channel: My Monetization Strategy",
+      "topic": "How I automated my $2,400/month Dev YouTube channel with a single script",
       "category": "E",
       "category_name": "Money / Income Story",
       "virality_score": 92,
-      "analysis": "This topic will rank on Medium this week due to its relevance to the current trend of developer monetization. The cross-source evidence includes the success story of a developer who turned their YouTube channel into a $2,400/month income stream. This post will be different from existing ones as it will provide a detailed, first-person account of the monetization strategy.",
+      "analysis": "This topic will rank on Medium because it combines a high-income story with a technical automation angle, which is in high demand. The cross-source evidence includes GitHub trending repositories on automation and YouTube API, as well as Reddit discussions on passive income. This topic is different from existing posts because it provides a specific, actionable example of automation.",
       "cross_source_signals": [
-        "Dev.to (#passiveincome)",
-        "Google Trends: 'dev youtube channel monetization' rising"
+        "GitHub: youtube-api repo trending",
+        "Reddit r/PassiveIncome: 10 posts this week",
+        "Google Trends: 'youtube automation' rising"
       ],
-      "developer_pain": "high",
+      "developer_pain": "medium",
       "freshness": "breaking",
-      "money_angle": "Monetization strategy for a dev YouTube channel",
-      "story_angle": "I turned my dev YouTube channel into a $2,400/month income stream",
-      "suman_angle": "How I turned my dev YouTube channel into a $2,400/month income stream: my exact monetization strategy",
+      "money_angle": "monetization of a Dev YouTube channel",
+      "story_angle": "I was struggling to keep up with my YouTube channel's growth, until I automated it with a single script.",
+      "suman_angle": "How I automated my Dev YouTube channel and increased my income by 20% in one month",
       "target_keywords": [
-        "dev youtube channel monetization",
-        "passive income for developers"
+        "youtube automation",
+        "dev youtube channel",
+        "passive income"
       ],
-      "competing_articles": "Most existing posts are general guides \u2014 Suman's post will provide a personal, detailed account",
+      "competing_articles": "Most existing posts focus on general YouTube growth strategies, but this article provides a specific, technical solution.",
       "real_story_evidence": [
         {
           "source": "Dev.to (#passiveincome)",
           "title": "I Turned My Dev YouTube Channel Into a $2,400/Month Income Stream \u2014 Here's the Exact Math",
           "url": "https://dev.to/keenring/i-turned-my-dev-youtube-channel-into-a-2400month-income-stream-heres-the-exact-math-n2j",
-          "what_to_cite": "The exact math behind the monetization strategy"
+          "what_to_cite": "The author's exact income figures and monetization strategy"
         }
       ]
     },
     {
-      "topic": "Vibe Coding a Full-Stack App with Cursor & Claude: A Weekend Project",
-      "category": "B",
-      "category_name": "Vibe Coding / AI-Assisted Workflow",
-      "virality_score": 90,
-      "analysis": "This topic will rank on Medium this week due to the current interest in vibe coding and AI-assisted workflows. The cross-source evidence includes the trending repo on GitHub and the success story of a developer who built a full-stack app with Cursor & Claude. This post will be different from existing ones as it will provide a detailed, step-by-step guide to building a full-stack app with these tools.",
-      "cross_source_signals": [
-        "GitHub: Cursor repo trending",
-        "Dev.to: vibe coding tutorials"
-      ],
-      "developer_pain": "medium",
-      "freshness": "trending",
-      "money_angle": "",
-      "story_angle": "I built a full-stack app with Cursor & Claude over a weekend",
-      "suman_angle": "How I vibe coded a full-stack app with Cursor & Claude in 48 hours",
-      "target_keywords": [
-        "vibe coding",
-        "cursor & claude",
-        "full-stack app"
-      ],
-      "competing_articles": "Most existing posts are high-level overviews \u2014 Suman's post will provide a detailed, step-by-step guide",
-      "real_story_evidence": [
-        {
-          "source": "Dev.to (#saas)",
-          "title": "Vibe Coding: Full-Stack App with Cursor & Claude",
-          "url": "https://dev.to/albernaz_/vibe-coding-full-stack-app-with-cursor-claude-336d",
-          "what_to_cite": "The success story of building a full-stack app with Cursor & Claude"
-        }
-      ]
-    },
-    {
-      "topic": "Building a Research Agent with LangGraph: A Step-by-Step Guide",
+      "topic": "Building a research agent with LangGraph in 80 lines of Python",
       "category": "C",
       "category_name": "AI Agents & Multi-Agent Workflows",
       "virality_score": 88,
-      "analysis": "This topic will rank on Medium this week due to the current interest in AI agents and multi-agent workflows. The cross-source evidence includes the trending repo on GitHub and the success story of a developer who built a research agent with LangGraph. This post will be different from existing ones as it will provide a detailed, step-by-step guide to building a research agent with LangGraph.",
+      "analysis": "This topic will rank on Medium because it provides a concise, actionable example of building an AI agent with LangGraph. The cross-source evidence includes GitHub trending repositories on LangGraph and AI agents, as well as Reddit discussions on machine learning. This topic is different from existing posts because it provides a minimal, easy-to-reproduce example.",
       "cross_source_signals": [
         "GitHub: langgraph repo trending",
-        "Reddit r/MachineLearning: 4 posts this week"
+        "Reddit r/MachineLearning: 4 posts this week",
+        "Google Trends: 'langgraph tutorial' rising"
       ],
       "developer_pain": "high",
       "freshness": "breaking",
       "money_angle": "",
-      "story_angle": "I built a research agent with LangGraph to automate my morning brief",
-      "suman_angle": "How I built a research agent with LangGraph to automate my morning brief",
+      "story_angle": "I was struggling to build a research agent, until I discovered LangGraph and built one in just 80 lines of Python.",
+      "suman_angle": "How I built a research agent with LangGraph in one weekend (full code)",
       "target_keywords": [
         "langgraph tutorial",
         "build ai agent python",
         "research agent"
       ],
-      "competing_articles": "Most existing posts are abstract \u2014 Suman's post will provide a detailed, step-by-step guide",
+      "competing_articles": "Most existing posts provide lengthy, complex examples, but this article provides a concise, minimal example.",
       "real_story_evidence": [
         {
-          "source": "Hacker News (Show HN)",
-          "title": "Show HN: I replaced a $120k bowling center system with $1,600 in ESP32s",
-          "url": "https://news.ycombinator.com/item?id=48968606",
-          "what_to_cite": "The success story of building a custom system with ESP32s"
+          "source": "Dev.to (#indiehackers)",
+          "title": "I Built an AI-Powered Education Platform as a Solo Founder - Here's My Full Stack",
+          "url": "https://dev.to/jackhan312/i-built-an-ai-powered-education-platform-as-a-solo-founder-heres-my-full-stack-3557",
+          "what_to_cite": "The author's experience building an AI-powered platform as a solo founder"
+        }
+      ]
+    },
+    {
+      "topic": "Vibe coding a SaaS in a weekend with Cursor and Claude",
+      "category": "B",
+      "category_name": "Vibe Coding / AI-Assisted Workflow",
+      "virality_score": 85,
+      "analysis": "This topic will rank on Medium because it provides a specific, actionable example of vibe coding a SaaS with Cursor and Claude. The cross-source evidence includes GitHub trending repositories on vibe coding and AI-assisted workflow, as well as Reddit discussions on productivity. This topic is different from existing posts because it provides a concise, easy-to-reproduce example.",
+      "cross_source_signals": [
+        "GitHub: vibe-coding repo trending",
+        "Reddit r/productivity: 10 posts this week",
+        "Google Trends: 'vibe coding' rising"
+      ],
+      "developer_pain": "medium",
+      "freshness": "breaking",
+      "money_angle": "",
+      "story_angle": "I was struggling to build a SaaS, until I discovered vibe coding with Cursor and Claude and built one in just a weekend.",
+      "suman_angle": "How I vibe coded a SaaS in one weekend with Cursor and Claude (full code)",
+      "target_keywords": [
+        "vibe coding",
+        "cursor and claude",
+        "saaS development"
+      ],
+      "competing_articles": "Most existing posts provide general introductions to vibe coding, but this article provides a specific, actionable example.",
+      "real_story_evidence": [
+        {
+          "source": "Dev.to (#indiehackers)",
+          "title": "I'm building a $19 rank tracker in public \u2014 the stack, and why 'daily' is harder than it sounds",
+          "url": "https://dev.to/rankloop/im-building-a-19-rank-tracker-in-public-the-stack-and-why-daily-is-harder-than-it-sounds-43fc",
+          "what_to_cite": "The author's experience building a product in public and the challenges they faced"
         }
       ]
     }
@@ -135,14 +139,14 @@
       "title": "Show HN: I replaced a $120k bowling center system with $1,600 in ESP32s",
       "snippet": "I might be the only SRE on Earth with his own bowling center. It&#x27;s a more in-depth gig than you&#x27;d think.<p>My family and I bought an abandoned 8-lane bowling center in the rural mid-west. In",
       "url": "https://news.ycombinator.com/item?id=48968606",
-      "signal": "2933 points \u00b7 359 comments"
+      "signal": "2934 points \u00b7 359 comments"
     },
     {
       "source": "Dev.to (#saas)",
-      "title": "Orphaned AI agents: the SaaS AI agent security risk nobody tests for",
-      "snippet": "When a developer leaves your SaaS company, you revoke their Okta access, disable their GitHub...",
-      "url": "https://dev.to/albernaz_/orphaned-ai-agents-the-saas-ai-agent-security-risk-nobody-tests-for-336d",
-      "signal": "2 reactions \u00b7 1 comments"
+      "title": "Solo Founder or Startup Founder, What's right for you",
+      "snippet": "The coffee shop on 2nd Street doesn't open until 7. I know because I've sat in my car in the parking...",
+      "url": "https://dev.to/ayoubzulfiqar/solo-founder-or-startup-founder-whats-right-for-you-79l",
+      "signal": "2 reactions \u00b7 3 comments"
     },
     {
       "source": "Dev.to (#indiehackers)",
