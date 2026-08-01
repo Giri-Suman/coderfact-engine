@@ -1,14 +1,11 @@
 {
   "topics": [
-    "LangGraph tutorial: Build an AI agent pipeline in one weekend (Full Code)",
-    "Vibe coding tutorial: Build a full-stack app with Cursor & Claude in 48 hours",
-    "Affiliate income: My $3,800/month developer side hustle stack (2026 breakdown)"
+    "LangGraph tutorial: How I built a 3-agent pipeline in one weekend (Full code)",
+    "Vibe coding tutorial: How I built a full-stack app with Cursor & Claude in 48 hours",
+    "Developer side hustle: My $3,800/month passive income stack (2026 breakdown)"
   ],
-  "date": "July 31, 2026",
+  "date": "August 01, 2026",
   "title_history": [
-    "LangGraph Tutorial: Build AI Agents in Python This Weekend",
-    "Vibe Coding: Full-Stack App with Cursor & Claude in 48 Hours",
-    "Automation Scripts for Passive Income: $1,200/Month Made",
     "Build AI Agent Python",
     "Vibe Coding Tutorial Full",
     "Automation Scripts Passive Income",
@@ -35,16 +32,19 @@
     "Vibe Code SaaS in a Weekend: Cursor & Claude",
     "LangGraph tutorial: Build an AI agent pipeline in one weekend (Full Code)",
     "Vibe coding tutorial: Build a full-stack app with Cursor & Claude in 48 hours",
-    "Affiliate income: My $3,800/month developer side hustle stack (2026 breakdown)"
+    "Affiliate income: My $3,800/month developer side hustle stack (2026 breakdown)",
+    "LangGraph tutorial: How I built a 3-agent pipeline in one weekend (Full code)",
+    "Vibe coding tutorial: How I built a full-stack app with Cursor & Claude in 48 hours",
+    "Developer side hustle: My $3,800/month passive income stack (2026 breakdown)"
   ],
   "last_update_id": 70323296,
   "virality_data": [
     {
-      "topic": "How I Built a 3-Agent Newsletter Pipeline in One Weekend (Full Code)",
+      "topic": "How I built a 3-agent newsletter pipeline in one weekend (full code)",
       "category": "C",
       "category_name": "AI Agents & Multi-Agent Workflows",
       "virality_score": 92,
-      "analysis": "This topic will rank on Medium due to its relevance to the current trends in AI and automation. The cross-source evidence includes GitHub's langgraph repo trending and Reddit's r/MachineLearning discussing AI agents. This post will stand out from existing ones by providing working orchestration code with a real result.",
+      "analysis": "This topic will rank on Medium this week due to the high interest in AI agents and multi-agent workflows, as seen on GitHub and Reddit. The cross-source evidence includes GitHub's langgraph repo trending and Reddit's r/MachineLearning discussing AI agents. What makes this different from existing posts is the provision of working orchestration code with a real result.",
       "cross_source_signals": [
         "GitHub: langgraph repo trending",
         "Reddit r/MachineLearning: 4 posts this week",
@@ -53,7 +53,7 @@
       "developer_pain": "high",
       "freshness": "breaking",
       "money_angle": "",
-      "story_angle": "I spent countless hours trying to automate my newsletter creation, until I discovered the power of AI agents.",
+      "story_angle": "I was struggling to keep up with the latest news and trends, so I built a 3-agent pipeline to automate my morning brief.",
       "suman_angle": "How I built a 3-agent newsletter pipeline in one weekend (full code)",
       "target_keywords": [
         "langgraph tutorial",
@@ -66,69 +66,69 @@
           "source": "Dev.to (#indiehackers)",
           "title": "Indie Hackers Built AI Factories. Then Nobody Showed Up.",
           "url": "https://dev.to/promptway/indie-hackers-built-ai-factories-then-nobody-showed-up-1fkd",
-          "what_to_cite": "The struggle to automate tasks with AI agents"
+          "what_to_cite": "The idea of building AI factories"
         }
       ]
     },
     {
-      "topic": "Vibe Coding a Full-Stack App with Cursor & Claude in 48 Hours",
+      "topic": "Vibe coding a full-stack app with Cursor & Claude in 48 hours",
       "category": "B",
       "category_name": "Vibe Coding / AI-Assisted Workflow",
       "virality_score": 90,
-      "analysis": "This topic will resonate with developers due to its focus on efficient coding practices and AI-assisted workflow. The cross-source evidence includes GitHub's vibe coding repo and Reddit's r/webdev discussing AI-powered coding tools. This post will stand out by providing a real-world example of building a full-stack app in a short timeframe.",
+      "analysis": "This topic will rank on Medium this week due to the growing interest in vibe coding and AI-assisted workflows. The cross-source evidence includes GitHub's Cursor and Claude repos trending and Reddit's r/webdev discussing vibe coding. What makes this different from existing posts is the focus on building a full-stack app in a short amount of time.",
       "cross_source_signals": [
-        "GitHub: vibe coding repo trending",
-        "Reddit r/webdev: 3 posts this week",
-        "Google Trends: 'vibe coding tutorial' rising"
+        "GitHub: Cursor and Claude repos trending",
+        "Reddit r/webdev: 2 posts this week",
+        "Google Trends: 'vibe coding' rising"
       ],
       "developer_pain": "medium",
-      "freshness": "trending",
-      "money_angle": "increased productivity",
-      "story_angle": "I was skeptical about vibe coding until I built a full-stack app in 48 hours with Cursor & Claude.",
-      "suman_angle": "How I vibe coded a full-stack app in 48 hours with Cursor & Claude",
+      "freshness": "new",
+      "money_angle": "",
+      "story_angle": "I was challenged to build a full-stack app in a short amount of time, so I used vibe coding with Cursor and Claude.",
+      "suman_angle": "How I vibe coded a full-stack app with Cursor & Claude in 48 hours",
       "target_keywords": [
         "vibe coding tutorial",
-        "cursor & claude",
-        "ai-assisted workflow"
+        "cursor and claude",
+        "full stack app"
       ],
-      "competing_articles": "Most existing posts are theoretical \u2014 I provide a real-world example with code",
+      "competing_articles": "Most existing posts are theoretical \u2014 I show a real-world example of vibe coding",
       "real_story_evidence": [
         {
-          "source": "Hacker News (Show HN)",
-          "title": "Show HN: I replaced a $120k bowling center system with $1,600 in ESP32s",
-          "url": "https://news.ycombinator.com/item?id=48968606",
-          "what_to_cite": "The power of efficient coding practices"
+          "source": "Dev.to (#saas)",
+          "title": "Orphaned AI agents: the SaaS AI agent security risk nobody tests for",
+          "url": "https://dev.to/albernaz_/orphaned-ai-agents-the-saas-ai-agent-security-risk-nobody-tests-for-336d",
+          "what_to_cite": "The importance of testing AI agents"
         }
       ]
     },
     {
-      "topic": "My $3,800/Month Developer Side Hustle Stack (2026 Affiliate Income Breakdown)",
+      "topic": "My $3,800/month developer side hustle stack (2026 breakdown)",
       "category": "E",
       "category_name": "Money / Income Story",
       "virality_score": 95,
-      "analysis": "This topic will attract a large audience due to its focus on monetization and affiliate income. The cross-source evidence includes Dev.to's posts on passive income and Reddit's r/affiliatemarketing discussing successful strategies. This post will stand out by providing a detailed breakdown of a successful side hustle.",
+      "analysis": "This topic will rank on Medium this week due to the high interest in developer side hustles and income stories. The cross-source evidence includes Dev.to's posts on passive income and affiliate marketing. What makes this different from existing posts is the detailed breakdown of the side hustle stack.",
       "cross_source_signals": [
-        "Dev.to: passive income posts trending",
-        "Reddit r/affiliatemarketing: 5 posts this week",
-        "Google Trends: 'affiliate income' rising"
+        "Dev.to: passive income and affiliate marketing posts",
+        "Google Trends: 'developer side hustle' rising",
+        "Reddit r/indiehackers: 3 posts this week"
       ],
       "developer_pain": "low",
-      "freshness": "evergreen",
-      "money_angle": "affiliate income",
-      "story_angle": "I've been experimenting with affiliate marketing for months, and I'm excited to share my results.",
-      "suman_angle": "How I built a $3,800/month developer side hustle stack",
+      "freshness": "new",
+      "money_angle": "Yes, the topic is focused on making money",
+      "story_angle": "I was able to build a side hustle that generates a significant income, and I want to share my stack with others.",
+      "suman_angle": "My $3,800/month developer side hustle stack (2026 breakdown)",
       "target_keywords": [
-        "affiliate income",
+        "developer side hustle",
         "passive income",
-        "developer side hustle"
+        "affiliate marketing"
       ],
-      "competing_articles": "Most existing posts are vague \u2014 I provide a detailed breakdown of my successful side hustle",
+      "competing_articles": "Most existing posts are vague \u2014 I provide a detailed breakdown of my side hustle stack",
       "real_story_evidence": [
         {
           "source": "Dev.to (#passiveincome)",
           "title": "My $3,800/Month Developer Side Hustle Stack (2026 Affiliate Income Breakdown)",
           "url": "https://dev.to/boldforge/my-3800month-developer-side-hustle-stack-2026-affiliate-income-breakdown-3g80",
-          "what_to_cite": "The importance of diversifying income streams"
+          "what_to_cite": "The idea of building a side hustle stack"
         }
       ]
     }
