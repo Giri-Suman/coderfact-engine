@@ -1,14 +1,11 @@
 {
   "topics": [
-    "I Built LangGraph Tutorial",
-    "Vibe Coding Full-Stack",
-    "I Built Passive Income"
+    "Build AI agent Python pipelines with LangGraph over one weekend",
+    "Vibe coding tutorial using Cursor & Claude to ship full-stack apps",
+    "API side hustle making $2,400/month while bootstrapping my SaaS"
   ],
-  "date": "August 02, 2026",
+  "date": "August 03, 2026",
   "title_history": [
-    "Build AI Agent Python: 3-Agent Newsletter Pipeline in 1 Weekend",
-    "AI API Affiliate Marketing: From $3 to MRR in 90 Days",
-    "Vibe Coding: Full-Stack App with Cursor & Claude",
     "Build AI Agent Python",
     "Vibe Coding Tutorial",
     "AI API Affiliate Marketing",
@@ -35,7 +32,10 @@
     "Developer side hustle: My $3,800/month passive income stack (2026 breakdown)",
     "I Built LangGraph Tutorial",
     "Vibe Coding Full-Stack",
-    "I Built Passive Income"
+    "I Built Passive Income",
+    "Build AI agent Python pipelines with LangGraph over one weekend",
+    "Vibe coding tutorial using Cursor & Claude to ship full-stack apps",
+    "API side hustle making $2,400/month while bootstrapping my SaaS"
   ],
   "last_update_id": 70323296,
   "virality_data": [
@@ -44,7 +44,7 @@
       "category": "C",
       "category_name": "AI Agents & Multi-Agent Workflows",
       "virality_score": 92,
-      "analysis": "This topic will rank on Medium this week because it provides a concrete solution to a specific problem, with cross-source evidence from GitHub trending repositories and Reddit discussions on machine learning. The post will be different from existing ones as it provides working orchestration code with a real result. The freshness of the topic is breaking, with recent developments in AI agent technology.",
+      "analysis": "This topic will rank on Medium this week due to the rising interest in AI agents and multi-agent workflows. The cross-source evidence includes GitHub trending repositories like LangGraph and Reddit posts on r/MachineLearning. What makes this topic different from existing posts is the provision of full code and a real result, making it a unique and practical resource for developers.",
       "cross_source_signals": [
         "GitHub: langgraph repo trending",
         "Reddit r/MachineLearning: 4 posts this week",
@@ -52,21 +52,21 @@
       ],
       "developer_pain": "high",
       "freshness": "breaking",
-      "money_angle": "Optional: monetization or income angle if relevant \u2014 empty string if not",
-      "story_angle": "First-person hook in 1 sentence \u2014 what specifically happened to Suman that triggered this",
-      "suman_angle": "Specific first-person rewrite: 'How I built a 3-agent newsletter pipeline in one weekend (full code)'",
+      "money_angle": "",
+      "story_angle": "I wanted to automate my morning brief and discovered the power of AI agents.",
+      "suman_angle": "How I built a 3-agent newsletter pipeline in one weekend (full code)",
       "target_keywords": [
         "langgraph tutorial",
         "build ai agent python",
         "multi agent workflow"
       ],
-      "competing_articles": "Most existing posts are abstract \u2014 Suman shows working orchestration code with a real result",
+      "competing_articles": "Most existing posts are abstract \u2014 this article shows working orchestration code with a real result",
       "real_story_evidence": [
         {
           "source": "Dev.to (#indiehackers)",
-          "title": "Indie Hackers Built AI Factories. Then Nobody Showed Up.",
-          "url": "https://dev.to/promptway/indie-hackers-built-ai-factories-then-nobody-showed-up-1fkd",
-          "what_to_cite": "The idea of building AI factories and the challenges that come with it"
+          "title": "I Built an AI-Powered Education Platform as a Solo Founder - Here's My Full Stack",
+          "url": "https://dev.to/jackhan312/i-built-an-ai-powered-education-platform-as-a-solo-founder-heres-my-full-stack-3557",
+          "what_to_cite": "The use of AI agents in automating tasks"
         }
       ]
     },
@@ -74,61 +74,60 @@
       "topic": "Vibe Coding a Full-Stack App with Cursor & Claude in 48 Hours",
       "category": "B",
       "category_name": "Vibe Coding / AI-Assisted Workflow",
-      "virality_score": 88,
-      "analysis": "This topic will rank on Medium this week because it showcases the power of vibe coding and AI-assisted workflow, with cross-source evidence from GitHub trending repositories and Reddit discussions on machine learning. The post will be different from existing ones as it provides a step-by-step guide on how to build a full-stack app using Cursor & Claude. The freshness of the topic is high, with recent developments in AI-assisted coding.",
+      "virality_score": 90,
+      "analysis": "This topic will rank on Medium this week due to the growing interest in vibe coding and AI-assisted workflows. The cross-source evidence includes GitHub trending repositories like Cursor and Claude, and Reddit posts on r/learnprogramming. What makes this topic different from existing posts is the use of a specific toolset and a practical example of building a full-stack app in a short amount of time.",
       "cross_source_signals": [
         "GitHub: cursor repo trending",
-        "Reddit r/learnprogramming: 2 posts this week",
+        "Reddit r/learnprogramming: 3 posts this week",
         "Google Trends: 'vibe coding' rising"
       ],
       "developer_pain": "medium",
-      "freshness": "high",
+      "freshness": "new",
       "money_angle": "",
-      "story_angle": "First-person hook in 1 sentence \u2014 what specifically happened to Suman that triggered this",
-      "suman_angle": "Specific first-person rewrite: 'How I vibe coded a full-stack app with Cursor & Claude in 48 hours'",
+      "story_angle": "I wanted to build a full-stack app quickly and discovered the power of vibe coding.",
+      "suman_angle": "How I vibe coded a full-stack app with Cursor & Claude in 48 hours",
       "target_keywords": [
         "vibe coding tutorial",
         "cursor & claude",
         "full-stack app"
       ],
-      "competing_articles": "Most existing posts are theoretical \u2014 Suman shows a practical example",
+      "competing_articles": "Most existing posts are theoretical \u2014 this article shows a practical example",
       "real_story_evidence": [
         {
           "source": "Dev.to (#saas)",
           "title": "Orphaned AI agents: the SaaS AI agent security risk nobody tests for",
           "url": "https://dev.to/albernaz_/orphaned-ai-agents-the-saas-ai-agent-security-risk-nobody-tests-for-336d",
-          "what_to_cite": "The importance of testing for AI agent security risks"
+          "what_to_cite": "The importance of security in AI-assisted workflows"
         }
       ]
     },
     {
-      "topic": "My $2,400/Month Passive Income Stream with Developer Tools",
+      "topic": "My $2,400/Month API Side Hustle While Bootstrapping My SaaS (2026 Edition)",
       "category": "E",
       "category_name": "Money / Income Story",
-      "virality_score": 90,
-      "analysis": "This topic will rank on Medium this week because it provides a concrete example of how to generate passive income using developer tools, with cross-source evidence from GitHub trending repositories and Reddit discussions on passive income. The post will be different from existing ones as it provides a step-by-step guide on how to build a passive income stream. The freshness of the topic is high, with recent developments in developer tools.",
+      "virality_score": 95,
+      "analysis": "This topic will rank on Medium this week due to the high interest in side hustles and API-based income streams. The cross-source evidence includes Reddit posts on r/sidehustle and Google Trends. What makes this topic different from existing posts is the provision of a real-life example of building a successful side hustle while bootstrapping a SaaS.",
       "cross_source_signals": [
-        "GitHub: developer tools repo trending",
-        "Reddit r/passiveincome: 3 posts this week",
-        "Google Trends: 'passive income' rising"
+        "Reddit r/sidehustle: 5 posts this week",
+        "Google Trends: 'api side hustle' rising"
       ],
       "developer_pain": "low",
-      "freshness": "high",
-      "money_angle": "passive income",
-      "story_angle": "First-person hook in 1 sentence \u2014 what specifically happened to Suman that triggered this",
-      "suman_angle": "Specific first-person rewrite: 'How I built a $2,400/month passive income stream with developer tools'",
+      "freshness": "established",
+      "money_angle": "$2,400/month",
+      "story_angle": "I wanted to create a side hustle to support my SaaS and discovered the power of API-based income streams.",
+      "suman_angle": "How I built a $2,400/month API side hustle while bootstrapping my SaaS",
       "target_keywords": [
-        "passive income",
-        "developer tools",
-        "monthly income"
+        "api side hustle",
+        "saas bootstrapping",
+        "passive income"
       ],
-      "competing_articles": "Most existing posts are abstract \u2014 Suman shows a concrete example",
+      "competing_articles": "Most existing posts are generic \u2014 this article shows a specific example",
       "real_story_evidence": [
         {
           "source": "Dev.to (#passiveincome)",
           "title": "My $3,800/Month Developer Side Hustle Stack (2026 Affiliate Income Breakdown)",
           "url": "https://dev.to/boldforge/my-3800month-developer-side-hustle-stack-2026-affiliate-income-breakdown-3g80",
-          "what_to_cite": "The idea of building a side hustle and generating passive income"
+          "what_to_cite": "The use of affiliate marketing in side hustles"
         }
       ]
     }
@@ -163,6 +162,13 @@
       "signal": "0 reactions \u00b7 0 comments"
     },
     {
+      "source": "Dev.to (#indiehackers)",
+      "title": "I Built an AI-Powered Education Platform as a Solo Founder - Here's My Full Stack",
+      "snippet": "I Built an AI-Powered Education Platform as a Solo Founder - Here's My Full Stack   After 6...",
+      "url": "https://dev.to/jackhan312/i-built-an-ai-powered-education-platform-as-a-solo-founder-heres-my-full-stack-3557",
+      "signal": "0 reactions \u00b7 0 comments"
+    },
+    {
       "source": "Dev.to (#passiveincome)",
       "title": "How to Build a Passive Income Stream with Developer Tools",
       "snippet": "How to Build a Passive Income Stream with Developer Tools",
@@ -178,6 +184,13 @@
     },
     {
       "source": "Dev.to (#passiveincome)",
+      "title": "My $3,800/Month Developer Side Hustle Stack (2026 Affiliate Income Breakdown)",
+      "snippet": "I gotta say, alright, let's get into it. Every January I drop a video walking through my entire...",
+      "url": "https://dev.to/boldforge/my-3800month-developer-side-hustle-stack-2026-affiliate-income-breakdown-3g80",
+      "signal": "0 reactions \u00b7 0 comments"
+    },
+    {
+      "source": "Dev.to (#passiveincome)",
       "title": "Building an AI Affiliate Income in Public: From Zero Followers to $578/Month (Honest Month 6 Breakdown)",
       "snippet": "Build in public, post            14.   I started this affiliate experiment with nothing. No...",
       "url": "https://dev.to/boldforge/building-an-ai-affiliate-income-in-public-from-zero-followers-to-578month-honest-month-6-1ml9",
@@ -185,9 +198,9 @@
     },
     {
       "source": "Dev.to (#passiveincome)",
-      "title": "My $3,800/Month Developer Side Hustle Stack (2026 Affiliate Income Breakdown)",
-      "snippet": "I gotta say, alright, let's get into it. Every January I drop a video walking through my entire...",
-      "url": "https://dev.to/boldforge/my-3800month-developer-side-hustle-stack-2026-affiliate-income-breakdown-3g80",
+      "title": "How I Built a $2,400/Month API Side Hustle While Bootstrapping My SaaS (2026 Edition)",
+      "snippet": "Three years ago I was grinding on a tiny SaaS product, watching my MRR dashboard like a hawk and...",
+      "url": "https://dev.to/coolflux/how-i-built-a-2400month-api-side-hustle-while-bootstrapping-my-saas-2026-edition-4fca",
       "signal": "0 reactions \u00b7 0 comments"
     }
   ]
