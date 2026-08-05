@@ -1,179 +1,207 @@
 {
   "topics": [
-    "Build AI Agent Python",
-    "Automate Sales Invoicing",
-    "AI Affiliate Marketing Script"
+    "I Built LangGraph AI",
+    "Vibe Coding Full-Stack",
+    "My API Side Hustle"
   ],
-  "date": "May 06, 2026",
+  "date": "August 05, 2026",
   "title_history": [
-    "Fixing CVE-2026-3854 GitHub RCE Vulnerability",
-    "Automating Claude Code Optimization Fast",
-    "Building Custom Code Search Engine",
-    "HERMES.md Bug Fix Saved Me $200",
-    "I Built Custom Code Search Engine",
-    "Warp Optimization Boosted Performance",
-    "Warp Terminal Errors Fixed",
-    "Automating Codex Skills Fast",
-    "Gitnexus Optimization Hacks",
-    "I Fixed Warp Terminal Errors",
-    "I Built Trading Bot with TauricResearch",
-    "I Optimized Public APIs with Cache",
-    "Warp Terminal Errors Fixed",
-    "I Built Trading Bot",
-    "Claude Code Optimized Fast",
-    "VS Code Copilot Commits Fix",
-    "TauricResearch Trading Bot Tutorial",
-    "Claude Code Optimization RuVnet Ruflo",
-    "LangGraph Tutorial: I Built a 3-Agent Pipeline",
-    "Gemini CLI Tutorial: Automate Sales Invoicing",
-    "LangGraph Script: I Generate $1,500 Monthly",
-    "Gemini CLI Tutorial",
-    "LangGraph AI Agent",
-    "Claude Sales Funnel",
-    "Build AI Agent Python",
-    "Gemini CLI Tutorial",
-    "Passive Income Python",
-    "Build AI Agent Python",
-    "Automate Sales Invoicing",
-    "AI Affiliate Marketing Script"
+    "LangGraph: Build 3-Agent Newsletter Pipeline in a Weekend",
+    "Vibe Code Full-Stack App: Cursor & Claude in 48 Hours",
+    "Automation Scripts: $1,200/Month Passive Income",
+    "LangGraph Tutorial: Build AI Agents in Python This Weekend",
+    "Vibe Coding: Cursor & Claude Built My Full-Stack App",
+    "Automation Scripts: $0 to $1200/Month in 90 Days",
+    "Dev YouTube Channel Monetization: My $2.4K Strategy",
+    "Vibe Coding a Full-Stack App: Cursor & Claude in 48 Hrs",
+    "Build AI Agent Python: LangGraph Morning Brief",
+    "Dev YouTube Automation: My Script Boosted Income 20%",
+    "Build AI Research Agent with LangGraph: Full Code",
+    "Vibe Code SaaS in a Weekend: Cursor & Claude",
+    "LangGraph tutorial: Build an AI agent pipeline in one weekend (Full Code)",
+    "Vibe coding tutorial: Build a full-stack app with Cursor & Claude in 48 hours",
+    "Affiliate income: My $3,800/month developer side hustle stack (2026 breakdown)",
+    "LangGraph tutorial: How I built a 3-agent pipeline in one weekend (Full code)",
+    "Vibe coding tutorial: How I built a full-stack app with Cursor & Claude in 48 hours",
+    "Developer side hustle: My $3,800/month passive income stack (2026 breakdown)",
+    "I Built LangGraph Tutorial",
+    "Vibe Coding Full-Stack",
+    "I Built Passive Income",
+    "Build AI agent Python pipelines with LangGraph over one weekend",
+    "Vibe coding tutorial using Cursor & Claude to ship full-stack apps",
+    "API side hustle making $2,400/month while bootstrapping my SaaS",
+    "LangGraph tutorial: I built a multi agent workflow in one weekend (full code)",
+    "Vibe coding tutorial: How I built a full stack app with Cursor & Claude in 48 hours",
+    "API side hustle: How I make $2,400/month while bootstrapping my SaaS",
+    "I Built LangGraph AI",
+    "Vibe Coding Full-Stack",
+    "My API Side Hustle"
   ],
-  "last_update_id": 70323294,
+  "last_update_id": 70323296,
   "virality_data": [
     {
-      "topic": "How I Built a 3-Agent Newsletter Pipeline in One Weekend",
+      "topic": "How I Built a 3-Agent Newsletter Pipeline in One Weekend (Full Code)",
       "category": "C",
       "category_name": "AI Agents & Multi-Agent Workflows",
       "virality_score": 92,
-      "analysis": "This topic will rank on Medium this week because it combines the trending topics of AI agents and multi-agent workflows with a personal story of building a real-world application. The cross-source evidence includes GitHub trending repositories like LangGraph and Reddit posts on r/MachineLearning. What makes it different from existing posts is the focus on a specific, tangible outcome - a newsletter pipeline.",
+      "analysis": "This topic will rank on Medium this week because it combines the trending AI agent topic with a concrete, achievable result. The cross-source evidence includes GitHub's LangGraph repo trending and Reddit's r/MachineLearning discussing AI agents. This post will stand out from existing ones by providing working orchestration code and a real result.",
       "cross_source_signals": [
         "GitHub: langgraph repo trending",
         "Reddit r/MachineLearning: 4 posts this week",
         "Google Trends: 'ai agent tutorial' rising"
       ],
-      "developer_pain": "medium",
+      "developer_pain": "high",
       "freshness": "breaking",
       "money_angle": "",
-      "story_angle": "I was tired of manually curating my weekly newsletter and wanted to automate the process using AI agents.",
+      "story_angle": "I spent countless hours trying to automate my morning brief, until I built a 3-agent pipeline that changed everything.",
       "suman_angle": "How I built a 3-agent newsletter pipeline in one weekend (full code)",
       "target_keywords": [
         "langgraph tutorial",
         "build ai agent python",
         "multi agent workflow"
       ],
-      "competing_articles": "Most existing posts are abstract \u2014 this article shows working orchestration code with a real result",
+      "competing_articles": "Most existing posts are abstract \u2014 this one shows working orchestration code with a real result",
       "real_story_evidence": [
         {
-          "source": "Dev.to",
-          "title": "I Built an AI Agent Team That Makes Money 24/7 - Real Case Study",
-          "url": "https://dev.to/__55bb2e8b82015f0c96f3/i-built-an-ai-agent-team-that-makes-money-247-real-case-study-5c9d",
-          "what_to_cite": "The author's experience with building AI agent teams for passive income"
+          "source": "Dev.to (#indiehackers)",
+          "title": "I Built an AI-Powered Education Platform as a Solo Founder - Here's My Full Stack",
+          "url": "https://dev.to/jackhan312/i-built-an-ai-powered-education-platform-as-a-solo-founder-heres-my-full-stack-3557",
+          "what_to_cite": "The author's experience with building an AI-powered platform"
         }
       ]
     },
     {
-      "topic": "Automating Sales Invoicing with Gemini CLI",
-      "category": "D",
-      "category_name": "AI Automation Across Domains",
-      "virality_score": 88,
-      "analysis": "This topic will rank on Medium this week because it combines the trending topic of AI automation with a real-world application in sales invoicing. The cross-source evidence includes GitHub trending repositories like Gemini CLI and Reddit posts on r/automation. What makes it different from existing posts is the focus on a specific, tangible outcome - automating sales invoicing.",
+      "topic": "Vibe Coding a Full-Stack App with Cursor & Claude in 48 Hours",
+      "category": "B",
+      "category_name": "Vibe Coding / AI-Assisted Workflow",
+      "virality_score": 89,
+      "analysis": "This topic will resonate with developers because it showcases the power of AI-assisted workflow in building a full-stack app quickly. The cross-source evidence includes GitHub's Cursor and Claude repos trending and Hacker News discussing vibe coding. This post will stand out by providing a concrete example of building a full-stack app in a short timeframe.",
       "cross_source_signals": [
-        "GitHub: gemini-cli repo trending",
-        "Reddit r/automation: 2 posts this week",
-        "Google Trends: 'sales invoicing automation' rising"
+        "GitHub: cursor and claude repos trending",
+        "Hacker News: vibe coding discussion",
+        "Google Trends: 'vibe coding' rising"
       ],
-      "developer_pain": "high",
-      "freshness": "established",
-      "money_angle": "potential to save companies thousands of dollars in manual invoicing costs",
-      "story_angle": "I was tasked with automating sales invoicing for my company and discovered the power of Gemini CLI.",
-      "suman_angle": "How I automated sales invoicing with Gemini CLI in one hour (full code)",
+      "developer_pain": "medium",
+      "freshness": "trending",
+      "money_angle": "",
+      "story_angle": "I was skeptical of vibe coding until I built a full-stack app with Cursor & Claude in just 48 hours.",
+      "suman_angle": "How I vibe coded a full-stack app with Cursor & Claude in 48 hours",
       "target_keywords": [
-        "gemini cli tutorial",
-        "automate sales invoicing",
-        "ai automation"
+        "vibe coding",
+        "cursor and claude",
+        "full-stack app"
       ],
-      "competing_articles": "Most existing posts are outdated \u2014 this article shows the latest Gemini CLI features",
+      "competing_articles": "Most existing posts are theoretical \u2014 this one provides a concrete example",
       "real_story_evidence": [
         {
-          "source": "Dev.to",
-          "title": "Gemini CLI Tutorial: Automate Sales Invoicing",
-          "url": "https://dev.to/jacob_fritz_6c8d20bfa13b5/gemini-cli-tutorial-automate-sales-invoicing-fhg",
-          "what_to_cite": "The author's experience with automating sales invoicing using Gemini CLI"
+          "source": "Hacker News (Show HN)",
+          "title": "Show HN: I replaced a $120k bowling center system with $1,600 in ESP32s",
+          "url": "https://news.ycombinator.com/item?id=48968606",
+          "what_to_cite": "The author's experience with building a complex system quickly"
         }
       ]
     },
     {
-      "topic": "How I Made $1,500 Monthly with a Simple AI-Powered Affiliate Marketing Script",
+      "topic": "My $2,400/Month API Side Hustle While Bootstrapping My SaaS",
       "category": "E",
       "category_name": "Money / Income Story",
       "virality_score": 95,
-      "analysis": "This topic will rank on Medium this week because it combines the trending topic of AI-powered affiliate marketing with a personal story of making a significant income. The cross-source evidence includes GitHub trending repositories like LangGraph and Reddit posts on r/affiliatemarketing. What makes it different from existing posts is the focus on a specific, tangible outcome - making $1,500 monthly.",
+      "analysis": "This topic will rank on Medium because it combines a concrete, achievable result with a relatable story. The cross-source evidence includes Dev.to discussions on API side hustles and Google Trends on 'passive income'. This post will stand out by providing a real, first-person account of building a successful side hustle.",
       "cross_source_signals": [
-        "GitHub: langgraph repo trending",
-        "Reddit r/affiliatemarketing: 3 posts this week",
-        "Google Trends: 'ai affiliate marketing' rising"
+        "Dev.to: API side hustles discussion",
+        "Google Trends: 'passive income' rising",
+        "Reddit: r/passiveincome discussion"
       ],
       "developer_pain": "low",
-      "freshness": "breaking",
-      "money_angle": "making $1,500 monthly with a simple AI-powered affiliate marketing script",
-      "story_angle": "I was looking for ways to monetize my programming skills and discovered the potential of AI-powered affiliate marketing.",
-      "suman_angle": "How I made $1,500 monthly with a simple AI-powered affiliate marketing script (full code)",
+      "freshness": "evergreen",
+      "money_angle": "$2,400/month",
+      "story_angle": "I was struggling to bootstrap my SaaS until I built a successful API side hustle that changed everything.",
+      "suman_angle": "How I built a $2,400/month API side hustle while bootstrapping my SaaS",
       "target_keywords": [
-        "ai affiliate marketing",
-        "make money online",
-        "affiliate marketing script"
+        "api side hustle",
+        "passive income",
+        "bootstrapping saas"
       ],
-      "competing_articles": "Most existing posts are theoretical \u2014 this article shows a real, working example",
+      "competing_articles": "Most existing posts are theoretical \u2014 this one provides a real, first-person account",
       "real_story_evidence": [
         {
-          "source": "Dev.to",
-          "title": "LangGraph Script: I Generate $1,500 Monthly",
-          "url": "https://dev.to/jacob_fritz_6c8d20bfa13b5/langgraph-script-i-generate-1500-monthly-fhg",
-          "what_to_cite": "The author's experience with generating $1,500 monthly using LangGraph"
+          "source": "Dev.to (#passiveincome)",
+          "title": "How to Build a Passive Income Stream with Developer Tools",
+          "url": "https://dev.to/dev_gaddam_bab4b85ca732b6/how-to-build-a-passive-income-stream-with-developer-tools-1nah",
+          "what_to_cite": "The author's experience with building a passive income stream"
         }
       ]
     }
   ],
   "success_stories": [
     {
+      "source": "Hacker News (Show HN)",
+      "title": "Show HN: I replaced a $120k bowling center system with $1,600 in ESP32s",
+      "snippet": "I might be the only SRE on Earth with his own bowling center. It&#x27;s a more in-depth gig than you&#x27;d think.<p>My family and I bought an abandoned 8-lane bowling center in the rural mid-west. In",
+      "url": "https://news.ycombinator.com/item?id=48968606",
+      "signal": "2935 points \u00b7 360 comments"
+    },
+    {
       "source": "Dev.to (#saas)",
-      "title": "Built a 5k usd MRR app with AI but still needed a developer",
-      "snippet": "You see it everywhere you turn:   \"I built this using just AI and im making 10K USD MRR\"  \"Just got...",
-      "url": "https://dev.to/chocoscoding/built-a-5k-usd-mrr-app-with-ai-but-still-needed-a-developer-2k8p",
-      "signal": "39 reactions \u00b7 13 comments"
+      "title": "Orphaned AI agents: the SaaS AI agent security risk nobody tests for",
+      "snippet": "When a developer leaves your SaaS company, you revoke their Okta access, disable their GitHub...",
+      "url": "https://dev.to/albernaz_/orphaned-ai-agents-the-saas-ai-agent-security-risk-nobody-tests-for-336d",
+      "signal": "2 reactions \u00b7 1 comments"
     },
     {
-      "source": "Dev.to (#passiveincome)",
-      "title": "I Built an AI Agent Team That Makes Money 24/7 - Real Case Study",
-      "snippet": "The Bottom Line First   AI agents don't replace your job. They handle the \"$10/hour tasks\"...",
-      "url": "https://dev.to/__55bb2e8b82015f0c96f3/i-built-an-ai-agent-team-that-makes-money-247-real-case-study-5c9d",
+      "source": "Dev.to (#saas)",
+      "title": "Solo Founder or Startup Founder, What's right for you",
+      "snippet": "The coffee shop on 2nd Street doesn't open until 7. I know because I've sat in my car in the parking...",
+      "url": "https://dev.to/ayoubzulfiqar/solo-founder-or-startup-founder-whats-right-for-you-79l",
+      "signal": "2 reactions \u00b7 3 comments"
+    },
+    {
+      "source": "Dev.to (#indiehackers)",
+      "title": "Indie Hackers Built AI Factories. Then Nobody Showed Up.",
+      "snippet": "There is a particular kind of demo video making the rounds this year. Dark editor theme. Agent panel...",
+      "url": "https://dev.to/promptway/indie-hackers-built-ai-factories-then-nobody-showed-up-1fkd",
+      "signal": "0 reactions \u00b7 0 comments"
+    },
+    {
+      "source": "Dev.to (#indiehackers)",
+      "title": "I Built an AI-Powered Education Platform as a Solo Founder - Here's My Full Stack",
+      "snippet": "I Built an AI-Powered Education Platform as a Solo Founder - Here's My Full Stack   After 6...",
+      "url": "https://dev.to/jackhan312/i-built-an-ai-powered-education-platform-as-a-solo-founder-heres-my-full-stack-3557",
       "signal": "0 reactions \u00b7 0 comments"
     },
     {
       "source": "Dev.to (#passiveincome)",
-      "title": "How to Use AI to Write & Self-Publish Ebooks for Passive Income",
-      "snippet": "Discover step-by-step how to use AI to write and self-publish ebooks for passive income. Learn optimized strategies, tools, and platforms.",
-      "url": "https://dev.to/jacob_fritz_6c8d20bfa13b5/how-to-use-ai-to-write-self-publish-ebooks-for-passive-income-fhg",
+      "title": "How to Build a Passive Income Stream with Developer Tools",
+      "snippet": "How to Build a Passive Income Stream with Developer Tools",
+      "url": "https://dev.to/dev_gaddam_bab4b85ca732b6/how-to-build-a-passive-income-stream-with-developer-tools-1nah",
       "signal": "0 reactions \u00b7 0 comments"
     },
     {
       "source": "Dev.to (#passiveincome)",
-      "title": "How to Build a Paid Newsletter That Earns Recurring Revenue",
-      "snippet": "Learn step-by-step how to build a paid newsletter, grow your audience, and earn recurring revenue in 2024. Discover the tools, strategies, and tactics.",
-      "url": "https://dev.to/jacob_fritz_6c8d20bfa13b5/how-to-build-a-paid-newsletter-that-earns-recurring-revenue-20hp",
+      "title": "I Built a Notion Tracker for This Side Hustle: 90 Days Documenting an AI API Affiliate Income Stream",
+      "snippet": "Nine PM on a Tuesday. I'm closing my IDE for the day\u2014day job done\u2014and cracking open a Notion database...",
+      "url": "https://dev.to/truedeck/i-built-a-notion-tracker-for-this-side-hustle-90-days-documenting-an-ai-api-affiliate-income-stream-4n1p",
       "signal": "0 reactions \u00b7 0 comments"
     },
     {
       "source": "Dev.to (#passiveincome)",
-      "title": "How I Generated $750 in \u2018Seed Money\u2019 for My NISA in Just 30 Days (Without a Side Hustle)",
-      "snippet": "Stop trying to save your way to wealth and start leveraging corporate marketing budgets to fund your...",
-      "url": "https://dev.to/_07a306f4bf233eecbc3a/how-i-generated-750-in-seed-money-for-my-nisa-in-just-30-days-without-a-side-hustle-1cc9",
+      "title": "My $3,800/Month Developer Side Hustle Stack (2026 Affiliate Income Breakdown)",
+      "snippet": "I gotta say, alright, let's get into it. Every January I drop a video walking through my entire...",
+      "url": "https://dev.to/boldforge/my-3800month-developer-side-hustle-stack-2026-affiliate-income-breakdown-3g80",
       "signal": "0 reactions \u00b7 0 comments"
     },
     {
       "source": "Dev.to (#passiveincome)",
-      "title": "Side Hustle Ideas for Software Developers: Turn Skills into Income",
-      "snippet": "Discover profitable side hustle ideas for software developers to earn extra income using coding, teaching, and entrepreneurial skills.",
-      "url": "https://dev.to/daniel_writes_27/side-hustle-ideas-for-software-developers-turn-skills-into-income-3igp",
+      "title": "Building an AI Affiliate Income in Public: From Zero Followers to $578/Month (Honest Month 6 Breakdown)",
+      "snippet": "Build in public, post            14.   I started this affiliate experiment with nothing. No...",
+      "url": "https://dev.to/boldforge/building-an-ai-affiliate-income-in-public-from-zero-followers-to-578month-honest-month-6-1ml9",
+      "signal": "0 reactions \u00b7 0 comments"
+    },
+    {
+      "source": "Dev.to (#passiveincome)",
+      "title": "How I Built a $2,400/Month API Side Hustle While Bootstrapping My SaaS (2026 Edition)",
+      "snippet": "Three years ago I was grinding on a tiny SaaS product, watching my MRR dashboard like a hawk and...",
+      "url": "https://dev.to/coolflux/how-i-built-a-2400month-api-side-hustle-while-bootstrapping-my-saas-2026-edition-4fca",
       "signal": "0 reactions \u00b7 0 comments"
     }
   ]
