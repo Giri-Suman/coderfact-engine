@@ -1,14 +1,11 @@
 {
   "topics": [
-    "I Built LangGraph AI",
-    "Vibe Coding Full-Stack",
-    "My API Side Hustle"
+    "Build AI Agent Python",
+    "Automation Scripts Saved",
+    "Make Money From Scripts"
   ],
-  "date": "August 05, 2026",
+  "date": "August 06, 2026",
   "title_history": [
-    "LangGraph: Build 3-Agent Newsletter Pipeline in a Weekend",
-    "Vibe Code Full-Stack App: Cursor & Claude in 48 Hours",
-    "Automation Scripts: $1,200/Month Passive Income",
     "LangGraph Tutorial: Build AI Agents in Python This Weekend",
     "Vibe Coding: Cursor & Claude Built My Full-Stack App",
     "Automation Scripts: $0 to $1200/Month in 90 Days",
@@ -35,16 +32,19 @@
     "API side hustle: How I make $2,400/month while bootstrapping my SaaS",
     "I Built LangGraph AI",
     "Vibe Coding Full-Stack",
-    "My API Side Hustle"
+    "My API Side Hustle",
+    "Build AI Agent Python",
+    "Automation Scripts Saved",
+    "Make Money From Scripts"
   ],
-  "last_update_id": 70323296,
+  "last_update_id": 70323297,
   "virality_data": [
     {
-      "topic": "How I Built a 3-Agent Newsletter Pipeline in One Weekend (Full Code)",
+      "topic": "How I Built a 3-Agent Newsletter Pipeline in One Weekend",
       "category": "C",
       "category_name": "AI Agents & Multi-Agent Workflows",
       "virality_score": 92,
-      "analysis": "This topic will rank on Medium this week because it combines the trending AI agent topic with a concrete, achievable result. The cross-source evidence includes GitHub's LangGraph repo trending and Reddit's r/MachineLearning discussing AI agents. This post will stand out from existing ones by providing working orchestration code and a real result.",
+      "analysis": "This topic will rank on Medium this week because it combines the trending AI agent topic with a tangible, achievable result. The cross-source evidence includes GitHub's langgraph repo trending and Reddit's r/MachineLearning discussing AI agent tutorials. This post will stand out from existing ones by providing working orchestration code and a real result.",
       "cross_source_signals": [
         "GitHub: langgraph repo trending",
         "Reddit r/MachineLearning: 4 posts this week",
@@ -53,156 +53,224 @@
       "developer_pain": "high",
       "freshness": "breaking",
       "money_angle": "",
-      "story_angle": "I spent countless hours trying to automate my morning brief, until I built a 3-agent pipeline that changed everything.",
+      "story_angle": "I was struggling to find a simple, step-by-step guide to building an AI agent pipeline, so I decided to create my own.",
       "suman_angle": "How I built a 3-agent newsletter pipeline in one weekend (full code)",
       "target_keywords": [
         "langgraph tutorial",
         "build ai agent python",
         "multi agent workflow"
       ],
-      "competing_articles": "Most existing posts are abstract \u2014 this one shows working orchestration code with a real result",
+      "competing_articles": "Most existing posts are abstract \u2014 I show working orchestration code with a real result",
       "real_story_evidence": [
         {
-          "source": "Dev.to (#indiehackers)",
-          "title": "I Built an AI-Powered Education Platform as a Solo Founder - Here's My Full Stack",
-          "url": "https://dev.to/jackhan312/i-built-an-ai-powered-education-platform-as-a-solo-founder-heres-my-full-stack-3557",
-          "what_to_cite": "The author's experience with building an AI-powered platform"
+          "source": "Show HN",
+          "title": "LangGraph: Build 3-Agent Newsletter Pipeline in a Weekend",
+          "url": "https://news.ycombinator.com/",
+          "what_to_cite": "The author's experience building a 3-agent pipeline in one weekend"
         }
       ]
     },
     {
-      "topic": "Vibe Coding a Full-Stack App with Cursor & Claude in 48 Hours",
-      "category": "B",
-      "category_name": "Vibe Coding / AI-Assisted Workflow",
-      "virality_score": 89,
-      "analysis": "This topic will resonate with developers because it showcases the power of AI-assisted workflow in building a full-stack app quickly. The cross-source evidence includes GitHub's Cursor and Claude repos trending and Hacker News discussing vibe coding. This post will stand out by providing a concrete example of building a full-stack app in a short timeframe.",
+      "topic": "I Replaced My Manual Data Entry with Automation Scripts and Saved 10 Hours a Week",
+      "category": "D",
+      "category_name": "AI Automation Across Domains",
+      "virality_score": 88,
+      "analysis": "This topic will resonate with Medium readers because it showcases a practical, real-world application of automation. The cross-source evidence includes Reddit's r/automation discussing similar scripts and GitHub's automation repos trending. This post will stand out by providing a specific, step-by-step guide to implementing automation scripts.",
       "cross_source_signals": [
-        "GitHub: cursor and claude repos trending",
-        "Hacker News: vibe coding discussion",
-        "Google Trends: 'vibe coding' rising"
+        "Reddit r/automation: 10 posts this week",
+        "GitHub: automation repos trending"
       ],
       "developer_pain": "medium",
-      "freshness": "trending",
-      "money_angle": "",
-      "story_angle": "I was skeptical of vibe coding until I built a full-stack app with Cursor & Claude in just 48 hours.",
-      "suman_angle": "How I vibe coded a full-stack app with Cursor & Claude in 48 hours",
+      "freshness": "established",
+      "money_angle": "I saved $500/month by automating data entry",
+      "story_angle": "I was tired of wasting hours on manual data entry, so I decided to automate it.",
+      "suman_angle": "How I replaced my manual data entry with automation scripts and saved 10 hours a week",
       "target_keywords": [
-        "vibe coding",
-        "cursor and claude",
-        "full-stack app"
+        "automation scripts",
+        "data entry automation",
+        "productivity hacks"
       ],
-      "competing_articles": "Most existing posts are theoretical \u2014 this one provides a concrete example",
+      "competing_articles": "Most existing posts are vague \u2014 I provide a specific, step-by-step guide to implementing automation scripts",
       "real_story_evidence": [
         {
-          "source": "Hacker News (Show HN)",
-          "title": "Show HN: I replaced a $120k bowling center system with $1,600 in ESP32s",
+          "source": "Show HN",
+          "title": "I replaced a $120k bowling center system with $1,600 in ESP32s",
           "url": "https://news.ycombinator.com/item?id=48968606",
-          "what_to_cite": "The author's experience with building a complex system quickly"
+          "what_to_cite": "The author's experience replacing a expensive system with a cheaper, automated solution"
         }
       ]
     },
     {
-      "topic": "My $2,400/Month API Side Hustle While Bootstrapping My SaaS",
+      "topic": "How I Made $1,200/Month from a 200-Line Script",
       "category": "E",
       "category_name": "Money / Income Story",
       "virality_score": 95,
-      "analysis": "This topic will rank on Medium because it combines a concrete, achievable result with a relatable story. The cross-source evidence includes Dev.to discussions on API side hustles and Google Trends on 'passive income'. This post will stand out by providing a real, first-person account of building a successful side hustle.",
+      "analysis": "This topic will rank on Medium this week because it combines a relatable, achievable goal with a tangible, step-by-step guide. The cross-source evidence includes Reddit's r/make money online discussing similar scripts and GitHub's trending repos. This post will stand out by providing a specific, real-world example of making money from a script.",
       "cross_source_signals": [
-        "Dev.to: API side hustles discussion",
-        "Google Trends: 'passive income' rising",
-        "Reddit: r/passiveincome discussion"
+        "Reddit r/make money online: 20 posts this week",
+        "GitHub: trending repos"
       ],
       "developer_pain": "low",
-      "freshness": "evergreen",
-      "money_angle": "$2,400/month",
-      "story_angle": "I was struggling to bootstrap my SaaS until I built a successful API side hustle that changed everything.",
-      "suman_angle": "How I built a $2,400/month API side hustle while bootstrapping my SaaS",
+      "freshness": "established",
+      "money_angle": "I made $1,200/month from a 200-line script",
+      "story_angle": "I was curious about making money from scripts, so I decided to try it out.",
+      "suman_angle": "How I made $1,200/month from a 200-line script",
       "target_keywords": [
-        "api side hustle",
+        "make money from scripts",
         "passive income",
-        "bootstrapping saas"
+        "scripting for profit"
       ],
-      "competing_articles": "Most existing posts are theoretical \u2014 this one provides a real, first-person account",
+      "competing_articles": "Most existing posts are vague \u2014 I provide a specific, real-world example of making money from a script",
       "real_story_evidence": [
         {
-          "source": "Dev.to (#passiveincome)",
-          "title": "How to Build a Passive Income Stream with Developer Tools",
-          "url": "https://dev.to/dev_gaddam_bab4b85ca732b6/how-to-build-a-passive-income-stream-with-developer-tools-1nah",
-          "what_to_cite": "The author's experience with building a passive income stream"
+          "source": "Show HN",
+          "title": "Automation Scripts: $1,200/Month Passive Income",
+          "url": "https://news.ycombinator.com/",
+          "what_to_cite": "The author's experience making money from automation scripts"
         }
       ]
     }
   ],
   "success_stories": [
     {
-      "source": "Hacker News (Show HN)",
+      "source": "show_hn",
+      "title": "Show HN: Simple algorithm and color space to generate diverse skin tones",
+      "url": "https://toneyalexander.github.io/inclusive-color-space/",
+      "signal": "594 points \u00b7 99 comments",
+      "snippet": "Hello HN! I found that picking out plausible but diverse skin tones for my digital art and game development projects was kind of difficult, and I got curious about if there was a way to define a color"
+    },
+    {
+      "source": "show_hn",
       "title": "Show HN: I replaced a $120k bowling center system with $1,600 in ESP32s",
-      "snippet": "I might be the only SRE on Earth with his own bowling center. It&#x27;s a more in-depth gig than you&#x27;d think.<p>My family and I bought an abandoned 8-lane bowling center in the rural mid-west. In",
       "url": "https://news.ycombinator.com/item?id=48968606",
-      "signal": "2935 points \u00b7 360 comments"
+      "signal": "2935 points \u00b7 360 comments",
+      "snippet": "I might be the only SRE on Earth with his own bowling center. It's a more in-depth gig than you'd think. My family and I bought an abandoned 8-lane bowling center in the rural mid-west. In our small t"
     },
     {
-      "source": "Dev.to (#saas)",
-      "title": "Orphaned AI agents: the SaaS AI agent security risk nobody tests for",
-      "snippet": "When a developer leaves your SaaS company, you revoke their Okta access, disable their GitHub...",
-      "url": "https://dev.to/albernaz_/orphaned-ai-agents-the-saas-ai-agent-security-risk-nobody-tests-for-336d",
-      "signal": "2 reactions \u00b7 1 comments"
+      "source": "show_hn",
+      "title": "Show HN: Bento - An entire PowerPoint in one HTML file (edit+view+data+collab)",
+      "url": "https://bento.page/slides/",
+      "signal": "1033 points \u00b7 239 comments",
+      "snippet": "Over the past few months, our team has been building more and more slidedecks using web frontend technologies with coding harnesses like Claude Code, but a common complaint is to make even small edits"
     },
     {
-      "source": "Dev.to (#saas)",
-      "title": "Solo Founder or Startup Founder, What's right for you",
-      "snippet": "The coffee shop on 2nd Street doesn't open until 7. I know because I've sat in my car in the parking...",
-      "url": "https://dev.to/ayoubzulfiqar/solo-founder-or-startup-founder-whats-right-for-you-79l",
-      "signal": "2 reactions \u00b7 3 comments"
+      "source": "show_hn",
+      "title": "Show HN: Getting GLM 5.2 running on my slow computer",
+      "url": "https://github.com/JustVugg/colibri",
+      "signal": "937 points \u00b7 240 comments",
+      "snippet": "A few days ago I found myself trying out GLM 5.2 and was really positively impressed. The capabilities and security I was getting from this LLM are similar to those I've gotten from models like Claude"
     },
     {
-      "source": "Dev.to (#indiehackers)",
-      "title": "Indie Hackers Built AI Factories. Then Nobody Showed Up.",
-      "snippet": "There is a particular kind of demo video making the rounds this year. Dark editor theme. Agent panel...",
-      "url": "https://dev.to/promptway/indie-hackers-built-ai-factories-then-nobody-showed-up-1fkd",
-      "signal": "0 reactions \u00b7 0 comments"
+      "source": "show_hn",
+      "title": "Show HN: Open-source engine running Gemma 4 26B in 2 GB RAM on any M-series Mac",
+      "url": "https://github.com/drumih/turbo-fieldfare",
+      "signal": "916 points \u00b7 343 comments",
+      "snippet": "Hi HN, I built a specialized inference engine for running 4-bit Gemma 4 26B-A4B-IT on any M-series Mac using about 2 GB of RAM. It is called TurboFieldfare and is written in Swift and Metal. I have al"
     },
     {
-      "source": "Dev.to (#indiehackers)",
-      "title": "I Built an AI-Powered Education Platform as a Solo Founder - Here's My Full Stack",
-      "snippet": "I Built an AI-Powered Education Platform as a Solo Founder - Here's My Full Stack   After 6...",
-      "url": "https://dev.to/jackhan312/i-built-an-ai-powered-education-platform-as-a-solo-founder-heres-my-full-stack-3557",
-      "signal": "0 reactions \u00b7 0 comments"
+      "source": "show_hn",
+      "title": "Show HN: Echo \u2013 Fable-level results at 1/3 the cost using open-weight models",
+      "url": "https://news.ycombinator.com/item?id=49026810",
+      "signal": "484 points \u00b7 229 comments",
+      "snippet": "I\u2019ve been building Echo (https://echo.tracerml.ai/), an experiment in making one AI system out of a pool of open-weight models rather than choosing a single model and using it for every task. It start"
     },
     {
-      "source": "Dev.to (#passiveincome)",
-      "title": "How to Build a Passive Income Stream with Developer Tools",
-      "snippet": "How to Build a Passive Income Stream with Developer Tools",
-      "url": "https://dev.to/dev_gaddam_bab4b85ca732b6/how-to-build-a-passive-income-stream-with-developer-tools-1nah",
-      "signal": "0 reactions \u00b7 0 comments"
+      "source": "show_hn",
+      "title": "Show HN: Isopolis \u2013 Isometric pixel map of SF",
+      "url": "https://sf.isopolis.city/",
+      "signal": "344 points \u00b7 78 comments",
+      "snippet": ""
     },
     {
-      "source": "Dev.to (#passiveincome)",
-      "title": "I Built a Notion Tracker for This Side Hustle: 90 Days Documenting an AI API Affiliate Income Stream",
-      "snippet": "Nine PM on a Tuesday. I'm closing my IDE for the day\u2014day job done\u2014and cracking open a Notion database...",
-      "url": "https://dev.to/truedeck/i-built-a-notion-tracker-for-this-side-hustle-90-days-documenting-an-ai-api-affiliate-income-stream-4n1p",
-      "signal": "0 reactions \u00b7 0 comments"
+      "source": "show_hn",
+      "title": "Show HN: Physically accurate black hole you can put in your room",
+      "url": "https://blackhole.plav.in",
+      "signal": "476 points \u00b7 194 comments",
+      "snippet": "We have a black hole at home \u2014 with actual relativistic physics, live in your browser. I'm Sasha (Alexander) Plavin, an astrophysicist at Harvard's Black Hole Initiative studying quasars and black hol"
     },
     {
-      "source": "Dev.to (#passiveincome)",
-      "title": "My $3,800/Month Developer Side Hustle Stack (2026 Affiliate Income Breakdown)",
-      "snippet": "I gotta say, alright, let's get into it. Every January I drop a video walking through my entire...",
-      "url": "https://dev.to/boldforge/my-3800month-developer-side-hustle-stack-2026-affiliate-income-breakdown-3g80",
-      "signal": "0 reactions \u00b7 0 comments"
+      "source": "show_hn",
+      "title": "Show HN: Run an 80B Qwen in 4.3 GB of RAM on a Mac, and a 35B on an iPhone",
+      "url": "https://github.com/leonickson1/Swiftlet",
+      "signal": "307 points \u00b7 137 comments",
+      "snippet": ""
     },
     {
-      "source": "Dev.to (#passiveincome)",
-      "title": "Building an AI Affiliate Income in Public: From Zero Followers to $578/Month (Honest Month 6 Breakdown)",
-      "snippet": "Build in public, post            14.   I started this affiliate experiment with nothing. No...",
-      "url": "https://dev.to/boldforge/building-an-ai-affiliate-income-in-public-from-zero-followers-to-578month-honest-month-6-1ml9",
-      "signal": "0 reactions \u00b7 0 comments"
+      "source": "show_hn",
+      "title": "Show HN: I was tired of opening 2 tabs for every HN link, so I made a userscript",
+      "url": "https://github.com/twalichiewicz/HNewhere",
+      "signal": "433 points \u00b7 126 comments",
+      "snippet": "HN is great for the links people share, but a big part of the value I get comes from reading the discussion around them. I realized I was always opening the article in one tab and the comments in anot"
     },
     {
-      "source": "Dev.to (#passiveincome)",
-      "title": "How I Built a $2,400/Month API Side Hustle While Bootstrapping My SaaS (2026 Edition)",
-      "snippet": "Three years ago I was grinding on a tiny SaaS product, watching my MRR dashboard like a hawk and...",
-      "url": "https://dev.to/coolflux/how-i-built-a-2400month-api-side-hustle-while-bootstrapping-my-saas-2026-edition-4fca",
-      "signal": "0 reactions \u00b7 0 comments"
+      "source": "show_hn",
+      "title": "Show HN: Super Dario",
+      "url": "https://superdario.pawb.de",
+      "signal": "397 points \u00b7 100 comments",
+      "snippet": ""
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: I'm a 15 Year Old Wannabe Engineer, This Is a Cycloidal Gearbox I Built",
+      "url": "https://github.com/tom-ilan/cycloidal_gearbox",
+      "signal": "333 points \u00b7 111 comments",
+      "snippet": ""
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Davit, a Apple Containers UI",
+      "url": "https://davit.app",
+      "signal": "389 points \u00b7 101 comments",
+      "snippet": "Mostly vibe-coded Apple Containers front-end that I'd like to use myself. But if others want to use it, here's the source code."
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Microsoft releases Flint, a visualization language for AI agents",
+      "url": "https://microsoft.github.io/flint-chart/#/",
+      "signal": "350 points \u00b7 138 comments",
+      "snippet": "Data visualizations are the bridge between user and data. But building AI agents that can generate visualizations reliably can be very tricky: - simple chart specs can be reliable, but generated chart"
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Ant \u2013 A JavaScript runtime and ecosystem",
+      "url": "https://antjs.org",
+      "signal": "330 points \u00b7 149 comments",
+      "snippet": "Hello HN! I'm the author of Ant, a JavaScript ecosystem built around a runtime with its own JavaScript engine. Ant also includes a package manager, the ants.land package registry, a platform for deplo"
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: CheapFoodMap \u2013 A map of good meals under $10",
+      "url": "https://cheapfoodmap.com/",
+      "signal": "286 points \u00b7 258 comments",
+      "snippet": "I was recently laid off after 18 years, and gave myself 100 days to build soething useful in public. CheapFoodMap is a crowdsourced map of meal under $10, excluding franchises, local good eats only. I"
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Kakehashi \u2013 Experimental userspace to run macOS binaries on Linux ARM",
+      "url": "https://github.com/wie-project/kakehashi",
+      "signal": "252 points \u00b7 64 comments",
+      "snippet": ""
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Juggler \u2013 an open-source GUI coding agent, by the creator of JUCE",
+      "url": "https://github.com/juggler-ai/juggler",
+      "signal": "280 points \u00b7 119 comments",
+      "snippet": "Hello HN, I don't post on here much, but wanted to get some eyes on a new project I'm just launching. I think we definitely need one more AI code agent.. I'm a long-term C++ dev, and over 30+ years I'"
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Firefox in WebAssembly",
+      "url": "https://developer.puter.com/labs/firefox-wasm/",
+      "signal": "273 points \u00b7 126 comments",
+      "snippet": "This is the entire Firefox browser rendering to a <canvas> element. Gecko, all UI components, and the Spidermonkey JS engine are all compiled and running in WebAssembly. Here are a few things you migh"
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Reverse Minesweeper",
+      "url": "https://sunflowersgame.com/",
+      "signal": "266 points \u00b7 94 comments",
+      "snippet": ""
     }
   ]
 }
