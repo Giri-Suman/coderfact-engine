@@ -27,7 +27,7 @@ jobs:
 
       - name: Syntax check
         run: |
-          python -m compileall -q agent.py humanizer.py research_engine.py test_engine.py
+          python -m compileall -q agent.py humanizer.py research_engine.py judge.py promo.py test_engine.py
 
       # Offline: no network, no API keys, no publishing.
       - name: Offline test suite

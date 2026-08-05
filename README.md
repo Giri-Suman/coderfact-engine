@@ -20,8 +20,12 @@ python agent.py draft                  # read the Telegram reply, write the arti
 python agent.py educational <topic>    # short-form drop
 python agent.py social <topic>         # per-platform social pack
 python agent.py humanize <file.md>     # rerun the rewrite/repair loop on a draft
+python agent.py judge <file.md>        # editorial review; --fix applies findings
+python agent.py promo <file.md> [url]  # LinkedIn + X posts from a finished article
 
 python humanizer.py <file.md> [--fix] [--json]   # audit prose, no AI calls
+python judge.py --dry <file.md>                  # grounded facts only, no AI calls
+python promo.py <file.md> --facts                # what the promo writer sees
 python research_engine.py doctor|scan|search <q> # sources + offline library
 python test_engine.py                            # offline test suite
 ```
@@ -37,6 +41,8 @@ without calling an AI provider or publishing anything.
 | `agent.py` | Orchestration, prompts, Telegram, Dev.to and GitHub publishing |
 | `research_engine.py` | Parallel source sweep, clustering, ranking, research library |
 | `humanizer.py` | AI-tell detection, scoring, repair loop, voice fingerprint (stdlib only) |
+| `judge.py` | Editorial rubric, fabrication detection, critique → revise loop |
+| `promo.py` | LinkedIn + X posts generated from a finished article |
 | `test_engine.py` | Offline suite — no network, no keys |
 | `state.json` | Today's topics, title history, Telegram cursor |
 | `research/library.jsonl` | Append-only archive of every research run |
@@ -78,6 +84,45 @@ asserts this byte-for-byte.
 Calibration against this repo's own corpus: untreated drafts in `medium_drafts/`
 score 3–33; hand-written technical prose scores in the mid-50s. Treat the score
 as a relative signal, not an AI-detector verdict.
+
+### Editorial review
+
+The humanizer catches mechanical tells. It cannot tell you the hook is generic
+or that a revenue figure was invented, so `judge.py` runs a second loop:
+
+```
+article ──► measure facts in Python ──► rubric review (8 weighted dimensions)
+                    │                              │
+                    │                              ├─ ship ──────────► publish
+                    └─ blocking issues ────────►   └─ revise with the actual
+                       (fabricated figures,           findings ──► re-judge
+                        unverified URLs,              (keep only if the score
+                        vague attribution,             improved, max 2 rounds)
+                        zero code blocks)
+```
+
+An LLM asked to review its own output mostly produces praise, so two guards
+apply. Everything measurable — word count, keyword placement, code blocks,
+citation URLs, money figures — is computed in Python first and handed to the
+reviewer as ground truth it may not contradict. And **fabrication is detected
+deterministically**: a money or audience figure with no cited source, or a URL
+that was never in the research evidence, forces a `reject` regardless of what
+the model thinks of the prose. Technical metrics the author measured themselves
+(timings, LOC, memory) are explicitly allowed.
+
+```bash
+python judge.py --dry medium_drafts/*.md   # grounded facts, no API key needed
+```
+
+### Promotion
+
+`promo.py` writes the LinkedIn post and X thread **from the finished article**,
+not from the topic — so the posts quote the real error string and the real
+before/after number instead of inventing a second, worse article. Platform
+limits are enforced in Python rather than requested in the prompt: 280 chars per
+X post (the model is asked to cut, truncation at a word boundary is the
+fallback), and the LinkedIn hook is checked against the ~210-char fold, which is
+the only line most people read. Both drafts go through the humanizer first.
 
 ### Voice calibration
 
@@ -125,6 +170,9 @@ Tuning (all optional):
 |---|---|---|
 | `HUMANIZE_ROUNDS` | `2` | Max repair rounds per article |
 | `HUMANIZE_TARGET` | `85` | Score at which repair stops early |
+| `JUDGE_ROUNDS` | `2` | Max editorial revise rounds per article |
+| `JUDGE_TARGET` | `78` | Editorial score at which review stops early |
+| `PROMO_THREAD_LEN` | `6` | Posts in the generated X thread |
 | `VOICE_SAMPLES_DIR` | `voice` | Where voice samples live |
 | `SOURCE_TIMEOUT` | `45` | Per-source seconds before a source is degraded |
 | `REDDIT_BUDGET` | `40` | Total seconds for the Reddit leg |

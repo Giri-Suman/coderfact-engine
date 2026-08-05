@@ -242,6 +242,15 @@ with tempfile.TemporaryDirectory() as td:
 
 check("tokens drops stopwords", "the" not in R.tokens("the agent and the tool"))
 
+# A measured before/after is the specificity the engine exists to produce.
+# Flagging "from 500ms to 200ms" as a fake range trained the writer away from it.
+for _txt, _want in [("Response time went from 500ms to 200ms.", False),
+                    ("Scaled from 3 workers to 12 workers.", False),
+                    ("Used by everyone from startups to enterprises.", True),
+                    ("anything from debugging to deployment", True)]:
+    check(f"false-ranges {'flags' if _want else 'ignores'}: {_txt[:38]}",
+          any(f.pid == 12 for f in H.scan(_txt)) == _want)
+
 # Show HN regressions. Algolia's default sort is relevance across ALL TIME, and
 # this source used to hardcode age_hours=72 — so a 14-year-old post arrived
 # labelled as three-day-fresh signal. It also filtered launches by income
@@ -304,6 +313,108 @@ _money = R.Item("show_hn", "Show HN: $4k MRR from a script", url="https://x/2",
 _block = R.format_stories([R.Cluster("k", items=[_generic, _money])])
 check("income-angle story is listed first",
       _block.index("$4k MRR") < _block.index("A neat CLI"))
+
+
+import judge as J
+import promo as P
+
+print("\njudge — grounding and blocking")
+
+_FAB = """# How I Made Money
+
+I built this in a weekend and it now does $4,200 MRR with 1,300 paying customers.
+According to a study, most devs never ship. Research shows this is common.
+Proof at https://totally-invented-source.com/proof.
+
+## What I did
+Prose with no code at all.
+"""
+_gt_fab = J.ground_truth(_FAB, {"title": "x",
+                                "allowed_urls": ["https://news.ycombinator.com/item?id=1"],
+                                "evidence_text": []})
+check("money figures are captured whole, not truncated at 'M'",
+      "$4,200 MRR" in _gt_fab["unsourced_money_figures"], _gt_fab["unsourced_money_figures"])
+check("audience counts flagged",
+      any("1,300" in m for m in _gt_fab["unsourced_money_figures"]))
+check("url outside the evidence list flagged",
+      _gt_fab["unsourced_urls"] == ["https://totally-invented-source.com/proof"])
+check("vague attribution flagged", len(_gt_fab["vague_attributions"]) >= 2)
+check("missing code flagged", _gt_fab["code_blocks"] == 0)
+check("fabrication produces blocking issues", len(J.blocking_issues(_gt_fab)) >= 3)
+
+# The author's own technical measurements are explicitly allowed — flagging
+# them would make the judge unusable on exactly the articles this engine writes.
+_CLEAN = """# Fixing a slow query
+
+The psycopg2 OperationalError fired at 02:14. The query took 4200ms, now 180ms.
+Cut 340 lines. Memory dropped from 512MB to 90MB.
+
+```python
+import psycopg2  # 2.9.9
+conn = psycopg2.connect(host="db", port=5432)
+```
+
+| metric | before | after |
+|---|---|---|
+| latency | 4200ms | 180ms |
+"""
+_gt_clean = J.ground_truth(_CLEAN, {"primary_keyword": "psycopg2", "target_words": 60})
+check("technical metrics are not treated as money", _gt_clean["unsourced_money_figures"] == [],
+      _gt_clean["unsourced_money_figures"])
+check("pipeline's own image hosts aren't treated as citations",
+      J.ground_truth("![x](https://image.pollinations.ai/prompt/y)\n\n```py\na=1\n```",
+                     {"allowed_urls": ["https://example.com"]})["unsourced_urls"] == [])
+check("clean draft has no blocking issues", J.blocking_issues(_gt_clean) == [])
+check("artifact-free H2s are named",
+      "What I did" in " ".join(_gt_fab["h2_without_artifact"]))
+check("rubric weights sum to 1.0", abs(sum(w for w, _ in J.RUBRIC.values()) - 1.0) < 1e-9)
+
+# A judge that can't parse its own model output must not silently pass a draft.
+_v = J.judge(_CLEAN, {"title": "t"}, lambda p, max_tokens=0: "not json at all")
+check("judge falls back to revise/reject when scoring fails",
+      _v.verdict in ("revise", "reject") and _v.error)
+
+# review_loop must not accept a revision that scores worse.
+_calls = {"n": 0}
+
+
+def _degrading_ai(prompt, max_tokens=0):
+    _calls["n"] += 1
+    if "EDITOR'S FINDINGS" in prompt:
+        return _CLEAN + "\n\nAccording to a study, this is common.\n"
+    return json.dumps({
+        "scores": {k: (9 if _calls["n"] == 1 else 3) for k in J.RUBRIC},
+        "verdict": "revise", "strengths": [],
+        "findings": [{"severity": "high", "dimension": "structure",
+                      "quote": "Cut 340 lines.", "problem": "vague", "fix": "name the file"}],
+    })
+
+
+_final, _hist = J.review_loop(_CLEAN, {"title": "t"}, _degrading_ai, max_rounds=1)
+check("a worse revision is discarded", _final == _CLEAN, "kept the degraded revision")
+check("review_loop records every round", len(_hist) >= 2)
+
+print("\npromo — platform limits and grounding")
+
+check("SEO header is stripped before facts are read",
+      not P.strip_seo_block("---\nTAGS: x\n---\nCUT THE ABOVE BLOCK HERE ✂️\n\nReal opening."
+                            ).startswith("---"))
+_facts = P.extract_facts(_CLEAN, "Fixing a slow query")
+check("facts pull the real code snippet", "psycopg2" in _facts["snippet"])
+check("facts pull real metrics", any("4200ms" in m or "180ms" in m for m in _facts["metrics"]))
+check("facts detect the comparison table", _facts["has_table"])
+
+_long = "x " * 400
+_fitted, _warn = P._fit_x(_long, ask_ai=None)
+check("over-length X post is truncated to the limit", len(_fitted) <= P.X_LIMIT, len(_fitted))
+check("truncation is flagged as a warning", bool(_warn))
+check("truncation lands on a word boundary", "  " not in _fitted.rstrip("…"))
+_short = "A short post."
+check("short X post is left alone", P._fit_x(_short, ask_ai=None)[0] == _short)
+check("model rewrite is preferred over truncation",
+      P._fit_x("y " * 300, ask_ai=lambda p, max_tokens=0: "concise version")[0]
+      == "concise version")
+check("tweet numbering prefixes are stripped", P._clean_post('2/ "Real text"') == "Real text")
 
 
 # ── summary ──────────────────────────────────────────────────────────────────

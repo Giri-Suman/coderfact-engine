@@ -4,6 +4,8 @@ from datetime import datetime, timezone, timedelta
 
 import humanizer
 import research_engine as rx
+import judge
+import promo
 
 DEVTO_KEY      = os.getenv("DEVTO_API_KEY")
 TELEGRAM_BOT   = os.getenv("TELEGRAM_BOT_TOKEN")
@@ -1418,6 +1420,45 @@ Output: clean Markdown only. Start with the hook scene. No preamble.
             send_tg(f"⚠️ AI-tell score *{human_score}/100* ({human_grade}) — "
                     f"review before publishing.\nTop tells: _{top}_")
 
+    # ── Pass 2.75: editorial review ─────────────────────────────────────────
+    # The humanizer catches mechanical tells. It cannot tell that the hook is
+    # generic or that a revenue figure was invented, so a reviewer scores the
+    # draft against a rubric grounded in facts measured here, then the findings
+    # go back to the model. A revision is kept only if it scores higher.
+    tg_step("⚖️ Pass 2.75/3: Editorial review (judge -> revise loop)...")
+    judge_ctx = {
+        "title": seo_title,
+        "article_format": article_format,
+        "primary_keyword": primary_kw,
+        "target_words": target_words,
+        "allowed_urls": [e.get("url") for e in _per_topic_evidence if e.get("url")]
+                        + [s.get("url") for s in _relevant_stories if s.get("url")],
+        "evidence_text": [f"{e.get('source', '')} — {e.get('title', '')} ({e.get('url', '')})"
+                          for e in _per_topic_evidence]
+                         + [f"{s.get('source', '')} — {s.get('title', '')} ({s.get('url', '')})"
+                            for s in _relevant_stories[:5]],
+    }
+    verdicts = []
+    try:
+        article, verdicts = judge.review_loop(article, judge_ctx, ask_ai)
+    except Exception as e:
+        print(f"[judge] review loop failed (non-fatal): {e}")
+
+    if verdicts:
+        final_v = verdicts[-1]
+        print(f"[judge] final — {final_v.summary()}")
+        if final_v.blocking or final_v.verdict == "reject":
+            issues = "\n".join(f"• {b[:150]}" for b in final_v.blocking[:3]) \
+                     or "• see the run log for the reviewer's findings"
+            send_tg(f"🛑 *Editorial review: {final_v.verdict}* "
+                    f"({final_v.weighted:.0f}/100)\n"
+                    f"Publishing anyway as a Dev.to *draft* — do not publish "
+                    f"until these are fixed:\n{issues}")
+        elif final_v.weighted < judge.TARGET_SCORE:
+            weak = ", ".join(f"{k} {s}/10" for k, s in
+                             sorted(final_v.scores.items(), key=lambda kv: kv[1])[:3])
+            send_tg(f"⚠️ *Editorial score {final_v.weighted:.0f}/100* — weakest: _{weak}_")
+
     meta  = ""
     tags_line = ""
     clean = []
@@ -1842,6 +1883,107 @@ Return ONLY a JSON array with 3-6 objects. No markdown fences. Schema:
             except Exception:
                 pass
             raise
+
+    # ── Pass 4: promotion ───────────────────────────────────────────────────
+    # Generated FROM the finished article, so the posts quote details that
+    # actually exist in it. Never fatal — the article is already published.
+    try:
+        promo_pack_for(article=medium_content, title=seo_title,
+                       article_url=github_url or "https://coderfact.com",
+                       slug=draft_slug(seo_title), notify=True)
+    except Exception as e:
+        print(f"[promo] pack failed (non-fatal): {e}")
+        send_tg(f"⚠️ Promo pack failed: `{str(e)[:150]}`\nArticle is fine.")
+
+
+def promo_pack_for(article: str, title: str, article_url: str = "",
+                   slug: str = "", notify: bool = False):
+    """Build + save the LinkedIn/X promo pack for a finished article."""
+    voice_ctx = f"{AUTHOR_CONTEXT}. Vibe: {AUTHOR_VIBE}"
+    pack = promo.build_promo(article, title, ask_ai, article_url=article_url,
+                             author=AUTHOR_NAME, voice_context=voice_ctx)
+
+    md = promo.render_markdown(pack, AUTHOR_NAME)
+    path = f"social/{slug or draft_slug(title, fallback='promo')}-promo.md"
+    url = save_file_to_github(path, md, f"docs: promo pack — {title[:50]}")
+
+    if not (GITHUB_TOKEN and GITHUB_REPO):
+        os.makedirs("social", exist_ok=True)
+        with open(path, "w", encoding="utf-8") as fh:
+            fh.write(md)
+        print(f"[promo] wrote {path}")
+
+    if notify:
+        hook = pack.linkedin_hook or (pack.linkedin.split("\n", 1)[0] if pack.linkedin else "")
+        msg = (f"📣 *Promo pack ready*\n\n"
+               f"📝 _{title[:80]}_\n"
+               f"💼 LinkedIn: {len(pack.linkedin)} chars\n"
+               f"🐦 X thread: {len(pack.x_thread)} posts\n")
+        if pack.human_scores:
+            msg += "🧬 " + ", ".join(f"{k} {v}/100" for k, v in pack.human_scores.items()) + "\n"
+        if url:
+            msg += f"💾 [Promo pack file]({url})\n"
+        if pack.warnings:
+            msg += "\n⚠️ " + "\n⚠️ ".join(w[:120] for w in pack.warnings[:3]) + "\n"
+        if hook:
+            msg += f"\n_Hook:_\n```\n{hook[:220]}\n```"
+        send_tg(msg)
+    return pack
+
+
+def promo_cli():
+    """CLI: python agent.py promo <file.md> [url]"""
+    args = [a for a in sys.argv[2:] if a]
+    if not args:
+        print("Usage: python agent.py promo <file.md> [article_url]")
+        return 1
+    path = args[0]
+    url = args[1] if len(args) > 1 else ""
+    if not os.path.exists(path):
+        print(f"No such file: {path}")
+        return 1
+    with open(path, encoding="utf-8") as fh:
+        text = fh.read()
+    title = next((l.lstrip("# ").strip() for l in text.splitlines()
+                  if l.startswith("# ")), os.path.basename(path))
+    pack = promo_pack_for(text, title, article_url=url,
+                          slug=os.path.splitext(os.path.basename(path))[0], notify=False)
+    print(promo.render_markdown(pack, AUTHOR_NAME))
+    return 0
+
+
+def judge_cli():
+    """CLI: python agent.py judge <file.md> [--fix]"""
+    args = [a for a in sys.argv[2:] if not a.startswith("--")]
+    if not args:
+        print("Usage: python agent.py judge <file.md> [--fix]")
+        return 1
+    path = args[0]
+    if not os.path.exists(path):
+        print(f"No such file: {path}")
+        return 1
+    with open(path, encoding="utf-8") as fh:
+        text = fh.read()
+    title = next((l.lstrip("# ").strip() for l in text.splitlines()
+                  if l.startswith("# ")), os.path.basename(path))
+    ctx = {"title": title, "allowed_urls": judge._URL_RE.findall(text), "evidence_text": []}
+
+    if "--fix" in sys.argv:
+        fixed, history = judge.review_loop(text, ctx, ask_ai)
+        if fixed != text:
+            with open(path, "w", encoding="utf-8") as fh:
+                fh.write(fixed)
+            print(f"[judge] wrote revision to {path}")
+        v = history[-1]
+    else:
+        v = judge.judge(text, ctx, ask_ai)
+
+    print(f"\n{v.summary()}\n")
+    for k, s in sorted(v.scores.items(), key=lambda kv: kv[1]):
+        print(f"  {s:2d}/10  {k}")
+    print()
+    print(judge.format_findings(v))
+    return 0
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
@@ -2304,15 +2446,18 @@ if __name__ == "__main__":
             pass
 
     COMMANDS = {"research": research, "draft": draft, "educational": educational,
-                "social": social, "doctor": doctor, "humanize": humanize_cli}
+                "social": social, "doctor": doctor, "humanize": humanize_cli,
+                "judge": judge_cli, "promo": promo_cli}
     cmd = sys.argv[1] if len(sys.argv) > 1 else ""
     if cmd not in COMMANDS:
         print("Usage: python agent.py <command>\n"
               "  research              pick + score today's topics, send the Telegram brief\n"
               "  draft                 read the Telegram reply and write the chosen article(s)\n"
               "  educational <topic>   short-form drop (hooks + tips + steps)\n"
-              "  social <topic>        per-platform social pack\n"
+              "  social <topic>        per-platform social pack from a topic\n"
               "  humanize <file.md>    rewrite/repair an existing draft in place\n"
+              "  judge <file.md>       editorial review; --fix applies the findings\n"
+              "  promo <file.md> [url] LinkedIn + X posts from a finished article\n"
               "  doctor                probe every source and key, publish nothing")
         sys.exit(2)
     sys.exit(COMMANDS[cmd]() or 0)

@@ -399,10 +399,14 @@ PATTERNS = [
     Pattern(11, "elegant-variation", "low",
             "Reuse the same noun instead of cycling synonyms.",
             rx=_rx(r"\b(the (?:aforementioned|latter|former)|said (?:tool|library|approach|method))\b")),
+    # Endpoints containing a digit are a real measured range ("from 500ms to
+    # 200ms", "from 3 workers to 12"), which is the specificity this engine is
+    # trying to produce. Only fire when BOTH endpoints are non-numeric, which is
+    # the fake-spectrum case ("from startups to enterprises").
     Pattern(12, "false-ranges", "medium",
             "List the items; drop the fake spectrum.",
-            rx=_rx(r"\b(?:anything |everything )?(?:ranging )?from\s+[\w'-]{3,20}\s+to\s+"
-                   r"[\w'-]{3,20}\b(?![^.\n]*\b\d)")),
+            rx=_rx(r"\b(?:anything |everything )?(?:ranging )?from\s+"
+                   r"(?![\w'-]*\d)[\w'-]{3,20}\s+to\s+(?![\w'-]*\d)[\w'-]{3,20}\b")),
     Pattern(13, "passive-voice", "medium",
             "Name the actor. Active voice.",
             rx=_rx(r"\b(?:is|are|was|were|been|being)\s+\w+(?:ed|en)\s+by\b|"
