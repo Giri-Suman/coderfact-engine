@@ -1,0 +1,9 @@
+# Runtime deps for agent.py / research_engine.py / humanizer.py
+# humanizer.py is stdlib-only by design — it must stay importable anywhere.
+requests>=2.31.0
+feedparser>=6.0.10
+beautifulsoup4>=4.12.0
+
+# Google Trends. Optional: research_engine imports it lazily and reports the
+# source as degraded when it is absent, so the sweep still runs without it.
+pytrends>=4.9.2

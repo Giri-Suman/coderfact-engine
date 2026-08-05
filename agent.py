@@ -1,6 +1,9 @@
-import os, sys, json, base64, re, requests, feedparser
+import os, sys, json, base64, re, hashlib, requests, feedparser
 from bs4 import BeautifulSoup
 from datetime import datetime, timezone, timedelta
+
+import humanizer
+import research_engine as rx
 
 DEVTO_KEY      = os.getenv("DEVTO_API_KEY")
 TELEGRAM_BOT   = os.getenv("TELEGRAM_BOT_TOKEN")
@@ -22,16 +25,59 @@ TICK3          = chr(96) * 3
 # This was called in draft_single() but NEVER DEFINED -> NameError crash
 # ═══════════════════════════════════════════════════════════════════════════════
 def convert_mermaid_for_medium(body: str) -> str:
-    """Convert Mermaid code blocks to mermaid.ink image URLs for Medium compatibility."""
+    """Convert Mermaid code blocks to mermaid.ink image URLs for Medium compatibility.
+
+    Must be URL-SAFE base64. Standard base64 emits '+' and '/', and a '/' inside
+    the path segment splits the URL — mermaid.ink then 404s and the article ships
+    with a broken image. Real example: 'graph TD\\n A-->B' encodes to a string
+    containing '...LS0+fHllc3wg...'.
+    """
     pattern = re.compile(r'```mermaid\s*\n(.*?)```', re.DOTALL)
 
     def replace_mermaid(match):
         diagram = match.group(1).strip()
-        encoded = base64.b64encode(diagram.encode('utf-8')).decode('ascii')
+        encoded = base64.urlsafe_b64encode(diagram.encode('utf-8')).decode('ascii')
         img_url = f"https://mermaid.ink/img/{encoded}?theme=dark&bgColor=!1a1a2e"
         return f"![Mermaid diagram]({img_url})\n"
 
     return pattern.sub(replace_mermaid, body)
+
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# JSON extraction — one implementation for the whole file.
+#
+# The old code used `raw.strip("```json").strip("```")` in five places. str.strip
+# takes a SET OF CHARACTERS, not a suffix, so that call strips any leading or
+# trailing ` j s o n from the payload. A response starting with `[{"name": ...`
+# survives by luck; one starting with `no results` loses its 'n' and 'o'.
+# ═══════════════════════════════════════════════════════════════════════════════
+def extract_json(raw: str, want=None):
+    """Parse JSON out of an LLM response. Handles code fences, preamble prose and
+    trailing commas. `want` may be dict or list to assert the top-level type."""
+    if not raw:
+        raise ValueError("empty response")
+    text = re.sub(r'^\s*```(?:json)?\s*', '', raw.strip(), flags=re.MULTILINE)
+    text = re.sub(r'```\s*$', '', text, flags=re.MULTILINE).strip()
+
+    candidates = [text]
+    for opener, closer in (("{", "}"), ("[", "]")):
+        start, end = text.find(opener), text.rfind(closer)
+        if start != -1 and end > start:
+            candidates.append(text[start:end + 1])
+
+    last_err = None
+    for blob in candidates:
+        for attempt in (blob, re.sub(r',(\s*[}\]])', r'\1', blob)):
+            try:
+                data = json.loads(attempt, strict=False)
+            except Exception as e:
+                last_err = e
+                continue
+            if want and not isinstance(data, want):
+                last_err = ValueError(f"expected {want}, got {type(data).__name__}")
+                continue
+            return data
+    raise ValueError(f"JSON extraction failed: {last_err} | raw[:200]={raw[:200]!r}")
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
@@ -68,173 +114,60 @@ def render_quote_card(quote: str, attribution: str = "") -> str:
 # Runs after the article is written. Different model, different prompt.
 # Goal: kill "AI tells" without losing technical accuracy.
 # ═══════════════════════════════════════════════════════════════════════════════
-HUMAN_BANNED = [
-    "delve", "navigate", "leverage", "landscape", "robust", "seamless", "unleash",
-    "utilize", "empower", "groundbreaking", "revolutionize", "game-changer",
-    "synergy", "cutting-edge", "supercharge", "spearhead", "foster", "facilitate",
-    "paradigm", "holistic", "it is worth noting", "furthermore", "moreover",
-    "additionally", "in conclusion", "in summary", "to summarize", "in essence",
-    "at the end of the day", "tapestry", "elevate", "embark", "unparalleled",
-    "transformative", "noteworthy", "comprehensive", "intricate", "myriad",
-    "plethora", "ever-evolving", "rapidly evolving",
-]
+HUMAN_BANNED = humanizer.AI_VOCAB   # kept as an alias; the list lives in humanizer.py
 
-def humanize_pass(article_md: str, voice_context: str, target_words: int) -> str:
-    """Rewrite an AI-drafted article to read like a human dev wrote it."""
+def humanize_pass(article_md: str, voice_context: str, target_words: int):
+    """Rewrite + repair loop. Returns (article, humanizer.Report | None).
+
+    The old implementation did one blind rewrite, then ai_lint() PRINTED its
+    findings and returned the article unchanged — every tell it detected still
+    shipped. humanizer.humanize() feeds those findings back to the model and
+    re-scans, and only keeps a repair that measurably improves the score.
+    """
     if not article_md or len(article_md) < 200:
-        return article_md
-    banned_block = ", ".join(HUMAN_BANNED)
+        return article_md, None
     try:
-        rewritten = ask_ai(f"""You are an editor at a tech magazine, not a writer. You are looking at a draft and your only job is to make it sound less like a generated post.
-
-DRAFT:
----
-{article_md}
----
-
-Output the rewritten article only. No preamble, no "Here is the rewritten version".
-
-WHAT TO PRESERVE EXACTLY (do not touch a single character):
-- All ## H2 headings (SEO depends on them)
-- All ```code``` fences and their contents
-- All ```mermaid``` blocks
-- All pipe-tables
-- All blockquotes (lines starting with >)
-- All image markdown (![alt](url))
-- All TAGS: and META: lines
-- All JSON widget blocks (```json?chameleon)
-
-WHAT TO REWRITE: only the prose paragraphs between these elements.
-
-HOW TO REWRITE — these are observations about real writing, not techniques to insert:
-
-1. Real writers repeat themselves accidentally and then move on. They don't catch every redundancy. Leave one or two in.
-
-2. Real writers have one verbal tic per piece. Pick ONE for this article — could be parentheticals, could be em-dashes, could be sentence fragments — and use only that one. Do not mix tics. The previous version of this engine alternated four different "human tells" mechanically; that's a pattern, kill it.
-
-3. Real writers don't ask the reader rhetorical questions more than once per long article. If the draft has multiple "Sound familiar?" / "Right?" / "See where this is going?" — delete all but one, and rewrite that one to be specific to the topic.
-
-4. Real writers rarely say "I". They show I by what they noticed. "The error log was empty" is more I than "I noticed the error log was empty". Where you see "I [verb]ed", try cutting the I and the verb.
-
-5. Real writers fail to be funny most of the time. If the draft has a wisecrack that sounds polished — chai metaphor, 1am joke, "developer pain" gag — cut it. Leave one tired observation that isn't trying to be funny.
-
-6. Real writers commit to verbs. "It really is" → "it is". "Actually started" → "started". "Pretty much works" → "works". Cut hedges.
-
-7. Real writers don't conclude. The last paragraph just stops. Don't add wrap-up lines.
-
-VOICE CONTEXT: {voice_context}
-
-WHAT TO DELETE ON SIGHT (these are AI tells from the previous draft):
-- Any sentence containing: {banned_block}
-- Any sentence starting with: Furthermore, Moreover, Additionally, In conclusion, In summary, To summarize, In essence, At the end of the day, It is worth noting, As we can see, As mentioned, As discussed.
-- The phrases "the clap button", "tap that clap", "drop a comment below", "share this article", "let me know in the comments" — replace with one specific, non-cliché ask if a CTA is needed.
-- Any sentence that sounds like a LinkedIn post (motivational, declarative, no specific noun).
-- Verbatim repeats of "Yeah. Me too.", "Sound familiar?", "I spent three hours on this. THREE hours.", "It was 1am" — these are template phrases from the previous prompt that the model copied. Strip them.
-
-WORD TARGET: ~{target_words}. If under, do NOT pad — output as-is. Padding is worse than short.
-
-SANITY CHECK BEFORE YOU OUTPUT: read your rewrite. If you can hear it being said by a real tired person, ship it. If it sounds like a podcast intro, rewrite it again.""", max_tokens=int(target_words * 2.2) + 500)
-        if not rewritten or len(rewritten) < int(len(article_md) * 0.5):
-            print(f"[humanize] Output too short ({len(rewritten) if rewritten else 0} vs draft {len(article_md)}) — keeping original")
-            return article_md
-        # Strip any preamble accidentally added
-        for prefix in ("Here is the rewritten", "Here's the rewritten", "Rewritten:", "REWRITTEN:"):
-            if rewritten.lstrip().startswith(prefix):
-                rewritten = rewritten.split("\n", 1)[1] if "\n" in rewritten else rewritten
-        print(f"[humanize] OK — rewrote {len(article_md)} -> {len(rewritten)} chars")
-        return rewritten.strip()
+        return humanizer.humanize(
+            article_md, ask_ai,
+            voice_context=voice_context,
+            target_words=target_words,
+            max_rounds=int(os.getenv("HUMANIZE_ROUNDS", "2")),
+            target_score=int(os.getenv("HUMANIZE_TARGET", "85")),
+        )
     except Exception as e:
-        print(f"[humanize] Failed: {e} — keeping AI draft")
-        return article_md
+        print(f"[humanize] failed: {e} — keeping AI draft")
+        return article_md, None
 
 
-# ═══════════════════════════════════════════════════════════════════════════════
-# AI-LINT — final pass to catch tells the model snuck back in.
-# Returns (fixed_article, list_of_warnings). Auto-fixes safe patterns,
-# logs warnings for unsafe ones. Runs AFTER humanize_pass.
-# ═══════════════════════════════════════════════════════════════════════════════
-def ai_lint(article_md: str) -> tuple:
-    warnings = []
-    fixed = article_md
-
-    # 1. Hard banned phrases — these are template phrases from the previous prompt
-    #    that the model copies verbatim. Each instance is a strong AI-detection signal.
-    HARD_BANS = [
-        r"\bI spent three hours on this\b",
-        r"\bTHREE hours\b",
-        r"\bSound familiar\??",
-        r"\bYeah\.\s*Me too\.",
-        r"\bIt was 1am\b",
-        r"\bthe clap button is right there\b",
-        r"\btap that clap\b",
-        r"\bIn conclusion\b",
-        r"\bIn summary\b",
-        r"\bTo summarize\b",
-        r"\bFurthermore,",
-        r"\bMoreover,",
-        r"\bAdditionally,",
-        r"\bIt is worth noting\b",
-        r"\bAs we can see\b",
-        r"\bWithout further ado\b",
-        r"\bBuckle up\b",
-        r"\bLet's dive in\b",
-    ]
-    for pattern in HARD_BANS:
-        if re.search(pattern, fixed, re.IGNORECASE):
-            warnings.append(f"AI-tell present: {pattern}")
-
-    # 2. Banned vocab — sentence-level offenders
-    BANNED_VOCAB = [
-        "delve", "leverage", "robust", "seamless", "unleash",
-        "empower", "groundbreaking", "revolutionize", "game-changer",
-        "synergy", "cutting-edge", "supercharge", "paradigm",
-        "tapestry", "myriad", "plethora", "ever-evolving",
-        "transformative", "comprehensive", "noteworthy",
-        "elevate", "embark", "unparalleled", "intricate",
-    ]
-    for word in BANNED_VOCAB:
-        if re.search(rf"\b{word}\b", fixed, re.IGNORECASE):
-            warnings.append(f"Banned word still present: {word}")
-
-    # 3. Repeated identical short paragraphs (e.g. "Yeah. Me too." appearing twice)
-    paragraphs = [p.strip() for p in re.split(r"\n\n+", fixed) if p.strip()]
-    seen = set()
-    for p in paragraphs:
-        if len(p) < 200 and p in seen:
-            warnings.append(f"Duplicate short paragraph: {p[:60]}")
-        seen.add(p)
-
-    # 4. Three+ short fragments in a row — formulaic humanization signature
-    if re.search(r"(?:^|\n)([A-Z][^.\n]{1,40}\.\s+){3,}", fixed):
-        warnings.append("Three+ short fragments in a row (formulaic humanization)")
-
-    # 5. Auto-fix: collapse em-dash overload (4+ em-dashes in one paragraph)
-    def fix_emdash_overload(match):
-        para = match.group(0)
-        if para.count("—") >= 4:
-            parts = para.split("—")
-            rebuilt = parts[0]
-            for i, part in enumerate(parts[1:], 1):
-                if i % 2 == 1:
-                    stripped = part.lstrip()
-                    if stripped:
-                        rebuilt += ". " + stripped[0].upper() + stripped[1:]
-                    else:
-                        rebuilt += "—" + part
-                else:
-                    rebuilt += "—" + part
-            return rebuilt
-        return para
-
-    fixed = re.sub(r"[^\n]+", fix_emdash_overload, fixed)
-
-    return fixed, warnings
+def ai_lint(article_md: str):
+    """Back-compat shim: (article, warnings). Detection lives in humanizer.py."""
+    fixed, _ = humanizer.autofix(article_md)
+    findings = humanizer.scan(fixed)
+    return fixed, [f"{f.name}: {f.excerpt}" for f in findings]
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
 # FIX 2: Added robust GitHub file saver with proper error handling
 # GitHub API creates folders implicitly when you PUT a file with path like folder/file.md
 # ═══════════════════════════════════════════════════════════════════════════════
+def draft_slug(title: str, maxlen: int = 60, fallback: str = "draft") -> str:
+    """Filename slug that will not silently overwrite a different draft.
+
+    The old inline expression truncated at 60 characters, so two titles sharing
+    a long prefix mapped to the same medium_drafts/<slug>.md and the second run
+    clobbered the first. When truncation actually happens, disambiguate with a
+    short hash of the full title.
+    """
+    base = re.sub(r"[^\w\s-]", "", str(title).lower()).strip()
+    base = re.sub(r"[\s_]+", "-", base).strip("-")
+    if not base:
+        return fallback
+    if len(base) <= maxlen:
+        return base
+    digest = hashlib.sha1(str(title).encode("utf-8")).hexdigest()[:6]
+    return f"{base[:maxlen].rstrip('-')}-{digest}"
+
+
 def save_file_to_github(path: str, content: str, message: str) -> str:
     """Save a file to GitHub repo. Returns the file URL or empty string on failure."""
     if not (GITHUB_TOKEN and GITHUB_REPO):
@@ -392,14 +325,40 @@ def load_state():
     return json.load(open(STATE_FILE)) if os.path.exists(STATE_FILE) else {}
 
 def save_state(data):
-    json.dump(data, open(STATE_FILE, "w"), indent=2)
-    if not (GITHUB_TOKEN and GITHUB_REPO): return
+    """Write state locally, then mirror to GitHub.
+
+    Every network call here is bounded and non-fatal. The old version called
+    requests.get(...).json() with no timeout and no try/except: the Telegram
+    listener runs this every 15 minutes, so one hung GitHub API call stalled the
+    job until the 20-minute workflow timeout killed it.
+    """
+    payload = json.dumps(data, indent=2)
+    with open(STATE_FILE, "w", encoding="utf-8") as fh:
+        fh.write(payload)
+    if not (GITHUB_TOKEN and GITHUB_REPO):
+        return
+
     api = f"https://api.github.com/repos/{GITHUB_REPO}/contents/{STATE_FILE}"
-    hdrs = {"Authorization": f"token {GITHUB_TOKEN}"}
-    sha = requests.get(api, headers=hdrs).json().get("sha")
-    body = {"message": "chore: update state", "content": base64.b64encode(json.dumps(data, indent=2).encode()).decode()}
-    if sha: body["sha"] = sha
-    requests.put(api, headers=hdrs, json=body)
+    hdrs = {"Authorization": f"token {GITHUB_TOKEN}",
+            "Accept": "application/vnd.github+json"}
+    sha = None
+    try:
+        r = requests.get(api, headers=hdrs, timeout=10)
+        if r.status_code == 200:
+            sha = r.json().get("sha")
+    except Exception as e:
+        print(f"[state] GET failed ({e}) — attempting blind PUT")
+
+    body = {"message": "chore: update state",
+            "content": base64.b64encode(payload.encode()).decode()}
+    if sha:
+        body["sha"] = sha
+    try:
+        r = requests.put(api, headers=hdrs, json=body, timeout=15)
+        if r.status_code not in (200, 201):
+            print(f"[state] PUT {r.status_code}: {r.text[:160]}")
+    except Exception as e:
+        print(f"[state] PUT failed (non-fatal): {e}")
 
 
 def send_tg(msg):
@@ -768,15 +727,28 @@ def research():
     state         = load_state()
     title_history = state.get("title_history", [])
 
-    print("[research] Fetching live trends from 8 sources...")
-    signals     = fetch_trends()
-    trend_block = format_signals(signals)
-    print(f"[research] Trend block ready ({len(trend_block)} chars)")
-
-    print("[research] Fetching real developer success stories...")
-    success_stories = fetch_success_stories()
-    stories_block   = format_success_stories(success_stories)
-    print(f"[research] Stories block ready ({len(stories_block)} chars)")
+    print("[research] Parallel sweep across all sources...")
+    clusters, health = [], []
+    try:
+        clusters, health, _items = rx.research_sweep()
+        trend_block   = rx.format_clusters(clusters, limit=18)
+        stories_block = rx.format_stories(clusters)
+        health_block  = rx.format_health(health)
+        # Legacy shape — draft_single reads these back out of state.json.
+        success_stories = [
+            {"source": it.source, "title": it.title, "url": it.url,
+             "signal": it.detail, "snippet": it.meta.get("snippet", "")}
+            for c in clusters for it in c.items if it.meta.get("story") and it.url
+        ][:20]
+    except Exception as e:
+        print(f"[research] sweep failed ({e}) — falling back to the legacy fetchers")
+        signals         = fetch_trends()
+        trend_block     = format_signals(signals)
+        success_stories = fetch_success_stories()
+        stories_block   = format_success_stories(success_stories)
+        health_block    = "SOURCE HEALTH: unavailable (ranked sweep failed)."
+        clusters        = []
+    print(f"[research] trends {len(trend_block)} chars, stories {len(stories_block)} chars")
 
     history_block = ""
     if title_history:
@@ -852,7 +824,8 @@ WHAT MAKES A CODING/AI ARTICLE GO VIRAL ON MEDIUM (research-backed):
 9. AUDIENCE: CoderFact readers are devs 25-40, practical builders, India + global
 10. SPECIFICITY: Named errors, specific tools, exact time saved = more trust
 
-LIVE SIGNALS FROM 8 SOURCES (GitHub, HackerNews, Reddit, Dev.to, ProductHunt, Tech RSS, StackOverflow, Google Trends):
+{health_block}
+
 {trend_block}
 
 {stories_block}
@@ -890,8 +863,7 @@ PICK topics Suman can write from personal experience (frontend dev, automation t
 NO think-pieces, NO opinion articles, NO listicles longer than 7 items, NO news summaries.""", max_tokens=2500)
 
     try:
-        vdata = json.loads(virality_raw.strip().strip("```json").strip("```").strip())
-        if not isinstance(vdata, list): raise ValueError("not a list")
+        vdata = extract_json(virality_raw, want=list)
         vdata = [v for v in vdata if isinstance(v, dict)][:3]
         if len(vdata) < 1: raise ValueError("empty list")
         print(f"[research] Scored {len(vdata)} topics")
@@ -974,6 +946,21 @@ Reply ONLY in this exact format, nothing else:
 
     if len(titles) < 3:
         titles = [v.get("suman_angle", v.get("topic", f"Topic {i+1}")) for i, v in enumerate(vdata)]
+
+    # Novelty is checked against the whole archive, not the last 30 titles.
+    for t in titles:
+        is_new, closest, sim = rx.novelty(t, threshold=0.55)
+        if not is_new:
+            print(f"[research] NEAR-DUPLICATE ({sim}) of past title: {closest[:70]}")
+    try:
+        rx.library_append({
+            "date": today,
+            "titles": titles,
+            "clusters": [c.as_dict() for c in clusters[:20]],
+            "health": [f"{h.name}:{h.status}" for h in health],
+        })
+    except Exception as e:
+        print(f"[research] library append failed (non-fatal): {e}")
 
     updated_history = (title_history + titles)[-30:]
     save_state({
@@ -1082,7 +1069,7 @@ def draft_single(title: str, idx: int, total: int):
         complexity_raw = ask_ai(f'''Classify this blog post title by complexity: "{title}"
 Reply with ONLY a JSON object:
 {{"complexity": "simple"|"moderate"|"deep", "reason": "one sentence", "target_words": <800-1400>}}''')
-        c = json.loads(complexity_raw.strip("```json").strip("```").strip())
+        c = extract_json(complexity_raw, want=dict)
         target_words = min(max(int(c.get("target_words", 1100)), 800), 1400)
         complexity   = _s(c.get("complexity"), "moderate")
         reason       = _s(c.get("reason"), "")
@@ -1110,8 +1097,7 @@ Return ONLY a JSON object — no markdown, no explanation:
   "medium_tags": ["4 existing Medium/Dev.to tags, lowercase, no hyphens"],
   "competitor_angle": "one sentence: what makes this different from existing articles on this topic"
 }}""")
-        kw_data = json.loads(kw_research_raw.strip().strip("```json").strip("```").strip())
-        if not isinstance(kw_data, dict): raise ValueError("not a dict")
+        kw_data = extract_json(kw_research_raw, want=dict)
         print(f"[draft] KW research OK")
     except Exception as e:
         tg_err("Pass 0 keyword research", e)
@@ -1135,30 +1121,6 @@ Return ONLY a JSON object — no markdown, no explanation:
     print(f"[draft] primary='{primary_kw}' seo_title='{seo_title}'")
 
     tg_step("📋 Pass 1/3: Building outline...")
-
-    def extract_json(raw: str):
-        import re as _re
-        raw = raw.strip()
-        raw = _re.sub(r'^```(?:json)?\s*', '', raw, flags=_re.MULTILINE)
-        raw = _re.sub(r'```\s*$', '', raw, flags=_re.MULTILINE)
-        raw = raw.strip()
-        try:
-            return json.loads(raw)
-        except Exception:
-            pass
-        start = raw.find('{')
-        end   = raw.rfind('}')
-        if start != -1 and end != -1:
-            blob = raw[start:end+1]
-            try:
-                return json.loads(blob)
-            except Exception:
-                pass
-            try:
-                return json.loads(_re.sub(r',(\s*[}\]])', r'\1', blob))
-            except Exception as e:
-                raise ValueError(f"JSON extraction failed: {e}\nRaw (first 200): {raw[:200]}")
-        raise ValueError(f"No JSON object in response: {raw[:200]}")
 
     try:
         outline_raw = ask_ai(f"""You are helping {AUTHOR_NAME} — {AUTHOR_CONTEXT} — plan a blog post.
@@ -1440,21 +1402,21 @@ Output: clean Markdown only. Start with the hook scene. No preamble.
         tg_err("Pass 2 article writing", e)
         raise
 
-    tg_step("🧬 Pass 2.5/3: Humanizing voice (anti-AI rewrite)...")
+    tg_step("🧬 Pass 2.5/3: Humanizing (rewrite -> lint -> repair loop)...")
     voice_ctx = f"{AUTHOR_NAME} — {AUTHOR_CONTEXT}. Vibe: {AUTHOR_VIBE}"
-    article = humanize_pass(article, voice_ctx, target_words)
+    article, human_report = humanize_pass(article, voice_ctx, target_words)
 
-    # FIX 4: AI-tell linter — final safety net
-    article, lint_warnings = ai_lint(article)
-    if lint_warnings:
-        print(f"[lint] {len(lint_warnings)} AI-tell(s) detected:")
-        for w in lint_warnings[:8]:
-            print(f"  - {w}")
-        if len(lint_warnings) >= 8:
-            try:
-                send_tg(f"⚠️ Article has {len(lint_warnings)} AI-detection warnings — review carefully before publishing")
-            except Exception:
-                pass
+    human_score, human_grade = 0, "unknown"
+    if human_report:
+        human_score, human_grade = human_report.after.score, human_report.after.grade()
+        print(f"[humanize] {human_report.summary()}")
+        for f in human_report.remaining[:8]:
+            print(f"  - [{f.severity}] {f.name}: {f.excerpt[:70]}")
+        if human_grade in ("needs-work", "reject"):
+            top = ", ".join(sorted({f.name for f in human_report.remaining
+                                    if f.severity == "high"})[:5]) or "none"
+            send_tg(f"⚠️ AI-tell score *{human_score}/100* ({human_grade}) — "
+                    f"review before publishing.\nTop tells: _{top}_")
 
     meta  = ""
     tags_line = ""
@@ -1484,8 +1446,8 @@ Output: clean Markdown only. Start with the hook scene. No preamble.
                 'Rules: lowercase, no spaces, no hyphens, max 4 items. '
                 'Choose from: python, programming, webdev, javascript, ai, tutorial, automation, productivity, devops, beginners. '
                 'No explanation.'
-            ).strip("```json").strip("```")
-            tags = [sanitize_tag(t) for t in json.loads(raw)][:4]
+            )
+            tags = [sanitize_tag(t) for t in extract_json(raw, want=list)][:4]
         except Exception:
             tags = ["python", "programming", "automation", "tutorial"]
 
@@ -1617,11 +1579,7 @@ Return ONLY a JSON array with 3-6 objects. No markdown fences. Schema:
   }}
 ]""", max_tokens=3500)
 
-        import re as _re2
-        vplan_raw  = visual_plan_raw.strip().strip("```json").strip("```").strip()
-        arr_match  = _re2.search(r'\[.*\]', vplan_raw, _re2.DOTALL)
-        visual_plan = json.loads(arr_match.group() if arr_match else vplan_raw)
-        if not isinstance(visual_plan, list): raise ValueError("not a list")
+        visual_plan = extract_json(visual_plan_raw, want=list)
 
         visual_plan = [
             v for v in visual_plan if isinstance(v, dict) and (
@@ -1803,7 +1761,7 @@ Return ONLY a JSON array with 3-6 objects. No markdown fences. Schema:
     # ═══════════════════════════════════════════════════════════════════════════════
     github_url = ""
     try:
-        slug = re.sub(r'[^\w\s]', '', seo_title.lower()).replace(' ', '-')[:60]
+        slug = draft_slug(seo_title)
         md_path = f"medium_drafts/{slug}.md"
         github_url = save_file_to_github(
             md_path, 
@@ -1859,7 +1817,7 @@ Return ONLY a JSON array with 3-6 objects. No markdown fences. Schema:
                 # Try to save to GitHub even if Dev.to fails
                 if not github_url:
                     try:
-                        slug = re.sub(r'[^\w\s]', '', seo_title.lower()).replace(' ', '-')[:60]
+                        slug = draft_slug(seo_title)
                         github_url = save_file_to_github(
                             f"medium_drafts/{slug}.md",
                             github_content,
@@ -1873,7 +1831,7 @@ Return ONLY a JSON array with 3-6 objects. No markdown fences. Schema:
             tg_err("Dev.to publish", e)
             # Emergency GitHub save
             try:
-                slug = re.sub(r'[^\w\s]', '', seo_title.lower()).replace(' ', '-')[:60]
+                slug = draft_slug(seo_title)
                 github_url = save_file_to_github(
                     f"medium_drafts/{slug}.md",
                     github_content,
@@ -1941,25 +1899,8 @@ RULES:
         send_tg(f"❌ Educational generation failed: {str(e)[:300]}")
         raise
 
-    def _parse_edu_json(s: str):
-        import re as _re
-        s = s.strip()
-        s = _re.sub(r'^```(?:json)?\s*', '', s, flags=_re.MULTILINE)
-        s = _re.sub(r'```\s*$',          '', s, flags=_re.MULTILINE).strip()
-        start, end = s.find('{'), s.rfind('}')
-        if start != -1 and end != -1:
-            s = s[start:end + 1]
-        # strict=False allows literal \n / \t inside string values (LLMs love putting raw newlines in code fields)
-        try:
-            return json.loads(s, strict=False)
-        except json.JSONDecodeError:
-            # Trailing-comma cleanup, then retry
-            return json.loads(_re.sub(r',(\s*[}\]])', r'\1', s), strict=False)
-
     try:
-        data = _parse_edu_json(raw)
-        if not isinstance(data, dict):
-            raise ValueError("not a dict")
+        data = extract_json(raw, want=dict)
     except Exception as e:
         print(f"[educational] JSON parse failed: {e} — raw start: {raw[:300]}")
         send_tg(f"❌ Educational JSON parse failed:\n`{str(e)[:200]}`")
@@ -2048,7 +1989,7 @@ RULES:
 
     md = "\n".join(md_lines)
 
-    slug    = re.sub(r'[^\w\s]', '', title.lower()).replace(' ', '-')[:60] or "drop"
+    slug    = draft_slug(title, fallback="drop")
     md_path = f"educational/{slug}.md"
     url     = save_file_to_github(md_path, md, f"docs: educational drop — {title[:50]}")
 
@@ -2129,23 +2070,8 @@ REQUIREMENTS:
         send_tg(f"❌ Social media generation failed: {str(e)[:300]}")
         raise
 
-    def _parse_json(s: str):
-        import re as _re
-        s = s.strip()
-        s = _re.sub(r'^```(?:json)?\s*', '', s, flags=_re.MULTILINE)
-        s = _re.sub(r'```\s*$', '', s, flags=_re.MULTILINE).strip()
-        start, end = s.find('{'), s.rfind('}')
-        if start != -1 and end != -1:
-            s = s[start:end + 1]
-        try:
-            return json.loads(s)
-        except json.JSONDecodeError:
-            return json.loads(_re.sub(r',(?=\s*[}\]])', '', s), strict=False)
-
     try:
-        data = _parse_json(raw)
-        if not isinstance(data, dict):
-            raise ValueError("not a dict")
+        data = extract_json(raw, want=dict)
     except Exception as e:
         print(f"[social] JSON parse failed: {e} — raw start: {raw[:300]}")
         send_tg(f"❌ Social JSON parse failed:\n`{str(e)[:200]}`")
@@ -2155,9 +2081,6 @@ REQUIREMENTS:
         if isinstance(val, str):
             return val.strip()
         return fallback
-
-    def _seq(val):
-        return [str(x).strip() for x in (val or []) if isinstance(x, (list, tuple))] if isinstance(val, list) else []
 
     instagram = data.get("instagram", {}) or {}
     linkedin = data.get("linkedin", {}) or {}
@@ -2203,7 +2126,7 @@ REQUIREMENTS:
     md_lines += ["---", f"*By {AUTHOR_NAME} — social pack generated by the CoderFact engine.*"]
 
     md = "\n".join(md_lines)
-    slug = re.sub(r'[^\w\s]', '', topic.lower()).replace(' ', '-')[:60] or "social-pack"
+    slug = draft_slug(topic, fallback="social-pack")
     md_path = f"social/{slug}.md"
     url = save_file_to_github(md_path, md, f"docs: social content pack — {topic[:50]}")
 
@@ -2323,8 +2246,73 @@ def draft():
         send_tg(f"🎉 All {total} drafts done! Check your Dev.to dashboard.")
 
 
+def doctor():
+    """Probe every signal source and every configured API key. No AI calls, no
+    publishing — safe to run any time to find out what is actually broken."""
+    print("=" * 68)
+    print("CONFIG")
+    print("=" * 68)
+    for label, val in (("OPENROUTER_API_KEY", OPENROUTER_KEY), ("GEMINI_API_KEY", GEMINI_KEY),
+                       ("GROQ_API_KEY", GROQ_KEY), ("DEVTO_API_KEY", DEVTO_KEY),
+                       ("TELEGRAM_BOT_TOKEN", TELEGRAM_BOT), ("TELEGRAM_CHAT_ID", TELEGRAM_CHAT),
+                       ("GITHUB_TOKEN", GITHUB_TOKEN), ("GITHUB_REPOSITORY", GITHUB_REPO)):
+        print(f"  {'SET ' if val else 'MISS'}  {label}")
+    if not (OPENROUTER_KEY or GEMINI_KEY or GROQ_KEY):
+        print("\n  !! No AI provider configured — research/draft cannot run.")
+
+    samples = humanizer.load_voice_samples()
+    print(f"\n  voice samples: {len(samples)} "
+          f"({'fingerprint active' if samples else 'none — using persona text'})")
+    print(f"  research library: {len(rx.library_read())} past run(s) at {rx.LIBRARY_PATH}")
+
+    print("\n" + "=" * 68)
+    print("SOURCES")
+    print("=" * 68)
+    _items, health = rx.fetch_all()
+    print()
+    print(rx.format_health(health))
+    return 1 if [h for h in health if h.status in ("failed", "timeout")] else 0
+
+
+def humanize_cli():
+    """python agent.py humanize <file.md> — run the full rewrite/repair loop on
+    an existing draft and write it back."""
+    paths = sys.argv[2:]
+    if not paths:
+        return print("Usage: python agent.py humanize <file.md> [more.md ...]")
+    voice_ctx = f"{AUTHOR_NAME} — {AUTHOR_CONTEXT}. Vibe: {AUTHOR_VIBE}"
+    for path in paths:
+        try:
+            with open(path, encoding="utf-8") as fh:
+                text = fh.read()
+        except Exception as e:
+            print(f"!! {path}: {e}")
+            continue
+        words = humanizer.prose_word_count(text)
+        fixed, report = humanizer.humanize(text, ask_ai, voice_context=voice_ctx,
+                                           target_words=max(words, 600))
+        with open(path, "w", encoding="utf-8") as fh:
+            fh.write(fixed)
+        print(f"{path}: {report.summary()}")
+
+
 if __name__ == "__main__":
-    {"research": research, "draft": draft, "educational": educational, "social": social}.get(
-        sys.argv[1] if len(sys.argv) > 1 else "",
-        lambda: print("Usage: python agent.py research | draft | educational <topic> | social <topic>")
-    )()
+    for _stream in (sys.stdout, sys.stderr):
+        try:
+            _stream.reconfigure(encoding="utf-8", errors="replace")
+        except Exception:
+            pass
+
+    COMMANDS = {"research": research, "draft": draft, "educational": educational,
+                "social": social, "doctor": doctor, "humanize": humanize_cli}
+    cmd = sys.argv[1] if len(sys.argv) > 1 else ""
+    if cmd not in COMMANDS:
+        print("Usage: python agent.py <command>\n"
+              "  research              pick + score today's topics, send the Telegram brief\n"
+              "  draft                 read the Telegram reply and write the chosen article(s)\n"
+              "  educational <topic>   short-form drop (hooks + tips + steps)\n"
+              "  social <topic>        per-platform social pack\n"
+              "  humanize <file.md>    rewrite/repair an existing draft in place\n"
+              "  doctor                probe every source and key, publish nothing")
+        sys.exit(2)
+    sys.exit(COMMANDS[cmd]() or 0)

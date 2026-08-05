@@ -1,0 +1,40 @@
+name: 0. Tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: tests-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Syntax check
+        run: |
+          python -m compileall -q agent.py humanizer.py research_engine.py test_engine.py
+
+      # Offline: no network, no API keys, no publishing.
+      - name: Offline test suite
+        run: python test_engine.py
+
+      # Advisory only — scores every committed draft so regressions in the
+      # writing pipeline show up in the log without blocking the run.
+      - name: AI-tell audit of committed drafts
+        continue-on-error: true
+        run: python humanizer.py medium_drafts/*.md educational/*.md

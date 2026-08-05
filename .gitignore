@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.env
+
+# Personal writing samples used for voice calibration — the README is tracked,
+# the samples themselves are not.
+voice/*
+!voice/README.md
