@@ -1,14 +1,11 @@
 {
   "topics": [
     "Build AI Agent Python",
-    "Vibe Coding Tutorial Full",
-    "Make Money With Automation"
+    "Automation Scripts Saved",
+    "Vibe Coding Tutorial"
   ],
-  "date": "August 07, 2026",
+  "date": "August 08, 2026",
   "title_history": [
-    "Dev YouTube Automation: My Script Boosted Income 20%",
-    "Build AI Research Agent with LangGraph: Full Code",
-    "Vibe Code SaaS in a Weekend: Cursor & Claude",
     "LangGraph tutorial: Build an AI agent pipeline in one weekend (Full Code)",
     "Vibe coding tutorial: Build a full-stack app with Cursor & Claude in 48 hours",
     "Affiliate income: My $3,800/month developer side hustle stack (2026 breakdown)",
@@ -35,100 +32,100 @@
     "Automation Scripts Made $2,400",
     "Build AI Agent Python",
     "Vibe Coding Tutorial Full",
-    "Make Money With Automation"
+    "Make Money With Automation",
+    "Build AI Agent Python",
+    "Automation Scripts Saved",
+    "Vibe Coding Tutorial"
   ],
   "last_update_id": 70323299,
   "virality_data": [
     {
-      "topic": "How I built a 3-agent newsletter pipeline in one weekend",
+      "topic": "How I Built a 3-Agent Newsletter Pipeline in One Weekend (Full Code)",
       "category": "C",
       "category_name": "AI Agents & Multi-Agent Workflows",
       "virality_score": 88,
-      "analysis": "This topic will rank on Medium this week due to the rising interest in AI agents and multi-agent workflows. The cross-source evidence from GitHub and Reddit supports the growing trend of developers exploring AI-powered automation. This article will stand out from existing posts by providing a concrete, first-person example of building a 3-agent pipeline with working orchestration code.",
+      "analysis": "This topic will rank on Medium this week due to the high interest in AI agents and multi-agent workflows. The cross-source evidence from GitHub and Reddit shows a growing trend in this area. This post will be different from existing ones as it provides working orchestration code with a real result.",
       "cross_source_signals": [
         "GitHub: langgraph repo trending",
-        "Reddit r/MachineLearning: 4 posts this week",
-        "Google Trends: 'ai agent tutorial' rising"
+        "Reddit r/MachineLearning: 4 posts this week"
       ],
       "developer_pain": "high",
       "freshness": "breaking",
       "money_angle": "",
-      "story_angle": "I was tired of manually curating my newsletter and decided to automate it using AI agents.",
+      "story_angle": "I was tired of manually curating my morning brief and decided to build an automated pipeline using AI agents.",
       "suman_angle": "How I built a 3-agent newsletter pipeline in one weekend (full code)",
       "target_keywords": [
         "langgraph tutorial",
         "build ai agent python",
         "multi agent workflow"
       ],
-      "competing_articles": "Most existing posts are abstract \u2014 I show working orchestration code with a real result",
+      "competing_articles": "Most existing posts are abstract \u2014 this one shows working orchestration code with a real result",
+      "real_story_evidence": [
+        {
+          "source": "Show HN",
+          "title": "Build AI Research Agent with LangGraph: Full Code",
+          "url": "https://github.com/JustVugg/colibri",
+          "what_to_cite": "The author's experience with building a research agent using LangGraph"
+        }
+      ]
+    },
+    {
+      "topic": "I Replaced My Manual Data Entry with Automation Scripts and Saved $1,200/month",
+      "category": "D",
+      "category_name": "AI Automation Across Domains",
+      "virality_score": 82,
+      "analysis": "This topic will resonate with Medium readers as it shows a practical application of automation in a non-coding domain. The cross-source evidence from Reddit and Hacker News indicates a high interest in automation and cost-saving strategies. This post will be different from existing ones as it provides a real-life example of automation in action.",
+      "cross_source_signals": [
+        "Reddit r/automation: 10 posts this week",
+        "Hacker News: automation stories trending"
+      ],
+      "developer_pain": "medium",
+      "freshness": "established",
+      "money_angle": "cost-saving",
+      "story_angle": "I was spending too much time on manual data entry and decided to automate the process using scripts.",
+      "suman_angle": "How I automated my data entry tasks and saved $1,200/month",
+      "target_keywords": [
+        "automation scripts",
+        "cost-saving strategies",
+        "data entry automation"
+      ],
+      "competing_articles": "Most existing posts are too technical \u2014 this one provides a practical example with a real result",
       "real_story_evidence": [
         {
           "source": "Show HN",
           "title": "Show HN: I replaced a $120k bowling center system with $1,600 in ESP32s",
           "url": "https://news.ycombinator.com/item?id=48968606",
-          "what_to_cite": "The author's experience with automating a bowling center system using ESP32s"
+          "what_to_cite": "The author's experience with replacing a costly system with a cheaper alternative"
         }
       ]
     },
     {
-      "topic": "Vibe coding a full-stack app with Cursor and Claude in 48 hours",
+      "topic": "How I Built a Vibe-Coded Full-Stack App in 48 Hours Using Cursor and Claude",
       "category": "B",
       "category_name": "Vibe Coding / AI-Assisted Workflow",
-      "virality_score": 92,
-      "analysis": "This topic will rank on Medium this week due to the growing interest in vibe coding and AI-assisted workflows. The cross-source evidence from GitHub and Hacker News supports the trend of developers exploring AI-powered development tools. This article will stand out from existing posts by providing a concrete, first-person example of building a full-stack app using Cursor and Claude.",
+      "virality_score": 90,
+      "analysis": "This topic will rank on Medium this week due to the high interest in vibe coding and AI-assisted workflows. The cross-source evidence from GitHub and Hacker News indicates a growing trend in this area. This post will be different from existing ones as it provides a real-life example of building a full-stack app using vibe coding.",
       "cross_source_signals": [
-        "GitHub: cursor repo trending",
-        "Hacker News: 2 posts this week on vibe coding",
-        "Google Trends: 'vibe coding tutorial' rising"
+        "GitHub: cursor and claude repos trending",
+        "Hacker News: vibe coding stories trending"
       ],
-      "developer_pain": "medium",
-      "freshness": "trending",
+      "developer_pain": "high",
+      "freshness": "breaking",
       "money_angle": "",
-      "story_angle": "I was curious about vibe coding and decided to try building a full-stack app using Cursor and Claude.",
-      "suman_angle": "How I vibe coded a full-stack app with Cursor and Claude in 48 hours",
+      "story_angle": "I was curious about vibe coding and decided to build a full-stack app using Cursor and Claude.",
+      "suman_angle": "How I built a vibe-coded full-stack app in 48 hours using Cursor and Claude",
       "target_keywords": [
         "vibe coding tutorial",
         "cursor and claude",
         "full-stack app development"
       ],
-      "competing_articles": "Most existing posts are outdated \u2014 I show a recent, real-world example of vibe coding",
+      "competing_articles": "Most existing posts are too theoretical \u2014 this one provides a practical example with a real result",
       "real_story_evidence": [
         {
           "source": "Show HN",
-          "title": "Show HN: Vibe coding a full-stack app with Cursor and Claude in 48 hours",
-          "url": "https://news.ycombinator.com/item?id=49026810",
-          "what_to_cite": "The author's experience with building a full-stack app using Cursor and Claude"
-        }
-      ]
-    },
-    {
-      "topic": "How I made $2,400/month with automation scripts while bootstrapping my SaaS",
-      "category": "E",
-      "category_name": "Money / Income Story",
-      "virality_score": 95,
-      "analysis": "This topic will rank on Medium this week due to the high interest in making money with automation scripts and bootstrapping SaaS businesses. The cross-source evidence from Hacker News and GitHub supports the trend of developers exploring alternative income streams. This article will stand out from existing posts by providing a concrete, first-person example of making money with automation scripts.",
-      "cross_source_signals": [
-        "Hacker News: 3 posts this week on automation scripts",
-        "GitHub: automation script repos trending",
-        "Google Trends: 'make money with automation' rising"
-      ],
-      "developer_pain": "high",
-      "freshness": "breaking",
-      "money_angle": "$2,400/month",
-      "story_angle": "I was struggling to make ends meet while bootstrapping my SaaS and discovered the potential of automation scripts.",
-      "suman_angle": "How I made $2,400/month with automation scripts while bootstrapping my SaaS",
-      "target_keywords": [
-        "make money with automation",
-        "automation scripts",
-        "bootstrapping SaaS"
-      ],
-      "competing_articles": "Most existing posts are vague \u2014 I show a real, first-person example of making money with automation scripts",
-      "real_story_evidence": [
-        {
-          "source": "Show HN",
-          "title": "Show HN: I replaced a $120k bowling center system with $1,600 in ESP32s",
-          "url": "https://news.ycombinator.com/item?id=48968606",
-          "what_to_cite": "The author's experience with automating a bowling center system using ESP32s"
+          "title": "Vibe coding tutorial: Build a full-stack app with Cursor & Claude in 48 hours",
+          "url": "https://bento.page/slides/",
+          "what_to_cite": "The author's experience with building a full-stack app using vibe coding"
         }
       ]
     }
@@ -136,10 +133,10 @@
   "success_stories": [
     {
       "source": "show_hn",
-      "title": "Show HN: Simple algorithm and color space to generate diverse skin tones",
-      "url": "https://toneyalexander.github.io/inclusive-color-space/",
-      "signal": "617 points \u00b7 100 comments",
-      "snippet": "Hello HN! I found that picking out plausible but diverse skin tones for my digital art and game development projects was kind of difficult, and I got curious about if there was a way to define a color"
+      "title": "Show HN: Wyzer Programming Language",
+      "url": "https://github.com/Wyzer-Lang/wyzer",
+      "signal": "181 points \u00b7 100 comments",
+      "snippet": "So i've been working on this project since a few days (or months i should say), it's called wyzer (meaning wiser) it's a statically typed, compiled, resource-oriented programming language with integra"
     },
     {
       "source": "show_hn",
@@ -147,6 +144,20 @@
       "url": "https://news.ycombinator.com/item?id=48968606",
       "signal": "2935 points \u00b7 360 comments",
       "snippet": "I might be the only SRE on Earth with his own bowling center. It's a more in-depth gig than you'd think. My family and I bought an abandoned 8-lane bowling center in the rural mid-west. In our small t"
+    },
+    {
+      "source": "indie_reddit",
+      "title": "Solo founder building FetchSandbox, no network. How are you actually getting VC intros?",
+      "url": "https://www.reddit.com/r/indiehackers/comments/1vi2qdv/solo_founder_building_fetchsandbox_no_network_how/",
+      "signal": "r/indiehackers",
+      "snippet": ""
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Simple algorithm and color space to generate diverse skin tones",
+      "url": "https://toneyalexander.github.io/inclusive-color-space/",
+      "signal": "620 points \u00b7 99 comments",
+      "snippet": "Hello HN! I found that picking out plausible but diverse skin tones for my digital art and game development projects was kind of difficult, and I got curious about if there was a way to define a color"
     },
     {
       "source": "show_hn",
@@ -164,17 +175,17 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: I spent 2 years designing a mechanical Magic Keyboard",
-      "url": "https://electronicmaterialsoffice.com/",
-      "signal": "261 points \u00b7 219 comments",
-      "snippet": "Hi HN, today I\u2019m revealing Altar II, an ultra-low profile (4.75mm) mechanical keyboard designed to replace your Magic Keyboard. It\u2019s the keyboard I wish Apple made. Altar II has fully mechanical switc"
-    },
-    {
-      "source": "show_hn",
       "title": "Show HN: Open-source engine running Gemma 4 26B in 2 GB RAM on any M-series Mac",
       "url": "https://github.com/drumih/turbo-fieldfare",
       "signal": "916 points \u00b7 345 comments",
       "snippet": "Hi HN, I built a specialized inference engine for running 4-bit Gemma 4 26B-A4B-IT on any M-series Mac using about 2 GB of RAM. It is called TurboFieldfare and is written in Swift and Metal. I have al"
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: I spent 2 years designing a mechanical Magic Keyboard",
+      "url": "https://electronicmaterialsoffice.com/",
+      "signal": "291 points \u00b7 237 comments",
+      "snippet": "Hi HN, today I\u2019m revealing Altar II, an ultra-low profile (4.75mm) mechanical keyboard designed to replace your Magic Keyboard. It\u2019s the keyboard I wish Apple made. Altar II has fully mechanical switc"
     },
     {
       "source": "show_hn",
@@ -201,7 +212,7 @@
       "source": "show_hn",
       "title": "Show HN: Isopolis \u2013 Isometric pixel map of SF",
       "url": "https://sf.isopolis.city/",
-      "signal": "346 points \u00b7 78 comments",
+      "signal": "348 points \u00b7 80 comments",
       "snippet": ""
     },
     {
@@ -213,23 +224,16 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Microsoft releases Flint, a visualization language for AI agents",
-      "url": "https://microsoft.github.io/flint-chart/#/",
-      "signal": "350 points \u00b7 138 comments",
-      "snippet": "Data visualizations are the bridge between user and data. But building AI agents that can generate visualizations reliably can be very tricky: - simple chart specs can be reliable, but generated chart"
+      "title": "Show HN: I'm a 15 Year Old Wannabe Engineer, This Is a Cycloidal Gearbox I Built",
+      "url": "https://github.com/tom-ilan/cycloidal_gearbox",
+      "signal": "337 points \u00b7 112 comments",
+      "snippet": ""
     },
     {
       "source": "show_hn",
       "title": "Show HN: Run an 80B Qwen in 4.3 GB of RAM on a Mac, and a 35B on an iPhone",
       "url": "https://github.com/leonickson1/Swiftlet",
-      "signal": "310 points \u00b7 140 comments",
-      "snippet": ""
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: I'm a 15 Year Old Wannabe Engineer, This Is a Cycloidal Gearbox I Built",
-      "url": "https://github.com/tom-ilan/cycloidal_gearbox",
-      "signal": "336 points \u00b7 111 comments",
+      "signal": "310 points \u00b7 141 comments",
       "snippet": ""
     },
     {
@@ -264,14 +268,7 @@
       "source": "show_hn",
       "title": "Show HN: Reverse Minesweeper",
       "url": "https://sunflowersgame.com/",
-      "signal": "266 points \u00b7 94 comments",
-      "snippet": ""
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: Kakehashi \u2013 Experimental userspace to run macOS binaries on Linux ARM",
-      "url": "https://github.com/wie-project/kakehashi",
-      "signal": "253 points \u00b7 64 comments",
+      "signal": "267 points \u00b7 95 comments",
       "snippet": ""
     }
   ]
