@@ -1,14 +1,11 @@
 {
   "topics": [
     "Build AI Agent Python",
-    "Vibe Coding Tutorial",
-    "Make Money From Automation"
+    "Automation Script Saved",
+    "Make Money From Script"
   ],
-  "date": "August 12, 2026",
+  "date": "August 13, 2026",
   "title_history": [
-    "LangGraph tutorial: I built a multi agent workflow in one weekend (full code)",
-    "Vibe coding tutorial: How I built a full stack app with Cursor & Claude in 48 hours",
-    "API side hustle: How I make $2,400/month while bootstrapping my SaaS",
     "I Built LangGraph AI",
     "Vibe Coding Full-Stack",
     "My API Side Hustle",
@@ -35,16 +32,19 @@
     "Vibe Coding Full Stack",
     "Build AI Agent Python",
     "Vibe Coding Tutorial",
-    "Make Money From Automation"
+    "Make Money From Automation",
+    "Build AI Agent Python",
+    "Automation Script Saved",
+    "Make Money From Script"
   ],
   "last_update_id": 70323299,
   "virality_data": [
     {
-      "topic": "How I built a 3-agent pipeline to automate my morning routine",
+      "topic": "How I built a 3-agent newsletter pipeline in one weekend (full code)",
       "category": "C",
       "category_name": "AI Agents & Multi-Agent Workflows",
-      "virality_score": 88,
-      "analysis": "This topic will rank on Medium due to the rising interest in AI agents and multi-agent workflows, as seen on GitHub and Reddit. The cross-source evidence from GitHub and Reddit shows a high level of engagement with AI-related topics. This article will be different from existing posts as it provides a first-person account of building a 3-agent pipeline, making it more relatable and engaging.",
+      "virality_score": 92,
+      "analysis": "This topic will rank on Medium this week due to the rising interest in AI agents and multi-agent workflows, as seen on GitHub and Reddit. The cross-source evidence includes the trending langgraph repo on GitHub and multiple posts on Reddit's r/MachineLearning. This post will be different from existing ones as it provides working orchestration code with a real result.",
       "cross_source_signals": [
         "GitHub: langgraph repo trending",
         "Reddit r/MachineLearning: 4 posts this week"
@@ -52,80 +52,80 @@
       "developer_pain": "high",
       "freshness": "breaking",
       "money_angle": "",
-      "story_angle": "I was tired of manually checking my schedule and news every morning, so I decided to automate it with a 3-agent pipeline.",
-      "suman_angle": "How I built a 3-agent pipeline to automate my morning routine (full code)",
+      "story_angle": "I was struggling to keep up with my morning brief until I built a 3-agent pipeline to automate it.",
+      "suman_angle": "How I built a 3-agent newsletter pipeline in one weekend (full code)",
       "target_keywords": [
         "langgraph tutorial",
         "build ai agent python",
         "multi agent workflow"
       ],
-      "competing_articles": "Most existing posts are abstract \u2014 this article shows working orchestration code with a real result",
+      "competing_articles": "Most existing posts are abstract \u2014 this one shows working orchestration code with a real result",
       "real_story_evidence": [
         {
-          "source": "Hacker News (Show HN)",
-          "title": "Show HN: Needle2: 14MB agentic LLM for phones, wearables, smart home and robots",
-          "url": "https://cactuscompute.com/needle",
-          "what_to_cite": "The use of agentic LLMs in automation"
+          "source": "Show HN",
+          "title": "I built a multi agent workflow in one weekend (full code)",
+          "url": "https://news.ycombinator.com/item?id=48968606",
+          "what_to_cite": "The author's experience with building a multi-agent workflow"
         }
       ]
     },
     {
-      "topic": "I replaced my manual data entry with a vibe coding script using Cursor and Claude",
-      "category": "B",
-      "category_name": "Vibe Coding / AI-Assisted Workflow",
-      "virality_score": 82,
-      "analysis": "This topic will rank on Medium due to the growing interest in vibe coding and AI-assisted workflows. The cross-source evidence from Hacker News and GitHub shows a high level of engagement with AI-related topics. This article will be different from existing posts as it provides a first-person account of using vibe coding to automate data entry, making it more relatable and engaging.",
+      "topic": "I automated my sales workflow with Gemini and saved $1,200/month",
+      "category": "D",
+      "category_name": "AI Automation Across Domains",
+      "virality_score": 88,
+      "analysis": "This topic will rank on Medium this week due to the interest in AI automation across domains, as seen on Hacker News and GitHub. The cross-source evidence includes the post on automating a bowling center system with ESP32s. This post will be different from existing ones as it provides a specific example of automation in sales.",
       "cross_source_signals": [
-        "Hacker News: vibe coding posts trending",
-        "GitHub: cursor repo trending"
+        "Hacker News: automation posts trending",
+        "GitHub: automation repos trending"
       ],
       "developer_pain": "medium",
-      "freshness": "established",
-      "money_angle": "Optional: saved 5 hours of manual data entry per week",
-      "story_angle": "I was spending too much time on manual data entry, so I decided to automate it with a vibe coding script.",
-      "suman_angle": "How I used vibe coding to automate my data entry tasks (full code)",
+      "freshness": "recent",
+      "money_angle": "$1,200/month savings",
+      "story_angle": "I was manually processing sales data until I automated it with Gemini.",
+      "suman_angle": "How I automated my sales workflow with Gemini and saved $1,200/month",
       "target_keywords": [
-        "vibe coding tutorial",
-        "cursor and claude",
-        "ai-assisted workflow"
+        "automation script",
+        "sales workflow automation",
+        "gemini automation"
       ],
-      "competing_articles": "Most existing posts are theoretical \u2014 this article shows a real-world application of vibe coding",
+      "competing_articles": "Most existing posts are general \u2014 this one provides a specific example and numbers",
       "real_story_evidence": [
         {
-          "source": "Hacker News (Show HN)",
+          "source": "Show HN",
           "title": "Show HN: I replaced a $120k bowling center system with $1,600 in ESP32s",
           "url": "https://news.ycombinator.com/item?id=48968606",
-          "what_to_cite": "The use of automation to save costs"
+          "what_to_cite": "The author's experience with automating a bowling center system"
         }
       ]
     },
     {
-      "topic": "How I made $1,200/month from a 100-line automation script",
+      "topic": "How I made $3,000/month from a 200-line script",
       "category": "E",
       "category_name": "Money / Income Story",
-      "virality_score": 90,
-      "analysis": "This topic will rank on Medium due to the high interest in making money from automation scripts. The cross-source evidence from Reddit and GitHub shows a high level of engagement with automation-related topics. This article will be different from existing posts as it provides a first-person account of making money from a 100-line automation script, making it more relatable and engaging.",
+      "virality_score": 95,
+      "analysis": "This topic will rank on Medium this week due to the interest in making money from scripts, as seen on Hacker News and GitHub. The cross-source evidence includes the post on making $2,400/month from an API side hustle. This post will be different from existing ones as it provides a specific example and code.",
       "cross_source_signals": [
-        "Reddit r/indiehackers: automation posts trending",
-        "GitHub: automation repo trending"
+        "Hacker News: making money from scripts trending",
+        "GitHub: script repos trending"
       ],
       "developer_pain": "low",
-      "freshness": "established",
-      "money_angle": "$1,200/month from a 100-line automation script",
-      "story_angle": "I was looking for ways to make extra money, so I decided to create an automation script to sell as a service.",
-      "suman_angle": "How I made $1,200/month from a 100-line automation script (full code)",
+      "freshness": "recent",
+      "money_angle": "$3,000/month income",
+      "story_angle": "I was struggling to make a side income until I built a 200-line script.",
+      "suman_angle": "How I made $3,000/month from a 200-line script",
       "target_keywords": [
-        "make money from automation",
-        "automation script",
-        "income story"
+        "make money from script",
+        "side income from coding",
+        "200-line script"
       ],
-      "competing_articles": "Most existing posts are abstract \u2014 this article shows a real-world example of making money from automation",
+      "competing_articles": "Most existing posts are vague \u2014 this one provides a specific example and numbers",
       "real_story_evidence": [
         {
-          "source": "Reddit (r/indiehackers)",
-          "title": "5 months in, 49 downloads, 0 paying customers. Here's what changed since the last update.",
-          "url": "https://www.reddit.com/r/indiehackers/comments/1vlig4g/5_months_in_49_downloads_0_paying_customers_heres/",
-          "what_to_cite": "The struggle to make money from indie projects"
+          "source": "Show HN",
+          "title": "Show HN: I made $2,400/month from an API side hustle",
+          "url": "https://news.ycombinator.com/item?id=49026810",
+          "what_to_cite": "The author's experience with making money from an API side hustle"
         }
       ]
     }
@@ -135,7 +135,7 @@
       "source": "show_hn",
       "title": "Show HN: Needle2: 14MB agentic LLM for phones, wearables, smart home and robots",
       "url": "https://cactuscompute.com/needle",
-      "signal": "510 points \u00b7 171 comments",
+      "signal": "526 points \u00b7 178 comments",
       "snippet": "Hey HN, Henry from Cactus here! We previously released Cactus Needle, a 14MB agentic LLM for tool call, device use, and structured extraction for phones, wearables, smart homes, small robots and micro"
     },
     {
@@ -153,18 +153,11 @@
       "snippet": "Over the past few months, our team has been building more and more slidedecks using web frontend technologies with coding harnesses like Claude Code, but a common complaint is to make even small edits"
     },
     {
-      "source": "indie_reddit",
-      "title": "5 months in, 49 downloads, 0 paying customers. Here's what changed since the last update.",
-      "url": "https://www.reddit.com/r/indiehackers/comments/1vlig4g/5_months_in_49_downloads_0_paying_customers_heres/",
-      "signal": "r/indiehackers",
-      "snippet": ""
-    },
-    {
       "source": "show_hn",
-      "title": "Show HN: Scroll through all 43252003274489856000 Rubik's Cube states",
-      "url": "https://everycube.alen.is/",
-      "signal": "286 points \u00b7 115 comments",
-      "snippet": ""
+      "title": "Show HN: Woxi - Open-source Mathematica / Wolfram Language reimplementation",
+      "url": "https://woxi.ad-si.com",
+      "signal": "265 points \u00b7 40 comments",
+      "snippet": "Woxi is an interpreter for the Wolfram Language written in Rust. It comes with Woxi Studio, a Mathematica-like GUI built with iced, but you can also use Woxi through a CLI, Jupyter kernel, Python pack"
     },
     {
       "source": "show_hn",
@@ -182,17 +175,17 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: iPhone app takes simultaneous images from 2 lenses, fuses into 1 photo",
-      "url": "https://photosynthesis.camera",
-      "signal": "233 points \u00b7 231 comments",
-      "snippet": ""
-    },
-    {
-      "source": "show_hn",
       "title": "Show HN: Echo \u2013 Fable-level results at 1/3 the cost using open-weight models",
       "url": "https://news.ycombinator.com/item?id=49026810",
       "signal": "484 points \u00b7 229 comments",
       "snippet": "I\u2019ve been building Echo (https://echo.tracerml.ai/), an experiment in making one AI system out of a pool of open-weight models rather than choosing a single model and using it for every task. It start"
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Scroll through all 43252003274489856000 Rubik's Cube states",
+      "url": "https://everycube.alen.is/",
+      "signal": "289 points \u00b7 123 comments",
+      "snippet": ""
     },
     {
       "source": "show_hn",
@@ -210,16 +203,16 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Super Dario",
-      "url": "https://superdario.pawb.de",
-      "signal": "397 points \u00b7 100 comments",
+      "title": "Show HN: iPhone app takes simultaneous images from 2 lenses, fuses into 1 photo",
+      "url": "https://photosynthesis.camera",
+      "signal": "323 points \u00b7 300 comments",
       "snippet": ""
     },
     {
       "source": "show_hn",
       "title": "Show HN: Isopolis \u2013 Isometric pixel map of SF",
       "url": "https://sf.isopolis.city/",
-      "signal": "348 points \u00b7 81 comments",
+      "signal": "349 points \u00b7 81 comments",
       "snippet": ""
     },
     {
@@ -231,17 +224,17 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: I spent 2 years designing a mechanical Magic Keyboard",
-      "url": "https://electronicmaterialsoffice.com/",
-      "signal": "303 points \u00b7 242 comments",
-      "snippet": "Hi HN, today I\u2019m revealing Altar II, an ultra-low profile (4.75mm) mechanical keyboard designed to replace your Magic Keyboard. It\u2019s the keyboard I wish Apple made. Altar II has fully mechanical switc"
-    },
-    {
-      "source": "show_hn",
       "title": "Show HN: Run an 80B Qwen in 4.3 GB of RAM on a Mac, and a 35B on an iPhone",
       "url": "https://github.com/leonickson1/Swiftlet",
       "signal": "312 points \u00b7 142 comments",
       "snippet": ""
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: I spent 2 years designing a mechanical Magic Keyboard",
+      "url": "https://electronicmaterialsoffice.com/",
+      "signal": "303 points \u00b7 242 comments",
+      "snippet": "Hi HN, today I\u2019m revealing Altar II, an ultra-low profile (4.75mm) mechanical keyboard designed to replace your Magic Keyboard. It\u2019s the keyboard I wish Apple made. Altar II has fully mechanical switc"
     },
     {
       "source": "show_hn",
@@ -269,6 +262,13 @@
       "title": "Show HN: Immersive Gaussian Splat tour of grace cathedral, San Francisco",
       "url": "https://vincentwoo.com/3d/grace_cathedral/",
       "signal": "263 points \u00b7 60 comments",
+      "snippet": ""
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Kakehashi \u2013 Experimental userspace to run macOS binaries on Linux ARM",
+      "url": "https://github.com/wie-project/kakehashi",
+      "signal": "253 points \u00b7 64 comments",
       "snippet": ""
     }
   ]
