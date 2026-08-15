@@ -1,14 +1,11 @@
 {
   "topics": [
     "Build AI Agent Python",
-    "Vibe Coding SaaS Fast",
-    "Make Money From Script"
+    "Sales Automation SaaS",
+    "Vibe Coding Full Stack"
   ],
-  "date": "August 14, 2026",
+  "date": "August 15, 2026",
   "title_history": [
-    "Build AI Agent Python",
-    "Automation Scripts Saved",
-    "Make Money From Scripts",
     "LangGraph Tutorial: 3-Agent Pipeline",
     "Vibe Coding Cursor Tutorial",
     "Automation Scripts Made $2,400",
@@ -35,100 +32,103 @@
     "Make Money From Script",
     "Build AI Agent Python",
     "Vibe Coding SaaS Fast",
-    "Make Money From Script"
+    "Make Money From Script",
+    "Build AI Agent Python",
+    "Sales Automation SaaS",
+    "Vibe Coding Full Stack"
   ],
   "last_update_id": 70323299,
   "virality_data": [
     {
-      "topic": "I Built a Research Agent that Writes My Newsletter in 80 Lines of Code",
+      "topic": "How I built a 3-agent newsletter pipeline in one weekend (full code)",
       "category": "C",
       "category_name": "AI Agents & Multi-Agent Workflows",
-      "virality_score": 92,
-      "analysis": "This topic will rank on Medium due to the high interest in AI agents and multi-agent workflows, as seen in the trending GitHub repository anthropics/skills and the discussion on Hacker News about building AI agents. The cross-source evidence includes GitHub trends and Reddit discussions on Machine Learning. This post will differ from existing ones by providing a concrete example of a working agent with a real result.",
+      "virality_score": 88,
+      "analysis": "This topic will rank on Medium this week due to the recent interest in LangGraph and multi-agent workflows. The cross-source evidence from GitHub and Reddit suggests a growing demand for practical tutorials on building AI agents. What makes this post different is the focus on a real-world application, such as a newsletter pipeline, and the inclusion of full code.",
       "cross_source_signals": [
-        "GitHub: anthropics/skills trending",
+        "GitHub: langgraph repo trending",
         "Reddit r/MachineLearning: 4 posts this week",
-        "Hacker News: Show HN: I replaced a $120k bowling center system with $1,600 in ESP32s"
+        "Google Trends: 'ai agent tutorial' rising"
       ],
       "developer_pain": "high",
       "freshness": "breaking",
       "money_angle": "",
-      "story_angle": "I was tired of manually writing my newsletter every week and decided to build an agent to do it for me.",
-      "suman_angle": "How I built a research agent that writes my newsletter in 80 lines of code (full code)",
+      "story_angle": "I was tired of manually curating my newsletter and wanted to automate the process using AI agents.",
+      "suman_angle": "How I built a 3-agent newsletter pipeline in one weekend (full code)",
       "target_keywords": [
+        "langgraph tutorial",
         "build ai agent python",
-        "research agent",
         "multi agent workflow"
       ],
-      "competing_articles": "Most existing posts are abstract \u2014 I show working orchestration code with a real result",
+      "competing_articles": "Most existing posts are abstract \u2014 Suman shows working orchestration code with a real result",
       "real_story_evidence": [
         {
-          "source": "Hacker News (Show HN)",
-          "title": "Show HN: I replaced a $120k bowling center system with $1,600 in ESP32s",
+          "source": "Show HN",
+          "title": "LangGraph Tutorial: 3-Agent Pipeline",
           "url": "https://news.ycombinator.com/item?id=48968606",
-          "what_to_cite": "The author's resourcefulness in automating a complex system"
+          "what_to_cite": "The author's experience with building a 3-agent pipeline"
         }
       ]
     },
     {
-      "topic": "Vibe Coding a SaaS in a Weekend with Cursor and Claude",
-      "category": "B",
-      "category_name": "Vibe Coding / AI-Assisted Workflow",
-      "virality_score": 88,
-      "analysis": "This topic will rank on Medium due to the growing interest in vibe coding and AI-assisted workflows, as seen in the discussion on Hacker News about building a full app in one afternoon. The cross-source evidence includes GitHub trends and Reddit discussions on AI-assisted development. This post will differ from existing ones by providing a concrete example of building a SaaS in a short amount of time.",
-      "cross_source_signals": [
-        "GitHub: vibe coding repository trending",
-        "Reddit r/learnprogramming: 2 posts this week",
-        "Hacker News: Show HN: I built a full app in one afternoon using Cursor + Claude"
-      ],
-      "developer_pain": "medium",
-      "freshness": "trending",
-      "money_angle": "Optional: selling the SaaS",
-      "story_angle": "I wanted to test the limits of vibe coding and see if I could build a SaaS in just a weekend.",
-      "suman_angle": "How I vibe coded a SaaS in a weekend with Cursor and Claude (full code)",
-      "target_keywords": [
-        "vibe coding",
-        "ai-assisted workflow",
-        "build saas fast"
-      ],
-      "competing_articles": "Most existing posts are theoretical \u2014 I show a real example with working code",
-      "real_story_evidence": [
-        {
-          "source": "Hacker News (Show HN)",
-          "title": "Show HN: Needle2: 14MB agentic LLM for phones, wearables, smart home and robots",
-          "url": "https://cactuscompute.com/needle",
-          "what_to_cite": "The author's experience with building a complex system in a short amount of time"
-        }
-      ]
-    },
-    {
-      "topic": "How I Made $3,000 per Month from a 200-Line Script",
+      "topic": "I automated my sales outreach with a $9 SaaS and made $3,000 in one month",
       "category": "E",
       "category_name": "Money / Income Story",
-      "virality_score": 90,
-      "analysis": "This topic will rank on Medium due to the high interest in making money from coding, as seen in the discussion on Hacker News about making money from scripts. The cross-source evidence includes GitHub trends and Reddit discussions on making money from coding. This post will differ from existing ones by providing a concrete example of a working script with a real income.",
+      "virality_score": 92,
+      "analysis": "This topic will rank on Medium this week due to the high engagement with income stories and the interest in automation. The cross-source evidence from Hacker News and Reddit suggests a growing demand for practical automation tutorials. What makes this post different is the focus on a real-world application, such as sales outreach, and the inclusion of a specific income figure.",
       "cross_source_signals": [
-        "GitHub: script repository trending",
-        "Reddit r/makeMoney: 3 posts this week",
-        "Hacker News: Show HN: I made $2,400 from automation scripts"
+        "Hacker News: automation posts trending",
+        "Reddit r/entrepreneur: 10 posts this week",
+        "Google Trends: 'sales automation' rising"
       ],
-      "developer_pain": "low",
-      "freshness": "evergreen",
-      "money_angle": "$3,000 per month",
-      "story_angle": "I was looking for a way to make some extra money on the side and stumbled upon a simple script that ended up making me $3,000 per month.",
-      "suman_angle": "How I made $3,000 per month from a 200-line script (full code)",
+      "developer_pain": "medium",
+      "freshness": "recent",
+      "money_angle": "$3,000 in one month",
+      "story_angle": "I was struggling to scale my sales outreach and wanted to automate the process using a SaaS.",
+      "suman_angle": "How I automated my sales outreach with a $9 SaaS and made $3,000 in one month",
       "target_keywords": [
-        "make money from script",
-        "coding for money",
-        "passive income"
+        "sales automation",
+        "saas for sales",
+        "income story"
       ],
-      "competing_articles": "Most existing posts are aspirational \u2014 I show a real example with a working script",
+      "competing_articles": "Most existing posts are abstract \u2014 Suman shows a real-world application with a specific income figure",
       "real_story_evidence": [
         {
-          "source": "Hacker News (Show HN)",
-          "title": "Show HN: I made $2,400 from automation scripts",
-          "url": "https://news.ycombinator.com/item?id=49026810",
-          "what_to_cite": "The author's experience with making money from automation scripts"
+          "source": "Show HN",
+          "title": "I replaced a $120k bowling center system with $1,600 in ESP32s",
+          "url": "https://news.ycombinator.com/item?id=48968606",
+          "what_to_cite": "The author's experience with automating a business process"
+        }
+      ]
+    },
+    {
+      "topic": "Vibe coding a full-stack app with Cursor and Claude in one weekend",
+      "category": "B",
+      "category_name": "Vibe Coding / AI-Assisted Workflow",
+      "virality_score": 85,
+      "analysis": "This topic will rank on Medium this week due to the interest in vibe coding and AI-assisted workflows. The cross-source evidence from GitHub and Reddit suggests a growing demand for practical tutorials on building full-stack apps with AI assistance. What makes this post different is the focus on a real-world application, such as a full-stack app, and the inclusion of a specific timeframe.",
+      "cross_source_signals": [
+        "GitHub: vibe coding repo trending",
+        "Reddit r/webdev: 5 posts this week",
+        "Google Trends: 'vibe coding' rising"
+      ],
+      "developer_pain": "medium",
+      "freshness": "recent",
+      "money_angle": "",
+      "story_angle": "I wanted to build a full-stack app quickly and efficiently using vibe coding and AI assistance.",
+      "suman_angle": "Vibe coding a full-stack app with Cursor and Claude in one weekend",
+      "target_keywords": [
+        "vibe coding",
+        "ai assisted workflow",
+        "full stack app"
+      ],
+      "competing_articles": "Most existing posts are abstract \u2014 Suman shows a real-world application with a specific timeframe",
+      "real_story_evidence": [
+        {
+          "source": "Show HN",
+          "title": "Show HN: Bento - An entire PowerPoint in one HTML file (edit+view+data+collab)",
+          "url": "https://bento.page/slides/",
+          "what_to_cite": "The author's experience with building a complex application quickly"
         }
       ]
     }
@@ -143,17 +143,17 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Needle2: 14MB agentic LLM for phones, wearables, smart home and robots",
-      "url": "https://cactuscompute.com/needle",
-      "signal": "527 points \u00b7 182 comments",
-      "snippet": "Hey HN, Henry from Cactus here! We previously released Cactus Needle, a 14MB agentic LLM for tool call, device use, and structured extraction for phones, wearables, smart homes, small robots and micro"
-    },
-    {
-      "source": "show_hn",
       "title": "Show HN: Bento - An entire PowerPoint in one HTML file (edit+view+data+collab)",
       "url": "https://bento.page/slides/",
       "signal": "1033 points \u00b7 239 comments",
       "snippet": "Over the past few months, our team has been building more and more slidedecks using web frontend technologies with coding harnesses like Claude Code, but a common complaint is to make even small edits"
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Needle2: 14MB agentic LLM for phones, wearables, smart home and robots",
+      "url": "https://cactuscompute.com/needle",
+      "signal": "527 points \u00b7 182 comments",
+      "snippet": "Hey HN, Henry from Cactus here! We previously released Cactus Needle, a 14MB agentic LLM for tool call, device use, and structured extraction for phones, wearables, smart homes, small robots and micro"
     },
     {
       "source": "show_hn",
@@ -171,17 +171,17 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Woxi - Open-source Mathematica / Wolfram Language reimplementation",
-      "url": "https://woxi.ad-si.com",
-      "signal": "308 points \u00b7 45 comments",
-      "snippet": "Woxi is an interpreter for the Wolfram Language written in Rust. It comes with Woxi Studio, a Mathematica-like GUI built with iced, but you can also use Woxi through a CLI, Jupyter kernel, Python pack"
-    },
-    {
-      "source": "show_hn",
       "title": "Show HN: Echo \u2013 Fable-level results at 1/3 the cost using open-weight models",
       "url": "https://news.ycombinator.com/item?id=49026810",
       "signal": "484 points \u00b7 229 comments",
       "snippet": "I\u2019ve been building Echo (https://echo.tracerml.ai/), an experiment in making one AI system out of a pool of open-weight models rather than choosing a single model and using it for every task. It start"
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Woxi - Open-source Mathematica / Wolfram Language reimplementation",
+      "url": "https://woxi.ad-si.com",
+      "signal": "313 points \u00b7 45 comments",
+      "snippet": "Woxi is an interpreter for the Wolfram Language written in Rust. It comes with Woxi Studio, a Mathematica-like GUI built with iced, but you can also use Woxi through a CLI, Jupyter kernel, Python pack"
     },
     {
       "source": "show_hn",
@@ -206,13 +206,6 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: iPhone app takes simultaneous images from 2 lenses, fuses into 1 photo",
-      "url": "https://photosynthesis.camera",
-      "signal": "327 points \u00b7 302 comments",
-      "snippet": ""
-    },
-    {
-      "source": "show_hn",
       "title": "Show HN: I'm a 15 Year Old Wannabe Engineer, This Is a Cycloidal Gearbox I Built",
       "url": "https://github.com/tom-ilan/cycloidal_gearbox",
       "signal": "338 points \u00b7 115 comments",
@@ -220,16 +213,23 @@
     },
     {
       "source": "show_hn",
+      "title": "Show HN: iPhone app takes simultaneous images from 2 lenses, fuses into 1 photo",
+      "url": "https://photosynthesis.camera",
+      "signal": "328 points \u00b7 304 comments",
+      "snippet": ""
+    },
+    {
+      "source": "show_hn",
       "title": "Show HN: Scroll through all 43252003274489856000 Rubik's Cube states",
       "url": "https://everycube.alen.is/",
-      "signal": "291 points \u00b7 123 comments",
+      "signal": "292 points \u00b7 123 comments",
       "snippet": ""
     },
     {
       "source": "show_hn",
       "title": "Show HN: Run an 80B Qwen in 4.3 GB of RAM on a Mac, and a 35B on an iPhone",
       "url": "https://github.com/leonickson1/Swiftlet",
-      "signal": "312 points \u00b7 142 comments",
+      "signal": "312 points \u00b7 141 comments",
       "snippet": ""
     },
     {
@@ -245,13 +245,6 @@
       "url": "https://cheapfoodmap.com/",
       "signal": "287 points \u00b7 258 comments",
       "snippet": "I was recently laid off after 18 years, and gave myself 100 days to build soething useful in public. CheapFoodMap is a crowdsourced map of meal under $10, excluding franchises, local good eats only. I"
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: Firefox in WebAssembly",
-      "url": "https://developer.puter.com/labs/firefox-wasm/",
-      "signal": "273 points \u00b7 126 comments",
-      "snippet": "This is the entire Firefox browser rendering to a <canvas> element. Gecko, all UI components, and the Spidermonkey JS engine are all compiled and running in WebAssembly. Here are a few things you migh"
     },
     {
       "source": "show_hn",
@@ -273,6 +266,13 @@
       "url": "https://github.com/wie-project/kakehashi",
       "signal": "254 points \u00b7 64 comments",
       "snippet": ""
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: I simulated closing the Strait of Hormuz on real oil trade data",
+      "url": "https://globaloilnetwork.staffinganalytics.io/",
+      "signal": "244 points \u00b7 128 comments",
+      "snippet": "OP here: I created this visualization tool as the byproduct of a supply chain class I taught at Columbia. The pedagogical exercise grew into a full blown visualization and paper about global oil trade"
     }
   ]
 }
