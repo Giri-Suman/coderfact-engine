@@ -1,14 +1,11 @@
 {
   "topics": [
-    "Build AI Agent Python",
-    "Sales Automation SaaS",
-    "Vibe Coding Full Stack"
+    "Reddit Marketing Automation",
+    "LangGraph Tutorial Pipeline",
+    "Automation Script Income"
   ],
-  "date": "August 15, 2026",
+  "date": "August 16, 2026",
   "title_history": [
-    "LangGraph Tutorial: 3-Agent Pipeline",
-    "Vibe Coding Cursor Tutorial",
-    "Automation Scripts Made $2,400",
     "Build AI Agent Python",
     "Vibe Coding Tutorial Full",
     "Make Money With Automation",
@@ -35,100 +32,103 @@
     "Make Money From Script",
     "Build AI Agent Python",
     "Sales Automation SaaS",
-    "Vibe Coding Full Stack"
+    "Vibe Coding Full Stack",
+    "Reddit Marketing Automation",
+    "LangGraph Tutorial Pipeline",
+    "Automation Script Income"
   ],
   "last_update_id": 70323299,
   "virality_data": [
     {
-      "topic": "How I built a 3-agent newsletter pipeline in one weekend (full code)",
-      "category": "C",
-      "category_name": "AI Agents & Multi-Agent Workflows",
-      "virality_score": 88,
-      "analysis": "This topic will rank on Medium this week due to the recent interest in LangGraph and multi-agent workflows. The cross-source evidence from GitHub and Reddit suggests a growing demand for practical tutorials on building AI agents. What makes this post different is the focus on a real-world application, such as a newsletter pipeline, and the inclusion of full code.",
+      "topic": "How I automated my Reddit marketing workflow using Python and LangGraph",
+      "category": "D",
+      "category_name": "AI Automation Across Domains",
+      "virality_score": 92,
+      "analysis": "This topic will rank on Medium this week due to the high interest in AI automation and Reddit marketing. The cross-source evidence from Reddit and GitHub indicates a growing demand for automation solutions. This post will stand out from existing ones by providing a concrete, step-by-step guide to automating Reddit marketing workflows.",
       "cross_source_signals": [
+        "Reddit r/indiehackers: automation posts trending",
         "GitHub: langgraph repo trending",
-        "Reddit r/MachineLearning: 4 posts this week",
-        "Google Trends: 'ai agent tutorial' rising"
+        "Google Trends: 'reddit marketing automation' rising"
       ],
       "developer_pain": "high",
       "freshness": "breaking",
+      "money_angle": "Potential to increase engagement and sales through automated marketing",
+      "story_angle": "I was struggling to manage my Reddit marketing campaigns manually, until I discovered the power of automation",
+      "suman_angle": "How I automated my Reddit marketing workflow in one weekend (full code and results)",
+      "target_keywords": [
+        "reddit marketing automation",
+        "langgraph tutorial",
+        "python automation"
+      ],
+      "competing_articles": "Most existing posts focus on manual marketing strategies or generic automation tips \u2014 Suman's post will provide a unique, hands-on approach",
+      "real_story_evidence": [
+        {
+          "source": "Reddit r/indiehackers",
+          "title": "I automated my full Reddit marketing workflow",
+          "url": "https://www.reddit.com/r/indiehackers/comments/1voxwqt/i_automated_my_full_reddit_marketing_workflow/",
+          "what_to_cite": "The author's successful automation of their Reddit marketing workflow"
+        }
+      ]
+    },
+    {
+      "topic": "Building a 3-agent pipeline for automated research using LangGraph",
+      "category": "C",
+      "category_name": "AI Agents & Multi-Agent Workflows",
+      "virality_score": 88,
+      "analysis": "This topic will resonate with developers interested in AI and automation due to the increasing popularity of LangGraph and multi-agent workflows. The post will provide a unique, first-person perspective on building a 3-agent pipeline, showcasing the potential for automation in research tasks. The cross-source evidence from GitHub and Reddit supports the growing interest in AI-powered research tools.",
+      "cross_source_signals": [
+        "GitHub: langgraph repo trending",
+        "Reddit r/MachineLearning: multi-agent posts trending",
+        "Google Trends: 'ai research automation' rising"
+      ],
+      "developer_pain": "medium",
+      "freshness": "established",
       "money_angle": "",
-      "story_angle": "I was tired of manually curating my newsletter and wanted to automate the process using AI agents.",
-      "suman_angle": "How I built a 3-agent newsletter pipeline in one weekend (full code)",
+      "story_angle": "I wanted to automate my research workflow, but struggled to find a comprehensive guide",
+      "suman_angle": "How I built a 3-agent pipeline for automated research in one weekend (full code and results)",
       "target_keywords": [
         "langgraph tutorial",
-        "build ai agent python",
-        "multi agent workflow"
+        "multi agent workflow",
+        "automated research"
       ],
-      "competing_articles": "Most existing posts are abstract \u2014 Suman shows working orchestration code with a real result",
+      "competing_articles": "Most existing posts focus on theoretical aspects of multi-agent workflows \u2014 Suman's post will provide a practical, step-by-step guide",
       "real_story_evidence": [
         {
-          "source": "Show HN",
-          "title": "LangGraph Tutorial: 3-Agent Pipeline",
-          "url": "https://news.ycombinator.com/item?id=48968606",
-          "what_to_cite": "The author's experience with building a 3-agent pipeline"
+          "source": "Hacker News (Show HN)",
+          "title": "Show HN: Needle2: 14MB agentic LLM for phones, wearables, smart home and robots",
+          "url": "https://cactuscompute.com/needle",
+          "what_to_cite": "The potential for AI agents to revolutionize various industries"
         }
       ]
     },
     {
-      "topic": "I automated my sales outreach with a $9 SaaS and made $3,000 in one month",
+      "topic": "How I made $1,200/month from a simple automation script",
       "category": "E",
       "category_name": "Money / Income Story",
-      "virality_score": 92,
-      "analysis": "This topic will rank on Medium this week due to the high engagement with income stories and the interest in automation. The cross-source evidence from Hacker News and Reddit suggests a growing demand for practical automation tutorials. What makes this post different is the focus on a real-world application, such as sales outreach, and the inclusion of a specific income figure.",
+      "virality_score": 95,
+      "analysis": "This topic will attract a large audience due to the high interest in making money through automation. The post will provide a unique, first-person perspective on creating a simple automation script that generates a significant income. The cross-source evidence from Reddit and GitHub supports the growing demand for automation solutions that can generate revenue.",
       "cross_source_signals": [
-        "Hacker News: automation posts trending",
-        "Reddit r/entrepreneur: 10 posts this week",
-        "Google Trends: 'sales automation' rising"
+        "Reddit r/indiehackers: automation income posts trending",
+        "GitHub: automation script repos trending",
+        "Google Trends: 'automation income' rising"
       ],
-      "developer_pain": "medium",
-      "freshness": "recent",
-      "money_angle": "$3,000 in one month",
-      "story_angle": "I was struggling to scale my sales outreach and wanted to automate the process using a SaaS.",
-      "suman_angle": "How I automated my sales outreach with a $9 SaaS and made $3,000 in one month",
+      "developer_pain": "high",
+      "freshness": "breaking",
+      "money_angle": "Potential to generate significant income through automation",
+      "story_angle": "I was struggling to make a living as a developer, until I discovered the power of automation income",
+      "suman_angle": "How I made $1,200/month from a simple automation script (full code and results)",
       "target_keywords": [
-        "sales automation",
-        "saas for sales",
-        "income story"
+        "automation income",
+        "make money with automation",
+        "python automation"
       ],
-      "competing_articles": "Most existing posts are abstract \u2014 Suman shows a real-world application with a specific income figure",
+      "competing_articles": "Most existing posts focus on generic automation tips or require significant upfront investment \u2014 Suman's post will provide a unique, low-cost approach",
       "real_story_evidence": [
         {
-          "source": "Show HN",
-          "title": "I replaced a $120k bowling center system with $1,600 in ESP32s",
+          "source": "Hacker News (Show HN)",
+          "title": "Show HN: I replaced a $120k bowling center system with $1,600 in ESP32s",
           "url": "https://news.ycombinator.com/item?id=48968606",
-          "what_to_cite": "The author's experience with automating a business process"
-        }
-      ]
-    },
-    {
-      "topic": "Vibe coding a full-stack app with Cursor and Claude in one weekend",
-      "category": "B",
-      "category_name": "Vibe Coding / AI-Assisted Workflow",
-      "virality_score": 85,
-      "analysis": "This topic will rank on Medium this week due to the interest in vibe coding and AI-assisted workflows. The cross-source evidence from GitHub and Reddit suggests a growing demand for practical tutorials on building full-stack apps with AI assistance. What makes this post different is the focus on a real-world application, such as a full-stack app, and the inclusion of a specific timeframe.",
-      "cross_source_signals": [
-        "GitHub: vibe coding repo trending",
-        "Reddit r/webdev: 5 posts this week",
-        "Google Trends: 'vibe coding' rising"
-      ],
-      "developer_pain": "medium",
-      "freshness": "recent",
-      "money_angle": "",
-      "story_angle": "I wanted to build a full-stack app quickly and efficiently using vibe coding and AI assistance.",
-      "suman_angle": "Vibe coding a full-stack app with Cursor and Claude in one weekend",
-      "target_keywords": [
-        "vibe coding",
-        "ai assisted workflow",
-        "full stack app"
-      ],
-      "competing_articles": "Most existing posts are abstract \u2014 Suman shows a real-world application with a specific timeframe",
-      "real_story_evidence": [
-        {
-          "source": "Show HN",
-          "title": "Show HN: Bento - An entire PowerPoint in one HTML file (edit+view+data+collab)",
-          "url": "https://bento.page/slides/",
-          "what_to_cite": "The author's experience with building a complex application quickly"
+          "what_to_cite": "The potential for automation to save costs and generate revenue"
         }
       ]
     }
@@ -150,17 +150,24 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Needle2: 14MB agentic LLM for phones, wearables, smart home and robots",
-      "url": "https://cactuscompute.com/needle",
-      "signal": "527 points \u00b7 182 comments",
-      "snippet": "Hey HN, Henry from Cactus here! We previously released Cactus Needle, a 14MB agentic LLM for tool call, device use, and structured extraction for phones, wearables, smart homes, small robots and micro"
-    },
-    {
-      "source": "show_hn",
       "title": "Show HN: Open-source engine running Gemma 4 26B in 2 GB RAM on any M-series Mac",
       "url": "https://github.com/drumih/turbo-fieldfare",
       "signal": "919 points \u00b7 345 comments",
       "snippet": "Hi HN, I built a specialized inference engine for running 4-bit Gemma 4 26B-A4B-IT on any M-series Mac using about 2 GB of RAM. It is called TurboFieldfare and is written in Swift and Metal. I have al"
+    },
+    {
+      "source": "indie_reddit",
+      "title": "I automated my full Reddit marketing workflow",
+      "url": "https://www.reddit.com/r/indiehackers/comments/1voxwqt/i_automated_my_full_reddit_marketing_workflow/",
+      "signal": "r/indiehackers",
+      "snippet": ""
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Needle2: 14MB agentic LLM for phones, wearables, smart home and robots",
+      "url": "https://cactuscompute.com/needle",
+      "signal": "527 points \u00b7 182 comments",
+      "snippet": "Hey HN, Henry from Cactus here! We previously released Cactus Needle, a 14MB agentic LLM for tool call, device use, and structured extraction for phones, wearables, smart homes, small robots and micro"
     },
     {
       "source": "show_hn",
@@ -178,13 +185,6 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Woxi - Open-source Mathematica / Wolfram Language reimplementation",
-      "url": "https://woxi.ad-si.com",
-      "signal": "313 points \u00b7 45 comments",
-      "snippet": "Woxi is an interpreter for the Wolfram Language written in Rust. It comes with Woxi Studio, a Mathematica-like GUI built with iced, but you can also use Woxi through a CLI, Jupyter kernel, Python pack"
-    },
-    {
-      "source": "show_hn",
       "title": "Show HN: Physically accurate black hole you can put in your room",
       "url": "https://blackhole.plav.in",
       "signal": "477 points \u00b7 194 comments",
@@ -196,6 +196,13 @@
       "url": "https://github.com/twalichiewicz/HNewhere",
       "signal": "433 points \u00b7 126 comments",
       "snippet": "HN is great for the links people share, but a big part of the value I get comes from reading the discussion around them. I realized I was always opening the article in one tab and the comments in anot"
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Woxi - Open-source Mathematica / Wolfram Language reimplementation",
+      "url": "https://woxi.ad-si.com",
+      "signal": "313 points \u00b7 45 comments",
+      "snippet": "Woxi is an interpreter for the Wolfram Language written in Rust. It comes with Woxi Studio, a Mathematica-like GUI built with iced, but you can also use Woxi through a CLI, Jupyter kernel, Python pack"
     },
     {
       "source": "show_hn",
@@ -220,16 +227,16 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Scroll through all 43252003274489856000 Rubik's Cube states",
-      "url": "https://everycube.alen.is/",
-      "signal": "292 points \u00b7 123 comments",
+      "title": "Show HN: Run an 80B Qwen in 4.3 GB of RAM on a Mac, and a 35B on an iPhone",
+      "url": "https://github.com/leonickson1/Swiftlet",
+      "signal": "312 points \u00b7 141 comments",
       "snippet": ""
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Run an 80B Qwen in 4.3 GB of RAM on a Mac, and a 35B on an iPhone",
-      "url": "https://github.com/leonickson1/Swiftlet",
-      "signal": "312 points \u00b7 141 comments",
+      "title": "Show HN: Scroll through all 43252003274489856000 Rubik's Cube states",
+      "url": "https://everycube.alen.is/",
+      "signal": "292 points \u00b7 123 comments",
       "snippet": ""
     },
     {
@@ -264,15 +271,8 @@
       "source": "show_hn",
       "title": "Show HN: Kakehashi \u2013 Experimental userspace to run macOS binaries on Linux ARM",
       "url": "https://github.com/wie-project/kakehashi",
-      "signal": "254 points \u00b7 64 comments",
+      "signal": "255 points \u00b7 64 comments",
       "snippet": ""
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: I simulated closing the Strait of Hormuz on real oil trade data",
-      "url": "https://globaloilnetwork.staffinganalytics.io/",
-      "signal": "244 points \u00b7 128 comments",
-      "snippet": "OP here: I created this visualization tool as the byproduct of a supply chain class I taught at Columbia. The pedagogical exercise grew into a full blown visualization and paper about global oil trade"
     }
   ]
 }
