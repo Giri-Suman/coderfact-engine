@@ -417,6 +417,139 @@ check("model rewrite is preferred over truncation",
 check("tweet numbering prefixes are stripped", P._clean_post('2/ "Real text"') == "Real text")
 
 
+import brain as B
+import claims as C
+
+print("\nbrain — parsing and verified numbers")
+
+_STORIES = """# Stories
+
+## Cut the sweep from 9 minutes to 40 seconds
+- when: 2026-08
+- numbers: 9 min -> 40 s, 38 HTTP calls -> 6
+- source:
+- tags: python, concurrency
+
+Ran serially, including 15 sequential lookups. Thread pool fixed it.
+
+## Dropped the Docker image from 1.2 GB to 180 MB
+- when: 2026-07
+- numbers: 1.2 GB -> 180 MB
+- source: https://github.com/example/repo/pull/12
+- tags: docker
+
+Multi-stage build.
+"""
+with tempfile.TemporaryDirectory() as _td:
+    with open(os.path.join(_td, "stories.md"), "w", encoding="utf-8") as fh:
+        fh.write(_STORIES)
+    with open(os.path.join(_td, "beliefs.md"), "w", encoding="utf-8") as fh:
+        fh.write("# Beliefs\n\nSome prose that is not a belief.\n\n- Benchmarks without a machine spec are vibes.\n")
+    with open(os.path.join(_td, "voice.md"), "w", encoding="utf-8") as fh:
+        fh.write("# Voice\n\nExplanatory preamble the model must never receive.\n\n- Name the version.\n")
+    _b = B.load(_td)
+
+    check("brain parses both stories", len(_b.stories) == 2)
+    # '- source:' with nothing after it is the normal case for work on your own
+    # machine; it must be consumed as a field, not fall into the prose body.
+    check("empty field does not leak into the body",
+          "source:" not in _b.stories[0].body, _b.stories[0].body[:60])
+    check("beliefs take bullets only, not prose", _b.beliefs == ["Benchmarks without a machine spec are vibes."])
+    check("voice.md preamble is not fed to the model",
+          _b.voice_rules == ["Name the version."], _b.voice_rules)
+    _nums = _b.verified_numbers()
+    check("compound number field is atomised", {"9", "40", "38", "6"} <= _nums, sorted(_nums))
+    check("unit forms are kept too", "40s" in _nums or "9min" in _nums, sorted(_nums))
+    # Prose is NOT a source of verified figures. A story body legitimately
+    # discusses numbers it argues against — an entry describing a fabricated
+    # "$200 saved" claim must never certify $200 as verified.
+    check("prose numbers do not become verified", "15" not in _nums, sorted(_nums))
+    _poison = B.Brain(stories=[B.Story(title="t", numbers=["40 s"],
+                                       body="The draft claimed $200 saved. It was invented.")])
+    check("a story arguing against a figure does not verify it",
+          "200" not in _poison.verified_numbers() and "$200" not in _poison.verified_numbers(),
+          sorted(_poison.verified_numbers()))
+    check("story source URL is verified", "https://github.com/example/repo/pull/12" in _b.verified_urls())
+    # A topic-specific pull must lead with the story that fits and is allowed to
+    # drop the one that does not — dumping the whole brain buries the match.
+    _blk = _b.for_topic("docker image size")
+    check("for_topic includes the relevant story", "180 MB" in _blk)
+    check("for_topic drops or trails the irrelevant one",
+          "40 seconds" not in _blk or _blk.index("180 MB") < _blk.index("40 seconds"))
+    check("for_topic falls back when nothing matches",
+          bool(_b.for_topic("underwater basket weaving").strip()))
+    check("empty brain is falsy", not B.load(os.path.join(_td, "nope")))
+
+check("atomize splits a range", {"9min", "40s", "9", "40"} <= B.atomize_numbers("9 min -> 40 s"))
+check("normalize_number is comma/space insensitive",
+      B.normalize_number("$ 4,200 ") == B.normalize_number("$4200"))
+
+print("\nclaims — receipts")
+
+_ART = """# Cutting the sweep
+
+The sweep took 9 minutes before I touched it. I got it to 40 seconds.
+
+According to a study, most pipelines are IO bound.
+
+We now push $9,400 MRR from this.
+
+| stage | before | after |
+|---|---|---|
+| sweep | 9 minutes | 40 seconds |
+
+```python
+PORT = 8787   # not a claim
+TIMEOUT = 4500
+```
+
+Runs on Python 3.11 with psycopg2 2.9.9 on port 5432.
+"""
+with tempfile.TemporaryDirectory() as _td2:
+    with open(os.path.join(_td2, "stories.md"), "w", encoding="utf-8") as fh:
+        fh.write(_STORIES)
+    _b2 = B.load(_td2)
+
+_cm = C.build_map(_ART, title="t", brain=_b2)
+_figs = {c.figure.lower() for c in _cm.claims}
+
+check("code block figures are not claims",
+      not any("8787" in f or "4500" in f for f in _figs), sorted(_figs))
+check("versions and ports are not claims",
+      not any(f.startswith(("3.11", "2.9.9", "5432")) for f in _figs), sorted(_figs))
+# A before/after table is the most claim-dense element in these articles.
+# humanizer masks tables so a rewrite cannot mangle them; claims must NOT.
+check("table figures are extracted",
+      any(c.text.startswith("[table]") for c in _cm.claims),
+      [c.text[:40] for c in _cm.claims])
+check("table claim carries its row label",
+      any("sweep" in c.text.lower() and c.text.startswith("[table]") for c in _cm.claims))
+_prov = {c.figure.lower(): c.provenance for c in _cm.claims}
+check("a figure in the brain is BRAIN",
+      any(v == "BRAIN" for k, v in _prov.items() if "9 minutes" in k or "40 seconds" in k), _prov)
+check("an unsourced money figure is UNSOURCED",
+      any(v == "UNSOURCED" for k, v in _prov.items() if "9,400" in k or "9400" in k), _prov)
+check("vague attribution becomes an external claim",
+      any(c.kind == "external" and c.provenance == "UNSOURCED" for c in _cm.claims))
+check("coverage is a fraction of all claims", 0.0 <= _cm.coverage <= 1.0)
+
+# Money is never self-evidenced: the author is not the authority on revenue.
+_money = C.classify([C.Claim(text="I make $9,400 MRR from it.", figure="$9,400", kind="number")],
+                    brain=B.Brain())
+check("first-person does not launder a money claim", _money[0].provenance == "UNSOURCED")
+_timing = C.classify([C.Claim(text="I measured 250 ms on my laptop.", figure="250 ms", kind="number")],
+                     brain=B.Brain())
+check("first-person timing is allowed as SELF", _timing[0].provenance == "SELF")
+
+_ok, _drift, _matched, _total = C.verify(_ART, _cm)
+check("an unedited article verifies clean", _ok and not _drift, _drift)
+_edited = _ART.replace("40 seconds.", "40 seconds. It also saved 12 hours.")
+_ok2, _drift2, _, _ = C.verify(_edited, _cm)
+check("a figure added after mapping is caught as drift", not _ok2 and _drift2, _drift2)
+check("render lists the unsourced section",
+      "Unsourced" in C.render(_cm) or not _cm.unsourced)
+
+
 # ── summary ──────────────────────────────────────────────────────────────────
 print("\n" + "=" * 62)
 print(f"{len(PASS)} passed, {len(FAIL)} failed")

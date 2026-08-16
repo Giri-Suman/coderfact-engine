@@ -27,7 +27,7 @@ jobs:
 
       - name: Syntax check
         run: |
-          python -m compileall -q agent.py humanizer.py research_engine.py judge.py promo.py test_engine.py
+          python -m compileall -q agent.py humanizer.py research_engine.py judge.py promo.py brain.py claims.py test_engine.py
 
       # Offline: no network, no API keys, no publishing.
       - name: Offline test suite
@@ -38,3 +38,9 @@ jobs:
       - name: AI-tell audit of committed drafts
         continue-on-error: true
         run: python humanizer.py medium_drafts/*.md educational/*.md
+
+      # Which published figures still have no receipt. Advisory for now: the
+      # back catalogue predates the claims map and would fail the whole run.
+      - name: Claim coverage of committed drafts
+        continue-on-error: true
+        run: python claims.py medium_drafts/*.md

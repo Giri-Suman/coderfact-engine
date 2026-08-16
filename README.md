@@ -4,6 +4,9 @@ An automated content pipeline: sweep developer platforms for what's actually
 getting engagement, propose three scored topics over Telegram, and draft the one
 you pick into a Dev.to draft plus a Markdown file in this repo.
 
+The pipeline is written down in [PIPELINE.md](PIPELINE.md) — every stage, both
+human checkpoints, and the rules that were added after something went wrong.
+
 ```
 morning_research.yml   08:00 IST   agent.py research   -> Telegram brief with 3 scored topics
 telegram_listener.yml  every 15m   agent.py draft      -> reads your reply, writes the article
@@ -21,10 +24,14 @@ python agent.py educational <topic>    # short-form drop
 python agent.py social <topic>         # per-platform social pack
 python agent.py humanize <file.md>     # rerun the rewrite/repair loop on a draft
 python agent.py judge <file.md>        # editorial review; --fix applies findings
+python agent.py claims <file.md>       # map every claim to its receipt
+python agent.py brain init|list|check  # the author's own sourced material
 python agent.py promo <file.md> [url]  # LinkedIn + X posts from a finished article
 
 python humanizer.py <file.md> [--fix] [--json]   # audit prose, no AI calls
 python judge.py --dry <file.md>                  # grounded facts only, no AI calls
+python claims.py [--write] <file.md>             # claims map, no AI calls
+python brain.py list|check <topic>               # what a draft would be given
 python promo.py <file.md> --facts                # what the promo writer sees
 python research_engine.py doctor|scan|search <q> # sources + offline library
 python test_engine.py                            # offline test suite
@@ -42,6 +49,9 @@ without calling an AI provider or publishing anything.
 | `research_engine.py` | Parallel source sweep, clustering, ranking, research library |
 | `humanizer.py` | AI-tell detection, scoring, repair loop, voice fingerprint (stdlib only) |
 | `judge.py` | Editorial rubric, fabrication detection, critique → revise loop |
+| `claims.py` | Every factual claim mapped to its receipt (no AI calls) |
+| `brain.py` | The author's beliefs, sourced stories and voice rules |
+| `PIPELINE.md` | The contract — every stage and rule in plain English |
 | `promo.py` | LinkedIn + X posts generated from a finished article |
 | `test_engine.py` | Offline suite — no network, no keys |
 | `state.json` | Today's topics, title history, Telegram cursor |
@@ -124,6 +134,62 @@ X post (the model is asked to cut, truncation at a word boundary is the
 fallback), and the LinkedIn hook is checked against the ~210-char fold, which is
 the only line most people read. Both drafts go through the humanizer first.
 
+### Claims map
+
+Borrowed from learnwithhasan.com's "AI Content Factory": no claim ships without
+a receipt. Where `judge.py` scans for known-bad patterns, `claims.py` inverts
+the default — it enumerates **every** checkable figure and demands a provenance
+label for each:
+
+| Label | Meaning |
+|---|---|
+| `BRAIN` | the figure appears in `brain/stories.md` — you measured it |
+| `EVIDENCE` | traces to a research URL the writer was handed |
+| `SELF` | first-person process detail you're the authority on |
+| `UNSOURCED` | **the finding** |
+
+Money and audience numbers can never be `SELF` — you are not the authority on
+someone else's revenue. Versions, ports and years are excluded as identifiers,
+not claims. Code blocks are excluded; **tables are not** — a before/after table
+is the most claim-dense element in these articles, so each figure is extracted
+with its row label.
+
+The map ships beside the draft as `<slug>.claims.md`, and `verify()` re-checks a
+published piece against it, so an edit that introduces a new figure is caught.
+
+```bash
+python claims.py medium_drafts/*.md   # coverage per draft, no API key needed
+```
+
+### The brain
+
+The claims map proves what was used; the brain supplies what to use. Three
+hand-written files loaded into the draft prompt, ranked by relevance to the
+topic:
+
+- `brain/beliefs.md` — positions worth arguing, so a piece has a spine
+- `brain/stories.md` — things that happened, **with numbers and a source**
+- `brain/voice.md` — prose rules a measurement can't capture
+
+A model with nothing real to hand invents a `$4,200 MRR`, because the prompt
+asked for a specific number and specificity is what it was trained to produce.
+Stories are parsed structurally, so the figures in each entry's `numbers:` field
+become the *allowed* set the claims map validates against.
+
+**Only the `numbers:` field counts.** Prose in a story body is used for relevance
+ranking and never for provenance — a story legitimately discusses figures it is
+arguing against, and an entry describing a fabricated "$200 saved" claim must not
+certify `$200` as verified for the next article.
+
+```bash
+python agent.py brain init      # scaffold with worked examples
+python brain.py check "docker"  # what a draft on that topic would receive
+```
+
+After each piece, S10 proposes new entries into `brain/inbox.md`. Nothing is
+auto-promoted — an unreviewed "fact" would be laundered into every future
+article as verified.
+
 ### Voice calibration
 
 Put your own writing in `voice/*.md` and the rewrite prompt gets measured facts
@@ -172,6 +238,7 @@ Tuning (all optional):
 | `HUMANIZE_TARGET` | `85` | Score at which repair stops early |
 | `JUDGE_ROUNDS` | `2` | Max editorial revise rounds per article |
 | `JUDGE_TARGET` | `78` | Editorial score at which review stops early |
+| `BRAIN_DIR` | `brain` | Where beliefs/stories/voice rules live |
 | `PROMO_THREAD_LEN` | `6` | Posts in the generated X thread |
 | `VOICE_SAMPLES_DIR` | `voice` | Where voice samples live |
 | `SOURCE_TIMEOUT` | `45` | Per-source seconds before a source is degraded |

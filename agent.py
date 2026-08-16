@@ -6,6 +6,8 @@ import humanizer
 import research_engine as rx
 import judge
 import promo
+import brain
+import claims
 
 DEVTO_KEY      = os.getenv("DEVTO_API_KEY")
 TELEGRAM_BOT   = os.getenv("TELEGRAM_BOT_TOKEN")
@@ -1275,6 +1277,14 @@ Return ONLY the JSON object.""")
                 diagrams_block += "Use ASCII box-drawing characters for architecture/flow.\n"
 
 
+    # The author's own sourced material. A writer with a real number to hand
+    # does not need to invent one — this is the cause-side fix that judge.py
+    # and claims.py check from the proof side.
+    _brain = brain.load()
+    brain_block = _brain.for_topic(f"{title} {primary_kw} {solution_name}")
+    if _brain:
+        print(f"[brain] {_brain.summary()}")
+
     tg_step("✍️ Pass 2/3: Writing article...")
     try:
         article = ask_ai(f"""You are ghostwriting for {AUTHOR_NAME}: {AUTHOR_CONTEXT}. Vibe: {AUTHOR_VIBE}.
@@ -1319,6 +1329,8 @@ LSI keywords (Google expects these — use naturally):
   → {_ks(lsi_kws, 'use semantically related terms')}
 Competitor angle (what makes this DIFFERENT):
   → {competitor_angle}
+
+{brain_block if brain_block else ''}
 
 ▌STRUCTURE (markdown, no HTML)
 1. HOOK — 2 sentences max. A specific moment. No headline, no "Introduction".
@@ -1458,6 +1470,19 @@ Output: clean Markdown only. Start with the hook scene. No preamble.
             weak = ", ".join(f"{k} {s}/10" for k, s in
                              sorted(final_v.scores.items(), key=lambda kv: kv[1])[:3])
             send_tg(f"⚠️ *Editorial score {final_v.weighted:.0f}/100* — weakest: _{weak}_")
+
+    # ── Claims map: every checkable figure gets a receipt, or it is listed ──
+    claims_map = None
+    try:
+        claims_map = claims.build_map(
+            article, title=seo_title, slug=draft_slug(seo_title), brain=_brain,
+            evidence_urls=judge_ctx["allowed_urls"],
+            evidence_text=judge_ctx["evidence_text"])
+        print(f"[claims] {claims_map.summary()}")
+        for c in claims_map.unsourced[:8]:
+            print(f"  UNSOURCED line {c.line}: {c.figure or c.text[:60]}")
+    except Exception as e:
+        print(f"[claims] map failed (non-fatal): {e}")
 
     meta  = ""
     tags_line = ""
@@ -1805,12 +1830,27 @@ Return ONLY a JSON array with 3-6 objects. No markdown fences. Schema:
         slug = draft_slug(seo_title)
         md_path = f"medium_drafts/{slug}.md"
         github_url = save_file_to_github(
-            md_path, 
+            md_path,
             github_content,
             f"docs: new draft — {seo_title[:50]}"
         )
     except Exception as e:
         print(f"[draft] GitHub save failed (non-fatal): {e}")
+
+    # The claims map ships beside the draft so the receipts are reviewable
+    # alongside the prose, not buried in a run log.
+    if claims_map is not None:
+        try:
+            save_file_to_github(f"medium_drafts/{draft_slug(seo_title)}.claims.md",
+                                claims.render(claims_map),
+                                f"docs: claims map — {seo_title[:50]}")
+            if claims_map.unsourced:
+                worst = "\n".join(f"• `{c.figure or c.text[:60]}` (line {c.line})"
+                                  for c in claims_map.unsourced[:4])
+                send_tg(f"🧾 *Claims map: {claims_map.coverage:.0%} sourced* "
+                        f"({len(claims_map.unsourced)} without a receipt)\n{worst}")
+        except Exception as e:
+            print(f"[claims] save failed (non-fatal): {e}")
 
     # ═══════════════════════════════════════════════════════════════════════════════
     # FIX 3: Check DEVTO_KEY before attempting publish + better error reporting
@@ -1884,6 +1924,19 @@ Return ONLY a JSON array with 3-6 objects. No markdown fences. Schema:
                 pass
             raise
 
+    # ── Pass 3.5: flywheel ──────────────────────────────────────────────────
+    # What did this piece establish that the next one should start with?
+    # Candidates land in brain/inbox.md; nothing is auto-promoted, because an
+    # unreviewed "fact" would be laundered into every future article as verified.
+    try:
+        n = brain.seed_entry(article, seo_title, ask_ai,
+                             evidence_text=judge_ctx["evidence_text"])
+        if n:
+            send_tg(f"🌱 {n} brain candidate(s) in `brain/inbox.md` — "
+                    f"review and move the good ones into `brain/stories.md`.")
+    except Exception as e:
+        print(f"[brain] seeding failed (non-fatal): {e}")
+
     # ── Pass 4: promotion ───────────────────────────────────────────────────
     # Generated FROM the finished article, so the posts quote details that
     # actually exist in it. Never fatal — the article is already published.
@@ -1949,6 +2002,55 @@ def promo_cli():
     pack = promo_pack_for(text, title, article_url=url,
                           slug=os.path.splitext(os.path.basename(path))[0], notify=False)
     print(promo.render_markdown(pack, AUTHOR_NAME))
+    return 0
+
+
+def claims_cli():
+    """CLI: python agent.py claims <file.md> [--write]"""
+    args = [a for a in sys.argv[2:] if not a.startswith("--")]
+    if not args:
+        print("Usage: python agent.py claims <file.md> [--write]")
+        return 1
+    path = args[0]
+    if not os.path.exists(path):
+        print(f"No such file: {path}")
+        return 1
+    with open(path, encoding="utf-8") as fh:
+        text = fh.read()
+    title = next((l.lstrip("# ").strip() for l in text.splitlines()
+                  if l.startswith("# ")), os.path.basename(path))
+    slug = os.path.splitext(os.path.basename(path))[0]
+    cmap = claims.build_map(text, title=title, slug=slug, brain=brain.load(),
+                            evidence_urls=claims._URL_RE.findall(text))
+    print(cmap.summary())
+    for c in cmap.unsourced:
+        print(f"  UNSOURCED line {c.line}: `{c.figure or ''}` {c.text[:90]}")
+    if "--write" in sys.argv:
+        out = os.path.join(os.path.dirname(path), slug + ".claims.md")
+        with open(out, "w", encoding="utf-8") as fh:
+            fh.write(claims.render(cmap))
+        print(f"wrote {out}")
+    return 0
+
+
+def brain_cli():
+    """CLI: python agent.py brain [init|list|check <topic>]"""
+    sub = sys.argv[2] if len(sys.argv) > 2 else "list"
+    if sub == "init":
+        made = brain.scaffold()
+        print(f"created: {', '.join(made)}" if made else
+              f"{brain.BRAIN_DIR}/ already set up — nothing overwritten")
+        return 0
+    b = brain.load()
+    if not b:
+        print(f"No brain at {brain.BRAIN_DIR}/. Run: python agent.py brain init")
+        return 1
+    if sub == "check":
+        print(b.for_topic(" ".join(sys.argv[3:]) or "python automation"))
+    else:
+        print(b.summary())
+        for s in b.stories:
+            print(f"  - {s.title}  [{', '.join(s.numbers) or 'no numbers'}]")
     return 0
 
 
@@ -2447,7 +2549,8 @@ if __name__ == "__main__":
 
     COMMANDS = {"research": research, "draft": draft, "educational": educational,
                 "social": social, "doctor": doctor, "humanize": humanize_cli,
-                "judge": judge_cli, "promo": promo_cli}
+                "judge": judge_cli, "promo": promo_cli,
+                "claims": claims_cli, "brain": brain_cli}
     cmd = sys.argv[1] if len(sys.argv) > 1 else ""
     if cmd not in COMMANDS:
         print("Usage: python agent.py <command>\n"
@@ -2458,6 +2561,8 @@ if __name__ == "__main__":
               "  humanize <file.md>    rewrite/repair an existing draft in place\n"
               "  judge <file.md>       editorial review; --fix applies the findings\n"
               "  promo <file.md> [url] LinkedIn + X posts from a finished article\n"
+              "  claims <file.md>      map every factual claim to its receipt\n"
+              "  brain [init|list|check <topic>]  the author's own sourced material\n"
               "  doctor                probe every source and key, publish nothing")
         sys.exit(2)
     sys.exit(COMMANDS[cmd]() or 0)

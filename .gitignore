@@ -6,3 +6,7 @@ __pycache__/
 # the samples themselves are not.
 voice/*
 !voice/README.md
+
+# Brain: the scaffold and README are tracked so the format is discoverable,
+# but your own beliefs/stories are personal — untrack them if you prefer.
+brain/inbox.md
