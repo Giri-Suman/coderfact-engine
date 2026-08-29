@@ -79,7 +79,9 @@ real material so it never needs to invent, then prove what it used.
 
 ## Cost
 
-No paid infrastructure. Free tiers only — OpenRouter/Gemini/Groq for models,
+No paid infrastructure. Free tiers only — OpenRouter/Gemini/Groq for models
+(Gemini Flash is free-of-charge on the free tier; `GEMINI_MODELS` lists two so
+the quota buckets are independent),
 public APIs and RSS for research, GitHub Actions for scheduling. The only paid
 key that could be added is a SERP API for prior-art analysis, which S3 currently
 approximates with Dev.to, Hacker News and Reddit search.

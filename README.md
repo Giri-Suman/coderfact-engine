@@ -239,6 +239,10 @@ Tuning (all optional):
 | `JUDGE_ROUNDS` | `2` | Max editorial revise rounds per article |
 | `JUDGE_TARGET` | `78` | Editorial score at which review stops early |
 | `BRAIN_DIR` | `brain` | Where beliefs/stories/voice rules live |
+| `GEMINI_MODELS` | `gemini-3.7-flash,gemini-3.5-flash` | Gemini chain, in order |
+| `OPENROUTER_MODELS` | 4 `:free` slugs | OpenRouter chain, in order |
+| `GROQ_MODEL` | `llama-3.3-70b-versatile` | Groq model |
+| `OPENROUTER_ALLOW_PAID` | unset | Enable `openrouter/auto` (can bill) |
 | `PROMO_THREAD_LEN` | `6` | Posts in the generated X thread |
 | `VOICE_SAMPLES_DIR` | `voice` | Where voice samples live |
 | `SOURCE_TIMEOUT` | `45` | Per-source seconds before a source is degraded |
@@ -246,8 +250,28 @@ Tuning (all optional):
 | `SHOW_HN_WINDOW_DAYS` | `30` | Recency window for Show HN launches |
 | `RESEARCH_LIBRARY_DIR` | `research` | Where the archive is written |
 
-AI providers are tried in order — OpenRouter Llama 3.3 70B, Gemini 2.0 Flash,
-DeepSeek R1, Groq, Gemma, OpenRouter auto — and any one of them is enough.
+AI providers are tried in order — **Gemini 3.7 Flash, Gemini 3.5 Flash** (direct
+API), Groq, then OpenRouter's free models. Any one of them is enough.
+
+Gemini goes first because the **direct API is the only genuinely free path to a
+Flash model**. OpenRouter carries every Gemini tier but none of them free —
+`google/gemini-3.5-flash` bills $1.50/$9.00 per million tokens there.
+
+Model IDs rot, silently. A retired slug returns 404, the chain falls through, and
+a run "succeeds" on a worse model. Three of the four OpenRouter slugs originally
+hardcoded here had been removed from the catalogue, and `gemini-2.0-flash` had
+been shut down by Google — so two thirds of the fallback chain was dead with no
+symptom. Check any time:
+
+```bash
+python agent.py models   # resolves every configured ID against the live catalogue
+```
+
+Override without touching code: `GEMINI_MODELS`, `OPENROUTER_MODELS`, `GROQ_MODEL`.
+
+`openrouter/auto` is **off by default** — its pricing is variable, so it can route
+to a paid model and bill you. Set `OPENROUTER_ALLOW_PAID=1` if a run completing
+matters more than the run being free.
 
 ## Telegram replies
 

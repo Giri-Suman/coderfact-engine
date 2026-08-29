@@ -9,6 +9,38 @@ import promo
 import brain
 import claims
 
+
+def _load_dotenv(path=".env"):
+    """Read a local .env into os.environ for CLI runs.
+
+    .env has always been gitignored here, which implies it was meant to work —
+    but nothing ever read it, so a local key file was silently ignored and every
+    CLI run behaved as though no keys were set. Deliberately dependency-free and
+    deliberately non-overriding: a real environment variable (which is how
+    GitHub Actions injects secrets) always wins over the file.
+    """
+    if not os.path.exists(path):
+        return 0
+    n = 0
+    try:
+        with open(path, encoding="utf-8") as fh:
+            for line in fh:
+                line = line.strip()
+                if not line or line.startswith("#") or "=" not in line:
+                    continue
+                key, _, val = line.partition("=")
+                key = key.strip().removeprefix("export ").strip()
+                val = val.strip().strip('"').strip("'")
+                if key and key not in os.environ:
+                    os.environ[key] = val
+                    n += 1
+    except Exception as e:
+        print(f"[env] could not read {path}: {e}")
+    return n
+
+
+_load_dotenv()
+
 DEVTO_KEY      = os.getenv("DEVTO_API_KEY")
 TELEGRAM_BOT   = os.getenv("TELEGRAM_BOT_TOKEN")
 TELEGRAM_CHAT  = os.getenv("TELEGRAM_CHAT_ID")
@@ -18,6 +50,38 @@ OPENROUTER_KEY = os.getenv("OPENROUTER_API_KEY")
 GITHUB_TOKEN   = os.getenv("GITHUB_TOKEN")
 GITHUB_REPO    = os.getenv("GITHUB_REPOSITORY")
 STATE_FILE     = "state.json"
+
+# Gemini models, tried in order. All Flash tiers are free-of-charge on the free
+# tier, and each model ID carries its OWN quota, so listing two is real fallback
+# capacity rather than a preference — one article costs 12-15 model calls and the
+# free tier allows 10 requests/minute.
+#
+# Override without touching code when Google retires one:
+#   GEMINI_MODELS="gemini-3.7-flash,gemini-3.6-flash"
+# This list was previously a single hardcoded "gemini-2.0-flash", which Google
+# has since shut down — the whole Gemini leg was dead and every run silently
+# fell through to the next provider.
+GEMINI_MODELS  = [m.strip() for m in os.getenv(
+    "GEMINI_MODELS", "gemini-3.7-flash,gemini-3.5-flash").split(",") if m.strip()]
+
+# OpenRouter ':free' slugs, tried in order. These rot faster than anything else
+# in this file — the three previously hardcoded here (llama-3.3-70b-instruct,
+# deepseek-r1-0528, gemma-3-27b-it) had ALL been removed from the catalogue, so
+# the entire OpenRouter leg was returning 404 on every call.
+#
+# Chosen for long-form drafting: big context (the article prompt is large) and a
+# high completion cap. Verify the list any time with `python agent.py models`.
+OPENROUTER_MODELS = [m.strip() for m in os.getenv(
+    "OPENROUTER_MODELS",
+    "z-ai/glm-5.2:free,"
+    "minimax/minimax-m3:free,"
+    "nvidia/nemotron-3-super-120b-a12b:free,"
+    "google/gemma-4-31b-it:free").split(",") if m.strip()]
+
+# openrouter/auto has variable pricing and can bill real money. Off unless asked.
+OPENROUTER_ALLOW_PAID = os.getenv("OPENROUTER_ALLOW_PAID", "").strip().lower() in ("1", "true", "yes")
+
+GROQ_MODEL     = os.getenv("GROQ_MODEL", "llama-3.3-70b-versatile")
 
 AUTHOR_NAME    = os.getenv("AUTHOR_NAME",    "Suman Giri")
 AUTHOR_CONTEXT = os.getenv("AUTHOR_CONTEXT", "a tech automation enthusiast, senior frontend developer from Kolkata who builds tools for CoderFact")
@@ -172,11 +236,31 @@ def draft_slug(title: str, maxlen: int = 60, fallback: str = "draft") -> str:
     return f"{base[:maxlen].rstrip('-')}-{digest}"
 
 
-def save_file_to_github(path: str, content: str, message: str) -> str:
-    """Save a file to GitHub repo. Returns the file URL or empty string on failure."""
-    if not (GITHUB_TOKEN and GITHUB_REPO):
-        print(f"[GitHub] SKIP: No token/repo configured")
+def _save_local(path: str, content: str) -> str:
+    """Write beside the repo so a run without a GitHub token still leaves its
+    output on disk. Returns the path, or '' on failure."""
+    try:
+        os.makedirs(os.path.dirname(path) or ".", exist_ok=True)
+        with open(path, "w", encoding="utf-8") as fh:
+            fh.write(content)
+        print(f"[local] wrote {path} ({len(content)} chars)")
+        return path
+    except Exception as e:
+        print(f"[local] could not write {path}: {e}")
         return ""
+
+
+def save_file_to_github(path: str, content: str, message: str) -> str:
+    """Save a file to the GitHub repo. Returns the file URL, or on failure the
+    local path it fell back to.
+
+    Without a token this used to return '' and drop the content on the floor —
+    so a local run generated a full article, a claims map and a promo pack and
+    then discarded all three. Local runs now keep their output.
+    """
+    if not (GITHUB_TOKEN and GITHUB_REPO):
+        print("[GitHub] SKIP: no token/repo — saving locally instead")
+        return _save_local(path, content)
 
     api_url = f"https://api.github.com/repos/{GITHUB_REPO}/contents/{path}"
     hdrs = {
@@ -214,10 +298,10 @@ def save_file_to_github(path: str, content: str, message: str) -> str:
             return url
         else:
             print(f"[GitHub] PUT FAILED {r.status_code}: {r.text[:300]}")
-            return ""
+            return _save_local(path, content)
     except Exception as e:
         print(f"[GitHub] PUT error: {e}")
-        return ""
+        return _save_local(path, content)
 
 
 def ask_ai(prompt: str, max_tokens: int = 4000) -> str:
@@ -254,6 +338,45 @@ def ask_ai(prompt: str, max_tokens: int = 4000) -> str:
                 raise
         raise RuntimeError(f"{name}: exhausted retries")
 
+    def _gemini(model, prompt, max_tokens, retries=2):
+        """Google's own endpoint. Kept separate from _openai_compat because the
+        request and response shapes differ."""
+        for attempt in range(retries + 1):
+            r = requests.post(
+                f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent",
+                headers={"x-goog-api-key": GEMINI_KEY, "Content-Type": "application/json"},
+                json={"contents": [{"parts": [{"text": prompt}]}],
+                      "generationConfig": {"maxOutputTokens": max_tokens,
+                                           "temperature": 0.7}},
+                timeout=60,
+            )
+            if r.status_code == 429 and attempt < retries:
+                wait = 2 ** attempt
+                print(f"[AI] Gemini {model} rate-limited — waiting {wait}s")
+                time.sleep(wait)
+                continue
+            r.raise_for_status()
+            data = r.json()
+
+            # A safety block or a MAX_TOKENS stop returns 200 with no parts.
+            # Indexing straight into candidates[0].content.parts[0] turned those
+            # into a bare KeyError that said nothing about what happened.
+            cands = data.get("candidates") or []
+            if not cands:
+                fb = data.get("promptFeedback") or {}
+                raise ValueError(f"no candidates (blockReason="
+                                 f"{fb.get('blockReason', 'unknown')})")
+            parts = (cands[0].get("content") or {}).get("parts") or []
+            if not parts:
+                raise ValueError(f"empty response (finishReason="
+                                 f"{cands[0].get('finishReason', 'unknown')})")
+            text = "".join(p.get("text", "") for p in parts).strip()
+            if len(text) < 50:
+                raise ValueError(f"Too short ({len(text)} chars)")
+            print(f"[AI] Gemini {model} OK")
+            return text
+        raise RuntimeError(f"Gemini {model}: exhausted retries")
+
     OR_HEADERS = {
         "Authorization": f"Bearer {OPENROUTER_KEY}",
         "Content-Type":  "application/json",
@@ -264,61 +387,43 @@ def ask_ai(prompt: str, max_tokens: int = 4000) -> str:
     OR_URL = "https://openrouter.ai/api/v1/chat/completions"
     errors = []
 
-    if OPENROUTER_KEY:
+    # Gemini first: the direct API is the only genuinely free path to a Flash
+    # model. OpenRouter carries every Gemini tier but NONE of them free —
+    # google/gemini-3.5-flash bills $1.50/$9.00 per million there.
+    for _model in GEMINI_MODELS:
+        if not GEMINI_KEY:
+            break
         try:
-            return _openai_compat(OR_URL, OR_HEADERS,
-                "meta-llama/llama-3.3-70b-instruct:free",
-                prompt, max_tokens, "OR Llama 3.3 70B")
+            return _gemini(_model, prompt, max_tokens)
         except Exception as e:
-            errors.append(str(e)); print(f"[AI] OR Llama failed -> {e}")
-
-    if GEMINI_KEY:
-        try:
-            r = requests.post(
-                f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={GEMINI_KEY}",
-                json={"contents": [{"parts": [{"text": prompt}]}],
-                      "generationConfig": {"maxOutputTokens": max_tokens, "temperature": 0.7}},
-                timeout=45,
-            )
-            r.raise_for_status()
-            text = r.json()["candidates"][0]["content"]["parts"][0]["text"].strip()
-            if len(text) < 50: raise ValueError(f"Too short ({len(text)} chars)")
-            print("[AI] Gemini 2.0 Flash OK")
-            return text
-        except Exception as e:
-            errors.append(str(e)); print(f"[AI] Gemini failed -> {e}")
-
-    if OPENROUTER_KEY:
-        try:
-            return _openai_compat(OR_URL, OR_HEADERS,
-                "deepseek/deepseek-r1-0528:free",
-                prompt, max_tokens, "OR DeepSeek R1 0528")
-        except Exception as e:
-            errors.append(str(e)); print(f"[AI] OR DeepSeek failed -> {e}")
+            errors.append(str(e)); print(f"[AI] Gemini {_model} failed -> {e}")
 
     if GROQ_KEY:
         try:
             return _openai_compat(
                 "https://api.groq.com/openai/v1/chat/completions",
                 {"Authorization": f"Bearer {GROQ_KEY}", "Content-Type": "application/json"},
-                "llama-3.3-70b-versatile",
-                prompt, max_tokens, "Groq Llama 3.3 70B")
+                GROQ_MODEL, prompt, max_tokens, f"Groq {GROQ_MODEL}")
         except Exception as e:
             errors.append(str(e)); print(f"[AI] Groq failed -> {e}")
 
-    if OPENROUTER_KEY:
+    for _model in OPENROUTER_MODELS:
+        if not OPENROUTER_KEY:
+            break
         try:
-            return _openai_compat(OR_URL, OR_HEADERS,
-                "google/gemma-3-27b-it:free",
-                prompt, max_tokens, "OR Gemma 3 27B")
+            return _openai_compat(OR_URL, OR_HEADERS, _model,
+                                  prompt, max_tokens, f"OR {_model}")
         except Exception as e:
-            errors.append(str(e)); print(f"[AI] OR Gemma failed -> {e}")
+            errors.append(str(e)); print(f"[AI] OR {_model} failed -> {e}")
 
-    if OPENROUTER_KEY:
+    # openrouter/auto is deliberately last and off by default: its pricing is
+    # variable (-1), so it can route a request to a PAID model and bill for it.
+    # Opt in with OPENROUTER_ALLOW_PAID=1 if a run completing matters more than
+    # the run being free.
+    if OPENROUTER_KEY and OPENROUTER_ALLOW_PAID:
         try:
-            return _openai_compat(OR_URL, OR_HEADERS,
-                "openrouter/auto",
-                prompt, max_tokens, "OR Auto Free Router")
+            return _openai_compat(OR_URL, OR_HEADERS, "openrouter/auto",
+                                  prompt, max_tokens, "OR Auto (PAID — variable pricing)")
         except Exception as e:
             errors.append(str(e)); print(f"[AI] OR Auto failed -> {e}")
 
@@ -2504,10 +2609,31 @@ def doctor():
     if not (OPENROUTER_KEY or GEMINI_KEY or GROQ_KEY):
         print("\n  !! No AI provider configured — research/draft cannot run.")
 
+    # Model IDs go stale: this pipeline sat on gemini-2.0-flash for months after
+    # Google shut it down, and the only symptom was the Gemini leg quietly
+    # falling through to the next provider. Resolve each configured model
+    # against the live API so a retired one is visible here, not in a run log.
+    if GEMINI_KEY:
+        print(f"\n  Gemini models ({', '.join(GEMINI_MODELS)}):")
+        for m in GEMINI_MODELS:
+            try:
+                r = requests.get(
+                    f"https://generativelanguage.googleapis.com/v1beta/models/{m}",
+                    headers={"x-goog-api-key": GEMINI_KEY}, timeout=15)
+                if r.ok:
+                    print(f"    OK    {m}")
+                else:
+                    detail = (r.json().get("error", {}).get("message", "") or r.text)[:70]
+                    print(f"    FAIL  {m} — HTTP {r.status_code}: {detail}")
+            except Exception as e:
+                print(f"    FAIL  {m} — {str(e)[:70]}")
+
     samples = humanizer.load_voice_samples()
     print(f"\n  voice samples: {len(samples)} "
           f"({'fingerprint active' if samples else 'none — using persona text'})")
     print(f"  research library: {len(rx.library_read())} past run(s) at {rx.LIBRARY_PATH}")
+    _brain = brain.load()
+    print(f"  brain: {_brain.summary() if _brain else 'empty — run: python agent.py brain init'}")
 
     print("\n" + "=" * 68)
     print("SOURCES")
@@ -2516,6 +2642,114 @@ def doctor():
     print()
     print(rx.format_health(health))
     return 1 if [h for h in health if h.status in ("failed", "timeout")] else 0
+
+
+def try_cli():
+    """python agent.py try "<topic>" — draft one article end to end, locally.
+
+    The normal draft path waits on a Telegram reply, so there was no way to
+    exercise the pipeline on a topic you name. This runs every stage — brain
+    pull, outline, article, humanize loop, judge loop, claims map, promo pack —
+    and writes the output to disk. It never publishes: Dev.to only ever receives
+    published:false, and without DEVTO_API_KEY it is not called at all.
+    """
+    topic = " ".join(sys.argv[2:]).strip()
+    if not topic:
+        print('Usage: python agent.py try "your topic here"')
+        return 1
+    if not (GEMINI_KEY or GROQ_KEY or OPENROUTER_KEY):
+        print("No AI provider configured. Put a key in .env "
+              "(cp .env.example .env) or export GEMINI_API_KEY.")
+        return 1
+
+    print("=" * 68)
+    print(f"DRY RUN — {topic}")
+    print("=" * 68)
+    print(f"  provider chain : Gemini {GEMINI_MODELS if GEMINI_KEY else '(no key)'}")
+    print(f"  Dev.to         : {'draft only (published:false)' if DEVTO_KEY else 'not configured — skipped'}")
+    print(f"  GitHub         : {'configured' if (GITHUB_TOKEN and GITHUB_REPO) else 'not configured — saving locally'}")
+    print(f"  Telegram       : {'configured' if (TELEGRAM_BOT and TELEGRAM_CHAT) else 'not configured — messages skipped'}")
+    b = brain.load()
+    print(f"  brain          : {b.summary() if b else 'empty'}")
+    print()
+
+    try:
+        draft_single(topic, 1, 1)
+    except Exception as e:
+        import traceback
+        traceback.print_exc()
+        print(f"\nDRY RUN FAILED: {e}")
+        return 1
+
+    slug = draft_slug(topic)
+    print("\n" + "=" * 68)
+    print("OUTPUT")
+    print("=" * 68)
+    for p in (f"medium_drafts/{slug}.md", f"medium_drafts/{slug}.claims.md",
+              f"social/{slug}-promo.md"):
+        print(f"  {'OK  ' if os.path.exists(p) else 'MISS'} {p}")
+    print("\nScore the result:")
+    print(f"  python humanizer.py medium_drafts/{slug}.md")
+    print(f"  python claims.py    medium_drafts/{slug}.md")
+    print(f"  python agent.py judge medium_drafts/{slug}.md")
+    return 0
+
+
+def models_cli():
+    """python agent.py models — resolve every configured model against the live
+    provider catalogues. Model IDs rot silently: a retired slug just 404s and the
+    chain falls through, so a run 'succeeds' on a worse model, or not at all."""
+    bad = 0
+
+    print("=" * 68)
+    print("OPENROUTER")
+    print("=" * 68)
+    try:
+        data = requests.get("https://openrouter.ai/api/v1/models", timeout=30).json()["data"]
+        cat = {m["id"]: m for m in data}
+        for mid in OPENROUTER_MODELS:
+            m = cat.get(mid)
+            if not m:
+                print(f"  GONE  {mid}"); bad += 1
+                continue
+            p = m.get("pricing") or {}
+            is_free = str(p.get("prompt")) in ("0", "0.0") and str(p.get("completion")) in ("0", "0.0")
+            print(f"  {'FREE' if is_free else 'PAID'}  {mid:<48} "
+                  f"ctx={m.get('context_length', '?')}")
+            if not is_free:
+                print(f"        !! bills {p.get('prompt')}/{p.get('completion')} per token")
+        free_now = sorted(m["id"] for m in data if m["id"].endswith(":free"))
+        print(f"\n  {len(free_now)} ':free' models currently on OpenRouter:")
+        for f in free_now:
+            print(f"    {f}")
+    except Exception as e:
+        print(f"  could not reach OpenRouter: {str(e)[:90]}")
+
+    print("\n" + "=" * 68)
+    print("GEMINI (direct API — the only free path to a Flash model)")
+    print("=" * 68)
+    if not GEMINI_KEY:
+        print("  GEMINI_API_KEY not set — cannot resolve model IDs")
+    else:
+        for mid in GEMINI_MODELS:
+            try:
+                r = requests.get(
+                    f"https://generativelanguage.googleapis.com/v1beta/models/{mid}",
+                    headers={"x-goog-api-key": GEMINI_KEY}, timeout=15)
+                if r.ok:
+                    print(f"  OK    {mid}")
+                else:
+                    detail = (r.json().get("error", {}).get("message", "") or r.text)[:70]
+                    print(f"  FAIL  {mid} — HTTP {r.status_code}: {detail}"); bad += 1
+            except Exception as e:
+                print(f"  FAIL  {mid} — {str(e)[:70]}"); bad += 1
+
+    print(f"\n  Groq: {GROQ_MODEL} ({'key set' if GROQ_KEY else 'no key'})")
+    print(f"  openrouter/auto fallback: {'ENABLED (can bill)' if OPENROUTER_ALLOW_PAID else 'off'}")
+    if bad:
+        print(f"\n  {bad} configured model(s) unusable — override with "
+              f"GEMINI_MODELS / OPENROUTER_MODELS")
+    return 1 if bad else 0
 
 
 def humanize_cli():
@@ -2550,7 +2784,8 @@ if __name__ == "__main__":
     COMMANDS = {"research": research, "draft": draft, "educational": educational,
                 "social": social, "doctor": doctor, "humanize": humanize_cli,
                 "judge": judge_cli, "promo": promo_cli,
-                "claims": claims_cli, "brain": brain_cli}
+                "claims": claims_cli, "brain": brain_cli,
+                "models": models_cli, "try": try_cli}
     cmd = sys.argv[1] if len(sys.argv) > 1 else ""
     if cmd not in COMMANDS:
         print("Usage: python agent.py <command>\n"
@@ -2563,6 +2798,8 @@ if __name__ == "__main__":
               "  promo <file.md> [url] LinkedIn + X posts from a finished article\n"
               "  claims <file.md>      map every factual claim to its receipt\n"
               "  brain [init|list|check <topic>]  the author's own sourced material\n"
+              "  try \"<topic>\"         draft one article end to end, locally, publish nothing\n"
+              "  models                resolve every configured model against the provider\n"
               "  doctor                probe every source and key, publish nothing")
         sys.exit(2)
     sys.exit(COMMANDS[cmd]() or 0)
