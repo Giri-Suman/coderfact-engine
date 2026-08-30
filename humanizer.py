@@ -748,6 +748,51 @@ def _sane_length(new, old, floor=0.55):
     return bool(new) and len(new) >= int(len(old) * floor)
 
 
+# A model handed a truncated or confusing draft often answers ABOUT the draft
+# instead of rewriting it — "the content cuts off mid-sentence, send the full
+# text and I will rewrite it". That reply is prose of a plausible length, so
+# every length check passes and the commentary gets saved as the article. It
+# has to be recognised by what it is, not how long it is.
+_META_REPLY_PATTERNS = [
+    r"\bwhat you (?:pasted|provided|shared|sent)\b",
+    r"\bthe (?:rest|remainder) of the (?:draft|article|text)\b",
+    r"\bi can only (?:rewrite|work with|see|process)\b",
+    r"\b(?:send|share|provide|paste) (?:me )?the (?:full|complete|rest)\b",
+    r"\bi(?:'d| would) need the (?:full|complete|entire)\b",
+    r"\b(?:content|text|draft) (?:cuts|is cut) off\b",
+    r"\bcuts off mid-?sentence\b",
+    r"\bwell short of the\b.{0,30}\btarget\b",
+    r"\bthe draft (?:appears|seems) to be\b",
+    r"\b(?:please|kindly) (?:provide|share|paste)\b",
+    r"\bis missing from\b",
+    r"\bonce you (?:send|provide|share)\b",
+    r"\bi (?:cannot|can't|am unable to) (?:rewrite|complete|proceed)\b",
+]
+# Named _META_REPLY_RE, not _META_RE: that name is already taken above by the
+# TAGS:/META: line masker, and shadowing it silently stopped those lines
+# being protected from rewrites.
+_META_REPLY_RE = re.compile("|".join(_META_REPLY_PATTERNS), re.IGNORECASE)
+
+
+def looks_like_meta_response(text, original=""):
+    """True when the model talked about the task instead of doing it.
+
+    Two signals, either is enough:
+      * an explicit meta phrase ("send the full text")
+      * the reply is far shorter than the input AND addresses the reader as
+        "you" — a rewrite has no reason to do either.
+    """
+    if not text:
+        return True
+    head = text[:1200]
+    if _META_REPLY_RE.search(head):
+        return True
+    if original and len(text) < len(original) * 0.5:
+        if re.search(r"\byou (?:pasted|sent|provided|need|would|can)\b", head, re.IGNORECASE):
+            return True
+    return False
+
+
 def rewrite_pass(md, ask_ai, voice_context, voice_brief, target_words):
     """First pass: rewrite for voice. Observations about real writing, not
     tricks to insert."""
@@ -790,6 +835,9 @@ WORD TARGET: about {target_words}. If the result runs short, leave it short. Pad
 Output the rewritten article only. No preamble, no commentary."""
     out = ask_ai(prompt, max_tokens=int(target_words * 2.2) + 600)
     out = _strip_preamble(out)
+    if looks_like_meta_response(out, md):
+        print("[humanize] rewrite returned commentary, not a rewrite — keeping input")
+        return md
     if not _sane_length(out, md):
         print(f"[humanize] rewrite too short ({len(out)} vs {len(md)}) — keeping input")
         return md
@@ -824,6 +872,9 @@ RULES FOR THIS PASS:
 Output the corrected article only. No preamble, no list of what you changed."""
     out = ask_ai(prompt, max_tokens=int(target_words * 2.2) + 600)
     out = _strip_preamble(out)
+    if looks_like_meta_response(out, md):
+        print(f"[humanize] repair round {round_no} returned commentary — keeping previous")
+        return md
     if not _sane_length(out, md, floor=0.7):
         print(f"[humanize] repair round {round_no} too short — keeping previous")
         return md

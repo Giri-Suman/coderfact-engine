@@ -134,6 +134,30 @@ X post (the model is asked to cut, truncation at a word boundary is the
 fallback), and the LinkedIn hook is checked against the ~210-char fold, which is
 the only line most people read. Both drafts go through the humanizer first.
 
+### Why a draft can come back at 70 words
+
+Gemini 3.x Flash has thinking **on by default**, and thinking shares the
+`maxOutputTokens` budget with the visible answer. A 900-word article requested
+with a 2,760-token budget came back as 70 words and `finishReason=MAX_TOKENS` —
+reasoning had spent the budget before the prose started.
+
+That truncated stub then flowed into the humanizer, which replied *about* the
+draft ("the content cuts off mid-sentence, send the full text and I will rewrite
+it"), and because that reply was plausible prose of a reasonable length, every
+length check passed and the commentary was saved as the article.
+
+Four guards now, at each level it could have been caught:
+
+1. `GEMINI_TOKEN_HEADROOM` (3x) and `GEMINI_THINKING=low` give reasoning room.
+   The thinking field is dropped and retried automatically if the API rejects it.
+2. A `MAX_TOKENS` / `SAFETY` / `RECITATION` finish reason raises, so the chain
+   falls through to the next provider instead of returning a fragment. The error
+   reports the token split so you can see thinking-vs-output.
+3. `looks_like_meta_response()` rejects a reply that discusses the draft rather
+   than being it — in `rewrite_pass`, `repair_pass` and `judge.revise`.
+4. An article under `ARTICLE_MIN_RATIO` of its target, or ending mid-sentence,
+   fails the draft instead of continuing down the pipeline.
+
 ### Claims map
 
 Borrowed from learnwithhasan.com's "AI Content Factory": no claim ships without
@@ -243,6 +267,9 @@ Tuning (all optional):
 | `OPENROUTER_MODELS` | 4 `:free` slugs | OpenRouter chain, in order |
 | `GROQ_MODEL` | `llama-3.3-70b-versatile` | Groq model |
 | `OPENROUTER_ALLOW_PAID` | unset | Enable `openrouter/auto` (can bill) |
+| `GEMINI_THINKING` | `low` | Thinking level; empty string sends no field |
+| `GEMINI_TOKEN_HEADROOM` | `3.0` | Multiplier on the output-token budget |
+| `ARTICLE_MIN_RATIO` | `0.45` | Min share of target words before a draft is rejected |
 | `PROMO_THREAD_LEN` | `6` | Posts in the generated X thread |
 | `VOICE_SAMPLES_DIR` | `voice` | Where voice samples live |
 | `SOURCE_TIMEOUT` | `45` | Per-source seconds before a source is degraded |

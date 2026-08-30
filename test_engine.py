@@ -595,6 +595,53 @@ check("the 3.11 detector ignores {{ }} escaped braces",
       not _fstring_backslash_offenders('x = f"""{{ "k": "v\\n" }}"""'))
 
 
+print("\ntruncation + meta-response guards")
+
+# The exact failure that shipped: a truncated draft made the model answer ABOUT
+# the draft, and that commentary was saved as the article.
+_REFUSAL = """The rest of the draft is missing from what you pasted - the content
+cuts off mid-sentence after "successfully." I can only rewrite what is actually
+here, and what is here is roughly 70 words, well short of the 900-word target.
+
+To produce a full article, I would need the complete draft. Send the full text
+and I will rewrite it against the voice fingerprint."""
+
+_REAL = """The webhook fired at 02:14 and came back 400. Stripe signs every payload
+with a timestamped HMAC, and the raw body has to reach the verifier byte for
+byte. Next.js 14 parses JSON before the handler runs, so the signature never
+matched. Setting the route to accept the raw body fixed it."""
+
+check("refusal is recognised as commentary", H.looks_like_meta_response(_REFUSAL))
+check("real prose is not flagged", not H.looks_like_meta_response(_REAL, _REAL))
+check("empty output counts as meta", H.looks_like_meta_response(""))
+for _p in ("send the full text", "I can only rewrite", "what you pasted",
+           "the content cuts off", "I would need the complete"):
+    check("meta phrase caught: " + _p, H.looks_like_meta_response("Sure. " + _p + " and I will help."))
+
+_kept = H.rewrite_pass(_REAL, lambda p, max_tokens=0: _REFUSAL, "v", "", 900)
+check("rewrite_pass discards a commentary reply", _kept == _REAL)
+_kept2 = H.repair_pass(_REAL, [H.Finding(1, "x", "high", 1, "e", "f")],
+                       lambda p, max_tokens=0: _REFUSAL, 900)
+check("repair_pass discards a commentary reply", _kept2 == _REAL)
+
+_better = _REAL.replace("came back 400", "returned 400")
+check("a genuine rewrite is accepted",
+      H.rewrite_pass(_REAL, lambda p, max_tokens=0: _better, "v", "", 900) == _better)
+
+_v = J.Verdict(findings=[{"severity": "high", "dimension": "structure",
+                          "quote": "x", "problem": "y", "fix": "z"}])
+check("judge.revise discards a commentary reply",
+      J.revise(_REAL, _v, lambda p, max_tokens=0: _REFUSAL) == _REAL)
+
+# Mid-sentence truncation: the published break ended on "and successfully".
+_END_RE = re.compile(r"[.!?)\]`\"\u2019]\s*$")
+for _txt, _complete in [("A full sentence.", True), ("ends with code `x`", True),
+                        ("a list item)", True), ("and successfully", False),
+                        ("The model was steered toward", False)]:
+    check(("complete: " if _complete else "truncated: ") + _txt[:28],
+          bool(_END_RE.search(_txt.strip())) == _complete)
+
+
 # ── summary ──────────────────────────────────────────────────────────────────
 print("\n" + "=" * 62)
 print(f"{len(PASS)} passed, {len(FAIL)} failed")

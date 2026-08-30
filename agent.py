@@ -78,6 +78,16 @@ OPENROUTER_MODELS = [m.strip() for m in os.getenv(
     "nvidia/nemotron-3-super-120b-a12b:free,"
     "google/gemma-4-31b-it:free").split(",") if m.strip()]
 
+# Gemini 3.x thinks by default and thinking shares the output-token budget with
+# the answer, so the budget has to cover BOTH. "low" keeps reasoning cheap for a
+# drafting workload; set GEMINI_THINKING="" to send no thinking field at all.
+GEMINI_THINKING = os.getenv("GEMINI_THINKING", "low").strip()
+GEMINI_TOKEN_HEADROOM = float(os.getenv("GEMINI_TOKEN_HEADROOM", "3.0"))
+
+# Minimum share of the target word count an article must reach before it is
+# allowed to continue down the pipeline.
+ARTICLE_MIN_RATIO = float(os.getenv("ARTICLE_MIN_RATIO", "0.45"))
+
 # openrouter/auto has variable pricing and can bill real money. Off unless asked.
 OPENROUTER_ALLOW_PAID = os.getenv("OPENROUTER_ALLOW_PAID", "").strip().lower() in ("1", "true", "yes")
 
@@ -340,16 +350,34 @@ def ask_ai(prompt: str, max_tokens: int = 4000) -> str:
 
     def _gemini(model, prompt, max_tokens, retries=2):
         """Google's own endpoint. Kept separate from _openai_compat because the
-        request and response shapes differ."""
+        request and response shapes differ.
+
+        Gemini 3.x Flash has thinking ON by default (medium), and thinking
+        shares the maxOutputTokens budget with the visible answer. A 900-word
+        article asked for with maxOutputTokens=2760 came back as 70 words with
+        finishReason=MAX_TOKENS, because reasoning had eaten the budget. Two
+        defences: ask for a low thinking level, and give the budget real
+        headroom.
+        """
+        budget = max(int(max_tokens * GEMINI_TOKEN_HEADROOM), 4096)
+        cfg = {"maxOutputTokens": budget, "temperature": 0.7}
+        if GEMINI_THINKING:
+            # Field name is not in the public REST reference; if the API
+            # rejects it we drop it and retry rather than failing the call.
+            cfg["thinkingConfig"] = {"thinkingLevel": GEMINI_THINKING}
+
         for attempt in range(retries + 1):
             r = requests.post(
                 f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent",
                 headers={"x-goog-api-key": GEMINI_KEY, "Content-Type": "application/json"},
                 json={"contents": [{"parts": [{"text": prompt}]}],
-                      "generationConfig": {"maxOutputTokens": max_tokens,
-                                           "temperature": 0.7}},
-                timeout=60,
+                      "generationConfig": cfg},
+                timeout=90,
             )
+            if r.status_code == 400 and "thinkingConfig" in cfg:
+                print(f"[AI] Gemini {model}: thinkingConfig rejected — retrying without")
+                cfg.pop("thinkingConfig")
+                continue
             if r.status_code == 429 and attempt < retries:
                 wait = 2 ** attempt
                 print(f"[AI] Gemini {model} rate-limited — waiting {wait}s")
@@ -373,7 +401,21 @@ def ask_ai(prompt: str, max_tokens: int = 4000) -> str:
             text = "".join(p.get("text", "") for p in parts).strip()
             if len(text) < 50:
                 raise ValueError(f"Too short ({len(text)} chars)")
-            print(f"[AI] Gemini {model} OK")
+
+            # A MAX_TOKENS stop that still produced some text is the dangerous
+            # case: it looks like success and returns a sentence fragment. That
+            # fragment previously flowed into the humanizer, which responded
+            # with commentary about the truncation, and the commentary was
+            # saved as the article. Treat it as a failure and fall through.
+            finish = (cands[0].get("finishReason") or "").upper()
+            if finish in ("MAX_TOKENS", "RECITATION", "SAFETY", "PROHIBITED_CONTENT"):
+                usage = data.get("usageMetadata") or {}
+                raise ValueError(
+                    f"truncated: finishReason={finish}, budget={budget}, "
+                    f"thoughts={usage.get('thoughtsTokenCount', '?')}, "
+                    f"output={usage.get('candidatesTokenCount', '?')} "
+                    f"({len(text)} chars kept)")
+            print(f"[AI] Gemini {model} OK ({len(text)} chars)")
             return text
         raise RuntimeError(f"Gemini {model}: exhausted retries")
 
@@ -1516,7 +1558,22 @@ Output: clean Markdown only. Start with the hook scene. No preamble.
 """, max_tokens=int(target_words * 2.4) + 600)
         if not article or len(article) < 200:
             raise ValueError(f"Article too short ({len(article)} chars)")
-        print(f"[draft] Article generated: {len(article)} chars")
+
+        # A flat 200-char floor let a 70-word stub through on a 900-word target.
+        # Measure against what was actually asked for, and treat a draft ending
+        # mid-sentence as truncation regardless of length — both are the
+        # signature of an output-token budget that ran out.
+        _words = humanizer.prose_word_count(article)
+        if _words < target_words * ARTICLE_MIN_RATIO:
+            raise ValueError(
+                f"Article truncated: {_words} words vs {target_words} target "
+                f"(floor {ARTICLE_MIN_RATIO:.0%}). Usually the model's output-token "
+                f"budget ran out — check the provider log above for finishReason.")
+        if not re.search(r'[.!?)\]`"’]\s*$', article.strip()):
+            raise ValueError(
+                f"Article ends mid-sentence ({_words} words): "
+                f"...{article.strip()[-70:]!r}")
+        print(f"[draft] Article generated: {len(article)} chars, {_words} prose words")
     except Exception as e:
         tg_err("Pass 2 article writing", e)
         raise

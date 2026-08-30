@@ -375,6 +375,9 @@ Output the corrected article only. No preamble, no changelog."""
 
     out = ask_ai(prompt, max_tokens=int(len(article) / 3) + 1200)
     out = humanizer._strip_preamble(out)
+    if humanizer.looks_like_meta_response(out, article):
+        print("[judge] revision returned commentary, not an article — keeping previous")
+        return article
     if not out or len(out) < len(article) * 0.6:
         print(f"[judge] revision too short ({len(out) if out else 0} vs {len(article)}) — keeping previous")
         return article
