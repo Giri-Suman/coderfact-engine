@@ -550,6 +550,51 @@ check("render lists the unsourced section",
       "Unsourced" in C.render(_cm) or not _cm.unsourced)
 
 
+# ── Python 3.11 f-string compatibility ───────────────────────────────────────
+# CI runs 3.11, where a backslash inside an f-string EXPRESSION is a
+# SyntaxError; PEP 701 only lifted that in 3.12. Dev machines on 3.12+ compile
+# such a line happily and the break only shows up in Actions, so scan for it
+# here. ast.parse(feature_version=(3,11)) does NOT catch this — it was a
+# tokenizer restriction, not a grammar feature.
+print("\npython 3.11 compatibility")
+
+import re
+import glob as _glob2
+
+_FSTR = re.compile(r"(?:rf|fr|f|F)(\"\"\"|'''|\"|')(.*?)\1", re.DOTALL)
+
+
+def _fstring_backslash_offenders(src):
+    # Drop {{ and }} first: those are literal braces in an f-string (JSON in a
+    # prompt template), not expressions.
+    src = src.replace("{{", "\x00").replace("}}", "\x01")
+    out = []
+    for m in _FSTR.finditer(src):
+        for expr in re.findall(r"\{([^{}]*)\}", m.group(2)):
+            if "\\" in expr:
+                out.append((src.count("\n", 0, m.start()) + 1, expr[:60]))
+    return out
+
+
+# test_engine.py is skipped: the two checks below deliberately embed a bad
+# line as a fixture, and CI's compileall covers this file anyway.
+_offenders = []
+for _f in sorted(f for f in _glob2.glob("*.py") if f != "test_engine.py"):
+    with open(_f, encoding="utf-8") as _fh:
+        _offenders += [(_f, ln, ex) for ln, ex in _fstring_backslash_offenders(_fh.read())]
+
+check("no backslash inside an f-string expression (breaks Python 3.11)",
+      not _offenders,
+      "; ".join(f"{f}:{ln} {{{ex}}}" for f, ln, ex in _offenders[:4]))
+
+# The detector must actually detect — a guard that silently passes is worse
+# than no guard.
+check("the 3.11 detector catches a known-bad line",
+      len(_fstring_backslash_offenders("""x = f"a {re.sub(r'\\s+', ' ', b)} c" """)) == 1)
+check("the 3.11 detector ignores {{ }} escaped braces",
+      not _fstring_backslash_offenders('x = f"""{{ "k": "v\\n" }}"""'))
+
+
 # ── summary ──────────────────────────────────────────────────────────────────
 print("\n" + "=" * 62)
 print(f"{len(PASS)} passed, {len(FAIL)} failed")

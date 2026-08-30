@@ -134,7 +134,11 @@ class Story:
         if self.source:
             L.append(f"    source: {self.source}")
         if self.body:
-            L.append(f"    what happened: {re.sub(r'\s+', ' ', self.body)[:400]}")
+            # Computed outside the f-string on purpose: CI runs Python 3.11,
+            # where a backslash inside an f-string expression is a SyntaxError.
+            # PEP 701 only lifted that in 3.12, so this must stay split.
+            flat = re.sub(r"\s+", " ", self.body)
+            L.append(f"    what happened: {flat[:400]}")
         return "\n".join(L)
 
 
