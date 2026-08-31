@@ -1,14 +1,11 @@
 {
   "topics": [
-    "Build SaaS With Cursor: I Built a $19 App in 11 Hours",
-    "AI Agent Tutorial: Stop Scrolling News \u2014 My LangGraph Code",
-    "GitHub Actions Not Working: The Silent Fail That Wasted My 3 Hours"
+    "Fast Search Autocomplete: The Python Trie That Cut My Latency to P99 0ms",
+    "Local AI Agent: I Built a Smart Home Controller in 1 Hour With Python",
+    "Claude Prompt Engineering: Why Vibe Coding Breaks Prompts (And the Fix)"
   ],
-  "date": "August 30, 2026",
+  "date": "August 31, 2026",
   "title_history": [
-    "Build AI Agent Python",
-    "Automation Scripts Saved",
-    "Vibe Coding Tutorial",
     "LangGraph Tutorial: I Automated",
     "Vibe Coding Tutorial: 48hr App",
     "Automation Script: $1,200/Month",
@@ -35,63 +32,100 @@
     "Automation Script Income",
     "Build SaaS With Cursor: I Built a $19 App in 11 Hours",
     "AI Agent Tutorial: Stop Scrolling News \u2014 My LangGraph Code",
-    "GitHub Actions Not Working: The Silent Fail That Wasted My 3 Hours"
+    "GitHub Actions Not Working: The Silent Fail That Wasted My 3 Hours",
+    "Fast Search Autocomplete: The Python Trie That Cut My Latency to P99 0ms",
+    "Local AI Agent: I Built a Smart Home Controller in 1 Hour With Python",
+    "Claude Prompt Engineering: Why Vibe Coding Breaks Prompts (And the Fix)"
   ],
   "last_update_id": 70323300,
   "virality_data": [
     {
-      "topic": "Vibe coding a small SaaS in one weekend",
-      "category": "B",
-      "category_name": "Vibe Coding / AI-Assisted Workflow",
-      "virality_score": 78,
-      "developer_pain": "medium",
-      "freshness": "fresh",
-      "suman_angle": "Vibe coding a $19 SaaS in 11 hours \u2014 full prompts, full code, full Stripe screenshot",
-      "target_keywords": [
-        "vibe coding tutorial",
-        "build saas with cursor",
-        "ai assisted coding"
+      "topic": "Why I dumped elasticsearch for a memory-mapped trie to achieve 0ms autocomplete on 240M domains",
+      "category": "G",
+      "category_name": "Software Architecture Insight",
+      "virality_score": 92,
+      "analysis": "This topic rides on the massive Hacker News and Reddit traction of the 0ms autocomplete article. Devs are highly critical of Elasticsearch's memory footprint and are seeking ultra-fast, bare-metal alternatives. Suman can share a practical architectural pivot showing how to implement a memory-mapped trie in Node/Python for instant lookups.",
+      "cross_source_signals": [
+        "Hacker News: P99 0 ms* autocomplete for 240M domain names (80 comments)",
+        "Reddit r/programming: p99 0 ms* autocomplete for 240 million domain names"
       ],
-      "money_angle": "Real Gumroad/Stripe revenue from a one-weekend build",
-      "story_angle": "Closed the laptop Friday at 9pm with an idea, opened it Sunday with a paying customer",
-      "analysis": "Vibe coding is the dominant 2026 dev meme. Real numbers + working code beats every theoretical post.",
-      "competing_articles": "Most posts show the workflow but skip the money / honest failures \u2014 Suman shows both."
-    },
-    {
-      "topic": "Building a research AI agent in 80 lines",
-      "category": "C",
-      "category_name": "AI Agents & Multi-Agent Workflows",
-      "virality_score": 76,
       "developer_pain": "high",
       "freshness": "breaking",
-      "suman_angle": "I replaced my morning news scroll with a 4-agent pipeline (full code)",
-      "target_keywords": [
-        "ai agent tutorial",
-        "langgraph python",
-        "multi agent workflow"
-      ],
       "money_angle": "",
-      "story_angle": "Tired of the morning doom-scroll, built a personal news agent over chai",
-      "analysis": "Agent-building tutorials have huge search demand and most are abstract. Concrete code wins.",
-      "competing_articles": "Existing posts are diagrams without working orchestration."
+      "story_angle": "I was paying $120/month for a bloated Elasticsearch cluster just to serve search autocomplete, so I rewrote it using a raw memory-mapped trie that costs $0 to run.",
+      "suman_angle": "How I built a P99 0ms autocomplete for 240M records using a 50-line memory-mapped trie",
+      "target_keywords": [
+        "autocomplete system design",
+        "memory mapped file python",
+        "fast search autocomplete"
+      ],
+      "competing_articles": "Most system design articles focus on complex Redis/Elasticsearch clusters, whereas this offers a simple, ultra-fast single-node architectural alternative.",
+      "real_story_evidence": [
+        {
+          "source": "Hacker News (Show HN)",
+          "title": "P99 0 ms* autocomplete for 240M domain names",
+          "url": "https://ruurtjan.com/articles/p99-0ms-autocomplete-for-240-million-domain-names",
+          "what_to_cite": "How binary search on a memory-mapped file of sorted fixed-size records achieves sub-millisecond autocomplete times."
+        }
+      ]
     },
     {
-      "topic": "GitHub Actions silent failures",
-      "category": "F",
-      "category_name": "Debugging / Fix With Code",
-      "virality_score": 70,
-      "developer_pain": "high",
-      "freshness": "established",
-      "suman_angle": "Why my GitHub Action failed with zero error message \u2014 the 3-hour root cause",
-      "target_keywords": [
-        "github actions not working",
-        "github actions debug",
-        "github actions silent fail"
+      "topic": "Building a local-first AI agent using a 14MB LLM to control my smart home",
+      "category": "C",
+      "category_name": "AI Agents & Multi-Agent Workflows",
+      "virality_score": 89,
+      "analysis": "Agentic LLMs usually require massive cloud APIs that introduce high latency and cost. This article taps into the trending 'Needle2' 14MB model to show how to build an ultra-lightweight, local-first agentic workflow. It perfectly targets devs looking for cheap, private, and fast on-device agent solutions.",
+      "cross_source_signals": [
+        "Hacker News: Show HN: Needle2: 14MB agentic LLM for phones, wearables, smart home and robots (537 points)"
       ],
+      "developer_pain": "high",
+      "freshness": "breaking",
       "money_angle": "",
-      "story_angle": "Pipeline went green, repo did nothing \u2014 chased it for three hours",
-      "analysis": "Persistent pain on Stack Overflow weekly. Existing posts are outdated. Fresh root-cause wins.",
-      "competing_articles": "Existing articles are 2023/2024 \u2014 runner image and syntax both moved on."
+      "story_angle": "I got tired of paying OpenAI API fees and waiting 3 seconds for my smart home agent to respond, so I deployed a 14MB model locally that runs in milliseconds.",
+      "suman_angle": "How to build a local-first AI agent in 60 lines of Python using a 14MB LLM",
+      "target_keywords": [
+        "local ai agent",
+        "on device llm python",
+        "needle2 agentic llm"
+      ],
+      "competing_articles": "Most agent tutorials rely on heavy frameworks like LangChain with GPT-4, whereas this focuses on lightweight, zero-latency local deployments.",
+      "real_story_evidence": [
+        {
+          "source": "Hacker News (Show HN)",
+          "title": "Show HN: Needle2: 14MB agentic LLM for phones, wearables, smart home and robots",
+          "url": "https://cactuscompute.com/needle",
+          "what_to_cite": "The Cactus Needle2 model's ability to execute tool calls and structured extraction within a tiny 14MB footprint."
+        }
+      ]
+    },
+    {
+      "topic": "The load-bearing vocabulary of Claude: How I cut my token costs by 40% with precise prompting",
+      "category": "B",
+      "category_name": "Vibe Coding / AI-Assisted Workflow",
+      "virality_score": 94,
+      "analysis": "This topic addresses the massive financial and token-limit pain points of vibe coding with Claude. By analyzing the load-bearing vocabulary of Claude, devs can prompt more efficiently and avoid hallucinations. It provides immediate, actionable value to any developer using AI-assisted workflows in 2026.",
+      "cross_source_signals": [
+        "Hacker News: Show HN: The load-bearing vocabulary of Claude (694 points, 326 comments)"
+      ],
+      "developer_pain": "high",
+      "freshness": "breaking",
+      "money_angle": "Reduces Claude API token consumption and subscription waste by up to 40%.",
+      "story_angle": "My cursor billing was getting out of hand because of Claude's verbose responses, so I analyzed its load-bearing vocabulary to write highly compressed, hyper-efficient prompts.",
+      "suman_angle": "How I optimized my Claude prompts using its 'load-bearing vocabulary' to save 40% on token costs",
+      "target_keywords": [
+        "claude prompt engineering",
+        "vibe coding optimization",
+        "reduce llm token costs"
+      ],
+      "competing_articles": "Standard prompting guides offer generic advice like 'be specific', whereas this uses mathematical vocabulary insights to optimize prompts.",
+      "real_story_evidence": [
+        {
+          "source": "Hacker News (Show HN)",
+          "title": "Show HN: The load-bearing vocabulary of Claude",
+          "url": "https://louisabraham.github.io/load-bearing/",
+          "what_to_cite": "How certain key verbs and formatting constraints acts as structural pillars for Claude's reasoning capabilities."
+        }
+      ]
     }
   ],
   "success_stories": [
@@ -99,7 +133,14 @@
       "source": "show_hn",
       "title": "Show HN: The load-bearing vocabulary of Claude",
       "url": "https://louisabraham.github.io/load-bearing/",
-      "signal": "686 points \u00b7 321 comments",
+      "signal": "694 points \u00b7 326 comments",
+      "snippet": ""
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: NFC Energy-Harvesting PCB Business Card with an MCU",
+      "url": "https://wilsonharper.net/projects/businesscard/",
+      "signal": "159 points \u00b7 16 comments",
       "snippet": ""
     },
     {
@@ -174,13 +215,6 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: OpenTIE and OpenXWA, Modern Ports of Tie Fighter and X-Wing Alliance",
-      "url": "https://github.com/elyosh/OpenTIE/",
-      "signal": "223 points \u00b7 57 comments",
-      "snippet": ""
-    },
-    {
-      "source": "show_hn",
       "title": "Show HN: Scroll through all 43252003274489856000 Rubik's Cube states",
       "url": "https://everycube.alen.is/",
       "signal": "295 points \u00b7 123 comments",
@@ -188,10 +222,10 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: We built open OpenRouter that turns usage into a better model",
-      "url": "https://github.com/experientiallabs/experiential",
-      "signal": "218 points \u00b7 46 comments",
-      "snippet": "Hi HN, we built an open source model gateway. It's a single place to manage our own self hosted, frontier, and open source models in one place. It\u2019s is rust native, built for concurrency, and implemen"
+      "title": "Show HN: OpenTIE and OpenXWA, Modern Ports of Tie Fighter and X-Wing Alliance",
+      "url": "https://github.com/elyosh/OpenTIE/",
+      "signal": "227 points \u00b7 58 comments",
+      "snippet": ""
     },
     {
       "source": "show_hn",
@@ -202,10 +236,10 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: A techno machine in one HTML file, with verifiable renders",
-      "url": "https://ssx360.github.io/rack-02/?src=hn",
-      "signal": "240 points \u00b7 48 comments",
-      "snippet": ""
+      "title": "Show HN: We built open OpenRouter that turns usage into a better model",
+      "url": "https://github.com/experientiallabs/experiential",
+      "signal": "220 points \u00b7 46 comments",
+      "snippet": "Hi HN, we built an open source model gateway. It's a single place to manage our own self hosted, frontier, and open source models in one place. It\u2019s is rust native, built for concurrency, and implemen"
     },
     {
       "source": "show_hn",
@@ -213,6 +247,13 @@
       "url": "https://baselashraf81.github.io/eigendrum/",
       "signal": "243 points \u00b7 103 comments",
       "snippet": "Hi HN, I built Eigendrum, a web tool that solves the 2D wave equation for arbitrary shapes so you can hear what they sound like as drums. How it works: * Solves -\u2207\u00b2u = \u03bbu using finite element analysis"
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: A techno machine in one HTML file, with verifiable renders",
+      "url": "https://ssx360.github.io/rack-02/?src=hn",
+      "signal": "240 points \u00b7 48 comments",
+      "snippet": ""
     },
     {
       "source": "show_hn",
@@ -227,13 +268,6 @@
       "url": "https://www.whodunnitai.com/",
       "signal": "215 points \u00b7 89 comments",
       "snippet": "Hey HN! I'm excited to show off this really fun project I put together. I originally built this project 2-3 years ago, AI was already booming at the time, however voice AI agents were still very early"
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: textlog \u2013 A quiet, text-only microblogging platform, open-source, no JS",
-      "url": "https://textlog.cc/about",
-      "signal": "210 points \u00b7 83 comments",
-      "snippet": ""
     }
   ]
 }
