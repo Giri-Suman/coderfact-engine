@@ -642,6 +642,52 @@ for _txt, _complete in [("A full sentence.", True), ("ends with code `x`", True)
           bool(_END_RE.search(_txt.strip())) == _complete)
 
 
+print("\nMedium-format critique fixes")
+
+import agent as A
+
+# 1. Mermaid: Medium shows alt text when the image fails, so it must describe
+#    the diagram. It used to say literally "Mermaid diagram".
+_mmd = "```mermaid\ngraph TD\n  A[Incoming request] --> B{Cache hit?}\n  B -->|yes| C[Serve from trie]\n```"
+_out = A.convert_mermaid_for_medium(_mmd)
+check("mermaid alt text describes the diagram", "Mermaid diagram" not in _out and "Incoming request" in _out)
+check("mermaid payload is URL-safe", not any(c in _out.split("img/")[1].split(")")[0] for c in "+/"))
+
+# 3. SEO scaffolding: question headings read as SEO-farm and Medium downranks
+#    them, but wh-word noun phrases are exactly the narrative style we want.
+for _h, _is_q in [("How do I build a fast search autocomplete in python using a trie?", True),
+                  ("What does the full working code look like?", True),
+                  ("Can you fix it without breaking everything?", True),
+                  ("Why the linear scan falls over", False),
+                  ("What actually worked", False),
+                  ("The memory gotcha", False),
+                  ("Caching the warm start", False)]:
+    check(("question: " if _is_q else "narrative: ") + _h[:44],
+          bool(A._QUESTION_HEAD_RE.match(_h)) == _is_q)
+
+# 4. Credibility: a perf number without machine/tool/sample size gets flagged,
+#    because that is the one a commenter will try to reproduce.
+for _txt, _fig, _want in [
+        ("It held 22,400 req/s on a 4-core M2 with wrk, 100 connections.", "22,400 req/s", "SELF"),
+        ("Latency dropped to 180 ms, measured with hyperfine over 50 runs.", "180 ms", "SELF"),
+        ("I measured 22,400 req/s on the new build.", "22,400 req/s", "NEEDS_METHOD"),
+        ("The build now uses 90 MB.", "90 MB", "NEEDS_METHOD"),
+        ("My script took 47 minutes before I touched it.", "47 minutes", "SELF")]:
+    _c = C.classify([C.Claim(text=_txt, figure=_fig, kind="number")], brain=B.Brain())[0]
+    check(f"{_want}: {_fig} in {_txt[:34]!r}", _c.provenance == _want, _c.provenance)
+
+check("claims render surfaces missing methodology",
+      "missing methodology" in C.render(C.build_map(
+          "The build now uses 90 MB.\n", title="t", brain=B.Brain())).lower())
+
+# 2. Code presentation: the checklist names real counts, not a generic reminder.
+_chk = A._medium_checklist("![Diagram: A to B](u)\n\n```python\nimport x\n```\n\n```bash\nls\n```")
+check("checklist counts diagrams", "1 diagram" in _chk)
+check("checklist counts code blocks and languages", "2 code block" in _chk and "bash, python" in _chk)
+check("checklist names the Gist workaround", "Gist" in _chk)
+check("checklist skips empty sections", "diagram" not in A._medium_checklist("plain prose, no artifacts"))
+
+
 # ── summary ──────────────────────────────────────────────────────────────────
 print("\n" + "=" * 62)
 print(f"{len(PASS)} passed, {len(FAIL)} failed")

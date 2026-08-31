@@ -86,6 +86,15 @@ GEMINI_TOKEN_HEADROOM = float(os.getenv("GEMINI_TOKEN_HEADROOM", "3.0"))
 
 # Minimum share of the target word count an article must reach before it is
 # allowed to continue down the pipeline.
+# A heading is only interrogative when a wh-word is followed by an auxiliary
+# ("How DO I build...", "What DOES it cost"). "Why the linear scan falls over"
+# and "What actually worked" are noun phrases and are exactly the narrative
+# style we want, so matching on the wh-word alone would reject good headings.
+_QUESTION_HEAD_RE = re.compile(
+    r"^\s*(?:how|what|why|when|where|which|who)\s+(?:do|does|did|is|are|was|were|can|could|should|will|would|have|has|had)\b"
+    r"|^\s*(?:can|does|do|is|are|should|will|would|have|has)\s+(?:i|you|we|it|they|the)\b",
+    re.IGNORECASE)
+
 ARTICLE_MIN_RATIO = float(os.getenv("ARTICLE_MIN_RATIO", "0.45"))
 
 # openrouter/auto has variable pricing and can bill real money. Off unless asked.
@@ -116,7 +125,14 @@ def convert_mermaid_for_medium(body: str) -> str:
         diagram = match.group(1).strip()
         encoded = base64.urlsafe_b64encode(diagram.encode('utf-8')).decode('ascii')
         img_url = f"https://mermaid.ink/img/{encoded}?theme=dark&bgColor=!1a1a2e"
-        return f"![Mermaid diagram]({img_url})\n"
+        # Alt text matters more than usual: Medium has no native Mermaid
+        # support, so when the image fails the reader sees this string. It said
+        # "Mermaid diagram", which is why the critique reported exactly that.
+        labels = re.findall(r"\[([^\]]{3,40})\]|\{([^}]{3,40})\}", diagram)
+        names = [a or b for a, b in labels][:3]
+        head = (diagram.splitlines() or ["diagram"])[0].strip()
+        alt = " to ".join(names) if len(names) >= 2 else (names[0] if names else head)
+        return f"![Diagram: {alt}]({img_url})\n"
 
     return pattern.sub(replace_mermaid, body)
 
@@ -162,6 +178,39 @@ def extract_json(raw: str, want=None):
 # QuickChart.io — render real data charts as PNG URLs (no API key required)
 # Pass a Chart.js config dict; get back a Markdown image string.
 # ═══════════════════════════════════════════════════════════════════════════════
+def _medium_checklist(body: str) -> str:
+    """Medium-specific steps the Markdown cannot express.
+
+    Medium renders neither Mermaid nor syntax-highlighted code. The pipeline
+    converts diagrams to mermaid.ink images, but the import still needs a human
+    pass, and a checklist naming the actual counts beats a generic reminder.
+    """
+    n_diagrams = body.count("![Diagram:")
+    fences = re.findall(r"```(\w*)", body)
+    real = [f for f in fences if f and f.lower() not in ("mermaid", "json?chameleon")]
+    langs = sorted(set(real))
+
+    L = ["MEDIUM PUBLISHING CHECKLIST\n"]
+    if n_diagrams:
+        L.append(
+            "  [ ] %d diagram(s) are mermaid.ink images. Open each in the preview.\n"
+            "      If one shows alt text instead of a picture, rebuild it at\n"
+            "      mermaid.live and upload the PNG - Medium has no Mermaid support.\n"
+            % n_diagrams)
+    if real:
+        L.append(
+            "  [ ] %d code block(s) (%s). Medium's native blocks barely highlight.\n"
+            "      Paste each into a GitHub Gist and embed the Gist URL, or use\n"
+            "      carbon.now.sh images. Gists stay copyable; carbon images do not.\n"
+            % (len(real), ", ".join(langs) or "no language tags"))
+    L.append(
+        "  [ ] Any throughput/latency/memory number: confirm the machine and the\n"
+        "      method are in the same paragraph. The .claims.md file lists ones\n"
+        "      flagged NEEDS_METHOD - those get fact-checked in the comments.\n")
+    L.append("  [ ] Headings read as narrative, not as search queries.\n")
+    return "".join(L)
+
+
 def quickchart_url(config: dict, w: int = 700, h: int = 400, bg: str = "#1a1a2e") -> str:
     try:
         import urllib.parse as _u
@@ -1296,8 +1345,7 @@ Every string value must be valid JSON — no unescaped quotes, no literal newlin
   "real_metric": "Before/after number e.g. 47 min to 3 min.",
   "surprise_finding": "Unexpected discovery only a builder would know.",
   "reader_benefit": "What reader can do after reading.",
-  "h2_headings": ["heading 1","heading 2","heading 3","heading 4"],
-  "aeo_h2_headings": ["People Also Ask question with long-tail keyword 1","Q2","Q3","Q4"],
+  "h2_headings": ["5-6 NARRATIVE headings that tell the story in order: the incident, why the obvious approach fails, the actual fix, the gotcha nobody warns you about, the refinement, the results. Short noun phrases, NOT questions. e.g. 'Why the linear scan falls over', 'The memory gotcha', 'Caching the warm start'"],
   "tldr": {{"problem":"one sentence","solution":"one sentence","result":"one sentence"}},
   "engagement_cta": "Specific question for readers.",
   "thumbnail_prompt": "Cinematic Midjourney/Flux prompt for a dark-theme tech thumbnail. Be specific about the technology shown.",
@@ -1373,20 +1421,27 @@ Return ONLY the JSON object.""")
     widget_prompt    = _s(outline.get("interactive_widget_prompt"), "An interactive code simulator for this topic")
     seo_keywords     = _list(outline.get("seo_keywords"),  ["python","automation","tutorial","coding","developer"])
 
+    # Narrative arc, not People-Also-Ask questions. A stack of question headings
+    # ("How do I build X in Python using a trie?") is the tell of SEO-farm
+    # content: Medium's curation downranks it and readers bounce. The keyword
+    # goes in the prose; the heading moves the story.
     h2_default = [
-        "Why This Problem Is More Painful Than It Looks",
-        "What I Tried First (And Why It Failed)",
-        "The Actual Fix — With the Full Code",
-        "Results, Surprises, and What I'd Do Differently",
+        "The incident",
+        "Why the obvious fix falls over",
+        "What actually worked",
+        "The gotcha nobody warns you about",
+        "Results, and what I would do differently",
     ]
-    aeo_default = [
-        "Why Does This Problem Keep Happening?",
-        "How Do You Fix It Without Breaking Everything Else?",
-        "What Does the Full Working Code Look Like?",
-        "How Much Time Does This Actually Save?",
-    ]
-    h2_headings  = _list(outline.get("h2_headings"),     h2_default) or h2_default
-    aeo_headings = _list(outline.get("aeo_h2_headings"), aeo_default) or aeo_default
+    h2_headings = _list(outline.get("h2_headings"), h2_default) or h2_default
+
+    # Reject question-form headings even if the model ignored the instruction.
+    _questiony = [h for h in h2_headings
+                  if h.strip().endswith("?")
+                  or _QUESTION_HEAD_RE.match(h.strip())]
+    if len(_questiony) > 1:
+        print(f"[draft] {len(_questiony)} question-form headings from the outline — "
+              f"using the narrative default instead")
+        h2_headings = h2_default
 
     tldr_raw = outline.get("tldr", {})
     tldr = _dict(tldr_raw, ["problem","solution","result"], "")
@@ -1490,8 +1545,16 @@ Competitor angle (what makes this DIFFERENT):
    - **Fix:** {tldr.get('solution', solution_name)}
    - **Result:** {tldr.get('result', real_metric)}
 
-3. H2 SECTIONS — use these exact headings, in order (these are AEO question-form headings so Google's Answer Engine indexes them as direct answers):
-{chr(10).join(f'   ## {h}' for h in aeo_headings)}
+3. H2 SECTIONS — use these exact headings, in order:
+{chr(10).join(f'   ## {h}' for h in h2_headings)}
+
+   These are NARRATIVE headings and they must stay that way. Do NOT rewrite them
+   as questions. A stack of "How do I X in Python using Y?" headings is the
+   signature of SEO-farm content: Medium's curation system downranks it and human
+   readers bounce. The heading's job is to move the story forward, not to match a
+   search query. The keyword belongs in the prose underneath it.
+   Never write "The Answer is:", "In short:", "TL;DR:" or a bolded restatement
+   directly under a heading.
 
 4. Each H2 contains ALL THREE of: prose (2-4 paragraphs), one concrete artifact (code OR diagram OR table OR chart), one specific named detail (version, error message, command).
 
@@ -1537,6 +1600,18 @@ Competitor angle (what makes this DIFFERENT):
 
 ▌LENGTH
 ~{target_words} words. If you need to cut, cut adjectives and the second sentence of every paragraph that has three sentences. Never cut code or diagrams.
+
+▌BENCHMARK NUMBERS NEED METHODOLOGY
+Any throughput, latency, or memory figure gets a methodology clause in the same
+paragraph — machine, dataset size, and how it was measured. Not a footnote, not
+"benchmarks show". Write it the way you would defend it in a comment thread,
+because that is exactly where it will be challenged:
+  BAD:  "It handles 22,400 req/s."
+  GOOD: "It held 22,400 req/s on a 4-core M2 with wrk, 100 connections, 30s, all
+         keys warm — single process, no network hop, so treat it as a ceiling."
+If you cannot state the machine and the method, do not state the number. Say
+"roughly an order of magnitude faster" and move on. A hedged number survives
+fact-checking; a precise one you cannot defend costs the author the reader.
 
 ▌ANTI-FABRICATION
 A. NEVER invent specific dollar amounts, MRR, user counts, follower counts, or company revenue without a real source.
@@ -1980,7 +2055,9 @@ Return ONLY a JSON array with 3-6 objects. No markdown fences. Schema:
         f"TAGS: {', '.join(tags)}\n"
         f"THUMBNAIL PROMPT: {thumbnail_prompt}\n"
         "---\n"
-        "✂️ CUT THE ABOVE BLOCK BEFORE PUBLISHING TO MEDIUM ✂️\n\n"
+        f"{_medium_checklist(medium_body)}"
+        "---\n"
+        "✂️ CUT EVERYTHING ABOVE THIS LINE BEFORE PUBLISHING TO MEDIUM ✂️\n\n"
     )
     github_content = seo_block + medium_content
 

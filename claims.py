@@ -73,6 +73,26 @@ _IDENTIFIER_RE = re.compile(
     r"\b(?:v?\d+\.\d+(?:\.\d+)?|:\d{2,5}\b|20\d{2}|python\s*3\.\d+|node\s*\d+)",
     re.IGNORECASE)
 
+# A throughput/latency/memory claim is the one a commenter will actually try
+# to reproduce, so "22,400 req/s" with no machine or method is a credibility
+# liability even when the author did measure it. SELF provenance is not
+# enough for these — they also need methodology in the same paragraph.
+_PERF_RE = re.compile(
+    r"\d[\d,.]*\s*(?:req/s|rps|qps|requests?/s|ops/s|ms|milliseconds?|seconds?|MB|GB|KB|x faster|x slower)\b",
+    re.IGNORECASE)
+_METHOD_RE = re.compile(
+    # A tool...
+    r"\b(?:wrk|apachebench|\bab\b|hyperfine|locust|k6|jmeter|pytest-benchmark|siege|oha)\b"
+    # ...or a machine...
+    r"|\b\d+\s*(?:-|\s)?(?:core|vcpu|cpu|gb|thread)s?\b"
+    r"|\bon (?:a|my|the) [\w\s-]{0,30}?(?:mac|m1|m2|m3|m4|laptop|vm|droplet|instance|box|server|macbook)\b"
+    # ...or a sample size / distribution.
+    r"|\b(?:over|across) \d+ (?:runs?|iterations?|requests?|samples?)\b"
+    r"|\b\d+ connections\b|\b(?:median|average|mean) of\b|\bp9[59]\b"
+    r"|\b(?:single process|cold start|all keys warm|warm cache)\b",
+    re.IGNORECASE)
+
+
 BLOCKING = "UNSOURCED"
 
 
@@ -235,9 +255,19 @@ def classify(claims, brain=None, evidence_urls=None, evidence_text=None, article
         # be the sole authority on somebody's revenue.
         money = re.search(r"\$|mrr|arr|customers?|subscribers?|users?|followers?|downloads?",
                           c.figure, re.IGNORECASE)
+        if not money and _PERF_RE.search(c.figure):
+            if _METHOD_RE.search(c.text):
+                c.provenance, c.receipt = "SELF", "measured, methodology stated"
+            else:
+                c.provenance = "NEEDS_METHOD"
+                c.receipt = ("throughput/latency/memory claim with no machine, tool "
+                             "or sample size — this is the number a commenter will "
+                             "try to reproduce")
+            continue
+
         if not money and _SELF_RE.search(c.text):
             c.provenance = "SELF"
-            c.receipt = "first-person measurement"
+            c.receipt = "first-person process detail"
             continue
 
         c.provenance = "UNSOURCED"
@@ -266,7 +296,9 @@ class ClaimsMap:
     def summary(self):
         return (f"{len(self.claims)} claim(s), {self.coverage:.0%} sourced "
                 f"({self.counts.get('BRAIN', 0)} brain, {self.counts.get('EVIDENCE', 0)} evidence, "
-                f"{self.counts.get('SELF', 0)} first-person, {len(self.unsourced)} unsourced)")
+                f"{self.counts.get('SELF', 0)} first-person, "
+                f"{self.counts.get('NEEDS_METHOD', 0)} need methodology, "
+                f"{len(self.unsourced)} unsourced)")
 
     def as_dict(self):
         return {"title": self.title, "slug": self.slug,
@@ -297,9 +329,17 @@ def render(cmap):
     else:
         L += ["Every checkable claim has a receipt.", ""]
 
+    needs = [c for c in cmap.claims if c.provenance == "NEEDS_METHOD"]
+    if needs:
+        L += ["## Performance claims missing methodology", "",
+              "These will be fact-checked in the comments. State the machine, the",
+              "tool and the sample size in the same paragraph, or hedge the number.", ""]
+        for c in needs:
+            L += [f"- **line {c.line}** `{c.figure}`", f"  > {c.text}", ""]
+
     for label, heading in (("BRAIN", "Backed by the author's own measurements"),
                            ("EVIDENCE", "Backed by cited research"),
-                           ("SELF", "First-person process detail (no external source possible)")):
+                           ("SELF", "Measured by the author, methodology stated")):
         group = [c for c in cmap.claims if c.provenance == label]
         if not group:
             continue
