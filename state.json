@@ -1,14 +1,11 @@
 {
   "topics": [
-    "Micro SaaS Launch: How I Made $1,200 in 14 Days on Reddit",
-    "MCP Server Tutorial: Stop Copy-Pasting Schemas to Claude",
-    "Git Aliases That Saved Me 5 Hours of Terminal Work This Week"
+    "Automatic bird identification: I built a local AI system with Python RTSP",
+    "On-device LLM guide: How I run a 14MB local AI agent on my old phone",
+    "Claude prompt engineering mistakes that wasted 10 hours (And the fixes)"
   ],
-  "date": "August 31, 2026",
+  "date": "September 01, 2026",
   "title_history": [
-    "Build AI Agent Python",
-    "Automation Script Pays",
-    "Vibe Coding SaaS Fast",
     "Build AI Agent Python",
     "Automation Scripts Saved",
     "Vibe Coding Full Stack",
@@ -35,100 +32,103 @@
     "Claude Prompt Engineering: Why Vibe Coding Breaks Prompts (And the Fix)",
     "Micro SaaS Launch: How I Made $1,200 in 14 Days on Reddit",
     "MCP Server Tutorial: Stop Copy-Pasting Schemas to Claude",
-    "Git Aliases That Saved Me 5 Hours of Terminal Work This Week"
+    "Git Aliases That Saved Me 5 Hours of Terminal Work This Week",
+    "Automatic bird identification: I built a local AI system with Python RTSP",
+    "On-device LLM guide: How I run a 14MB local AI agent on my old phone",
+    "Claude prompt engineering mistakes that wasted 10 hours (And the fixes)"
   ],
   "last_update_id": 70323301,
   "virality_data": [
     {
-      "topic": "How I launched my screenshots-to-actions Mac app (Scinta) on Reddit and made my first $1,200 in 14 days",
-      "category": "E",
-      "category_name": "Money / Income Story",
-      "virality_score": 94,
-      "analysis": "First-person indie hacker launch stories are currently dominating Medium's partner program algorithms. By anchoring the narrative to a real Reddit-to-product launch, it taps into the high-intent 'micro-SaaS' builder audience. The concrete monetary timeline ($1,200 in 14 days) drives exceptional click-through and read-ratio metrics.",
-      "cross_source_signals": [
-        "Reddit r/indiehackers: Highly upvoted launch thread for Scinta",
-        "Google Trends: 'micro saas ideas 2026' up 180%",
-        "Substack: Rising interest in screenshot-to-code automation utilities"
-      ],
-      "developer_pain": "high",
-      "freshness": "breaking",
-      "money_angle": "How a simple screenshots-to-actions utility converted Reddit beta feedback into $1,200 in direct Stripe sales within two weeks.",
-      "story_angle": "After getting roasted on r/indiehackers for a buggy beta, I spent 48 hours rewriting my Mac utility's OCR pipeline and launched to paying users.",
-      "suman_angle": "How we launched Scinta on Reddit and made our first $1,200 in 14 days (with our exact launch script)",
-      "target_keywords": [
-        "micro saas launch",
-        "indie hacker income",
-        "screenshot to code"
-      ],
-      "competing_articles": "Most income reports are vague or theoretical; this post provides the exact launch timeline, pricing tiers, and Reddit conversion rates.",
-      "real_story_evidence": [
-        {
-          "source": "Reddit (r/indiehackers)",
-          "title": "Two weeks ago I asked for feedback on Scinta, our screenshots-to-actions Mac app. We just launched",
-          "url": "https://www.reddit.com/r/indiehackers/comments/1w2ho6x/two_weeks_ago_i_asked_for_feedback_on_scinta_our/",
-          "what_to_cite": "How user feedback from a raw Reddit post was implemented within 14 days to transition from a buggy beta to a successful paid launch."
-        }
-      ]
-    },
-    {
-      "topic": "Building a custom MCP server to let Claude edit your local PostgreSQL database in 50 lines of Python",
-      "category": "C",
-      "category_name": "AI Agents & Multi-Agent Workflows",
+      "topic": "I built an automatic bird identification system using my home security cameras and Python",
+      "category": "D",
+      "category_name": "AI Automation Across Domains",
       "virality_score": 92,
-      "analysis": "Model Context Protocol (MCP) is the fastest-growing standard in the AI developer ecosystem right now. Providing a hands-on, copy-pasteable implementation of a custom MCP server satisfies the massive search volume for practical MCP tutorials. This bridges the gap between theoretical agent systems and real-world database manipulation.",
+      "analysis": "This bridges the gap between hardware tinkering and practical AI automation, which heavily engages the r/selfhosted and Medium builder communities. It takes a real-world physical signal (security cameras) and processes it with local AI tools. Readers love concrete, visual automation projects that they can replicate over a weekend using their existing home setups.",
       "cross_source_signals": [
-        "GitHub: punkpeye/awesome-mcp-servers gaining thousands of stars",
-        "Hacker News: Multi-agent orchestration protocols dominating front-page discussions",
-        "Google Trends: 'Model Context Protocol tutorial' search volume breakout"
-      ],
-      "developer_pain": "high",
-      "freshness": "breaking",
-      "money_angle": "",
-      "story_angle": "I got tired of manually copying schema definitions into Claude, so I built a custom MCP server to let my agent query my database directly.",
-      "suman_angle": "Stop copy-pasting schemas: How to build a custom MCP server for Claude in 50 lines of Python",
-      "target_keywords": [
-        "model context protocol",
-        "mcp server tutorial",
-        "claude agent python"
-      ],
-      "competing_articles": "Most MCP articles only list pre-made servers; this guide actually teaches the reader how to write their own custom protocol server from scratch.",
-      "real_story_evidence": [
-        {
-          "source": "GitHub",
-          "title": "punkpeye/awesome-mcp-servers A collection of MCP servers.",
-          "url": "https://github.com/punkpeye/awesome-mcp-servers",
-          "what_to_cite": "How the explosive growth of the awesome-mcp-servers ecosystem proves developers are actively looking for custom integration protocols."
-        }
-      ]
-    },
-    {
-      "topic": "7 Git aliases and commands I use every day to save 5 hours a week as a senior developer",
-      "category": "H",
-      "category_name": "Tips & Tricks / Real Workflow",
-      "virality_score": 89,
-      "analysis": "Practical, highly bookmarkable Git workflow articles consistently perform well on Medium due to their broad, cross-language appeal. By focusing on hyper-specific productivity-saving aliases rather than basic commands, it appeals directly to mid-to-senior level developers. The clear, copy-pasteable config blocks ensure high engagement and claps.",
-      "cross_source_signals": [
-        "Dev.to: Git workflow optimization posts trending with high reaction counts",
-        "Reddit r/programming: Recurring threads on terminal setup and command-line efficiency",
-        "GitHub: Dotfiles repositories seeing sustained search traffic"
+        "Hacker News: 471 points on security camera bird identification",
+        "GitHub: BirdNET-Go integration trending",
+        "Reddit r/selfhosted: high interest in local RTSP camera processing"
       ],
       "developer_pain": "medium",
-      "freshness": "classic",
+      "freshness": "breaking",
       "money_angle": "",
-      "story_angle": "After watching a junior dev spend 10 minutes resolving a simple merge conflict, I realized my custom Git configuration saves me hours of cognitive load.",
-      "suman_angle": "7 Git aliases and configurations I use to save 5 hours of terminal work every week",
+      "story_angle": "I got tired of guessing what birds were nesting in my backyard, so I hooked my RTSP security camera stream into a local Python pipeline to auto-identify every species in real-time.",
+      "suman_angle": "How I turned my home security cameras into an automatic bird identification system with Python",
       "target_keywords": [
-        "git aliases",
-        "git workflow tips",
-        "developer productivity command line"
+        "python rtsp camera",
+        "automatic bird identification",
+        "local ai automation"
       ],
-      "competing_articles": "Unlike generic 'Git 101' lists, this post focuses on advanced workflow automation, custom formatting, and fast conflict-resolution shortcuts.",
+      "competing_articles": "Most camera automation posts focus on generic motion detection; this article provides a complete pipeline from RTSP stream capture to audio/visual AI classification.",
       "real_story_evidence": [
         {
-          "source": "Dev.to",
-          "title": "10 Git Commands You\u2019ll Wish You Knew Earlier",
-          "url": "https://dev.to/sylwia-lask/10-git-commands-youll-wish-you-knew-earlier-4fcp",
-          "what_to_cite": "The high developer interest in upgrading basic command-line habits to advanced, time-saving terminal configurations."
+          "source": "Hacker News (Show HN)",
+          "title": "I turned my security cameras into an automatic bird identification system",
+          "url": "https://jasontucker.blog/how-i-turned-my-security-cameras-into-an-automatic-bird-identification-system-with-birdnet-go/",
+          "what_to_cite": "Using BirdNET-Go to analyze audio extracted from RTSP security camera streams for real-time wildlife logging."
+        }
+      ]
+    },
+    {
+      "topic": "How I deployed a 14MB agentic LLM locally on an old phone to control my smart home",
+      "category": "B",
+      "category_name": "Vibe Coding / AI-Assisted Workflow",
+      "virality_score": 94,
+      "analysis": "With the massive 2026 interest in running tiny, hyper-optimized models on-device, showing how to use a 14MB model for structured tool calling is highly viral. It appeals to developers frustrated by high API costs and latency of cloud LLMs for simple agentic tasks. The post provides a direct, copyable implementation of local structured extraction.",
+      "cross_source_signals": [
+        "Hacker News: Needle2 launch with 537 points",
+        "Reddit r/LocalLLaMA: intense discussion on sub-1B models for tool calling",
+        "GitHub: rising stars in on-device agent engines"
+      ],
+      "developer_pain": "high",
+      "freshness": "breaking",
+      "money_angle": "Cutting API costs by 100% by migrating local agent tasks from GPT-4o to an on-device 14MB model",
+      "story_angle": "I wanted to run an AI agent to parse my voice commands locally without paying OpenAI $30/month or draining my phone battery.",
+      "suman_angle": "I bypassed OpenAI: How I run a 14MB agentic LLM locally on my phone for zero-cost tool calling",
+      "target_keywords": [
+        "on device llm",
+        "local ai agent",
+        "needle2 tutorial"
+      ],
+      "competing_articles": "Most local LLM guides focus on massive 7B+ models that require a desktop GPU; this guide shows how to run an agentic model on lightweight, everyday hardware.",
+      "real_story_evidence": [
+        {
+          "source": "Hacker News (Show HN)",
+          "title": "Show HN: Needle2: 14MB agentic LLM for phones, wearables, smart home and robots",
+          "url": "https://cactuscompute.com/needle",
+          "what_to_cite": "Using Cactus Needle2, a 14MB model optimized specifically for fast structured extraction and tool calls on low-power devices."
+        }
+      ]
+    },
+    {
+      "topic": "The load-bearing vocabulary of Claude: How I optimized my prompts by avoiding hidden trigger words",
+      "category": "H",
+      "category_name": "Tips & Tricks / Real Workflow",
+      "virality_score": 91,
+      "analysis": "Prompt engineering is shifting from vibes to empirical analysis in 2026. Revealing the specific 'load-bearing' tokens that alter Claude's behavior gives developers a concrete optimization framework. This is highly actionable and provides immediate performance improvements for anyone building with Claude APIs.",
+      "cross_source_signals": [
+        "Hacker News: 700 points on Claude's load-bearing vocabulary",
+        "Reddit r/ChatGPTPro: discussions on prompt token optimization",
+        "Google Trends: 'claude prompt optimization' rising"
+      ],
+      "developer_pain": "high",
+      "freshness": "fresh",
+      "money_angle": "",
+      "story_angle": "I spent days debugging why my Claude-based agent kept failing on structured JSON outputs until I analyzed the exact tokens that trigger its internal reasoning loops.",
+      "suman_angle": "The load-bearing vocabulary of Claude: The exact words that make (or break) your LLM prompts",
+      "target_keywords": [
+        "claude prompt engineering",
+        "llm token optimization",
+        "claude system prompt"
+      ],
+      "competing_articles": "Generic prompt guides offer vague advice like 'be specific'; this article reveals the empirical token-level behavior of Sonnet 3.5.",
+      "real_story_evidence": [
+        {
+          "source": "Hacker News (Show HN)",
+          "title": "Show HN: The load-bearing vocabulary of Claude",
+          "url": "https://louisabraham.github.io/load-bearing/",
+          "what_to_cite": "Analyzing the empirical impact of specific vocabulary constraints and hidden token biases on Claude's output quality."
         }
       ]
     }
@@ -138,14 +138,7 @@
       "source": "show_hn",
       "title": "Show HN: The load-bearing vocabulary of Claude",
       "url": "https://louisabraham.github.io/load-bearing/",
-      "signal": "694 points \u00b7 326 comments",
-      "snippet": ""
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: NFC Energy-Harvesting PCB Business Card with an MCU",
-      "url": "https://wilsonharper.net/projects/businesscard/",
-      "signal": "165 points \u00b7 17 comments",
+      "signal": "700 points \u00b7 326 comments",
       "snippet": ""
     },
     {
@@ -170,13 +163,6 @@
       "snippet": "Hey HN, Henry from Cactus here! We previously released Cactus Needle, a 14MB agentic LLM for tool call, device use, and structured extraction for phones, wearables, smart homes, small robots and micro"
     },
     {
-      "source": "indie_reddit",
-      "title": "Two weeks ago I asked for feedback on Scinta, our screenshots-to-actions Mac app. We just launched",
-      "url": "https://www.reddit.com/r/indiehackers/comments/1w2ho6x/two_weeks_ago_i_asked_for_feedback_on_scinta_our/",
-      "signal": "r/indiehackers",
-      "snippet": ""
-    },
-    {
       "source": "show_hn",
       "title": "Show HN: Huzzah \u2013 a novel approach to coding with AI",
       "url": "https://www.danielvaughn.dev/posts/huzzah/",
@@ -192,13 +178,6 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: I'm a 15 Year Old Wannabe Engineer, This Is a Cycloidal Gearbox I Built",
-      "url": "https://github.com/tom-ilan/cycloidal_gearbox",
-      "signal": "338 points \u00b7 115 comments",
-      "snippet": ""
-    },
-    {
-      "source": "show_hn",
       "title": "Show HN: iPhone app takes simultaneous images from 2 lenses, fuses into 1 photo",
       "url": "https://photosynthesis.camera",
       "signal": "329 points \u00b7 305 comments",
@@ -210,6 +189,13 @@
       "url": "https://woxi.ad-si.com",
       "signal": "314 points \u00b7 46 comments",
       "snippet": "Woxi is an interpreter for the Wolfram Language written in Rust. It comes with Woxi Studio, a Mathematica-like GUI built with iced, but you can also use Woxi through a CLI, Jupyter kernel, Python pack"
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Laser Graffiti",
+      "url": "https://laser.consti.de",
+      "signal": "183 points \u00b7 36 comments",
+      "snippet": ""
     },
     {
       "source": "show_hn",
@@ -234,13 +220,6 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: OpenTIE and OpenXWA, Modern Ports of Tie Fighter and X-Wing Alliance",
-      "url": "https://github.com/elyosh/OpenTIE/",
-      "signal": "227 points \u00b7 58 comments",
-      "snippet": ""
-    },
-    {
-      "source": "show_hn",
       "title": "Show HN: Kakehashi \u2013 Experimental userspace to run macOS binaries on Linux ARM",
       "url": "https://github.com/wie-project/kakehashi",
       "signal": "255 points \u00b7 64 comments",
@@ -248,10 +227,10 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: We built open OpenRouter that turns usage into a better model",
-      "url": "https://github.com/experientiallabs/experiential",
-      "signal": "220 points \u00b7 46 comments",
-      "snippet": "Hi HN, we built an open source model gateway. It's a single place to manage our own self hosted, frontier, and open source models in one place. It\u2019s is rust native, built for concurrency, and implemen"
+      "title": "Show HN: OpenTIE and OpenXWA, Modern Ports of Tie Fighter and X-Wing Alliance",
+      "url": "https://github.com/elyosh/OpenTIE/",
+      "signal": "228 points \u00b7 58 comments",
+      "snippet": ""
     },
     {
       "source": "show_hn",
@@ -269,10 +248,31 @@
     },
     {
       "source": "show_hn",
+      "title": "Show HN: We built open OpenRouter that turns usage into a better model",
+      "url": "https://github.com/experientiallabs/experiential",
+      "signal": "220 points \u00b7 47 comments",
+      "snippet": "Hi HN, we built an open source model gateway. It's a single place to manage our own self hosted, frontier, and open source models in one place. It\u2019s is rust native, built for concurrency, and implemen"
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: NFC Energy-Harvesting PCB Business Card with an MCU",
+      "url": "https://wilsonharper.net/projects/businesscard/",
+      "signal": "215 points \u00b7 30 comments",
+      "snippet": ""
+    },
+    {
+      "source": "show_hn",
       "title": "Show HN: Wyzer Programming Language",
       "url": "https://github.com/Wyzer-Lang/wyzer",
       "signal": "227 points \u00b7 120 comments",
       "snippet": "So i've been working on this project since a few days (or months i should say), it's called wyzer (meaning wiser) it's a statically typed, compiled, resource-oriented programming language with integra"
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Voice driven murder mystery, Interview AI suspects with your voice",
+      "url": "https://www.whodunnitai.com/",
+      "signal": "215 points \u00b7 89 comments",
+      "snippet": "Hey HN! I'm excited to show off this really fun project I put together. I originally built this project 2-3 years ago, AI was already booming at the time, however voice AI agents were still very early"
     }
   ]
 }
