@@ -1,14 +1,11 @@
 {
   "topics": [
-    "Automatic bird identification: I built a local AI system with Python RTSP",
-    "On-device LLM guide: How I run a 14MB local AI agent on my old phone",
-    "Claude prompt engineering mistakes that wasted 10 hours (And the fixes)"
+    "Needle2 Python tutorial: I built a local agent in 60 lines of code",
+    "SlotStream Mac migration: Why cloud APIs broke our LLM pipeline",
+    "Voice AI app tutorial: I built a WebRTC Python game in 7 days"
   ],
-  "date": "September 01, 2026",
+  "date": "September 02, 2026",
   "title_history": [
-    "Build AI Agent Python",
-    "Automation Scripts Saved",
-    "Vibe Coding Full Stack",
     "Build AI Agent Python",
     "Vibe Coding Tutorial",
     "Make Money From Automation",
@@ -35,100 +32,106 @@
     "Git Aliases That Saved Me 5 Hours of Terminal Work This Week",
     "Automatic bird identification: I built a local AI system with Python RTSP",
     "On-device LLM guide: How I run a 14MB local AI agent on my old phone",
-    "Claude prompt engineering mistakes that wasted 10 hours (And the fixes)"
+    "Claude prompt engineering mistakes that wasted 10 hours (And the fixes)",
+    "Needle2 Python tutorial: I built a local agent in 60 lines of code",
+    "SlotStream Mac migration: Why cloud APIs broke our LLM pipeline",
+    "Voice AI app tutorial: I built a WebRTC Python game in 7 days"
   ],
   "last_update_id": 70323301,
   "virality_data": [
     {
-      "topic": "I built an automatic bird identification system using my home security cameras and Python",
-      "category": "D",
-      "category_name": "AI Automation Across Domains",
-      "virality_score": 92,
-      "analysis": "This bridges the gap between hardware tinkering and practical AI automation, which heavily engages the r/selfhosted and Medium builder communities. It takes a real-world physical signal (security cameras) and processes it with local AI tools. Readers love concrete, visual automation projects that they can replicate over a weekend using their existing home setups.",
+      "topic": "How to build an offline, zero-latency local agent using a 14MB LLM",
+      "category": "C",
+      "category_name": "AI Agents & Multi-Agent Workflows",
+      "virality_score": 93,
+      "analysis": "With the release of Needle2, there is immense developer interest in running agentic workflows entirely on-device without API costs or network latency. This article provides a step-by-step implementation of a tool-calling router using Python and a 14MB model. It targets the massive wave of developers looking to escape high OpenAI/Claude API bills.",
       "cross_source_signals": [
-        "Hacker News: 471 points on security camera bird identification",
-        "GitHub: BirdNET-Go integration trending",
-        "Reddit r/selfhosted: high interest in local RTSP camera processing"
-      ],
-      "developer_pain": "medium",
-      "freshness": "breaking",
-      "money_angle": "",
-      "story_angle": "I got tired of guessing what birds were nesting in my backyard, so I hooked my RTSP security camera stream into a local Python pipeline to auto-identify every species in real-time.",
-      "suman_angle": "How I turned my home security cameras into an automatic bird identification system with Python",
-      "target_keywords": [
-        "python rtsp camera",
-        "automatic bird identification",
-        "local ai automation"
-      ],
-      "competing_articles": "Most camera automation posts focus on generic motion detection; this article provides a complete pipeline from RTSP stream capture to audio/visual AI classification.",
-      "real_story_evidence": [
-        {
-          "source": "Hacker News (Show HN)",
-          "title": "I turned my security cameras into an automatic bird identification system",
-          "url": "https://jasontucker.blog/how-i-turned-my-security-cameras-into-an-automatic-bird-identification-system-with-birdnet-go/",
-          "what_to_cite": "Using BirdNET-Go to analyze audio extracted from RTSP security camera streams for real-time wildlife logging."
-        }
-      ]
-    },
-    {
-      "topic": "How I deployed a 14MB agentic LLM locally on an old phone to control my smart home",
-      "category": "B",
-      "category_name": "Vibe Coding / AI-Assisted Workflow",
-      "virality_score": 94,
-      "analysis": "With the massive 2026 interest in running tiny, hyper-optimized models on-device, showing how to use a 14MB model for structured tool calling is highly viral. It appeals to developers frustrated by high API costs and latency of cloud LLMs for simple agentic tasks. The post provides a direct, copyable implementation of local structured extraction.",
-      "cross_source_signals": [
-        "Hacker News: Needle2 launch with 537 points",
-        "Reddit r/LocalLLaMA: intense discussion on sub-1B models for tool calling",
-        "GitHub: rising stars in on-device agent engines"
+        "Hacker News: Needle2 launch trending with 537 points",
+        "GitHub: on-device agent tool calling repositories rising",
+        "Reddit r/LocalLLaMA: High demand for sub-100MB models with structured JSON output"
       ],
       "developer_pain": "high",
       "freshness": "breaking",
-      "money_angle": "Cutting API costs by 100% by migrating local agent tasks from GPT-4o to an on-device 14MB model",
-      "story_angle": "I wanted to run an AI agent to parse my voice commands locally without paying OpenAI $30/month or draining my phone battery.",
-      "suman_angle": "I bypassed OpenAI: How I run a 14MB agentic LLM locally on my phone for zero-cost tool calling",
+      "money_angle": "",
+      "story_angle": "I got tired of paying $120/month in API costs just for simple home automation routing, so I built a local agent using a 14MB model.",
+      "suman_angle": "How I built an offline, zero-latency local agent in 60 lines of Python using a 14MB LLM",
       "target_keywords": [
-        "on device llm",
         "local ai agent",
-        "needle2 tutorial"
+        "on-device llm",
+        "needle2 python tutorial",
+        "structured output local llm"
       ],
-      "competing_articles": "Most local LLM guides focus on massive 7B+ models that require a desktop GPU; this guide shows how to run an agentic model on lightweight, everyday hardware.",
+      "competing_articles": "Most local LLM guides focus on running heavy 8B models that lag on standard hardware; this shows how to achieve sub-50ms tool calling using a highly optimized 14MB engine.",
       "real_story_evidence": [
         {
           "source": "Hacker News (Show HN)",
           "title": "Show HN: Needle2: 14MB agentic LLM for phones, wearables, smart home and robots",
           "url": "https://cactuscompute.com/needle",
-          "what_to_cite": "Using Cactus Needle2, a 14MB model optimized specifically for fast structured extraction and tool calls on low-power devices."
+          "what_to_cite": "Cactus Needle2 is a highly optimized 14MB agentic LLM designed specifically for fast tool calling, device use, and structured extraction."
         }
       ]
     },
     {
-      "topic": "The load-bearing vocabulary of Claude: How I optimized my prompts by avoiding hidden trigger words",
-      "category": "H",
-      "category_name": "Tips & Tricks / Real Workflow",
-      "virality_score": 91,
-      "analysis": "Prompt engineering is shifting from vibes to empirical analysis in 2026. Revealing the specific 'load-bearing' tokens that alter Claude's behavior gives developers a concrete optimization framework. This is highly actionable and provides immediate performance improvements for anyone building with Claude APIs.",
+      "topic": "Why we stopped using hosted APIs and moved to local SlotStream execution on Mac",
+      "category": "G",
+      "category_name": "Software Architecture Insight",
+      "virality_score": 89,
+      "analysis": "The architectural transition from paid cloud endpoints to local execution of massive open-source models is a major 2026 trend. Highlighting how SlotStream allows a 104GB model like Qwen3.8-Flash-Next to run at 12 tok/s on a 48GB Mac Studio captures both cost-conscious and performance-driven tech leads. It offers concrete hardware trade-offs that are highly shareable.",
       "cross_source_signals": [
-        "Hacker News: 700 points on Claude's load-bearing vocabulary",
-        "Reddit r/ChatGPTPro: discussions on prompt token optimization",
-        "Google Trends: 'claude prompt optimization' rising"
+        "Hacker News: SlotStream post trending with 197 points and 94 comments",
+        "GitHub: carloslfu/slotstream trending in LLM inference tools",
+        "Reddit r/selfhosted: massive interest in running 100B+ models on consumer Macs"
       ],
-      "developer_pain": "high",
+      "developer_pain": "medium",
       "freshness": "fresh",
       "money_angle": "",
-      "story_angle": "I spent days debugging why my Claude-based agent kept failing on structured JSON outputs until I analyzed the exact tokens that trigger its internal reasoning loops.",
-      "suman_angle": "The load-bearing vocabulary of Claude: The exact words that make (or break) your LLM prompts",
+      "story_angle": "Our monthly API bill for processing high-volume structured data crossed $4,000, prompting us to redesign our inference pipeline around local memory-mapped slot streams.",
+      "suman_angle": "Why we migrated our LLM pipeline from cloud APIs to local SlotStream running a 104GB model on a Mac Studio",
       "target_keywords": [
-        "claude prompt engineering",
-        "llm token optimization",
-        "claude system prompt"
+        "slotstream mac",
+        "run large llm locally",
+        "qwen3.8 flash next mac studio",
+        "local llm inference architecture"
       ],
-      "competing_articles": "Generic prompt guides offer vague advice like 'be specific'; this article reveals the empirical token-level behavior of Sonnet 3.5.",
+      "competing_articles": "Most architecture articles discuss basic llama.cpp setups, whereas this dives into memory-mapped SlotStream execution to run models larger than unified memory sizes.",
       "real_story_evidence": [
         {
           "source": "Hacker News (Show HN)",
-          "title": "Show HN: The load-bearing vocabulary of Claude",
-          "url": "https://louisabraham.github.io/load-bearing/",
-          "what_to_cite": "Analyzing the empirical impact of specific vocabulary constraints and hidden token biases on Claude's output quality."
+          "title": "Show HN: Running 104GB Qwen3.8-Flash-Next on 48GB Mac with at ~12 tok/s",
+          "url": "https://github.com/carloslfu/slotstream",
+          "what_to_cite": "Using SlotStream to run a 104GB Qwen3.8-Flash-Next model on a 48GB Mac at approximately 12 tokens per second."
+        }
+      ]
+    },
+    {
+      "topic": "How I built and shipped a voice-driven AI web game in 7 days",
+      "category": "A",
+      "category_name": "Developer Success Story",
+      "virality_score": 91,
+      "analysis": "Medium readers love highly execution-focused, solo-developer success stories that show a complete pipeline from idea to launch. Centering the narrative around a voice-driven AI game taps into the current browser-based AI gaming meta. It provides actionable details on handling WebRTC audio streaming, prompt design, and latency optimization.",
+      "cross_source_signals": [
+        "Hacker News: Whodunnit AI trending with 215 points",
+        "Product Hunt: Voice-driven interactive entertainment gaining rapid traction",
+        "Google Trends: 'voice ai web app' search queries rising"
+      ],
+      "developer_pain": "medium",
+      "freshness": "fresh",
+      "money_angle": "How to design a viral loop and micro-transactions for a solo-developer AI game",
+      "story_angle": "I wanted to see if I could build a fully immersive, voice-controlled mystery game over a single week using modern web APIs and LLM backends.",
+      "suman_angle": "How I shipped a voice-driven AI murder mystery game in 7 days as a solo developer",
+      "target_keywords": [
+        "voice ai app tutorial",
+        "build web game with llm",
+        "webrtc voice assistant python",
+        "whodunnit ai clone"
+      ],
+      "competing_articles": "While other posts discuss theoretical voice interfaces, this is a highly practical execution story detailing the exact mechanics of real-time speech-to-text suspect interviews.",
+      "real_story_evidence": [
+        {
+          "source": "Hacker News (Show HN)",
+          "title": "Show HN: Voice driven murder mystery, Interview AI suspects with your voice",
+          "url": "https://www.whodunnitai.com/",
+          "what_to_cite": "The Whodunnit AI game allows players to use their voice to interview AI suspects in a real-time, highly interactive murder mystery setting."
         }
       ]
     }
@@ -136,9 +139,16 @@
   "success_stories": [
     {
       "source": "show_hn",
+      "title": "Show HN: Running 104GB Qwen3.8-Flash-Next on 48GB Mac with at ~12 tok/s",
+      "url": "https://github.com/carloslfu/slotstream",
+      "signal": "197 points \u00b7 94 comments",
+      "snippet": "I built slotstream, a way to run Qwen3.8-Flash-Next 4-bit on a low-memory mac starting from 16GB, a 125B parameter model that would need 100GB+ memory/RAM, thanks to expert-offloading/ssd-streaming. E"
+    },
+    {
+      "source": "show_hn",
       "title": "Show HN: The load-bearing vocabulary of Claude",
       "url": "https://louisabraham.github.io/load-bearing/",
-      "signal": "700 points \u00b7 326 comments",
+      "signal": "701 points \u00b7 326 comments",
       "snippet": ""
     },
     {
@@ -171,13 +181,6 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Isopolis \u2013 Isometric pixel map of SF",
-      "url": "https://sf.isopolis.city/",
-      "signal": "350 points \u00b7 81 comments",
-      "snippet": ""
-    },
-    {
-      "source": "show_hn",
       "title": "Show HN: iPhone app takes simultaneous images from 2 lenses, fuses into 1 photo",
       "url": "https://photosynthesis.camera",
       "signal": "329 points \u00b7 305 comments",
@@ -194,7 +197,7 @@
       "source": "show_hn",
       "title": "Show HN: Laser Graffiti",
       "url": "https://laser.consti.de",
-      "signal": "183 points \u00b7 36 comments",
+      "signal": "249 points \u00b7 60 comments",
       "snippet": ""
     },
     {
@@ -220,10 +223,10 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Kakehashi \u2013 Experimental userspace to run macOS binaries on Linux ARM",
-      "url": "https://github.com/wie-project/kakehashi",
-      "signal": "255 points \u00b7 64 comments",
-      "snippet": ""
+      "title": "Show HN: Eigendrum - Draw any shape and hear what it sounds like as a drum",
+      "url": "https://baselashraf81.github.io/eigendrum/",
+      "signal": "243 points \u00b7 103 comments",
+      "snippet": "Hi HN, I built Eigendrum, a web tool that solves the 2D wave equation for arbitrary shapes so you can hear what they sound like as drums. How it works: * Solves -\u2207\u00b2u = \u03bbu using finite element analysis"
     },
     {
       "source": "show_hn",
@@ -231,13 +234,6 @@
       "url": "https://github.com/elyosh/OpenTIE/",
       "signal": "228 points \u00b7 58 comments",
       "snippet": ""
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: Eigendrum - Draw any shape and hear what it sounds like as a drum",
-      "url": "https://baselashraf81.github.io/eigendrum/",
-      "signal": "243 points \u00b7 103 comments",
-      "snippet": "Hi HN, I built Eigendrum, a web tool that solves the 2D wave equation for arbitrary shapes so you can hear what they sound like as drums. How it works: * Solves -\u2207\u00b2u = \u03bbu using finite element analysis"
     },
     {
       "source": "show_hn",
@@ -255,13 +251,6 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: NFC Energy-Harvesting PCB Business Card with an MCU",
-      "url": "https://wilsonharper.net/projects/businesscard/",
-      "signal": "215 points \u00b7 30 comments",
-      "snippet": ""
-    },
-    {
-      "source": "show_hn",
       "title": "Show HN: Wyzer Programming Language",
       "url": "https://github.com/Wyzer-Lang/wyzer",
       "signal": "227 points \u00b7 120 comments",
@@ -269,10 +258,24 @@
     },
     {
       "source": "show_hn",
+      "title": "Show HN: NFC Energy-Harvesting PCB Business Card with an MCU",
+      "url": "https://wilsonharper.net/projects/businesscard/",
+      "signal": "217 points \u00b7 30 comments",
+      "snippet": ""
+    },
+    {
+      "source": "show_hn",
       "title": "Show HN: Voice driven murder mystery, Interview AI suspects with your voice",
       "url": "https://www.whodunnitai.com/",
       "signal": "215 points \u00b7 89 comments",
       "snippet": "Hey HN! I'm excited to show off this really fun project I put together. I originally built this project 2-3 years ago, AI was already booming at the time, however voice AI agents were still very early"
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: textlog \u2013 A quiet, text-only microblogging platform, open-source, no JS",
+      "url": "https://textlog.cc/about",
+      "signal": "210 points \u00b7 83 comments",
+      "snippet": ""
     }
   ]
 }
