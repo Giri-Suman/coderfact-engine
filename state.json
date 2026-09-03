@@ -1,14 +1,11 @@
 {
   "topics": [
-    "Needle2 Python tutorial: I built a local agent in 60 lines of code",
-    "SlotStream Mac migration: Why cloud APIs broke our LLM pipeline",
-    "Voice AI app tutorial: I built a WebRTC Python game in 7 days"
+    "Block AI YouTube videos: How I Built a Paid Safari Extension",
+    "Claude prompt engineering: How I Fixed Code Drift in Cursor",
+    "Rust interpreter tutorial: I Built a Mathematica Clone Using Iced"
   ],
-  "date": "September 02, 2026",
+  "date": "September 03, 2026",
   "title_history": [
-    "Build AI Agent Python",
-    "Vibe Coding Tutorial",
-    "Make Money From Automation",
     "Build AI Agent Python",
     "Automation Script Saved",
     "Make Money From Script",
@@ -35,115 +32,108 @@
     "Claude prompt engineering mistakes that wasted 10 hours (And the fixes)",
     "Needle2 Python tutorial: I built a local agent in 60 lines of code",
     "SlotStream Mac migration: Why cloud APIs broke our LLM pipeline",
-    "Voice AI app tutorial: I built a WebRTC Python game in 7 days"
+    "Voice AI app tutorial: I built a WebRTC Python game in 7 days",
+    "Block AI YouTube videos: How I Built a Paid Safari Extension",
+    "Claude prompt engineering: How I Fixed Code Drift in Cursor",
+    "Rust interpreter tutorial: I Built a Mathematica Clone Using Iced"
   ],
   "last_update_id": 70323304,
   "virality_data": [
     {
-      "topic": "How to build an offline, zero-latency local agent using a 14MB LLM",
-      "category": "C",
-      "category_name": "AI Agents & Multi-Agent Workflows",
-      "virality_score": 93,
-      "analysis": "With the release of Needle2, there is immense developer interest in running agentic workflows entirely on-device without API costs or network latency. This article provides a step-by-step implementation of a tool-calling router using Python and a 14MB model. It targets the massive wave of developers looking to escape high OpenAI/Claude API bills.",
+      "topic": "I built a Safari extension that hides AI-labeled videos on YouTube and made it a paid product",
+      "category": "E",
+      "category_name": "Money / Income Story",
+      "virality_score": 94,
+      "analysis": "This taps directly into the growing backlash against low-quality AI-generated content on YouTube, which is a major pain point for developers and tech enthusiasts. It features a tangible monetization angle ($1.99 Safari extension) backed by real-world validation. The contrast between building simple browser extensions and generating immediate utility-based revenue is highly viral on Medium.",
       "cross_source_signals": [
-        "Hacker News: Needle2 launch trending with 537 points",
-        "GitHub: on-device agent tool calling repositories rising",
-        "Reddit r/LocalLLaMA: High demand for sub-100MB models with structured JSON output"
+        "Hacker News: Weedout extension trending with 177 points and 80 comments",
+        "Reddit r/selfhosted: Discussions on filtering AI-generated video spam",
+        "Google Trends: 'block AI videos YouTube' search interest rising"
+      ],
+      "developer_pain": "high",
+      "freshness": "breaking",
+      "money_angle": "How a simple $1.99 Safari extension converts fed-up developers into a steady micro-income stream.",
+      "story_angle": "My YouTube feed was overrun by hallucinated AI conspiracy videos, so I spent a weekend writing a Safari extension to filter them out\u2014and people actually paid for it.",
+      "suman_angle": "Why I built a $1.99 Safari extension to purge AI videos from YouTube (and how I launched it)",
+      "target_keywords": [
+        "safari extension development",
+        "block ai youtube videos",
+        "micro saas income"
+      ],
+      "competing_articles": "Most browser extension guides are generic 'Hello World' templates; this offers a real-world product narrative with actual code to parse page elements and filter video feeds.",
+      "real_story_evidence": [
+        {
+          "source": "Hacker News (Show HN)",
+          "title": "Show HN: Weedout \u2013 Safari extension that hides YouTube AI-labeled videos",
+          "url": "https://masteranza.github.io/weedout/",
+          "what_to_cite": "The developer built a $1.99 Safari extension called Weedout because AI-generated conspiracy videos were getting out of control in their feed."
+        }
+      ]
+    },
+    {
+      "topic": "Using Claude's load-bearing vocabulary to write highly reliable code generation prompts",
+      "category": "B",
+      "category_name": "Vibe Coding / AI-Assisted Workflow",
+      "virality_score": 92,
+      "analysis": "This leverages a highly technical, deep-dive analysis of Claude's internal token probabilities and vocabulary patterns that went viral on Hacker News. Instead of generic prompt engineering, it shows developers how to use Claude's preferred linguistic tokens to drastically reduce hallucinations during vibe-coding sessions. This provides a massive unfair advantage to developers using Cursor and Claude in 2026.",
+      "cross_source_signals": [
+        "Hacker News: The load-bearing vocabulary of Claude trending with 701 points",
+        "GitHub: Discussions on optimizing system prompts for Claude 3.5/3.8",
+        "Reddit r/Cursor: Complaints about Claude suddenly forgetting context in long files"
       ],
       "developer_pain": "high",
       "freshness": "breaking",
       "money_angle": "",
-      "story_angle": "I got tired of paying $120/month in API costs just for simple home automation routing, so I built a local agent using a 14MB model.",
-      "suman_angle": "How I built an offline, zero-latency local agent in 60 lines of Python using a 14MB LLM",
+      "story_angle": "I was tired of Claude hallucinating library methods during my vibe-coding sessions, so I analyzed its load-bearing vocabulary to write deterministic prompts.",
+      "suman_angle": "I analyzed Claude's 'load-bearing' vocabulary to stop prompt drift in Cursor",
       "target_keywords": [
-        "local ai agent",
-        "on-device llm",
-        "needle2 python tutorial",
-        "structured output local llm"
+        "claude prompt engineering",
+        "vibe coding tips",
+        "cursor ai workflow"
       ],
-      "competing_articles": "Most local LLM guides focus on running heavy 8B models that lag on standard hardware; this shows how to achieve sub-50ms tool calling using a highly optimized 14MB engine.",
+      "competing_articles": "Most prompt engineering guides are superficial lists of 'act as a senior dev' hacks; this is a data-driven look at token behavior and linguistic patterns.",
       "real_story_evidence": [
         {
           "source": "Hacker News (Show HN)",
-          "title": "Show HN: Needle2: 14MB agentic LLM for phones, wearables, smart home and robots",
-          "url": "https://cactuscompute.com/needle",
-          "what_to_cite": "Cactus Needle2 is a highly optimized 14MB agentic LLM designed specifically for fast tool calling, device use, and structured extraction."
+          "title": "Show HN: The load-bearing vocabulary of Claude",
+          "url": "https://louisabraham.github.io/load-bearing/",
+          "what_to_cite": "The research analyzing specific linguistic tokens that Claude relies heavily on to maintain context and structural logic."
         }
       ]
     },
     {
-      "topic": "Why we stopped using hosted APIs and moved to local SlotStream execution on Mac",
+      "topic": "Building a custom Wolfram Language interpreter in Rust with an iced-based GUI",
       "category": "G",
       "category_name": "Software Architecture Insight",
       "virality_score": 89,
-      "analysis": "The architectural transition from paid cloud endpoints to local execution of massive open-source models is a major 2026 trend. Highlighting how SlotStream allows a 104GB model like Qwen3.8-Flash-Next to run at 12 tok/s on a 48GB Mac Studio captures both cost-conscious and performance-driven tech leads. It offers concrete hardware trade-offs that are highly shareable.",
+      "analysis": "This focuses on a high-performance system engineering challenge: writing an interpreter for a complex, symbolic language (Wolfram/Mathematica) in Rust. It appeals to senior engineers interested in language design, AST parsing, and building modern, lightweight desktop GUIs with Rust's iced library. It stands out because symbolic computation architecture is rarely covered in mainstream dev blogs.",
       "cross_source_signals": [
-        "Hacker News: SlotStream post trending with 197 points and 94 comments",
-        "GitHub: carloslfu/slotstream trending in LLM inference tools",
-        "Reddit r/selfhosted: massive interest in running 100B+ models on consumer Macs"
+        "Hacker News: Woxi - Open-source Mathematica / Wolfram Language reimplementation with 314 points",
+        "GitHub: Trending Rust GUI and interpreter projects",
+        "Reddit r/rust: Discussions on using iced vs egui for complex desktop interfaces"
       ],
       "developer_pain": "medium",
       "freshness": "fresh",
       "money_angle": "",
-      "story_angle": "Our monthly API bill for processing high-volume structured data crossed $4,000, prompting us to redesign our inference pipeline around local memory-mapped slot streams.",
-      "suman_angle": "Why we migrated our LLM pipeline from cloud APIs to local SlotStream running a 104GB model on a Mac Studio",
+      "story_angle": "I wanted a lightweight, open-source alternative to Mathematica, so I explored how to parse symbolic math and render interactive notebooks using Rust.",
+      "suman_angle": "Why I built a lightweight Mathematica clone in Rust (and the architecture behind parsing symbolic code)",
       "target_keywords": [
-        "slotstream mac",
-        "run large llm locally",
-        "qwen3.8 flash next mac studio",
-        "local llm inference architecture"
+        "rust interpreter tutorial",
+        "wolfram language open source",
+        "rust iced gui guide"
       ],
-      "competing_articles": "Most architecture articles discuss basic llama.cpp setups, whereas this dives into memory-mapped SlotStream execution to run models larger than unified memory sizes.",
+      "competing_articles": "Most Rust architecture posts are about basic web servers or CLI tools; this dives deep into AST parsing, symbolic evaluation, and immediate-mode UI rendering.",
       "real_story_evidence": [
         {
           "source": "Hacker News (Show HN)",
-          "title": "Show HN: Running 104GB Qwen3.8-Flash-Next on 48GB Mac with at ~12 tok/s",
-          "url": "https://github.com/carloslfu/slotstream",
-          "what_to_cite": "Using SlotStream to run a 104GB Qwen3.8-Flash-Next model on a 48GB Mac at approximately 12 tokens per second."
-        }
-      ]
-    },
-    {
-      "topic": "How I built and shipped a voice-driven AI web game in 7 days",
-      "category": "A",
-      "category_name": "Developer Success Story",
-      "virality_score": 91,
-      "analysis": "Medium readers love highly execution-focused, solo-developer success stories that show a complete pipeline from idea to launch. Centering the narrative around a voice-driven AI game taps into the current browser-based AI gaming meta. It provides actionable details on handling WebRTC audio streaming, prompt design, and latency optimization.",
-      "cross_source_signals": [
-        "Hacker News: Whodunnit AI trending with 215 points",
-        "Product Hunt: Voice-driven interactive entertainment gaining rapid traction",
-        "Google Trends: 'voice ai web app' search queries rising"
-      ],
-      "developer_pain": "medium",
-      "freshness": "fresh",
-      "money_angle": "How to design a viral loop and micro-transactions for a solo-developer AI game",
-      "story_angle": "I wanted to see if I could build a fully immersive, voice-controlled mystery game over a single week using modern web APIs and LLM backends.",
-      "suman_angle": "How I shipped a voice-driven AI murder mystery game in 7 days as a solo developer",
-      "target_keywords": [
-        "voice ai app tutorial",
-        "build web game with llm",
-        "webrtc voice assistant python",
-        "whodunnit ai clone"
-      ],
-      "competing_articles": "While other posts discuss theoretical voice interfaces, this is a highly practical execution story detailing the exact mechanics of real-time speech-to-text suspect interviews.",
-      "real_story_evidence": [
-        {
-          "source": "Hacker News (Show HN)",
-          "title": "Show HN: Voice driven murder mystery, Interview AI suspects with your voice",
-          "url": "https://www.whodunnitai.com/",
-          "what_to_cite": "The Whodunnit AI game allows players to use their voice to interview AI suspects in a real-time, highly interactive murder mystery setting."
+          "title": "Show HN: Woxi - Open-source Mathematica / Wolfram Language reimplementation",
+          "url": "https://woxi.ad-si.com",
+          "what_to_cite": "Woxi is an interpreter for the Wolfram Language written in Rust that comes with Woxi Studio, a Mathematica-like GUI built with iced."
         }
       ]
     }
   ],
   "success_stories": [
-    {
-      "source": "show_hn",
-      "title": "Show HN: Running 104GB Qwen3.8-Flash-Next on 48GB Mac with at ~12 tok/s",
-      "url": "https://github.com/carloslfu/slotstream",
-      "signal": "197 points \u00b7 94 comments",
-      "snippet": "I built slotstream, a way to run Qwen3.8-Flash-Next 4-bit on a low-memory mac starting from 16GB, a 125B parameter model that would need 100GB+ memory/RAM, thanks to expert-offloading/ssd-streaming. E"
-    },
     {
       "source": "show_hn",
       "title": "Show HN: The load-bearing vocabulary of Claude",
@@ -181,6 +171,13 @@
     },
     {
       "source": "show_hn",
+      "title": "Show HN: Running 104GB Qwen3.8-Flash-Next on 48GB Mac with at ~12 tok/s",
+      "url": "https://github.com/carloslfu/slotstream",
+      "signal": "226 points \u00b7 110 comments",
+      "snippet": "I built slotstream, a way to run Qwen3.8-Flash-Next 4-bit on a low-memory mac starting from 16GB, a 125B parameter model that would need 100GB+ memory/RAM, thanks to expert-offloading/ssd-streaming. E"
+    },
+    {
+      "source": "show_hn",
       "title": "Show HN: iPhone app takes simultaneous images from 2 lenses, fuses into 1 photo",
       "url": "https://photosynthesis.camera",
       "signal": "329 points \u00b7 305 comments",
@@ -195,24 +192,17 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Laser Graffiti",
-      "url": "https://laser.consti.de",
-      "signal": "249 points \u00b7 60 comments",
-      "snippet": ""
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: Run an 80B Qwen in 4.3 GB of RAM on a Mac, and a 35B on an iPhone",
-      "url": "https://github.com/leonickson1/Swiftlet",
-      "signal": "312 points \u00b7 141 comments",
-      "snippet": ""
-    },
-    {
-      "source": "show_hn",
       "title": "Show HN: I spent 2 years designing a mechanical Magic Keyboard",
       "url": "https://electronicmaterialsoffice.com/",
       "signal": "306 points \u00b7 245 comments",
       "snippet": "Hi HN, today I\u2019m revealing Altar II, an ultra-low profile (4.75mm) mechanical keyboard designed to replace your Magic Keyboard. It\u2019s the keyboard I wish Apple made. Altar II has fully mechanical switc"
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Laser Graffiti",
+      "url": "https://laser.consti.de",
+      "signal": "251 points \u00b7 60 comments",
+      "snippet": ""
     },
     {
       "source": "show_hn",
@@ -223,17 +213,17 @@
     },
     {
       "source": "show_hn",
+      "title": "Show HN: Weedout \u2013 Safari extension that hides YouTube AI-labeled videos",
+      "url": "https://masteranza.github.io/weedout/",
+      "signal": "177 points \u00b7 80 comments",
+      "snippet": "I'm the developer. I built this because AI-generated conspiracy videos were getting out of control in my own YouTube feed. Weedout is a $1.99 Safari extension for macOS that removes videos YouTube lab"
+    },
+    {
+      "source": "show_hn",
       "title": "Show HN: Eigendrum - Draw any shape and hear what it sounds like as a drum",
       "url": "https://baselashraf81.github.io/eigendrum/",
       "signal": "243 points \u00b7 103 comments",
       "snippet": "Hi HN, I built Eigendrum, a web tool that solves the 2D wave equation for arbitrary shapes so you can hear what they sound like as drums. How it works: * Solves -\u2207\u00b2u = \u03bbu using finite element analysis"
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: OpenTIE and OpenXWA, Modern Ports of Tie Fighter and X-Wing Alliance",
-      "url": "https://github.com/elyosh/OpenTIE/",
-      "signal": "228 points \u00b7 58 comments",
-      "snippet": ""
     },
     {
       "source": "show_hn",
@@ -244,10 +234,10 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: We built open OpenRouter that turns usage into a better model",
-      "url": "https://github.com/experientiallabs/experiential",
-      "signal": "220 points \u00b7 47 comments",
-      "snippet": "Hi HN, we built an open source model gateway. It's a single place to manage our own self hosted, frontier, and open source models in one place. It\u2019s is rust native, built for concurrency, and implemen"
+      "title": "Show HN: OpenTIE and OpenXWA, Modern Ports of Tie Fighter and X-Wing Alliance",
+      "url": "https://github.com/elyosh/OpenTIE/",
+      "signal": "228 points \u00b7 58 comments",
+      "snippet": ""
     },
     {
       "source": "show_hn",
@@ -258,9 +248,16 @@
     },
     {
       "source": "show_hn",
+      "title": "Show HN: We built open OpenRouter that turns usage into a better model",
+      "url": "https://github.com/experientiallabs/experiential",
+      "signal": "220 points \u00b7 47 comments",
+      "snippet": "Hi HN, we built an open source model gateway. It's a single place to manage our own self hosted, frontier, and open source models in one place. It\u2019s is rust native, built for concurrency, and implemen"
+    },
+    {
+      "source": "show_hn",
       "title": "Show HN: NFC Energy-Harvesting PCB Business Card with an MCU",
       "url": "https://wilsonharper.net/projects/businesscard/",
-      "signal": "217 points \u00b7 30 comments",
+      "signal": "218 points \u00b7 30 comments",
       "snippet": ""
     },
     {
