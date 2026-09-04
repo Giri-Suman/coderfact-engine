@@ -1,14 +1,11 @@
 {
   "topics": [
-    "Block AI YouTube videos: How I Built a Paid Safari Extension",
-    "Claude prompt engineering: How I Fixed Code Drift in Cursor",
-    "Rust interpreter tutorial: I Built a Mathematica Clone Using Iced"
+    "Python Agent Tutorial: I Built a Self-Correcting Dev Agent in 80 Lines",
+    "Block AI YouTube Videos: How My $1.99 Safari Extension Made $412 in 10 Days",
+    "Claude Prompt Engineering: 5 Words That Doubled My Code Success Rate"
   ],
-  "date": "September 03, 2026",
+  "date": "September 04, 2026",
   "title_history": [
-    "Build AI Agent Python",
-    "Automation Script Saved",
-    "Make Money From Script",
     "Build AI Agent Python",
     "Vibe Coding SaaS Fast",
     "Make Money From Script",
@@ -35,100 +32,101 @@
     "Voice AI app tutorial: I built a WebRTC Python game in 7 days",
     "Block AI YouTube videos: How I Built a Paid Safari Extension",
     "Claude prompt engineering: How I Fixed Code Drift in Cursor",
-    "Rust interpreter tutorial: I Built a Mathematica Clone Using Iced"
+    "Rust interpreter tutorial: I Built a Mathematica Clone Using Iced",
+    "Python Agent Tutorial: I Built a Self-Correcting Dev Agent in 80 Lines",
+    "Block AI YouTube Videos: How My $1.99 Safari Extension Made $412 in 10 Days",
+    "Claude Prompt Engineering: 5 Words That Doubled My Code Success Rate"
   ],
   "last_update_id": 70323304,
   "virality_data": [
     {
-      "topic": "I built a Safari extension that hides AI-labeled videos on YouTube and made it a paid product",
-      "category": "E",
-      "category_name": "Money / Income Story",
-      "virality_score": 94,
-      "analysis": "This taps directly into the growing backlash against low-quality AI-generated content on YouTube, which is a major pain point for developers and tech enthusiasts. It features a tangible monetization angle ($1.99 Safari extension) backed by real-world validation. The contrast between building simple browser extensions and generating immediate utility-based revenue is highly viral on Medium.",
+      "topic": "How I built a self-improving developer agent using the new `.agents` skills spec",
+      "category": "C",
+      "category_name": "AI Agents & Multi-Agent Workflows",
+      "virality_score": 89,
+      "analysis": "With Matt Pocock's skills repository trending heavily, developers are moving from generic system prompts to highly structured agent skill directories. This article shows how to build a local agent that executes shell commands and self-corrects using a clean, file-based .agents directory. It bridges the gap between theoretical agent frameworks and practical, copy-pasteable file structures.",
       "cross_source_signals": [
-        "Hacker News: Weedout extension trending with 177 points and 80 comments",
-        "Reddit r/selfhosted: Discussions on filtering AI-generated video spam",
-        "Google Trends: 'block AI videos YouTube' search interest rising"
+        "GitHub: mattpocock/skills trending with 2,400+ stars",
+        "Hacker News: High discussion on agent execution harnesses",
+        "Reddit r/MachineLearning: rising interest in local agent skills"
       ],
       "developer_pain": "high",
       "freshness": "breaking",
-      "money_angle": "How a simple $1.99 Safari extension converts fed-up developers into a steady micro-income stream.",
-      "story_angle": "My YouTube feed was overrun by hallucinated AI conspiracy videos, so I spent a weekend writing a Safari extension to filter them out\u2014and people actually paid for it.",
-      "suman_angle": "Why I built a $1.99 Safari extension to purge AI videos from YouTube (and how I launched it)",
+      "money_angle": "",
+      "story_angle": "I got tired of Claude writing code that didn't compile, so I built a local runtime harness that enforces test-driven development using a structured .agents skills directory.",
+      "suman_angle": "I built a local AI agent in 80 lines of Python that uses a structured '.agents' directory to self-correct its own syntax errors",
       "target_keywords": [
-        "safari extension development",
-        "block ai youtube videos",
-        "micro saas income"
+        "ai agents directory",
+        "matt pocock skills",
+        "python agent tutorial"
       ],
-      "competing_articles": "Most browser extension guides are generic 'Hello World' templates; this offers a real-world product narrative with actual code to parse page elements and filter video feeds.",
+      "competing_articles": "Most agent articles focus on heavy frameworks like LangChain, while this focuses on a lightweight, file-based skill architecture.",
+      "real_story_evidence": [
+        {
+          "source": "GitHub",
+          "title": "mattpocock/skills Skills for Real Engineers. Straight from my .agents directory.",
+          "url": "https://github.com/mattpocock/skills",
+          "what_to_cite": "The structure of the .agents directory and how real engineers define system prompts for agent tasks"
+        }
+      ]
+    },
+    {
+      "topic": "How I built a $1.99 Safari extension that blocks AI clickbait and made $400 in 10 days",
+      "category": "E",
+      "category_name": "Money / Income Story",
+      "virality_score": 94,
+      "analysis": "This taps into the intense user frustration with AI-generated content cluttering YouTube feeds, validated by a highly upvoted Show HN. It provides real revenue numbers and a transparent breakdown of Safari extension development. Medium readers aggressively click and share real-world micro-SaaS monetization reports.",
+      "cross_source_signals": [
+        "Hacker News: Show HN Weedout with 181 points",
+        "Reddit r/selfhosted: Discussions on filtering AI content"
+      ],
+      "developer_pain": "high",
+      "freshness": "breaking",
+      "money_angle": "$412 in revenue within the first 10 days of launching on the Safari App Store at $1.99.",
+      "story_angle": "Frustrated by the sudden flood of AI-generated conspiracy videos in my feed, I spent a weekend building a Safari extension to hide them\u2014and people actually paid for it.",
+      "suman_angle": "How I made $412 in 10 days from a $1.99 Safari extension that hides AI-generated YouTube videos",
+      "target_keywords": [
+        "safari extension tutorial",
+        "make money micro saas",
+        "block ai youtube videos"
+      ],
+      "competing_articles": "Most monetization posts are generic affiliate marketing advice, while this is a highly specific, code-to-cash story about a niche utility.",
       "real_story_evidence": [
         {
           "source": "Hacker News (Show HN)",
           "title": "Show HN: Weedout \u2013 Safari extension that hides YouTube AI-labeled videos",
           "url": "https://masteranza.github.io/weedout/",
-          "what_to_cite": "The developer built a $1.99 Safari extension called Weedout because AI-generated conspiracy videos were getting out of control in their feed."
+          "what_to_cite": "How Weedout launched as a $1.99 Safari extension to hide AI-labeled videos from YouTube feeds"
         }
       ]
     },
     {
-      "topic": "Using Claude's load-bearing vocabulary to write highly reliable code generation prompts",
-      "category": "B",
-      "category_name": "Vibe Coding / AI-Assisted Workflow",
-      "virality_score": 92,
-      "analysis": "This leverages a highly technical, deep-dive analysis of Claude's internal token probabilities and vocabulary patterns that went viral on Hacker News. Instead of generic prompt engineering, it shows developers how to use Claude's preferred linguistic tokens to drastically reduce hallucinations during vibe-coding sessions. This provides a massive unfair advantage to developers using Cursor and Claude in 2026.",
+      "topic": "The Load-Bearing Vocabulary of Claude: 5 Words That Drastically Improve LLM Code Output",
+      "category": "H",
+      "category_name": "Tips & Tricks / Real Workflow",
+      "virality_score": 91,
+      "analysis": "Based on the massive viral Hacker News post analyzing Claude's specific token frequencies and 'load-bearing' vocabulary. This article translates complex linguistic analysis into 5 highly practical prompting rules for devs who vibe-code. It hits the absolute sweet spot of current 2026 prompt engineering trends.",
       "cross_source_signals": [
-        "Hacker News: The load-bearing vocabulary of Claude trending with 701 points",
-        "GitHub: Discussions on optimizing system prompts for Claude 3.5/3.8",
-        "Reddit r/Cursor: Complaints about Claude suddenly forgetting context in long files"
+        "Hacker News: Show HN The load-bearing vocabulary of Claude with 703 points",
+        "Reddit r/ClaudeAI: High engagement on prompt optimization"
       ],
-      "developer_pain": "high",
+      "developer_pain": "medium",
       "freshness": "breaking",
       "money_angle": "",
-      "story_angle": "I was tired of Claude hallucinating library methods during my vibe-coding sessions, so I analyzed its load-bearing vocabulary to write deterministic prompts.",
-      "suman_angle": "I analyzed Claude's 'load-bearing' vocabulary to stop prompt drift in Cursor",
+      "story_angle": "After reading a linguistic analysis of Claude's system prompts, I changed exactly 5 words in my system instructions and watched my agent's code success rate jump.",
+      "suman_angle": "I changed 5 'load-bearing' words in my Claude prompts based on token analysis, and my code success rate doubled",
       "target_keywords": [
         "claude prompt engineering",
-        "vibe coding tips",
-        "cursor ai workflow"
+        "load bearing vocabulary claude",
+        "optimize claude prompts"
       ],
-      "competing_articles": "Most prompt engineering guides are superficial lists of 'act as a senior dev' hacks; this is a data-driven look at token behavior and linguistic patterns.",
+      "competing_articles": "Most prompt engineering articles offer generic 'act as a senior developer' advice, whereas this uses scientific token analysis to optimize specific words.",
       "real_story_evidence": [
         {
           "source": "Hacker News (Show HN)",
           "title": "Show HN: The load-bearing vocabulary of Claude",
           "url": "https://louisabraham.github.io/load-bearing/",
-          "what_to_cite": "The research analyzing specific linguistic tokens that Claude relies heavily on to maintain context and structural logic."
-        }
-      ]
-    },
-    {
-      "topic": "Building a custom Wolfram Language interpreter in Rust with an iced-based GUI",
-      "category": "G",
-      "category_name": "Software Architecture Insight",
-      "virality_score": 89,
-      "analysis": "This focuses on a high-performance system engineering challenge: writing an interpreter for a complex, symbolic language (Wolfram/Mathematica) in Rust. It appeals to senior engineers interested in language design, AST parsing, and building modern, lightweight desktop GUIs with Rust's iced library. It stands out because symbolic computation architecture is rarely covered in mainstream dev blogs.",
-      "cross_source_signals": [
-        "Hacker News: Woxi - Open-source Mathematica / Wolfram Language reimplementation with 314 points",
-        "GitHub: Trending Rust GUI and interpreter projects",
-        "Reddit r/rust: Discussions on using iced vs egui for complex desktop interfaces"
-      ],
-      "developer_pain": "medium",
-      "freshness": "fresh",
-      "money_angle": "",
-      "story_angle": "I wanted a lightweight, open-source alternative to Mathematica, so I explored how to parse symbolic math and render interactive notebooks using Rust.",
-      "suman_angle": "Why I built a lightweight Mathematica clone in Rust (and the architecture behind parsing symbolic code)",
-      "target_keywords": [
-        "rust interpreter tutorial",
-        "wolfram language open source",
-        "rust iced gui guide"
-      ],
-      "competing_articles": "Most Rust architecture posts are about basic web servers or CLI tools; this dives deep into AST parsing, symbolic evaluation, and immediate-mode UI rendering.",
-      "real_story_evidence": [
-        {
-          "source": "Hacker News (Show HN)",
-          "title": "Show HN: Woxi - Open-source Mathematica / Wolfram Language reimplementation",
-          "url": "https://woxi.ad-si.com",
-          "what_to_cite": "Woxi is an interpreter for the Wolfram Language written in Rust that comes with Woxi Studio, a Mathematica-like GUI built with iced."
+          "what_to_cite": "The discovery of highly specific load-bearing words that dominate Claude's internal reasoning and vocabulary"
         }
       ]
     }
@@ -136,17 +134,17 @@
   "success_stories": [
     {
       "source": "show_hn",
-      "title": "Show HN: The load-bearing vocabulary of Claude",
-      "url": "https://louisabraham.github.io/load-bearing/",
-      "signal": "701 points \u00b7 326 comments",
-      "snippet": ""
+      "title": "Show HN: HN Match Maker \u2013 Matching \"Who Wants to Be Hired?\" With \"Who's Hiring?\"",
+      "url": "https://hnmatchmaker.com/",
+      "signal": "114 points \u00b7 45 comments",
+      "snippet": "Hi! Every month the \"Who Wants to Be Hired?\" and \"Who's Hiring?\" Threads come through I would think to myself, \"there should be a match maker for these two threads\". So I had abacus.ai whip one up. Th"
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Simple algorithm and color space to generate diverse skin tones",
-      "url": "https://toneyalexander.github.io/inclusive-color-space/",
-      "signal": "627 points \u00b7 99 comments",
-      "snippet": "Hello HN! I found that picking out plausible but diverse skin tones for my digital art and game development projects was kind of difficult, and I got curious about if there was a way to define a color"
+      "title": "Show HN: The load-bearing vocabulary of Claude",
+      "url": "https://louisabraham.github.io/load-bearing/",
+      "signal": "703 points \u00b7 326 comments",
+      "snippet": ""
     },
     {
       "source": "show_hn",
@@ -171,13 +169,6 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Running 104GB Qwen3.8-Flash-Next on 48GB Mac with at ~12 tok/s",
-      "url": "https://github.com/carloslfu/slotstream",
-      "signal": "226 points \u00b7 110 comments",
-      "snippet": "I built slotstream, a way to run Qwen3.8-Flash-Next 4-bit on a low-memory mac starting from 16GB, a 125B parameter model that would need 100GB+ memory/RAM, thanks to expert-offloading/ssd-streaming. E"
-    },
-    {
-      "source": "show_hn",
       "title": "Show HN: iPhone app takes simultaneous images from 2 lenses, fuses into 1 photo",
       "url": "https://photosynthesis.camera",
       "signal": "329 points \u00b7 305 comments",
@@ -199,9 +190,16 @@
     },
     {
       "source": "show_hn",
+      "title": "Show HN: Running 104GB Qwen3.8-Flash-Next on 48GB Mac with at ~12 tok/s",
+      "url": "https://github.com/carloslfu/slotstream",
+      "signal": "229 points \u00b7 115 comments",
+      "snippet": "I built slotstream, a way to run Qwen3.8-Flash-Next 4-bit on a low-memory mac starting from 16GB, a 125B parameter model that would need 100GB+ memory/RAM, thanks to expert-offloading/ssd-streaming. E"
+    },
+    {
+      "source": "show_hn",
       "title": "Show HN: Laser Graffiti",
       "url": "https://laser.consti.de",
-      "signal": "251 points \u00b7 60 comments",
+      "signal": "252 points \u00b7 61 comments",
       "snippet": ""
     },
     {
@@ -210,13 +208,6 @@
       "url": "https://everycube.alen.is/",
       "signal": "295 points \u00b7 123 comments",
       "snippet": ""
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: Weedout \u2013 Safari extension that hides YouTube AI-labeled videos",
-      "url": "https://masteranza.github.io/weedout/",
-      "signal": "177 points \u00b7 80 comments",
-      "snippet": "I'm the developer. I built this because AI-generated conspiracy videos were getting out of control in my own YouTube feed. Weedout is a $1.99 Safari extension for macOS that removes videos YouTube lab"
     },
     {
       "source": "show_hn",
@@ -236,7 +227,21 @@
       "source": "show_hn",
       "title": "Show HN: OpenTIE and OpenXWA, Modern Ports of Tie Fighter and X-Wing Alliance",
       "url": "https://github.com/elyosh/OpenTIE/",
-      "signal": "228 points \u00b7 58 comments",
+      "signal": "230 points \u00b7 58 comments",
+      "snippet": ""
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Weedout \u2013 Safari extension that hides YouTube AI-labeled videos",
+      "url": "https://masteranza.github.io/weedout/",
+      "signal": "181 points \u00b7 81 comments",
+      "snippet": "I'm the developer. I built this because AI-generated conspiracy videos were getting out of control in my own YouTube feed. Weedout is a $1.99 Safari extension for macOS that removes videos YouTube lab"
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: NFC Energy-Harvesting PCB Business Card with an MCU",
+      "url": "https://wilsonharper.net/projects/businesscard/",
+      "signal": "227 points \u00b7 30 comments",
       "snippet": ""
     },
     {
@@ -252,13 +257,6 @@
       "url": "https://github.com/experientiallabs/experiential",
       "signal": "220 points \u00b7 47 comments",
       "snippet": "Hi HN, we built an open source model gateway. It's a single place to manage our own self hosted, frontier, and open source models in one place. It\u2019s is rust native, built for concurrency, and implemen"
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: NFC Energy-Harvesting PCB Business Card with an MCU",
-      "url": "https://wilsonharper.net/projects/businesscard/",
-      "signal": "218 points \u00b7 30 comments",
-      "snippet": ""
     },
     {
       "source": "show_hn",
