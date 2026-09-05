@@ -1,14 +1,11 @@
 {
   "topics": [
-    "Python Agent Tutorial: I Built a Self-Correcting Dev Agent in 80 Lines",
-    "Block AI YouTube Videos: How My $1.99 Safari Extension Made $412 in 10 Days",
-    "Claude Prompt Engineering: 5 Words That Doubled My Code Success Rate"
+    "eInk Bike Computer: I Built One Using ESP32 and Python",
+    "Claude Prompt Engineering: Stop Cursor Prompt Drift With 100 Words",
+    "Local LLM Tutorial: The Fix That Cut Autocomplete Latency to Sub-10ms"
   ],
-  "date": "September 04, 2026",
+  "date": "September 05, 2026",
   "title_history": [
-    "Build AI Agent Python",
-    "Vibe Coding SaaS Fast",
-    "Make Money From Script",
     "Build AI Agent Python",
     "Sales Automation SaaS",
     "Vibe Coding Full Stack",
@@ -35,98 +32,103 @@
     "Rust interpreter tutorial: I Built a Mathematica Clone Using Iced",
     "Python Agent Tutorial: I Built a Self-Correcting Dev Agent in 80 Lines",
     "Block AI YouTube Videos: How My $1.99 Safari Extension Made $412 in 10 Days",
-    "Claude Prompt Engineering: 5 Words That Doubled My Code Success Rate"
+    "Claude Prompt Engineering: 5 Words That Doubled My Code Success Rate",
+    "eInk Bike Computer: I Built One Using ESP32 and Python",
+    "Claude Prompt Engineering: Stop Cursor Prompt Drift With 100 Words",
+    "Local LLM Tutorial: The Fix That Cut Autocomplete Latency to Sub-10ms"
   ],
   "last_update_id": 70323304,
   "virality_data": [
     {
-      "topic": "How I built a self-improving developer agent using the new `.agents` skills spec",
-      "category": "C",
-      "category_name": "AI Agents & Multi-Agent Workflows",
-      "virality_score": 89,
-      "analysis": "With Matt Pocock's skills repository trending heavily, developers are moving from generic system prompts to highly structured agent skill directories. This article shows how to build a local agent that executes shell commands and self-corrects using a clean, file-based .agents directory. It bridges the gap between theoretical agent frameworks and practical, copy-pasteable file structures.",
+      "topic": "How I built and open-sourced an eInk bike computer as a solo web developer",
+      "category": "A",
+      "category_name": "Developer Success Story",
+      "virality_score": 92,
+      "analysis": "This taps into the massive maker and hardware-software crossover trend on Medium. Leveraging a real, highly-upvoted open-source hardware project provides incredible credibility and practical depth. It details how web devs can transition to physical computing using modern tools and AI assistance.",
       "cross_source_signals": [
-        "GitHub: mattpocock/skills trending with 2,400+ stars",
-        "Hacker News: High discussion on agent execution harnesses",
-        "Reddit r/MachineLearning: rising interest in local agent skills"
+        "Hacker News: Show HN with 272 points",
+        "GitHub: Open-source hardware repositories trending",
+        "Reddit r/embed: Rising interest in eInk displays"
       ],
       "developer_pain": "high",
-      "freshness": "breaking",
+      "freshness": "fresh",
       "money_angle": "",
-      "story_angle": "I got tired of Claude writing code that didn't compile, so I built a local runtime harness that enforces test-driven development using a structured .agents skills directory.",
-      "suman_angle": "I built a local AI agent in 80 lines of Python that uses a structured '.agents' directory to self-correct its own syntax errors",
+      "story_angle": "I wanted a highly readable, long-lasting bike computer without paying $300, so I built my own using an eInk display and open-source firmware.",
+      "suman_angle": "How I built an open-source eInk bike computer as a solo web developer (with zero hardware experience)",
       "target_keywords": [
-        "ai agents directory",
-        "matt pocock skills",
-        "python agent tutorial"
+        "eink bike computer",
+        "open source hardware",
+        "esp32 tutorial python"
       ],
-      "competing_articles": "Most agent articles focus on heavy frameworks like LangChain, while this focuses on a lightweight, file-based skill architecture.",
-      "real_story_evidence": [
-        {
-          "source": "GitHub",
-          "title": "mattpocock/skills Skills for Real Engineers. Straight from my .agents directory.",
-          "url": "https://github.com/mattpocock/skills",
-          "what_to_cite": "The structure of the .agents directory and how real engineers define system prompts for agent tasks"
-        }
-      ]
-    },
-    {
-      "topic": "How I built a $1.99 Safari extension that blocks AI clickbait and made $400 in 10 days",
-      "category": "E",
-      "category_name": "Money / Income Story",
-      "virality_score": 94,
-      "analysis": "This taps into the intense user frustration with AI-generated content cluttering YouTube feeds, validated by a highly upvoted Show HN. It provides real revenue numbers and a transparent breakdown of Safari extension development. Medium readers aggressively click and share real-world micro-SaaS monetization reports.",
-      "cross_source_signals": [
-        "Hacker News: Show HN Weedout with 181 points",
-        "Reddit r/selfhosted: Discussions on filtering AI content"
-      ],
-      "developer_pain": "high",
-      "freshness": "breaking",
-      "money_angle": "$412 in revenue within the first 10 days of launching on the Safari App Store at $1.99.",
-      "story_angle": "Frustrated by the sudden flood of AI-generated conspiracy videos in my feed, I spent a weekend building a Safari extension to hide them\u2014and people actually paid for it.",
-      "suman_angle": "How I made $412 in 10 days from a $1.99 Safari extension that hides AI-generated YouTube videos",
-      "target_keywords": [
-        "safari extension tutorial",
-        "make money micro saas",
-        "block ai youtube videos"
-      ],
-      "competing_articles": "Most monetization posts are generic affiliate marketing advice, while this is a highly specific, code-to-cash story about a niche utility.",
+      "competing_articles": "Most hardware stories are written by electrical engineers; this is a highly accessible guide tailored specifically for web and software developers.",
       "real_story_evidence": [
         {
           "source": "Hacker News (Show HN)",
-          "title": "Show HN: Weedout \u2013 Safari extension that hides YouTube AI-labeled videos",
-          "url": "https://masteranza.github.io/weedout/",
-          "what_to_cite": "How Weedout launched as a $1.99 Safari extension to hide AI-labeled videos from YouTube feeds"
+          "title": "Show HN: Open-Source eInk Bike Computer",
+          "url": "https://opentrailpaper.com",
+          "what_to_cite": "The creator built a fully functional eInk bike computer and highlighted how AI helped accelerate the development of the project."
         }
       ]
     },
     {
-      "topic": "The Load-Bearing Vocabulary of Claude: 5 Words That Drastically Improve LLM Code Output",
-      "category": "H",
-      "category_name": "Tips & Tricks / Real Workflow",
-      "virality_score": 91,
-      "analysis": "Based on the massive viral Hacker News post analyzing Claude's specific token frequencies and 'load-bearing' vocabulary. This article translates complex linguistic analysis into 5 highly practical prompting rules for devs who vibe-code. It hits the absolute sweet spot of current 2026 prompt engineering trends.",
+      "topic": "Analyzing Claude's 'load-bearing vocabulary' to fix prompt drift in Cursor",
+      "category": "B",
+      "category_name": "Vibe Coding / AI-Assisted Workflow",
+      "virality_score": 95,
+      "analysis": "This addresses the massive 2026 developer trend of Cursor and Claude optimization. By analyzing the actual mathematical token probabilities and 'load-bearing' words of Claude, it provides a scientific approach to prompt engineering. This moves beyond 'vibe coding' into reliable, deterministic code generation.",
       "cross_source_signals": [
-        "Hacker News: Show HN The load-bearing vocabulary of Claude with 703 points",
-        "Reddit r/ClaudeAI: High engagement on prompt optimization"
+        "Hacker News: Show HN with 706 points",
+        "GitHub: Cursor prompt optimization tools trending",
+        "Twitter: Devs discussing Claude token weights"
       ],
-      "developer_pain": "medium",
+      "developer_pain": "high",
       "freshness": "breaking",
       "money_angle": "",
-      "story_angle": "After reading a linguistic analysis of Claude's system prompts, I changed exactly 5 words in my system instructions and watched my agent's code success rate jump.",
-      "suman_angle": "I changed 5 'load-bearing' words in my Claude prompts based on token analysis, and my code success rate doubled",
+      "story_angle": "I got tired of my Cursor agent randomly breaking working code, so I analyzed Claude's high-probability tokens to build a deterministic prompt template.",
+      "suman_angle": "I analyzed Claude's 100 most 'load-bearing' words to stop prompt drift in Cursor",
       "target_keywords": [
         "claude prompt engineering",
-        "load bearing vocabulary claude",
-        "optimize claude prompts"
+        "cursor ai tips",
+        "vibe coding workflow"
       ],
-      "competing_articles": "Most prompt engineering articles offer generic 'act as a senior developer' advice, whereas this uses scientific token analysis to optimize specific words.",
+      "competing_articles": "Most prompt guides are generic listicles; this relies on actual linguistic token analysis of Claude's internal vocabulary weights.",
       "real_story_evidence": [
         {
           "source": "Hacker News (Show HN)",
           "title": "Show HN: The load-bearing vocabulary of Claude",
           "url": "https://louisabraham.github.io/load-bearing/",
-          "what_to_cite": "The discovery of highly specific load-bearing words that dominate Claude's internal reasoning and vocabulary"
+          "what_to_cite": "The analysis reveals specific high-probability tokens and 'load-bearing' words that dictate Claude's reasoning patterns."
+        }
+      ]
+    },
+    {
+      "topic": "Why we replaced our cloud LLM with a 125M local transformer for sub-10ms latency",
+      "category": "G",
+      "category_name": "Software Architecture Insight",
+      "virality_score": 89,
+      "analysis": "This hits the sweet spot of the 2026 shift toward on-device, ultra-small models. It provides a concrete architectural comparison between high-latency cloud APIs and sub-10ms local transformers. It shows developers how to train or fine-tune tiny specialized models for highly interactive applications.",
+      "cross_source_signals": [
+        "Hacker News: Show HN with 598 points",
+        "Hacker News: Needle2 14MB model trending",
+        "GitHub: On-device transformers rising"
+      ],
+      "developer_pain": "high",
+      "freshness": "fresh",
+      "money_angle": "Reducing cloud API costs to absolute zero by running inference entirely on-device.",
+      "story_angle": "Our real-time autocomplete was failing because cloud LLM API latency made the user experience feel sluggish, forcing us to move on-device.",
+      "suman_angle": "Why we replaced our cloud LLM with a 125M local transformer for sub-10ms autocomplete",
+      "target_keywords": [
+        "local llm tutorial",
+        "on device ai python",
+        "latency optimization web"
+      ],
+      "competing_articles": "Most AI architecture posts advocate for larger cloud models; this proves the performance and cost benefits of micro-models on-device.",
+      "real_story_evidence": [
+        {
+          "source": "Hacker News (Show HN)",
+          "title": "Show HN: I trained a 125M model to autocomplete piano on-device",
+          "url": "https://simedw.com/2026/08/20/midi-autocomplete/",
+          "what_to_cite": "A 125M-parameter transformer autocompletes performances in real time on-device at ~108 notes/sec on an iPhone 15."
         }
       ]
     }
@@ -134,23 +136,23 @@
   "success_stories": [
     {
       "source": "show_hn",
-      "title": "Show HN: HN Match Maker \u2013 Matching \"Who Wants to Be Hired?\" With \"Who's Hiring?\"",
-      "url": "https://hnmatchmaker.com/",
-      "signal": "114 points \u00b7 45 comments",
-      "snippet": "Hi! Every month the \"Who Wants to Be Hired?\" and \"Who's Hiring?\" Threads come through I would think to myself, \"there should be a match maker for these two threads\". So I had abacus.ai whip one up. Th"
+      "title": "Show HN: Open-Source eInk Bike Computer",
+      "url": "https://opentrailpaper.com",
+      "signal": "272 points \u00b7 97 comments",
+      "snippet": "Hey all, i just launched my Eink Bike computer project and think it is cool. Another tidbit, in the crazy things that AI has done... It has helped create a ANT (common sensor wireless protocol used in"
     },
     {
       "source": "show_hn",
       "title": "Show HN: The load-bearing vocabulary of Claude",
       "url": "https://louisabraham.github.io/load-bearing/",
-      "signal": "703 points \u00b7 326 comments",
+      "signal": "706 points \u00b7 326 comments",
       "snippet": ""
     },
     {
       "source": "show_hn",
       "title": "Show HN: I trained a 125M model to autocomplete piano on-device",
       "url": "https://simedw.com/2026/08/20/midi-autocomplete/",
-      "signal": "598 points \u00b7 118 comments",
+      "signal": "598 points \u00b7 117 comments",
       "snippet": "I trained a 125M-parameter transformer to autocomplete piano performances in real time (~108 notes/sec on an iPhone 15). The idea is basically GitHub Copilot or Tabnine, except instead of prompting it"
     },
     {
@@ -164,7 +166,7 @@
       "source": "show_hn",
       "title": "Show HN: Huzzah \u2013 a novel approach to coding with AI",
       "url": "https://www.danielvaughn.dev/posts/huzzah/",
-      "signal": "384 points \u00b7 210 comments",
+      "signal": "384 points \u00b7 209 comments",
       "snippet": "Hello everyone. I've been working on this experimental editor called Huzzah. I've been working almost exclusively with coding agents since January of this year, and over the past few months I began to"
     },
     {
@@ -190,24 +192,24 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Running 104GB Qwen3.8-Flash-Next on 48GB Mac with at ~12 tok/s",
-      "url": "https://github.com/carloslfu/slotstream",
-      "signal": "229 points \u00b7 115 comments",
-      "snippet": "I built slotstream, a way to run Qwen3.8-Flash-Next 4-bit on a low-memory mac starting from 16GB, a 125B parameter model that would need 100GB+ memory/RAM, thanks to expert-offloading/ssd-streaming. E"
+      "title": "Show HN: Scroll through all 43252003274489856000 Rubik's Cube states",
+      "url": "https://everycube.alen.is/",
+      "signal": "295 points \u00b7 123 comments",
+      "snippet": ""
     },
     {
       "source": "show_hn",
       "title": "Show HN: Laser Graffiti",
       "url": "https://laser.consti.de",
-      "signal": "252 points \u00b7 61 comments",
+      "signal": "253 points \u00b7 61 comments",
       "snippet": ""
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Scroll through all 43252003274489856000 Rubik's Cube states",
-      "url": "https://everycube.alen.is/",
-      "signal": "295 points \u00b7 123 comments",
-      "snippet": ""
+      "title": "Show HN: Running 104GB Qwen3.8-Flash-Next on 48GB Mac with at ~12 tok/s",
+      "url": "https://github.com/carloslfu/slotstream",
+      "signal": "234 points \u00b7 115 comments",
+      "snippet": "I built slotstream, a way to run Qwen3.8-Flash-Next 4-bit on a low-memory mac starting from 16GB, a 125B parameter model that would need 100GB+ memory/RAM, thanks to expert-offloading/ssd-streaming. E"
     },
     {
       "source": "show_hn",
@@ -225,23 +227,16 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: OpenTIE and OpenXWA, Modern Ports of Tie Fighter and X-Wing Alliance",
-      "url": "https://github.com/elyosh/OpenTIE/",
-      "signal": "230 points \u00b7 58 comments",
+      "title": "Show HN: NFC Energy-Harvesting PCB Business Card with an MCU",
+      "url": "https://wilsonharper.net/projects/businesscard/",
+      "signal": "231 points \u00b7 30 comments",
       "snippet": ""
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Weedout \u2013 Safari extension that hides YouTube AI-labeled videos",
-      "url": "https://masteranza.github.io/weedout/",
-      "signal": "181 points \u00b7 81 comments",
-      "snippet": "I'm the developer. I built this because AI-generated conspiracy videos were getting out of control in my own YouTube feed. Weedout is a $1.99 Safari extension for macOS that removes videos YouTube lab"
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: NFC Energy-Harvesting PCB Business Card with an MCU",
-      "url": "https://wilsonharper.net/projects/businesscard/",
-      "signal": "227 points \u00b7 30 comments",
+      "title": "Show HN: OpenTIE and OpenXWA, Modern Ports of Tie Fighter and X-Wing Alliance",
+      "url": "https://github.com/elyosh/OpenTIE/",
+      "signal": "230 points \u00b7 58 comments",
       "snippet": ""
     },
     {
@@ -255,8 +250,15 @@
       "source": "show_hn",
       "title": "Show HN: We built open OpenRouter that turns usage into a better model",
       "url": "https://github.com/experientiallabs/experiential",
-      "signal": "220 points \u00b7 47 comments",
+      "signal": "222 points \u00b7 47 comments",
       "snippet": "Hi HN, we built an open source model gateway. It's a single place to manage our own self hosted, frontier, and open source models in one place. It\u2019s is rust native, built for concurrency, and implemen"
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Weedout \u2013 Safari extension that hides YouTube AI-labeled videos",
+      "url": "https://masteranza.github.io/weedout/",
+      "signal": "182 points \u00b7 82 comments",
+      "snippet": "I'm the developer. I built this because AI-generated conspiracy videos were getting out of control in my own YouTube feed. Weedout is a $1.99 Safari extension for macOS that removes videos YouTube lab"
     },
     {
       "source": "show_hn",
