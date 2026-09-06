@@ -1,14 +1,11 @@
 {
   "topics": [
-    "eInk Bike Computer: I Built One Using ESP32 and Python",
-    "Claude Prompt Engineering: Stop Cursor Prompt Drift With 100 Words",
-    "Local LLM Tutorial: The Fix That Cut Autocomplete Latency to Sub-10ms"
+    "I Built a WASM LaTeX Editor to Replace Overleaf \u2014 Full Architecture",
+    "AI Agent Memory Architecture: How I Fixed Context Drift in My Coding Agent",
+    "Kafka Alternatives for Backend: Why We Replaced Celery With HTTP Streams"
   ],
-  "date": "September 05, 2026",
+  "date": "September 06, 2026",
   "title_history": [
-    "Build AI Agent Python",
-    "Sales Automation SaaS",
-    "Vibe Coding Full Stack",
     "Reddit Marketing Automation",
     "LangGraph Tutorial Pipeline",
     "Automation Script Income",
@@ -35,100 +32,109 @@
     "Claude Prompt Engineering: 5 Words That Doubled My Code Success Rate",
     "eInk Bike Computer: I Built One Using ESP32 and Python",
     "Claude Prompt Engineering: Stop Cursor Prompt Drift With 100 Words",
-    "Local LLM Tutorial: The Fix That Cut Autocomplete Latency to Sub-10ms"
+    "Local LLM Tutorial: The Fix That Cut Autocomplete Latency to Sub-10ms",
+    "I Built a WASM LaTeX Editor to Replace Overleaf \u2014 Full Architecture",
+    "AI Agent Memory Architecture: How I Fixed Context Drift in My Coding Agent",
+    "Kafka Alternatives for Backend: Why We Replaced Celery With HTTP Streams"
   ],
   "last_update_id": 70323304,
   "virality_data": [
     {
-      "topic": "How I built and open-sourced an eInk bike computer as a solo web developer",
+      "topic": "Building a browser-based LaTeX compiler using WASM and pdfTeX to replace Overleaf",
       "category": "A",
       "category_name": "Developer Success Story",
-      "virality_score": 92,
-      "analysis": "This taps into the massive maker and hardware-software crossover trend on Medium. Leveraging a real, highly-upvoted open-source hardware project provides incredible credibility and practical depth. It details how web devs can transition to physical computing using modern tools and AI assistance.",
+      "virality_score": 87,
+      "analysis": "Engineers and researchers are tired of slow, cloud-queued LaTeX compilation on platforms like Overleaf. This project taps into the high-demand niche of WebAssembly compilation directly on client machines with zero backend cost. It differentiates itself by showing how to compile raw pdfTeX into WASM in a clean modern web stack without heavy container setups.",
       "cross_source_signals": [
-        "Hacker News: Show HN with 272 points",
-        "GitHub: Open-source hardware repositories trending",
-        "Reddit r/embed: Rising interest in eInk displays"
+        "Hacker News Show HN: TeXbrain browser WASM compiler (118 points)",
+        "GitHub: WebAssembly pdfTeX integration repos trending",
+        "Reddit r/webdev: Client-side compilation and WASM tools discussion"
       ],
       "developer_pain": "high",
       "freshness": "fresh",
-      "money_angle": "",
-      "story_angle": "I wanted a highly readable, long-lasting bike computer without paying $300, so I built my own using an eInk display and open-source firmware.",
-      "suman_angle": "How I built an open-source eInk bike computer as a solo web developer (with zero hardware experience)",
+      "money_angle": "$0 server bills by shifting 100% of PDF rendering compute to the user's browser",
+      "story_angle": "After hitting compute limits and slow compile queues on Overleaf while preparing my technical notes, I decided to compile pdfTeX to WASM and run an entire LaTeX editor in the browser.",
+      "suman_angle": "How I Built a Zero-Server LaTeX Editor in the Browser Using WebAssembly (Full Architecture)",
       "target_keywords": [
-        "eink bike computer",
-        "open source hardware",
-        "esp32 tutorial python"
+        "wasm latex editor",
+        "pdftex webassembly",
+        "build in-browser compiler javascript"
       ],
-      "competing_articles": "Most hardware stories are written by electrical engineers; this is a highly accessible guide tailored specifically for web and software developers.",
+      "competing_articles": "Most WebAssembly tutorials build trivial hello-world counters; this provides a real-world, high-utility technical breakdown of compiling legacy C code into browser-runnable WASM.",
       "real_story_evidence": [
         {
           "source": "Hacker News (Show HN)",
-          "title": "Show HN: Open-Source eInk Bike Computer",
-          "url": "https://opentrailpaper.com",
-          "what_to_cite": "The creator built a fully functional eInk bike computer and highlighted how AI helped accelerate the development of the project."
+          "title": "Show HN: TeXbrain, a LaTeX editor that runs pdfTeX in the browser via WASM",
+          "url": "https://github.com/swimmingbrain/texbrain",
+          "what_to_cite": "Engineering master's student built a client-side LaTeX workspace using WebAssembly-ported pdfTeX to eliminate cloud compile latencies."
         }
       ]
     },
     {
-      "topic": "Analyzing Claude's 'load-bearing vocabulary' to fix prompt drift in Cursor",
-      "category": "B",
-      "category_name": "Vibe Coding / AI-Assisted Workflow",
-      "virality_score": 95,
-      "analysis": "This addresses the massive 2026 developer trend of Cursor and Claude optimization. By analyzing the actual mathematical token probabilities and 'load-bearing' words of Claude, it provides a scientific approach to prompt engineering. This moves beyond 'vibe coding' into reliable, deterministic code generation.",
+      "topic": "Harnessing agent skills and memory to stop context drift in autonomous AI coders",
+      "category": "C",
+      "category_name": "AI Agents & Multi-Agent Workflows",
+      "virality_score": 89,
+      "analysis": "Agentic coding is the biggest trend in 2026 dev workflows, but agent amnesia and context degradation ruin complex tasks. This article leverages new open-source agent harness patterns (like Matt Pocock's agent skills and ECC) to give coding agents permanent instincts and modular memory. It delivers practical schema definitions and orchestration code that directly solve agent hallucinations during long coding runs.",
       "cross_source_signals": [
-        "Hacker News: Show HN with 706 points",
-        "GitHub: Cursor prompt optimization tools trending",
-        "Twitter: Devs discussing Claude token weights"
+        "GitHub: mattpocock/skills (253k views / trending in Shell & Agent tools)",
+        "GitHub: affaan-m/ECC agent harness performance optimization system",
+        "Dev.to: 20 Agentic AI Terms Every Developer Should Know"
       ],
       "developer_pain": "high",
       "freshness": "breaking",
-      "money_angle": "",
-      "story_angle": "I got tired of my Cursor agent randomly breaking working code, so I analyzed Claude's high-probability tokens to build a deterministic prompt template.",
-      "suman_angle": "I analyzed Claude's 100 most 'load-bearing' words to stop prompt drift in Cursor",
+      "money_angle": "Saves 40% in wasted LLM token regeneration costs on multi-step coding agent tasks",
+      "story_angle": "My coding agent kept rewriting working modules and forgetting architectural constraints halfway through a project until I implemented a structured `.agents` skills harness.",
+      "suman_angle": "Building a Self-Regulating Coding Agent: How I Fixed Agent Amnesia With a Custom Skills Harness",
       "target_keywords": [
-        "claude prompt engineering",
-        "cursor ai tips",
-        "vibe coding workflow"
+        "agent skills harness",
+        "ai agent memory architecture",
+        "multi agent context optimization"
       ],
-      "competing_articles": "Most prompt guides are generic listicles; this relies on actual linguistic token analysis of Claude's internal vocabulary weights.",
+      "competing_articles": "Most agent posts just wrap LangChain prompts; this article breaks down modular file-based agent instincts and deterministic harnesses.",
       "real_story_evidence": [
         {
-          "source": "Hacker News (Show HN)",
-          "title": "Show HN: The load-bearing vocabulary of Claude",
-          "url": "https://louisabraham.github.io/load-bearing/",
-          "what_to_cite": "The analysis reveals specific high-probability tokens and 'load-bearing' words that dictate Claude's reasoning patterns."
+          "source": "GitHub",
+          "title": "mattpocock/skills Skills for Real Engineers. Straight from my .agents directory.",
+          "url": "https://github.com/mattpocock/skills",
+          "what_to_cite": "Modular skills directory pattern (.agents) providing deterministic memory and instructions for autonomous coding agents."
+        },
+        {
+          "source": "GitHub",
+          "title": "affaan-m/ECC The agent harness performance optimization system. Skills, instincts, memory, security, and resea",
+          "url": "https://github.com/affaan-m/ECC",
+          "what_to_cite": "Harness architecture designed to optimize agent instincts, memory retention, and security during code generation."
         }
       ]
     },
     {
-      "topic": "Why we replaced our cloud LLM with a 125M local transformer for sub-10ms latency",
+      "topic": "Replacing complex Kafka/Celery queues with durable HTTP streams on object storage",
       "category": "G",
       "category_name": "Software Architecture Insight",
-      "virality_score": 89,
-      "analysis": "This hits the sweet spot of the 2026 shift toward on-device, ultra-small models. It provides a concrete architectural comparison between high-latency cloud APIs and sub-10ms local transformers. It shows developers how to train or fine-tune tiny specialized models for highly interactive applications.",
+      "virality_score": 84,
+      "analysis": "Data streaming architectures have become bloated and expensive for small-to-medium systems running Kafka clusters. This post breaks down the emerging architectural shift of using append-only object store streams over HTTP for durable, low-cost event messaging. It hits the sweet spot for backend developers looking for simplified, cost-effective infrastructure without sacrificing durability.",
       "cross_source_signals": [
-        "Hacker News: Show HN with 598 points",
-        "Hacker News: Needle2 14MB model trending",
-        "GitHub: On-device transformers rising"
+        "Hacker News: PicoMQ \u2013 Durable Streams over HTTP, on object storage (159 points)",
+        "Hacker News: Cloud in a Bottle self-hosting architecture discussions",
+        "Reddit r/backend: Simplifying event pipelines and avoiding Kafka maintenance overhead"
       ],
-      "developer_pain": "high",
+      "developer_pain": "medium",
       "freshness": "fresh",
-      "money_angle": "Reducing cloud API costs to absolute zero by running inference entirely on-device.",
-      "story_angle": "Our real-time autocomplete was failing because cloud LLM API latency made the user experience feel sluggish, forcing us to move on-device.",
-      "suman_angle": "Why we replaced our cloud LLM with a 125M local transformer for sub-10ms autocomplete",
+      "money_angle": "Cuts message broker operational infrastructure costs by up to 80% using S3-compatible storage",
+      "story_angle": "Tired of maintaining heavyweight message brokers for internal background workflows, I migrated our event streaming pipeline to append-only durable HTTP streams backed by object storage.",
+      "suman_angle": "Why We Replaced Our Heavyweight Event Broker With Durable HTTP Streams on Object Storage",
       "target_keywords": [
-        "local llm tutorial",
-        "on device ai python",
-        "latency optimization web"
+        "durable streams http",
+        "kafka alternatives backend",
+        "object storage event stream architecture"
       ],
-      "competing_articles": "Most AI architecture posts advocate for larger cloud models; this proves the performance and cost benefits of micro-models on-device.",
+      "competing_articles": "Traditional articles push complex enterprise message queues; this provides an honest architectural comparison and benchmark for simpler, modern streaming alternatives.",
       "real_story_evidence": [
         {
           "source": "Hacker News (Show HN)",
-          "title": "Show HN: I trained a 125M model to autocomplete piano on-device",
-          "url": "https://simedw.com/2026/08/20/midi-autocomplete/",
-          "what_to_cite": "A 125M-parameter transformer autocompletes performances in real time on-device at ~108 notes/sec on an iPhone 15."
+          "title": "Show HN: PicoMQ \u2013 Durable Streams over HTTP, on object storage",
+          "url": "https://picomq.com/",
+          "what_to_cite": "Rust-based architecture for durable, cheap, URL-addressable event streams built directly on top of object storage."
         }
       ]
     }
@@ -138,7 +144,7 @@
       "source": "show_hn",
       "title": "Show HN: Open-Source eInk Bike Computer",
       "url": "https://opentrailpaper.com",
-      "signal": "272 points \u00b7 97 comments",
+      "signal": "393 points \u00b7 121 comments",
       "snippet": "Hey all, i just launched my Eink Bike computer project and think it is cool. Another tidbit, in the crazy things that AI has done... It has helped create a ANT (common sensor wireless protocol used in"
     },
     {
@@ -185,13 +191,6 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: I spent 2 years designing a mechanical Magic Keyboard",
-      "url": "https://electronicmaterialsoffice.com/",
-      "signal": "306 points \u00b7 245 comments",
-      "snippet": "Hi HN, today I\u2019m revealing Altar II, an ultra-low profile (4.75mm) mechanical keyboard designed to replace your Magic Keyboard. It\u2019s the keyboard I wish Apple made. Altar II has fully mechanical switc"
-    },
-    {
-      "source": "show_hn",
       "title": "Show HN: Scroll through all 43252003274489856000 Rubik's Cube states",
       "url": "https://everycube.alen.is/",
       "signal": "295 points \u00b7 123 comments",
@@ -208,7 +207,7 @@
       "source": "show_hn",
       "title": "Show HN: Running 104GB Qwen3.8-Flash-Next on 48GB Mac with at ~12 tok/s",
       "url": "https://github.com/carloslfu/slotstream",
-      "signal": "234 points \u00b7 115 comments",
+      "signal": "238 points \u00b7 116 comments",
       "snippet": "I built slotstream, a way to run Qwen3.8-Flash-Next 4-bit on a low-memory mac starting from 16GB, a 125B parameter model that would need 100GB+ memory/RAM, thanks to expert-offloading/ssd-streaming. E"
     },
     {
@@ -217,6 +216,13 @@
       "url": "https://baselashraf81.github.io/eigendrum/",
       "signal": "243 points \u00b7 103 comments",
       "snippet": "Hi HN, I built Eigendrum, a web tool that solves the 2D wave equation for arbitrary shapes so you can hear what they sound like as drums. How it works: * Solves -\u2207\u00b2u = \u03bbu using finite element analysis"
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: TERMy \u2013 A fast terminal assistant that does not use LLMs",
+      "url": "https://github.com/gioblu/NPC-Forge/blob/main/docs/development.md",
+      "signal": "197 points \u00b7 44 comments",
+      "snippet": "I love research and development, you may have heard of me because of PJON (Padded Jittering Operative Network). It is a network protocol I started developing in 2010, which was recently implemented in"
     },
     {
       "source": "show_hn",
@@ -255,13 +261,6 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Weedout \u2013 Safari extension that hides YouTube AI-labeled videos",
-      "url": "https://masteranza.github.io/weedout/",
-      "signal": "182 points \u00b7 82 comments",
-      "snippet": "I'm the developer. I built this because AI-generated conspiracy videos were getting out of control in my own YouTube feed. Weedout is a $1.99 Safari extension for macOS that removes videos YouTube lab"
-    },
-    {
-      "source": "show_hn",
       "title": "Show HN: Voice driven murder mystery, Interview AI suspects with your voice",
       "url": "https://www.whodunnitai.com/",
       "signal": "215 points \u00b7 89 comments",
@@ -273,6 +272,13 @@
       "url": "https://textlog.cc/about",
       "signal": "210 points \u00b7 83 comments",
       "snippet": ""
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Weedout \u2013 Safari extension that hides YouTube AI-labeled videos",
+      "url": "https://masteranza.github.io/weedout/",
+      "signal": "182 points \u00b7 83 comments",
+      "snippet": "I'm the developer. I built this because AI-generated conspiracy videos were getting out of control in my own YouTube feed. Weedout is a $1.99 Safari extension for macOS that removes videos YouTube lab"
     }
   ]
 }
