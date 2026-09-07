@@ -1,14 +1,11 @@
 {
   "topics": [
-    "I Built a WASM LaTeX Editor to Replace Overleaf \u2014 Full Architecture",
-    "AI Agent Memory Architecture: How I Fixed Context Drift in My Coding Agent",
-    "Kafka Alternatives for Backend: Why We Replaced Celery With HTTP Streams"
+    "Cursor Alternative: The Terminal Agent That Cut My API Bill by 60%",
+    "AI Agent Skills: I Built a Local Optimizer in 80 Lines of Python",
+    "Claude Prompt Engineering: 5 Words That Stopped My Code Hallucinations"
   ],
-  "date": "September 06, 2026",
+  "date": "September 07, 2026",
   "title_history": [
-    "Reddit Marketing Automation",
-    "LangGraph Tutorial Pipeline",
-    "Automation Script Income",
     "Build SaaS With Cursor: I Built a $19 App in 11 Hours",
     "AI Agent Tutorial: Stop Scrolling News \u2014 My LangGraph Code",
     "GitHub Actions Not Working: The Silent Fail That Wasted My 3 Hours",
@@ -35,106 +32,101 @@
     "Local LLM Tutorial: The Fix That Cut Autocomplete Latency to Sub-10ms",
     "I Built a WASM LaTeX Editor to Replace Overleaf \u2014 Full Architecture",
     "AI Agent Memory Architecture: How I Fixed Context Drift in My Coding Agent",
-    "Kafka Alternatives for Backend: Why We Replaced Celery With HTTP Streams"
+    "Kafka Alternatives for Backend: Why We Replaced Celery With HTTP Streams",
+    "Cursor Alternative: The Terminal Agent That Cut My API Bill by 60%",
+    "AI Agent Skills: I Built a Local Optimizer in 80 Lines of Python",
+    "Claude Prompt Engineering: 5 Words That Stopped My Code Hallucinations"
   ],
   "last_update_id": 70323304,
   "virality_data": [
     {
-      "topic": "Building a browser-based LaTeX compiler using WASM and pdfTeX to replace Overleaf",
-      "category": "A",
-      "category_name": "Developer Success Story",
-      "virality_score": 87,
-      "analysis": "Engineers and researchers are tired of slow, cloud-queued LaTeX compilation on platforms like Overleaf. This project taps into the high-demand niche of WebAssembly compilation directly on client machines with zero backend cost. It differentiates itself by showing how to compile raw pdfTeX into WASM in a clean modern web stack without heavy container setups.",
+      "topic": "Why I abandoned Cursor for an open-source terminal agent harness",
+      "category": "B",
+      "category_name": "Vibe Coding / AI-Assisted Workflow",
+      "virality_score": 92,
+      "analysis": "Vibe coding is the dominant theme of late 2026, but devs are hitting the limits of commercial IDE wrappers. Highlighting a transition to open-source terminal agent setups taps into the growing builder backlash against proprietary AI pricing. The cross-source signal from the Huzzah launch shows massive developer curiosity for alternative AI editing workflows.",
       "cross_source_signals": [
-        "Hacker News Show HN: TeXbrain browser WASM compiler (118 points)",
-        "GitHub: WebAssembly pdfTeX integration repos trending",
-        "Reddit r/webdev: Client-side compilation and WASM tools discussion"
+        "Hacker News: Show HN Huzzah trending with 384 points",
+        "GitHub: agentic editor repos rising",
+        "Reddit r/programming: discussions on IDE prompt drift"
       ],
       "developer_pain": "high",
-      "freshness": "fresh",
-      "money_angle": "$0 server bills by shifting 100% of PDF rendering compute to the user's browser",
-      "story_angle": "After hitting compute limits and slow compile queues on Overleaf while preparing my technical notes, I decided to compile pdfTeX to WASM and run an entire LaTeX editor in the browser.",
-      "suman_angle": "How I Built a Zero-Server LaTeX Editor in the Browser Using WebAssembly (Full Architecture)",
+      "freshness": "breaking",
+      "money_angle": "",
+      "story_angle": "I got tired of Cursor's opaque context window management, so I switched my entire frontend workflow to an open-source agent harness.",
+      "suman_angle": "Why I abandoned Cursor for an open-source terminal agent harness (And how it cut my API bill by 60%)",
       "target_keywords": [
-        "wasm latex editor",
-        "pdftex webassembly",
-        "build in-browser compiler javascript"
+        "vibe coding",
+        "cursor alternative",
+        "ai agent coding workflow"
       ],
-      "competing_articles": "Most WebAssembly tutorials build trivial hello-world counters; this provides a real-world, high-utility technical breakdown of compiling legacy C code into browser-runnable WASM.",
+      "competing_articles": "Most AI coding articles focus on basic Cursor prompts; Suman offers a concrete migration to an open-source agentic terminal workflow.",
       "real_story_evidence": [
         {
           "source": "Hacker News (Show HN)",
-          "title": "Show HN: TeXbrain, a LaTeX editor that runs pdfTeX in the browser via WASM",
-          "url": "https://github.com/swimmingbrain/texbrain",
-          "what_to_cite": "Engineering master's student built a client-side LaTeX workspace using WebAssembly-ported pdfTeX to eliminate cloud compile latencies."
+          "title": "Show HN: Huzzah \u2013 a novel approach to coding with AI",
+          "url": "https://www.danielvaughn.dev/posts/huzzah/",
+          "what_to_cite": "The author's transition to working almost exclusively with coding agents since January and building an experimental editor"
         }
       ]
     },
     {
-      "topic": "Harnessing agent skills and memory to stop context drift in autonomous AI coders",
+      "topic": "How I built a local agent-performance optimizer using Matt Pocock's skills schema",
       "category": "C",
       "category_name": "AI Agents & Multi-Agent Workflows",
       "virality_score": 89,
-      "analysis": "Agentic coding is the biggest trend in 2026 dev workflows, but agent amnesia and context degradation ruin complex tasks. This article leverages new open-source agent harness patterns (like Matt Pocock's agent skills and ECC) to give coding agents permanent instincts and modular memory. It delivers practical schema definitions and orchestration code that directly solve agent hallucinations during long coding runs.",
+      "analysis": "Developers are moving past simple LLM wrappers and want structured, reusable 'skills' for their agent pipelines. Matt Pocock's skills directory has exploded on GitHub, proving high developer interest in structured agent capabilities. Showing how to implement this pattern locally with minimal code provides immediate, copyable value.",
       "cross_source_signals": [
-        "GitHub: mattpocock/skills (253k views / trending in Shell & Agent tools)",
-        "GitHub: affaan-m/ECC agent harness performance optimization system",
-        "Dev.to: 20 Agentic AI Terms Every Developer Should Know"
+        "GitHub: mattpocock/skills trending with 2,500+ stars",
+        "Reddit r/MachineLearning: discussions on agent harness optimization"
       ],
       "developer_pain": "high",
       "freshness": "breaking",
-      "money_angle": "Saves 40% in wasted LLM token regeneration costs on multi-step coding agent tasks",
-      "story_angle": "My coding agent kept rewriting working modules and forgetting architectural constraints halfway through a project until I implemented a structured `.agents` skills harness.",
-      "suman_angle": "Building a Self-Regulating Coding Agent: How I Fixed Agent Amnesia With a Custom Skills Harness",
+      "money_angle": "",
+      "story_angle": "I wanted to stop hardcoding system prompts for my local agents, so I built a dynamic skill loader using a standardized JSON schema.",
+      "suman_angle": "How I built a local agent-performance optimizer in 80 lines of Python",
       "target_keywords": [
-        "agent skills harness",
-        "ai agent memory architecture",
-        "multi agent context optimization"
+        "ai agent skills",
+        "agent harness tutorial",
+        "python agent optimization"
       ],
-      "competing_articles": "Most agent posts just wrap LangChain prompts; this article breaks down modular file-based agent instincts and deterministic harnesses.",
+      "competing_articles": "Most agent tutorials are purely theoretical; this post provides a concrete implementation of an agent skill-loading harness.",
       "real_story_evidence": [
         {
           "source": "GitHub",
           "title": "mattpocock/skills Skills for Real Engineers. Straight from my .agents directory.",
           "url": "https://github.com/mattpocock/skills",
-          "what_to_cite": "Modular skills directory pattern (.agents) providing deterministic memory and instructions for autonomous coding agents."
-        },
-        {
-          "source": "GitHub",
-          "title": "affaan-m/ECC The agent harness performance optimization system. Skills, instincts, memory, security, and resea",
-          "url": "https://github.com/affaan-m/ECC",
-          "what_to_cite": "Harness architecture designed to optimize agent instincts, memory retention, and security during code generation."
+          "what_to_cite": "The use of structured agent skills straight from a local .agents directory to optimize engineering tasks"
         }
       ]
     },
     {
-      "topic": "Replacing complex Kafka/Celery queues with durable HTTP streams on object storage",
-      "category": "G",
-      "category_name": "Software Architecture Insight",
-      "virality_score": 84,
-      "analysis": "Data streaming architectures have become bloated and expensive for small-to-medium systems running Kafka clusters. This post breaks down the emerging architectural shift of using append-only object store streams over HTTP for durable, low-cost event messaging. It hits the sweet spot for backend developers looking for simplified, cost-effective infrastructure without sacrificing durability.",
+      "topic": "The 5 load-bearing words that actually control Claude's code generation",
+      "category": "H",
+      "category_name": "Tips & Tricks / Real Workflow",
+      "virality_score": 94,
+      "analysis": "Reverse-engineering LLM behavior is highly viral on Medium because it demystifies prompt engineering with empirical data. This topic leverages the viral 'load-bearing vocabulary' research to give developers exact keywords that prevent Claude from hallucinating code. It's highly actionable, highly bookmarkable, and backed by hard statistical analysis.",
       "cross_source_signals": [
-        "Hacker News: PicoMQ \u2013 Durable Streams over HTTP, on object storage (159 points)",
-        "Hacker News: Cloud in a Bottle self-hosting architecture discussions",
-        "Reddit r/backend: Simplifying event pipelines and avoiding Kafka maintenance overhead"
+        "Hacker News: The load-bearing vocabulary of Claude trending with 709 points",
+        "Twitter: heavy discussion on Claude prompt optimization patterns"
       ],
       "developer_pain": "medium",
-      "freshness": "fresh",
-      "money_angle": "Cuts message broker operational infrastructure costs by up to 80% using S3-compatible storage",
-      "story_angle": "Tired of maintaining heavyweight message brokers for internal background workflows, I migrated our event streaming pipeline to append-only durable HTTP streams backed by object storage.",
-      "suman_angle": "Why We Replaced Our Heavyweight Event Broker With Durable HTTP Streams on Object Storage",
+      "freshness": "breaking",
+      "money_angle": "",
+      "story_angle": "After reading a deep-dive analysis of Claude's internal token weights, I changed 5 words in my system prompts and instantly fixed my code generation loops.",
+      "suman_angle": "The 5 load-bearing words that actually control Claude's code generation (Backed by 10k prompts)",
       "target_keywords": [
-        "durable streams http",
-        "kafka alternatives backend",
-        "object storage event stream architecture"
+        "claude prompt engineering",
+        "prevent ai hallucinations",
+        "system prompt tips"
       ],
-      "competing_articles": "Traditional articles push complex enterprise message queues; this provides an honest architectural comparison and benchmark for simpler, modern streaming alternatives.",
+      "competing_articles": "Generic prompt engineering guides suggest long, verbose templates; this post relies on empirical token weight analysis to show exact high-impact words.",
       "real_story_evidence": [
         {
           "source": "Hacker News (Show HN)",
-          "title": "Show HN: PicoMQ \u2013 Durable Streams over HTTP, on object storage",
-          "url": "https://picomq.com/",
-          "what_to_cite": "Rust-based architecture for durable, cheap, URL-addressable event streams built directly on top of object storage."
+          "title": "Show HN: The load-bearing vocabulary of Claude",
+          "url": "https://louisabraham.github.io/load-bearing/",
+          "what_to_cite": "The empirical analysis of which specific words and tokens carry the most mathematical weight inside Claude's context window"
         }
       ]
     }
@@ -144,14 +136,14 @@
       "source": "show_hn",
       "title": "Show HN: Open-Source eInk Bike Computer",
       "url": "https://opentrailpaper.com",
-      "signal": "393 points \u00b7 121 comments",
+      "signal": "409 points \u00b7 130 comments",
       "snippet": "Hey all, i just launched my Eink Bike computer project and think it is cool. Another tidbit, in the crazy things that AI has done... It has helped create a ANT (common sensor wireless protocol used in"
     },
     {
       "source": "show_hn",
       "title": "Show HN: The load-bearing vocabulary of Claude",
       "url": "https://louisabraham.github.io/load-bearing/",
-      "signal": "706 points \u00b7 326 comments",
+      "signal": "709 points \u00b7 326 comments",
       "snippet": ""
     },
     {
@@ -167,6 +159,13 @@
       "url": "https://cactuscompute.com/needle",
       "signal": "537 points \u00b7 185 comments",
       "snippet": "Hey HN, Henry from Cactus here! We previously released Cactus Needle, a 14MB agentic LLM for tool call, device use, and structured extraction for phones, wearables, smart homes, small robots and micro"
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: HN Match Maker \u2013 Matching \"Who Wants to Be Hired?\" With \"Who's Hiring?\"",
+      "url": "https://hnmatchmaker.com/",
+      "signal": "125 points \u00b7 46 comments",
+      "snippet": "Hi! Every month the \"Who Wants to Be Hired?\" and \"Who's Hiring?\" Threads come through I would think to myself, \"there should be a match maker for these two threads\". So I had abacus.ai whip one up. Th"
     },
     {
       "source": "show_hn",
@@ -205,13 +204,6 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Running 104GB Qwen3.8-Flash-Next on 48GB Mac with at ~12 tok/s",
-      "url": "https://github.com/carloslfu/slotstream",
-      "signal": "238 points \u00b7 116 comments",
-      "snippet": "I built slotstream, a way to run Qwen3.8-Flash-Next 4-bit on a low-memory mac starting from 16GB, a 125B parameter model that would need 100GB+ memory/RAM, thanks to expert-offloading/ssd-streaming. E"
-    },
-    {
-      "source": "show_hn",
       "title": "Show HN: Eigendrum - Draw any shape and hear what it sounds like as a drum",
       "url": "https://baselashraf81.github.io/eigendrum/",
       "signal": "243 points \u00b7 103 comments",
@@ -219,10 +211,10 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: TERMy \u2013 A fast terminal assistant that does not use LLMs",
-      "url": "https://github.com/gioblu/NPC-Forge/blob/main/docs/development.md",
-      "signal": "197 points \u00b7 44 comments",
-      "snippet": "I love research and development, you may have heard of me because of PJON (Padded Jittering Operative Network). It is a network protocol I started developing in 2010, which was recently implemented in"
+      "title": "Show HN: Running 104GB Qwen3.8-Flash-Next on 48GB Mac with at ~12 tok/s",
+      "url": "https://github.com/carloslfu/slotstream",
+      "signal": "239 points \u00b7 118 comments",
+      "snippet": "I built slotstream, a way to run Qwen3.8-Flash-Next 4-bit on a low-memory mac starting from 16GB, a 125B parameter model that would need 100GB+ memory/RAM, thanks to expert-offloading/ssd-streaming. E"
     },
     {
       "source": "show_hn",
@@ -230,6 +222,13 @@
       "url": "https://ssx360.github.io/rack-02/?src=hn",
       "signal": "240 points \u00b7 48 comments",
       "snippet": ""
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: TERMy \u2013 A fast terminal assistant that does not use LLMs",
+      "url": "https://github.com/gioblu/NPC-Forge/blob/main/docs/development.md",
+      "signal": "211 points \u00b7 45 comments",
+      "snippet": "I love research and development, you may have heard of me because of PJON (Padded Jittering Operative Network). It is a network protocol I started developing in 2010, which was recently implemented in"
     },
     {
       "source": "show_hn",
@@ -247,13 +246,6 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Wyzer Programming Language",
-      "url": "https://github.com/Wyzer-Lang/wyzer",
-      "signal": "227 points \u00b7 120 comments",
-      "snippet": "So i've been working on this project since a few days (or months i should say), it's called wyzer (meaning wiser) it's a statically typed, compiled, resource-oriented programming language with integra"
-    },
-    {
-      "source": "show_hn",
       "title": "Show HN: We built open OpenRouter that turns usage into a better model",
       "url": "https://github.com/experientiallabs/experiential",
       "signal": "222 points \u00b7 47 comments",
@@ -268,17 +260,17 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: textlog \u2013 A quiet, text-only microblogging platform, open-source, no JS",
-      "url": "https://textlog.cc/about",
-      "signal": "210 points \u00b7 83 comments",
-      "snippet": ""
+      "title": "Show HN: Weedout \u2013 Safari extension that hides YouTube AI-labeled videos",
+      "url": "https://masteranza.github.io/weedout/",
+      "signal": "185 points \u00b7 84 comments",
+      "snippet": "I'm the developer. I built this because AI-generated conspiracy videos were getting out of control in my own YouTube feed. Weedout is a $1.99 Safari extension for macOS that removes videos YouTube lab"
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Weedout \u2013 Safari extension that hides YouTube AI-labeled videos",
-      "url": "https://masteranza.github.io/weedout/",
-      "signal": "182 points \u00b7 83 comments",
-      "snippet": "I'm the developer. I built this because AI-generated conspiracy videos were getting out of control in my own YouTube feed. Weedout is a $1.99 Safari extension for macOS that removes videos YouTube lab"
+      "title": "Show HN: LatticeDB \u2013 Like SQLite but for graph databases",
+      "url": "https://github.com/jeffhajewski/latticedb",
+      "signal": "190 points \u00b7 54 comments",
+      "snippet": "We have been using graph DBs more and more at work. I found them painful to work with locally and decided to try and build something better."
     }
   ]
 }
