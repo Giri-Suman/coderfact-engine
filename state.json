@@ -1,14 +1,11 @@
 {
   "topics": [
-    "Cursor Alternative: The Terminal Agent That Cut My API Bill by 60%",
-    "AI Agent Skills: I Built a Local Optimizer in 80 Lines of Python",
-    "Claude Prompt Engineering: 5 Words That Stopped My Code Hallucinations"
+    "Multi-agent LLM tutorial: I Built a Financial Pipeline in 90 Lines",
+    "Vibe coding Cursor: I Built an On-Device Audio App in 4 Hours",
+    "Solo dev launch: Stop Wasting Hours With My 5-Day Chess Clock App"
   ],
-  "date": "September 07, 2026",
+  "date": "September 08, 2026",
   "title_history": [
-    "Build SaaS With Cursor: I Built a $19 App in 11 Hours",
-    "AI Agent Tutorial: Stop Scrolling News \u2014 My LangGraph Code",
-    "GitHub Actions Not Working: The Silent Fail That Wasted My 3 Hours",
     "Fast Search Autocomplete: The Python Trie That Cut My Latency to P99 0ms",
     "Local AI Agent: I Built a Smart Home Controller in 1 Hour With Python",
     "Claude Prompt Engineering: Why Vibe Coding Breaks Prompts (And the Fix)",
@@ -35,98 +32,106 @@
     "Kafka Alternatives for Backend: Why We Replaced Celery With HTTP Streams",
     "Cursor Alternative: The Terminal Agent That Cut My API Bill by 60%",
     "AI Agent Skills: I Built a Local Optimizer in 80 Lines of Python",
-    "Claude Prompt Engineering: 5 Words That Stopped My Code Hallucinations"
+    "Claude Prompt Engineering: 5 Words That Stopped My Code Hallucinations",
+    "Multi-agent LLM tutorial: I Built a Financial Pipeline in 90 Lines",
+    "Vibe coding Cursor: I Built an On-Device Audio App in 4 Hours",
+    "Solo dev launch: Stop Wasting Hours With My 5-Day Chess Clock App"
   ],
   "last_update_id": 70323305,
   "virality_data": [
     {
-      "topic": "Why I abandoned Cursor for an open-source terminal agent harness",
-      "category": "B",
-      "category_name": "Vibe Coding / AI-Assisted Workflow",
-      "virality_score": 92,
-      "analysis": "Vibe coding is the dominant theme of late 2026, but devs are hitting the limits of commercial IDE wrappers. Highlighting a transition to open-source terminal agent setups taps into the growing builder backlash against proprietary AI pricing. The cross-source signal from the Huzzah launch shows massive developer curiosity for alternative AI editing workflows.",
-      "cross_source_signals": [
-        "Hacker News: Show HN Huzzah trending with 384 points",
-        "GitHub: agentic editor repos rising",
-        "Reddit r/programming: discussions on IDE prompt drift"
-      ],
-      "developer_pain": "high",
-      "freshness": "breaking",
-      "money_angle": "",
-      "story_angle": "I got tired of Cursor's opaque context window management, so I switched my entire frontend workflow to an open-source agent harness.",
-      "suman_angle": "Why I abandoned Cursor for an open-source terminal agent harness (And how it cut my API bill by 60%)",
-      "target_keywords": [
-        "vibe coding",
-        "cursor alternative",
-        "ai agent coding workflow"
-      ],
-      "competing_articles": "Most AI coding articles focus on basic Cursor prompts; Suman offers a concrete migration to an open-source agentic terminal workflow.",
-      "real_story_evidence": [
-        {
-          "source": "Hacker News (Show HN)",
-          "title": "Show HN: Huzzah \u2013 a novel approach to coding with AI",
-          "url": "https://www.danielvaughn.dev/posts/huzzah/",
-          "what_to_cite": "The author's transition to working almost exclusively with coding agents since January and building an experimental editor"
-        }
-      ]
-    },
-    {
-      "topic": "How I built a local agent-performance optimizer using Matt Pocock's skills schema",
+      "topic": "Building a Multi-Agent Financial Research Pipeline with Python and Markdown Extraction",
       "category": "C",
       "category_name": "AI Agents & Multi-Agent Workflows",
       "virality_score": 89,
-      "analysis": "Developers are moving past simple LLM wrappers and want structured, reusable 'skills' for their agent pipelines. Matt Pocock's skills directory has exploded on GitHub, proving high developer interest in structured agent capabilities. Showing how to implement this pattern locally with minimal code provides immediate, copyable value.",
+      "analysis": "Multi-agent LLM systems for financial analysis and automated research are surging on GitHub with frameworks like TradingAgents and ByteDance's deer-flow hitting top trends. Most tutorials remain surface-level theoretical overviews without showing how disparate agents parse unstructured documents and reconcile conflicting analyst signals. This article gives developers a functional 3-agent pipeline using MarkItDown to ingest 10-K filings and generate consensus summaries.",
       "cross_source_signals": [
-        "GitHub: mattpocock/skills trending with 2,500+ stars",
-        "Reddit r/MachineLearning: discussions on agent harness optimization"
+        "Hacker News: Multi-Agents LLM Financial Trading Framework trending",
+        "GitHub: bytedance/deer-flow trending (81k+ signal)",
+        "GitHub: microsoft/markitdown trending (180k+ signal)"
       ],
       "developer_pain": "high",
       "freshness": "breaking",
-      "money_angle": "",
-      "story_angle": "I wanted to stop hardcoding system prompts for my local agents, so I built a dynamic skill loader using a standardized JSON schema.",
-      "suman_angle": "How I built a local agent-performance optimizer in 80 lines of Python",
+      "money_angle": "Automating equity research workflows that normally require expensive SaaS subscriptions or hours of manual document parsing",
+      "story_angle": "I spent 4 hours every Monday manually reading earnings reports until I built a 3-agent pipeline that extracts, debates, and summarizes financial filings in 90 seconds.",
+      "suman_angle": "How I Built a 3-Agent Financial Research System in 90 Lines of Python",
       "target_keywords": [
-        "ai agent skills",
-        "agent harness tutorial",
-        "python agent optimization"
+        "multi agent llm tutorial",
+        "financial trading agents python",
+        "microsoft markitdown automation",
+        "langgraph agent workflow"
       ],
-      "competing_articles": "Most agent tutorials are purely theoretical; this post provides a concrete implementation of an agent skill-loading harness.",
+      "competing_articles": "Existing posts explain agent concepts vaguely; this provides full orchestration code parsing raw PDF/Office filings into structured JSON decisions.",
       "real_story_evidence": [
         {
-          "source": "GitHub",
-          "title": "mattpocock/skills Skills for Real Engineers. Straight from my .agents directory.",
-          "url": "https://github.com/mattpocock/skills",
-          "what_to_cite": "The use of structured agent skills straight from a local .agents directory to optimize engineering tasks"
+          "source": "Hacker News",
+          "title": "Multi-Agents LLM Financial Trading Framework",
+          "url": "https://github.com/TauricResearch/TradingAgents",
+          "what_to_cite": "Reference TauricResearch's TradingAgents multi-agent framework architecture for orchestrating distinct agent roles"
         }
       ]
     },
     {
-      "topic": "The 5 load-bearing words that actually control Claude's code generation",
-      "category": "H",
-      "category_name": "Tips & Tricks / Real Workflow",
-      "virality_score": 94,
-      "analysis": "Reverse-engineering LLM behavior is highly viral on Medium because it demystifies prompt engineering with empirical data. This topic leverages the viral 'load-bearing vocabulary' research to give developers exact keywords that prevent Claude from hallucinating code. It's highly actionable, highly bookmarkable, and backed by hard statistical analysis.",
+      "topic": "Vibe Coding an AI Micro-SaaS with Cursor: Building an On-Device Piano Autocomplete Web App",
+      "category": "B",
+      "category_name": "Vibe Coding / AI-Assisted Workflow",
+      "virality_score": 87,
+      "analysis": "Developers are fascinated by lightweight edge models running in browsers but get stuck translating PyTorch checkpoints into interactive web interfaces. With the recent breakthrough of 125M parameter on-device MIDI transformers generating 108 notes/sec, building interactive audio apps via Cursor is now within reach for frontend builders. This guide demonstrates the exact prompts and Web Audio API glue code used to vibe-code an interactive music tool in one afternoon.",
       "cross_source_signals": [
-        "Hacker News: The load-bearing vocabulary of Claude trending with 709 points",
-        "Twitter: heavy discussion on Claude prompt optimization patterns"
+        "Hacker News: Show HN: I trained a 125M model to autocomplete piano on-device (598 points, 117 comments)",
+        "Hacker News: Show HN: Huzzah \u2013 a novel approach to coding with AI (384 points)",
+        "Dev.to: Agentic workflows for rapid frontend prototyping"
       ],
       "developer_pain": "medium",
-      "freshness": "breaking",
-      "money_angle": "",
-      "story_angle": "After reading a deep-dive analysis of Claude's internal token weights, I changed 5 words in my system prompts and instantly fixed my code generation loops.",
-      "suman_angle": "The 5 load-bearing words that actually control Claude's code generation (Backed by 10k prompts)",
+      "freshness": "fresh",
+      "money_angle": "Packaging niche ML models into monetizable web tools and audio micro-SaaS utilities",
+      "story_angle": "I wanted an AI copilot for my MIDI keyboard, so I used Cursor and Claude to build a full in-browser web synth around a 125M model in 4 hours.",
+      "suman_angle": "Vibe Coding a Web MIDI App in 4 Hours: How I Wired a 125M Model Using Cursor",
       "target_keywords": [
-        "claude prompt engineering",
-        "prevent ai hallucinations",
-        "system prompt tips"
+        "vibe coding cursor",
+        "on device ml web audio",
+        "midi autocomplete javascript",
+        "cursor ai web app tutorial"
       ],
-      "competing_articles": "Generic prompt engineering guides suggest long, verbose templates; this post relies on empirical token weight analysis to show exact high-impact words.",
+      "competing_articles": "Most Cursor posts build generic To-Do apps; this shows complex Web Audio API integration and ONNX runtime debugging through prompt iteration.",
       "real_story_evidence": [
         {
           "source": "Hacker News (Show HN)",
-          "title": "Show HN: The load-bearing vocabulary of Claude",
-          "url": "https://louisabraham.github.io/load-bearing/",
-          "what_to_cite": "The empirical analysis of which specific words and tokens carry the most mathematical weight inside Claude's context window"
+          "title": "Show HN: I trained a 125M model to autocomplete piano on-device",
+          "url": "https://simedw.com/2026/08/20/midi-autocomplete/",
+          "what_to_cite": "Cite Simon Edwardsson's achievement of running a 125M transformer at ~108 notes/sec on mobile/web runtimes"
+        }
+      ]
+    },
+    {
+      "topic": "Solo Dev Launch: Building and Launching OwnTime, a Priority Chess Clock App",
+      "category": "A",
+      "category_name": "Developer Success Story",
+      "virality_score": 84,
+      "analysis": "Time management and developer productivity tools consistently capture high read ratios on Medium when anchored in real solo builder journeys. OwnTime resonated on Hacker News by turning competing daily priorities into a physical chess-clock mechanic rather than another boring Pomodoro clone. This breakdown walks through the minimalist tech stack, UI state machine trade-offs, and initial launch metrics of a solo dev tool.",
+      "cross_source_signals": [
+        "Hacker News: Show HN: OwnTime \u2013 a chess clock for your day's priorities (118 points, 67 comments)",
+        "Hacker News: Show HN: Open-Source eInk Bike Computer (418 points)",
+        "GitHub: Solo developer productivity utility trends"
+      ],
+      "developer_pain": "medium",
+      "freshness": "fresh",
+      "money_angle": "Bootstrapping a freemium productivity web app with zero infrastructure overhead",
+      "story_angle": "Balancing context switching between coding and content broke my focus until I turned my daily task list into an interactive dual-timer.",
+      "suman_angle": "How I Shipped a Priority Chess-Clock App in 5 Days as a Solo Dev",
+      "target_keywords": [
+        "solo dev launch",
+        "build productivity app",
+        "chess clock time management",
+        "indie hacker tech stack"
+      ],
+      "competing_articles": "Generic productivity advice lacks implementation details; this post shares the exact state-management code, launch friction, and user feedback.",
+      "real_story_evidence": [
+        {
+          "source": "Hacker News (Show HN)",
+          "title": "Show HN: OwnTime \u2013 a chess clock for your day's priorities",
+          "url": "https://owntime.app/",
+          "what_to_cite": "Reference the core mechanics of balancing competing life roles using dual-timer chess clock paradigms"
         }
       ]
     }
@@ -136,7 +141,7 @@
       "source": "show_hn",
       "title": "Show HN: Open-Source eInk Bike Computer",
       "url": "https://opentrailpaper.com",
-      "signal": "409 points \u00b7 130 comments",
+      "signal": "418 points \u00b7 132 comments",
       "snippet": "Hey all, i just launched my Eink Bike computer project and think it is cool. Another tidbit, in the crazy things that AI has done... It has helped create a ANT (common sensor wireless protocol used in"
     },
     {
@@ -162,24 +167,10 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: HN Match Maker \u2013 Matching \"Who Wants to Be Hired?\" With \"Who's Hiring?\"",
-      "url": "https://hnmatchmaker.com/",
-      "signal": "125 points \u00b7 46 comments",
-      "snippet": "Hi! Every month the \"Who Wants to Be Hired?\" and \"Who's Hiring?\" Threads come through I would think to myself, \"there should be a match maker for these two threads\". So I had abacus.ai whip one up. Th"
-    },
-    {
-      "source": "show_hn",
       "title": "Show HN: Huzzah \u2013 a novel approach to coding with AI",
       "url": "https://www.danielvaughn.dev/posts/huzzah/",
       "signal": "384 points \u00b7 209 comments",
       "snippet": "Hello everyone. I've been working on this experimental editor called Huzzah. I've been working almost exclusively with coding agents since January of this year, and over the past few months I began to"
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: iPhone app takes simultaneous images from 2 lenses, fuses into 1 photo",
-      "url": "https://photosynthesis.camera",
-      "signal": "329 points \u00b7 305 comments",
-      "snippet": ""
     },
     {
       "source": "show_hn",
@@ -204,17 +195,17 @@
     },
     {
       "source": "show_hn",
+      "title": "Show HN: Stuxnet \u2013 A reconstructed source code of the infamous cyber-weapon",
+      "url": "https://github.com/Sadpainy/Stuxnet",
+      "signal": "151 points \u00b7 46 comments",
+      "snippet": "Stuxnet! Here reproduced by me. Only researchs educations purposes."
+    },
+    {
+      "source": "show_hn",
       "title": "Show HN: Eigendrum - Draw any shape and hear what it sounds like as a drum",
       "url": "https://baselashraf81.github.io/eigendrum/",
       "signal": "243 points \u00b7 103 comments",
       "snippet": "Hi HN, I built Eigendrum, a web tool that solves the 2D wave equation for arbitrary shapes so you can hear what they sound like as drums. How it works: * Solves -\u2207\u00b2u = \u03bbu using finite element analysis"
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: Running 104GB Qwen3.8-Flash-Next on 48GB Mac with at ~12 tok/s",
-      "url": "https://github.com/carloslfu/slotstream",
-      "signal": "239 points \u00b7 118 comments",
-      "snippet": "I built slotstream, a way to run Qwen3.8-Flash-Next 4-bit on a low-memory mac starting from 16GB, a 125B parameter model that would need 100GB+ memory/RAM, thanks to expert-offloading/ssd-streaming. E"
     },
     {
       "source": "show_hn",
@@ -225,10 +216,10 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: TERMy \u2013 A fast terminal assistant that does not use LLMs",
-      "url": "https://github.com/gioblu/NPC-Forge/blob/main/docs/development.md",
-      "signal": "211 points \u00b7 45 comments",
-      "snippet": "I love research and development, you may have heard of me because of PJON (Padded Jittering Operative Network). It is a network protocol I started developing in 2010, which was recently implemented in"
+      "title": "Show HN: Running 104GB Qwen3.8-Flash-Next on 48GB Mac with at ~12 tok/s",
+      "url": "https://github.com/carloslfu/slotstream",
+      "signal": "239 points \u00b7 118 comments",
+      "snippet": "I built slotstream, a way to run Qwen3.8-Flash-Next 4-bit on a low-memory mac starting from 16GB, a 125B parameter model that would need 100GB+ memory/RAM, thanks to expert-offloading/ssd-streaming. E"
     },
     {
       "source": "show_hn",
@@ -236,6 +227,13 @@
       "url": "https://wilsonharper.net/projects/businesscard/",
       "signal": "231 points \u00b7 30 comments",
       "snippet": ""
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: TERMy \u2013 A fast terminal assistant that does not use LLMs",
+      "url": "https://github.com/gioblu/NPC-Forge/blob/main/docs/development.md",
+      "signal": "218 points \u00b7 45 comments",
+      "snippet": "I love research and development, you may have heard of me because of PJON (Padded Jittering Operative Network). It is a network protocol I started developing in 2010, which was recently implemented in"
     },
     {
       "source": "show_hn",
@@ -260,6 +258,13 @@
     },
     {
       "source": "show_hn",
+      "title": "Show HN: LatticeDB \u2013 Like SQLite but for graph databases",
+      "url": "https://github.com/jeffhajewski/latticedb",
+      "signal": "190 points \u00b7 54 comments",
+      "snippet": "We have been using graph DBs more and more at work. I found them painful to work with locally and decided to try and build something better."
+    },
+    {
+      "source": "show_hn",
       "title": "Show HN: Weedout \u2013 Safari extension that hides YouTube AI-labeled videos",
       "url": "https://masteranza.github.io/weedout/",
       "signal": "185 points \u00b7 84 comments",
@@ -267,10 +272,10 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: LatticeDB \u2013 Like SQLite but for graph databases",
-      "url": "https://github.com/jeffhajewski/latticedb",
-      "signal": "190 points \u00b7 54 comments",
-      "snippet": "We have been using graph DBs more and more at work. I found them painful to work with locally and decided to try and build something better."
+      "title": "Show HN: Ante, a coding agent in a single binary that runs offline",
+      "url": "https://github.com/AntigmaLabs/ante",
+      "signal": "169 points \u00b7 93 comments",
+      "snippet": ""
     }
   ]
 }
