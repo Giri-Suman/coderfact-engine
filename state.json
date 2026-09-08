@@ -1,14 +1,11 @@
 {
   "topics": [
-    "Multi-agent LLM tutorial: I Built a Financial Pipeline in 90 Lines",
-    "Vibe coding Cursor: I Built an On-Device Audio App in 4 Hours",
-    "Solo dev launch: Stop Wasting Hours With My 5-Day Chess Clock App"
+    "AI Agent Skills Framework: I Built One in 90 Lines of Python",
+    "Safari Extension Monetization: How My $1.99 Tool Made $412 in 10 Days",
+    "Durable Streams Over HTTP: Why I Replaced Redis PubSub With S3"
   ],
   "date": "September 08, 2026",
   "title_history": [
-    "Fast Search Autocomplete: The Python Trie That Cut My Latency to P99 0ms",
-    "Local AI Agent: I Built a Smart Home Controller in 1 Hour With Python",
-    "Claude Prompt Engineering: Why Vibe Coding Breaks Prompts (And the Fix)",
     "Micro SaaS Launch: How I Made $1,200 in 14 Days on Reddit",
     "MCP Server Tutorial: Stop Copy-Pasting Schemas to Claude",
     "Git Aliases That Saved Me 5 Hours of Terminal Work This Week",
@@ -35,103 +32,106 @@
     "Claude Prompt Engineering: 5 Words That Stopped My Code Hallucinations",
     "Multi-agent LLM tutorial: I Built a Financial Pipeline in 90 Lines",
     "Vibe coding Cursor: I Built an On-Device Audio App in 4 Hours",
-    "Solo dev launch: Stop Wasting Hours With My 5-Day Chess Clock App"
+    "Solo dev launch: Stop Wasting Hours With My 5-Day Chess Clock App",
+    "AI Agent Skills Framework: I Built One in 90 Lines of Python",
+    "Safari Extension Monetization: How My $1.99 Tool Made $412 in 10 Days",
+    "Durable Streams Over HTTP: Why I Replaced Redis PubSub With S3"
   ],
   "last_update_id": 70323305,
   "virality_data": [
     {
-      "topic": "Building a Multi-Agent Financial Research Pipeline with Python and Markdown Extraction",
+      "topic": "Building an Agentic Skills Framework for Coding Agents with obra/superpowers and Karpathy CLAUDE.md Patterns",
       "category": "C",
       "category_name": "AI Agents & Multi-Agent Workflows",
-      "virality_score": 89,
-      "analysis": "Multi-agent LLM systems for financial analysis and automated research are surging on GitHub with frameworks like TradingAgents and ByteDance's deer-flow hitting top trends. Most tutorials remain surface-level theoretical overviews without showing how disparate agents parse unstructured documents and reconcile conflicting analyst signals. This article gives developers a functional 3-agent pipeline using MarkItDown to ingest 10-K filings and generate consensus summaries.",
+      "virality_score": 93,
+      "analysis": "Agent harness optimization and structured skill files (CLAUDE.md / agentic skills) are the hottest developer discussion across GitHub and Hacker News right now. Rather than treating coding agents as raw chat prompts, this workflow demonstrates how to build deterministic skill-injection loops that stop context decay. It directly solves the pain point of AI agents drifting or hallucinating repository context over long multi-step tasks.",
       "cross_source_signals": [
-        "Hacker News: Multi-Agents LLM Financial Trading Framework trending",
-        "GitHub: bytedance/deer-flow trending (81k+ signal)",
-        "GitHub: microsoft/markitdown trending (180k+ signal)"
+        "GitHub: obra/superpowers trending with 283k+ signal points",
+        "GitHub: multica-ai/andrej-karpathy-skills trending for Claude Code agent harnesses",
+        "Hacker News: Daniel Vaughn's Huzzah novel agentic coding workflow hitting 384 points"
       ],
       "developer_pain": "high",
       "freshness": "breaking",
-      "money_angle": "Automating equity research workflows that normally require expensive SaaS subscriptions or hours of manual document parsing",
-      "story_angle": "I spent 4 hours every Monday manually reading earnings reports until I built a 3-agent pipeline that extracts, debates, and summarizes financial filings in 90 seconds.",
-      "suman_angle": "How I Built a 3-Agent Financial Research System in 90 Lines of Python",
+      "money_angle": "",
+      "story_angle": "After watching Claude Code repeatedly overwrite core application logic during a multi-file refactor, I built a modular skills-and-instincts agent harness inspired by Karpathy's workflow that cut hallucinated edits to zero.",
+      "suman_angle": "How I Built a Deterministic Agent Skills Harness in 90 Lines of Python (Inspired by Karpathy's Workflow)",
       "target_keywords": [
-        "multi agent llm tutorial",
-        "financial trading agents python",
-        "microsoft markitdown automation",
-        "langgraph agent workflow"
+        "ai agent skills framework",
+        "claude code claudemd tutorial",
+        "agentic software development",
+        "agent harness python"
       ],
-      "competing_articles": "Existing posts explain agent concepts vaguely; this provides full orchestration code parsing raw PDF/Office filings into structured JSON decisions.",
+      "competing_articles": "Most agent articles only discuss high-level LangChain/LangGraph orchestrators; this provides an actionable, file-based skill injection harness for day-to-day coding agents.",
       "real_story_evidence": [
         {
-          "source": "Hacker News",
-          "title": "Multi-Agents LLM Financial Trading Framework",
-          "url": "https://github.com/TauricResearch/TradingAgents",
-          "what_to_cite": "Reference TauricResearch's TradingAgents multi-agent framework architecture for orchestrating distinct agent roles"
+          "source": "Hacker News (Show HN)",
+          "title": "Show HN: Huzzah \u2013 a novel approach to coding with AI",
+          "url": "https://www.danielvaughn.dev/posts/huzzah/",
+          "what_to_cite": "Developer Daniel Vaughn's findings on working exclusively with coding agents since January and how dedicated agent UI/harnesses outperform raw chat"
         }
       ]
     },
     {
-      "topic": "Vibe Coding an AI Micro-SaaS with Cursor: Building an On-Device Piano Autocomplete Web App",
-      "category": "B",
-      "category_name": "Vibe Coding / AI-Assisted Workflow",
+      "topic": "Solo Dev Launch: How I Shipped an AI-Filter Safari Extension and Made My First $400 in 10 Days",
+      "category": "E",
+      "category_name": "Money / Income Story",
+      "virality_score": 91,
+      "analysis": "Micro-SaaS and paid browser extensions targeting AI clutter on video platforms represent an immediate high-intent monetization trend. The developer behind Weedout proved that users will gladly pay a flat $1.99 upfront fee for a minimal tool that cleans AI slop from YouTube. This breakdown covers the exact Safari WebExtension boilerplate, Apple App Store review process, and Stripe conversion metrics.",
+      "cross_source_signals": [
+        "Hacker News: Weedout launch post capturing 185 points and 84 comments",
+        "Hacker News: LibreOffice download records surging after declaring zero AI features (anti-AI clutter trend)",
+        "Dev.to: High engagement around practical browser extension monetization"
+      ],
+      "developer_pain": "medium",
+      "freshness": "fresh",
+      "money_angle": "$1.99 one-time purchase yielding $412 revenue in the first 10 days post-launch",
+      "story_angle": "Tired of AI-generated content flooding my feeds, I coded a lightweight DOM-filtering Safari extension in 48 hours and launched it to test if people would actually pay $1.99 for an AI-free feed.",
+      "suman_angle": "How My $1.99 Safari Extension Made $412 in 10 Days (Full Tech Stack & Stripe Breakdown)",
+      "target_keywords": [
+        "safari extension monetization",
+        "micro saas browser extension",
+        "filter ai youtube extension",
+        "indie hacker first income"
+      ],
+      "competing_articles": "Most income reports focus on multi-month $10k MRR SaaS dreams; this breaks down a realistic 48-hour build with immediate paid utility and transparent conversion rates.",
+      "real_story_evidence": [
+        {
+          "source": "Hacker News (Show HN)",
+          "title": "Show HN: Weedout \u2013 Safari extension that hides YouTube AI-labeled videos",
+          "url": "https://masteranza.github.io/weedout/",
+          "what_to_cite": "The indie developer launched a $1.99 paid Safari extension specifically targeting YouTube's AI metadata labels"
+        }
+      ]
+    },
+    {
+      "topic": "Replacing Redis PubSub with S3-Backed Durable Streams Using PicoMQ Architecture",
+      "category": "G",
+      "category_name": "Software Architecture Insight",
       "virality_score": 87,
-      "analysis": "Developers are fascinated by lightweight edge models running in browsers but get stuck translating PyTorch checkpoints into interactive web interfaces. With the recent breakthrough of 125M parameter on-device MIDI transformers generating 108 notes/sec, building interactive audio apps via Cursor is now within reach for frontend builders. This guide demonstrates the exact prompts and Web Audio API glue code used to vibe-code an interactive music tool in one afternoon.",
+      "analysis": "Durable streams built directly on top of cheap object storage over HTTP are disrupting traditional memory-heavy broker setups like Redis Streams and Kafka for small-to-medium systems. Developers are looking to slash AWS bills by eliminating dedicated caching clusters while retaining replayable HTTP-addressable event streams. This deep-dive explores the exact trade-offs in P99 latency, append throughput, and cost savings.",
       "cross_source_signals": [
-        "Hacker News: Show HN: I trained a 125M model to autocomplete piano on-device (598 points, 117 comments)",
-        "Hacker News: Show HN: Huzzah \u2013 a novel approach to coding with AI (384 points)",
-        "Dev.to: Agentic workflows for rapid frontend prototyping"
+        "Hacker News: PicoMQ launch trending with 159 points and 31 comments",
+        "Hacker News: European CDN and Cloudflare concentration discussions driving interest in lean HTTP/object store infrastructure",
+        "GitHub: Durable stream architectures gaining traction among backend Rust and Node.js teams"
       ],
-      "developer_pain": "medium",
+      "developer_pain": "high",
       "freshness": "fresh",
-      "money_angle": "Packaging niche ML models into monetizable web tools and audio micro-SaaS utilities",
-      "story_angle": "I wanted an AI copilot for my MIDI keyboard, so I used Cursor and Claude to build a full in-browser web synth around a 125M model in 4 hours.",
-      "suman_angle": "Vibe Coding a Web MIDI App in 4 Hours: How I Wired a 125M Model Using Cursor",
+      "money_angle": "Cutting message broker infrastructure spend by 85% by swapping dedicated cluster instances for S3-compatible object storage",
+      "story_angle": "When our memory broker bill doubled during high-throughput ingestion spikes, we evaluated why durable HTTP streams over object storage provide better durability without the cluster maintenance headache.",
+      "suman_angle": "Why We Replaced Redis Streams with HTTP Durable Streams over S3 (Architecture & Benchmarks)",
       "target_keywords": [
-        "vibe coding cursor",
-        "on device ml web audio",
-        "midi autocomplete javascript",
-        "cursor ai web app tutorial"
+        "durable streams over http",
+        "redis streams alternatives",
+        "picomq architecture",
+        "object storage message broker"
       ],
-      "competing_articles": "Most Cursor posts build generic To-Do apps; this shows complex Web Audio API integration and ONNX runtime debugging through prompt iteration.",
+      "competing_articles": "Most queue architecture articles rehash Kafka vs RabbitMQ comparisons; this presents modern HTTP long-polling durable streams running over cheap S3 storage.",
       "real_story_evidence": [
         {
           "source": "Hacker News (Show HN)",
-          "title": "Show HN: I trained a 125M model to autocomplete piano on-device",
-          "url": "https://simedw.com/2026/08/20/midi-autocomplete/",
-          "what_to_cite": "Cite Simon Edwardsson's achievement of running a 125M transformer at ~108 notes/sec on mobile/web runtimes"
-        }
-      ]
-    },
-    {
-      "topic": "Solo Dev Launch: Building and Launching OwnTime, a Priority Chess Clock App",
-      "category": "A",
-      "category_name": "Developer Success Story",
-      "virality_score": 84,
-      "analysis": "Time management and developer productivity tools consistently capture high read ratios on Medium when anchored in real solo builder journeys. OwnTime resonated on Hacker News by turning competing daily priorities into a physical chess-clock mechanic rather than another boring Pomodoro clone. This breakdown walks through the minimalist tech stack, UI state machine trade-offs, and initial launch metrics of a solo dev tool.",
-      "cross_source_signals": [
-        "Hacker News: Show HN: OwnTime \u2013 a chess clock for your day's priorities (118 points, 67 comments)",
-        "Hacker News: Show HN: Open-Source eInk Bike Computer (418 points)",
-        "GitHub: Solo developer productivity utility trends"
-      ],
-      "developer_pain": "medium",
-      "freshness": "fresh",
-      "money_angle": "Bootstrapping a freemium productivity web app with zero infrastructure overhead",
-      "story_angle": "Balancing context switching between coding and content broke my focus until I turned my daily task list into an interactive dual-timer.",
-      "suman_angle": "How I Shipped a Priority Chess-Clock App in 5 Days as a Solo Dev",
-      "target_keywords": [
-        "solo dev launch",
-        "build productivity app",
-        "chess clock time management",
-        "indie hacker tech stack"
-      ],
-      "competing_articles": "Generic productivity advice lacks implementation details; this post shares the exact state-management code, launch friction, and user feedback.",
-      "real_story_evidence": [
-        {
-          "source": "Hacker News (Show HN)",
-          "title": "Show HN: OwnTime \u2013 a chess clock for your day's priorities",
-          "url": "https://owntime.app/",
-          "what_to_cite": "Reference the core mechanics of balancing competing life roles using dual-timer chess clock paradigms"
+          "title": "Show HN: PicoMQ \u2013 Durable Streams over HTTP, on object storage",
+          "url": "https://picomq.com/",
+          "what_to_cite": "PicoMQ's Rust implementation of durable, URL-addressable append/read/long-poll streams on top of commodity object storage"
         }
       ]
     }
@@ -139,17 +139,17 @@
   "success_stories": [
     {
       "source": "show_hn",
-      "title": "Show HN: Open-Source eInk Bike Computer",
-      "url": "https://opentrailpaper.com",
-      "signal": "418 points \u00b7 132 comments",
-      "snippet": "Hey all, i just launched my Eink Bike computer project and think it is cool. Another tidbit, in the crazy things that AI has done... It has helped create a ANT (common sensor wireless protocol used in"
-    },
-    {
-      "source": "show_hn",
       "title": "Show HN: The load-bearing vocabulary of Claude",
       "url": "https://louisabraham.github.io/load-bearing/",
       "signal": "709 points \u00b7 326 comments",
       "snippet": ""
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Open-Source eInk Bike Computer",
+      "url": "https://opentrailpaper.com",
+      "signal": "419 points \u00b7 132 comments",
+      "snippet": "Hey all, i just launched my Eink Bike computer project and think it is cool. Another tidbit, in the crazy things that AI has done... It has helped create a ANT (common sensor wireless protocol used in"
     },
     {
       "source": "show_hn",
@@ -167,6 +167,13 @@
     },
     {
       "source": "show_hn",
+      "title": "Show HN: HN Match Maker \u2013 Matching \"Who Wants to Be Hired?\" With \"Who's Hiring?\"",
+      "url": "https://hnmatchmaker.com/",
+      "signal": "125 points \u00b7 46 comments",
+      "snippet": "Hi! Every month the \"Who Wants to Be Hired?\" and \"Who's Hiring?\" Threads come through I would think to myself, \"there should be a match maker for these two threads\". So I had abacus.ai whip one up. Th"
+    },
+    {
+      "source": "show_hn",
       "title": "Show HN: Huzzah \u2013 a novel approach to coding with AI",
       "url": "https://www.danielvaughn.dev/posts/huzzah/",
       "signal": "384 points \u00b7 209 comments",
@@ -181,6 +188,13 @@
     },
     {
       "source": "show_hn",
+      "title": "Show HN: Stuxnet \u2013 A reconstructed source code of the infamous cyber-weapon",
+      "url": "https://github.com/Sadpainy/Stuxnet",
+      "signal": "161 points \u00b7 49 comments",
+      "snippet": "Stuxnet! Here reproduced by me. Only researchs educations purposes."
+    },
+    {
+      "source": "show_hn",
       "title": "Show HN: Scroll through all 43252003274489856000 Rubik's Cube states",
       "url": "https://everycube.alen.is/",
       "signal": "295 points \u00b7 123 comments",
@@ -192,13 +206,6 @@
       "url": "https://laser.consti.de",
       "signal": "253 points \u00b7 61 comments",
       "snippet": ""
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: Stuxnet \u2013 A reconstructed source code of the infamous cyber-weapon",
-      "url": "https://github.com/Sadpainy/Stuxnet",
-      "signal": "151 points \u00b7 46 comments",
-      "snippet": "Stuxnet! Here reproduced by me. Only researchs educations purposes."
     },
     {
       "source": "show_hn",
@@ -223,6 +230,13 @@
     },
     {
       "source": "show_hn",
+      "title": "Show HN: TERMy \u2013 A fast terminal assistant that does not use LLMs",
+      "url": "https://github.com/gioblu/NPC-Forge/blob/main/docs/development.md",
+      "signal": "220 points \u00b7 45 comments",
+      "snippet": "I love research and development, you may have heard of me because of PJON (Padded Jittering Operative Network). It is a network protocol I started developing in 2010, which was recently implemented in"
+    },
+    {
+      "source": "show_hn",
       "title": "Show HN: NFC Energy-Harvesting PCB Business Card with an MCU",
       "url": "https://wilsonharper.net/projects/businesscard/",
       "signal": "231 points \u00b7 30 comments",
@@ -230,16 +244,9 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: TERMy \u2013 A fast terminal assistant that does not use LLMs",
-      "url": "https://github.com/gioblu/NPC-Forge/blob/main/docs/development.md",
-      "signal": "218 points \u00b7 45 comments",
-      "snippet": "I love research and development, you may have heard of me because of PJON (Padded Jittering Operative Network). It is a network protocol I started developing in 2010, which was recently implemented in"
-    },
-    {
-      "source": "show_hn",
       "title": "Show HN: OpenTIE and OpenXWA, Modern Ports of Tie Fighter and X-Wing Alliance",
       "url": "https://github.com/elyosh/OpenTIE/",
-      "signal": "230 points \u00b7 58 comments",
+      "signal": "231 points \u00b7 58 comments",
       "snippet": ""
     },
     {
@@ -269,13 +276,6 @@
       "url": "https://masteranza.github.io/weedout/",
       "signal": "185 points \u00b7 84 comments",
       "snippet": "I'm the developer. I built this because AI-generated conspiracy videos were getting out of control in my own YouTube feed. Weedout is a $1.99 Safari extension for macOS that removes videos YouTube lab"
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: Ante, a coding agent in a single binary that runs offline",
-      "url": "https://github.com/AntigmaLabs/ante",
-      "signal": "169 points \u00b7 93 comments",
-      "snippet": ""
     }
   ]
 }
