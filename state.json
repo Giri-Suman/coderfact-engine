@@ -1,14 +1,11 @@
 {
   "topics": [
-    "Stop AI agent verbosity: My 40-line Claude Code skill",
-    "Vibe coding Cursor tutorial: I built an on-device LLM in 48 hours",
-    "WASM document parser: How I built a zero-server PDF pipeline in JS"
+    "TradingAgents Tutorial: I Built a 3\u2011Agent Financial Analyst in 120 Lines \u2014 Full Code",
+    "Micro SaaS Consolidation: I Combined Two Apps Into One Dashboard \u2014 Users Doubled",
+    "Rewrite Python in Rust: Why I Rewrote Our Automation Tooling \u2014 Speedups Matter"
   ],
-  "date": "September 09, 2026",
+  "date": "September 10, 2026",
   "title_history": [
-    "Automatic bird identification: I built a local AI system with Python RTSP",
-    "On-device LLM guide: How I run a 14MB local AI agent on my old phone",
-    "Claude prompt engineering mistakes that wasted 10 hours (And the fixes)",
     "Needle2 Python tutorial: I built a local agent in 60 lines of code",
     "SlotStream Mac migration: Why cloud APIs broke our LLM pipeline",
     "Voice AI app tutorial: I built a WebRTC Python game in 7 days",
@@ -35,103 +32,101 @@
     "Durable Streams Over HTTP: Why I Replaced Redis PubSub With S3",
     "Stop AI agent verbosity: My 40-line Claude Code skill",
     "Vibe coding Cursor tutorial: I built an on-device LLM in 48 hours",
-    "WASM document parser: How I built a zero-server PDF pipeline in JS"
+    "WASM document parser: How I built a zero-server PDF pipeline in JS",
+    "TradingAgents Tutorial: I Built a 3\u2011Agent Financial Analyst in 120 Lines \u2014 Full Code",
+    "Micro SaaS Consolidation: I Combined Two Apps Into One Dashboard \u2014 Users Doubled",
+    "Rewrite Python in Rust: Why I Rewrote Our Automation Tooling \u2014 Speedups Matter"
   ],
   "last_update_id": 70323306,
   "virality_data": [
     {
-      "topic": "Building an ADHD-Friendly AI Coding Skill to Stop Agent Context Dumps",
+      "topic": "How to build a multi-agent financial portfolio analyst using Python and TradingAgents",
       "category": "C",
       "category_name": "AI Agents & Multi-Agent Workflows",
-      "virality_score": 93,
-      "analysis": "Agent verbosity and context burying is the single biggest productivity bottleneck developers face when using autonomous coding tools today. Strong cross-source momentum across Hacker News (296 comments) and GitHub trending validates massive community frustration with multi-agent chatter. This article stands out by providing a concise, copy-pasteable skill script that forces agents to extract actionable diffs instead of hiding solutions in walls of text.",
+      "virality_score": 89,
+      "analysis": "With the explosion of agentic frameworks in late 2026, developers are moving past generic chatbots and seeking production-ready orchestration. Citing the trending TradingAgents repository captures the high search volume around multi-agent financial LLMs. This article provides a concrete, runnable 3-agent setup for portfolio analysis rather than abstract theory.",
       "cross_source_signals": [
-        "Hacker News #2 cluster: 296 comments on 'I-have-ADHD: A skill to stop coding agents from burying the answer'",
-        "GitHub Trending Python: ayghri/i-have-adhd (31,750 views/stars)",
-        "Developer community discourse around agent tool-call verbosity and context optimization"
+        "GitHub: TauricResearch/TradingAgents trending with 104k+ stars",
+        "Hacker News: High engagement on multi-agent LLM financial frameworks",
+        "Reddit r/algorithmictrading: Active discussions on LLM-driven market analysis"
       ],
       "developer_pain": "high",
       "freshness": "breaking",
-      "money_angle": "",
-      "story_angle": "I spent three hours debugging a broken auth middleware because my autonomous coding agent buried the critical 2-line fix inside an 800-word architectural monologue.",
-      "suman_angle": "How I Built a 40-Line Skill That Stops Coding Agents From Hiding the Fix",
+      "money_angle": "Shows developers how to automate their personal stock/crypto portfolio analysis using free LLM APIs.",
+      "story_angle": "I was tired of manually parsing earnings reports and news feeds every morning, so I orchestrated a 3-agent pipeline to do it for me.",
+      "suman_angle": "How I built a 3-agent financial analyst pipeline in 120 lines of Python (full code)",
       "target_keywords": [
-        "ai coding agent skills",
-        "claude code context optimization",
-        "stop ai agent verbosity",
-        "developer productivity ai"
+        "multi agent llm",
+        "tradingagents tutorial",
+        "ai financial agent python"
       ],
-      "competing_articles": "Most agent skill tutorials teach how to add more tools; this post teaches how to restrain agent output and surface immediate diffs with working code.",
+      "competing_articles": "Most financial AI articles are generic sentiment analysis; this shows actual multi-agent orchestration with specialized research, risk, and execution roles.",
       "real_story_evidence": [
         {
-          "source": "GitHub & Hacker News",
-          "title": "I-have-ADHD: A skill to stop coding agents from burying the answer",
-          "url": "https://github.com/ayghri/i-have-adhd",
-          "what_to_cite": "Reference how custom prompt skills enforce concise, top-line answers before tool executions to prevent developer attention fatigue."
+          "source": "GitHub",
+          "title": "TauricResearch/TradingAgents TradingAgents: Multi-Agents LLM Financial Trading Framework",
+          "url": "https://github.com/TauricResearch/TradingAgents",
+          "what_to_cite": "Use the architecture of TauricResearch's TradingAgents to explain how the planner, actor, and reporter agents communicate."
         }
       ]
     },
     {
-      "topic": "Vibe Coding an On-Device Real-Time Neural Autocomplete in One Weekend",
-      "category": "B",
-      "category_name": "Vibe Coding / AI-Assisted Workflow",
+      "topic": "Why combining two micro-SaaS apps doubled my user retention",
+      "category": "E",
+      "category_name": "Money / Income Story",
       "virality_score": 91,
-      "analysis": "The intersection of small local models (under 150M parameters) and AI-assisted prototyping is exploding in developer interest. With 598 points and 117 comments on HN, the community is eager to see real-world performance benchmarks of client-side transformer execution. Writing this from an interactive developer perspective gives builders an exact step-by-step pipeline for exporting lightweight models into WebAssembly/browser runtimes.",
+      "analysis": "Medium readers love transparent, numbers-driven developer journeys that challenge conventional 'build more apps' wisdom. Anchoring this in a real Reddit indie hacker success story provides immediate credibility. It addresses the fatigue of managing multiple tiny codebases and marketing channels.",
       "cross_source_signals": [
-        "Hacker News Show HN: 598 points, 117 comments on real-time on-device 125M model execution",
-        "Rising search demand for local lightweight ML runtimes and WebAssembly inference",
-        "Developer curiosity on building zero-latency UI autocompletions without cloud API bills"
-      ],
-      "developer_pain": "medium",
-      "freshness": "fresh",
-      "money_angle": "Cut third-party LLM API inference costs to zero for latency-sensitive keyboard/audio apps",
-      "story_angle": "I was tired of paying $40/month in streaming API calls for interactive completions, so I paired Cursor with a 125M lightweight transformer to run it purely on-device at 100+ events/sec.",
-      "suman_angle": "Vibe Coding an On-Device 125M Autocomplete in 48 Hours with Cursor and ONNX",
-      "target_keywords": [
-        "on-device transformer",
-        "local llm webassembly",
-        "vibe coding cursor tutorial",
-        "lightweight ai model js"
-      ],
-      "competing_articles": "Most local AI tutorials focus on massive 7B models via Ollama; this shows how to build ultra-fast, single-purpose 125M model micro-interactions.",
-      "real_story_evidence": [
-        {
-          "source": "Hacker News (Show HN)",
-          "title": "Show HN: I trained a 125M model to autocomplete piano on-device",
-          "url": "https://simedw.com/2026/08/20/midi-autocomplete/",
-          "what_to_cite": "Cite reaching ~108 real-time events/sec on consumer mobile/desktop hardware using a targeted 125M parameter architecture."
-        }
-      ]
-    },
-    {
-      "topic": "Automating Multi-Format Document Ingestion by Building an In-Browser WASM Parser",
-      "category": "D",
-      "category_name": "AI Automation Across Domains",
-      "virality_score": 87,
-      "analysis": "Document preparation and academic typesetting workflows are notoriously fragile, requiring heavy backend compute or expensive SaaS subscriptions. The high engagement on browser-based compilation (118 points on HN) proves that devs want client-side, zero-server document pipelines. This guide provides a practical blueprint for automating document compiling directly in the client without server infrastructure costs.",
-      "cross_source_signals": [
-        "Hacker News Show HN: TeXbrain browser WASM compiler (118 points, 28 comments)",
-        "Developer fatigue with subscription-heavy document processing platforms like Overleaf",
-        "Dev.to & GitHub rising interest in WebAssembly automation for document engines"
+        "Reddit r/indiehackers: High upvotes on consolidation strategies",
+        "Hacker News: Intense discussion on indie hacker burnout and product-market fit"
       ],
       "developer_pain": "high",
       "freshness": "fresh",
-      "money_angle": "Eliminated $24/month per-seat cloud compilation subscriptions by shifting parsing entirely to client-side WASM",
-      "story_angle": "Our document automation workflow stalled every time our serverless functions hit 15-minute timeout limits, until I moved the entire PDF compilation engine into the user's browser with WebAssembly.",
-      "suman_angle": "How I Built a Zero-Server Automated Document Pipeline in JavaScript and WASM",
+      "money_angle": "Consolidating subscription models and reducing infrastructure overhead to boost net MRR.",
+      "story_angle": "I was drowning in maintenance for two separate micro-apps making under $100/mo each until I made the hard choice to merge them.",
+      "suman_angle": "Why I combined my two failing micro-SaaS apps into one dashboard (and doubled my active users)",
       "target_keywords": [
-        "wasm document parser",
-        "client side pdf automation",
-        "webassembly compile tutorial",
-        "pdftex wasm"
+        "indie hacker mrr",
+        "micro saas consolidation",
+        "solopreneur developer journey"
       ],
-      "competing_articles": "Most document automation guides rely on heavy Python Docker containers on AWS; this tutorial gives a zero-cost, purely client-side WASM implementation.",
+      "competing_articles": "Most income stories focus on launching new products; this offers a contrarian, highly practical take on saving existing products through consolidation.",
       "real_story_evidence": [
         {
-          "source": "Hacker News (Show HN)",
-          "title": "Show HN: TeXbrain, a LaTeX editor that runs pdfTeX in the browser via WASM",
-          "url": "https://github.com/swimmingbrain/texbrain",
-          "what_to_cite": "Reference running complete native typesetting binary engines entirely within client-side WebAssembly to remove backend compute dependencies."
+          "source": "Reddit r/indiehackers",
+          "title": "Less tabs, more impact: Why I combined two of my indie apps",
+          "url": "https://www.reddit.com/r/indiehackers/comments/1wcaw6r/less_tabs_more_impact_why_i_combined_two_of_my/",
+          "what_to_cite": "Reference how combining two separate dashboards into a single unified tab dramatically improved user engagement and simplified marketing."
+        }
+      ]
+    },
+    {
+      "topic": "Why we rewrote our internal developer CLI from Python to Rust",
+      "category": "G",
+      "category_name": "Software Architecture Insight",
+      "virality_score": 87,
+      "analysis": "The 'rewrite it in Rust' narrative remains incredibly potent on Medium, especially when backed by shocking performance metrics (e.g., 10,000x speedups). This post dives into the architectural friction of Python's startup latency and dependency hell in local developer environments. It provides concrete before-and-after code comparisons to justify the rewrite.",
+      "cross_source_signals": [
+        "Dev.to: High engagement on Rust vs Python CLI performance posts",
+        "Hacker News: Constant debate on the real-world utility of rewriting tools in Rust"
+      ],
+      "developer_pain": "medium",
+      "freshness": "fresh",
+      "money_angle": "",
+      "story_angle": "Our local build steps were lagging, so I spent a weekend porting our version bump script to Rust and accidentally eliminated all startup latency.",
+      "suman_angle": "Why I rewrote our local automation tooling from Python to Rust (and why speedups actually matter)",
+      "target_keywords": [
+        "rewrite python in rust",
+        "rust developer tooling",
+        "cli performance optimization"
+      ],
+      "competing_articles": "Many Rust articles are purely theoretical; this focuses on internal developer experience, startup latency, and concrete CLI benchmarks.",
+      "real_story_evidence": [
+        {
+          "source": "Dev.to",
+          "title": "I Built a Version Bump Tool in Rust That Is 10,000x Faster Than Its Python Counterparts.",
+          "url": "https://dev.to/wiseai/i-built-a-version-bump-tool-in-rust-that-is-10000x-faster-than-its-python-counterparts-i6b",
+          "what_to_cite": "Cite how replacing standard Python parsing with a highly optimized Rust binary reduced execution time from seconds to microseconds."
         }
       ]
     }
@@ -139,9 +134,23 @@
   "success_stories": [
     {
       "source": "show_hn",
+      "title": "Show HN: What if the speed of light was 5 km/h?",
+      "url": "https://rivendell.dmitrybrant.com/relativity/",
+      "signal": "243 points \u00b7 98 comments",
+      "snippet": "I've always wanted to make a visualization where the speed of light was scaled down to human speeds, so that we could intuit relativistic effects with everyday objects. Here is the first version of it"
+    },
+    {
+      "source": "indie_reddit",
+      "title": "Less tabs, more impact: Why I combined two of my indie apps",
+      "url": "https://www.reddit.com/r/indiehackers/comments/1wcaw6r/less_tabs_more_impact_why_i_combined_two_of_my/",
+      "signal": "r/indiehackers",
+      "snippet": ""
+    },
+    {
+      "source": "show_hn",
       "title": "Show HN: Copperhead \u2013 Cursor for circuit boards",
       "url": "https://copperhead.sh/",
-      "signal": "225 points \u00b7 90 comments",
+      "signal": "242 points \u00b7 113 comments",
       "snippet": ""
     },
     {
@@ -167,20 +176,6 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Needle2: 14MB agentic LLM for phones, wearables, smart home and robots",
-      "url": "https://cactuscompute.com/needle",
-      "signal": "537 points \u00b7 185 comments",
-      "snippet": "Hey HN, Henry from Cactus here! We previously released Cactus Needle, a 14MB agentic LLM for tool call, device use, and structured extraction for phones, wearables, smart homes, small robots and micro"
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: HN Match Maker \u2013 Matching \"Who Wants to Be Hired?\" With \"Who's Hiring?\"",
-      "url": "https://hnmatchmaker.com/",
-      "signal": "125 points \u00b7 46 comments",
-      "snippet": "Hi! Every month the \"Who Wants to Be Hired?\" and \"Who's Hiring?\" Threads come through I would think to myself, \"there should be a match maker for these two threads\". So I had abacus.ai whip one up. Th"
-    },
-    {
-      "source": "show_hn",
       "title": "Show HN: Huzzah \u2013 a novel approach to coding with AI",
       "url": "https://www.danielvaughn.dev/posts/huzzah/",
       "signal": "384 points \u00b7 209 comments",
@@ -195,13 +190,6 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Scroll through all 43252003274489856000 Rubik's Cube states",
-      "url": "https://everycube.alen.is/",
-      "signal": "295 points \u00b7 123 comments",
-      "snippet": ""
-    },
-    {
-      "source": "show_hn",
       "title": "Show HN: Laser Graffiti",
       "url": "https://laser.consti.de",
       "signal": "253 points \u00b7 61 comments",
@@ -209,24 +197,17 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Stuxnet \u2013 A reconstructed source code of the infamous cyber-weapon",
-      "url": "https://github.com/Sadpainy/Stuxnet",
-      "signal": "169 points \u00b7 50 comments",
-      "snippet": "Stuxnet! Here reproduced by me. Only researchs educations purposes."
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: Eigendrum - Draw any shape and hear what it sounds like as a drum",
-      "url": "https://baselashraf81.github.io/eigendrum/",
-      "signal": "243 points \u00b7 103 comments",
-      "snippet": "Hi HN, I built Eigendrum, a web tool that solves the 2D wave equation for arbitrary shapes so you can hear what they sound like as drums. How it works: * Solves -\u2207\u00b2u = \u03bbu using finite element analysis"
-    },
-    {
-      "source": "show_hn",
       "title": "Show HN: LLM Attention Visualization",
       "url": "https://ishamf.dev/p/llm-attention-visualizer/",
-      "signal": "154 points \u00b7 24 comments",
+      "signal": "166 points \u00b7 26 comments",
       "snippet": ""
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Running 104GB Qwen3.8-Flash-Next on 48GB Mac with at ~12 tok/s",
+      "url": "https://github.com/carloslfu/slotstream",
+      "signal": "240 points \u00b7 118 comments",
+      "snippet": "I built slotstream, a way to run Qwen3.8-Flash-Next 4-bit on a low-memory mac starting from 16GB, a 125B parameter model that would need 100GB+ memory/RAM, thanks to expert-offloading/ssd-streaming. E"
     },
     {
       "source": "show_hn",
@@ -237,10 +218,10 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Running 104GB Qwen3.8-Flash-Next on 48GB Mac with at ~12 tok/s",
-      "url": "https://github.com/carloslfu/slotstream",
-      "signal": "239 points \u00b7 118 comments",
-      "snippet": "I built slotstream, a way to run Qwen3.8-Flash-Next 4-bit on a low-memory mac starting from 16GB, a 125B parameter model that would need 100GB+ memory/RAM, thanks to expert-offloading/ssd-streaming. E"
+      "title": "Show HN: Stuxnet \u2013 A reconstructed source code of the infamous cyber-weapon",
+      "url": "https://github.com/Sadpainy/Stuxnet",
+      "signal": "176 points \u00b7 51 comments",
+      "snippet": "Stuxnet! Here reproduced by me. Only researchs educations purposes."
     },
     {
       "source": "show_hn",
@@ -260,7 +241,7 @@
       "source": "show_hn",
       "title": "Show HN: TERMy \u2013 A fast terminal assistant that does not use LLMs",
       "url": "https://github.com/gioblu/NPC-Forge/blob/main/docs/development.md",
-      "signal": "221 points \u00b7 45 comments",
+      "signal": "225 points \u00b7 45 comments",
       "snippet": "I love research and development, you may have heard of me because of PJON (Padded Jittering Operative Network). It is a network protocol I started developing in 2010, which was recently implemented in"
     },
     {
@@ -276,6 +257,20 @@
       "url": "https://github.com/jeffhajewski/latticedb",
       "signal": "190 points \u00b7 54 comments",
       "snippet": "We have been using graph DBs more and more at work. I found them painful to work with locally and decided to try and build something better."
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Weedout \u2013 Safari extension that hides YouTube AI-labeled videos",
+      "url": "https://masteranza.github.io/weedout/",
+      "signal": "185 points \u00b7 84 comments",
+      "snippet": "I'm the developer. I built this because AI-generated conspiracy videos were getting out of control in my own YouTube feed. Weedout is a $1.99 Safari extension for macOS that removes videos YouTube lab"
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Desktopcolors.com \u2013 A museum for solid background colors of classic OS",
+      "url": "https://desktopcolors.com",
+      "signal": "166 points \u00b7 76 comments",
+      "snippet": "Hi HN, in my last vacation, I built desktopcolors.com as a place to collect iconic solid background colors. Let me know what you think."
     }
   ]
 }
