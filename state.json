@@ -1,14 +1,11 @@
 {
   "topics": [
-    "TradingAgents Tutorial: I Built a 3\u2011Agent Financial Analyst in 120 Lines \u2014 Full Code",
-    "Micro SaaS Consolidation: I Combined Two Apps Into One Dashboard \u2014 Users Doubled",
-    "Rewrite Python in Rust: Why I Rewrote Our Automation Tooling \u2014 Speedups Matter"
+    "Shopify React Native Swift: Why They Abandoned It for Pure Native Apps",
+    "AI Agent Verbosity Fix: My 45-Line Python Script That Stops Claude's Yap",
+    "DIY Bike Computer ESP32: I Built an Open-Source eInk Screen for Under $40"
   ],
-  "date": "September 10, 2026",
+  "date": "September 11, 2026",
   "title_history": [
-    "Needle2 Python tutorial: I built a local agent in 60 lines of code",
-    "SlotStream Mac migration: Why cloud APIs broke our LLM pipeline",
-    "Voice AI app tutorial: I built a WebRTC Python game in 7 days",
     "Block AI YouTube videos: How I Built a Paid Safari Extension",
     "Claude prompt engineering: How I Fixed Code Drift in Cursor",
     "Rust interpreter tutorial: I Built a Mathematica Clone Using Iced",
@@ -35,98 +32,91 @@
     "WASM document parser: How I built a zero-server PDF pipeline in JS",
     "TradingAgents Tutorial: I Built a 3\u2011Agent Financial Analyst in 120 Lines \u2014 Full Code",
     "Micro SaaS Consolidation: I Combined Two Apps Into One Dashboard \u2014 Users Doubled",
-    "Rewrite Python in Rust: Why I Rewrote Our Automation Tooling \u2014 Speedups Matter"
+    "Rewrite Python in Rust: Why I Rewrote Our Automation Tooling \u2014 Speedups Matter",
+    "Shopify React Native Swift: Why They Abandoned It for Pure Native Apps",
+    "AI Agent Verbosity Fix: My 45-Line Python Script That Stops Claude's Yap",
+    "DIY Bike Computer ESP32: I Built an Open-Source eInk Screen for Under $40"
   ],
   "last_update_id": 70323306,
   "virality_data": [
     {
-      "topic": "How to build a multi-agent financial portfolio analyst using Python and TradingAgents",
-      "category": "C",
-      "category_name": "AI Agents & Multi-Agent Workflows",
-      "virality_score": 89,
-      "analysis": "With the explosion of agentic frameworks in late 2026, developers are moving past generic chatbots and seeking production-ready orchestration. Citing the trending TradingAgents repository captures the high search volume around multi-agent financial LLMs. This article provides a concrete, runnable 3-agent setup for portfolio analysis rather than abstract theory.",
+      "topic": "Why Shopify Abandoned React Native for Swift and Kotlin (And What It Means for Solo Builders)",
+      "category": "G",
+      "category_name": "Software Architecture Insight",
+      "virality_score": 92,
+      "analysis": "Shopify's massive engineering pivot back to 100% native mobile apps is dominating both Hacker News (990 points, 674 comments) and Reddit discussions this week. The tech community is actively debating the viability of hybrid frameworks versus native performance in 2026. This post cuts through corporate PR to deliver an actionable architectural teardown with concrete native vs. bridge benchmarks for independent developers.",
       "cross_source_signals": [
-        "GitHub: TauricResearch/TradingAgents trending with 104k+ stars",
-        "Hacker News: High engagement on multi-agent LLM financial frameworks",
-        "Reddit r/algorithmictrading: Active discussions on LLM-driven market analysis"
+        "Hacker News: Shopify is moving from React Native back to Swift and Kotlin (990 points, 674 comments)",
+        "Reddit r/programming: Shopify is moving from React Native back to Swift and Kotlin",
+        "Shopify Engineering Blog: Official announcement post 'Back to Native'"
       ],
       "developer_pain": "high",
       "freshness": "breaking",
-      "money_angle": "Shows developers how to automate their personal stock/crypto portfolio analysis using free LLM APIs.",
-      "story_angle": "I was tired of manually parsing earnings reports and news feeds every morning, so I orchestrated a 3-agent pipeline to do it for me.",
-      "suman_angle": "How I built a 3-agent financial analyst pipeline in 120 lines of Python (full code)",
+      "money_angle": "Saves teams hundreds of engineering hours lost to bridge maintenance and debugging framework updates",
+      "story_angle": "After spending 3 weeks wrestling with cross-platform bridge bottlenecks in my hybrid app, Shopify's engineering announcement validated every single architectural pain point I suffered.",
+      "suman_angle": "Why Shopify Left React Native for Native Swift and Kotlin \u2014 An Honest Architectural Breakdown",
       "target_keywords": [
-        "multi agent llm",
-        "tradingagents tutorial",
-        "ai financial agent python"
+        "react native vs native 2026",
+        "shopify react native swift",
+        "hybrid mobile architecture",
+        "kotlin multiplatform vs react native"
       ],
-      "competing_articles": "Most financial AI articles are generic sentiment analysis; this shows actual multi-agent orchestration with specialized research, risk, and execution roles.",
-      "real_story_evidence": [
-        {
-          "source": "GitHub",
-          "title": "TauricResearch/TradingAgents TradingAgents: Multi-Agents LLM Financial Trading Framework",
-          "url": "https://github.com/TauricResearch/TradingAgents",
-          "what_to_cite": "Use the architecture of TauricResearch's TradingAgents to explain how the planner, actor, and reporter agents communicate."
-        }
-      ]
+      "competing_articles": "Most coverage is brief commentary on the announcement; this post provides technical architectural comparison tables, profiling metrics, and clear migration heuristics.",
+      "real_story_evidence": []
     },
     {
-      "topic": "Why combining two micro-SaaS apps doubled my user retention",
-      "category": "E",
-      "category_name": "Money / Income Story",
-      "virality_score": 91,
-      "analysis": "Medium readers love transparent, numbers-driven developer journeys that challenge conventional 'build more apps' wisdom. Anchoring this in a real Reddit indie hacker success story provides immediate credibility. It addresses the fatigue of managing multiple tiny codebases and marketing channels.",
+      "topic": "Building an ADHD-Friendly AI Coding Guardrail: Stop Claude from Hiding the Answer",
+      "category": "C",
+      "category_name": "AI Agents & Multi-Agent Workflows",
+      "virality_score": 89,
+      "analysis": "Agentic coding skills and MCP extensions are trending rapidly on GitHub (obra/superpowers and ayghri/i-have-adhd), as devs grow frustrated with verbose agent outputs burying real solutions. This week's signal shows massive interest in deterministic prompting skills that enforce concise, action-first responses. This post gives readers a drop-in 45-line Python skill framework to keep Claude Code and agent loops focused on code diffs.",
       "cross_source_signals": [
-        "Reddit r/indiehackers: High upvotes on consolidation strategies",
-        "Hacker News: Intense discussion on indie hacker burnout and product-market fit"
+        "GitHub Trending: ayghri/i-have-adhd (ADHD-friendly coding agent skill)",
+        "GitHub Trending: obra/superpowers (Agentic skills framework & dev methodology)",
+        "Hacker News: Show HN: Huzzah \u2013 a novel approach to coding with AI (384 points)"
       ],
       "developer_pain": "high",
       "freshness": "fresh",
-      "money_angle": "Consolidating subscription models and reducing infrastructure overhead to boost net MRR.",
-      "story_angle": "I was drowning in maintenance for two separate micro-apps making under $100/mo each until I made the hard choice to merge them.",
-      "suman_angle": "Why I combined my two failing micro-SaaS apps into one dashboard (and doubled my active users)",
+      "money_angle": "Cuts LLM token consumption by 45% by pruning unnecessary agent commentary and conversational padding",
+      "story_angle": "I was losing 40 minutes a day parsing 500-word conversational summaries from my coding agent just to find a two-line syntax fix.",
+      "suman_angle": "My AI Agent Was Wasting My Time: How I Built a 45-Line Python Output Filter for Claude",
       "target_keywords": [
-        "indie hacker mrr",
-        "micro saas consolidation",
-        "solopreneur developer journey"
+        "claude code skills tutorial",
+        "agentic workflow python",
+        "ai agent verbosity fix",
+        "custom agent skill framework"
       ],
-      "competing_articles": "Most income stories focus on launching new products; this offers a contrarian, highly practical take on saving existing products through consolidation.",
-      "real_story_evidence": [
-        {
-          "source": "Reddit r/indiehackers",
-          "title": "Less tabs, more impact: Why I combined two of my indie apps",
-          "url": "https://www.reddit.com/r/indiehackers/comments/1wcaw6r/less_tabs_more_impact_why_i_combined_two_of_my/",
-          "what_to_cite": "Reference how combining two separate dashboards into a single unified tab dramatically improved user engagement and simplified marketing."
-        }
-      ]
+      "competing_articles": "Generic prompt engineering guides offer vague tips; this post provides a production-ready Python skill script that directly intercepts and shapes agent outputs.",
+      "real_story_evidence": []
     },
     {
-      "topic": "Why we rewrote our internal developer CLI from Python to Rust",
-      "category": "G",
-      "category_name": "Software Architecture Insight",
-      "virality_score": 87,
-      "analysis": "The 'rewrite it in Rust' narrative remains incredibly potent on Medium, especially when backed by shocking performance metrics (e.g., 10,000x speedups). This post dives into the architectural friction of Python's startup latency and dependency hell in local developer environments. It provides concrete before-and-after code comparisons to justify the rewrite.",
+      "topic": "I Built an Open-Source Hardware Bike Computer with an eInk Screen and Python",
+      "category": "A",
+      "category_name": "Developer Success Story",
+      "virality_score": 86,
+      "analysis": "Hardware hacking and minimalist eInk projects consistently capture top spot engagement on Hacker News (421 points, 132 comments) because developers are exhausted by glossy SaaS apps and crave tactile, low-power builds. This tutorial taps directly into maker curiosity by detailing the complete bill of materials, circuit wiring, and Python rendering loop. It delivers an inspiring, highly clappable journey of taking a physical product from breadboard to handlebar.",
       "cross_source_signals": [
-        "Dev.to: High engagement on Rust vs Python CLI performance posts",
-        "Hacker News: Constant debate on the real-world utility of rewriting tools in Rust"
+        "Hacker News: Show HN: Open-Source eInk Bike Computer (421 points, 132 comments)",
+        "Hacker News: Show HN: Copperhead \u2013 Cursor for circuit boards (245 points)"
       ],
       "developer_pain": "medium",
       "freshness": "fresh",
-      "money_angle": "",
-      "story_angle": "Our local build steps were lagging, so I spent a weekend porting our version bump script to Rust and accidentally eliminated all startup latency.",
-      "suman_angle": "Why I rewrote our local automation tooling from Python to Rust (and why speedups actually matter)",
+      "money_angle": "Built a custom GPS cycling computer for $38 total parts cost versus $300 commercial Garmin units",
+      "story_angle": "Tired of screens washing out in direct sunlight, I spent a weekend assembling an ESP32 board and eInk panel with custom MicroPython telemetry code.",
+      "suman_angle": "How I Built an Open-Source eInk Bike Computer for Under $40 (Full Code + Hardware BOM)",
       "target_keywords": [
-        "rewrite python in rust",
-        "rust developer tooling",
-        "cli performance optimization"
+        "eink display python tutorial",
+        "diy bike computer esp32",
+        "open source eink hardware",
+        "micropython gps logger"
       ],
-      "competing_articles": "Many Rust articles are purely theoretical; this focuses on internal developer experience, startup latency, and concrete CLI benchmarks.",
+      "competing_articles": "Most hardware articles leave out firmware code or wiring diagrams; this post provides the exact component list, pin mappings, and MicroPython refresh loop.",
       "real_story_evidence": [
         {
-          "source": "Dev.to",
-          "title": "I Built a Version Bump Tool in Rust That Is 10,000x Faster Than Its Python Counterparts.",
-          "url": "https://dev.to/wiseai/i-built-a-version-bump-tool-in-rust-that-is-10000x-faster-than-its-python-counterparts-i6b",
-          "what_to_cite": "Cite how replacing standard Python parsing with a highly optimized Rust binary reduced execution time from seconds to microseconds."
+          "source": "Hacker News (Show HN)",
+          "title": "Show HN: Open-Source eInk Bike Computer",
+          "url": "https://opentrailpaper.com",
+          "what_to_cite": "Showcases open-source hardware leveraging low-power eInk display technology for daylight visibility and extreme battery efficiency"
         }
       ]
     }
@@ -136,22 +126,8 @@
       "source": "show_hn",
       "title": "Show HN: What if the speed of light was 5 km/h?",
       "url": "https://rivendell.dmitrybrant.com/relativity/",
-      "signal": "243 points \u00b7 98 comments",
+      "signal": "579 points \u00b7 261 comments",
       "snippet": "I've always wanted to make a visualization where the speed of light was scaled down to human speeds, so that we could intuit relativistic effects with everyday objects. Here is the first version of it"
-    },
-    {
-      "source": "indie_reddit",
-      "title": "Less tabs, more impact: Why I combined two of my indie apps",
-      "url": "https://www.reddit.com/r/indiehackers/comments/1wcaw6r/less_tabs_more_impact_why_i_combined_two_of_my/",
-      "signal": "r/indiehackers",
-      "snippet": ""
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: Copperhead \u2013 Cursor for circuit boards",
-      "url": "https://copperhead.sh/",
-      "signal": "242 points \u00b7 113 comments",
-      "snippet": ""
     },
     {
       "source": "show_hn",
@@ -162,17 +138,24 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Open-Source eInk Bike Computer",
-      "url": "https://opentrailpaper.com",
-      "signal": "419 points \u00b7 132 comments",
-      "snippet": "Hey all, i just launched my Eink Bike computer project and think it is cool. Another tidbit, in the crazy things that AI has done... It has helped create a ANT (common sensor wireless protocol used in"
-    },
-    {
-      "source": "show_hn",
       "title": "Show HN: I trained a 125M model to autocomplete piano on-device",
       "url": "https://simedw.com/2026/08/20/midi-autocomplete/",
       "signal": "598 points \u00b7 117 comments",
       "snippet": "I trained a 125M-parameter transformer to autocomplete piano performances in real time (~108 notes/sec on an iPhone 15). The idea is basically GitHub Copilot or Tabnine, except instead of prompting it"
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Copperhead \u2013 Cursor for circuit boards",
+      "url": "https://copperhead.sh/",
+      "signal": "245 points \u00b7 114 comments",
+      "snippet": ""
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Open-Source eInk Bike Computer",
+      "url": "https://opentrailpaper.com",
+      "signal": "421 points \u00b7 132 comments",
+      "snippet": "Hey all, i just launched my Eink Bike computer project and think it is cool. Another tidbit, in the crazy things that AI has done... It has helped create a ANT (common sensor wireless protocol used in"
     },
     {
       "source": "show_hn",
@@ -197,13 +180,6 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: LLM Attention Visualization",
-      "url": "https://ishamf.dev/p/llm-attention-visualizer/",
-      "signal": "166 points \u00b7 26 comments",
-      "snippet": ""
-    },
-    {
-      "source": "show_hn",
       "title": "Show HN: Running 104GB Qwen3.8-Flash-Next on 48GB Mac with at ~12 tok/s",
       "url": "https://github.com/carloslfu/slotstream",
       "signal": "240 points \u00b7 118 comments",
@@ -215,13 +191,6 @@
       "url": "https://ssx360.github.io/rack-02/?src=hn",
       "signal": "240 points \u00b7 48 comments",
       "snippet": ""
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: Stuxnet \u2013 A reconstructed source code of the infamous cyber-weapon",
-      "url": "https://github.com/Sadpainy/Stuxnet",
-      "signal": "176 points \u00b7 51 comments",
-      "snippet": "Stuxnet! Here reproduced by me. Only researchs educations purposes."
     },
     {
       "source": "show_hn",
@@ -243,6 +212,20 @@
       "url": "https://github.com/gioblu/NPC-Forge/blob/main/docs/development.md",
       "signal": "225 points \u00b7 45 comments",
       "snippet": "I love research and development, you may have heard of me because of PJON (Padded Jittering Operative Network). It is a network protocol I started developing in 2010, which was recently implemented in"
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: LLM Attention Visualization",
+      "url": "https://ishamf.dev/p/llm-attention-visualizer/",
+      "signal": "169 points \u00b7 30 comments",
+      "snippet": ""
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Stuxnet \u2013 A reconstructed source code of the infamous cyber-weapon",
+      "url": "https://github.com/Sadpainy/Stuxnet",
+      "signal": "176 points \u00b7 51 comments",
+      "snippet": "Stuxnet! Here reproduced by me. Only researchs educations purposes."
     },
     {
       "source": "show_hn",
@@ -271,6 +254,13 @@
       "url": "https://desktopcolors.com",
       "signal": "166 points \u00b7 76 comments",
       "snippet": "Hi HN, in my last vacation, I built desktopcolors.com as a place to collect iconic solid background colors. Let me know what you think."
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Compute polynomials twice as fast",
+      "url": "https://thomasahle.com/fast-polynomials/",
+      "signal": "132 points \u00b7 40 comments",
+      "snippet": "A few years ago my coauthor and I was wondering if we could reduce the number of multiplications used for hashing algorithms. We had a construction and a 100 page proof, but we were not 100% sure it w"
     }
   ]
 }
