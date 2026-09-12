@@ -1,14 +1,11 @@
 {
   "topics": [
-    "Shopify React Native Swift: Why They Abandoned It for Pure Native Apps",
-    "AI Agent Verbosity Fix: My 45-Line Python Script That Stops Claude's Yap",
-    "DIY Bike Computer ESP32: I Built an Open-Source eInk Screen for Under $40"
+    "Google App Ads Fraud Wasted My $220: How I Stopped the Bots",
+    "Build MCP Server Python: How I Connected Claude to My Local Tools",
+    "Claude Prompt Engineering: 7 Secret Tokens That Fixed My Code Generation"
   ],
-  "date": "September 11, 2026",
+  "date": "September 12, 2026",
   "title_history": [
-    "Block AI YouTube videos: How I Built a Paid Safari Extension",
-    "Claude prompt engineering: How I Fixed Code Drift in Cursor",
-    "Rust interpreter tutorial: I Built a Mathematica Clone Using Iced",
     "Python Agent Tutorial: I Built a Self-Correcting Dev Agent in 80 Lines",
     "Block AI YouTube Videos: How My $1.99 Safari Extension Made $412 in 10 Days",
     "Claude Prompt Engineering: 5 Words That Doubled My Code Success Rate",
@@ -35,88 +32,103 @@
     "Rewrite Python in Rust: Why I Rewrote Our Automation Tooling \u2014 Speedups Matter",
     "Shopify React Native Swift: Why They Abandoned It for Pure Native Apps",
     "AI Agent Verbosity Fix: My 45-Line Python Script That Stops Claude's Yap",
-    "DIY Bike Computer ESP32: I Built an Open-Source eInk Screen for Under $40"
+    "DIY Bike Computer ESP32: I Built an Open-Source eInk Screen for Under $40",
+    "Google App Ads Fraud Wasted My $220: How I Stopped the Bots",
+    "Build MCP Server Python: How I Connected Claude to My Local Tools",
+    "Claude Prompt Engineering: 7 Secret Tokens That Fixed My Code Generation"
   ],
   "last_update_id": 70323306,
   "virality_data": [
     {
-      "topic": "Why Shopify Abandoned React Native for Swift and Kotlin (And What It Means for Solo Builders)",
-      "category": "G",
-      "category_name": "Software Architecture Insight",
-      "virality_score": 92,
-      "analysis": "Shopify's massive engineering pivot back to 100% native mobile apps is dominating both Hacker News (990 points, 674 comments) and Reddit discussions this week. The tech community is actively debating the viability of hybrid frameworks versus native performance in 2026. This post cuts through corporate PR to deliver an actionable architectural teardown with concrete native vs. bridge benchmarks for independent developers.",
+      "topic": "How I Wasted $220 on Google App Ads (And Why 60% of My Installs Were Actually Robots)",
+      "category": "E",
+      "category_name": "Money / Income Story",
+      "virality_score": 94,
+      "analysis": "This topic taps directly into the developer pain of burning marketing spend on fraudulent traffic, which is highly relatable for indie hackers. Backed by a trending real-world case study, it exposes the dark side of modern PPC campaigns. It stands out because most income posts focus solely on positive MRR, whereas analyzing a calculated loss with concrete data gets massive engagement.",
       "cross_source_signals": [
-        "Hacker News: Shopify is moving from React Native back to Swift and Kotlin (990 points, 674 comments)",
-        "Reddit r/programming: Shopify is moving from React Native back to Swift and Kotlin",
-        "Shopify Engineering Blog: Official announcement post 'Back to Native'"
+        "Hacker News: 237 comments on Google Ads bot farm",
+        "Reddit r/indiehackers: High engagement on ad-fraud discussions",
+        "Google Trends: 'Google app campaign fraud' rising"
       ],
       "developer_pain": "high",
       "freshness": "breaking",
-      "money_angle": "Saves teams hundreds of engineering hours lost to bridge maintenance and debugging framework updates",
-      "story_angle": "After spending 3 weeks wrestling with cross-platform bridge bottlenecks in my hybrid app, Shopify's engineering announcement validated every single architectural pain point I suffered.",
-      "suman_angle": "Why Shopify Left React Native for Native Swift and Kotlin \u2014 An Honest Architectural Breakdown",
+      "money_angle": "How ad network fraud drained a $220 budget and how to configure IP exclusion lists to save your next campaign",
+      "story_angle": "I launched my micro-SaaS mobile client, set up a modest $220 Google Ads campaign, and watched in horror as my database filled with automated bot sessions.",
+      "suman_angle": "How I Wasted $220 on Google App Ads (And Why 60% of My Installs Were Actually Robots)",
       "target_keywords": [
-        "react native vs native 2026",
-        "shopify react native swift",
-        "hybrid mobile architecture",
-        "kotlin multiplatform vs react native"
+        "google app ads fraud",
+        "indie hacker marketing",
+        "mobile app bot traffic"
       ],
-      "competing_articles": "Most coverage is brief commentary on the announcement; this post provides technical architectural comparison tables, profiling metrics, and clear migration heuristics.",
-      "real_story_evidence": []
+      "competing_articles": "Most marketing guides blindly recommend Google App Campaigns; this article exposes the exact bot-farm patterns and provides a Node.js script to detect and filter them.",
+      "real_story_evidence": [
+        {
+          "source": "Hacker News",
+          "title": "I spent $220 on Google app ads and 60% of the installs were robots",
+          "url": "https://dayzlegame.com/blog/google-ads-bot-farm/",
+          "what_to_cite": "The author spent $220 on Google Ads resulting in 60% bot installs that instantly crashed their metrics."
+        }
+      ]
     },
     {
-      "topic": "Building an ADHD-Friendly AI Coding Guardrail: Stop Claude from Hiding the Answer",
+      "topic": "How to Build a Custom MCP Server in 80 Lines of Python to Connect Claude to Your Local Tools",
       "category": "C",
       "category_name": "AI Agents & Multi-Agent Workflows",
-      "virality_score": 89,
-      "analysis": "Agentic coding skills and MCP extensions are trending rapidly on GitHub (obra/superpowers and ayghri/i-have-adhd), as devs grow frustrated with verbose agent outputs burying real solutions. This week's signal shows massive interest in deterministic prompting skills that enforce concise, action-first responses. This post gives readers a drop-in 45-line Python skill framework to keep Claude Code and agent loops focused on code diffs.",
+      "virality_score": 92,
+      "analysis": "Model Context Protocol (MCP) is the fastest-growing standard in 2026 for connecting LLMs to local data. This tutorial provides a highly practical, copy-pasteable implementation that developers can immediately use with Claude Desktop. It moves past generic agent frameworks to show a concrete, protocol-compliant integration.",
       "cross_source_signals": [
-        "GitHub Trending: ayghri/i-have-adhd (ADHD-friendly coding agent skill)",
-        "GitHub Trending: obra/superpowers (Agentic skills framework & dev methodology)",
-        "Hacker News: Show HN: Huzzah \u2013 a novel approach to coding with AI (384 points)"
+        "Dev.to: MCP community challenge trending",
+        "GitHub: Model Context Protocol SDK stars spiking",
+        "Reddit r/LanguageTechnology: High interest in MCP implementations"
       ],
       "developer_pain": "high",
-      "freshness": "fresh",
-      "money_angle": "Cuts LLM token consumption by 45% by pruning unnecessary agent commentary and conversational padding",
-      "story_angle": "I was losing 40 minutes a day parsing 500-word conversational summaries from my coding agent just to find a two-line syntax fix.",
-      "suman_angle": "My AI Agent Was Wasting My Time: How I Built a 45-Line Python Output Filter for Claude",
+      "freshness": "breaking",
+      "money_angle": "",
+      "story_angle": "I got tired of copy-pasting local database schemas into Claude, so I built a local MCP server that lets Claude query my dev environment directly.",
+      "suman_angle": "I Built a Custom MCP Server in 80 Lines of Python to Connect Claude to My Local Dev Tools",
       "target_keywords": [
-        "claude code skills tutorial",
-        "agentic workflow python",
-        "ai agent verbosity fix",
-        "custom agent skill framework"
+        "model context protocol tutorial",
+        "build mcp server python",
+        "claude desktop integration"
       ],
-      "competing_articles": "Generic prompt engineering guides offer vague tips; this post provides a production-ready Python skill script that directly intercepts and shapes agent outputs.",
-      "real_story_evidence": []
+      "competing_articles": "Most MCP articles are abstract announcements from Anthropic; this is a hands-on, line-by-line coding guide for building a working server.",
+      "real_story_evidence": [
+        {
+          "source": "Dev.to",
+          "title": "From AI Solutions to Shared Knowledge: Building an MCP for the Community",
+          "url": "https://dev.to/pascal_cescato_692b7a8a20/from-ai-solutions-to-shared-knowledge-building-an-mcp-for-the-community-6bk",
+          "what_to_cite": "Using the Model Context Protocol (MCP) to bridge AI solutions with shared community knowledge and local tools."
+        }
+      ]
     },
     {
-      "topic": "I Built an Open-Source Hardware Bike Computer with an eInk Screen and Python",
-      "category": "A",
-      "category_name": "Developer Success Story",
-      "virality_score": 86,
-      "analysis": "Hardware hacking and minimalist eInk projects consistently capture top spot engagement on Hacker News (421 points, 132 comments) because developers are exhausted by glossy SaaS apps and crave tactile, low-power builds. This tutorial taps directly into maker curiosity by detailing the complete bill of materials, circuit wiring, and Python rendering loop. It delivers an inspiring, highly clappable journey of taking a physical product from breadboard to handlebar.",
+      "topic": "The Load-Bearing Vocabulary of Claude: 7 Secret Tokens That Drastically Improve Code Generation",
+      "category": "H",
+      "category_name": "Tips & Tricks / Real Workflow",
+      "virality_score": 89,
+      "analysis": "This article dissects the underlying tokens that Claude heavily relies on to structure logical reasoning and code. Developers are obsessed with prompt engineering optimizations, and analyzing actual linguistic biases of Sonnet 3.5 provides scientific, actionable value. It offers a highly unique angle compared to generic 'how to prompt' listicles.",
       "cross_source_signals": [
-        "Hacker News: Show HN: Open-Source eInk Bike Computer (421 points, 132 comments)",
-        "Hacker News: Show HN: Copperhead \u2013 Cursor for circuit boards (245 points)"
+        "Hacker News: 710 points on Claude's load-bearing vocabulary",
+        "Reddit r/ClaudeAI: Intense discussion on token-level prompting",
+        "Twitter/X: Tech influencers sharing LLM linguistic analysis"
       ],
       "developer_pain": "medium",
-      "freshness": "fresh",
-      "money_angle": "Built a custom GPS cycling computer for $38 total parts cost versus $300 commercial Garmin units",
-      "story_angle": "Tired of screens washing out in direct sunlight, I spent a weekend assembling an ESP32 board and eInk panel with custom MicroPython telemetry code.",
-      "suman_angle": "How I Built an Open-Source eInk Bike Computer for Under $40 (Full Code + Hardware BOM)",
+      "freshness": "sharp",
+      "money_angle": "",
+      "story_angle": "I analyzed Claude's output patterns and discovered that forcing specific 'load-bearing' tokens in system prompts eliminates half of its structural coding errors.",
+      "suman_angle": "The Load-Bearing Vocabulary of Claude: 7 Secret Tokens That Drastically Improve Code Generation",
       "target_keywords": [
-        "eink display python tutorial",
-        "diy bike computer esp32",
-        "open source eink hardware",
-        "micropython gps logger"
+        "claude prompt engineering",
+        "llm system prompts",
+        "claude 3.5 sonnet tips"
       ],
-      "competing_articles": "Most hardware articles leave out firmware code or wiring diagrams; this post provides the exact component list, pin mappings, and MicroPython refresh loop.",
+      "competing_articles": "While others offer basic prompt templates, this post dives deep into the statistical tokens that dictate Claude's reasoning state machine.",
       "real_story_evidence": [
         {
           "source": "Hacker News (Show HN)",
-          "title": "Show HN: Open-Source eInk Bike Computer",
-          "url": "https://opentrailpaper.com",
-          "what_to_cite": "Showcases open-source hardware leveraging low-power eInk display technology for daylight visibility and extreme battery efficiency"
+          "title": "The load-bearing vocabulary of Claude",
+          "url": "https://louisabraham.github.io/load-bearing/",
+          "what_to_cite": "Analyzing the specific, highly-weighted vocabulary and tokens that Claude uses to structure its outputs."
         }
       ]
     }
@@ -126,8 +138,29 @@
       "source": "show_hn",
       "title": "Show HN: What if the speed of light was 5 km/h?",
       "url": "https://rivendell.dmitrybrant.com/relativity/",
-      "signal": "579 points \u00b7 261 comments",
+      "signal": "607 points \u00b7 277 comments",
       "snippet": "I've always wanted to make a visualization where the speed of light was scaled down to human speeds, so that we could intuit relativistic effects with everyday objects. Here is the first version of it"
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Hacker News, without AI",
+      "url": "https://hcker.news/?ai=exclude",
+      "signal": "184 points \u00b7 84 comments",
+      "snippet": ""
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Hacker News, Without AI",
+      "url": "https://www.unslop.news/",
+      "signal": "184 points \u00b7 77 comments",
+      "snippet": ""
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Bodily Oddities",
+      "url": "https://vester.si/bodily-oddities/",
+      "signal": "213 points \u00b7 151 comments",
+      "snippet": "When I was about 11 years old, my best friend and I were playing during recess at school, and I was carrying him around on my back, presumably pretending to be a multipart attack robot. All of a sudde"
     },
     {
       "source": "show_hn",
@@ -145,17 +178,17 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Copperhead \u2013 Cursor for circuit boards",
-      "url": "https://copperhead.sh/",
-      "signal": "245 points \u00b7 114 comments",
-      "snippet": ""
+      "title": "Show HN: Open-Source eInk Bike Computer",
+      "url": "https://opentrailpaper.com",
+      "signal": "421 points \u00b7 133 comments",
+      "snippet": "Hey all, i just launched my Eink Bike computer project and think it is cool. Another tidbit, in the crazy things that AI has done... It has helped create a ANT (common sensor wireless protocol used in"
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Open-Source eInk Bike Computer",
-      "url": "https://opentrailpaper.com",
-      "signal": "421 points \u00b7 132 comments",
-      "snippet": "Hey all, i just launched my Eink Bike computer project and think it is cool. Another tidbit, in the crazy things that AI has done... It has helped create a ANT (common sensor wireless protocol used in"
+      "title": "Show HN: Copperhead \u2013 Cursor for circuit boards",
+      "url": "https://copperhead.sh/",
+      "signal": "248 points \u00b7 115 comments",
+      "snippet": ""
     },
     {
       "source": "show_hn",
@@ -163,13 +196,6 @@
       "url": "https://www.danielvaughn.dev/posts/huzzah/",
       "signal": "384 points \u00b7 209 comments",
       "snippet": "Hello everyone. I've been working on this experimental editor called Huzzah. I've been working almost exclusively with coding agents since January of this year, and over the past few months I began to"
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: Woxi - Open-source Mathematica / Wolfram Language reimplementation",
-      "url": "https://woxi.ad-si.com",
-      "signal": "314 points \u00b7 46 comments",
-      "snippet": "Woxi is an interpreter for the Wolfram Language written in Rust. It comes with Woxi Studio, a Mathematica-like GUI built with iced, but you can also use Woxi through a CLI, Jupyter kernel, Python pack"
     },
     {
       "source": "show_hn",
@@ -215,20 +241,6 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: LLM Attention Visualization",
-      "url": "https://ishamf.dev/p/llm-attention-visualizer/",
-      "signal": "169 points \u00b7 30 comments",
-      "snippet": ""
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: Stuxnet \u2013 A reconstructed source code of the infamous cyber-weapon",
-      "url": "https://github.com/Sadpainy/Stuxnet",
-      "signal": "176 points \u00b7 51 comments",
-      "snippet": "Stuxnet! Here reproduced by me. Only researchs educations purposes."
-    },
-    {
-      "source": "show_hn",
       "title": "Show HN: We built open OpenRouter that turns usage into a better model",
       "url": "https://github.com/experientiallabs/experiential",
       "signal": "222 points \u00b7 47 comments",
@@ -243,24 +255,24 @@
     },
     {
       "source": "show_hn",
+      "title": "Show HN: LLM Attention Visualization",
+      "url": "https://ishamf.dev/p/llm-attention-visualizer/",
+      "signal": "172 points \u00b7 31 comments",
+      "snippet": ""
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Stuxnet \u2013 A reconstructed source code of the infamous cyber-weapon",
+      "url": "https://github.com/Sadpainy/Stuxnet",
+      "signal": "177 points \u00b7 51 comments",
+      "snippet": "Stuxnet! Here reproduced by me. Only researchs educations purposes."
+    },
+    {
+      "source": "show_hn",
       "title": "Show HN: Weedout \u2013 Safari extension that hides YouTube AI-labeled videos",
       "url": "https://masteranza.github.io/weedout/",
       "signal": "185 points \u00b7 84 comments",
       "snippet": "I'm the developer. I built this because AI-generated conspiracy videos were getting out of control in my own YouTube feed. Weedout is a $1.99 Safari extension for macOS that removes videos YouTube lab"
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: Desktopcolors.com \u2013 A museum for solid background colors of classic OS",
-      "url": "https://desktopcolors.com",
-      "signal": "166 points \u00b7 76 comments",
-      "snippet": "Hi HN, in my last vacation, I built desktopcolors.com as a place to collect iconic solid background colors. Let me know what you think."
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: Compute polynomials twice as fast",
-      "url": "https://thomasahle.com/fast-polynomials/",
-      "signal": "132 points \u00b7 40 comments",
-      "snippet": "A few years ago my coauthor and I was wondering if we could reduce the number of multiplications used for hashing algorithms. We had a construction and a 100 page proof, but we were not 100% sure it w"
     }
   ]
 }
