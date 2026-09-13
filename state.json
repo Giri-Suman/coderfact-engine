@@ -1,14 +1,11 @@
 {
   "topics": [
-    "Google App Ads Fraud Wasted My $220: How I Stopped the Bots",
-    "Build MCP Server Python: How I Connected Claude to My Local Tools",
-    "Claude Prompt Engineering: 7 Secret Tokens That Fixed My Code Generation"
+    "Write Basic Interpreter in C: How I Built a 500-Line UEFI Bootloader",
+    "Vibe Coding Claude: I Built a Piano Autocompleter in 4 Hours",
+    "Claude API Cost Reduction: The LangGraph Fix That Cut My Bill by 30%"
   ],
-  "date": "September 12, 2026",
+  "date": "September 13, 2026",
   "title_history": [
-    "Python Agent Tutorial: I Built a Self-Correcting Dev Agent in 80 Lines",
-    "Block AI YouTube Videos: How My $1.99 Safari Extension Made $412 in 10 Days",
-    "Claude Prompt Engineering: 5 Words That Doubled My Code Success Rate",
     "eInk Bike Computer: I Built One Using ESP32 and Python",
     "Claude Prompt Engineering: Stop Cursor Prompt Drift With 100 Words",
     "Local LLM Tutorial: The Fix That Cut Autocomplete Latency to Sub-10ms",
@@ -35,100 +32,103 @@
     "DIY Bike Computer ESP32: I Built an Open-Source eInk Screen for Under $40",
     "Google App Ads Fraud Wasted My $220: How I Stopped the Bots",
     "Build MCP Server Python: How I Connected Claude to My Local Tools",
-    "Claude Prompt Engineering: 7 Secret Tokens That Fixed My Code Generation"
+    "Claude Prompt Engineering: 7 Secret Tokens That Fixed My Code Generation",
+    "Write Basic Interpreter in C: How I Built a 500-Line UEFI Bootloader",
+    "Vibe Coding Claude: I Built a Piano Autocompleter in 4 Hours",
+    "Claude API Cost Reduction: The LangGraph Fix That Cut My Bill by 30%"
   ],
   "last_update_id": 70323306,
   "virality_data": [
     {
-      "topic": "How I Wasted $220 on Google App Ads (And Why 60% of My Installs Were Actually Robots)",
-      "category": "E",
-      "category_name": "Money / Income Story",
-      "virality_score": 94,
-      "analysis": "This topic taps directly into the developer pain of burning marketing spend on fraudulent traffic, which is highly relatable for indie hackers. Backed by a trending real-world case study, it exposes the dark side of modern PPC campaigns. It stands out because most income posts focus solely on positive MRR, whereas analyzing a calculated loss with concrete data gets massive engagement.",
-      "cross_source_signals": [
-        "Hacker News: 237 comments on Google Ads bot farm",
-        "Reddit r/indiehackers: High engagement on ad-fraud discussions",
-        "Google Trends: 'Google app campaign fraud' rising"
-      ],
-      "developer_pain": "high",
-      "freshness": "breaking",
-      "money_angle": "How ad network fraud drained a $220 budget and how to configure IP exclusion lists to save your next campaign",
-      "story_angle": "I launched my micro-SaaS mobile client, set up a modest $220 Google Ads campaign, and watched in horror as my database filled with automated bot sessions.",
-      "suman_angle": "How I Wasted $220 on Google App Ads (And Why 60% of My Installs Were Actually Robots)",
-      "target_keywords": [
-        "google app ads fraud",
-        "indie hacker marketing",
-        "mobile app bot traffic"
-      ],
-      "competing_articles": "Most marketing guides blindly recommend Google App Campaigns; this article exposes the exact bot-farm patterns and provides a Node.js script to detect and filter them.",
-      "real_story_evidence": [
-        {
-          "source": "Hacker News",
-          "title": "I spent $220 on Google app ads and 60% of the installs were robots",
-          "url": "https://dayzlegame.com/blog/google-ads-bot-farm/",
-          "what_to_cite": "The author spent $220 on Google Ads resulting in 60% bot installs that instantly crashed their metrics."
-        }
-      ]
-    },
-    {
-      "topic": "How to Build a Custom MCP Server in 80 Lines of Python to Connect Claude to Your Local Tools",
-      "category": "C",
-      "category_name": "AI Agents & Multi-Agent Workflows",
-      "virality_score": 92,
-      "analysis": "Model Context Protocol (MCP) is the fastest-growing standard in 2026 for connecting LLMs to local data. This tutorial provides a highly practical, copy-pasteable implementation that developers can immediately use with Claude Desktop. It moves past generic agent frameworks to show a concrete, protocol-compliant integration.",
-      "cross_source_signals": [
-        "Dev.to: MCP community challenge trending",
-        "GitHub: Model Context Protocol SDK stars spiking",
-        "Reddit r/LanguageTechnology: High interest in MCP implementations"
-      ],
-      "developer_pain": "high",
-      "freshness": "breaking",
-      "money_angle": "",
-      "story_angle": "I got tired of copy-pasting local database schemas into Claude, so I built a local MCP server that lets Claude query my dev environment directly.",
-      "suman_angle": "I Built a Custom MCP Server in 80 Lines of Python to Connect Claude to My Local Dev Tools",
-      "target_keywords": [
-        "model context protocol tutorial",
-        "build mcp server python",
-        "claude desktop integration"
-      ],
-      "competing_articles": "Most MCP articles are abstract announcements from Anthropic; this is a hands-on, line-by-line coding guide for building a working server.",
-      "real_story_evidence": [
-        {
-          "source": "Dev.to",
-          "title": "From AI Solutions to Shared Knowledge: Building an MCP for the Community",
-          "url": "https://dev.to/pascal_cescato_692b7a8a20/from-ai-solutions-to-shared-knowledge-building-an-mcp-for-the-community-6bk",
-          "what_to_cite": "Using the Model Context Protocol (MCP) to bridge AI solutions with shared community knowledge and local tools."
-        }
-      ]
-    },
-    {
-      "topic": "The Load-Bearing Vocabulary of Claude: 7 Secret Tokens That Drastically Improve Code Generation",
-      "category": "H",
-      "category_name": "Tips & Tricks / Real Workflow",
+      "topic": "How I wrote a tiny BASIC interpreter that boots directly on bare-metal UEFI",
+      "category": "A",
+      "category_name": "Developer Success Story",
       "virality_score": 89,
-      "analysis": "This article dissects the underlying tokens that Claude heavily relies on to structure logical reasoning and code. Developers are obsessed with prompt engineering optimizations, and analyzing actual linguistic biases of Sonnet 3.5 provides scientific, actionable value. It offers a highly unique angle compared to generic 'how to prompt' listicles.",
+      "analysis": "Bare-metal and low-level programming projects are currently dominating Hacker News and Medium because devs are experiencing fatigue from high-level JS framework churn. This article taps into the nostalgic builder narrative by showing exactly how to bypass operating systems entirely to run code. It provides concrete, copyable bootstrap code that bridges the gap between intimidating low-level assembly and high-level logic.",
       "cross_source_signals": [
-        "Hacker News: 710 points on Claude's load-bearing vocabulary",
-        "Reddit r/ClaudeAI: Intense discussion on token-level prompting",
-        "Twitter/X: Tech influencers sharing LLM linguistic analysis"
+        "Hacker News: 156 points on Thoreau BASIC",
+        "GitHub: osdev-related repositories trending",
+        "Reddit r/programming: high engagement on custom interpreters"
       ],
-      "developer_pain": "medium",
-      "freshness": "sharp",
+      "developer_pain": "high",
+      "freshness": "fresh",
       "money_angle": "",
-      "story_angle": "I analyzed Claude's output patterns and discovered that forcing specific 'load-bearing' tokens in system prompts eliminates half of its structural coding errors.",
-      "suman_angle": "The Load-Bearing Vocabulary of Claude: 7 Secret Tokens That Drastically Improve Code Generation",
+      "story_angle": "I wanted to escape the modern web stack bloat, so I went to the absolute metal and wrote an old-fashioned BASIC interpreter that boots straight from UEFI.",
+      "suman_angle": "How I wrote a 500-line BASIC interpreter that boots directly on bare-metal UEFI",
       "target_keywords": [
-        "claude prompt engineering",
-        "llm system prompts",
-        "claude 3.5 sonnet tips"
+        "uefi bootloader tutorial",
+        "write basic interpreter",
+        "bare metal programming c"
       ],
-      "competing_articles": "While others offer basic prompt templates, this post dives deep into the statistical tokens that dictate Claude's reasoning state machine.",
+      "competing_articles": "Most UEFI tutorials are dry, academic, or write a simple 'Hello World'. This shows a fully functioning, interactive interpreter booting on real hardware.",
       "real_story_evidence": [
         {
           "source": "Hacker News (Show HN)",
-          "title": "The load-bearing vocabulary of Claude",
+          "title": "Show HN: I wrote a BASIC interpreter that boots on UEFI machines",
+          "url": "https://tarjan.itch.io/thoreaubasic",
+          "what_to_cite": "The creator wrote Thoreau BASIC to achieve a small, old-fashioned interpreter with line numbers and immediate mode booting directly on UEFI."
+        }
+      ]
+    },
+    {
+      "topic": "How I vibe-coded an on-device piano autocompleter in 4 hours using Claude and Web Audio",
+      "category": "B",
+      "category_name": "Vibe Coding / AI-Assisted Workflow",
+      "virality_score": 92,
+      "analysis": "This article merges the massive 'vibe coding' trend with real-time browser audio synthesis, a highly visual and interactive niche. It explains the exact prompt sequence used to generate the Web Audio API code and load a small transformer model on-device. By proving that advanced AI audio generation can run entirely in the client-side browser, it captures both high search volume and high bookmarks.",
+      "cross_source_signals": [
+        "Hacker News: 598 points on 125M piano autocomplete model",
+        "Google Trends: 'vibe coding Claude' rising",
+        "Reddit r/LocalLLaMA: interest in on-device WebGPU models"
+      ],
+      "developer_pain": "medium",
+      "freshness": "breaking",
+      "money_angle": "",
+      "story_angle": "I wanted a real-time musical companion in my browser, so I used Claude to build a web-based piano autocompleter powered by a local 125M model.",
+      "suman_angle": "How I vibe-coded an on-device piano autocomplete tool in 4 hours using Claude",
+      "target_keywords": [
+        "vibe coding claude",
+        "on device llm browser",
+        "web audio api autocomplete"
+      ],
+      "competing_articles": "Most AI music posts are about heavy Python backends; this tutorial shows how to run a lightweight model directly in the browser with vanilla JS.",
+      "real_story_evidence": [
+        {
+          "source": "Hacker News (Show HN)",
+          "title": "Show HN: I trained a 125M model to autocomplete piano on-device",
+          "url": "https://simedw.com/2026/08/20/midi-autocomplete/",
+          "what_to_cite": "The developer trained a 125M-parameter transformer running on-device to autocomplete piano performances at ~108 notes per second."
+        }
+      ]
+    },
+    {
+      "topic": "I built a prompt-optimization agent that filters Claude's 'load-bearing' tokens to save 30% on API costs",
+      "category": "C",
+      "category_name": "AI Agents & Multi-Agent Workflows",
+      "virality_score": 94,
+      "analysis": "LLM API costs and token bloat are primary developer pain points in late 2026. This article introduces the concept of Claude's 'load-bearing vocabulary'\u2014specific tokens that hold disproportionate semantic weight\u2014and shows how to build an agent that prunes redundant prompt tokens before execution. It provides an actionable, 80-line Python orchestration script that yields immediate, measurable financial savings.",
+      "cross_source_signals": [
+        "Hacker News: 710 points on the load-bearing vocabulary of Claude",
+        "GitHub: awesome-llm-apps trending with 137k stars",
+        "Reddit r/LanguageTechnology: discussions on token pruning"
+      ],
+      "developer_pain": "high",
+      "freshness": "breaking",
+      "money_angle": "Saves developers and startups 30% on their monthly LLM API bills.",
+      "story_angle": "After seeing how Claude relies on specific 'load-bearing' tokens, I built a pre-processing agent to strip prompt fluff and instantly slashed my API bill.",
+      "suman_angle": "I built a prompt-optimization agent that strips Claude's 'load-bearing' tokens to save 30% on API costs",
+      "target_keywords": [
+        "claude api cost reduction",
+        "token optimization agent",
+        "langgraph prompt agent"
+      ],
+      "competing_articles": "Most prompt engineering articles are theoretical; this article provides a concrete Python script that programmatically optimizes token payloads based on real linguistic research.",
+      "real_story_evidence": [
+        {
+          "source": "Hacker News (Show HN)",
+          "title": "Show HN: The load-bearing vocabulary of Claude",
           "url": "https://louisabraham.github.io/load-bearing/",
-          "what_to_cite": "Analyzing the specific, highly-weighted vocabulary and tokens that Claude uses to structure its outputs."
+          "what_to_cite": "The research analyzed Claude's tokenizer to discover specific high-impact, 'load-bearing' vocabulary words that dictate output quality."
         }
       ]
     }
@@ -138,28 +138,14 @@
       "source": "show_hn",
       "title": "Show HN: What if the speed of light was 5 km/h?",
       "url": "https://rivendell.dmitrybrant.com/relativity/",
-      "signal": "607 points \u00b7 277 comments",
+      "signal": "617 points \u00b7 282 comments",
       "snippet": "I've always wanted to make a visualization where the speed of light was scaled down to human speeds, so that we could intuit relativistic effects with everyday objects. Here is the first version of it"
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: Hacker News, without AI",
-      "url": "https://hcker.news/?ai=exclude",
-      "signal": "184 points \u00b7 84 comments",
-      "snippet": ""
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: Hacker News, Without AI",
-      "url": "https://www.unslop.news/",
-      "signal": "184 points \u00b7 77 comments",
-      "snippet": ""
     },
     {
       "source": "show_hn",
       "title": "Show HN: Bodily Oddities",
       "url": "https://vester.si/bodily-oddities/",
-      "signal": "213 points \u00b7 151 comments",
+      "signal": "323 points \u00b7 199 comments",
       "snippet": "When I was about 11 years old, my best friend and I were playing during recess at school, and I was carrying him around on my back, presumably pretending to be a multipart attack robot. All of a sudde"
     },
     {
@@ -167,6 +153,20 @@
       "title": "Show HN: The load-bearing vocabulary of Claude",
       "url": "https://louisabraham.github.io/load-bearing/",
       "signal": "710 points \u00b7 326 comments",
+      "snippet": ""
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Hacker News, without AI",
+      "url": "https://hcker.news/?ai=exclude",
+      "signal": "199 points \u00b7 87 comments",
+      "snippet": ""
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Hacker News, Without AI",
+      "url": "https://www.unslop.news/",
+      "signal": "192 points \u00b7 80 comments",
       "snippet": ""
     },
     {
@@ -180,15 +180,8 @@
       "source": "show_hn",
       "title": "Show HN: Open-Source eInk Bike Computer",
       "url": "https://opentrailpaper.com",
-      "signal": "421 points \u00b7 133 comments",
+      "signal": "422 points \u00b7 133 comments",
       "snippet": "Hey all, i just launched my Eink Bike computer project and think it is cool. Another tidbit, in the crazy things that AI has done... It has helped create a ANT (common sensor wireless protocol used in"
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: Copperhead \u2013 Cursor for circuit boards",
-      "url": "https://copperhead.sh/",
-      "signal": "248 points \u00b7 115 comments",
-      "snippet": ""
     },
     {
       "source": "show_hn",
@@ -196,6 +189,13 @@
       "url": "https://www.danielvaughn.dev/posts/huzzah/",
       "signal": "384 points \u00b7 209 comments",
       "snippet": "Hello everyone. I've been working on this experimental editor called Huzzah. I've been working almost exclusively with coding agents since January of this year, and over the past few months I began to"
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Copperhead \u2013 Cursor for circuit boards",
+      "url": "https://copperhead.sh/",
+      "signal": "249 points \u00b7 115 comments",
+      "snippet": ""
     },
     {
       "source": "show_hn",
@@ -255,16 +255,9 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: LLM Attention Visualization",
-      "url": "https://ishamf.dev/p/llm-attention-visualizer/",
-      "signal": "172 points \u00b7 31 comments",
-      "snippet": ""
-    },
-    {
-      "source": "show_hn",
       "title": "Show HN: Stuxnet \u2013 A reconstructed source code of the infamous cyber-weapon",
       "url": "https://github.com/Sadpainy/Stuxnet",
-      "signal": "177 points \u00b7 51 comments",
+      "signal": "178 points \u00b7 51 comments",
       "snippet": "Stuxnet! Here reproduced by me. Only researchs educations purposes."
     },
     {
@@ -273,6 +266,13 @@
       "url": "https://masteranza.github.io/weedout/",
       "signal": "185 points \u00b7 84 comments",
       "snippet": "I'm the developer. I built this because AI-generated conspiracy videos were getting out of control in my own YouTube feed. Weedout is a $1.99 Safari extension for macOS that removes videos YouTube lab"
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: LLM Attention Visualization",
+      "url": "https://ishamf.dev/p/llm-attention-visualizer/",
+      "signal": "173 points \u00b7 32 comments",
+      "snippet": ""
     }
   ]
 }
