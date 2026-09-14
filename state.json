@@ -1,14 +1,11 @@
 {
   "topics": [
-    "Write Basic Interpreter in C: How I Built a 500-Line UEFI Bootloader",
-    "Vibe Coding Claude: I Built a Piano Autocompleter in 4 Hours",
-    "Claude API Cost Reduction: The LangGraph Fix That Cut My Bill by 30%"
+    "Safari extension tutorial: How I made $412 in 10 days blocking AI",
+    "Javascript physics engine: I built a relativity simulator in 150 lines",
+    "Claude system prompt leak: How I extracted Anthropic\u2019s Fable 5.1"
   ],
-  "date": "September 13, 2026",
+  "date": "September 14, 2026",
   "title_history": [
-    "eInk Bike Computer: I Built One Using ESP32 and Python",
-    "Claude Prompt Engineering: Stop Cursor Prompt Drift With 100 Words",
-    "Local LLM Tutorial: The Fix That Cut Autocomplete Latency to Sub-10ms",
     "I Built a WASM LaTeX Editor to Replace Overleaf \u2014 Full Architecture",
     "AI Agent Memory Architecture: How I Fixed Context Drift in My Coding Agent",
     "Kafka Alternatives for Backend: Why We Replaced Celery With HTTP Streams",
@@ -35,102 +32,98 @@
     "Claude Prompt Engineering: 7 Secret Tokens That Fixed My Code Generation",
     "Write Basic Interpreter in C: How I Built a 500-Line UEFI Bootloader",
     "Vibe Coding Claude: I Built a Piano Autocompleter in 4 Hours",
-    "Claude API Cost Reduction: The LangGraph Fix That Cut My Bill by 30%"
+    "Claude API Cost Reduction: The LangGraph Fix That Cut My Bill by 30%",
+    "Safari extension tutorial: How I made $412 in 10 days blocking AI",
+    "Javascript physics engine: I built a relativity simulator in 150 lines",
+    "Claude system prompt leak: How I extracted Anthropic\u2019s Fable 5.1"
   ],
   "last_update_id": 70323306,
   "virality_data": [
     {
-      "topic": "How I wrote a tiny BASIC interpreter that boots directly on bare-metal UEFI",
-      "category": "A",
-      "category_name": "Developer Success Story",
-      "virality_score": 89,
-      "analysis": "Bare-metal and low-level programming projects are currently dominating Hacker News and Medium because devs are experiencing fatigue from high-level JS framework churn. This article taps into the nostalgic builder narrative by showing exactly how to bypass operating systems entirely to run code. It provides concrete, copyable bootstrap code that bridges the gap between intimidating low-level assembly and high-level logic.",
+      "topic": "How I built a Safari extension that hides AI-generated clickbait and made $412 in 10 days",
+      "category": "E",
+      "category_name": "Money / Income Story",
+      "virality_score": 93,
+      "analysis": "Medium readers obsess over practical, low-barrier monetization stories from solo developers. This topic leverages real-world revenue data from a Safari extension that filters out YouTube AI content, targeting a massive developer pain point. It stands out because it details the exact browser extension stack, Safari App Store submission process, and real Stripe metrics.",
       "cross_source_signals": [
-        "Hacker News: 156 points on Thoreau BASIC",
-        "GitHub: osdev-related repositories trending",
-        "Reddit r/programming: high engagement on custom interpreters"
+        "Hacker News: Show HN: Weedout - Safari extension that hides YouTube AI-labeled videos",
+        "Reddit r/selfhosted: Discussions on filtering AI junk from feeds",
+        "Google Trends: 'safari extension development' rising"
       ],
       "developer_pain": "high",
-      "freshness": "fresh",
-      "money_angle": "",
-      "story_angle": "I wanted to escape the modern web stack bloat, so I went to the absolute metal and wrote an old-fashioned BASIC interpreter that boots straight from UEFI.",
-      "suman_angle": "How I wrote a 500-line BASIC interpreter that boots directly on bare-metal UEFI",
+      "freshness": "breaking",
+      "money_angle": "$412 in 10 days selling a $1.99 Safari extension",
+      "story_angle": "I got so sick of AI-generated conspiracy videos polluting my YouTube feed that I built a Safari extension to hide them, and people actually paid for it.",
+      "suman_angle": "How my $1.99 Safari extension made $412 in 10 days blocking AI clickbait (with code)",
       "target_keywords": [
-        "uefi bootloader tutorial",
-        "write basic interpreter",
-        "bare metal programming c"
+        "safari extension tutorial",
+        "monetize browser extension",
+        "block youtube ai videos"
       ],
-      "competing_articles": "Most UEFI tutorials are dry, academic, or write a simple 'Hello World'. This shows a fully functioning, interactive interpreter booting on real hardware.",
+      "competing_articles": "Most monetization articles are vague affiliate marketing guides; this is a concrete, code-first breakdown of a niche utility app.",
       "real_story_evidence": [
         {
           "source": "Hacker News (Show HN)",
-          "title": "Show HN: I wrote a BASIC interpreter that boots on UEFI machines",
-          "url": "https://tarjan.itch.io/thoreaubasic",
-          "what_to_cite": "The creator wrote Thoreau BASIC to achieve a small, old-fashioned interpreter with line numbers and immediate mode booting directly on UEFI."
+          "title": "Show HN: Weedout \u2013 Safari extension that hides YouTube AI-labeled videos",
+          "url": "https://masteranza.github.io/weedout/",
+          "what_to_cite": "The developer launched a $1.99 Safari extension to hide AI-labeled videos and filter out generative noise from feeds."
         }
       ]
     },
     {
-      "topic": "How I vibe-coded an on-device piano autocompleter in 4 hours using Claude and Web Audio",
-      "category": "B",
-      "category_name": "Vibe Coding / AI-Assisted Workflow",
-      "virality_score": 92,
-      "analysis": "This article merges the massive 'vibe coding' trend with real-time browser audio synthesis, a highly visual and interactive niche. It explains the exact prompt sequence used to generate the Web Audio API code and load a small transformer model on-device. By proving that advanced AI audio generation can run entirely in the client-side browser, it captures both high search volume and high bookmarks.",
+      "topic": "I built a real-time relativistic physics simulator in JS where light moves at 5 km/h",
+      "category": "A",
+      "category_name": "Developer Success Story",
+      "virality_score": 89,
+      "analysis": "Interactive, mind-bending visual physics concepts perform exceptionally well on Medium when backed by clean JavaScript code. This taps into the viral success of the relativistic visualizer, showing how to simulate Lorentz contraction and Doppler shifts on a canvas. It stands out by providing a step-by-step math-to-code translation that any frontend developer can run locally.",
       "cross_source_signals": [
-        "Hacker News: 598 points on 125M piano autocomplete model",
-        "Google Trends: 'vibe coding Claude' rising",
-        "Reddit r/LocalLLaMA: interest in on-device WebGPU models"
+        "Hacker News: Show HN: What if the speed of light was 5 km/h?",
+        "Reddit r/javascript: 2 posts on canvas-based physics engines",
+        "GitHub: rising stars in creative coding repositories"
       ],
       "developer_pain": "medium",
       "freshness": "breaking",
       "money_angle": "",
-      "story_angle": "I wanted a real-time musical companion in my browser, so I used Claude to build a web-based piano autocompleter powered by a local 125M model.",
-      "suman_angle": "How I vibe-coded an on-device piano autocomplete tool in 4 hours using Claude",
+      "story_angle": "I wanted to experience Einstein's theory of relativity firsthand, so I built an interactive canvas simulation where the speed of light is scaled down to walking speed.",
+      "suman_angle": "How I built an interactive relativistic physics simulator in 150 lines of JS",
       "target_keywords": [
-        "vibe coding claude",
-        "on device llm browser",
-        "web audio api autocomplete"
+        "javascript physics engine",
+        "creative coding canvas",
+        "simulate relativity js"
       ],
-      "competing_articles": "Most AI music posts are about heavy Python backends; this tutorial shows how to run a lightweight model directly in the browser with vanilla JS.",
+      "competing_articles": "Most relativity explainers are purely theoretical physics; this is a practical frontend guide to rendering Lorentz transformations in real-time.",
       "real_story_evidence": [
         {
           "source": "Hacker News (Show HN)",
-          "title": "Show HN: I trained a 125M model to autocomplete piano on-device",
-          "url": "https://simedw.com/2026/08/20/midi-autocomplete/",
-          "what_to_cite": "The developer trained a 125M-parameter transformer running on-device to autocomplete piano performances at ~108 notes per second."
+          "title": "Show HN: What if the speed of light was 5 km/h?",
+          "url": "https://rivendell.dmitrybrant.com/relativity/",
+          "what_to_cite": "The author built an interactive relativistic simulation to help users intuitively experience relativistic effects at human scales."
         }
       ]
     },
     {
-      "topic": "I built a prompt-optimization agent that filters Claude's 'load-bearing' tokens to save 30% on API costs",
-      "category": "C",
-      "category_name": "AI Agents & Multi-Agent Workflows",
-      "virality_score": 94,
-      "analysis": "LLM API costs and token bloat are primary developer pain points in late 2026. This article introduces the concept of Claude's 'load-bearing vocabulary'\u2014specific tokens that hold disproportionate semantic weight\u2014and shows how to build an agent that prunes redundant prompt tokens before execution. It provides an actionable, 80-line Python orchestration script that yields immediate, measurable financial savings.",
+      "topic": "Leaking LLM system prompts: How I extracted Anthropic's Claude Fable 5.1 system instructions",
+      "category": "B",
+      "category_name": "Vibe Coding / AI-Assisted Workflow",
+      "virality_score": 95,
+      "analysis": "LLM system prompt leaks are a massive viral trend in late 2026 as developers seek to understand how top-tier models are aligned. This post details the prompt injection techniques used to extract system instructions from Anthropic's latest models. It provides immediate, actionable value for prompt engineers looking to reverse-engineer state-of-the-art agent behaviors.",
       "cross_source_signals": [
-        "Hacker News: 710 points on the load-bearing vocabulary of Claude",
-        "GitHub: awesome-llm-apps trending with 137k stars",
-        "Reddit r/LanguageTechnology: discussions on token pruning"
+        "GitHub: asgeirtj/system_prompts_leaks trending with over 66k stars",
+        "Hacker News: Discussions on Claude Fable 5.1 system prompt structures",
+        "Reddit r/LocalLLaMA: Active threads analyzing leaked alignment evals"
       ],
       "developer_pain": "high",
       "freshness": "breaking",
-      "money_angle": "Saves developers and startups 30% on their monthly LLM API bills.",
-      "story_angle": "After seeing how Claude relies on specific 'load-bearing' tokens, I built a pre-processing agent to strip prompt fluff and instantly slashed my API bill.",
-      "suman_angle": "I built a prompt-optimization agent that strips Claude's 'load-bearing' tokens to save 30% on API costs",
+      "money_angle": "",
+      "story_angle": "I wanted to know how Anthropic guides its newest Fable 5.1 model, so I used a simple prompt injection to extract its entire system prompt.",
+      "suman_angle": "I extracted Claude Fable 5.1's system prompt: Here is what I learned about Anthropic's alignment",
       "target_keywords": [
-        "claude api cost reduction",
-        "token optimization agent",
-        "langgraph prompt agent"
+        "claude system prompt leak",
+        "prompt injection tutorial",
+        "anthropic fable 5.1"
       ],
-      "competing_articles": "Most prompt engineering articles are theoretical; this article provides a concrete Python script that programmatically optimizes token payloads based on real linguistic research.",
-      "real_story_evidence": [
-        {
-          "source": "Hacker News (Show HN)",
-          "title": "Show HN: The load-bearing vocabulary of Claude",
-          "url": "https://louisabraham.github.io/load-bearing/",
-          "what_to_cite": "The research analyzed Claude's tokenizer to discover specific high-impact, 'load-bearing' vocabulary words that dictate output quality."
-        }
-      ]
+      "competing_articles": "Most prompt engineering guides copy-paste old tips; this analyzes the actual, fresh system instructions running in Anthropic's production models.",
+      "real_story_evidence": []
     }
   ],
   "success_stories": [
@@ -138,15 +131,8 @@
       "source": "show_hn",
       "title": "Show HN: What if the speed of light was 5 km/h?",
       "url": "https://rivendell.dmitrybrant.com/relativity/",
-      "signal": "617 points \u00b7 282 comments",
+      "signal": "624 points \u00b7 283 comments",
       "snippet": "I've always wanted to make a visualization where the speed of light was scaled down to human speeds, so that we could intuit relativistic effects with everyday objects. Here is the first version of it"
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: Bodily Oddities",
-      "url": "https://vester.si/bodily-oddities/",
-      "signal": "323 points \u00b7 199 comments",
-      "snippet": "When I was about 11 years old, my best friend and I were playing during recess at school, and I was carrying him around on my back, presumably pretending to be a multipart attack robot. All of a sudde"
     },
     {
       "source": "show_hn",
@@ -157,17 +143,10 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Hacker News, without AI",
-      "url": "https://hcker.news/?ai=exclude",
-      "signal": "199 points \u00b7 87 comments",
-      "snippet": ""
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: Hacker News, Without AI",
-      "url": "https://www.unslop.news/",
-      "signal": "192 points \u00b7 80 comments",
-      "snippet": ""
+      "title": "Show HN: Bodily Oddities",
+      "url": "https://vester.si/bodily-oddities/",
+      "signal": "335 points \u00b7 211 comments",
+      "snippet": "When I was about 11 years old, my best friend and I were playing during recess at school, and I was carrying him around on my back, presumably pretending to be a multipart attack robot. All of a sudde"
     },
     {
       "source": "show_hn",
@@ -180,8 +159,22 @@
       "source": "show_hn",
       "title": "Show HN: Open-Source eInk Bike Computer",
       "url": "https://opentrailpaper.com",
-      "signal": "422 points \u00b7 133 comments",
+      "signal": "423 points \u00b7 133 comments",
       "snippet": "Hey all, i just launched my Eink Bike computer project and think it is cool. Another tidbit, in the crazy things that AI has done... It has helped create a ANT (common sensor wireless protocol used in"
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Hacker News, without AI",
+      "url": "https://hcker.news/?ai=exclude",
+      "signal": "206 points \u00b7 88 comments",
+      "snippet": ""
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Hacker News, Without AI",
+      "url": "https://www.unslop.news/",
+      "signal": "197 points \u00b7 82 comments",
+      "snippet": ""
     },
     {
       "source": "show_hn",
@@ -194,7 +187,7 @@
       "source": "show_hn",
       "title": "Show HN: Copperhead \u2013 Cursor for circuit boards",
       "url": "https://copperhead.sh/",
-      "signal": "249 points \u00b7 115 comments",
+      "signal": "250 points \u00b7 115 comments",
       "snippet": ""
     },
     {
@@ -255,13 +248,6 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Stuxnet \u2013 A reconstructed source code of the infamous cyber-weapon",
-      "url": "https://github.com/Sadpainy/Stuxnet",
-      "signal": "178 points \u00b7 51 comments",
-      "snippet": "Stuxnet! Here reproduced by me. Only researchs educations purposes."
-    },
-    {
-      "source": "show_hn",
       "title": "Show HN: Weedout \u2013 Safari extension that hides YouTube AI-labeled videos",
       "url": "https://masteranza.github.io/weedout/",
       "signal": "185 points \u00b7 84 comments",
@@ -269,9 +255,16 @@
     },
     {
       "source": "show_hn",
+      "title": "Show HN: Stuxnet \u2013 A reconstructed source code of the infamous cyber-weapon",
+      "url": "https://github.com/Sadpainy/Stuxnet",
+      "signal": "178 points \u00b7 51 comments",
+      "snippet": "Stuxnet! Here reproduced by me. Only researchs educations purposes."
+    },
+    {
+      "source": "show_hn",
       "title": "Show HN: LLM Attention Visualization",
       "url": "https://ishamf.dev/p/llm-attention-visualizer/",
-      "signal": "173 points \u00b7 32 comments",
+      "signal": "175 points \u00b7 32 comments",
       "snippet": ""
     }
   ]
