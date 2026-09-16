@@ -1,14 +1,11 @@
 {
   "topics": [
-    "Local LLM MacBook Trick: How I Run a 104GB Qwen Model at 12 tok/s",
-    "Huzzah editor tutorial: I Built a Live React Dashboard in 2 Hours",
-    "Multi agent Python tutorial: I Automated My Project Ops in 150 Lines"
+    "Single file python app: I built it in 2 hours using Capsule and Claude",
+    "E-ink raspberry pi frame: I built a bird-drawing monitor with Gemini 3.8",
+    "Repurpose 4g hotspot tech: My $20 OpenWrt telemetry server hack"
   ],
-  "date": "September 15, 2026",
+  "date": "September 16, 2026",
   "title_history": [
-    "Cursor Alternative: The Terminal Agent That Cut My API Bill by 60%",
-    "AI Agent Skills: I Built a Local Optimizer in 80 Lines of Python",
-    "Claude Prompt Engineering: 5 Words That Stopped My Code Hallucinations",
     "Multi-agent LLM tutorial: I Built a Financial Pipeline in 90 Lines",
     "Vibe coding Cursor: I Built an On-Device Audio App in 4 Hours",
     "Solo dev launch: Stop Wasting Hours With My 5-Day Chess Clock App",
@@ -35,100 +32,106 @@
     "Claude system prompt leak: How I extracted Anthropic\u2019s Fable 5.1",
     "Local LLM MacBook Trick: How I Run a 104GB Qwen Model at 12 tok/s",
     "Huzzah editor tutorial: I Built a Live React Dashboard in 2 Hours",
-    "Multi agent Python tutorial: I Automated My Project Ops in 150 Lines"
+    "Multi agent Python tutorial: I Automated My Project Ops in 150 Lines",
+    "Single file python app: I built it in 2 hours using Capsule and Claude",
+    "E-ink raspberry pi frame: I built a bird-drawing monitor with Gemini 3.8",
+    "Repurpose 4g hotspot tech: My $20 OpenWrt telemetry server hack"
   ],
   "last_update_id": 70323306,
   "virality_data": [
     {
-      "topic": "Why I stopped paying for LLM APIs: Running a 104GB Qwen3.8 model locally on my 48GB Mac using SlotStream",
-      "category": "G",
-      "category_name": "Software Architecture Insight",
-      "virality_score": 94,
-      "analysis": "This article taps into the massive 2026 trend of local LLM execution, specifically leveraging slot-streaming architectures to run models larger than unified memory. By showing how to achieve 12 tok/s on a 104GB model on consumer hardware, it addresses a major developer pain point (API costs and privacy). The cross-source signal is extremely strong with high engagement on both Hacker News and r/LocalLLaMA.",
-      "cross_source_signals": [
-        "Hacker News: Show HN: Running 104GB Qwen3.8-Flash-Next on 48GB Mac with at ~12 tok/s (240 points)",
-        "Reddit r/LocalLLaMA: Running Qwen3.8-Flash-Next locally on a 12GB VRAM card"
-      ],
-      "developer_pain": "high",
-      "freshness": "breaking",
-      "money_angle": "Cutting down Claude/OpenAI API bills from $150/month to $0 by self-hosting on local hardware.",
-      "story_angle": "Suman was shocked by his monthly Anthropic API bill and decided to experiment with SlotStream to run Qwen3.8-Flash-Next locally on his Mac Studio.",
-      "suman_angle": "How I bypassed Mac memory limits to run a 104GB Qwen model locally at 12 tok/s",
-      "target_keywords": [
-        "local llm macbook",
-        "slotstream tutorial",
-        "qwen local execution",
-        "run large models locally"
-      ],
-      "competing_articles": "Most local LLM guides only discuss small 8B models; this guide provides the exact architecture and config to run a 100GB+ model using SlotStream's memory-swapping technique.",
-      "real_story_evidence": [
-        {
-          "source": "Hacker News (Show HN)",
-          "title": "Show HN: Running 104GB Qwen3.8-Flash-Next on 48GB Mac with at ~12 tok/s",
-          "url": "https://github.com/carloslfu/slotstream",
-          "what_to_cite": "Cite the SlotStream repository's technique of streaming weights dynamically to run a 104GB Qwen3.8 model on a 48GB Mac at 12 tokens per second."
-        }
-      ]
-    },
-    {
-      "topic": "I ditched Cursor Chat for Huzzah: Vibe coding a state-synchronized React app with an agentic editor",
+      "topic": "Building a single-file web app with Capsule and Claude in 100 lines of Python",
       "category": "B",
       "category_name": "Vibe Coding / AI-Assisted Workflow",
-      "virality_score": 91,
-      "analysis": "Vibe coding is the dominant development paradigm of 2026, but developers are experiencing 'chat fatigue' with traditional sidebars. This post introduces Huzzah, an experimental agent-first editor, demonstrating a fresh, state-driven approach to AI-assisted UI coding. It directly captures the high curiosity of developers looking for the next evolution beyond Cursor.",
+      "virality_score": 93,
+      "analysis": "Single-file web apps that embed their own SQLite database are dominating developer mindshare right now as a backlash to over-engineered SPA frameworks. Pairing the viral 'Capsule' launch with a Claude-driven vibe coding workflow hits the exact sweet spot of 2026 developer curiosity. This provides a highly copyable, zero-config template that developers can deploy instantly.",
       "cross_source_signals": [
-        "Hacker News: Show HN: Huzzah \u2013 a novel approach to coding with AI (384 points)",
-        "Dev.to: AI Is Already Better at Coding Than Most Software Developers"
+        "Hacker News: Show HN Capsule - Single-file web apps that save their data into SQLite (321 points)",
+        "GitHub: withcapsule/capsule trending repos",
+        "Reddit r/selfhosted: Discussions on lightweight local-first web architectures"
       ],
-      "developer_pain": "medium",
-      "freshness": "fresh",
+      "developer_pain": "high",
+      "freshness": "breaking",
       "money_angle": "",
-      "story_angle": "Suman got tired of constantly copy-pasting generated code blocks from chat sidebars and tried Huzzah's agentic editor to build a reactive UI in one sitting.",
-      "suman_angle": "Vibe coding beyond Cursor: How I built a real-time dashboard using Huzzah's agentic editor in 2 hours",
+      "story_angle": "I got tired of setting up Docker, Postgres, and Next.js just to prototype a simple idea, so I built a self-contained bookmarking tool in one Python file.",
+      "suman_angle": "I built a single-file web app in 2 hours using Capsule and Claude (and it saves data directly to SQLite)",
       "target_keywords": [
-        "huzzah editor tutorial",
-        "vibe coding 2026",
-        "cursor alternative ai coding",
-        "agentic code editor"
+        "capsule web app",
+        "single file python app",
+        "claude vibe coding",
+        "local first sqlite"
       ],
-      "competing_articles": "While other articles focus on basic Cursor prompt engineering, this piece shows a hands-on workflow using a cutting-edge, state-synchronized agent editor.",
+      "competing_articles": "Most Capsule reviews only show the basic hello-world; Suman demonstrates a complete, interactive CRUD app created entirely via natural language prompting.",
       "real_story_evidence": [
         {
           "source": "Hacker News (Show HN)",
-          "title": "Show HN: Huzzah \u2013 a novel approach to coding with AI",
-          "url": "https://www.danielvaughn.dev/posts/huzzah/",
-          "what_to_cite": "Cite the creator's experience working almost exclusively with coding agents since January to design a highly synchronized agent-editor workflow."
+          "title": "Show HN: Capsule \u2013 Single-file web apps that save their data into SQLite",
+          "url": "https://withcapsule.app/",
+          "what_to_cite": "Reference how Capsule allows writing simple, single-file applications that run locally and handle persistent storage effortlessly with zero setup."
         }
       ]
     },
     {
-      "topic": "My 3-agent 'Pion' clone that autonomously manages my side-project operations in 150 lines of Python",
-      "category": "C",
-      "category_name": "AI Agents & Multi-Agent Workflows",
-      "virality_score": 89,
-      "analysis": "Autonomous business operations are a major trend in late 2026, inspired by frameworks like Pion. This article provides a concrete, multi-agent architecture that handles real tasks (monitoring, customer support triage, and database updates) instead of theoretical toy scripts. It appeals directly to builders who want to automate their operational overhead.",
+      "topic": "How I built a bird-identifying e-ink frame using a Raspberry Pi and Gemini 3.8",
+      "category": "D",
+      "category_name": "AI Automation Across Domains",
+      "virality_score": 91,
+      "analysis": "Hardware hacking meets generative AI is a massive traffic driver on Medium. This topic leverages the viral e-ink bird frame project and automates the audio parsing and illustration generation using the brand-new Gemini 3.8 Live API. It bridges the gap between hardware tinkering, audio processing, and visual AI generation.",
       "cross_source_signals": [
-        "Hacker News: Pion, an agent designed to run any company autonomously (384 points)",
-        "GitHub: Multi-agent framework trends"
+        "Hacker News: Show HN: An e-ink frame that hears birds and draws them as 1800s illustrations (1575 points)",
+        "GitHub: arnegiacomo/fugleramme trending",
+        "Google: searches for Gemini 3.8 Live Extended Thinking rising"
       ],
-      "developer_pain": "high",
+      "developer_pain": "medium",
       "freshness": "breaking",
-      "money_angle": "Saving 15+ hours of weekly operational overhead, allowing a solo dev to scale side-hustle revenue without hiring.",
-      "story_angle": "Suman wanted to automate the tedious operational chores of his side projects and built a mini multi-agent coordinator inspired by Andon Labs' Pion.",
-      "suman_angle": "I built a lightweight multi-agent system to run my side-project operations autonomously",
+      "money_angle": "",
+      "story_angle": "I wanted to turn my backyard bird sounds into classical art, so I hooked up a cheap microphone to a Raspberry Pi and automated the pipeline.",
+      "suman_angle": "How I built an e-ink frame that listens to backyard birds and draws them using Gemini 3.8",
       "target_keywords": [
-        "pion autonomous agent",
-        "multi agent python tutorial",
-        "automate business with ai agents",
-        "langgraph alternative"
+        "e-ink raspberry pi",
+        "gemini 3.8 live tutorial",
+        "audio classification ai",
+        "diy eink frame"
       ],
-      "competing_articles": "Most agent articles are highly theoretical; this post provides a complete, working Python implementation of an operational agent loop with clear message-passing logs.",
+      "competing_articles": "The original project is a complex Rust codebase; Suman provides a simplified Python script that achieves the same pipeline in under 100 lines.",
       "real_story_evidence": [
         {
           "source": "Hacker News (Show HN)",
-          "title": "Pion, an agent designed to run any company autonomously",
-          "url": "https://andonlabs.com/blog/why-we-built-pion",
-          "what_to_cite": "Cite Pion's core design philosophy of building an autonomous agent that can coordinate across company tasks and execute operations independently."
+          "title": "Show HN: An e-ink frame that hears birds and draws them as 1800s illustrations",
+          "url": "https://github.com/arnegiacomo/fugleramme",
+          "what_to_cite": "Cite the original project's concept of capturing ambient bird calls and translating them into retro-style illustrations on an e-paper display."
+        }
+      ]
+    },
+    {
+      "topic": "How I hacked a $20 4G hotspot into a remote telemetry logger",
+      "category": "H",
+      "category_name": "Tips & Tricks / Real Workflow",
+      "virality_score": 89,
+      "analysis": "Cheap hardware virtualization and rooting projects have an incredibly high read-ratio on Medium because they feel like 'real hacking'. By detailing the exact SSH commands, serial pinouts, and network configurations needed to repurpose a dirt-cheap LTE modem, this post offers massive practical utility. It taps into the growing hobbyist desire to build off-grid IoT devices without paying for expensive cellular shields.",
+      "cross_source_signals": [
+        "Hacker News: Show HN: Hacking a $20 4G wireless hotspot into a texting device (187 points)",
+        "Reddit r/hardwarehacking: rising interest in repurposing cheap Qualcomm-based routers",
+        "GitHub: bkovac/modem-thing repository activity"
+      ],
+      "developer_pain": "high",
+      "freshness": "fresh",
+      "money_angle": "",
+      "story_angle": "I refused to spend $80 on an industrial cellular IoT shield, so I spent a weekend cracking open a cheap consumer hotspot instead.",
+      "suman_angle": "My $20 hardware hack: Turning a cheap 4G hotspot into a Linux-powered telemetry server",
+      "target_keywords": [
+        "hardware hacking tutorial",
+        "repurpose 4g hotspot",
+        "openwrt embedded linux",
+        "cheap iot gateway"
+      ],
+      "competing_articles": "Most guides are overly academic or skip the bricking risks; Suman provides a step-by-step recovery and serial console guide that guarantees success.",
+      "real_story_evidence": [
+        {
+          "source": "Hacker News (Show HN)",
+          "title": "Show HN: Hacking a $20 4G wireless hotspot into a texting device",
+          "url": "https://bkovac.github.io/modem-thing/",
+          "what_to_cite": "Reference how consumer 4G USB hotspots can be exploited via serial/ADB to run custom scripts and send programmatic SMS messages."
         }
       ]
     }
@@ -136,23 +139,37 @@
   "success_stories": [
     {
       "source": "show_hn",
-      "title": "Show HN: Running 104GB Qwen3.8-Flash-Next on 48GB Mac with at ~12 tok/s",
-      "url": "https://github.com/carloslfu/slotstream",
-      "signal": "240 points \u00b7 118 comments",
-      "snippet": "I built slotstream, a way to run Qwen3.8-Flash-Next 4-bit on a low-memory mac starting from 16GB, a 125B parameter model that would need 100GB+ memory/RAM, thanks to expert-offloading/ssd-streaming. E"
+      "title": "Show HN: An e-ink frame that hears birds and draws them as 1800s illustrations",
+      "url": "https://github.com/arnegiacomo/fugleramme",
+      "signal": "1575 points \u00b7 197 comments",
+      "snippet": "See also: Avian Visitors - https://news.ycombinator.com/item?id=48343424 - May 2026 (20 comments)"
     },
     {
       "source": "show_hn",
-      "title": "Show HN: What if the speed of light was 5 km/h?",
-      "url": "https://rivendell.dmitrybrant.com/relativity/",
-      "signal": "627 points \u00b7 287 comments",
-      "snippet": "I've always wanted to make a visualization where the speed of light was scaled down to human speeds, so that we could intuit relativistic effects with everyday objects. Here is the first version of it"
+      "title": "Show HN: Capsule \u2013 Single-file web apps that save their data into SQLite",
+      "url": "https://withcapsule.app/",
+      "signal": "321 points \u00b7 129 comments",
+      "snippet": "Hey HN, I always had the problem that building HTML pages is really simple now, but trying to save data required hosting it somewhere, and sharing it afterwards was not easy. Over the last few months,"
     },
     {
       "source": "show_hn",
       "title": "Show HN: The load-bearing vocabulary of Claude",
       "url": "https://louisabraham.github.io/load-bearing/",
       "signal": "710 points \u00b7 326 comments",
+      "snippet": ""
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: What if the speed of light was 5 km/h?",
+      "url": "https://rivendell.dmitrybrant.com/relativity/",
+      "signal": "628 points \u00b7 289 comments",
+      "snippet": "I've always wanted to make a visualization where the speed of light was scaled down to human speeds, so that we could intuit relativistic effects with everyday objects. Here is the first version of it"
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Hacking a $20 4G wireless hotspot into a texting device",
+      "url": "https://bkovac.github.io/modem-thing/",
+      "signal": "187 points \u00b7 33 comments",
       "snippet": ""
     },
     {
@@ -164,17 +181,17 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Bodily Oddities",
-      "url": "https://vester.si/bodily-oddities/",
-      "signal": "340 points \u00b7 214 comments",
-      "snippet": "When I was about 11 years old, my best friend and I were playing during recess at school, and I was carrying him around on my back, presumably pretending to be a multipart attack robot. All of a sudde"
-    },
-    {
-      "source": "show_hn",
       "title": "Show HN: Open-Source eInk Bike Computer",
       "url": "https://opentrailpaper.com",
       "signal": "423 points \u00b7 133 comments",
       "snippet": "Hey all, i just launched my Eink Bike computer project and think it is cool. Another tidbit, in the crazy things that AI has done... It has helped create a ANT (common sensor wireless protocol used in"
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Bodily Oddities",
+      "url": "https://vester.si/bodily-oddities/",
+      "signal": "340 points \u00b7 215 comments",
+      "snippet": "When I was about 11 years old, my best friend and I were playing during recess at school, and I was carrying him around on my back, presumably pretending to be a multipart attack robot. All of a sudde"
     },
     {
       "source": "show_hn",
@@ -185,9 +202,16 @@
     },
     {
       "source": "show_hn",
+      "title": "Show HN: Laser Graffiti",
+      "url": "https://laser.consti.de",
+      "signal": "253 points \u00b7 61 comments",
+      "snippet": ""
+    },
+    {
+      "source": "show_hn",
       "title": "Show HN: Hacker News, without AI",
       "url": "https://hcker.news/?ai=exclude",
-      "signal": "206 points \u00b7 89 comments",
+      "signal": "207 points \u00b7 89 comments",
       "snippet": ""
     },
     {
@@ -199,13 +223,6 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Laser Graffiti",
-      "url": "https://laser.consti.de",
-      "signal": "253 points \u00b7 61 comments",
-      "snippet": ""
-    },
-    {
-      "source": "show_hn",
       "title": "Show HN: Copperhead \u2013 Cursor for circuit boards",
       "url": "https://copperhead.sh/",
       "signal": "250 points \u00b7 115 comments",
@@ -213,16 +230,23 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: A techno machine in one HTML file, with verifiable renders",
-      "url": "https://ssx360.github.io/rack-02/?src=hn",
-      "signal": "240 points \u00b7 48 comments",
-      "snippet": ""
+      "title": "Show HN: I made a flight simulator, except you're just a passenger",
+      "url": "https://inflightsimulator.com",
+      "signal": "142 points \u00b7 61 comments",
+      "snippet": "Buckle your seatbelt, secure your tray table, and open your window shade. Now you can simulate flying anywhere in the world as a commercial passenger, from takeoff to touchdown. Terrain, weather, and "
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Neobrutalism.dev \u2013 Just added Base UI support and added new color theme",
-      "url": "https://www.neobrutalism.dev/",
-      "signal": "152 points \u00b7 72 comments",
+      "title": "Show HN: Running 104GB Qwen3.8-Flash-Next on 48GB Mac with at ~12 tok/s",
+      "url": "https://github.com/carloslfu/slotstream",
+      "signal": "240 points \u00b7 118 comments",
+      "snippet": "I built slotstream, a way to run Qwen3.8-Flash-Next 4-bit on a low-memory mac starting from 16GB, a 125B parameter model that would need 100GB+ memory/RAM, thanks to expert-offloading/ssd-streaming. E"
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: A techno machine in one HTML file, with verifiable renders",
+      "url": "https://ssx360.github.io/rack-02/?src=hn",
+      "signal": "240 points \u00b7 48 comments",
       "snippet": ""
     },
     {
@@ -252,27 +276,6 @@
       "url": "https://github.com/experientiallabs/experiential",
       "signal": "222 points \u00b7 47 comments",
       "snippet": "Hi HN, we built an open source model gateway. It's a single place to manage our own self hosted, frontier, and open source models in one place. It\u2019s is rust native, built for concurrency, and implemen"
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: LatticeDB \u2013 Like SQLite but for graph databases",
-      "url": "https://github.com/jeffhajewski/latticedb",
-      "signal": "190 points \u00b7 54 comments",
-      "snippet": "We have been using graph DBs more and more at work. I found them painful to work with locally and decided to try and build something better."
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: Weedout \u2013 Safari extension that hides YouTube AI-labeled videos",
-      "url": "https://masteranza.github.io/weedout/",
-      "signal": "185 points \u00b7 84 comments",
-      "snippet": "I'm the developer. I built this because AI-generated conspiracy videos were getting out of control in my own YouTube feed. Weedout is a $1.99 Safari extension for macOS that removes videos YouTube lab"
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: Stuxnet \u2013 A reconstructed source code of the infamous cyber-weapon",
-      "url": "https://github.com/Sadpainy/Stuxnet",
-      "signal": "178 points \u00b7 51 comments",
-      "snippet": "Stuxnet! Here reproduced by me. Only researchs educations purposes."
     }
   ]
 }
