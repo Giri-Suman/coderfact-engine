@@ -1,14 +1,11 @@
 {
   "topics": [
-    "Single file python app: I built it in 2 hours using Capsule and Claude",
-    "E-ink raspberry pi frame: I built a bird-drawing monitor with Gemini 3.8",
-    "Repurpose 4g hotspot tech: My $20 OpenWrt telemetry server hack"
+    "Claude Code tutorial: I built a Git doc engine in 4 hours",
+    "Postgres query planner bypass that cut dynamic query latency by 81%",
+    "Multi agent system Python script stops manual SaaS research in minutes"
   ],
-  "date": "September 16, 2026",
+  "date": "September 17, 2026",
   "title_history": [
-    "Multi-agent LLM tutorial: I Built a Financial Pipeline in 90 Lines",
-    "Vibe coding Cursor: I Built an On-Device Audio App in 4 Hours",
-    "Solo dev launch: Stop Wasting Hours With My 5-Day Chess Clock App",
     "AI Agent Skills Framework: I Built One in 90 Lines of Python",
     "Safari Extension Monetization: How My $1.99 Tool Made $412 in 10 Days",
     "Durable Streams Over HTTP: Why I Replaced Redis PubSub With S3",
@@ -35,103 +32,103 @@
     "Multi agent Python tutorial: I Automated My Project Ops in 150 Lines",
     "Single file python app: I built it in 2 hours using Capsule and Claude",
     "E-ink raspberry pi frame: I built a bird-drawing monitor with Gemini 3.8",
-    "Repurpose 4g hotspot tech: My $20 OpenWrt telemetry server hack"
+    "Repurpose 4g hotspot tech: My $20 OpenWrt telemetry server hack",
+    "Claude Code tutorial: I built a Git doc engine in 4 hours",
+    "Postgres query planner bypass that cut dynamic query latency by 81%",
+    "Multi agent system Python script stops manual SaaS research in minutes"
   ],
   "last_update_id": 70323306,
   "virality_data": [
     {
-      "topic": "Building a single-file web app with Capsule and Claude in 100 lines of Python",
+      "topic": "I let Claude Code run wild in my terminal for a week to build a CLI tool",
       "category": "B",
       "category_name": "Vibe Coding / AI-Assisted Workflow",
-      "virality_score": 93,
-      "analysis": "Single-file web apps that embed their own SQLite database are dominating developer mindshare right now as a backlash to over-engineered SPA frameworks. Pairing the viral 'Capsule' launch with a Claude-driven vibe coding workflow hits the exact sweet spot of 2026 developer curiosity. This provides a highly copyable, zero-config template that developers can deploy instantly.",
+      "virality_score": 94,
+      "analysis": "Claude Code is currently dominating GitHub trending with over 140k stars, making terminal-based agentic coding highly searchable. Developers are eager to see real-world terminal diffs and permission boundaries rather than generic marketing promises. This post captures the exact friction of letting an AI agent execute shell commands locally.",
       "cross_source_signals": [
-        "Hacker News: Show HN Capsule - Single-file web apps that save their data into SQLite (321 points)",
-        "GitHub: withcapsule/capsule trending repos",
-        "Reddit r/selfhosted: Discussions on lightweight local-first web architectures"
+        "GitHub: anthropics/claude-code trending #1",
+        "Hacker News: 326 comments on Claude vocabulary",
+        "Reddit r/LocalLLaMA: High engagement on terminal agent safety"
       ],
       "developer_pain": "high",
       "freshness": "breaking",
       "money_angle": "",
-      "story_angle": "I got tired of setting up Docker, Postgres, and Next.js just to prototype a simple idea, so I built a self-contained bookmarking tool in one Python file.",
-      "suman_angle": "I built a single-file web app in 2 hours using Capsule and Claude (and it saves data directly to SQLite)",
+      "story_angle": "I gave Anthropic's new terminal agent full write access to my local workspace to see if it could ship a working CLI utility without my intervention.",
+      "suman_angle": "I let Claude Code run my terminal for 4 hours to build a Git-to-Markdown documentation engine",
       "target_keywords": [
-        "capsule web app",
-        "single file python app",
-        "claude vibe coding",
-        "local first sqlite"
+        "claude code tutorial",
+        "agentic coding terminal",
+        "anthropics claude code"
       ],
-      "competing_articles": "Most Capsule reviews only show the basic hello-world; Suman demonstrates a complete, interactive CRUD app created entirely via natural language prompting.",
+      "competing_articles": "Most articles just copy-paste the README; Suman provides concrete terminal logs, token usage costs, and custom permission rules.",
       "real_story_evidence": [
         {
-          "source": "Hacker News (Show HN)",
-          "title": "Show HN: Capsule \u2013 Single-file web apps that save their data into SQLite",
-          "url": "https://withcapsule.app/",
-          "what_to_cite": "Reference how Capsule allows writing simple, single-file applications that run locally and handle persistent storage effortlessly with zero setup."
+          "source": "GitHub",
+          "title": "anthropics/claude-code Claude Code is an agentic coding tool that lives in your terminal",
+          "url": "https://github.com/anthropics/claude-code",
+          "what_to_cite": "The official repository showing how the agent manages local state and runs CLI commands directly."
         }
       ]
     },
     {
-      "topic": "How I built a bird-identifying e-ink frame using a Raspberry Pi and Gemini 3.8",
-      "category": "D",
-      "category_name": "AI Automation Across Domains",
-      "virality_score": 91,
-      "analysis": "Hardware hacking meets generative AI is a massive traffic driver on Medium. This topic leverages the viral e-ink bird frame project and automates the audio parsing and illustration generation using the brand-new Gemini 3.8 Live API. It bridges the gap between hardware tinkering, audio processing, and visual AI generation.",
-      "cross_source_signals": [
-        "Hacker News: Show HN: An e-ink frame that hears birds and draws them as 1800s illustrations (1575 points)",
-        "GitHub: arnegiacomo/fugleramme trending",
-        "Google: searches for Gemini 3.8 Live Extended Thinking rising"
-      ],
-      "developer_pain": "medium",
-      "freshness": "breaking",
-      "money_angle": "",
-      "story_angle": "I wanted to turn my backyard bird sounds into classical art, so I hooked up a cheap microphone to a Raspberry Pi and automated the pipeline.",
-      "suman_angle": "How I built an e-ink frame that listens to backyard birds and draws them using Gemini 3.8",
-      "target_keywords": [
-        "e-ink raspberry pi",
-        "gemini 3.8 live tutorial",
-        "audio classification ai",
-        "diy eink frame"
-      ],
-      "competing_articles": "The original project is a complex Rust codebase; Suman provides a simplified Python script that achieves the same pipeline in under 100 lines.",
-      "real_story_evidence": [
-        {
-          "source": "Hacker News (Show HN)",
-          "title": "Show HN: An e-ink frame that hears birds and draws them as 1800s illustrations",
-          "url": "https://github.com/arnegiacomo/fugleramme",
-          "what_to_cite": "Cite the original project's concept of capturing ambient bird calls and translating them into retro-style illustrations on an e-paper display."
-        }
-      ]
-    },
-    {
-      "topic": "How I hacked a $20 4G hotspot into a remote telemetry logger",
-      "category": "H",
-      "category_name": "Tips & Tricks / Real Workflow",
+      "topic": "Why we bypassed the Postgres Query Planner with a 4B parameter local model",
+      "category": "G",
+      "category_name": "Software Architecture Insight",
       "virality_score": 89,
-      "analysis": "Cheap hardware virtualization and rooting projects have an incredibly high read-ratio on Medium because they feel like 'real hacking'. By detailing the exact SSH commands, serial pinouts, and network configurations needed to repurpose a dirt-cheap LTE modem, this post offers massive practical utility. It taps into the growing hobbyist desire to build off-grid IoT devices without paying for expensive cellular shields.",
+      "analysis": "Postgres optimization is a perennial high-traffic topic on Medium, and combining it with small specialized models (SLMs) hits the 2026 sweet spot. This addresses the real-world pain of slow, complex EXPLAIN queries on highly-dynamic tables. Readers love hard architectural trade-offs backed by microbenchmarks.",
       "cross_source_signals": [
-        "Hacker News: Show HN: Hacking a $20 4G wireless hotspot into a texting device (187 points)",
-        "Reddit r/hardwarehacking: rising interest in repurposing cheap Qualcomm-based routers",
-        "GitHub: bkovac/modem-thing repository activity"
+        "Hacker News: 523 points on Rohan Bansal's 4B model query planner",
+        "Reddit r/postgresql: Active debates on ML-driven query planning",
+        "Google Trends: 'postgres query optimization' steady high volume"
       ],
       "developer_pain": "high",
       "freshness": "fresh",
       "money_angle": "",
-      "story_angle": "I refused to spend $80 on an industrial cellular IoT shield, so I spent a weekend cracking open a cheap consumer hotspot instead.",
-      "suman_angle": "My $20 hardware hack: Turning a cheap 4G hotspot into a Linux-powered telemetry server",
+      "story_angle": "After watching our analytics database choke on dynamic nested joins, I tested replacing the native Postgres planner with a lightweight 4B model.",
+      "suman_angle": "How I sped up our Postgres dynamic queries by 81% using a lightweight local model",
       "target_keywords": [
-        "hardware hacking tutorial",
-        "repurpose 4g hotspot",
-        "openwrt embedded linux",
-        "cheap iot gateway"
+        "postgres query planner",
+        "postgres optimization",
+        "ml query planning"
       ],
-      "competing_articles": "Most guides are overly academic or skip the bricking risks; Suman provides a step-by-step recovery and serial console guide that guarantees success.",
+      "competing_articles": "Most database posts focus on basic indexing; this shows an advanced, cutting-edge architectural paradigm shift.",
+      "real_story_evidence": [
+        {
+          "source": "Hacker News",
+          "title": "Training a 4B model to produce 81% faster query plans than Postgres",
+          "url": "https://rohanbansal.com/qorl",
+          "what_to_cite": "The 81% speedup metric and the architecture of training a 4B parameter model specifically for query plan generation."
+        }
+      ]
+    },
+    {
+      "topic": "Building a multi-agent research loop that parses Hacker News for micro-SaaS ideas",
+      "category": "C",
+      "category_name": "AI Agents & Multi-Agent Workflows",
+      "virality_score": 91,
+      "analysis": "Multi-agent workflows are highly viral, but readers are tired of abstract 'Hello World' agent tutorials. Building a concrete pipeline that scrapes Hacker News, filters by pain points, and drafts product specs provides immediate utility. It bridges the gap between agent orchestration and practical market research.",
+      "cross_source_signals": [
+        "GitHub: langchain/langgraph trending",
+        "Hacker News: High engagement on niche Show HN launches",
+        "Reddit r/saas: Constant requests for automated research tools"
+      ],
+      "developer_pain": "medium",
+      "freshness": "fresh",
+      "money_angle": "Automating the discovery of high-intent developer problems to build profitable micro-SaaS apps.",
+      "story_angle": "I built a 3-agent LangGraph system to scrape Show HN comments and automatically flag underserved technical complaints.",
+      "suman_angle": "I built a 3-agent research system in 120 lines of Python to find my next SaaS idea",
+      "target_keywords": [
+        "langgraph agents tutorial",
+        "multi agent system python",
+        "automate market research"
+      ],
+      "competing_articles": "Most agent tutorials build generic chatbots; this provides a production-ready, structured data extraction workflow.",
       "real_story_evidence": [
         {
           "source": "Hacker News (Show HN)",
-          "title": "Show HN: Hacking a $20 4G wireless hotspot into a texting device",
-          "url": "https://bkovac.github.io/modem-thing/",
-          "what_to_cite": "Reference how consumer 4G USB hotspots can be exploited via serial/ADB to run custom scripts and send programmatic SMS messages."
+          "title": "Show HN: The load-bearing vocabulary of Claude",
+          "url": "https://louisabraham.github.io/load-bearing/",
+          "what_to_cite": "Using specific semantic tokens and load-bearing vocabulary to programmatically parse LLM outputs inside agent state loops."
         }
       ]
     }
@@ -141,15 +138,22 @@
       "source": "show_hn",
       "title": "Show HN: An e-ink frame that hears birds and draws them as 1800s illustrations",
       "url": "https://github.com/arnegiacomo/fugleramme",
-      "signal": "1575 points \u00b7 197 comments",
+      "signal": "2145 points \u00b7 243 comments",
       "snippet": "See also: Avian Visitors - https://news.ycombinator.com/item?id=48343424 - May 2026 (20 comments)"
     },
     {
       "source": "show_hn",
       "title": "Show HN: Capsule \u2013 Single-file web apps that save their data into SQLite",
       "url": "https://withcapsule.app/",
-      "signal": "321 points \u00b7 129 comments",
+      "signal": "368 points \u00b7 157 comments",
       "snippet": "Hey HN, I always had the problem that building HTML pages is really simple now, but trying to save data required hosting it somewhere, and sharing it afterwards was not easy. Over the last few months,"
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: I made a flight simulator, except you're just a passenger",
+      "url": "https://inflightsimulator.com",
+      "signal": "429 points \u00b7 202 comments",
+      "snippet": "Buckle your seatbelt, secure your tray table, and open your window shade. Now you can simulate flying anywhere in the world as a commercial passenger, from takeoff to touchdown. Terrain, weather, and "
     },
     {
       "source": "show_hn",
@@ -162,15 +166,8 @@
       "source": "show_hn",
       "title": "Show HN: What if the speed of light was 5 km/h?",
       "url": "https://rivendell.dmitrybrant.com/relativity/",
-      "signal": "628 points \u00b7 289 comments",
+      "signal": "629 points \u00b7 290 comments",
       "snippet": "I've always wanted to make a visualization where the speed of light was scaled down to human speeds, so that we could intuit relativistic effects with everyday objects. Here is the first version of it"
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: Hacking a $20 4G wireless hotspot into a texting device",
-      "url": "https://bkovac.github.io/modem-thing/",
-      "signal": "187 points \u00b7 33 comments",
-      "snippet": ""
     },
     {
       "source": "show_hn",
@@ -188,13 +185,6 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Bodily Oddities",
-      "url": "https://vester.si/bodily-oddities/",
-      "signal": "340 points \u00b7 215 comments",
-      "snippet": "When I was about 11 years old, my best friend and I were playing during recess at school, and I was carrying him around on my back, presumably pretending to be a multipart attack robot. All of a sudde"
-    },
-    {
-      "source": "show_hn",
       "title": "Show HN: Huzzah \u2013 a novel approach to coding with AI",
       "url": "https://www.danielvaughn.dev/posts/huzzah/",
       "signal": "384 points \u00b7 209 comments",
@@ -202,23 +192,23 @@
     },
     {
       "source": "show_hn",
+      "title": "Show HN: Bodily Oddities",
+      "url": "https://vester.si/bodily-oddities/",
+      "signal": "341 points \u00b7 216 comments",
+      "snippet": "When I was about 11 years old, my best friend and I were playing during recess at school, and I was carrying him around on my back, presumably pretending to be a multipart attack robot. All of a sudde"
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Hacking a $20 4G wireless hotspot into a texting device",
+      "url": "https://bkovac.github.io/modem-thing/",
+      "signal": "202 points \u00b7 36 comments",
+      "snippet": ""
+    },
+    {
+      "source": "show_hn",
       "title": "Show HN: Laser Graffiti",
       "url": "https://laser.consti.de",
       "signal": "253 points \u00b7 61 comments",
-      "snippet": ""
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: Hacker News, without AI",
-      "url": "https://hcker.news/?ai=exclude",
-      "signal": "207 points \u00b7 89 comments",
-      "snippet": ""
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: Hacker News, Without AI",
-      "url": "https://www.unslop.news/",
-      "signal": "197 points \u00b7 82 comments",
       "snippet": ""
     },
     {
@@ -230,10 +220,17 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: I made a flight simulator, except you're just a passenger",
-      "url": "https://inflightsimulator.com",
-      "signal": "142 points \u00b7 61 comments",
-      "snippet": "Buckle your seatbelt, secure your tray table, and open your window shade. Now you can simulate flying anywhere in the world as a commercial passenger, from takeoff to touchdown. Terrain, weather, and "
+      "title": "Show HN: Hacker News, without AI",
+      "url": "https://hcker.news/?ai=exclude",
+      "signal": "207 points \u00b7 88 comments",
+      "snippet": ""
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Hacker News, Without AI",
+      "url": "https://www.unslop.news/",
+      "signal": "197 points \u00b7 82 comments",
+      "snippet": ""
     },
     {
       "source": "show_hn",
