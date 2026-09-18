@@ -1,14 +1,11 @@
 {
   "topics": [
-    "Claude Code tutorial: I built a Git doc engine in 4 hours",
-    "Postgres query planner bypass that cut dynamic query latency by 81%",
-    "Multi agent system Python script stops manual SaaS research in minutes"
+    "Build SaaS with Cursor in 11 hours \u2014 Here is the exact code",
+    "LangGraph Python tutorial: Stop reading news manually \u2014 My 80-line script",
+    "Github actions not working: How I fixed the silent error in 3 hours"
   ],
-  "date": "September 17, 2026",
+  "date": "September 18, 2026",
   "title_history": [
-    "AI Agent Skills Framework: I Built One in 90 Lines of Python",
-    "Safari Extension Monetization: How My $1.99 Tool Made $412 in 10 Days",
-    "Durable Streams Over HTTP: Why I Replaced Redis PubSub With S3",
     "Stop AI agent verbosity: My 40-line Claude Code skill",
     "Vibe coding Cursor tutorial: I built an on-device LLM in 48 hours",
     "WASM document parser: How I built a zero-server PDF pipeline in JS",
@@ -35,102 +32,66 @@
     "Repurpose 4g hotspot tech: My $20 OpenWrt telemetry server hack",
     "Claude Code tutorial: I built a Git doc engine in 4 hours",
     "Postgres query planner bypass that cut dynamic query latency by 81%",
-    "Multi agent system Python script stops manual SaaS research in minutes"
+    "Multi agent system Python script stops manual SaaS research in minutes",
+    "Build SaaS with Cursor in 11 hours \u2014 Here is the exact code",
+    "LangGraph Python tutorial: Stop reading news manually \u2014 My 80-line script",
+    "Github actions not working: How I fixed the silent error in 3 hours"
   ],
   "last_update_id": 70323306,
   "virality_data": [
     {
-      "topic": "I let Claude Code run wild in my terminal for a week to build a CLI tool",
+      "topic": "Vibe coding a small SaaS in one weekend",
       "category": "B",
       "category_name": "Vibe Coding / AI-Assisted Workflow",
-      "virality_score": 94,
-      "analysis": "Claude Code is currently dominating GitHub trending with over 140k stars, making terminal-based agentic coding highly searchable. Developers are eager to see real-world terminal diffs and permission boundaries rather than generic marketing promises. This post captures the exact friction of letting an AI agent execute shell commands locally.",
-      "cross_source_signals": [
-        "GitHub: anthropics/claude-code trending #1",
-        "Hacker News: 326 comments on Claude vocabulary",
-        "Reddit r/LocalLLaMA: High engagement on terminal agent safety"
-      ],
-      "developer_pain": "high",
-      "freshness": "breaking",
-      "money_angle": "",
-      "story_angle": "I gave Anthropic's new terminal agent full write access to my local workspace to see if it could ship a working CLI utility without my intervention.",
-      "suman_angle": "I let Claude Code run my terminal for 4 hours to build a Git-to-Markdown documentation engine",
-      "target_keywords": [
-        "claude code tutorial",
-        "agentic coding terminal",
-        "anthropics claude code"
-      ],
-      "competing_articles": "Most articles just copy-paste the README; Suman provides concrete terminal logs, token usage costs, and custom permission rules.",
-      "real_story_evidence": [
-        {
-          "source": "GitHub",
-          "title": "anthropics/claude-code Claude Code is an agentic coding tool that lives in your terminal",
-          "url": "https://github.com/anthropics/claude-code",
-          "what_to_cite": "The official repository showing how the agent manages local state and runs CLI commands directly."
-        }
-      ]
-    },
-    {
-      "topic": "Why we bypassed the Postgres Query Planner with a 4B parameter local model",
-      "category": "G",
-      "category_name": "Software Architecture Insight",
-      "virality_score": 89,
-      "analysis": "Postgres optimization is a perennial high-traffic topic on Medium, and combining it with small specialized models (SLMs) hits the 2026 sweet spot. This addresses the real-world pain of slow, complex EXPLAIN queries on highly-dynamic tables. Readers love hard architectural trade-offs backed by microbenchmarks.",
-      "cross_source_signals": [
-        "Hacker News: 523 points on Rohan Bansal's 4B model query planner",
-        "Reddit r/postgresql: Active debates on ML-driven query planning",
-        "Google Trends: 'postgres query optimization' steady high volume"
-      ],
-      "developer_pain": "high",
-      "freshness": "fresh",
-      "money_angle": "",
-      "story_angle": "After watching our analytics database choke on dynamic nested joins, I tested replacing the native Postgres planner with a lightweight 4B model.",
-      "suman_angle": "How I sped up our Postgres dynamic queries by 81% using a lightweight local model",
-      "target_keywords": [
-        "postgres query planner",
-        "postgres optimization",
-        "ml query planning"
-      ],
-      "competing_articles": "Most database posts focus on basic indexing; this shows an advanced, cutting-edge architectural paradigm shift.",
-      "real_story_evidence": [
-        {
-          "source": "Hacker News",
-          "title": "Training a 4B model to produce 81% faster query plans than Postgres",
-          "url": "https://rohanbansal.com/qorl",
-          "what_to_cite": "The 81% speedup metric and the architecture of training a 4B parameter model specifically for query plan generation."
-        }
-      ]
-    },
-    {
-      "topic": "Building a multi-agent research loop that parses Hacker News for micro-SaaS ideas",
-      "category": "C",
-      "category_name": "AI Agents & Multi-Agent Workflows",
-      "virality_score": 91,
-      "analysis": "Multi-agent workflows are highly viral, but readers are tired of abstract 'Hello World' agent tutorials. Building a concrete pipeline that scrapes Hacker News, filters by pain points, and drafts product specs provides immediate utility. It bridges the gap between agent orchestration and practical market research.",
-      "cross_source_signals": [
-        "GitHub: langchain/langgraph trending",
-        "Hacker News: High engagement on niche Show HN launches",
-        "Reddit r/saas: Constant requests for automated research tools"
-      ],
+      "virality_score": 78,
       "developer_pain": "medium",
       "freshness": "fresh",
-      "money_angle": "Automating the discovery of high-intent developer problems to build profitable micro-SaaS apps.",
-      "story_angle": "I built a 3-agent LangGraph system to scrape Show HN comments and automatically flag underserved technical complaints.",
-      "suman_angle": "I built a 3-agent research system in 120 lines of Python to find my next SaaS idea",
+      "suman_angle": "Vibe coding a $19 SaaS in 11 hours \u2014 full prompts, full code, full Stripe screenshot",
       "target_keywords": [
-        "langgraph agents tutorial",
-        "multi agent system python",
-        "automate market research"
+        "vibe coding tutorial",
+        "build saas with cursor",
+        "ai assisted coding"
       ],
-      "competing_articles": "Most agent tutorials build generic chatbots; this provides a production-ready, structured data extraction workflow.",
-      "real_story_evidence": [
-        {
-          "source": "Hacker News (Show HN)",
-          "title": "Show HN: The load-bearing vocabulary of Claude",
-          "url": "https://louisabraham.github.io/load-bearing/",
-          "what_to_cite": "Using specific semantic tokens and load-bearing vocabulary to programmatically parse LLM outputs inside agent state loops."
-        }
-      ]
+      "money_angle": "Real Gumroad/Stripe revenue from a one-weekend build",
+      "story_angle": "Closed the laptop Friday at 9pm with an idea, opened it Sunday with a paying customer",
+      "analysis": "Vibe coding is the dominant 2026 dev meme. Real numbers + working code beats every theoretical post.",
+      "competing_articles": "Most posts show the workflow but skip the money / honest failures \u2014 Suman shows both."
+    },
+    {
+      "topic": "Building a research AI agent in 80 lines",
+      "category": "C",
+      "category_name": "AI Agents & Multi-Agent Workflows",
+      "virality_score": 76,
+      "developer_pain": "high",
+      "freshness": "breaking",
+      "suman_angle": "I replaced my morning news scroll with a 4-agent pipeline (full code)",
+      "target_keywords": [
+        "ai agent tutorial",
+        "langgraph python",
+        "multi agent workflow"
+      ],
+      "money_angle": "",
+      "story_angle": "Tired of the morning doom-scroll, built a personal news agent over chai",
+      "analysis": "Agent-building tutorials have huge search demand and most are abstract. Concrete code wins.",
+      "competing_articles": "Existing posts are diagrams without working orchestration."
+    },
+    {
+      "topic": "GitHub Actions silent failures",
+      "category": "F",
+      "category_name": "Debugging / Fix With Code",
+      "virality_score": 70,
+      "developer_pain": "high",
+      "freshness": "established",
+      "suman_angle": "Why my GitHub Action failed with zero error message \u2014 the 3-hour root cause",
+      "target_keywords": [
+        "github actions not working",
+        "github actions debug",
+        "github actions silent fail"
+      ],
+      "money_angle": "",
+      "story_angle": "Pipeline went green, repo did nothing \u2014 chased it for three hours",
+      "analysis": "Persistent pain on Stack Overflow weekly. Existing posts are outdated. Fresh root-cause wins.",
+      "competing_articles": "Existing articles are 2023/2024 \u2014 runner image and syntax both moved on."
     }
   ],
   "success_stories": [
@@ -138,22 +99,15 @@
       "source": "show_hn",
       "title": "Show HN: An e-ink frame that hears birds and draws them as 1800s illustrations",
       "url": "https://github.com/arnegiacomo/fugleramme",
-      "signal": "2145 points \u00b7 243 comments",
+      "signal": "2282 points \u00b7 255 comments",
       "snippet": "See also: Avian Visitors - https://news.ycombinator.com/item?id=48343424 - May 2026 (20 comments)"
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Capsule \u2013 Single-file web apps that save their data into SQLite",
-      "url": "https://withcapsule.app/",
-      "signal": "368 points \u00b7 157 comments",
-      "snippet": "Hey HN, I always had the problem that building HTML pages is really simple now, but trying to save data required hosting it somewhere, and sharing it afterwards was not easy. Over the last few months,"
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: I made a flight simulator, except you're just a passenger",
-      "url": "https://inflightsimulator.com",
-      "signal": "429 points \u00b7 202 comments",
-      "snippet": "Buckle your seatbelt, secure your tray table, and open your window shade. Now you can simulate flying anywhere in the world as a commercial passenger, from takeoff to touchdown. Terrain, weather, and "
+      "title": "Show HN: Share your AI Setup, Learn from others",
+      "url": "https://mysetup.ai/",
+      "signal": "209 points \u00b7 119 comments",
+      "snippet": "I kept seeing engineers share what they were building with AI; however, I was always more curious about how they worked. Which agents did they use? What skills and tools had stuck or been thrown out t"
     },
     {
       "source": "show_hn",
@@ -164,9 +118,23 @@
     },
     {
       "source": "show_hn",
+      "title": "Show HN: I made a flight simulator, except you're just a passenger",
+      "url": "https://inflightsimulator.com",
+      "signal": "438 points \u00b7 205 comments",
+      "snippet": "Buckle your seatbelt, secure your tray table, and open your window shade. Now you can simulate flying anywhere in the world as a commercial passenger, from takeoff to touchdown. Terrain, weather, and "
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Capsule \u2013 Single-file web apps that save their data into SQLite",
+      "url": "https://withcapsule.app/",
+      "signal": "376 points \u00b7 165 comments",
+      "snippet": "Hey HN, I always had the problem that building HTML pages is really simple now, but trying to save data required hosting it somewhere, and sharing it afterwards was not easy. Over the last few months,"
+    },
+    {
+      "source": "show_hn",
       "title": "Show HN: What if the speed of light was 5 km/h?",
       "url": "https://rivendell.dmitrybrant.com/relativity/",
-      "signal": "629 points \u00b7 290 comments",
+      "signal": "630 points \u00b7 290 comments",
       "snippet": "I've always wanted to make a visualization where the speed of light was scaled down to human speeds, so that we could intuit relativistic effects with everyday objects. Here is the first version of it"
     },
     {
@@ -180,7 +148,7 @@
       "source": "show_hn",
       "title": "Show HN: Open-Source eInk Bike Computer",
       "url": "https://opentrailpaper.com",
-      "signal": "423 points \u00b7 133 comments",
+      "signal": "424 points \u00b7 134 comments",
       "snippet": "Hey all, i just launched my Eink Bike computer project and think it is cool. Another tidbit, in the crazy things that AI has done... It has helped create a ANT (common sensor wireless protocol used in"
     },
     {
@@ -199,13 +167,6 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Hacking a $20 4G wireless hotspot into a texting device",
-      "url": "https://bkovac.github.io/modem-thing/",
-      "signal": "202 points \u00b7 36 comments",
-      "snippet": ""
-    },
-    {
-      "source": "show_hn",
       "title": "Show HN: Laser Graffiti",
       "url": "https://laser.consti.de",
       "signal": "253 points \u00b7 61 comments",
@@ -220,20 +181,6 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Hacker News, without AI",
-      "url": "https://hcker.news/?ai=exclude",
-      "signal": "207 points \u00b7 88 comments",
-      "snippet": ""
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: Hacker News, Without AI",
-      "url": "https://www.unslop.news/",
-      "signal": "197 points \u00b7 82 comments",
-      "snippet": ""
-    },
-    {
-      "source": "show_hn",
       "title": "Show HN: Running 104GB Qwen3.8-Flash-Next on 48GB Mac with at ~12 tok/s",
       "url": "https://github.com/carloslfu/slotstream",
       "signal": "240 points \u00b7 118 comments",
@@ -244,6 +191,27 @@
       "title": "Show HN: A techno machine in one HTML file, with verifiable renders",
       "url": "https://ssx360.github.io/rack-02/?src=hn",
       "signal": "240 points \u00b7 48 comments",
+      "snippet": ""
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Hacking a $20 4G wireless hotspot into a texting device",
+      "url": "https://bkovac.github.io/modem-thing/",
+      "signal": "204 points \u00b7 36 comments",
+      "snippet": ""
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Hacker News, without AI",
+      "url": "https://hcker.news/?ai=exclude",
+      "signal": "207 points \u00b7 88 comments",
+      "snippet": ""
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Hacker News, Without AI",
+      "url": "https://www.unslop.news/",
+      "signal": "197 points \u00b7 82 comments",
       "snippet": ""
     },
     {
@@ -266,13 +234,6 @@
       "url": "https://github.com/gioblu/NPC-Forge/blob/main/docs/development.md",
       "signal": "225 points \u00b7 45 comments",
       "snippet": "I love research and development, you may have heard of me because of PJON (Padded Jittering Operative Network). It is a network protocol I started developing in 2010, which was recently implemented in"
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: We built open OpenRouter that turns usage into a better model",
-      "url": "https://github.com/experientiallabs/experiential",
-      "signal": "222 points \u00b7 47 comments",
-      "snippet": "Hi HN, we built an open source model gateway. It's a single place to manage our own self hosted, frontier, and open source models in one place. It\u2019s is rust native, built for concurrency, and implemen"
     }
   ]
 }
