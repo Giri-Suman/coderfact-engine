@@ -1,14 +1,11 @@
 {
   "topics": [
-    "Build SaaS with Cursor in 11 hours \u2014 Here is the exact code",
-    "LangGraph Python tutorial: Stop reading news manually \u2014 My 80-line script",
-    "Github actions not working: How I fixed the silent error in 3 hours"
+    "Cactus Needle LLM: The Fix That Cut My API Bill From $300 to $0",
+    "Chess Clock Task Manager: I Built 2 SaaS Apps in 30 Days (With Code)",
+    "PicoMQ Streaming: Why Redis Breaks on HTTP (And What to Do Instead)"
   ],
-  "date": "September 18, 2026",
+  "date": "September 19, 2026",
   "title_history": [
-    "Stop AI agent verbosity: My 40-line Claude Code skill",
-    "Vibe coding Cursor tutorial: I built an on-device LLM in 48 hours",
-    "WASM document parser: How I built a zero-server PDF pipeline in JS",
     "TradingAgents Tutorial: I Built a 3\u2011Agent Financial Analyst in 120 Lines \u2014 Full Code",
     "Micro SaaS Consolidation: I Combined Two Apps Into One Dashboard \u2014 Users Doubled",
     "Rewrite Python in Rust: Why I Rewrote Our Automation Tooling \u2014 Speedups Matter",
@@ -35,79 +32,124 @@
     "Multi agent system Python script stops manual SaaS research in minutes",
     "Build SaaS with Cursor in 11 hours \u2014 Here is the exact code",
     "LangGraph Python tutorial: Stop reading news manually \u2014 My 80-line script",
-    "Github actions not working: How I fixed the silent error in 3 hours"
+    "Github actions not working: How I fixed the silent error in 3 hours",
+    "Cactus Needle LLM: The Fix That Cut My API Bill From $300 to $0",
+    "Chess Clock Task Manager: I Built 2 SaaS Apps in 30 Days (With Code)",
+    "PicoMQ Streaming: Why Redis Breaks on HTTP (And What to Do Instead)"
   ],
   "last_update_id": 70323306,
   "virality_data": [
     {
-      "topic": "Vibe coding a small SaaS in one weekend",
-      "category": "B",
-      "category_name": "Vibe Coding / AI-Assisted Workflow",
-      "virality_score": 78,
-      "developer_pain": "medium",
-      "freshness": "fresh",
-      "suman_angle": "Vibe coding a $19 SaaS in 11 hours \u2014 full prompts, full code, full Stripe screenshot",
-      "target_keywords": [
-        "vibe coding tutorial",
-        "build saas with cursor",
-        "ai assisted coding"
+      "topic": "Replacing Heavy Cloud LLMs with an 8MB Needle Model for Document Automation",
+      "category": "D",
+      "category_name": "AI Automation Across Domains",
+      "virality_score": 89,
+      "analysis": "Edge-sized specialized models like Cactus Needle 3 prove that high-cost frontier API calls are overkill for document and structured extraction workflows. With DeepSeek and Claude API costs eating SaaS margins, showing developers how an 8-29MB local model matches cloud benchmarks captures immediate traction. The post delivers actionable Python code to run zero-latency document parsing locally without paying cloud providers.",
+      "cross_source_signals": [
+        "Hacker News: Show HN Cactus Needle 3 with 195 points & 87 comments",
+        "GitHub: Edge automation and quantized small model repos trending",
+        "Dev.to: Rising discussions around local AI vs cloud API costs"
       ],
-      "money_angle": "Real Gumroad/Stripe revenue from a one-weekend build",
-      "story_angle": "Closed the laptop Friday at 9pm with an idea, opened it Sunday with a paying customer",
-      "analysis": "Vibe coding is the dominant 2026 dev meme. Real numbers + working code beats every theoretical post.",
-      "competing_articles": "Most posts show the workflow but skip the money / honest failures \u2014 Suman shows both."
-    },
-    {
-      "topic": "Building a research AI agent in 80 lines",
-      "category": "C",
-      "category_name": "AI Agents & Multi-Agent Workflows",
-      "virality_score": 76,
       "developer_pain": "high",
       "freshness": "breaking",
-      "suman_angle": "I replaced my morning news scroll with a 4-agent pipeline (full code)",
+      "money_angle": "Slash monthly LLM token bills from $340 to $0 by offloading deterministic extraction tasks to local micro-models",
+      "story_angle": "After spending $300/month on Claude API calls just to parse structured invoices, I replaced the cloud pipeline with an 8MB quantized model running locally in Python.",
+      "suman_angle": "I Replaced My $300/mo Claude API Invoice Parser with an 8MB Local Model (Full Python Code)",
       "target_keywords": [
-        "ai agent tutorial",
-        "langgraph python",
-        "multi agent workflow"
+        "cactus needle llm",
+        "local ai document automation",
+        "small language models python",
+        "replace openai api local model"
       ],
-      "money_angle": "",
-      "story_angle": "Tired of the morning doom-scroll, built a personal news agent over chai",
-      "analysis": "Agent-building tutorials have huge search demand and most are abstract. Concrete code wins.",
-      "competing_articles": "Existing posts are diagrams without working orchestration."
+      "competing_articles": "Most document extraction articles default to expensive OpenAI/Claude API wrappers; this demonstrates a tiny, zero-cost 8MB local alternative.",
+      "real_story_evidence": [
+        {
+          "source": "Hacker News (Show HN)",
+          "title": "Show HN: Cactus Needle 3: 8-29MB automation models can match DeepSeek V4 Flash",
+          "url": "https://cactuscompute.com/needle",
+          "what_to_cite": "Needle 3 achieves parity with DeepSeek V4 Flash in deterministic structured automation at just 8-29MB model size."
+        }
+      ]
     },
     {
-      "topic": "GitHub Actions silent failures",
-      "category": "F",
-      "category_name": "Debugging / Fix With Code",
-      "virality_score": 70,
-      "developer_pain": "high",
-      "freshness": "established",
-      "suman_angle": "Why my GitHub Action failed with zero error message \u2014 the 3-hour root cause",
-      "target_keywords": [
-        "github actions not working",
-        "github actions debug",
-        "github actions silent fail"
+      "topic": "Building a Time-Boxed Sprint Dashboard using OwnTime Role Architecture",
+      "category": "A",
+      "category_name": "Developer Success Story",
+      "virality_score": 85,
+      "analysis": "Developer burnout and context switching across multiple micro-projects is at an all-time high among indie builders. The viral Hacker News launch of OwnTime demonstrated strong demand for chess-clock style priority management across developer roles. Walking readers through building a lightweight role-allocating productivity dashboard offers high read-ratio and immediate utility.",
+      "cross_source_signals": [
+        "Hacker News: Show HN OwnTime with 118 points & 67 comments",
+        "GitHub: Growing popularity of minimal developer dashboard templates",
+        "Dev.to: Discussions on solo dev time-management and sprint fatigue"
       ],
-      "money_angle": "",
-      "story_angle": "Pipeline went green, repo did nothing \u2014 chased it for three hours",
-      "analysis": "Persistent pain on Stack Overflow weekly. Existing posts are outdated. Fresh root-cause wins.",
-      "competing_articles": "Existing articles are 2023/2024 \u2014 runner image and syntax both moved on."
+      "developer_pain": "medium",
+      "freshness": "fresh",
+      "money_angle": "Prevents context collapse when juggling paid client work alongside a bootstrapped SaaS project",
+      "story_angle": "I kept abandoning my side projects until I applied the chess-clock role allocation model into a custom 120-line dashboard.",
+      "suman_angle": "How I Shipped 2 SaaS Apps in 30 Days by Building a Role-Based Chess Clock Dashboard",
+      "target_keywords": [
+        "developer productivity tool",
+        "indie hacker time management",
+        "chess clock task manager",
+        "build productivity dashboard python"
+      ],
+      "competing_articles": "Generic productivity posts push Notion templates; this shares a custom, code-backed time allocation system built specifically for multi-project devs.",
+      "real_story_evidence": [
+        {
+          "source": "Hacker News (Show HN)",
+          "title": "Show HN: OwnTime \u2013 a chess clock for your day's priorities",
+          "url": "https://owntime.app/",
+          "what_to_cite": "Using the chess-clock principle across defined life roles to manage competing priorities without context fatigue."
+        }
+      ]
+    },
+    {
+      "topic": "Replacing Redis with HTTP-Native Object Storage Streams Using PicoMQ",
+      "category": "G",
+      "category_name": "Software Architecture Insight",
+      "virality_score": 87,
+      "analysis": "Managing stateful Redis clusters or Kafka setups for lightweight event-driven microservices introduces significant operational overhead and cloud cost. PicoMQ's approach of running durable streams over HTTP backed directly by object storage provides a compelling architectural alternative. This technical breakdown explores the trade-offs, throughput metrics, and implementation code for replacing self-hosted stream infrastructure.",
+      "cross_source_signals": [
+        "Hacker News: Show HN PicoMQ with 159 points & 31 comments",
+        "Cloudflare Blog: Architectural shifts toward object-storage-backed systems and memory optimization",
+        "GitHub: Rust-based stream server adoption gaining momentum"
+      ],
+      "developer_pain": "high",
+      "freshness": "fresh",
+      "money_angle": "Reduces monthly infrastructure hosting bills by swapping always-on memory instances for object-store streaming",
+      "story_angle": "When our Redis memory costs spiked on serverless workers, we re-architected our task queue around HTTP durable streams on object storage.",
+      "suman_angle": "Why We Ditched Redis for Durable HTTP Streams on Object Storage (Architecture & Code)",
+      "target_keywords": [
+        "picomq streaming",
+        "durable streams http",
+        "redis stream alternative",
+        "object storage event queue"
+      ],
+      "competing_articles": "Most queue architecture articles rehash Redis vs RabbitMQ; this highlights modern S3/object-storage-backed streaming with zero memory persistence overhead.",
+      "real_story_evidence": [
+        {
+          "source": "Hacker News (Show HN)",
+          "title": "Show HN: PicoMQ \u2013 Durable Streams over HTTP, on object storage",
+          "url": "https://picomq.com/",
+          "what_to_cite": "Running granular, URL-addressable durable streams (create/append/read/long-poll) directly on top of cheap object storage."
+        }
+      ]
     }
   ],
   "success_stories": [
     {
       "source": "show_hn",
-      "title": "Show HN: An e-ink frame that hears birds and draws them as 1800s illustrations",
-      "url": "https://github.com/arnegiacomo/fugleramme",
-      "signal": "2282 points \u00b7 255 comments",
-      "snippet": "See also: Avian Visitors - https://news.ycombinator.com/item?id=48343424 - May 2026 (20 comments)"
+      "title": "Show HN: Cactus Needle 3: 8-29MB automation models can match DeepSeek V4 Flash",
+      "url": "https://cactuscompute.com/needle",
+      "signal": "195 points \u00b7 87 comments",
+      "snippet": "Hey HN, Henry from Cactus here. We submitted Needle 2 here a few weeks ago, and the feedback in the discussion thread was incredibly valuable, thanks! Thanks to all that feedback, we\u2019ve been able to m"
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Share your AI Setup, Learn from others",
-      "url": "https://mysetup.ai/",
-      "signal": "209 points \u00b7 119 comments",
-      "snippet": "I kept seeing engineers share what they were building with AI; however, I was always more curious about how they worked. Which agents did they use? What skills and tools had stuck or been thrown out t"
+      "title": "Show HN: An e-ink frame that hears birds and draws them as 1800s illustrations",
+      "url": "https://github.com/arnegiacomo/fugleramme",
+      "signal": "2326 points \u00b7 256 comments",
+      "snippet": "See also: Avian Visitors - https://news.ycombinator.com/item?id=48343424 - May 2026 (20 comments)"
     },
     {
       "source": "show_hn",
@@ -118,20 +160,6 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: I made a flight simulator, except you're just a passenger",
-      "url": "https://inflightsimulator.com",
-      "signal": "438 points \u00b7 205 comments",
-      "snippet": "Buckle your seatbelt, secure your tray table, and open your window shade. Now you can simulate flying anywhere in the world as a commercial passenger, from takeoff to touchdown. Terrain, weather, and "
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: Capsule \u2013 Single-file web apps that save their data into SQLite",
-      "url": "https://withcapsule.app/",
-      "signal": "376 points \u00b7 165 comments",
-      "snippet": "Hey HN, I always had the problem that building HTML pages is really simple now, but trying to save data required hosting it somewhere, and sharing it afterwards was not easy. Over the last few months,"
-    },
-    {
-      "source": "show_hn",
       "title": "Show HN: What if the speed of light was 5 km/h?",
       "url": "https://rivendell.dmitrybrant.com/relativity/",
       "signal": "630 points \u00b7 290 comments",
@@ -139,10 +167,31 @@
     },
     {
       "source": "show_hn",
+      "title": "Show HN: I made a flight simulator, except you're just a passenger",
+      "url": "https://inflightsimulator.com",
+      "signal": "442 points \u00b7 205 comments",
+      "snippet": "Buckle your seatbelt, secure your tray table, and open your window shade. Now you can simulate flying anywhere in the world as a commercial passenger, from takeoff to touchdown. Terrain, weather, and "
+    },
+    {
+      "source": "show_hn",
       "title": "Show HN: I trained a 125M model to autocomplete piano on-device",
       "url": "https://simedw.com/2026/08/20/midi-autocomplete/",
       "signal": "598 points \u00b7 117 comments",
       "snippet": "I trained a 125M-parameter transformer to autocomplete piano performances in real time (~108 notes/sec on an iPhone 15). The idea is basically GitHub Copilot or Tabnine, except instead of prompting it"
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Share your AI Setup, Learn from others",
+      "url": "https://mysetup.ai/",
+      "signal": "233 points \u00b7 135 comments",
+      "snippet": "I kept seeing engineers share what they were building with AI; however, I was always more curious about how they worked. Which agents did they use? What skills and tools had stuck or been thrown out t"
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Capsule \u2013 Single-file web apps that save their data into SQLite",
+      "url": "https://withcapsule.app/",
+      "signal": "377 points \u00b7 166 comments",
+      "snippet": "Hey HN, I always had the problem that building HTML pages is really simple now, but trying to save data required hosting it somewhere, and sharing it afterwards was not easy. Over the last few months,"
     },
     {
       "source": "show_hn",
@@ -195,13 +244,6 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Hacking a $20 4G wireless hotspot into a texting device",
-      "url": "https://bkovac.github.io/modem-thing/",
-      "signal": "204 points \u00b7 36 comments",
-      "snippet": ""
-    },
-    {
-      "source": "show_hn",
       "title": "Show HN: Hacker News, without AI",
       "url": "https://hcker.news/?ai=exclude",
       "signal": "207 points \u00b7 88 comments",
@@ -230,10 +272,10 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: TERMy \u2013 A fast terminal assistant that does not use LLMs",
-      "url": "https://github.com/gioblu/NPC-Forge/blob/main/docs/development.md",
-      "signal": "225 points \u00b7 45 comments",
-      "snippet": "I love research and development, you may have heard of me because of PJON (Padded Jittering Operative Network). It is a network protocol I started developing in 2010, which was recently implemented in"
+      "title": "Show HN: Hacking a $20 4G wireless hotspot into a texting device",
+      "url": "https://bkovac.github.io/modem-thing/",
+      "signal": "206 points \u00b7 37 comments",
+      "snippet": ""
     }
   ]
 }
