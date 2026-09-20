@@ -1,14 +1,11 @@
 {
   "topics": [
-    "Cactus Needle LLM: The Fix That Cut My API Bill From $300 to $0",
-    "Chess Clock Task Manager: I Built 2 SaaS Apps in 30 Days (With Code)",
-    "PicoMQ Streaming: Why Redis Breaks on HTTP (And What to Do Instead)"
+    "Wasm Latex Editor: I Built a Zero-Cost PDF Generator in 1 Day",
+    "AI Coding Agent Skills: Stop Debugging Manually With This Claude Setup",
+    "Zig vs Rust: Why the Borrow Checker Broke My CLI Tooling (And the Fix)"
   ],
-  "date": "September 19, 2026",
+  "date": "September 20, 2026",
   "title_history": [
-    "TradingAgents Tutorial: I Built a 3\u2011Agent Financial Analyst in 120 Lines \u2014 Full Code",
-    "Micro SaaS Consolidation: I Combined Two Apps Into One Dashboard \u2014 Users Doubled",
-    "Rewrite Python in Rust: Why I Rewrote Our Automation Tooling \u2014 Speedups Matter",
     "Shopify React Native Swift: Why They Abandoned It for Pure Native Apps",
     "AI Agent Verbosity Fix: My 45-Line Python Script That Stops Claude's Yap",
     "DIY Bike Computer ESP32: I Built an Open-Source eInk Screen for Under $40",
@@ -35,103 +32,106 @@
     "Github actions not working: How I fixed the silent error in 3 hours",
     "Cactus Needle LLM: The Fix That Cut My API Bill From $300 to $0",
     "Chess Clock Task Manager: I Built 2 SaaS Apps in 30 Days (With Code)",
-    "PicoMQ Streaming: Why Redis Breaks on HTTP (And What to Do Instead)"
+    "PicoMQ Streaming: Why Redis Breaks on HTTP (And What to Do Instead)",
+    "Wasm Latex Editor: I Built a Zero-Cost PDF Generator in 1 Day",
+    "AI Coding Agent Skills: Stop Debugging Manually With This Claude Setup",
+    "Zig vs Rust: Why the Borrow Checker Broke My CLI Tooling (And the Fix)"
   ],
   "last_update_id": 70323306,
   "virality_data": [
     {
-      "topic": "Replacing Heavy Cloud LLMs with an 8MB Needle Model for Document Automation",
-      "category": "D",
-      "category_name": "AI Automation Across Domains",
+      "topic": "Building an in-browser LaTeX PDF generator using WASM and pdfTeX (zero server cost)",
+      "category": "A",
+      "category_name": "Developer Success Story",
       "virality_score": 89,
-      "analysis": "Edge-sized specialized models like Cactus Needle 3 prove that high-cost frontier API calls are overkill for document and structured extraction workflows. With DeepSeek and Claude API costs eating SaaS margins, showing developers how an 8-29MB local model matches cloud benchmarks captures immediate traction. The post delivers actionable Python code to run zero-latency document parsing locally without paying cloud providers.",
+      "analysis": "Developers and researchers hate paying Overleaf subscriptions or maintaining heavy server-side LaTeX compilation docker images for simple document generation. This taps into the massive signal around compiling legacy C/TeX binaries into WebAssembly to achieve sub-second client-side document rendering. It stands out by providing clean JS glue code to load pdfTeX into the browser without any backend compute bills.",
       "cross_source_signals": [
-        "Hacker News: Show HN Cactus Needle 3 with 195 points & 87 comments",
-        "GitHub: Edge automation and quantized small model repos trending",
-        "Dev.to: Rising discussions around local AI vs cloud API costs"
+        "HackerNews: Show HN TeXbrain running pdfTeX via WASM (118 points, 28 comments)",
+        "GitHub: WebAssembly tooling & C-to-WASM compilers trending across dev feeds",
+        "Reddit r/webdev: Frequent pain points around hosting headless Chrome / LaTeX containers"
+      ],
+      "developer_pain": "high",
+      "freshness": "recent",
+      "money_angle": "Cut backend server costs to $0 for dynamic PDF rendering workflows",
+      "story_angle": "I was spending $45/month running a heavy headless LaTeX Docker container for client invoices until I compiled the engine to WASM and ran it entirely in the browser.",
+      "suman_angle": "How I Compiled LaTeX to WASM to Generate PDFs in the Browser with Zero Server Costs",
+      "target_keywords": [
+        "wasm latex editor",
+        "pdftex webassembly",
+        "client side pdf generation",
+        "run latex in browser"
+      ],
+      "competing_articles": "Most WebAssembly posts are toy Raytracer demos; this provides a production-grade pattern for dynamic client-side document generation without backend overhead.",
+      "real_story_evidence": [
+        {
+          "source": "Hacker News (Show HN)",
+          "title": "Show HN: TeXbrain, a LaTeX editor that runs pdfTeX in the browser via WASM",
+          "url": "https://github.com/swimmingbrain/texbrain",
+          "what_to_cite": "Showcases compiling pdfTeX engine directly into WebAssembly so users can compile LaTeX completely client-side in the browser."
+        }
+      ]
+    },
+    {
+      "topic": "Building production engineering skills into AI coding agent workflows using Addy Osmani's agent-skills standard",
+      "category": "C",
+      "category_name": "AI Agents & Multi-Agent Workflows",
+      "virality_score": 92,
+      "analysis": "AI coding assistants frequently hallucinate bad architecture or break repo conventions when left unconstrained. With Addy Osmani's agent-skills repository spiking on GitHub and Claude Code trending, devs want concrete skill definitions to make autonomous agents adhere to strict engineering constraints. This post offers practical skill configs and orchestration loops readers can immediately plug into terminal agents.",
+      "cross_source_signals": [
+        "GitHub: addyosmani/agent-skills hitting top trending with 97k+ signal weight",
+        "GitHub: anthropics/claude-code terminal agent dominance",
+        "HackerNews: Claude load-bearing vocabulary and agentic tooling discussions (710 points)"
       ],
       "developer_pain": "high",
       "freshness": "breaking",
-      "money_angle": "Slash monthly LLM token bills from $340 to $0 by offloading deterministic extraction tasks to local micro-models",
-      "story_angle": "After spending $300/month on Claude API calls just to parse structured invoices, I replaced the cloud pipeline with an 8MB quantized model running locally in Python.",
-      "suman_angle": "I Replaced My $300/mo Claude API Invoice Parser with an 8MB Local Model (Full Python Code)",
+      "money_angle": "",
+      "story_angle": "My terminal AI coding agent kept breaking my TypeScript build pipelines until I structured its execution with explicit production skill rules and verification guards.",
+      "suman_angle": "How I Upgraded My Terminal AI Agent with Production Engineering Skills (Full Setup)",
       "target_keywords": [
-        "cactus needle llm",
-        "local ai document automation",
-        "small language models python",
-        "replace openai api local model"
+        "ai coding agent skills",
+        "claude code agent setup",
+        "production agent skills",
+        "addy osmani agent-skills"
       ],
-      "competing_articles": "Most document extraction articles default to expensive OpenAI/Claude API wrappers; this demonstrates a tiny, zero-cost 8MB local alternative.",
+      "competing_articles": "Most agent articles focus on generic chat loops; this shows how to inject production linters, test guards, and modular execution skills into autonomous coding agents.",
       "real_story_evidence": [
         {
-          "source": "Hacker News (Show HN)",
-          "title": "Show HN: Cactus Needle 3: 8-29MB automation models can match DeepSeek V4 Flash",
-          "url": "https://cactuscompute.com/needle",
-          "what_to_cite": "Needle 3 achieves parity with DeepSeek V4 Flash in deterministic structured automation at just 8-29MB model size."
+          "source": "GitHub Trending",
+          "title": "addyosmani/agent-skills Production-grade engineering skills for AI coding agents.",
+          "url": "https://github.com/addyosmani/agent-skills",
+          "what_to_cite": "Standardized skill patterns designed to inject production-grade engineering practices directly into agentic coding tool loops."
         }
       ]
     },
     {
-      "topic": "Building a Time-Boxed Sprint Dashboard using OwnTime Role Architecture",
-      "category": "A",
-      "category_name": "Developer Success Story",
-      "virality_score": 85,
-      "analysis": "Developer burnout and context switching across multiple micro-projects is at an all-time high among indie builders. The viral Hacker News launch of OwnTime demonstrated strong demand for chess-clock style priority management across developer roles. Walking readers through building a lightweight role-allocating productivity dashboard offers high read-ratio and immediate utility.",
+      "topic": "Replacing Rust memory management paradigms with Zig for ultra-fast tooling scripts",
+      "category": "G",
+      "category_name": "Software Architecture Insight",
+      "virality_score": 86,
+      "analysis": "The systems programming debate between Rust's strict borrow-checker overhead and Zig's explicit allocator-based simplicity is peaking across engineering communities. Developers building internal CLI tools and high-throughput data parsers are looking for honest technical breakdowns of when Zig outperforms Rust in developer ergonomics. This piece cuts through the hype with concrete allocator patterns and build benchmarks.",
       "cross_source_signals": [
-        "Hacker News: Show HN OwnTime with 118 points & 67 comments",
-        "GitHub: Growing popularity of minimal developer dashboard templates",
-        "Dev.to: Discussions on solo dev time-management and sprint fatigue"
+        "HackerNews: What Zig felt like, coming from Rust (249 comments, 212 points)",
+        "Dev.to: Systems architecture and CLI performance discussions",
+        "Reddit r/programming: Heated debates comparing Zig allocators against Rust lifetime semantics"
       ],
       "developer_pain": "medium",
       "freshness": "fresh",
-      "money_angle": "Prevents context collapse when juggling paid client work alongside a bootstrapped SaaS project",
-      "story_angle": "I kept abandoning my side projects until I applied the chess-clock role allocation model into a custom 120-line dashboard.",
-      "suman_angle": "How I Shipped 2 SaaS Apps in 30 Days by Building a Role-Based Chess Clock Dashboard",
+      "money_angle": "",
+      "story_angle": "After spending 3 days wrestling with complex lifetime annotations in a Rust data ingestion pipeline, I rewrote the core module in Zig with explicit allocators in one evening.",
+      "suman_angle": "Why I Replaced Our Rust CLI Tooling with Zig: Explicit Allocators vs Borrow Checker",
       "target_keywords": [
-        "developer productivity tool",
-        "indie hacker time management",
-        "chess clock task manager",
-        "build productivity dashboard python"
+        "zig vs rust",
+        "zig memory allocators",
+        "systems programming zig",
+        "why switch to zig"
       ],
-      "competing_articles": "Generic productivity posts push Notion templates; this shares a custom, code-backed time allocation system built specifically for multi-project devs.",
+      "competing_articles": "Existing posts are either surface-level syntax overviews or dogmatic language wars; this post gives real allocator code snippets and cold-start execution metrics.",
       "real_story_evidence": [
         {
-          "source": "Hacker News (Show HN)",
-          "title": "Show HN: OwnTime \u2013 a chess clock for your day's priorities",
-          "url": "https://owntime.app/",
-          "what_to_cite": "Using the chess-clock principle across defined life roles to manage competing priorities without context fatigue."
-        }
-      ]
-    },
-    {
-      "topic": "Replacing Redis with HTTP-Native Object Storage Streams Using PicoMQ",
-      "category": "G",
-      "category_name": "Software Architecture Insight",
-      "virality_score": 87,
-      "analysis": "Managing stateful Redis clusters or Kafka setups for lightweight event-driven microservices introduces significant operational overhead and cloud cost. PicoMQ's approach of running durable streams over HTTP backed directly by object storage provides a compelling architectural alternative. This technical breakdown explores the trade-offs, throughput metrics, and implementation code for replacing self-hosted stream infrastructure.",
-      "cross_source_signals": [
-        "Hacker News: Show HN PicoMQ with 159 points & 31 comments",
-        "Cloudflare Blog: Architectural shifts toward object-storage-backed systems and memory optimization",
-        "GitHub: Rust-based stream server adoption gaining momentum"
-      ],
-      "developer_pain": "high",
-      "freshness": "fresh",
-      "money_angle": "Reduces monthly infrastructure hosting bills by swapping always-on memory instances for object-store streaming",
-      "story_angle": "When our Redis memory costs spiked on serverless workers, we re-architected our task queue around HTTP durable streams on object storage.",
-      "suman_angle": "Why We Ditched Redis for Durable HTTP Streams on Object Storage (Architecture & Code)",
-      "target_keywords": [
-        "picomq streaming",
-        "durable streams http",
-        "redis stream alternative",
-        "object storage event queue"
-      ],
-      "competing_articles": "Most queue architecture articles rehash Redis vs RabbitMQ; this highlights modern S3/object-storage-backed streaming with zero memory persistence overhead.",
-      "real_story_evidence": [
-        {
-          "source": "Hacker News (Show HN)",
-          "title": "Show HN: PicoMQ \u2013 Durable Streams over HTTP, on object storage",
-          "url": "https://picomq.com/",
-          "what_to_cite": "Running granular, URL-addressable durable streams (create/append/read/long-poll) directly on top of cheap object storage."
+          "source": "Hacker News",
+          "title": "What Zig felt like, coming from Rust",
+          "url": "https://besok.github.io/posts/what-zig-felt-like-coming-from-rust/",
+          "what_to_cite": "Analyzes the practical shift from Rust's borrow checker to Zig's explicit memory management and comptime metaprogramming."
         }
       ]
     }
@@ -139,16 +139,9 @@
   "success_stories": [
     {
       "source": "show_hn",
-      "title": "Show HN: Cactus Needle 3: 8-29MB automation models can match DeepSeek V4 Flash",
-      "url": "https://cactuscompute.com/needle",
-      "signal": "195 points \u00b7 87 comments",
-      "snippet": "Hey HN, Henry from Cactus here. We submitted Needle 2 here a few weeks ago, and the feedback in the discussion thread was incredibly valuable, thanks! Thanks to all that feedback, we\u2019ve been able to m"
-    },
-    {
-      "source": "show_hn",
       "title": "Show HN: An e-ink frame that hears birds and draws them as 1800s illustrations",
       "url": "https://github.com/arnegiacomo/fugleramme",
-      "signal": "2326 points \u00b7 256 comments",
+      "signal": "2362 points \u00b7 258 comments",
       "snippet": "See also: Avian Visitors - https://news.ycombinator.com/item?id=48343424 - May 2026 (20 comments)"
     },
     {
@@ -169,29 +162,22 @@
       "source": "show_hn",
       "title": "Show HN: I made a flight simulator, except you're just a passenger",
       "url": "https://inflightsimulator.com",
-      "signal": "442 points \u00b7 205 comments",
+      "signal": "444 points \u00b7 205 comments",
       "snippet": "Buckle your seatbelt, secure your tray table, and open your window shade. Now you can simulate flying anywhere in the world as a commercial passenger, from takeoff to touchdown. Terrain, weather, and "
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: I trained a 125M model to autocomplete piano on-device",
-      "url": "https://simedw.com/2026/08/20/midi-autocomplete/",
-      "signal": "598 points \u00b7 117 comments",
-      "snippet": "I trained a 125M-parameter transformer to autocomplete piano performances in real time (~108 notes/sec on an iPhone 15). The idea is basically GitHub Copilot or Tabnine, except instead of prompting it"
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: Share your AI Setup, Learn from others",
-      "url": "https://mysetup.ai/",
-      "signal": "233 points \u00b7 135 comments",
-      "snippet": "I kept seeing engineers share what they were building with AI; however, I was always more curious about how they worked. Which agents did they use? What skills and tools had stuck or been thrown out t"
     },
     {
       "source": "show_hn",
       "title": "Show HN: Capsule \u2013 Single-file web apps that save their data into SQLite",
       "url": "https://withcapsule.app/",
-      "signal": "377 points \u00b7 166 comments",
+      "signal": "379 points \u00b7 167 comments",
       "snippet": "Hey HN, I always had the problem that building HTML pages is really simple now, but trying to save data required hosting it somewhere, and sharing it afterwards was not easy. Over the last few months,"
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Share your AI Setup, Learn from others",
+      "url": "https://mysetup.ai/",
+      "signal": "242 points \u00b7 138 comments",
+      "snippet": "I kept seeing engineers share what they were building with AI; however, I was always more curious about how they worked. Which agents did they use? What skills and tools had stuck or been thrown out t"
     },
     {
       "source": "show_hn",
@@ -202,10 +188,10 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Huzzah \u2013 a novel approach to coding with AI",
-      "url": "https://www.danielvaughn.dev/posts/huzzah/",
-      "signal": "384 points \u00b7 209 comments",
-      "snippet": "Hello everyone. I've been working on this experimental editor called Huzzah. I've been working almost exclusively with coding agents since January of this year, and over the past few months I began to"
+      "title": "Show HN: Cactus Needle 3: 8-29MB automation models can match DeepSeek V4 Flash",
+      "url": "https://cactuscompute.com/needle",
+      "signal": "227 points \u00b7 91 comments",
+      "snippet": "Hey HN, Henry from Cactus here. We submitted Needle 2 here a few weeks ago, and the feedback in the discussion thread was incredibly valuable, thanks! Thanks to all that feedback, we\u2019ve been able to m"
     },
     {
       "source": "show_hn",
@@ -244,20 +230,6 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Hacker News, without AI",
-      "url": "https://hcker.news/?ai=exclude",
-      "signal": "207 points \u00b7 88 comments",
-      "snippet": ""
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: Hacker News, Without AI",
-      "url": "https://www.unslop.news/",
-      "signal": "197 points \u00b7 82 comments",
-      "snippet": ""
-    },
-    {
-      "source": "show_hn",
       "title": "Show HN: NFC Energy-Harvesting PCB Business Card with an MCU",
       "url": "https://wilsonharper.net/projects/businesscard/",
       "signal": "231 points \u00b7 30 comments",
@@ -272,10 +244,38 @@
     },
     {
       "source": "show_hn",
+      "title": "Show HN: Hacker News, without AI",
+      "url": "https://hcker.news/?ai=exclude",
+      "signal": "207 points \u00b7 88 comments",
+      "snippet": ""
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Hacker News, Without AI",
+      "url": "https://www.unslop.news/",
+      "signal": "198 points \u00b7 82 comments",
+      "snippet": ""
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: TERMy \u2013 A fast terminal assistant that does not use LLMs",
+      "url": "https://github.com/gioblu/NPC-Forge/blob/main/docs/development.md",
+      "signal": "225 points \u00b7 45 comments",
+      "snippet": "I love research and development, you may have heard of me because of PJON (Padded Jittering Operative Network). It is a network protocol I started developing in 2010, which was recently implemented in"
+    },
+    {
+      "source": "show_hn",
       "title": "Show HN: Hacking a $20 4G wireless hotspot into a texting device",
       "url": "https://bkovac.github.io/modem-thing/",
-      "signal": "206 points \u00b7 37 comments",
+      "signal": "209 points \u00b7 37 comments",
       "snippet": ""
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: We built open OpenRouter that turns usage into a better model",
+      "url": "https://github.com/experientiallabs/experiential",
+      "signal": "222 points \u00b7 47 comments",
+      "snippet": "Hi HN, we built an open source model gateway. It's a single place to manage our own self hosted, frontier, and open source models in one place. It\u2019s is rust native, built for concurrency, and implemen"
     }
   ]
 }
