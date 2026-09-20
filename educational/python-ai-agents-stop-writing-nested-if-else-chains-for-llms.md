@@ -1,23 +1,23 @@
 # Python AI agents: Stop writing nested if-else chains for LLMs
 
-_Build a self-correcting agent in 20 lines of Python without heavy, over-engineered frameworks._
+_Build a self-correcting agent in 50 lines of Python without heavy, over-engineered frameworks._
 
 ## Scroll-stopping hooks
 
-**Hook 1.** Spent until 2 AM fighting nested abstractions just to make an LLM call a local tool, so I threw the framework out and built it with raw Python.
+**Hook 1.** I spent three hours last night trying to make an LLM output clean JSON, only for it to hallucinate a trailing comma and break my parser. The fix wasn't a better prompt—it was a 10-line Python loop that lets the model debug its own syntax.
 
-**Hook 2.** You don't need a heavy enterprise framework to build an AI agent—most of them are just glorified while-loops wrapping an LLM client.
+**Hook 2.** You don't need LangChain's massive dependency tree to build an AI agent. A simple while-loop, a system prompt, and a basic tool-calling schema in raw Python will outperform most bloated frameworks anyway.
 
-**Hook 3.** Everyone is selling 'agentic AI' like it's black magic, but it's literally just a Python script that parses JSON in a loop until the prompt is happy.
+**Hook 3.** Most 'AI agents' I see online are just expensive wrappers around a single API call. If your agent doesn't have a feedback loop to inspect its own output and run local code, you just built a chatbot with a fancy name.
 
-**Hook 4.** I got tired of my wrapper breaking every time a dependency updated, so I wrote a 50-line agent using nothing but the official OpenAI SDK.
+**Hook 4.** It's 1 AM, your API credits are draining, and your agent is stuck in an infinite loop calling the same broken tool. Here is the exact control-loop pattern I built for CoderFact to stop agents from burning cash.
 
-**Hook 5.** If your AI agent needs 15 architectural diagrams to explain how it calls a simple search API, you've over-engineered it.
+**Hook 5.** We need to talk about tool-calling in Python. Stop manually parsing strings with regex—OpenAI and Anthropic literally accept JSON schemas for functions, and matching them is just a dictionary lookup.
 
 ## 7 tips that actually move the needle
 
-### Tip 1. pydantic
-_Why it matters:_ Validating raw LLM outputs into structured Python objects prevents runtime crashes when the agent returns malformed data.
+### Tip 1. pydantic for structured output validation
+_Why it matters:_ It forces the LLM to conform to a strict schema before your code even attempts to run the arguments.
 
 ```python
 from pydantic import BaseModel
@@ -26,147 +26,137 @@ class ToolCall(BaseModel):
     args: dict
 ```
 
-### Tip 2. instructor
-_Why it matters:_ It patches the OpenAI client to guarantee your agent returns strict JSON matching your Pydantic schema.
+### Tip 2. instructor library for type-safe API calls
+_Why it matters:_ It patches the OpenAI client to return validated Pydantic objects directly instead of raw, untyped JSON strings.
 
 ```python
 import instructor
-from openai import OpenAI
 client = instructor.from_openai(OpenAI())
+resp = client.chat.completions.create(response_model=ToolCall)
 ```
 
-### Tip 3. tenacity
-_Why it matters:_ Agent loops fail constantly on rate limits or API hiccups; you need automated retries to keep the loop alive.
+### Tip 3. sys.executable subprocess pattern
+_Why it matters:_ Running agent-generated Python code locally requires executing it safely inside your current environment's virtualenv.
 
 ```python
-from tenacity import retry, stop_after_attempt
-@retry(stop=stop_after_attempt(3))
-def call_agent(): pass
+import sys, subprocess
+subprocess.run([sys.executable, "-c", code], capture_output=True)
 ```
 
-### Tip 4. rich.console
-_Why it matters:_ You need real-time terminal logging to see what your agent is thinking at 1 AM without digging through raw JSON dumps.
+### Tip 4. Hardcount iteration limits on execution loops
+_Why it matters:_ It acts as a circuit breaker to prevent your agent from running infinitely and draining your API budget on a single run.
 
-```python
-from rich.console import Console
-console = Console()
-console.log('[bold green]Agent decided to run tool...[/]')
+```
+for step in range(MAX_STEPS):
+    if task_completed: break
 ```
 
-### Tip 5. python-dotenv
-_Why it matters:_ Hardcoding API keys in your agent script is a security disaster waiting to happen.
+### Tip 5. System prompt injection with jinja2
+_Why it matters:_ Dynamically inserting tool definitions and historical state into your prompts is cleaner and less error-prone than messy f-strings.
 
 ```python
-from dotenv import load_dotenv
-import os
-load_dotenv()
-api_key = os.getenv('OPENAI_API_KEY')
+from jinja2 import Template
+Template("Tools: {{tools}}").render(tools=my_tools)
 ```
 
-### Tip 6. duckduckgo-search
-_Why it matters:_ Give your agent web access instantly without registering for heavy, paid search API keys.
+### Tip 6. Local execution testing with litellm
+_Why it matters:_ You can swap your backend to a local Llama 3 model with a single line of code to test your agent's logic for free.
 
 ```python
-from duckduckgo_search import DDGS
-results = DDGS().text('python news', max_results=3)
+import litellm
+litellm.completion(model="ollama/llama3", messages=msgs)
 ```
 
-### Tip 7. yarl
-_Why it matters:_ Safely parsing and building URLs inside your agent's execution block prevents malformed request crashes during tool execution.
+### Tip 7. Single-file state tracking with a dataclass
+_Why it matters:_ Keeping your agent's history, tool outputs, and execution steps in a simple typed object makes debugging late-night runs trivial.
 
-```python
-from yarl import URL
-base_url = URL('https://api.github.com') / 'repos'
+```
+@dataclass
+class AgentState:
+    history: list
+    steps: int
 ```
 
 ## Step-by-step procedure
 
-### 1. Step 1: Set up your environment
-Create a virtual environment and install the bare minimum dependencies: OpenAI, Pydantic, and Instructor.
-
-```python
-pip install openai pydantic instructor python-dotenv
-```
-
-### 2. Step 2: Define your agent's tool
-Create a standard Python function that your agent can call, like a simple calculator or API fetcher.
+### 1. Step 1: Define your Python tools
+Write standard Python functions and describe them using docstrings or simple JSON schemas so the LLM knows what arguments they accept.
 
 ```python
 def get_weather(city: str) -> str:
-    return f'Sunny in {city}, 25C'
+    return f"22C in {city}"
 ```
 
-### 3. Step 3: Model the agent's decision
-Use Pydantic to define the structure of how the agent decides to either call a tool or reply to the user.
+### 2. Step 2: Set up the ReAct system prompt
+Explain the Reason-Act-Observe loop to the LLM so it knows how to think before calling a tool.
 
-```python
-from pydantic import BaseModel
-class Decision(BaseModel):
-    tool_name: str
-    arguments: dict
-    thought: str
+```
+SYSTEM_PROMPT = "You can use tools. Format: Thought, Action, Observation."
 ```
 
-### 4. Step 4: Initialize the structured client
-Wrap your OpenAI client with Instructor so it forces the LLM to output your exact Pydantic schema.
+### 3. Step 3: Initialize the OpenAI client
+Set up a standard client to send the prompt, history, and available tool definitions to the model.
 
 ```python
-import instructor
 from openai import OpenAI
-client = instructor.from_openai(OpenAI())
+client = OpenAI()
 ```
 
-### 5. Step 5: Run the execution loop
-Write a simple loop that sends the prompt, gets the structured decision, runs the tool, and feeds the result back to the LLM.
+### 4. Step 4: Build the execution loop
+Write a loop that parses the model's tool calls, runs the corresponding Python functions, and appends the result to the messages.
 
 ```
-resp = client.chat.completions.create(
-    model='gpt-4o-mini',
-    response_model=Decision,
-    messages=[{'role': 'user', 'content': 'Is it sunny in Kolkata?'}]
-)
+while not finished:
+    res = call_llm(messages)
+    run_tool(res.tool_name)
 ```
 
-### 6. Step 6: Verify the agent's choice
-Print the structured output to verify that the agent correctly chose the 'get_weather' tool with 'Kolkata' as the argument.
+### 5. Step 5: Run and verify the agent
+Execute a script where the agent must use your tools to solve a query, and print the final execution trace to verify it made the right decisions.
 
-```python
-print(resp.thought)
-print(resp.tool_name)
-print(resp.arguments)
+```
+agent.run("What is the weather in Kolkata?")
+```
+
+### 6. Step 6: Add the execution circuit breaker
+Prevent infinite loops by raising an error if the agent exceeds 5 steps without returning a final answer.
+
+```
+if steps > 5:
+    raise Exception("Agent loop limit exceeded")
 ```
 
 ## The mistake almost everyone makes
 
-> ⚠️  Letting the agent run in an infinite loop when it gets stuck. Always set a max_iterations counter (usually 3 to 5) inside your while-loop to force-terminate the execution and return a fallback error message.
+> ⚠️  Letting the agent call tools without validating the arguments first. The LLM will inevitably hallucinate arguments that don't match your Python function signatures. The fix is to use Pydantic to validate the arguments, catch the validation error, and feed the error message back to the LLM so it can correct its own mistake on the next turn.
 
 ## X / Twitter thread (copy-paste ready)
 
-**1/** Python AI agents: Stop writing nested if-else chains for LLMs.
+**1/** Python AI agents don't need massive frameworks—you can build a self-correcting agent in 50 lines of raw code.
 
-**2/** I spent last night fighting complex frameworks just to make an LLM call a local function. It's too much. Here is how to build a clean agent with raw Python.
+**2/** I spent last night debugging an agent that ran into an infinite loop and ate $10 of API credits. Frameworks hide this logic; writing it yourself teaches you how to control the flow.
 
-**3/** Tip 1: Use instructor to force your LLM to output structured Pydantic models. No more parsing messy markdown code blocks.
+**3/** Tip 1: Use Pydantic to define your tools. Don't parse raw text with regex—let the model output structured JSON that maps directly to your Python functions.
 
-**4/** Tip 2: Keep your tools as plain Python functions. Your agent loop just needs to map the LLM's JSON choice to a function dictionary.
+**4/** Tip 2: Build a strict while-loop with a hard limit of 5 iterations. If the agent doesn't solve the task by then, kill the process. Your wallet will thank you.
 
-**5/** Tip 3: Always hardcode a max_iterations cap. If the agent gets confused, it will loop infinitely and drain your API balance in minutes.
+**5/** Tip 3: Feed Python execution errors back into the LLM. If its code crashes, write a handler that sends the traceback back as a user message so it can self-correct.
 
-**6/** Build light, build fast. Try this setup today and skip the framework bloat. What tool are you hooking up first?
+**6/** I put together the minimal template I use for CoderFact tools. Try building one tonight—it's way simpler than you think.
 
 ## LinkedIn version
 
-It was 1:30 AM last night, and I was staring at a stack trace 20 levels deep in some enterprise AI framework. All I wanted was to make an LLM check a local database and format the result. Instead, I was debugging abstract 'Runnable' chains.
+It was 1 AM last night, and I was staring at a terminal screen filled with API timeout errors. I was trying to build a simple automation helper for CoderFact using one of those massive, trending AI agent frameworks. But between the nested abstractions, undocumented breaking changes, and the fact that it took three imports just to run a print statement, I had enough. I pip uninstalled the library and decided to build it from scratch.
 
-I closed the editor, deleted the virtual env, and started over with a blank Python file. Just the official OpenAI client, Pydantic, and a simple while-loop.
+It turns out, an AI agent is just a while-loop with a system prompt and some structured data validation. You don't need hundreds of files of boilerplate. You just need a model that can output JSON, a validator like Pydantic to make sure the arguments are real, and a basic error handler to catch bugs.
 
-Within twenty minutes, I had a working agent. It didn't need complex graph orchestrators. It just used Pydantic to guarantee the model outputted structured JSON, mapped that JSON to a local Python dictionary of functions, and executed them.
+When you strip away the hype, the core pattern is simple: the model thinks, it decides to call a Python function, your code runs that function, and you feed the result back to the model. If the function crashes, you don't panic—you just send the traceback back to the LLM and let it write a fix.
 
-We have over-engineered AI development. If you are building tools, start with the simplest loop possible. You do not need heavy abstractions until your simple loop actually breaks under real production load.
+Once I wrote this loop myself, the agent actually started working. No magic, no over-engineered wrappers, just standard Python. Plus, I can actually debug it now when things go wrong at midnight.
 
-Keep it simple, keep it readable, and save your sleep.
+Stop overcomplicating your AI stack. Write the loop yourself first, understand the execution flow, and only pull in heavy frameworks when you genuinely hit their limits.
 
-#python #aiagents #softwareengineering #backend
+#python #aiagents #automation #backenddevelopment
 
 _Tags: python, aiagents, automation, backend_
 
