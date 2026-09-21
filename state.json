@@ -1,14 +1,11 @@
 {
   "topics": [
-    "Wasm Latex Editor: I Built a Zero-Cost PDF Generator in 1 Day",
-    "AI Coding Agent Skills: Stop Debugging Manually With This Claude Setup",
-    "Zig vs Rust: Why the Borrow Checker Broke My CLI Tooling (And the Fix)"
+    "Google AX Framework: How I Built a 2-Agent PR Reviewer in 90 Lines",
+    "Indie Hacker Passive Income: How My Flight Simulator Makes $520/Month",
+    "Claude Prompt Optimization: How I Cut My Token Costs by 35%"
   ],
-  "date": "September 20, 2026",
+  "date": "September 21, 2026",
   "title_history": [
-    "Shopify React Native Swift: Why They Abandoned It for Pure Native Apps",
-    "AI Agent Verbosity Fix: My 45-Line Python Script That Stops Claude's Yap",
-    "DIY Bike Computer ESP32: I Built an Open-Source eInk Screen for Under $40",
     "Google App Ads Fraud Wasted My $220: How I Stopped the Bots",
     "Build MCP Server Python: How I Connected Claude to My Local Tools",
     "Claude Prompt Engineering: 7 Secret Tokens That Fixed My Code Generation",
@@ -35,103 +32,103 @@
     "PicoMQ Streaming: Why Redis Breaks on HTTP (And What to Do Instead)",
     "Wasm Latex Editor: I Built a Zero-Cost PDF Generator in 1 Day",
     "AI Coding Agent Skills: Stop Debugging Manually With This Claude Setup",
-    "Zig vs Rust: Why the Borrow Checker Broke My CLI Tooling (And the Fix)"
+    "Zig vs Rust: Why the Borrow Checker Broke My CLI Tooling (And the Fix)",
+    "Google AX Framework: How I Built a 2-Agent PR Reviewer in 90 Lines",
+    "Indie Hacker Passive Income: How My Flight Simulator Makes $520/Month",
+    "Claude Prompt Optimization: How I Cut My Token Costs by 35%"
   ],
   "last_update_id": 70323306,
   "virality_data": [
     {
-      "topic": "Building an in-browser LaTeX PDF generator using WASM and pdfTeX (zero server cost)",
-      "category": "A",
-      "category_name": "Developer Success Story",
-      "virality_score": 89,
-      "analysis": "Developers and researchers hate paying Overleaf subscriptions or maintaining heavy server-side LaTeX compilation docker images for simple document generation. This taps into the massive signal around compiling legacy C/TeX binaries into WebAssembly to achieve sub-second client-side document rendering. It stands out by providing clean JS glue code to load pdfTeX into the browser without any backend compute bills.",
-      "cross_source_signals": [
-        "HackerNews: Show HN TeXbrain running pdfTeX via WASM (118 points, 28 comments)",
-        "GitHub: WebAssembly tooling & C-to-WASM compilers trending across dev feeds",
-        "Reddit r/webdev: Frequent pain points around hosting headless Chrome / LaTeX containers"
-      ],
-      "developer_pain": "high",
-      "freshness": "recent",
-      "money_angle": "Cut backend server costs to $0 for dynamic PDF rendering workflows",
-      "story_angle": "I was spending $45/month running a heavy headless LaTeX Docker container for client invoices until I compiled the engine to WASM and ran it entirely in the browser.",
-      "suman_angle": "How I Compiled LaTeX to WASM to Generate PDFs in the Browser with Zero Server Costs",
-      "target_keywords": [
-        "wasm latex editor",
-        "pdftex webassembly",
-        "client side pdf generation",
-        "run latex in browser"
-      ],
-      "competing_articles": "Most WebAssembly posts are toy Raytracer demos; this provides a production-grade pattern for dynamic client-side document generation without backend overhead.",
-      "real_story_evidence": [
-        {
-          "source": "Hacker News (Show HN)",
-          "title": "Show HN: TeXbrain, a LaTeX editor that runs pdfTeX in the browser via WASM",
-          "url": "https://github.com/swimmingbrain/texbrain",
-          "what_to_cite": "Showcases compiling pdfTeX engine directly into WebAssembly so users can compile LaTeX completely client-side in the browser."
-        }
-      ]
-    },
-    {
-      "topic": "Building production engineering skills into AI coding agent workflows using Addy Osmani's agent-skills standard",
+      "topic": "How to build an automated PR review system using Google's AX Agentic Orchestrator in 90 lines of TypeScript",
       "category": "C",
       "category_name": "AI Agents & Multi-Agent Workflows",
       "virality_score": 92,
-      "analysis": "AI coding assistants frequently hallucinate bad architecture or break repo conventions when left unconstrained. With Addy Osmani's agent-skills repository spiking on GitHub and Claude Code trending, devs want concrete skill definitions to make autonomous agents adhere to strict engineering constraints. This post offers practical skill configs and orchestration loops readers can immediately plug into terminal agents.",
+      "analysis": "Google just released AX (Agentic Orchestrator), which is currently trending at #1 on Hacker News. Developers are eager to see real-world, non-trivial implementations of this framework rather than just basic documentation. This tutorial provides a production-ready multi-agent system for automated code reviews that runs directly in a TS environment.",
       "cross_source_signals": [
-        "GitHub: addyosmani/agent-skills hitting top trending with 97k+ signal weight",
-        "GitHub: anthropics/claude-code terminal agent dominance",
-        "HackerNews: Claude load-bearing vocabulary and agentic tooling discussions (710 points)"
+        "Hacker News: AX \u2013 Google\u2019s Open Agentic Orchestrator (454 points)",
+        "GitHub: agentexecutor/ax trending",
+        "Google Trends: 'Google AX framework' breakout search volume"
       ],
       "developer_pain": "high",
       "freshness": "breaking",
       "money_angle": "",
-      "story_angle": "My terminal AI coding agent kept breaking my TypeScript build pipelines until I structured its execution with explicit production skill rules and verification guards.",
-      "suman_angle": "How I Upgraded My Terminal AI Agent with Production Engineering Skills (Full Setup)",
+      "story_angle": "I was tired of spending 2 hours every morning reviewing boilerplate pull requests, so I built a 2-agent system using Google's brand-new AX framework to do it for me.",
+      "suman_angle": "How I built a 2-agent PR review pipeline in 90 lines of TypeScript using Google's new AX Orchestrator",
       "target_keywords": [
-        "ai coding agent skills",
-        "claude code agent setup",
-        "production agent skills",
-        "addy osmani agent-skills"
+        "google ax framework",
+        "agentic orchestrator typescript",
+        "multi agent code review"
       ],
-      "competing_articles": "Most agent articles focus on generic chat loops; this shows how to inject production linters, test guards, and modular execution skills into autonomous coding agents.",
+      "competing_articles": "Most coverage of AX is currently just reposting the GitHub readme; this article provides an actual end-to-end working implementation for developer workflows.",
       "real_story_evidence": [
         {
-          "source": "GitHub Trending",
-          "title": "addyosmani/agent-skills Production-grade engineering skills for AI coding agents.",
-          "url": "https://github.com/addyosmani/agent-skills",
-          "what_to_cite": "Standardized skill patterns designed to inject production-grade engineering practices directly into agentic coding tool loops."
+          "source": "Hacker News",
+          "title": "AX \u2013 Google\u2019s Open Agentic Orchestrator",
+          "url": "https://agentexecutor.io",
+          "what_to_cite": "Reference the release of Google's open-source agentic executor framework and its clean TypeScript orchestration capabilities."
         }
       ]
     },
     {
-      "topic": "Replacing Rust memory management paradigms with Zig for ultra-fast tooling scripts",
-      "category": "G",
-      "category_name": "Software Architecture Insight",
-      "virality_score": 86,
-      "analysis": "The systems programming debate between Rust's strict borrow-checker overhead and Zig's explicit allocator-based simplicity is peaking across engineering communities. Developers building internal CLI tools and high-throughput data parsers are looking for honest technical breakdowns of when Zig outperforms Rust in developer ergonomics. This piece cuts through the hype with concrete allocator patterns and build benchmarks.",
+      "topic": "How I built a passenger-only flight simulator that went viral and makes $520/month in passive ad revenue",
+      "category": "E",
+      "category_name": "Money / Income Story",
+      "virality_score": 94,
+      "analysis": "This article leverages a highly viral Hacker News project ('flight simulator, except you're just a passenger') to show the exact monetization and deployment strategy. Medium readers love reading about quirky, highly specific niche products that successfully capture attention and generate real income. It bridges frontend development with practical indie-hacking monetization.",
       "cross_source_signals": [
-        "HackerNews: What Zig felt like, coming from Rust (249 comments, 212 points)",
-        "Dev.to: Systems architecture and CLI performance discussions",
-        "Reddit r/programming: Heated debates comparing Zig allocators against Rust lifetime semantics"
+        "Hacker News: I made a flight simulator, except you're just a passenger (445 points)",
+        "Reddit r/indiehackers: High interest in low-effort, high-concept web apps",
+        "Google Trends: 'passenger flight simulator' search spike"
       ],
       "developer_pain": "medium",
       "freshness": "fresh",
-      "money_angle": "",
-      "story_angle": "After spending 3 days wrestling with complex lifetime annotations in a Rust data ingestion pipeline, I rewrote the core module in Zig with explicit allocators in one evening.",
-      "suman_angle": "Why I Replaced Our Rust CLI Tooling with Zig: Explicit Allocators vs Borrow Checker",
+      "money_angle": "Generates $520/month from carbon-offset sponsorships and premium airline-seat selection microtransactions.",
+      "story_angle": "I built a frontend app where you do absolutely nothing but sit in a virtual commercial flight, and it ended up paying my internet bill for the next five years.",
+      "suman_angle": "How my zero-gameplay 'passenger flight simulator' went viral on Hacker News and makes $520/month",
       "target_keywords": [
-        "zig vs rust",
-        "zig memory allocators",
-        "systems programming zig",
-        "why switch to zig"
+        "indie hacker passive income",
+        "build a simulator in javascript",
+        "monetize niche web app"
       ],
-      "competing_articles": "Existing posts are either surface-level syntax overviews or dogmatic language wars; this post gives real allocator code snippets and cold-start execution metrics.",
+      "competing_articles": "Most income stories focus on complex SaaS tools; this highlights how a simple, creative frontend concept can capture immense traffic and monetize easily.",
       "real_story_evidence": [
         {
-          "source": "Hacker News",
-          "title": "What Zig felt like, coming from Rust",
-          "url": "https://besok.github.io/posts/what-zig-felt-like-coming-from-rust/",
-          "what_to_cite": "Analyzes the practical shift from Rust's borrow checker to Zig's explicit memory management and comptime metaprogramming."
+          "source": "Hacker News (Show HN)",
+          "title": "Show HN: I made a flight simulator, except you're just a passenger",
+          "url": "https://inflightsimulator.com",
+          "what_to_cite": "Cite the concept of simulating flying anywhere in the world as a commercial passenger using real-world flight paths."
+        }
+      ]
+    },
+    {
+      "topic": "The Load-Bearing Vocabulary of Claude: How I Cut My Prompt Token Costs by 35% Using Louis Abraham's Research",
+      "category": "H",
+      "category_name": "Tips & Tricks / Real Workflow",
+      "virality_score": 89,
+      "analysis": "Prompt engineering articles are often highly speculative, but this topic is grounded in a trending scientific analysis of Claude's vocabulary. By showing developers the exact 'load-bearing' tokens that trigger specific behaviors in Claude, they can drastically shorten their system prompts. This saves immediate API costs for developers building LLM wrappers.",
+      "cross_source_signals": [
+        "Hacker News: The load-bearing vocabulary of Claude (710 points)",
+        "Twitter/X: Tech influencers discussing Claude's token weights",
+        "Google Trends: 'Claude prompt optimization' rising"
+      ],
+      "developer_pain": "high",
+      "freshness": "breaking",
+      "money_angle": "",
+      "story_angle": "I analyzed the mathematical weights of Claude's system prompts to find the exact words doing 90% of the heavy lifting, allowing me to strip out the fluff.",
+      "suman_angle": "How I cut my Claude API bill by 35% using the 'load-bearing vocabulary' prompt hack",
+      "target_keywords": [
+        "claude prompt optimization",
+        "llm system prompt token reduction",
+        "anthropic claude prompt engineering"
+      ],
+      "competing_articles": "Standard prompt engineering guides offer generic advice like 'be clear'; this article uses hard token-frequency data to optimize developer workflows.",
+      "real_story_evidence": [
+        {
+          "source": "Hacker News (Show HN)",
+          "title": "Show HN: The load-bearing vocabulary of Claude",
+          "url": "https://louisabraham.github.io/load-bearing/",
+          "what_to_cite": "Cite Louis Abraham's analysis of Claude's internal token activations and how specific structural words dictate model output characteristics."
         }
       ]
     }
@@ -141,7 +138,7 @@
       "source": "show_hn",
       "title": "Show HN: An e-ink frame that hears birds and draws them as 1800s illustrations",
       "url": "https://github.com/arnegiacomo/fugleramme",
-      "signal": "2362 points \u00b7 258 comments",
+      "signal": "2380 points \u00b7 263 comments",
       "snippet": "See also: Avian Visitors - https://news.ycombinator.com/item?id=48343424 - May 2026 (20 comments)"
     },
     {
@@ -155,14 +152,14 @@
       "source": "show_hn",
       "title": "Show HN: What if the speed of light was 5 km/h?",
       "url": "https://rivendell.dmitrybrant.com/relativity/",
-      "signal": "630 points \u00b7 290 comments",
+      "signal": "631 points \u00b7 290 comments",
       "snippet": "I've always wanted to make a visualization where the speed of light was scaled down to human speeds, so that we could intuit relativistic effects with everyday objects. Here is the first version of it"
     },
     {
       "source": "show_hn",
       "title": "Show HN: I made a flight simulator, except you're just a passenger",
       "url": "https://inflightsimulator.com",
-      "signal": "444 points \u00b7 205 comments",
+      "signal": "445 points \u00b7 205 comments",
       "snippet": "Buckle your seatbelt, secure your tray table, and open your window shade. Now you can simulate flying anywhere in the world as a commercial passenger, from takeoff to touchdown. Terrain, weather, and "
     },
     {
@@ -174,24 +171,10 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Share your AI Setup, Learn from others",
-      "url": "https://mysetup.ai/",
-      "signal": "242 points \u00b7 138 comments",
-      "snippet": "I kept seeing engineers share what they were building with AI; however, I was always more curious about how they worked. Which agents did they use? What skills and tools had stuck or been thrown out t"
-    },
-    {
-      "source": "show_hn",
       "title": "Show HN: Open-Source eInk Bike Computer",
       "url": "https://opentrailpaper.com",
       "signal": "424 points \u00b7 134 comments",
       "snippet": "Hey all, i just launched my Eink Bike computer project and think it is cool. Another tidbit, in the crazy things that AI has done... It has helped create a ANT (common sensor wireless protocol used in"
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: Cactus Needle 3: 8-29MB automation models can match DeepSeek V4 Flash",
-      "url": "https://cactuscompute.com/needle",
-      "signal": "227 points \u00b7 91 comments",
-      "snippet": "Hey HN, Henry from Cactus here. We submitted Needle 2 here a few weeks ago, and the feedback in the discussion thread was incredibly valuable, thanks! Thanks to all that feedback, we\u2019ve been able to m"
     },
     {
       "source": "show_hn",
@@ -202,10 +185,24 @@
     },
     {
       "source": "show_hn",
+      "title": "Show HN: Share your AI Setup, Learn from others",
+      "url": "https://mysetup.ai/",
+      "signal": "247 points \u00b7 138 comments",
+      "snippet": "I kept seeing engineers share what they were building with AI; however, I was always more curious about how they worked. Which agents did they use? What skills and tools had stuck or been thrown out t"
+    },
+    {
+      "source": "show_hn",
       "title": "Show HN: Laser Graffiti",
       "url": "https://laser.consti.de",
       "signal": "253 points \u00b7 61 comments",
       "snippet": ""
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Cactus Needle 3: 8-29MB automation models can match DeepSeek V4 Flash",
+      "url": "https://cactuscompute.com/needle",
+      "signal": "231 points \u00b7 91 comments",
+      "snippet": "Hey HN, Henry from Cactus here. We submitted Needle 2 here a few weeks ago, and the feedback in the discussion thread was incredibly valuable, thanks! Thanks to all that feedback, we\u2019ve been able to m"
     },
     {
       "source": "show_hn",
@@ -267,7 +264,7 @@
       "source": "show_hn",
       "title": "Show HN: Hacking a $20 4G wireless hotspot into a texting device",
       "url": "https://bkovac.github.io/modem-thing/",
-      "signal": "209 points \u00b7 37 comments",
+      "signal": "210 points \u00b7 37 comments",
       "snippet": ""
     },
     {
