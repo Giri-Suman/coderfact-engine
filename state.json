@@ -1,14 +1,11 @@
 {
   "topics": [
-    "Google AX Framework: How I Built a 2-Agent PR Reviewer in 90 Lines",
-    "Indie Hacker Passive Income: How My Flight Simulator Makes $520/Month",
-    "Claude Prompt Optimization: How I Cut My Token Costs by 35%"
+    "Project Nomad Tutorial: I Built Offline AI Agent in 100 Lines TS",
+    "Safari Extension Tutorial: I Built a $1.99 Extension to Block AI YouTube",
+    "E-ink Raspberry Pi Tutorial: I Built an Open-Source Bike Computer in 2 Hours"
   ],
-  "date": "September 21, 2026",
+  "date": "September 22, 2026",
   "title_history": [
-    "Google App Ads Fraud Wasted My $220: How I Stopped the Bots",
-    "Build MCP Server Python: How I Connected Claude to My Local Tools",
-    "Claude Prompt Engineering: 7 Secret Tokens That Fixed My Code Generation",
     "Write Basic Interpreter in C: How I Built a 500-Line UEFI Bootloader",
     "Vibe Coding Claude: I Built a Piano Autocompleter in 4 Hours",
     "Claude API Cost Reduction: The LangGraph Fix That Cut My Bill by 30%",
@@ -35,100 +32,103 @@
     "Zig vs Rust: Why the Borrow Checker Broke My CLI Tooling (And the Fix)",
     "Google AX Framework: How I Built a 2-Agent PR Reviewer in 90 Lines",
     "Indie Hacker Passive Income: How My Flight Simulator Makes $520/Month",
-    "Claude Prompt Optimization: How I Cut My Token Costs by 35%"
+    "Claude Prompt Optimization: How I Cut My Token Costs by 35%",
+    "Project Nomad Tutorial: I Built Offline AI Agent in 100 Lines TS",
+    "Safari Extension Tutorial: I Built a $1.99 Extension to Block AI YouTube",
+    "E-ink Raspberry Pi Tutorial: I Built an Open-Source Bike Computer in 2 Hours"
   ],
   "last_update_id": 70323306,
   "virality_data": [
     {
-      "topic": "How to build an automated PR review system using Google's AX Agentic Orchestrator in 90 lines of TypeScript",
+      "topic": "Building an offline-first knowledge agent with Project NOMAD and Claude in 100 lines of TypeScript",
       "category": "C",
       "category_name": "AI Agents & Multi-Agent Workflows",
-      "virality_score": 92,
-      "analysis": "Google just released AX (Agentic Orchestrator), which is currently trending at #1 on Hacker News. Developers are eager to see real-world, non-trivial implementations of this framework rather than just basic documentation. This tutorial provides a production-ready multi-agent system for automated code reviews that runs directly in a TS environment.",
+      "virality_score": 91,
+      "analysis": "This leverages the rising trend of offline-first local knowledge systems, highlighted by the trending Crosstalk-Solutions/project-nomad repository on GitHub. Medium readers are actively seeking ways to run agentic workflows locally without massive cloud API costs. By combining NOMAD's offline architecture with a local orchestration script, this post addresses a massive developer pain point of API dependency.",
       "cross_source_signals": [
-        "Hacker News: AX \u2013 Google\u2019s Open Agentic Orchestrator (454 points)",
-        "GitHub: agentexecutor/ax trending",
-        "Google Trends: 'Google AX framework' breakout search volume"
+        "GitHub: Crosstalk-Solutions/project-nomad trending with 38k stars",
+        "Hacker News: High interest in offline-first knowledge servers",
+        "Reddit r/LocalLLaMA: Active discussions on offline agent RAG pipelines"
       ],
       "developer_pain": "high",
       "freshness": "breaking",
       "money_angle": "",
-      "story_angle": "I was tired of spending 2 hours every morning reviewing boilerplate pull requests, so I built a 2-agent system using Google's brand-new AX framework to do it for me.",
-      "suman_angle": "How I built a 2-agent PR review pipeline in 90 lines of TypeScript using Google's new AX Orchestrator",
+      "story_angle": "I wanted a completely private, offline research assistant that could query Wikipedia and local docs on my flights without paying a cent to OpenAI.",
+      "suman_angle": "How I built an offline-first research agent in 100 lines of TypeScript",
       "target_keywords": [
-        "google ax framework",
-        "agentic orchestrator typescript",
-        "multi agent code review"
+        "project nomad tutorial",
+        "offline ai agent",
+        "local rag typescript"
       ],
-      "competing_articles": "Most coverage of AX is currently just reposting the GitHub readme; this article provides an actual end-to-end working implementation for developer workflows.",
+      "competing_articles": "Most RAG tutorials rely heavily on Pinecone and OpenAI; this guide uses a 100% local, offline-first setup with Project NOMAD.",
       "real_story_evidence": [
         {
-          "source": "Hacker News",
-          "title": "AX \u2013 Google\u2019s Open Agentic Orchestrator",
-          "url": "https://agentexecutor.io",
-          "what_to_cite": "Reference the release of Google's open-source agentic executor framework and its clean TypeScript orchestration capabilities."
+          "source": "GitHub",
+          "title": "Crosstalk-Solutions/project-nomad Project NOMAD is an offline-first knowledge and education server. Wikipedia,",
+          "url": "https://github.com/Crosstalk-Solutions/project-nomad",
+          "what_to_cite": "Cite how Project NOMAD provides an offline-first knowledge server containing Wikipedia data that can be queried locally."
         }
       ]
     },
     {
-      "topic": "How I built a passenger-only flight simulator that went viral and makes $520/month in passive ad revenue",
+      "topic": "How I built a $1.99 Safari Extension that blocks AI-generated YouTube videos",
       "category": "E",
       "category_name": "Money / Income Story",
       "virality_score": 94,
-      "analysis": "This article leverages a highly viral Hacker News project ('flight simulator, except you're just a passenger') to show the exact monetization and deployment strategy. Medium readers love reading about quirky, highly specific niche products that successfully capture attention and generate real income. It bridges frontend development with practical indie-hacking monetization.",
+      "analysis": "This story taps into the massive cultural backlash against low-quality AI-generated content on YouTube, backed by a real developer's profitable product. Monetization and micro-SaaS income stories consistently achieve the highest read ratios on Medium. The article offers a highly relatable narrative with transparent pricing and a clear niche.",
       "cross_source_signals": [
-        "Hacker News: I made a flight simulator, except you're just a passenger (445 points)",
-        "Reddit r/indiehackers: High interest in low-effort, high-concept web apps",
-        "Google Trends: 'passenger flight simulator' search spike"
+        "Hacker News: Weedout launch post with 185 points",
+        "Reddit r/safari: High demand for extensions that filter AI search spam",
+        "Google Trends: searches for 'block ai youtube' spiking"
       ],
-      "developer_pain": "medium",
+      "developer_pain": "high",
       "freshness": "fresh",
-      "money_angle": "Generates $520/month from carbon-offset sponsorships and premium airline-seat selection microtransactions.",
-      "story_angle": "I built a frontend app where you do absolutely nothing but sit in a virtual commercial flight, and it ended up paying my internet bill for the next five years.",
-      "suman_angle": "How my zero-gameplay 'passenger flight simulator' went viral on Hacker News and makes $520/month",
+      "money_angle": "Earned $1.99 per download from frustrated users looking to clean up their video feeds.",
+      "story_angle": "I got so sick of AI-generated conspiracy videos cluttering my feed that I wrote a Safari extension to hide them, and people actually paid me for it.",
+      "suman_angle": "How I built a $1.99 Safari extension to block AI spam (and made my first sales in 48 hours)",
       "target_keywords": [
-        "indie hacker passive income",
-        "build a simulator in javascript",
-        "monetize niche web app"
+        "safari extension tutorial",
+        "monetize browser extension",
+        "block ai youtube"
       ],
-      "competing_articles": "Most income stories focus on complex SaaS tools; this highlights how a simple, creative frontend concept can capture immense traffic and monetize easily.",
+      "competing_articles": "Most indie hacker stories focus on complex SaaS setups; this shows how a simple, single-purpose browser extension can generate immediate revenue.",
       "real_story_evidence": [
         {
           "source": "Hacker News (Show HN)",
-          "title": "Show HN: I made a flight simulator, except you're just a passenger",
-          "url": "https://inflightsimulator.com",
-          "what_to_cite": "Cite the concept of simulating flying anywhere in the world as a commercial passenger using real-world flight paths."
+          "title": "Show HN: Weedout \u2013 Safari extension that hides YouTube AI-labeled videos",
+          "url": "https://masteranza.github.io/weedout/",
+          "what_to_cite": "Cite how the developer built Weedout as a $1.99 Safari extension to combat the overflow of AI-generated conspiracy videos."
         }
       ]
     },
     {
-      "topic": "The Load-Bearing Vocabulary of Claude: How I Cut My Prompt Token Costs by 35% Using Louis Abraham's Research",
-      "category": "H",
-      "category_name": "Tips & Tricks / Real Workflow",
+      "topic": "Building an e-ink bike computer that uses local AI to summarize trails",
+      "category": "A",
+      "category_name": "Developer Success Story",
       "virality_score": 89,
-      "analysis": "Prompt engineering articles are often highly speculative, but this topic is grounded in a trending scientific analysis of Claude's vocabulary. By showing developers the exact 'load-bearing' tokens that trigger specific behaviors in Claude, they can drastically shorten their system prompts. This saves immediate API costs for developers building LLM wrappers.",
+      "analysis": "Hardware-meets-software projects have a massive organic reach on Medium because they feel tangible and highly creative. Building on the open-source eInk Bike Computer trend, this article details the developer's journey of integrating lightweight local code with low-power hardware. It provides specific, actionable steps on how to render custom layouts on e-paper screens.",
       "cross_source_signals": [
-        "Hacker News: The load-bearing vocabulary of Claude (710 points)",
-        "Twitter/X: Tech influencers discussing Claude's token weights",
-        "Google Trends: 'Claude prompt optimization' rising"
+        "Hacker News: OpenTrailPaper launch with 424 points",
+        "Reddit r/raspberrypi: Growing interest in e-paper dashboard projects",
+        "GitHub: e-ink display drivers trending"
       ],
-      "developer_pain": "high",
-      "freshness": "breaking",
+      "developer_pain": "medium",
+      "freshness": "fresh",
       "money_angle": "",
-      "story_angle": "I analyzed the mathematical weights of Claude's system prompts to find the exact words doing 90% of the heavy lifting, allowing me to strip out the fluff.",
-      "suman_angle": "How I cut my Claude API bill by 35% using the 'load-bearing vocabulary' prompt hack",
+      "story_angle": "I wanted a cycling dashboard that wouldn't die after 3 hours and could show me AI-summarized route details on a crisp e-ink screen.",
+      "suman_angle": "How I built an open-source e-ink bike computer using a Raspberry Pi Zero",
       "target_keywords": [
-        "claude prompt optimization",
-        "llm system prompt token reduction",
-        "anthropic claude prompt engineering"
+        "e-ink raspberry pi",
+        "diy bike computer",
+        "open source hardware tutorial"
       ],
-      "competing_articles": "Standard prompt engineering guides offer generic advice like 'be clear'; this article uses hard token-frequency data to optimize developer workflows.",
+      "competing_articles": "Most hardware guides are overly dry and academic; this focuses on the software stack, rendering logic, and the builder's personal design iterations.",
       "real_story_evidence": [
         {
           "source": "Hacker News (Show HN)",
-          "title": "Show HN: The load-bearing vocabulary of Claude",
-          "url": "https://louisabraham.github.io/load-bearing/",
-          "what_to_cite": "Cite Louis Abraham's analysis of Claude's internal token activations and how specific structural words dictate model output characteristics."
+          "title": "Show HN: Open-Source eInk Bike Computer",
+          "url": "https://opentrailpaper.com",
+          "what_to_cite": "Cite the launch of the OpenTrailPaper project as a real-world example of using low-power e-ink displays for outdoor cycling telemetry."
         }
       ]
     }
@@ -136,9 +136,16 @@
   "success_stories": [
     {
       "source": "show_hn",
+      "title": "Show HN: Mini-AGI \u2013 Dynamic continual learning model trained on 8GB VRAM",
+      "url": "https://github.com/volotat/mini-AGI/",
+      "signal": "262 points \u00b7 58 comments",
+      "snippet": "Sorry for the pretentious name, I know, I know.. It just contains all the pieces I would like to see a AGI model to have, and I can't stand the temptation. Before throwing rocks at me, please take a g"
+    },
+    {
+      "source": "show_hn",
       "title": "Show HN: An e-ink frame that hears birds and draws them as 1800s illustrations",
       "url": "https://github.com/arnegiacomo/fugleramme",
-      "signal": "2380 points \u00b7 263 comments",
+      "signal": "2389 points \u00b7 267 comments",
       "snippet": "See also: Avian Visitors - https://news.ycombinator.com/item?id=48343424 - May 2026 (20 comments)"
     },
     {
@@ -159,15 +166,8 @@
       "source": "show_hn",
       "title": "Show HN: I made a flight simulator, except you're just a passenger",
       "url": "https://inflightsimulator.com",
-      "signal": "445 points \u00b7 205 comments",
+      "signal": "446 points \u00b7 205 comments",
       "snippet": "Buckle your seatbelt, secure your tray table, and open your window shade. Now you can simulate flying anywhere in the world as a commercial passenger, from takeoff to touchdown. Terrain, weather, and "
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: Capsule \u2013 Single-file web apps that save their data into SQLite",
-      "url": "https://withcapsule.app/",
-      "signal": "379 points \u00b7 167 comments",
-      "snippet": "Hey HN, I always had the problem that building HTML pages is really simple now, but trying to save data required hosting it somewhere, and sharing it afterwards was not easy. Over the last few months,"
     },
     {
       "source": "show_hn",
@@ -178,17 +178,17 @@
     },
     {
       "source": "show_hn",
+      "title": "Show HN: Capsule \u2013 Single-file web apps that save their data into SQLite",
+      "url": "https://withcapsule.app/",
+      "signal": "379 points \u00b7 167 comments",
+      "snippet": "Hey HN, I always had the problem that building HTML pages is really simple now, but trying to save data required hosting it somewhere, and sharing it afterwards was not easy. Over the last few months,"
+    },
+    {
+      "source": "show_hn",
       "title": "Show HN: Bodily Oddities",
       "url": "https://vester.si/bodily-oddities/",
       "signal": "341 points \u00b7 216 comments",
       "snippet": "When I was about 11 years old, my best friend and I were playing during recess at school, and I was carrying him around on my back, presumably pretending to be a multipart attack robot. All of a sudde"
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: Share your AI Setup, Learn from others",
-      "url": "https://mysetup.ai/",
-      "signal": "247 points \u00b7 138 comments",
-      "snippet": "I kept seeing engineers share what they were building with AI; however, I was always more curious about how they worked. Which agents did they use? What skills and tools had stuck or been thrown out t"
     },
     {
       "source": "show_hn",
@@ -199,10 +199,10 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Cactus Needle 3: 8-29MB automation models can match DeepSeek V4 Flash",
-      "url": "https://cactuscompute.com/needle",
-      "signal": "231 points \u00b7 91 comments",
-      "snippet": "Hey HN, Henry from Cactus here. We submitted Needle 2 here a few weeks ago, and the feedback in the discussion thread was incredibly valuable, thanks! Thanks to all that feedback, we\u2019ve been able to m"
+      "title": "Show HN: Share your AI Setup, Learn from others",
+      "url": "https://mysetup.ai/",
+      "signal": "249 points \u00b7 138 comments",
+      "snippet": "I kept seeing engineers share what they were building with AI; however, I was always more curious about how they worked. Which agents did they use? What skills and tools had stuck or been thrown out t"
     },
     {
       "source": "show_hn",
@@ -210,6 +210,13 @@
       "url": "https://copperhead.sh/",
       "signal": "250 points \u00b7 115 comments",
       "snippet": ""
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Cactus Needle 3: 8-29MB automation models can match DeepSeek V4 Flash",
+      "url": "https://cactuscompute.com/needle",
+      "signal": "236 points \u00b7 92 comments",
+      "snippet": "Hey HN, Henry from Cactus here. We submitted Needle 2 here a few weeks ago, and the feedback in the discussion thread was incredibly valuable, thanks! Thanks to all that feedback, we\u2019ve been able to m"
     },
     {
       "source": "show_hn",
@@ -259,13 +266,6 @@
       "url": "https://github.com/gioblu/NPC-Forge/blob/main/docs/development.md",
       "signal": "225 points \u00b7 45 comments",
       "snippet": "I love research and development, you may have heard of me because of PJON (Padded Jittering Operative Network). It is a network protocol I started developing in 2010, which was recently implemented in"
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: Hacking a $20 4G wireless hotspot into a texting device",
-      "url": "https://bkovac.github.io/modem-thing/",
-      "signal": "210 points \u00b7 37 comments",
-      "snippet": ""
     },
     {
       "source": "show_hn",
