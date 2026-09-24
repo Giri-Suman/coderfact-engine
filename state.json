@@ -1,14 +1,11 @@
 {
   "topics": [
-    "Project Nomad Tutorial: I Built Offline AI Agent in 100 Lines TS",
-    "Safari Extension Tutorial: I Built a $1.99 Extension to Block AI YouTube",
-    "E-ink Raspberry Pi Tutorial: I Built an Open-Source Bike Computer in 2 Hours"
+    "Vibe coding tutorial: I built a $19 SaaS in 11 hours with Cursor",
+    "LangGraph Python tutorial: I replaced my morning news with an AI agent",
+    "GitHub Actions not working? How I fixed a silent fail in 3 hours"
   ],
-  "date": "September 22, 2026",
+  "date": "September 24, 2026",
   "title_history": [
-    "Write Basic Interpreter in C: How I Built a 500-Line UEFI Bootloader",
-    "Vibe Coding Claude: I Built a Piano Autocompleter in 4 Hours",
-    "Claude API Cost Reduction: The LangGraph Fix That Cut My Bill by 30%",
     "Safari extension tutorial: How I made $412 in 10 days blocking AI",
     "Javascript physics engine: I built a relativity simulator in 150 lines",
     "Claude system prompt leak: How I extracted Anthropic\u2019s Fable 5.1",
@@ -35,117 +32,74 @@
     "Claude Prompt Optimization: How I Cut My Token Costs by 35%",
     "Project Nomad Tutorial: I Built Offline AI Agent in 100 Lines TS",
     "Safari Extension Tutorial: I Built a $1.99 Extension to Block AI YouTube",
-    "E-ink Raspberry Pi Tutorial: I Built an Open-Source Bike Computer in 2 Hours"
+    "E-ink Raspberry Pi Tutorial: I Built an Open-Source Bike Computer in 2 Hours",
+    "Vibe coding tutorial: I built a $19 SaaS in 11 hours with Cursor",
+    "LangGraph Python tutorial: I replaced my morning news with an AI agent",
+    "GitHub Actions not working? How I fixed a silent fail in 3 hours"
   ],
   "last_update_id": 70323306,
   "virality_data": [
     {
-      "topic": "Building an offline-first knowledge agent with Project NOMAD and Claude in 100 lines of TypeScript",
-      "category": "C",
-      "category_name": "AI Agents & Multi-Agent Workflows",
-      "virality_score": 91,
-      "analysis": "This leverages the rising trend of offline-first local knowledge systems, highlighted by the trending Crosstalk-Solutions/project-nomad repository on GitHub. Medium readers are actively seeking ways to run agentic workflows locally without massive cloud API costs. By combining NOMAD's offline architecture with a local orchestration script, this post addresses a massive developer pain point of API dependency.",
-      "cross_source_signals": [
-        "GitHub: Crosstalk-Solutions/project-nomad trending with 38k stars",
-        "Hacker News: High interest in offline-first knowledge servers",
-        "Reddit r/LocalLLaMA: Active discussions on offline agent RAG pipelines"
-      ],
-      "developer_pain": "high",
-      "freshness": "breaking",
-      "money_angle": "",
-      "story_angle": "I wanted a completely private, offline research assistant that could query Wikipedia and local docs on my flights without paying a cent to OpenAI.",
-      "suman_angle": "How I built an offline-first research agent in 100 lines of TypeScript",
-      "target_keywords": [
-        "project nomad tutorial",
-        "offline ai agent",
-        "local rag typescript"
-      ],
-      "competing_articles": "Most RAG tutorials rely heavily on Pinecone and OpenAI; this guide uses a 100% local, offline-first setup with Project NOMAD.",
-      "real_story_evidence": [
-        {
-          "source": "GitHub",
-          "title": "Crosstalk-Solutions/project-nomad Project NOMAD is an offline-first knowledge and education server. Wikipedia,",
-          "url": "https://github.com/Crosstalk-Solutions/project-nomad",
-          "what_to_cite": "Cite how Project NOMAD provides an offline-first knowledge server containing Wikipedia data that can be queried locally."
-        }
-      ]
-    },
-    {
-      "topic": "How I built a $1.99 Safari Extension that blocks AI-generated YouTube videos",
-      "category": "E",
-      "category_name": "Money / Income Story",
-      "virality_score": 94,
-      "analysis": "This story taps into the massive cultural backlash against low-quality AI-generated content on YouTube, backed by a real developer's profitable product. Monetization and micro-SaaS income stories consistently achieve the highest read ratios on Medium. The article offers a highly relatable narrative with transparent pricing and a clear niche.",
-      "cross_source_signals": [
-        "Hacker News: Weedout launch post with 185 points",
-        "Reddit r/safari: High demand for extensions that filter AI search spam",
-        "Google Trends: searches for 'block ai youtube' spiking"
-      ],
-      "developer_pain": "high",
-      "freshness": "fresh",
-      "money_angle": "Earned $1.99 per download from frustrated users looking to clean up their video feeds.",
-      "story_angle": "I got so sick of AI-generated conspiracy videos cluttering my feed that I wrote a Safari extension to hide them, and people actually paid me for it.",
-      "suman_angle": "How I built a $1.99 Safari extension to block AI spam (and made my first sales in 48 hours)",
-      "target_keywords": [
-        "safari extension tutorial",
-        "monetize browser extension",
-        "block ai youtube"
-      ],
-      "competing_articles": "Most indie hacker stories focus on complex SaaS setups; this shows how a simple, single-purpose browser extension can generate immediate revenue.",
-      "real_story_evidence": [
-        {
-          "source": "Hacker News (Show HN)",
-          "title": "Show HN: Weedout \u2013 Safari extension that hides YouTube AI-labeled videos",
-          "url": "https://masteranza.github.io/weedout/",
-          "what_to_cite": "Cite how the developer built Weedout as a $1.99 Safari extension to combat the overflow of AI-generated conspiracy videos."
-        }
-      ]
-    },
-    {
-      "topic": "Building an e-ink bike computer that uses local AI to summarize trails",
-      "category": "A",
-      "category_name": "Developer Success Story",
-      "virality_score": 89,
-      "analysis": "Hardware-meets-software projects have a massive organic reach on Medium because they feel tangible and highly creative. Building on the open-source eInk Bike Computer trend, this article details the developer's journey of integrating lightweight local code with low-power hardware. It provides specific, actionable steps on how to render custom layouts on e-paper screens.",
-      "cross_source_signals": [
-        "Hacker News: OpenTrailPaper launch with 424 points",
-        "Reddit r/raspberrypi: Growing interest in e-paper dashboard projects",
-        "GitHub: e-ink display drivers trending"
-      ],
+      "topic": "Vibe coding a small SaaS in one weekend",
+      "category": "B",
+      "category_name": "Vibe Coding / AI-Assisted Workflow",
+      "virality_score": 78,
       "developer_pain": "medium",
       "freshness": "fresh",
-      "money_angle": "",
-      "story_angle": "I wanted a cycling dashboard that wouldn't die after 3 hours and could show me AI-summarized route details on a crisp e-ink screen.",
-      "suman_angle": "How I built an open-source e-ink bike computer using a Raspberry Pi Zero",
+      "suman_angle": "Vibe coding a $19 SaaS in 11 hours \u2014 full prompts, full code, full Stripe screenshot",
       "target_keywords": [
-        "e-ink raspberry pi",
-        "diy bike computer",
-        "open source hardware tutorial"
+        "vibe coding tutorial",
+        "build saas with cursor",
+        "ai assisted coding"
       ],
-      "competing_articles": "Most hardware guides are overly dry and academic; this focuses on the software stack, rendering logic, and the builder's personal design iterations.",
-      "real_story_evidence": [
-        {
-          "source": "Hacker News (Show HN)",
-          "title": "Show HN: Open-Source eInk Bike Computer",
-          "url": "https://opentrailpaper.com",
-          "what_to_cite": "Cite the launch of the OpenTrailPaper project as a real-world example of using low-power e-ink displays for outdoor cycling telemetry."
-        }
-      ]
+      "money_angle": "Real Gumroad/Stripe revenue from a one-weekend build",
+      "story_angle": "Closed the laptop Friday at 9pm with an idea, opened it Sunday with a paying customer",
+      "analysis": "Vibe coding is the dominant 2026 dev meme. Real numbers + working code beats every theoretical post.",
+      "competing_articles": "Most posts show the workflow but skip the money / honest failures \u2014 Suman shows both."
+    },
+    {
+      "topic": "Building a research AI agent in 80 lines",
+      "category": "C",
+      "category_name": "AI Agents & Multi-Agent Workflows",
+      "virality_score": 76,
+      "developer_pain": "high",
+      "freshness": "breaking",
+      "suman_angle": "I replaced my morning news scroll with a 4-agent pipeline (full code)",
+      "target_keywords": [
+        "ai agent tutorial",
+        "langgraph python",
+        "multi agent workflow"
+      ],
+      "money_angle": "",
+      "story_angle": "Tired of the morning doom-scroll, built a personal news agent over chai",
+      "analysis": "Agent-building tutorials have huge search demand and most are abstract. Concrete code wins.",
+      "competing_articles": "Existing posts are diagrams without working orchestration."
+    },
+    {
+      "topic": "GitHub Actions silent failures",
+      "category": "F",
+      "category_name": "Debugging / Fix With Code",
+      "virality_score": 70,
+      "developer_pain": "high",
+      "freshness": "established",
+      "suman_angle": "Why my GitHub Action failed with zero error message \u2014 the 3-hour root cause",
+      "target_keywords": [
+        "github actions not working",
+        "github actions debug",
+        "github actions silent fail"
+      ],
+      "money_angle": "",
+      "story_angle": "Pipeline went green, repo did nothing \u2014 chased it for three hours",
+      "analysis": "Persistent pain on Stack Overflow weekly. Existing posts are outdated. Fresh root-cause wins.",
+      "competing_articles": "Existing articles are 2023/2024 \u2014 runner image and syntax both moved on."
     }
   ],
   "success_stories": [
     {
       "source": "show_hn",
-      "title": "Show HN: Mini-AGI \u2013 Dynamic continual learning model trained on 8GB VRAM",
-      "url": "https://github.com/volotat/mini-AGI/",
-      "signal": "262 points \u00b7 58 comments",
-      "snippet": "Sorry for the pretentious name, I know, I know.. It just contains all the pieces I would like to see a AGI model to have, and I can't stand the temptation. Before throwing rocks at me, please take a g"
-    },
-    {
-      "source": "show_hn",
       "title": "Show HN: An e-ink frame that hears birds and draws them as 1800s illustrations",
       "url": "https://github.com/arnegiacomo/fugleramme",
-      "signal": "2389 points \u00b7 267 comments",
+      "signal": "2390 points \u00b7 267 comments",
       "snippet": "See also: Avian Visitors - https://news.ycombinator.com/item?id=48343424 - May 2026 (20 comments)"
     },
     {
@@ -159,7 +113,7 @@
       "source": "show_hn",
       "title": "Show HN: What if the speed of light was 5 km/h?",
       "url": "https://rivendell.dmitrybrant.com/relativity/",
-      "signal": "631 points \u00b7 290 comments",
+      "signal": "633 points \u00b7 290 comments",
       "snippet": "I've always wanted to make a visualization where the speed of light was scaled down to human speeds, so that we could intuit relativistic effects with everyday objects. Here is the first version of it"
     },
     {
@@ -168,6 +122,13 @@
       "url": "https://inflightsimulator.com",
       "signal": "446 points \u00b7 205 comments",
       "snippet": "Buckle your seatbelt, secure your tray table, and open your window shade. Now you can simulate flying anywhere in the world as a commercial passenger, from takeoff to touchdown. Terrain, weather, and "
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Mini-AGI \u2013 Dynamic continual learning model trained on 8GB VRAM",
+      "url": "https://github.com/volotat/mini-AGI/",
+      "signal": "276 points \u00b7 76 comments",
+      "snippet": "Sorry for the pretentious name, I know, I know.. It just contains all the pieces I would like to see a AGI model to have, and I can't stand the temptation. Before throwing rocks at me, please take a g"
     },
     {
       "source": "show_hn",
@@ -180,7 +141,7 @@
       "source": "show_hn",
       "title": "Show HN: Capsule \u2013 Single-file web apps that save their data into SQLite",
       "url": "https://withcapsule.app/",
-      "signal": "379 points \u00b7 167 comments",
+      "signal": "380 points \u00b7 167 comments",
       "snippet": "Hey HN, I always had the problem that building HTML pages is really simple now, but trying to save data required hosting it somewhere, and sharing it afterwards was not easy. Over the last few months,"
     },
     {
@@ -201,7 +162,7 @@
       "source": "show_hn",
       "title": "Show HN: Share your AI Setup, Learn from others",
       "url": "https://mysetup.ai/",
-      "signal": "249 points \u00b7 138 comments",
+      "signal": "250 points \u00b7 139 comments",
       "snippet": "I kept seeing engineers share what they were building with AI; however, I was always more curious about how they worked. Which agents did they use? What skills and tools had stuck or been thrown out t"
     },
     {
@@ -213,13 +174,6 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Cactus Needle 3: 8-29MB automation models can match DeepSeek V4 Flash",
-      "url": "https://cactuscompute.com/needle",
-      "signal": "236 points \u00b7 92 comments",
-      "snippet": "Hey HN, Henry from Cactus here. We submitted Needle 2 here a few weeks ago, and the feedback in the discussion thread was incredibly valuable, thanks! Thanks to all that feedback, we\u2019ve been able to m"
-    },
-    {
-      "source": "show_hn",
       "title": "Show HN: Running 104GB Qwen3.8-Flash-Next on 48GB Mac with at ~12 tok/s",
       "url": "https://github.com/carloslfu/slotstream",
       "signal": "240 points \u00b7 118 comments",
@@ -227,10 +181,17 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: A techno machine in one HTML file, with verifiable renders",
-      "url": "https://ssx360.github.io/rack-02/?src=hn",
-      "signal": "240 points \u00b7 48 comments",
-      "snippet": ""
+      "title": "Show HN: Cactus Needle 3: 8-29MB automation models can match DeepSeek V4 Flash",
+      "url": "https://cactuscompute.com/needle",
+      "signal": "236 points \u00b7 92 comments",
+      "snippet": "Hey HN, Henry from Cactus here. We submitted Needle 2 here a few weeks ago, and the feedback in the discussion thread was incredibly valuable, thanks! Thanks to all that feedback, we\u2019ve been able to m"
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Drop \u2013 A rootless Linux sandbox with gVisor support",
+      "url": "https://droprun.sh/",
+      "signal": "186 points \u00b7 62 comments",
+      "snippet": "I created Drop because I always felt uneasy installing and running third-party programs using my main user account. A single compromised dependency means a full compromise of the system. What is even "
     },
     {
       "source": "show_hn",
@@ -250,7 +211,7 @@
       "source": "show_hn",
       "title": "Show HN: Hacker News, without AI",
       "url": "https://hcker.news/?ai=exclude",
-      "signal": "207 points \u00b7 88 comments",
+      "signal": "207 points \u00b7 85 comments",
       "snippet": ""
     },
     {
