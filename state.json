@@ -1,14 +1,11 @@
 {
   "topics": [
-    "This In-Browser AI Agent Saved Me $180/Month in 90 Lines of JavaScript",
-    "Vibe Coding Cursor Claude: I Built a Wasm Canvas in 48 Hours",
-    "Cactus Needle LLM: Stop Paying API Fees for Support Triage in Python"
+    "Block AI YouTube videos: I built a $1.99 Safari extension in 48 hours",
+    "LLM tool calling simplified: How I built a local Python agent with .agents",
+    "Python in WebAssembly cut my serverless GPU compute bill from $300 to $0"
   ],
-  "date": "September 25, 2026",
+  "date": "September 26, 2026",
   "title_history": [
-    "Local LLM MacBook Trick: How I Run a 104GB Qwen Model at 12 tok/s",
-    "Huzzah editor tutorial: I Built a Live React Dashboard in 2 Hours",
-    "Multi agent Python tutorial: I Automated My Project Ops in 150 Lines",
     "Single file python app: I built it in 2 hours using Capsule and Claude",
     "E-ink raspberry pi frame: I built a bird-drawing monitor with Gemini 3.8",
     "Repurpose 4g hotspot tech: My $20 OpenWrt telemetry server hack",
@@ -35,103 +32,103 @@
     "GitHub Actions not working? How I fixed a silent fail in 3 hours",
     "This In-Browser AI Agent Saved Me $180/Month in 90 Lines of JavaScript",
     "Vibe Coding Cursor Claude: I Built a Wasm Canvas in 48 Hours",
-    "Cactus Needle LLM: Stop Paying API Fees for Support Triage in Python"
+    "Cactus Needle LLM: Stop Paying API Fees for Support Triage in Python",
+    "Block AI YouTube videos: I built a $1.99 Safari extension in 48 hours",
+    "LLM tool calling simplified: How I built a local Python agent with .agents",
+    "Python in WebAssembly cut my serverless GPU compute bill from $300 to $0"
   ],
   "last_update_id": 70323306,
   "virality_data": [
     {
-      "topic": "Building an Autonomous In-Browser Web Agent with MCP and Local Execution",
-      "category": "C",
-      "category_name": "AI Agents & Multi-Agent Workflows",
-      "virality_score": 92,
-      "analysis": "AI agents operating locally inside client-side browser contexts via Model Context Protocol (MCP) represent the sharpest transition away from bloated remote agent APIs in 2026. With HKUDS/CLI-Anything gaining 50k+ GitHub stars and Dev.to reporting massive engagement on browser-native agents, developers are desperate for zero-infrastructure agent runtimes. This article provides concrete JavaScript/Python orchestration code to run autonomous workflows without sending DOM states to costly third-party cloud wrappers.",
+      "topic": "How I built a $1.99 Safari extension to filter out AI-generated YouTube junk",
+      "category": "E",
+      "category_name": "Money / Income Story",
+      "virality_score": 94,
+      "analysis": "Micro-SaaS stories targeting highly relatable user frustrations (like AI spam on YouTube) consistently go viral on Medium. This article provides a refreshing contrast to over-engineered SaaS startups by focusing on a simple, paid browser extension. It leverages direct search volume around cleaning up feeds while offering transparent monetization insights.",
       "cross_source_signals": [
-        "GitHub: HKUDS/CLI-Anything (50,430 stars trending)",
-        "Dev.to: 'What If Your AI Agent Never Had to Leave the Browser? (Demo)' trending (#12)",
-        "Hacker News: obra/superpowers agent methodology trending (291k views)"
+        "Hacker News: Show HN Weedout trending with 185 points",
+        "Reddit r/safari: Multiple threads on blocking AI-generated video channels",
+        "Google Trends: 'block AI youtube videos' search interest spike"
       ],
       "developer_pain": "high",
       "freshness": "breaking",
-      "money_angle": "Cut cloud agent API overhead and Selenium headless infrastructure costs from $180/mo to $0 by executing client-side.",
-      "story_angle": "Tired of paying $180/month for cloud headless browsers that constantly get bot-blocked, I built a lightweight in-browser MCP agent that automates web tasks locally in 90 lines of JavaScript.",
-      "suman_angle": "I Replaced My $180/Mo Cloud Scraper With an In-Browser AI Agent in 90 Lines of JavaScript",
+      "money_angle": "How a simple $1.99 one-time purchase app generates passive income without server maintenance costs.",
+      "story_angle": "I got so tired of my YouTube feed being flooded with AI-generated conspiracy videos that I spent a weekend building a Safari extension to hide them\u2014and people actually paid for it.",
+      "suman_angle": "I built a $1.99 Safari extension to block AI-generated YouTube junk in a weekend (and made my first sales with $0 marketing)",
       "target_keywords": [
-        "in-browser ai agent",
-        "mcp browser automation",
-        "client side web agent",
-        "browser ai automation javascript"
+        "safari extension tutorial",
+        "block ai youtube videos",
+        "monetize browser extension"
       ],
-      "competing_articles": "Existing agent tutorials rely on complex LangChain cloud orchestration or brittle Playwright scripts; this shows an in-page, lightweight client-side execution model.",
+      "competing_articles": "Most monetization articles focus on complex SaaS models; this shows how a single-purpose client-side extension can succeed with zero hosting overhead.",
       "real_story_evidence": [
         {
-          "source": "Dev.to",
-          "title": "What If Your AI Agent Never Had to Leave the Browser? (Demo \ud83d\ude80)",
-          "url": "https://dev.to/sylwia-lask/what-if-your-ai-agent-never-had-to-leave-the-browser-demo--5g",
-          "what_to_cite": "Reference how embedding MCP tooling inside browser extensions enables agents to access live tab states without server proxy latency."
+          "source": "Hacker News (Show HN)",
+          "title": "Show HN: Weedout \u2013 Safari extension that hides YouTube AI-labeled videos",
+          "url": "https://masteranza.github.io/weedout/",
+          "what_to_cite": "The developer built the $1.99 extension because AI-generated conspiracy videos were ruining their feed, running entirely client-side."
         }
       ]
     },
     {
-      "topic": "Vibe Coding an Architecture Canvas with Cursor and Wasm in One Weekend",
-      "category": "B",
-      "category_name": "Vibe Coding / AI-Assisted Workflow",
-      "virality_score": 89,
-      "analysis": "Human-AI collaborative tooling and visual IDEs are exploding as developers push back against messy, full-auto code generators. With Whiteboard (YC W26) hitting 287 points and 114 comments on Hacker News, devs want workflows that bridge visual design directly into code. This post deconstructs the exact Cursor + Claude prompt loops and WebAssembly scaffolding used to ship an interactive architecture builder in 48 hours.",
+      "topic": "Building a local agentic workflow using the new .agents skill directory standard",
+      "category": "C",
+      "category_name": "AI Agents & Multi-Agent Workflows",
+      "virality_score": 91,
+      "analysis": "The developer community in late 2026 is moving away from monolithic agent frameworks toward lightweight, portable skill-based directories. Citing trending GitHub specifications like Matt Pocock's skills schema captures the cutting edge of AI engineering. Providing a concrete, copyable implementation solves the theoretical-only agent post fatigue.",
       "cross_source_signals": [
-        "Hacker News Show HN: Whiteboard (YC W26) \u2013 An open-source IDE for thoughtful software design (287 points, 114 comments)",
-        "Hacker News: Show HN: Make cursed fonts like Times New Bastard using WASM (656 points)",
-        "GitHub: rohitg00/ai-engineering-from-scratch trending"
+        "GitHub: mattpocock/skills trending with high star velocity",
+        "GitHub: obra/superpowers agentic skills framework trending",
+        "Reddit r/LocalLLaMA: Discussions on standardizing LLM tool schemas"
+      ],
+      "developer_pain": "high",
+      "freshness": "breaking",
+      "money_angle": "",
+      "story_angle": "I was tired of rewriting system prompts and tool schemas every time I switched LLM providers, so I migrated my assistant to the new .agents skill directory standard.",
+      "suman_angle": "Stop hardcoding LLM tools: How I built a local AI agent using the new .agents skill directory standard",
+      "target_keywords": [
+        "ai agent tutorial python",
+        "llm tool calling",
+        "agentic workflow design"
+      ],
+      "competing_articles": "Most tutorials use heavy, locked-in frameworks like LangChain; this article teaches a clean, standard-based approach using lightweight portable schemas.",
+      "real_story_evidence": [
+        {
+          "source": "GitHub",
+          "title": "mattpocock/skills Skills for Real Engineers. Straight from my .agents directory.",
+          "url": "https://github.com/mattpocock/skills",
+          "what_to_cite": "The repository standardizes agent skills directly from a local .agents directory for clean engineering."
+        }
+      ]
+    },
+    {
+      "topic": "Why we compiled our layout engine to client-side WASM instead of running serverless GPUs",
+      "category": "G",
+      "category_name": "Software Architecture Insight",
+      "virality_score": 89,
+      "analysis": "Medium readers love architectural pivot stories that challenge the status quo of throwing expensive cloud compute at heavy processing tasks. Showing how to leverage Pyodide/WASM to run complex Python logic directly in the browser matches the trend of cost-conscious engineering. It directly addresses the pain of high serverless bills.",
+      "cross_source_signals": [
+        "Hacker News: Show HN Times New Bastard trending with 848 points",
+        "Reddit r/webassembly: In-browser Python layout engines",
+        "Google Trends: 'Pyodide performance' rising"
       ],
       "developer_pain": "high",
       "freshness": "fresh",
       "money_angle": "",
-      "story_angle": "Frustrated by AI tools spitting out unmaintainable spaghetti code, I used Cursor and Claude to vibe-code a visual architecture canvas that syncs with real TypeScript schemas.",
-      "suman_angle": "I Vibe-Coded a Visual Software Canvas in 48 Hours with Cursor and Wasm (Here's the Prompt Loop)",
+      "story_angle": "When our serverless bills started mounting from running layout algorithms on the cloud, we realized we could run Python directly in the user's browser using WebAssembly.",
+      "suman_angle": "Why I compiled my Python layout engine to client-side WASM (And cut my serverless compute bill to $0)",
       "target_keywords": [
-        "vibe coding cursor claude",
-        "cursor ide workflow 2026",
-        "build canvas app ai",
-        "software architecture ide"
+        "python in webassembly",
+        "pyodide tutorial",
+        "client side heavy processing"
       ],
-      "competing_articles": "Most vibe-coding articles are superficial 'I made a todo app' retrospectives; this covers full diff management, handling Wasm edge cases, and keeping AI aligned on strict architecture boundaries.",
+      "competing_articles": "Most WASM articles are purely academic; this shows a real-world production architectural shift that saves massive server costs.",
       "real_story_evidence": [
         {
           "source": "Hacker News (Show HN)",
-          "title": "Show HN: Whiteboard (YC W26) \u2013 An open-source IDE for thoughtful software design",
-          "url": "https://github.com/devdotfast/whiteboard",
-          "what_to_cite": "Cite Sid and Alex's approach to human-in-the-loop canvas design that lets developers structure system specs before writing code."
-        }
-      ]
-    },
-    {
-      "topic": "Replacing Heavy LLM APIs with an 8MB Cactus Needle Model for In-House Ticket Triage",
-      "category": "D",
-      "category_name": "AI Automation Across Domains",
-      "virality_score": 87,
-      "analysis": "Devs and ops teams are suffering from massive LLM token fatigue when doing simple domain tasks like customer support routing and invoice extraction. The breakthrough release of Cactus Needle 3 (8-29MB models matching DeepSeek Flash performance) on Hacker News proves that ultra-small edge models are viable for real production workflows. This post shows the end-to-end automation pipeline to run sub-10ms ticket classification locally for $0.",
-      "cross_source_signals": [
-        "Hacker News Show HN: Cactus Needle 3: 8-29MB automation models can match DeepSeek V4 Flash (236 points, 92 comments)",
-        "Hacker News Show HN: Mini-AGI \u2013 Dynamic continual learning model trained on 8GB VRAM (276 points)",
-        "GitHub: obra/superpowers agent methodology"
-      ],
-      "developer_pain": "high",
-      "freshness": "breaking",
-      "money_angle": "Slashed recurring monthly SaaS classification fees from $220/month down to zero local compute cost.",
-      "story_angle": "After watching our customer support classification bills climb to over $200/month on cloud LLM APIs, I replaced the entire triage pipeline with an 8MB quantized model running locally on CPU.",
-      "suman_angle": "How I Automated Customer Support Triage for $0 with an 8MB Local Model",
-      "target_keywords": [
-        "cactus needle llm",
-        "local ai automation",
-        "customer support automation python",
-        "edge ai classification"
-      ],
-      "competing_articles": "Most business automation posts push expensive OpenAI/Gemini API calls; this proves how to use specialized, sub-30MB edge models to achieve 10x lower latency with zero monthly cost.",
-      "real_story_evidence": [
-        {
-          "source": "Hacker News (Show HN)",
-          "title": "Show HN: Cactus Needle 3: 8-29MB automation models can match DeepSeek V4 Flash",
-          "url": "https://cactuscompute.com/needle",
-          "what_to_cite": "Reference Henry from Cactus demonstrating that 8-29MB specialized automation weights can deliver high-accuracy task classification on edge hardware."
+          "title": "Show HN: Make cursed fonts like Times New Bastard",
+          "url": "https://bastardica.mitpit.com",
+          "what_to_cite": "The tool processes OpenType ligatures rapidly on the client-side by loading Python directly in WASM."
         }
       ]
     }
@@ -139,24 +136,24 @@
   "success_stories": [
     {
       "source": "show_hn",
+      "title": "Show HN: Jev Plays Pok\u00e9mon Red",
+      "url": "https://jev-pokemon.vercel.app/",
+      "signal": "190 points \u00b7 80 comments",
+      "snippet": "Hey HN! Wanted to share a fun project I've been hacking on. Given Jev can make decisions really fast (but not fast enough to play Doom yet sadly), I wanted to try and push it to play a more complex ga"
+    },
+    {
+      "source": "show_hn",
       "title": "Show HN: Make cursed fonts like Times New Bastard",
       "url": "https://bastardica.mitpit.com",
-      "signal": "656 points \u00b7 90 comments",
+      "signal": "848 points \u00b7 123 comments",
       "snippet": "A joke tool that abuses OpenType's ligature feature to mix fonts. It works pretty fast on client-side by loading Python in WASM."
     },
     {
       "source": "show_hn",
       "title": "Show HN: Whiteboard (YC W26) \u2013 An open-source IDE for thoughtful software design",
       "url": "https://github.com/devdotfast/whiteboard",
-      "signal": "287 points \u00b7 114 comments",
+      "signal": "401 points \u00b7 132 comments",
       "snippet": "Hello! We\u2019re Sid, Alex, Ketan, and Milan. We\u2019re building Whiteboard (https://whiteboard.dev.fast/), an open-source desktop app where humans and agents can architect software together in a common works"
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: Koi.rest \u2013 watch some fish and regain your balance",
-      "url": "https://koi.rest",
-      "signal": "177 points \u00b7 46 comments",
-      "snippet": "Hi there. My name is Paul. I\u2019m a developer, an explorer and I\u2019ve got ADHD. As of the beginning of August, I\u2019m also unemployed. This last part, along with everything else this past year, has caused me "
     },
     {
       "source": "show_hn",
@@ -204,8 +201,15 @@
       "source": "show_hn",
       "title": "Show HN: Mini-AGI \u2013 Dynamic continual learning model trained on 8GB VRAM",
       "url": "https://github.com/volotat/mini-AGI/",
-      "signal": "276 points \u00b7 76 comments",
+      "signal": "277 points \u00b7 79 comments",
       "snippet": "Sorry for the pretentious name, I know, I know.. It just contains all the pieces I would like to see a AGI model to have, and I can't stand the temptation. Before throwing rocks at me, please take a g"
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Koi.rest \u2013 watch some fish and regain your balance",
+      "url": "https://koi.rest",
+      "signal": "216 points \u00b7 60 comments",
+      "snippet": "Hi there. My name is Paul. I\u2019m a developer, an explorer and I\u2019ve got ADHD. As of the beginning of August, I\u2019m also unemployed. This last part, along with everything else this past year, has caused me "
     },
     {
       "source": "show_hn",
@@ -265,17 +269,10 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Hacker News, without AI",
-      "url": "https://hcker.news/?ai=exclude",
-      "signal": "207 points \u00b7 85 comments",
-      "snippet": ""
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: Hacker News, Without AI",
-      "url": "https://www.unslop.news/",
-      "signal": "198 points \u00b7 82 comments",
-      "snippet": ""
+      "title": "Show HN: TERMy \u2013 A fast terminal assistant that does not use LLMs",
+      "url": "https://github.com/gioblu/NPC-Forge/blob/main/docs/development.md",
+      "signal": "225 points \u00b7 45 comments",
+      "snippet": "I love research and development, you may have heard of me because of PJON (Padded Jittering Operative Network). It is a network protocol I started developing in 2010, which was recently implemented in"
     }
   ]
 }
