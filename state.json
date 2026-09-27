@@ -1,14 +1,11 @@
 {
   "topics": [
-    "Block AI YouTube videos: I built a $1.99 Safari extension in 48 hours",
-    "LLM tool calling simplified: How I built a local Python agent with .agents",
-    "Python in WebAssembly cut my serverless GPU compute bill from $300 to $0"
+    "Vibe coding tutorial: I Built a $19 SaaS in 11 Hours With Cursor",
+    "AI agent tutorial: I Built a 4-Agent Python Pipeline for Daily News",
+    "GitHub Actions silent fail: The Fix That Saved Me 3 Hours of Debugging"
   ],
-  "date": "September 26, 2026",
+  "date": "September 27, 2026",
   "title_history": [
-    "Single file python app: I built it in 2 hours using Capsule and Claude",
-    "E-ink raspberry pi frame: I built a bird-drawing monitor with Gemini 3.8",
-    "Repurpose 4g hotspot tech: My $20 OpenWrt telemetry server hack",
     "Claude Code tutorial: I built a Git doc engine in 4 hours",
     "Postgres query planner bypass that cut dynamic query latency by 81%",
     "Multi agent system Python script stops manual SaaS research in minutes",
@@ -35,124 +32,88 @@
     "Cactus Needle LLM: Stop Paying API Fees for Support Triage in Python",
     "Block AI YouTube videos: I built a $1.99 Safari extension in 48 hours",
     "LLM tool calling simplified: How I built a local Python agent with .agents",
-    "Python in WebAssembly cut my serverless GPU compute bill from $300 to $0"
+    "Python in WebAssembly cut my serverless GPU compute bill from $300 to $0",
+    "Vibe coding tutorial: I Built a $19 SaaS in 11 Hours With Cursor",
+    "AI agent tutorial: I Built a 4-Agent Python Pipeline for Daily News",
+    "GitHub Actions silent fail: The Fix That Saved Me 3 Hours of Debugging"
   ],
   "last_update_id": 70323306,
   "virality_data": [
     {
-      "topic": "How I built a $1.99 Safari extension to filter out AI-generated YouTube junk",
-      "category": "E",
-      "category_name": "Money / Income Story",
-      "virality_score": 94,
-      "analysis": "Micro-SaaS stories targeting highly relatable user frustrations (like AI spam on YouTube) consistently go viral on Medium. This article provides a refreshing contrast to over-engineered SaaS startups by focusing on a simple, paid browser extension. It leverages direct search volume around cleaning up feeds while offering transparent monetization insights.",
-      "cross_source_signals": [
-        "Hacker News: Show HN Weedout trending with 185 points",
-        "Reddit r/safari: Multiple threads on blocking AI-generated video channels",
-        "Google Trends: 'block AI youtube videos' search interest spike"
-      ],
-      "developer_pain": "high",
-      "freshness": "breaking",
-      "money_angle": "How a simple $1.99 one-time purchase app generates passive income without server maintenance costs.",
-      "story_angle": "I got so tired of my YouTube feed being flooded with AI-generated conspiracy videos that I spent a weekend building a Safari extension to hide them\u2014and people actually paid for it.",
-      "suman_angle": "I built a $1.99 Safari extension to block AI-generated YouTube junk in a weekend (and made my first sales with $0 marketing)",
+      "topic": "Vibe coding a small SaaS in one weekend",
+      "category": "B",
+      "category_name": "Vibe Coding / AI-Assisted Workflow",
+      "virality_score": 78,
+      "developer_pain": "medium",
+      "freshness": "fresh",
+      "suman_angle": "Vibe coding a $19 SaaS in 11 hours \u2014 full prompts, full code, full Stripe screenshot",
       "target_keywords": [
-        "safari extension tutorial",
-        "block ai youtube videos",
-        "monetize browser extension"
+        "vibe coding tutorial",
+        "build saas with cursor",
+        "ai assisted coding"
       ],
-      "competing_articles": "Most monetization articles focus on complex SaaS models; this shows how a single-purpose client-side extension can succeed with zero hosting overhead.",
-      "real_story_evidence": [
-        {
-          "source": "Hacker News (Show HN)",
-          "title": "Show HN: Weedout \u2013 Safari extension that hides YouTube AI-labeled videos",
-          "url": "https://masteranza.github.io/weedout/",
-          "what_to_cite": "The developer built the $1.99 extension because AI-generated conspiracy videos were ruining their feed, running entirely client-side."
-        }
-      ]
+      "money_angle": "Real Gumroad/Stripe revenue from a one-weekend build",
+      "story_angle": "Closed the laptop Friday at 9pm with an idea, opened it Sunday with a paying customer",
+      "analysis": "Vibe coding is the dominant 2026 dev meme. Real numbers + working code beats every theoretical post.",
+      "competing_articles": "Most posts show the workflow but skip the money / honest failures \u2014 Suman shows both."
     },
     {
-      "topic": "Building a local agentic workflow using the new .agents skill directory standard",
+      "topic": "Building a research AI agent in 80 lines",
       "category": "C",
       "category_name": "AI Agents & Multi-Agent Workflows",
-      "virality_score": 91,
-      "analysis": "The developer community in late 2026 is moving away from monolithic agent frameworks toward lightweight, portable skill-based directories. Citing trending GitHub specifications like Matt Pocock's skills schema captures the cutting edge of AI engineering. Providing a concrete, copyable implementation solves the theoretical-only agent post fatigue.",
-      "cross_source_signals": [
-        "GitHub: mattpocock/skills trending with high star velocity",
-        "GitHub: obra/superpowers agentic skills framework trending",
-        "Reddit r/LocalLLaMA: Discussions on standardizing LLM tool schemas"
-      ],
+      "virality_score": 76,
       "developer_pain": "high",
       "freshness": "breaking",
-      "money_angle": "",
-      "story_angle": "I was tired of rewriting system prompts and tool schemas every time I switched LLM providers, so I migrated my assistant to the new .agents skill directory standard.",
-      "suman_angle": "Stop hardcoding LLM tools: How I built a local AI agent using the new .agents skill directory standard",
+      "suman_angle": "I replaced my morning news scroll with a 4-agent pipeline (full code)",
       "target_keywords": [
-        "ai agent tutorial python",
-        "llm tool calling",
-        "agentic workflow design"
+        "ai agent tutorial",
+        "langgraph python",
+        "multi agent workflow"
       ],
-      "competing_articles": "Most tutorials use heavy, locked-in frameworks like LangChain; this article teaches a clean, standard-based approach using lightweight portable schemas.",
-      "real_story_evidence": [
-        {
-          "source": "GitHub",
-          "title": "mattpocock/skills Skills for Real Engineers. Straight from my .agents directory.",
-          "url": "https://github.com/mattpocock/skills",
-          "what_to_cite": "The repository standardizes agent skills directly from a local .agents directory for clean engineering."
-        }
-      ]
+      "money_angle": "",
+      "story_angle": "Tired of the morning doom-scroll, built a personal news agent over chai",
+      "analysis": "Agent-building tutorials have huge search demand and most are abstract. Concrete code wins.",
+      "competing_articles": "Existing posts are diagrams without working orchestration."
     },
     {
-      "topic": "Why we compiled our layout engine to client-side WASM instead of running serverless GPUs",
-      "category": "G",
-      "category_name": "Software Architecture Insight",
-      "virality_score": 89,
-      "analysis": "Medium readers love architectural pivot stories that challenge the status quo of throwing expensive cloud compute at heavy processing tasks. Showing how to leverage Pyodide/WASM to run complex Python logic directly in the browser matches the trend of cost-conscious engineering. It directly addresses the pain of high serverless bills.",
-      "cross_source_signals": [
-        "Hacker News: Show HN Times New Bastard trending with 848 points",
-        "Reddit r/webassembly: In-browser Python layout engines",
-        "Google Trends: 'Pyodide performance' rising"
-      ],
+      "topic": "GitHub Actions silent failures",
+      "category": "F",
+      "category_name": "Debugging / Fix With Code",
+      "virality_score": 70,
       "developer_pain": "high",
-      "freshness": "fresh",
-      "money_angle": "",
-      "story_angle": "When our serverless bills started mounting from running layout algorithms on the cloud, we realized we could run Python directly in the user's browser using WebAssembly.",
-      "suman_angle": "Why I compiled my Python layout engine to client-side WASM (And cut my serverless compute bill to $0)",
+      "freshness": "established",
+      "suman_angle": "Why my GitHub Action failed with zero error message \u2014 the 3-hour root cause",
       "target_keywords": [
-        "python in webassembly",
-        "pyodide tutorial",
-        "client side heavy processing"
+        "github actions not working",
+        "github actions debug",
+        "github actions silent fail"
       ],
-      "competing_articles": "Most WASM articles are purely academic; this shows a real-world production architectural shift that saves massive server costs.",
-      "real_story_evidence": [
-        {
-          "source": "Hacker News (Show HN)",
-          "title": "Show HN: Make cursed fonts like Times New Bastard",
-          "url": "https://bastardica.mitpit.com",
-          "what_to_cite": "The tool processes OpenType ligatures rapidly on the client-side by loading Python directly in WASM."
-        }
-      ]
+      "money_angle": "",
+      "story_angle": "Pipeline went green, repo did nothing \u2014 chased it for three hours",
+      "analysis": "Persistent pain on Stack Overflow weekly. Existing posts are outdated. Fresh root-cause wins.",
+      "competing_articles": "Existing articles are 2023/2024 \u2014 runner image and syntax both moved on."
     }
   ],
   "success_stories": [
     {
       "source": "show_hn",
-      "title": "Show HN: Jev Plays Pok\u00e9mon Red",
-      "url": "https://jev-pokemon.vercel.app/",
-      "signal": "190 points \u00b7 80 comments",
-      "snippet": "Hey HN! Wanted to share a fun project I've been hacking on. Given Jev can make decisions really fast (but not fast enough to play Doom yet sadly), I wanted to try and push it to play a more complex ga"
+      "title": "Show HN: Reladraw \u2013 A diagram language where you decide where to place things",
+      "url": "https://github.com/reladraw/reladraw",
+      "signal": "288 points \u00b7 81 comments",
+      "snippet": "I love making diagrams to help understand, plan, etc. However, the options are (A) auto-placement languages like Mermaid or Graphviz (which don't let me decide how the diagram looks), or (B) software "
     },
     {
       "source": "show_hn",
       "title": "Show HN: Make cursed fonts like Times New Bastard",
       "url": "https://bastardica.mitpit.com",
-      "signal": "848 points \u00b7 123 comments",
+      "signal": "854 points \u00b7 123 comments",
       "snippet": "A joke tool that abuses OpenType's ligature feature to mix fonts. It works pretty fast on client-side by loading Python in WASM."
     },
     {
       "source": "show_hn",
       "title": "Show HN: Whiteboard (YC W26) \u2013 An open-source IDE for thoughtful software design",
       "url": "https://github.com/devdotfast/whiteboard",
-      "signal": "401 points \u00b7 132 comments",
+      "signal": "412 points \u00b7 141 comments",
       "snippet": "Hello! We\u2019re Sid, Alex, Ketan, and Milan. We\u2019re building Whiteboard (https://whiteboard.dev.fast/), an open-source desktop app where humans and agents can architect software together in a common works"
     },
     {
@@ -164,10 +125,10 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: The load-bearing vocabulary of Claude",
-      "url": "https://louisabraham.github.io/load-bearing/",
-      "signal": "710 points \u00b7 326 comments",
-      "snippet": ""
+      "title": "Show HN: Jev Plays Pok\u00e9mon Red",
+      "url": "https://jev-pokemon.vercel.app/",
+      "signal": "263 points \u00b7 111 comments",
+      "snippet": "Hey HN! Wanted to share a fun project I've been hacking on. Given Jev can make decisions really fast (but not fast enough to play Doom yet sadly), I wanted to try and push it to play a more complex ga"
     },
     {
       "source": "show_hn",
@@ -192,24 +153,17 @@
     },
     {
       "source": "show_hn",
+      "title": "Show HN: HN Match Maker \u2013 Matching \"Who Wants to Be Hired?\" With \"Who's Hiring?\"",
+      "url": "https://hnmatchmaker.com/",
+      "signal": "125 points \u00b7 46 comments",
+      "snippet": "Hi! Every month the \"Who Wants to Be Hired?\" and \"Who's Hiring?\" Threads come through I would think to myself, \"there should be a match maker for these two threads\". So I had abacus.ai whip one up. Th"
+    },
+    {
+      "source": "show_hn",
       "title": "Show HN: Capsule \u2013 Single-file web apps that save their data into SQLite",
       "url": "https://withcapsule.app/",
       "signal": "380 points \u00b7 167 comments",
       "snippet": "Hey HN, I always had the problem that building HTML pages is really simple now, but trying to save data required hosting it somewhere, and sharing it afterwards was not easy. Over the last few months,"
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: Mini-AGI \u2013 Dynamic continual learning model trained on 8GB VRAM",
-      "url": "https://github.com/volotat/mini-AGI/",
-      "signal": "277 points \u00b7 79 comments",
-      "snippet": "Sorry for the pretentious name, I know, I know.. It just contains all the pieces I would like to see a AGI model to have, and I can't stand the temptation. Before throwing rocks at me, please take a g"
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: Koi.rest \u2013 watch some fish and regain your balance",
-      "url": "https://koi.rest",
-      "signal": "216 points \u00b7 60 comments",
-      "snippet": "Hi there. My name is Paul. I\u2019m a developer, an explorer and I\u2019ve got ADHD. As of the beginning of August, I\u2019m also unemployed. This last part, along with everything else this past year, has caused me "
     },
     {
       "source": "show_hn",
@@ -220,6 +174,13 @@
     },
     {
       "source": "show_hn",
+      "title": "Show HN: Mini-AGI \u2013 Dynamic continual learning model trained on 8GB VRAM",
+      "url": "https://github.com/volotat/mini-AGI/",
+      "signal": "277 points \u00b7 80 comments",
+      "snippet": "Sorry for the pretentious name, I know, I know.. It just contains all the pieces I would like to see a AGI model to have, and I can't stand the temptation. Before throwing rocks at me, please take a g"
+    },
+    {
+      "source": "show_hn",
       "title": "Show HN: Laser Graffiti",
       "url": "https://laser.consti.de",
       "signal": "253 points \u00b7 61 comments",
@@ -227,9 +188,16 @@
     },
     {
       "source": "show_hn",
+      "title": "Show HN: Koi.rest \u2013 watch some fish and regain your balance",
+      "url": "https://koi.rest",
+      "signal": "223 points \u00b7 61 comments",
+      "snippet": "Hi there. My name is Paul. I\u2019m a developer, an explorer and I\u2019ve got ADHD. As of the beginning of August, I\u2019m also unemployed. This last part, along with everything else this past year, has caused me "
+    },
+    {
+      "source": "show_hn",
       "title": "Show HN: Share your AI Setup, Learn from others",
       "url": "https://mysetup.ai/",
-      "signal": "251 points \u00b7 139 comments",
+      "signal": "251 points \u00b7 140 comments",
       "snippet": "I kept seeing engineers share what they were building with AI; however, I was always more curious about how they worked. Which agents did they use? What skills and tools had stuck or been thrown out t"
     },
     {
@@ -250,7 +218,7 @@
       "source": "show_hn",
       "title": "Show HN: Cactus Needle 3: 8-29MB automation models can match DeepSeek V4 Flash",
       "url": "https://cactuscompute.com/needle",
-      "signal": "236 points \u00b7 92 comments",
+      "signal": "236 points \u00b7 93 comments",
       "snippet": "Hey HN, Henry from Cactus here. We submitted Needle 2 here a few weeks ago, and the feedback in the discussion thread was incredibly valuable, thanks! Thanks to all that feedback, we\u2019ve been able to m"
     },
     {
@@ -262,17 +230,10 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: OpenTIE and OpenXWA, Modern Ports of Tie Fighter and X-Wing Alliance",
-      "url": "https://github.com/elyosh/OpenTIE/",
-      "signal": "231 points \u00b7 58 comments",
+      "title": "Show HN: Hacker News, without AI",
+      "url": "https://hcker.news/?ai=exclude",
+      "signal": "207 points \u00b7 85 comments",
       "snippet": ""
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: TERMy \u2013 A fast terminal assistant that does not use LLMs",
-      "url": "https://github.com/gioblu/NPC-Forge/blob/main/docs/development.md",
-      "signal": "225 points \u00b7 45 comments",
-      "snippet": "I love research and development, you may have heard of me because of PJON (Padded Jittering Operative Network). It is a network protocol I started developing in 2010, which was recently implemented in"
     }
   ]
 }
