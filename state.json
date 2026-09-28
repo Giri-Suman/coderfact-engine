@@ -1,14 +1,11 @@
 {
   "topics": [
-    "Vibe coding tutorial: I Built a $19 SaaS in 11 Hours With Cursor",
-    "AI agent tutorial: I Built a 4-Agent Python Pipeline for Daily News",
-    "GitHub Actions silent fail: The Fix That Saved Me 3 Hours of Debugging"
+    "Vibe Coding Tutorial: I Built a $19 SaaS Using Cursor in 11 Hours \u2014 Full Walkthrough With Code",
+    "AI Agent Tutorial: I Built a 4-Agent Pipeline Using LangGraph in 80 Lines \u2014 Full Code",
+    "GitHub Actions Debug: I Found the Silent Fail Cause in 3 Hours \u2014 Here's the Fix"
   ],
-  "date": "September 27, 2026",
+  "date": "September 28, 2026",
   "title_history": [
-    "Claude Code tutorial: I built a Git doc engine in 4 hours",
-    "Postgres query planner bypass that cut dynamic query latency by 81%",
-    "Multi agent system Python script stops manual SaaS research in minutes",
     "Build SaaS with Cursor in 11 hours \u2014 Here is the exact code",
     "LangGraph Python tutorial: Stop reading news manually \u2014 My 80-line script",
     "Github actions not working: How I fixed the silent error in 3 hours",
@@ -35,7 +32,10 @@
     "Python in WebAssembly cut my serverless GPU compute bill from $300 to $0",
     "Vibe coding tutorial: I Built a $19 SaaS in 11 Hours With Cursor",
     "AI agent tutorial: I Built a 4-Agent Python Pipeline for Daily News",
-    "GitHub Actions silent fail: The Fix That Saved Me 3 Hours of Debugging"
+    "GitHub Actions silent fail: The Fix That Saved Me 3 Hours of Debugging",
+    "Vibe Coding Tutorial: I Built a $19 SaaS Using Cursor in 11 Hours \u2014 Full Walkthrough With Code",
+    "AI Agent Tutorial: I Built a 4-Agent Pipeline Using LangGraph in 80 Lines \u2014 Full Code",
+    "GitHub Actions Debug: I Found the Silent Fail Cause in 3 Hours \u2014 Here's the Fix"
   ],
   "last_update_id": 70323306,
   "virality_data": [
@@ -97,24 +97,24 @@
   "success_stories": [
     {
       "source": "show_hn",
+      "title": "Show HN: Lofi Cities \u2013 Pixel-art city nights with browser-generated lofi",
+      "url": "https://loficities.com/",
+      "signal": "234 points \u00b7 110 comments",
+      "snippet": ""
+    },
+    {
+      "source": "show_hn",
       "title": "Show HN: Reladraw \u2013 A diagram language where you decide where to place things",
       "url": "https://github.com/reladraw/reladraw",
-      "signal": "288 points \u00b7 81 comments",
+      "signal": "395 points \u00b7 114 comments",
       "snippet": "I love making diagrams to help understand, plan, etc. However, the options are (A) auto-placement languages like Mermaid or Graphviz (which don't let me decide how the diagram looks), or (B) software "
     },
     {
       "source": "show_hn",
       "title": "Show HN: Make cursed fonts like Times New Bastard",
       "url": "https://bastardica.mitpit.com",
-      "signal": "854 points \u00b7 123 comments",
+      "signal": "857 points \u00b7 123 comments",
       "snippet": "A joke tool that abuses OpenType's ligature feature to mix fonts. It works pretty fast on client-side by loading Python in WASM."
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: Whiteboard (YC W26) \u2013 An open-source IDE for thoughtful software design",
-      "url": "https://github.com/devdotfast/whiteboard",
-      "signal": "412 points \u00b7 141 comments",
-      "snippet": "Hello! We\u2019re Sid, Alex, Ketan, and Milan. We\u2019re building Whiteboard (https://whiteboard.dev.fast/), an open-source desktop app where humans and agents can architect software together in a common works"
     },
     {
       "source": "show_hn",
@@ -125,10 +125,10 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Jev Plays Pok\u00e9mon Red",
-      "url": "https://jev-pokemon.vercel.app/",
-      "signal": "263 points \u00b7 111 comments",
-      "snippet": "Hey HN! Wanted to share a fun project I've been hacking on. Given Jev can make decisions really fast (but not fast enough to play Doom yet sadly), I wanted to try and push it to play a more complex ga"
+      "title": "Show HN: Whiteboard (YC W26) \u2013 An open-source IDE for thoughtful software design",
+      "url": "https://github.com/devdotfast/whiteboard",
+      "signal": "419 points \u00b7 141 comments",
+      "snippet": "Hello! We\u2019re Sid, Alex, Ketan, and Milan. We\u2019re building Whiteboard (https://whiteboard.dev.fast/), an open-source desktop app where humans and agents can architect software together in a common works"
     },
     {
       "source": "show_hn",
@@ -160,6 +160,13 @@
     },
     {
       "source": "show_hn",
+      "title": "Show HN: Jev Plays Pok\u00e9mon Red",
+      "url": "https://jev-pokemon.vercel.app/",
+      "signal": "272 points \u00b7 121 comments",
+      "snippet": "Hey HN! Wanted to share a fun project I've been hacking on. Given Jev can make decisions really fast (but not fast enough to play Doom yet sadly), I wanted to try and push it to play a more complex ga"
+    },
+    {
+      "source": "show_hn",
       "title": "Show HN: Capsule \u2013 Single-file web apps that save their data into SQLite",
       "url": "https://withcapsule.app/",
       "signal": "380 points \u00b7 167 comments",
@@ -188,13 +195,6 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Koi.rest \u2013 watch some fish and regain your balance",
-      "url": "https://koi.rest",
-      "signal": "223 points \u00b7 61 comments",
-      "snippet": "Hi there. My name is Paul. I\u2019m a developer, an explorer and I\u2019ve got ADHD. As of the beginning of August, I\u2019m also unemployed. This last part, along with everything else this past year, has caused me "
-    },
-    {
-      "source": "show_hn",
       "title": "Show HN: Share your AI Setup, Learn from others",
       "url": "https://mysetup.ai/",
       "signal": "251 points \u00b7 140 comments",
@@ -209,6 +209,13 @@
     },
     {
       "source": "show_hn",
+      "title": "Show HN: Koi.rest \u2013 watch some fish and regain your balance",
+      "url": "https://koi.rest",
+      "signal": "226 points \u00b7 65 comments",
+      "snippet": "Hi there. My name is Paul. I\u2019m a developer, an explorer and I\u2019ve got ADHD. As of the beginning of August, I\u2019m also unemployed. This last part, along with everything else this past year, has caused me "
+    },
+    {
+      "source": "show_hn",
       "title": "Show HN: Running 104GB Qwen3.8-Flash-Next on 48GB Mac with at ~12 tok/s",
       "url": "https://github.com/carloslfu/slotstream",
       "signal": "240 points \u00b7 118 comments",
@@ -220,13 +227,6 @@
       "url": "https://cactuscompute.com/needle",
       "signal": "236 points \u00b7 93 comments",
       "snippet": "Hey HN, Henry from Cactus here. We submitted Needle 2 here a few weeks ago, and the feedback in the discussion thread was incredibly valuable, thanks! Thanks to all that feedback, we\u2019ve been able to m"
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: NFC Energy-Harvesting PCB Business Card with an MCU",
-      "url": "https://wilsonharper.net/projects/businesscard/",
-      "signal": "231 points \u00b7 30 comments",
-      "snippet": ""
     },
     {
       "source": "show_hn",
