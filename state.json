@@ -1,14 +1,11 @@
 {
   "topics": [
-    "Vibe Coding Tutorial: I Built a $19 SaaS Using Cursor in 11 Hours \u2014 Full Walkthrough With Code",
-    "AI Agent Tutorial: I Built a 4-Agent Pipeline Using LangGraph in 80 Lines \u2014 Full Code",
-    "GitHub Actions Debug: I Found the Silent Fail Cause in 3 Hours \u2014 Here's the Fix"
+    "Vibe coding tutorial: I built a $19 SaaS in 11 hrs \u2014 code Stripe screenshot",
+    "AI agent tutorial: I replaced my news scroll with a 4-agent LangGraph flow \u2014 code",
+    "GitHub actions silent fail: I fixed my zero error Action in 3 hours \u2014 debug"
   ],
-  "date": "September 28, 2026",
+  "date": "September 29, 2026",
   "title_history": [
-    "Build SaaS with Cursor in 11 hours \u2014 Here is the exact code",
-    "LangGraph Python tutorial: Stop reading news manually \u2014 My 80-line script",
-    "Github actions not working: How I fixed the silent error in 3 hours",
     "Cactus Needle LLM: The Fix That Cut My API Bill From $300 to $0",
     "Chess Clock Task Manager: I Built 2 SaaS Apps in 30 Days (With Code)",
     "PicoMQ Streaming: Why Redis Breaks on HTTP (And What to Do Instead)",
@@ -35,7 +32,10 @@
     "GitHub Actions silent fail: The Fix That Saved Me 3 Hours of Debugging",
     "Vibe Coding Tutorial: I Built a $19 SaaS Using Cursor in 11 Hours \u2014 Full Walkthrough With Code",
     "AI Agent Tutorial: I Built a 4-Agent Pipeline Using LangGraph in 80 Lines \u2014 Full Code",
-    "GitHub Actions Debug: I Found the Silent Fail Cause in 3 Hours \u2014 Here's the Fix"
+    "GitHub Actions Debug: I Found the Silent Fail Cause in 3 Hours \u2014 Here's the Fix",
+    "Vibe coding tutorial: I built a $19 SaaS in 11 hrs \u2014 code Stripe screenshot",
+    "AI agent tutorial: I replaced my news scroll with a 4-agent LangGraph flow \u2014 code",
+    "GitHub actions silent fail: I fixed my zero error Action in 3 hours \u2014 debug"
   ],
   "last_update_id": 70323306,
   "virality_data": [
@@ -99,36 +99,29 @@
       "source": "show_hn",
       "title": "Show HN: Lofi Cities \u2013 Pixel-art city nights with browser-generated lofi",
       "url": "https://loficities.com/",
-      "signal": "234 points \u00b7 110 comments",
+      "signal": "308 points \u00b7 135 comments",
       "snippet": ""
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: Reladraw \u2013 A diagram language where you decide where to place things",
-      "url": "https://github.com/reladraw/reladraw",
-      "signal": "395 points \u00b7 114 comments",
-      "snippet": "I love making diagrams to help understand, plan, etc. However, the options are (A) auto-placement languages like Mermaid or Graphviz (which don't let me decide how the diagram looks), or (B) software "
     },
     {
       "source": "show_hn",
       "title": "Show HN: Make cursed fonts like Times New Bastard",
       "url": "https://bastardica.mitpit.com",
-      "signal": "857 points \u00b7 123 comments",
+      "signal": "859 points \u00b7 123 comments",
       "snippet": "A joke tool that abuses OpenType's ligature feature to mix fonts. It works pretty fast on client-side by loading Python in WASM."
     },
     {
       "source": "show_hn",
       "title": "Show HN: An e-ink frame that hears birds and draws them as 1800s illustrations",
       "url": "https://github.com/arnegiacomo/fugleramme",
-      "signal": "2390 points \u00b7 267 comments",
+      "signal": "2391 points \u00b7 267 comments",
       "snippet": "See also: Avian Visitors - https://news.ycombinator.com/item?id=48343424 - May 2026 (20 comments)"
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Whiteboard (YC W26) \u2013 An open-source IDE for thoughtful software design",
-      "url": "https://github.com/devdotfast/whiteboard",
-      "signal": "419 points \u00b7 141 comments",
-      "snippet": "Hello! We\u2019re Sid, Alex, Ketan, and Milan. We\u2019re building Whiteboard (https://whiteboard.dev.fast/), an open-source desktop app where humans and agents can architect software together in a common works"
+      "title": "Show HN: Reladraw \u2013 A diagram language where you decide where to place things",
+      "url": "https://github.com/reladraw/reladraw",
+      "signal": "403 points \u00b7 119 comments",
+      "snippet": "I love making diagrams to help understand, plan, etc. However, the options are (A) auto-placement languages like Mermaid or Graphviz (which don't let me decide how the diagram looks), or (B) software "
     },
     {
       "source": "show_hn",
@@ -136,6 +129,13 @@
       "url": "https://rivendell.dmitrybrant.com/relativity/",
       "signal": "633 points \u00b7 290 comments",
       "snippet": "I've always wanted to make a visualization where the speed of light was scaled down to human speeds, so that we could intuit relativistic effects with everyday objects. Here is the first version of it"
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Whiteboard (YC W26) \u2013 An open-source IDE for thoughtful software design",
+      "url": "https://github.com/devdotfast/whiteboard",
+      "signal": "421 points \u00b7 142 comments",
+      "snippet": "Hello! We\u2019re Sid, Alex, Ketan, and Milan. We\u2019re building Whiteboard (https://whiteboard.dev.fast/), an open-source desktop app where humans and agents can architect software together in a common works"
     },
     {
       "source": "show_hn",
@@ -153,16 +153,9 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: HN Match Maker \u2013 Matching \"Who Wants to Be Hired?\" With \"Who's Hiring?\"",
-      "url": "https://hnmatchmaker.com/",
-      "signal": "125 points \u00b7 46 comments",
-      "snippet": "Hi! Every month the \"Who Wants to Be Hired?\" and \"Who's Hiring?\" Threads come through I would think to myself, \"there should be a match maker for these two threads\". So I had abacus.ai whip one up. Th"
-    },
-    {
-      "source": "show_hn",
       "title": "Show HN: Jev Plays Pok\u00e9mon Red",
       "url": "https://jev-pokemon.vercel.app/",
-      "signal": "272 points \u00b7 121 comments",
+      "signal": "278 points \u00b7 122 comments",
       "snippet": "Hey HN! Wanted to share a fun project I've been hacking on. Given Jev can make decisions really fast (but not fast enough to play Doom yet sadly), I wanted to try and push it to play a more complex ga"
     },
     {
@@ -181,17 +174,17 @@
     },
     {
       "source": "show_hn",
+      "title": "Show HN: HN.watch \u2013 Videos of all Hacker News posts",
+      "url": "https://hn.watch/",
+      "signal": "170 points \u00b7 91 comments",
+      "snippet": "Hi HN, I\u2019m Per, founder of Scrimba (YC S20). We\u2019ve spent the last decade teaching people how to code with an HTML-based video format. We\u2019ve now plugged an LLM into it, so that people can create explai"
+    },
+    {
+      "source": "show_hn",
       "title": "Show HN: Mini-AGI \u2013 Dynamic continual learning model trained on 8GB VRAM",
       "url": "https://github.com/volotat/mini-AGI/",
       "signal": "277 points \u00b7 80 comments",
       "snippet": "Sorry for the pretentious name, I know, I know.. It just contains all the pieces I would like to see a AGI model to have, and I can't stand the temptation. Before throwing rocks at me, please take a g"
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: Laser Graffiti",
-      "url": "https://laser.consti.de",
-      "signal": "253 points \u00b7 61 comments",
-      "snippet": ""
     },
     {
       "source": "show_hn",
@@ -220,6 +213,13 @@
       "url": "https://github.com/carloslfu/slotstream",
       "signal": "240 points \u00b7 118 comments",
       "snippet": "I built slotstream, a way to run Qwen3.8-Flash-Next 4-bit on a low-memory mac starting from 16GB, a 125B parameter model that would need 100GB+ memory/RAM, thanks to expert-offloading/ssd-streaming. E"
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Destroy Any Website with Stickman",
+      "url": "https://destroy.spritefusion.com/",
+      "signal": "142 points \u00b7 34 comments",
+      "snippet": ""
     },
     {
       "source": "show_hn",
