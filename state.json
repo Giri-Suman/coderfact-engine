@@ -1,14 +1,11 @@
 {
   "topics": [
-    "Vibe coding tutorial: I built a $19 SaaS in 11 hrs \u2014 code Stripe screenshot",
-    "AI agent tutorial: I replaced my news scroll with a 4-agent LangGraph flow \u2014 code",
-    "GitHub actions silent fail: I fixed my zero error Action in 3 hours \u2014 debug"
+    "E-ink Raspberry Pi Frame: I Built a Local AI Bird Drawer (Full Python Code)",
+    "AI Agent Arena: I Built a Real-Time Battle Game in 120 Lines of TypeScript",
+    "Python WebAssembly Cut My Hosting Costs to $0 for a Viral App (Full Code)"
   ],
-  "date": "September 29, 2026",
+  "date": "September 30, 2026",
   "title_history": [
-    "Cactus Needle LLM: The Fix That Cut My API Bill From $300 to $0",
-    "Chess Clock Task Manager: I Built 2 SaaS Apps in 30 Days (With Code)",
-    "PicoMQ Streaming: Why Redis Breaks on HTTP (And What to Do Instead)",
     "Wasm Latex Editor: I Built a Zero-Cost PDF Generator in 1 Day",
     "AI Coding Agent Skills: Stop Debugging Manually With This Claude Setup",
     "Zig vs Rust: Why the Borrow Checker Broke My CLI Tooling (And the Fix)",
@@ -35,79 +32,119 @@
     "GitHub Actions Debug: I Found the Silent Fail Cause in 3 Hours \u2014 Here's the Fix",
     "Vibe coding tutorial: I built a $19 SaaS in 11 hrs \u2014 code Stripe screenshot",
     "AI agent tutorial: I replaced my news scroll with a 4-agent LangGraph flow \u2014 code",
-    "GitHub actions silent fail: I fixed my zero error Action in 3 hours \u2014 debug"
+    "GitHub actions silent fail: I fixed my zero error Action in 3 hours \u2014 debug",
+    "E-ink Raspberry Pi Frame: I Built a Local AI Bird Drawer (Full Python Code)",
+    "AI Agent Arena: I Built a Real-Time Battle Game in 120 Lines of TypeScript",
+    "Python WebAssembly Cut My Hosting Costs to $0 for a Viral App (Full Code)"
   ],
   "last_update_id": 70323306,
   "virality_data": [
     {
-      "topic": "Vibe coding a small SaaS in one weekend",
+      "topic": "How I built a custom e-ink illustration frame that listens to birds and draws them using Python and Cactus Needle 3",
       "category": "B",
       "category_name": "Vibe Coding / AI-Assisted Workflow",
-      "virality_score": 78,
-      "developer_pain": "medium",
-      "freshness": "fresh",
-      "suman_angle": "Vibe coding a $19 SaaS in 11 hours \u2014 full prompts, full code, full Stripe screenshot",
-      "target_keywords": [
-        "vibe coding tutorial",
-        "build saas with cursor",
-        "ai assisted coding"
+      "virality_score": 94,
+      "analysis": "This combines the massive Hacker News trend of e-ink bird illustration frames with local, low-latency AI automation. Using Cactus Needle 3 (which matches DeepSeek V4 Flash at a fraction of the footprint) shows a highly optimized, modern vibe-coding workflow. It addresses the developer pain of running heavy LLMs on low-power edge devices like a Raspberry Pi.",
+      "cross_source_signals": [
+        "Hacker News: Show HN: An e-ink frame that hears birds and draws them as 1800s illustrations (2391 points)",
+        "Hacker News: Show HN: Cactus Needle 3: 8-29MB automation models can match DeepSeek V4 Flash"
       ],
-      "money_angle": "Real Gumroad/Stripe revenue from a one-weekend build",
-      "story_angle": "Closed the laptop Friday at 9pm with an idea, opened it Sunday with a paying customer",
-      "analysis": "Vibe coding is the dominant 2026 dev meme. Real numbers + working code beats every theoretical post.",
-      "competing_articles": "Most posts show the workflow but skip the money / honest failures \u2014 Suman shows both."
-    },
-    {
-      "topic": "Building a research AI agent in 80 lines",
-      "category": "C",
-      "category_name": "AI Agents & Multi-Agent Workflows",
-      "virality_score": 76,
       "developer_pain": "high",
       "freshness": "breaking",
-      "suman_angle": "I replaced my morning news scroll with a 4-agent pipeline (full code)",
-      "target_keywords": [
-        "ai agent tutorial",
-        "langgraph python",
-        "multi agent workflow"
-      ],
       "money_angle": "",
-      "story_angle": "Tired of the morning doom-scroll, built a personal news agent over chai",
-      "analysis": "Agent-building tutorials have huge search demand and most are abstract. Concrete code wins.",
-      "competing_articles": "Existing posts are diagrams without working orchestration."
+      "story_angle": "I wanted to build the viral e-ink bird-drawing frame but didn't want to pay $40/month in cloud API fees, so I vibe-coded a local Python pipeline on a Raspberry Pi Zero using Cactus Needle 3.",
+      "suman_angle": "I built the viral e-ink bird-drawing frame using local AI and 8MB models (full Python code)",
+      "target_keywords": [
+        "e-ink raspberry pi",
+        "cactus needle 3",
+        "local ai automation",
+        "vibe coding python"
+      ],
+      "competing_articles": "Most e-ink tutorials rely on expensive OpenAI APIs or complex cloud setups; this guide shows how to run it entirely locally with ultra-lightweight models.",
+      "real_story_evidence": [
+        {
+          "source": "Hacker News (Show HN)",
+          "title": "Show HN: An e-ink frame that hears birds and draws them as 1800s illustrations",
+          "url": "https://github.com/arnegiacomo/fugleramme",
+          "what_to_cite": "The hardware setup of using a Raspberry Pi and an Waveshare e-ink display to capture and illustrate bird songs."
+        },
+        {
+          "source": "Hacker News (Show HN)",
+          "title": "Show HN: Cactus Needle 3: 8-29MB automation models can match DeepSeek V4 Flash",
+          "url": "https://cactuscompute.com/needle",
+          "what_to_cite": "Using Cactus Needle 3's highly optimized 8-29MB model footprint to process classifications on edge hardware without API latency."
+        }
+      ]
     },
     {
-      "topic": "GitHub Actions silent failures",
-      "category": "F",
-      "category_name": "Debugging / Fix With Code",
-      "virality_score": 70,
-      "developer_pain": "high",
-      "freshness": "established",
-      "suman_angle": "Why my GitHub Action failed with zero error message \u2014 the 3-hour root cause",
-      "target_keywords": [
-        "github actions not working",
-        "github actions debug",
-        "github actions silent fail"
+      "topic": "How I built a real-time multiplayer 'AI Arena' game where LLM agents battle in 120 lines of TypeScript",
+      "category": "C",
+      "category_name": "AI Agents & Multi-Agent Workflows",
+      "virality_score": 91,
+      "analysis": "AI agent battles are a massive viral trend on tech social media, but most developers don't know how to orchestrate the real-time state machine. This post delivers a lightweight, copy-pasteable TypeScript solution using WebSockets. It directly rides the wave of TinyAIArena's viral launch.",
+      "cross_source_signals": [
+        "Hacker News: Show HN: TinyAIArena watch AI agents battle it out (120 points)",
+        "GitHub: paperclipai/paperclip trending"
       ],
+      "developer_pain": "medium",
+      "freshness": "fresh",
       "money_angle": "",
-      "story_angle": "Pipeline went green, repo did nothing \u2014 chased it for three hours",
-      "analysis": "Persistent pain on Stack Overflow weekly. Existing posts are outdated. Fresh root-cause wins.",
-      "competing_articles": "Existing articles are 2023/2024 \u2014 runner image and syntax both moved on."
+      "story_angle": "I got tired of boring static benchmarks, so I built a real-time web socket arena where local LLM agents fight in a visual game matrix.",
+      "suman_angle": "I built a real-time visual AI battle arena in 120 lines of TypeScript (full code)",
+      "target_keywords": [
+        "ai agent arena",
+        "typescript agents",
+        "real-time multi-agent",
+        "web socket game tutorial"
+      ],
+      "competing_articles": "Most agent articles are theoretical or command-line based; this provides a visual, real-time web-based game loop that developers can run locally.",
+      "real_story_evidence": [
+        {
+          "source": "Hacker News (Show HN)",
+          "title": "Show HN: TinyAIArena watch AI agents battle it out",
+          "url": "https://tinyaiarena.com/",
+          "what_to_cite": "The concept of a visual arena where lightweight AI agents compete in real-time battles instead of static text benchmarks."
+        }
+      ]
+    },
+    {
+      "topic": "How I built a client-side 'cursed font generator' using WebAssembly and Python that got 800+ upvotes in 24 hours",
+      "category": "E",
+      "category_name": "Money / Income Story",
+      "virality_score": 89,
+      "analysis": "This post analyzes the monetization and traffic strategy behind a viral client-side WASM tool like Times New Bastard. By running Python entirely in the browser via WebAssembly, the app has $0 hosting costs, allowing a solo developer to capture pure profit from digital downloads or donations. It hits the sweet spot of indie hacker economics on Medium.",
+      "cross_source_signals": [
+        "Hacker News: Show HN: Make cursed fonts like Times New Bastard (860 points)"
+      ],
+      "developer_pain": "high",
+      "freshness": "fresh",
+      "money_angle": "Generating $450 in passive donations/sales with $0 server hosting bills using in-browser WASM.",
+      "story_angle": "I built a viral joke font tool that processes OpenType fonts in the browser using Python in WebAssembly, resulting in massive traffic and $0 infrastructure costs.",
+      "suman_angle": "How my cursed font generator went viral and cost $0 to host using Python in WebAssembly",
+      "target_keywords": [
+        "python webassembly",
+        "wasm font manipulation",
+        "indie hacker passive income",
+        "client side python"
+      ],
+      "competing_articles": "Most WASM articles are highly academic; this is a practical, lighthearted case study on building a highly shareable, zero-cost web tool.",
+      "real_story_evidence": [
+        {
+          "source": "Hacker News (Show HN)",
+          "title": "Show HN: Make cursed fonts like Times New Bastard",
+          "url": "https://bastardica.mitpit.com",
+          "what_to_cite": "Abusing OpenType's ligature feature using client-side Python loaded in WebAssembly to process fonts instantly without a backend."
+        }
+      ]
     }
   ],
   "success_stories": [
     {
       "source": "show_hn",
-      "title": "Show HN: Lofi Cities \u2013 Pixel-art city nights with browser-generated lofi",
-      "url": "https://loficities.com/",
-      "signal": "308 points \u00b7 135 comments",
+      "title": "Show HN: Real-time Solar System with 526k asteroids and all tracked satellites",
+      "url": "https://space.bl2.net/",
+      "signal": "240 points \u00b7 51 comments",
       "snippet": ""
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: Make cursed fonts like Times New Bastard",
-      "url": "https://bastardica.mitpit.com",
-      "signal": "859 points \u00b7 123 comments",
-      "snippet": "A joke tool that abuses OpenType's ligature feature to mix fonts. It works pretty fast on client-side by loading Python in WASM."
     },
     {
       "source": "show_hn",
@@ -118,10 +155,10 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Reladraw \u2013 A diagram language where you decide where to place things",
-      "url": "https://github.com/reladraw/reladraw",
-      "signal": "403 points \u00b7 119 comments",
-      "snippet": "I love making diagrams to help understand, plan, etc. However, the options are (A) auto-placement languages like Mermaid or Graphviz (which don't let me decide how the diagram looks), or (B) software "
+      "title": "Show HN: Make cursed fonts like Times New Bastard",
+      "url": "https://bastardica.mitpit.com",
+      "signal": "860 points \u00b7 123 comments",
+      "snippet": "A joke tool that abuses OpenType's ligature feature to mix fonts. It works pretty fast on client-side by loading Python in WASM."
     },
     {
       "source": "show_hn",
@@ -132,10 +169,10 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Whiteboard (YC W26) \u2013 An open-source IDE for thoughtful software design",
-      "url": "https://github.com/devdotfast/whiteboard",
-      "signal": "421 points \u00b7 142 comments",
-      "snippet": "Hello! We\u2019re Sid, Alex, Ketan, and Milan. We\u2019re building Whiteboard (https://whiteboard.dev.fast/), an open-source desktop app where humans and agents can architect software together in a common works"
+      "title": "Show HN: Reladraw \u2013 A diagram language where you decide where to place things",
+      "url": "https://github.com/reladraw/reladraw",
+      "signal": "406 points \u00b7 119 comments",
+      "snippet": "I love making diagrams to help understand, plan, etc. However, the options are (A) auto-placement languages like Mermaid or Graphviz (which don't let me decide how the diagram looks), or (B) software "
     },
     {
       "source": "show_hn",
@@ -146,6 +183,20 @@
     },
     {
       "source": "show_hn",
+      "title": "Show HN: Lofi Cities \u2013 Pixel-art city nights with browser-generated lofi",
+      "url": "https://loficities.com/",
+      "signal": "314 points \u00b7 135 comments",
+      "snippet": ""
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Whiteboard (YC W26) \u2013 An open-source IDE for thoughtful software design",
+      "url": "https://github.com/devdotfast/whiteboard",
+      "signal": "422 points \u00b7 142 comments",
+      "snippet": "Hello! We\u2019re Sid, Alex, Ketan, and Milan. We\u2019re building Whiteboard (https://whiteboard.dev.fast/), an open-source desktop app where humans and agents can architect software together in a common works"
+    },
+    {
+      "source": "show_hn",
       "title": "Show HN: Open-Source eInk Bike Computer",
       "url": "https://opentrailpaper.com",
       "signal": "424 points \u00b7 134 comments",
@@ -153,10 +204,10 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Jev Plays Pok\u00e9mon Red",
-      "url": "https://jev-pokemon.vercel.app/",
-      "signal": "278 points \u00b7 122 comments",
-      "snippet": "Hey HN! Wanted to share a fun project I've been hacking on. Given Jev can make decisions really fast (but not fast enough to play Doom yet sadly), I wanted to try and push it to play a more complex ga"
+      "title": "Show HN: HN Match Maker \u2013 Matching \"Who Wants to Be Hired?\" With \"Who's Hiring?\"",
+      "url": "https://hnmatchmaker.com/",
+      "signal": "125 points \u00b7 46 comments",
+      "snippet": "Hi! Every month the \"Who Wants to Be Hired?\" and \"Who's Hiring?\" Threads come through I would think to myself, \"there should be a match maker for these two threads\". So I had abacus.ai whip one up. Th"
     },
     {
       "source": "show_hn",
@@ -174,16 +225,23 @@
     },
     {
       "source": "show_hn",
+      "title": "Show HN: Jev Plays Pok\u00e9mon Red",
+      "url": "https://jev-pokemon.vercel.app/",
+      "signal": "281 points \u00b7 123 comments",
+      "snippet": "Hey HN! Wanted to share a fun project I've been hacking on. Given Jev can make decisions really fast (but not fast enough to play Doom yet sadly), I wanted to try and push it to play a more complex ga"
+    },
+    {
+      "source": "show_hn",
       "title": "Show HN: HN.watch \u2013 Videos of all Hacker News posts",
       "url": "https://hn.watch/",
-      "signal": "170 points \u00b7 91 comments",
+      "signal": "210 points \u00b7 97 comments",
       "snippet": "Hi HN, I\u2019m Per, founder of Scrimba (YC S20). We\u2019ve spent the last decade teaching people how to code with an HTML-based video format. We\u2019ve now plugged an LLM into it, so that people can create explai"
     },
     {
       "source": "show_hn",
       "title": "Show HN: Mini-AGI \u2013 Dynamic continual learning model trained on 8GB VRAM",
       "url": "https://github.com/volotat/mini-AGI/",
-      "signal": "277 points \u00b7 80 comments",
+      "signal": "277 points \u00b7 81 comments",
       "snippet": "Sorry for the pretentious name, I know, I know.. It just contains all the pieces I would like to see a AGI model to have, and I can't stand the temptation. Before throwing rocks at me, please take a g"
     },
     {
@@ -202,13 +260,6 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Koi.rest \u2013 watch some fish and regain your balance",
-      "url": "https://koi.rest",
-      "signal": "226 points \u00b7 65 comments",
-      "snippet": "Hi there. My name is Paul. I\u2019m a developer, an explorer and I\u2019ve got ADHD. As of the beginning of August, I\u2019m also unemployed. This last part, along with everything else this past year, has caused me "
-    },
-    {
-      "source": "show_hn",
       "title": "Show HN: Running 104GB Qwen3.8-Flash-Next on 48GB Mac with at ~12 tok/s",
       "url": "https://github.com/carloslfu/slotstream",
       "signal": "240 points \u00b7 118 comments",
@@ -216,10 +267,10 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Destroy Any Website with Stickman",
-      "url": "https://destroy.spritefusion.com/",
-      "signal": "142 points \u00b7 34 comments",
-      "snippet": ""
+      "title": "Show HN: Koi.rest \u2013 watch some fish and regain your balance",
+      "url": "https://koi.rest",
+      "signal": "228 points \u00b7 65 comments",
+      "snippet": "Hi there. My name is Paul. I\u2019m a developer, an explorer and I\u2019ve got ADHD. As of the beginning of August, I\u2019m also unemployed. This last part, along with everything else this past year, has caused me "
     },
     {
       "source": "show_hn",
@@ -227,13 +278,6 @@
       "url": "https://cactuscompute.com/needle",
       "signal": "236 points \u00b7 93 comments",
       "snippet": "Hey HN, Henry from Cactus here. We submitted Needle 2 here a few weeks ago, and the feedback in the discussion thread was incredibly valuable, thanks! Thanks to all that feedback, we\u2019ve been able to m"
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: Hacker News, without AI",
-      "url": "https://hcker.news/?ai=exclude",
-      "signal": "207 points \u00b7 85 comments",
-      "snippet": ""
     }
   ]
 }
