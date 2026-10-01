@@ -1,14 +1,11 @@
 {
   "topics": [
-    "E-ink Raspberry Pi Frame: I Built a Local AI Bird Drawer (Full Python Code)",
-    "AI Agent Arena: I Built a Real-Time Battle Game in 120 Lines of TypeScript",
-    "Python WebAssembly Cut My Hosting Costs to $0 for a Viral App (Full Code)"
+    "Python WebAssembly Project: I Built a Viral Font App (Full Code)",
+    "Custom Cursor Agent: How I Automatically Reject Bloated PRs",
+    "Cursor AI Config: The Exact .agents Directory Setup I Use Daily"
   ],
-  "date": "September 30, 2026",
+  "date": "October 01, 2026",
   "title_history": [
-    "Wasm Latex Editor: I Built a Zero-Cost PDF Generator in 1 Day",
-    "AI Coding Agent Skills: Stop Debugging Manually With This Claude Setup",
-    "Zig vs Rust: Why the Borrow Checker Broke My CLI Tooling (And the Fix)",
     "Google AX Framework: How I Built a 2-Agent PR Reviewer in 90 Lines",
     "Indie Hacker Passive Income: How My Flight Simulator Makes $520/Month",
     "Claude Prompt Optimization: How I Cut My Token Costs by 35%",
@@ -35,107 +32,91 @@
     "GitHub actions silent fail: I fixed my zero error Action in 3 hours \u2014 debug",
     "E-ink Raspberry Pi Frame: I Built a Local AI Bird Drawer (Full Python Code)",
     "AI Agent Arena: I Built a Real-Time Battle Game in 120 Lines of TypeScript",
-    "Python WebAssembly Cut My Hosting Costs to $0 for a Viral App (Full Code)"
+    "Python WebAssembly Cut My Hosting Costs to $0 for a Viral App (Full Code)",
+    "Python WebAssembly Project: I Built a Viral Font App (Full Code)",
+    "Custom Cursor Agent: How I Automatically Reject Bloated PRs",
+    "Cursor AI Config: The Exact .agents Directory Setup I Use Daily"
   ],
   "last_update_id": 70323306,
   "virality_data": [
     {
-      "topic": "How I built a custom e-ink illustration frame that listens to birds and draws them using Python and Cactus Needle 3",
-      "category": "B",
-      "category_name": "Vibe Coding / AI-Assisted Workflow",
-      "virality_score": 94,
-      "analysis": "This combines the massive Hacker News trend of e-ink bird illustration frames with local, low-latency AI automation. Using Cactus Needle 3 (which matches DeepSeek V4 Flash at a fraction of the footprint) shows a highly optimized, modern vibe-coding workflow. It addresses the developer pain of running heavy LLMs on low-power edge devices like a Raspberry Pi.",
+      "topic": "How I built a viral client-side font mixer using Python in WebAssembly (and hit the front page of Hacker News)",
+      "category": "A",
+      "category_name": "Developer Success Story",
+      "virality_score": 92,
+      "analysis": "This taps directly into the highly popular trend of running Python in the browser via WebAssembly without high server overhead. It targets frontend developers looking to build interactive, fast client-side tools. The real-world validation of hitting the HN front page provides instant credibility.",
       "cross_source_signals": [
-        "Hacker News: Show HN: An e-ink frame that hears birds and draws them as 1800s illustrations (2391 points)",
-        "Hacker News: Show HN: Cactus Needle 3: 8-29MB automation models can match DeepSeek V4 Flash"
+        "Hacker News: Show HN with 861 points",
+        "GitHub: WASM-based font tool interest rising",
+        "Reddit r/javascript: discussions on client-side font manipulation"
       ],
       "developer_pain": "high",
       "freshness": "breaking",
       "money_angle": "",
-      "story_angle": "I wanted to build the viral e-ink bird-drawing frame but didn't want to pay $40/month in cloud API fees, so I vibe-coded a local Python pipeline on a Raspberry Pi Zero using Cactus Needle 3.",
-      "suman_angle": "I built the viral e-ink bird-drawing frame using local AI and 8MB models (full Python code)",
-      "target_keywords": [
-        "e-ink raspberry pi",
-        "cactus needle 3",
-        "local ai automation",
-        "vibe coding python"
-      ],
-      "competing_articles": "Most e-ink tutorials rely on expensive OpenAI APIs or complex cloud setups; this guide shows how to run it entirely locally with ultra-lightweight models.",
-      "real_story_evidence": [
-        {
-          "source": "Hacker News (Show HN)",
-          "title": "Show HN: An e-ink frame that hears birds and draws them as 1800s illustrations",
-          "url": "https://github.com/arnegiacomo/fugleramme",
-          "what_to_cite": "The hardware setup of using a Raspberry Pi and an Waveshare e-ink display to capture and illustrate bird songs."
-        },
-        {
-          "source": "Hacker News (Show HN)",
-          "title": "Show HN: Cactus Needle 3: 8-29MB automation models can match DeepSeek V4 Flash",
-          "url": "https://cactuscompute.com/needle",
-          "what_to_cite": "Using Cactus Needle 3's highly optimized 8-29MB model footprint to process classifications on edge hardware without API latency."
-        }
-      ]
-    },
-    {
-      "topic": "How I built a real-time multiplayer 'AI Arena' game where LLM agents battle in 120 lines of TypeScript",
-      "category": "C",
-      "category_name": "AI Agents & Multi-Agent Workflows",
-      "virality_score": 91,
-      "analysis": "AI agent battles are a massive viral trend on tech social media, but most developers don't know how to orchestrate the real-time state machine. This post delivers a lightweight, copy-pasteable TypeScript solution using WebSockets. It directly rides the wave of TinyAIArena's viral launch.",
-      "cross_source_signals": [
-        "Hacker News: Show HN: TinyAIArena watch AI agents battle it out (120 points)",
-        "GitHub: paperclipai/paperclip trending"
-      ],
-      "developer_pain": "medium",
-      "freshness": "fresh",
-      "money_angle": "",
-      "story_angle": "I got tired of boring static benchmarks, so I built a real-time web socket arena where local LLM agents fight in a visual game matrix.",
-      "suman_angle": "I built a real-time visual AI battle arena in 120 lines of TypeScript (full code)",
-      "target_keywords": [
-        "ai agent arena",
-        "typescript agents",
-        "real-time multi-agent",
-        "web socket game tutorial"
-      ],
-      "competing_articles": "Most agent articles are theoretical or command-line based; this provides a visual, real-time web-based game loop that developers can run locally.",
-      "real_story_evidence": [
-        {
-          "source": "Hacker News (Show HN)",
-          "title": "Show HN: TinyAIArena watch AI agents battle it out",
-          "url": "https://tinyaiarena.com/",
-          "what_to_cite": "The concept of a visual arena where lightweight AI agents compete in real-time battles instead of static text benchmarks."
-        }
-      ]
-    },
-    {
-      "topic": "How I built a client-side 'cursed font generator' using WebAssembly and Python that got 800+ upvotes in 24 hours",
-      "category": "E",
-      "category_name": "Money / Income Story",
-      "virality_score": 89,
-      "analysis": "This post analyzes the monetization and traffic strategy behind a viral client-side WASM tool like Times New Bastard. By running Python entirely in the browser via WebAssembly, the app has $0 hosting costs, allowing a solo developer to capture pure profit from digital downloads or donations. It hits the sweet spot of indie hacker economics on Medium.",
-      "cross_source_signals": [
-        "Hacker News: Show HN: Make cursed fonts like Times New Bastard (860 points)"
-      ],
-      "developer_pain": "high",
-      "freshness": "fresh",
-      "money_angle": "Generating $450 in passive donations/sales with $0 server hosting bills using in-browser WASM.",
-      "story_angle": "I built a viral joke font tool that processes OpenType fonts in the browser using Python in WebAssembly, resulting in massive traffic and $0 infrastructure costs.",
-      "suman_angle": "How my cursed font generator went viral and cost $0 to host using Python in WebAssembly",
+      "story_angle": "I wanted to build a fast, zero-server-cost utility to mix fonts using OpenType ligatures, so I ported a Python-based font library to WebAssembly.",
+      "suman_angle": "How I built a viral client-side font mixer using Python in WebAssembly (and hit the front page of Hacker News)",
       "target_keywords": [
         "python webassembly",
         "wasm font manipulation",
-        "indie hacker passive income",
-        "client side python"
+        "client-side opentype"
       ],
-      "competing_articles": "Most WASM articles are highly academic; this is a practical, lighthearted case study on building a highly shareable, zero-cost web tool.",
+      "competing_articles": "Most WASM tutorials are abstract hello-worlds; this shows a real, highly engaging product that leverages Python's rich ecosystem directly in the browser.",
       "real_story_evidence": [
         {
           "source": "Hacker News (Show HN)",
           "title": "Show HN: Make cursed fonts like Times New Bastard",
           "url": "https://bastardica.mitpit.com",
-          "what_to_cite": "Abusing OpenType's ligature feature using client-side Python loaded in WebAssembly to process fonts instantly without a backend."
+          "what_to_cite": "The project abuses OpenType's ligature feature to mix fonts, running fast client-side by loading Python in WASM to achieve 861 points on Hacker News."
         }
       ]
+    },
+    {
+      "topic": "Building a 'Lazy Senior Dev' AI Agent that automatically declines bloated PRs",
+      "category": "C",
+      "category_name": "AI Agents & Multi-Agent Workflows",
+      "virality_score": 94,
+      "analysis": "Humorous yet highly practical agent concepts perform exceptionally well on Medium in 2026. This leverages the trending philosophy of 'ponytail' (making agents write less, more efficient code). It provides a complete, copyable TypeScript/Python script for developers to run locally.",
+      "cross_source_signals": [
+        "GitHub: DietrichGebert/ponytail trending",
+        "Reddit r/programming: discussions on AI code bloat",
+        "Google Trends: AI agent workflows"
+      ],
+      "developer_pain": "medium",
+      "freshness": "breaking",
+      "money_angle": "",
+      "story_angle": "Tired of reviewing 500-line pull requests that could have been 5 lines, I wrote a local agent that acts as the laziest senior dev in the room.",
+      "suman_angle": "I built a 'Lazy Senior Dev' AI Agent that automatically rejects bloated PRs (Full Code)",
+      "target_keywords": [
+        "ai agent workflow",
+        "custom cursor agent",
+        "reduce code bloat"
+      ],
+      "competing_articles": "Most agent articles focus on generic research or writing tasks; this is highly tailored to developer workflows and code quality.",
+      "real_story_evidence": []
+    },
+    {
+      "topic": "My custom .agents directory setup: How I give Claude and Cursor superpowers",
+      "category": "H",
+      "category_name": "Tips & Tricks / Real Workflow",
+      "virality_score": 89,
+      "analysis": "With the explosion of Cursor and Claude-powered development in 2026, developers are hungry for real, production-ready system prompts and skill configurations. This offers highly practical, copy-pasteable configurations that readers can immediately drop into their projects.",
+      "cross_source_signals": [
+        "GitHub: mattpocock/skills trending",
+        "Reddit r/cursor: high interest in .agents directory configs",
+        "Google Trends: cursor ai custom rules"
+      ],
+      "developer_pain": "high",
+      "freshness": "hot",
+      "money_angle": "",
+      "story_angle": "I was tired of constantly repeating instructions to my AI editor, so I built a structured .agents directory to automate my coding style.",
+      "suman_angle": "Inside my .agents directory: The custom skills I use to supercharge Claude and Cursor",
+      "target_keywords": [
+        "cursor ai config",
+        "agents directory setup",
+        "claude system prompts"
+      ],
+      "competing_articles": "While many talk about basic prompt engineering, this article provides a structured, file-based system for scaling agent capabilities locally.",
+      "real_story_evidence": []
     }
   ],
   "success_stories": [
@@ -143,7 +124,7 @@
       "source": "show_hn",
       "title": "Show HN: Real-time Solar System with 526k asteroids and all tracked satellites",
       "url": "https://space.bl2.net/",
-      "signal": "240 points \u00b7 51 comments",
+      "signal": "384 points \u00b7 106 comments",
       "snippet": ""
     },
     {
@@ -157,7 +138,7 @@
       "source": "show_hn",
       "title": "Show HN: Make cursed fonts like Times New Bastard",
       "url": "https://bastardica.mitpit.com",
-      "signal": "860 points \u00b7 123 comments",
+      "signal": "861 points \u00b7 123 comments",
       "snippet": "A joke tool that abuses OpenType's ligature feature to mix fonts. It works pretty fast on client-side by loading Python in WASM."
     },
     {
@@ -169,13 +150,6 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Reladraw \u2013 A diagram language where you decide where to place things",
-      "url": "https://github.com/reladraw/reladraw",
-      "signal": "406 points \u00b7 119 comments",
-      "snippet": "I love making diagrams to help understand, plan, etc. However, the options are (A) auto-placement languages like Mermaid or Graphviz (which don't let me decide how the diagram looks), or (B) software "
-    },
-    {
-      "source": "show_hn",
       "title": "Show HN: I made a flight simulator, except you're just a passenger",
       "url": "https://inflightsimulator.com",
       "signal": "446 points \u00b7 205 comments",
@@ -183,17 +157,10 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Lofi Cities \u2013 Pixel-art city nights with browser-generated lofi",
-      "url": "https://loficities.com/",
-      "signal": "314 points \u00b7 135 comments",
-      "snippet": ""
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: Whiteboard (YC W26) \u2013 An open-source IDE for thoughtful software design",
-      "url": "https://github.com/devdotfast/whiteboard",
-      "signal": "422 points \u00b7 142 comments",
-      "snippet": "Hello! We\u2019re Sid, Alex, Ketan, and Milan. We\u2019re building Whiteboard (https://whiteboard.dev.fast/), an open-source desktop app where humans and agents can architect software together in a common works"
+      "title": "Show HN: Reladraw \u2013 A diagram language where you decide where to place things",
+      "url": "https://github.com/reladraw/reladraw",
+      "signal": "408 points \u00b7 119 comments",
+      "snippet": "I love making diagrams to help understand, plan, etc. However, the options are (A) auto-placement languages like Mermaid or Graphviz (which don't let me decide how the diagram looks), or (B) software "
     },
     {
       "source": "show_hn",
@@ -204,10 +171,17 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: HN Match Maker \u2013 Matching \"Who Wants to Be Hired?\" With \"Who's Hiring?\"",
-      "url": "https://hnmatchmaker.com/",
-      "signal": "125 points \u00b7 46 comments",
-      "snippet": "Hi! Every month the \"Who Wants to Be Hired?\" and \"Who's Hiring?\" Threads come through I would think to myself, \"there should be a match maker for these two threads\". So I had abacus.ai whip one up. Th"
+      "title": "Show HN: Whiteboard (YC W26) \u2013 An open-source IDE for thoughtful software design",
+      "url": "https://github.com/devdotfast/whiteboard",
+      "signal": "423 points \u00b7 142 comments",
+      "snippet": "Hello! We\u2019re Sid, Alex, Ketan, and Milan. We\u2019re building Whiteboard (https://whiteboard.dev.fast/), an open-source desktop app where humans and agents can architect software together in a common works"
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Lofi Cities \u2013 Pixel-art city nights with browser-generated lofi",
+      "url": "https://loficities.com/",
+      "signal": "316 points \u00b7 137 comments",
+      "snippet": ""
     },
     {
       "source": "show_hn",
@@ -227,15 +201,15 @@
       "source": "show_hn",
       "title": "Show HN: Jev Plays Pok\u00e9mon Red",
       "url": "https://jev-pokemon.vercel.app/",
-      "signal": "281 points \u00b7 123 comments",
+      "signal": "281 points \u00b7 124 comments",
       "snippet": "Hey HN! Wanted to share a fun project I've been hacking on. Given Jev can make decisions really fast (but not fast enough to play Doom yet sadly), I wanted to try and push it to play a more complex ga"
     },
     {
       "source": "show_hn",
-      "title": "Show HN: HN.watch \u2013 Videos of all Hacker News posts",
-      "url": "https://hn.watch/",
-      "signal": "210 points \u00b7 97 comments",
-      "snippet": "Hi HN, I\u2019m Per, founder of Scrimba (YC S20). We\u2019ve spent the last decade teaching people how to code with an HTML-based video format. We\u2019ve now plugged an LLM into it, so that people can create explai"
+      "title": "Show HN: Ledge.sh \u2013 Runnable Markdown Notes",
+      "url": "https://ledge.sh",
+      "signal": "126 points \u00b7 53 comments",
+      "snippet": "Hi HN, Ledge is a Markdown notebook that runs shell commands, code, SQL, etc from inside your own notes. I built Ledge because I spend much of my day copy/pasting commands from my notes into the termi"
     },
     {
       "source": "show_hn",
@@ -253,6 +227,13 @@
     },
     {
       "source": "show_hn",
+      "title": "Show HN: HN.watch \u2013 Videos of all Hacker News posts",
+      "url": "https://hn.watch/",
+      "signal": "215 points \u00b7 97 comments",
+      "snippet": "Hi HN, I\u2019m Per, founder of Scrimba (YC S20). We\u2019ve spent the last decade teaching people how to code with an HTML-based video format. We\u2019ve now plugged an LLM into it, so that people can create explai"
+    },
+    {
+      "source": "show_hn",
       "title": "Show HN: Copperhead \u2013 Cursor for circuit boards",
       "url": "https://copperhead.sh/",
       "signal": "250 points \u00b7 115 comments",
@@ -267,17 +248,17 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Koi.rest \u2013 watch some fish and regain your balance",
-      "url": "https://koi.rest",
-      "signal": "228 points \u00b7 65 comments",
-      "snippet": "Hi there. My name is Paul. I\u2019m a developer, an explorer and I\u2019ve got ADHD. As of the beginning of August, I\u2019m also unemployed. This last part, along with everything else this past year, has caused me "
-    },
-    {
-      "source": "show_hn",
       "title": "Show HN: Cactus Needle 3: 8-29MB automation models can match DeepSeek V4 Flash",
       "url": "https://cactuscompute.com/needle",
       "signal": "236 points \u00b7 93 comments",
       "snippet": "Hey HN, Henry from Cactus here. We submitted Needle 2 here a few weeks ago, and the feedback in the discussion thread was incredibly valuable, thanks! Thanks to all that feedback, we\u2019ve been able to m"
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Koi.rest \u2013 watch some fish and regain your balance",
+      "url": "https://koi.rest",
+      "signal": "228 points \u00b7 65 comments",
+      "snippet": "Hi there. My name is Paul. I\u2019m a developer, an explorer and I\u2019ve got ADHD. As of the beginning of August, I\u2019m also unemployed. This last part, along with everything else this past year, has caused me "
     }
   ]
 }
