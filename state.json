@@ -1,14 +1,11 @@
 {
   "topics": [
-    "Python WebAssembly Project: I Built a Viral Font App (Full Code)",
-    "Custom Cursor Agent: How I Automatically Reject Bloated PRs",
-    "Cursor AI Config: The Exact .agents Directory Setup I Use Daily"
+    "Self Hosted SMS Gateway: I Built a Twilio Alternative in 90 Lines of Python",
+    "AI Agent Skills Tutorial: I Rebuilt My Workflow in 80 Lines of Python",
+    "Git 3.0 SHA256 Migration: Why It Breaks Your CI/CD (And How to Fix It)"
   ],
-  "date": "October 01, 2026",
+  "date": "October 02, 2026",
   "title_history": [
-    "Google AX Framework: How I Built a 2-Agent PR Reviewer in 90 Lines",
-    "Indie Hacker Passive Income: How My Flight Simulator Makes $520/Month",
-    "Claude Prompt Optimization: How I Cut My Token Costs by 35%",
     "Project Nomad Tutorial: I Built Offline AI Agent in 100 Lines TS",
     "Safari Extension Tutorial: I Built a $1.99 Extension to Block AI YouTube",
     "E-ink Raspberry Pi Tutorial: I Built an Open-Source Bike Computer in 2 Hours",
@@ -35,98 +32,94 @@
     "Python WebAssembly Cut My Hosting Costs to $0 for a Viral App (Full Code)",
     "Python WebAssembly Project: I Built a Viral Font App (Full Code)",
     "Custom Cursor Agent: How I Automatically Reject Bloated PRs",
-    "Cursor AI Config: The Exact .agents Directory Setup I Use Daily"
+    "Cursor AI Config: The Exact .agents Directory Setup I Use Daily",
+    "Self Hosted SMS Gateway: I Built a Twilio Alternative in 90 Lines of Python",
+    "AI Agent Skills Tutorial: I Rebuilt My Workflow in 80 Lines of Python",
+    "Git 3.0 SHA256 Migration: Why It Breaks Your CI/CD (And How to Fix It)"
   ],
   "last_update_id": 70323306,
   "virality_data": [
     {
-      "topic": "How I built a viral client-side font mixer using Python in WebAssembly (and hit the front page of Hacker News)",
-      "category": "A",
-      "category_name": "Developer Success Story",
-      "virality_score": 92,
-      "analysis": "This taps directly into the highly popular trend of running Python in the browser via WebAssembly without high server overhead. It targets frontend developers looking to build interactive, fast client-side tools. The real-world validation of hitting the HN front page provides instant credibility.",
+      "topic": "Hacking a $20 4G wireless hotspot into an automated offline SMS gateway",
+      "category": "D",
+      "category_name": "AI Automation Across Domains",
+      "virality_score": 91,
+      "analysis": "Hardware-to-cloud automation projects with hyper-low hardware costs consistently dominate Medium claps and Hacker News front pages. With Twilio SMS costs skyrocketing, building a dedicated physical SMS gateway using cheap 4G hardware solves real transactional alerting costs for indie devs. This offers a concrete Python AT-command tutorial replacing expensive third-party SaaS pipelines.",
       "cross_source_signals": [
-        "Hacker News: Show HN with 861 points",
-        "GitHub: WASM-based font tool interest rising",
-        "Reddit r/javascript: discussions on client-side font manipulation"
+        "Hacker News: Show HN: Hacking a $20 4G wireless hotspot into a texting device (210 points, 37 comments)",
+        "GitHub: Open-source USB modem AT-command wrappers trending"
       ],
       "developer_pain": "high",
       "freshness": "breaking",
-      "money_angle": "",
-      "story_angle": "I wanted to build a fast, zero-server-cost utility to mix fonts using OpenType ligatures, so I ported a Python-based font library to WebAssembly.",
-      "suman_angle": "How I built a viral client-side font mixer using Python in WebAssembly (and hit the front page of Hacker News)",
+      "money_angle": "Cut my $60/month Twilio SMS notification bill down to a $5/month IoT SIM card",
+      "story_angle": "I was tired of paying premium SaaS pricing for basic transactional SMS alerts, so I flashed a $20 pocket 4G modem into a self-hosted text server.",
+      "suman_angle": "How I Turned a $20 4G Hotspot into a Local SMS Alert Server in 90 Lines of Python",
       "target_keywords": [
-        "python webassembly",
-        "wasm font manipulation",
-        "client-side opentype"
+        "4g hotspot sms python",
+        "self hosted sms gateway",
+        "twilio alternative hardware",
+        "python serial modem automation"
       ],
-      "competing_articles": "Most WASM tutorials are abstract hello-worlds; this shows a real, highly engaging product that leverages Python's rich ecosystem directly in the browser.",
+      "competing_articles": "Most SMS automation articles push Twilio or AWS SNS APIs; this gives readers a complete physical, zero-monthly-subscription blueprint.",
       "real_story_evidence": [
         {
           "source": "Hacker News (Show HN)",
-          "title": "Show HN: Make cursed fonts like Times New Bastard",
-          "url": "https://bastardica.mitpit.com",
-          "what_to_cite": "The project abuses OpenType's ligature feature to mix fonts, running fast client-side by loading Python in WASM to achieve 861 points on Hacker News."
+          "title": "Show HN: Hacking a $20 4G wireless hotspot into a texting device",
+          "url": "https://bkovac.github.io/modem-thing/",
+          "what_to_cite": "Repurposed a cheap $20 ZTE/Qualcomm 4G USB hotspot using Linux serial modem AT commands to handle bidirectional SMS."
         }
       ]
     },
     {
-      "topic": "Building a 'Lazy Senior Dev' AI Agent that automatically declines bloated PRs",
+      "topic": "Building a custom skill framework for AI agents with obra/superpowers and shell scripts",
       "category": "C",
       "category_name": "AI Agents & Multi-Agent Workflows",
-      "virality_score": 94,
-      "analysis": "Humorous yet highly practical agent concepts perform exceptionally well on Medium in 2026. This leverages the trending philosophy of 'ponytail' (making agents write less, more efficient code). It provides a complete, copyable TypeScript/Python script for developers to run locally.",
+      "virality_score": 89,
+      "analysis": "Agentic coding has moved beyond bloated LangChain setups to lightweight, Unix-style CLI tool execution frameworks like obra/superpowers and .agents skills. Developers are desperate for deterministic agent loops that actually ship PRs instead of hallucinating file edits. Providing a minimal, practical execution architecture backed by real shell-invoked tool definitions will drive massive bookmarking.",
       "cross_source_signals": [
-        "GitHub: DietrichGebert/ponytail trending",
-        "Reddit r/programming: discussions on AI code bloat",
-        "Google Trends: AI agent workflows"
+        "GitHub Trending: obra/superpowers agentic skills framework (rank 1 signal cluster, 294k weight)",
+        "GitHub Trending: mattpocock/skills for Real Engineers (.agents directory tooling)"
       ],
-      "developer_pain": "medium",
+      "developer_pain": "high",
       "freshness": "breaking",
       "money_angle": "",
-      "story_angle": "Tired of reviewing 500-line pull requests that could have been 5 lines, I wrote a local agent that acts as the laziest senior dev in the room.",
-      "suman_angle": "I built a 'Lazy Senior Dev' AI Agent that automatically rejects bloated PRs (Full Code)",
+      "story_angle": "My AI agent kept hallucinating complex refactors until I replaced fuzzy instructions with a modular, shell-executable skill framework.",
+      "suman_angle": "I Rebuilt My AI Agent Workflow with Unix Skills in 80 Lines of Python (Full Architecture)",
       "target_keywords": [
-        "ai agent workflow",
-        "custom cursor agent",
-        "reduce code bloat"
+        "ai agent skills tutorial",
+        "obra superpowers framework",
+        "agentic workflow python",
+        "cli tools for llm agents"
       ],
-      "competing_articles": "Most agent articles focus on generic research or writing tasks; this is highly tailored to developer workflows and code quality.",
+      "competing_articles": "Most agent articles demo toy chatbots; this explains how to build a production-ready skill loop that interacts directly with local git and shell environments.",
       "real_story_evidence": []
     },
     {
-      "topic": "My custom .agents directory setup: How I give Claude and Cursor superpowers",
-      "category": "H",
-      "category_name": "Tips & Tricks / Real Workflow",
-      "virality_score": 89,
-      "analysis": "With the explosion of Cursor and Claude-powered development in 2026, developers are hungry for real, production-ready system prompts and skill configurations. This offers highly practical, copy-pasteable configurations that readers can immediately drop into their projects.",
+      "topic": "Why Git 3.0's SHA-256 Transition Breaks Existing CI/CD Pipelines and How to Prepare",
+      "category": "G",
+      "category_name": "Software Architecture Insight",
+      "virality_score": 86,
+      "analysis": "The impending Git 3.0 default change from SHA-1 to SHA-256 is creating massive architectural discussions across the dev community due to ecosystem incompatibilities. Every tech lead and senior engineer is evaluating how this impacts submodules, object signing, and custom CI hooks. A deep-dive breaking down the exact trade-offs and transition traps provides high-authority editorial boost value.",
       "cross_source_signals": [
-        "GitHub: mattpocock/skills trending",
-        "Reddit r/cursor: high interest in .agents directory configs",
-        "Google Trends: cursor ai custom rules"
+        "Hacker News: Git 3.0's upcoming SHA-256 default will be a costly mistake (336 comments, 356 points)",
+        "GitButler engineering blog deep-dive on SHA-256 object formatting"
       ],
       "developer_pain": "high",
       "freshness": "hot",
       "money_angle": "",
-      "story_angle": "I was tired of constantly repeating instructions to my AI editor, so I built a structured .agents directory to automate my coding style.",
-      "suman_angle": "Inside my .agents directory: The custom skills I use to supercharge Claude and Cursor",
+      "story_angle": "When testing our build runner against Git's upcoming SHA-256 defaults, our entire multi-repo CI verification chain failed silently.",
+      "suman_angle": "Git 3.0 Will Break Your CI Pipelines: The Architecture Trade-offs of the SHA-256 Migration",
       "target_keywords": [
-        "cursor ai config",
-        "agents directory setup",
-        "claude system prompts"
+        "git 3.0 sha256 migration",
+        "git sha1 vs sha256 architecture",
+        "git object format compatibility",
+        "devops git 3.0 breaking changes"
       ],
-      "competing_articles": "While many talk about basic prompt engineering, this article provides a structured, file-based system for scaling agent capabilities locally.",
+      "competing_articles": "Most posts offer surface-level news summaries; this article provides an architectural post-mortem and exact shell audit scripts to test repo readiness.",
       "real_story_evidence": []
     }
   ],
   "success_stories": [
-    {
-      "source": "show_hn",
-      "title": "Show HN: Real-time Solar System with 526k asteroids and all tracked satellites",
-      "url": "https://space.bl2.net/",
-      "signal": "384 points \u00b7 106 comments",
-      "snippet": ""
-    },
     {
       "source": "show_hn",
       "title": "Show HN: An e-ink frame that hears birds and draws them as 1800s illustrations",
@@ -140,6 +133,13 @@
       "url": "https://bastardica.mitpit.com",
       "signal": "861 points \u00b7 123 comments",
       "snippet": "A joke tool that abuses OpenType's ligature feature to mix fonts. It works pretty fast on client-side by loading Python in WASM."
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Real-time Solar System with 526k asteroids and all tracked satellites",
+      "url": "https://space.bl2.net/",
+      "signal": "399 points \u00b7 107 comments",
+      "snippet": ""
     },
     {
       "source": "show_hn",
@@ -157,13 +157,6 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Reladraw \u2013 A diagram language where you decide where to place things",
-      "url": "https://github.com/reladraw/reladraw",
-      "signal": "408 points \u00b7 119 comments",
-      "snippet": "I love making diagrams to help understand, plan, etc. However, the options are (A) auto-placement languages like Mermaid or Graphviz (which don't let me decide how the diagram looks), or (B) software "
-    },
-    {
-      "source": "show_hn",
       "title": "Show HN: Open-Source eInk Bike Computer",
       "url": "https://opentrailpaper.com",
       "signal": "424 points \u00b7 134 comments",
@@ -175,6 +168,13 @@
       "url": "https://github.com/devdotfast/whiteboard",
       "signal": "423 points \u00b7 142 comments",
       "snippet": "Hello! We\u2019re Sid, Alex, Ketan, and Milan. We\u2019re building Whiteboard (https://whiteboard.dev.fast/), an open-source desktop app where humans and agents can architect software together in a common works"
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Reladraw \u2013 A diagram language where you decide where to place things",
+      "url": "https://github.com/reladraw/reladraw",
+      "signal": "409 points \u00b7 119 comments",
+      "snippet": "I love making diagrams to help understand, plan, etc. However, the options are (A) auto-placement languages like Mermaid or Graphviz (which don't let me decide how the diagram looks), or (B) software "
     },
     {
       "source": "show_hn",
@@ -201,15 +201,8 @@
       "source": "show_hn",
       "title": "Show HN: Jev Plays Pok\u00e9mon Red",
       "url": "https://jev-pokemon.vercel.app/",
-      "signal": "281 points \u00b7 124 comments",
+      "signal": "282 points \u00b7 124 comments",
       "snippet": "Hey HN! Wanted to share a fun project I've been hacking on. Given Jev can make decisions really fast (but not fast enough to play Doom yet sadly), I wanted to try and push it to play a more complex ga"
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: Ledge.sh \u2013 Runnable Markdown Notes",
-      "url": "https://ledge.sh",
-      "signal": "126 points \u00b7 53 comments",
-      "snippet": "Hi HN, Ledge is a Markdown notebook that runs shell commands, code, SQL, etc from inside your own notes. I built Ledge because I spend much of my day copy/pasting commands from my notes into the termi"
     },
     {
       "source": "show_hn",
@@ -227,13 +220,6 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: HN.watch \u2013 Videos of all Hacker News posts",
-      "url": "https://hn.watch/",
-      "signal": "215 points \u00b7 97 comments",
-      "snippet": "Hi HN, I\u2019m Per, founder of Scrimba (YC S20). We\u2019ve spent the last decade teaching people how to code with an HTML-based video format. We\u2019ve now plugged an LLM into it, so that people can create explai"
-    },
-    {
-      "source": "show_hn",
       "title": "Show HN: Copperhead \u2013 Cursor for circuit boards",
       "url": "https://copperhead.sh/",
       "signal": "250 points \u00b7 115 comments",
@@ -241,10 +227,17 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Running 104GB Qwen3.8-Flash-Next on 48GB Mac with at ~12 tok/s",
-      "url": "https://github.com/carloslfu/slotstream",
-      "signal": "240 points \u00b7 118 comments",
-      "snippet": "I built slotstream, a way to run Qwen3.8-Flash-Next 4-bit on a low-memory mac starting from 16GB, a 125B parameter model that would need 100GB+ memory/RAM, thanks to expert-offloading/ssd-streaming. E"
+      "title": "Show HN: Ledge.sh \u2013 Runnable Markdown Notes",
+      "url": "https://ledge.sh",
+      "signal": "199 points \u00b7 88 comments",
+      "snippet": "Hi HN, Ledge is a Markdown notebook that runs shell commands, code, SQL, etc from inside your own notes. I built Ledge because I spend much of my day copy/pasting commands from my notes into the termi"
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: HN.watch \u2013 Videos of all Hacker News posts",
+      "url": "https://hn.watch/",
+      "signal": "219 points \u00b7 97 comments",
+      "snippet": "Hi HN, I\u2019m Per, founder of Scrimba (YC S20). We\u2019ve spent the last decade teaching people how to code with an HTML-based video format. We\u2019ve now plugged an LLM into it, so that people can create explai"
     },
     {
       "source": "show_hn",
@@ -259,6 +252,13 @@
       "url": "https://koi.rest",
       "signal": "228 points \u00b7 65 comments",
       "snippet": "Hi there. My name is Paul. I\u2019m a developer, an explorer and I\u2019ve got ADHD. As of the beginning of August, I\u2019m also unemployed. This last part, along with everything else this past year, has caused me "
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Hacker News, without AI",
+      "url": "https://hcker.news/?ai=exclude",
+      "signal": "207 points \u00b7 85 comments",
+      "snippet": ""
     }
   ]
 }
