@@ -1,157 +1,145 @@
 # Python AI Agents: Build One Tonight Without LangChain Bloat
 
-_Stop fighting 40 layers of framework abstractions. A working ReAct agent is just 30 lines of clean Python._
+_Stop fighting massive frameworks—here is a raw, working loop using standard libraries and OpenAI tools._
 
 ## Scroll-stopping hooks
 
-**Hook 1.** Spent 4 hours debugging LangChain imports last night before realizing a ReAct agent is literally just a while loop and tool calling.
+**Hook 1.** Spent four hours debugging a LangChain abstraction hell last night before deleting the whole folder and writing 40 lines of clean Python.
 
-**Hook 2.** Most tutorials make AI agents look like rocket science. It's just an LLM outputting JSON and your script running Python functions.
+**Hook 2.** Most tutorials make AI agents sound like rocket science, but an agent is literally just a while loop with tool calls.
 
-**Hook 3.** I deleted 300 lines of messy orchestration code at 1am and replaced it with native OpenAI tool calls. Everything instantly worked.
+**Hook 3.** If your agent needs 12 wrapper classes just to search a database, you are overengineering the wrong layer.
 
-**Hook 4.** If you know how to write a Python dictionary and a while loop, you can build an autonomous agent from scratch.
+**Hook 4.** Wrote my first production Python agent at 1 AM because I refused to install a 400MB dependency graph for a basic calculator.
 
-**Hook 5.** Stop downloading massive agent frameworks for side projects. You can write your own in 10 minutes with zero boilerplate.
+**Hook 5.** You don't need a framework to build an autonomous agent—you just need the official OpenAI SDK and Python's inspect module.
 
 ## 7 tips that actually move the needle
 
-### Tip 1. Use pydantic to auto-generate tool schemas instead of writing raw JSON
-_Why it matters:_ It keeps your schemas in sync with your actual Python types without manual schema authoring.
+### Tip 1. Use pydantic to auto-generate JSON schemas from your Python functions
+_Why it matters:_ It eliminates manual schema dicts and prevents subtle type mismatch bugs when the model picks a tool.
 
 ```python
-from pydantic import BaseModel
-class SearchQuery(BaseModel):
-    query: str
+from pydantic import TypeAdapter
+schema = TypeAdapter(my_func).json_schema()
 ```
 
-### Tip 2. Set tool_choice='auto' in the openai SDK to let the model decide when to stop
-_Why it matters:_ The model will automatically return plain text when it finishes executing tools.
+### Tip 2. Map function names directly to callables using a simple dictionary dispatch table
+_Why it matters:_ It avoids ugly, unmaintainable if-elif chains inside your main inference loop.
 
 ```
-response = client.chat.completions.create(
-    model='gpt-4o-mini', messages=msgs, tools=tools, tool_choice='auto'
-)
+tools_map = {'get_weather': get_weather, 'run_query': run_query}
+result = tools_map[tool_name](**tool_args)
 ```
 
-### Tip 3. Implement a hard max_iterations counter in your while loop
-_Why it matters:_ Prevents accidental infinite loops that silently drain your API credits at 2am.
+### Tip 3. Bind tool schemas with openai.pydantic_function_tool for cleaner setups
+_Why it matters:_ The official SDK parses Pydantic models into valid tool definitions in one line.
+
+```python
+from openai import pydantic_function_tool
+tool_def = pydantic_function_tool(SearchInput)
+```
+
+### Tip 4. Enforce a hard max_iterations cap on your execution while loop
+_Why it matters:_ Without an explicit exit counter, an errant LLM will burn your API credits in an infinite call loop.
 
 ```
 for _ in range(5):
-    # run step
+    # run agent step
     if not response.tool_calls: break
 ```
 
-### Tip 4. Map function names to actual callables using a plain Python dict
-_Why it matters:_ Avoids messy if-else chains or unsafe eval() calls when dispatching tool executions.
+### Tip 5. Format execution errors as regular tool output messages instead of throwing exceptions
+_Why it matters:_ Passing the traceback back into the conversation lets the model correct its own mistakes.
 
 ```
-TOOL_MAP = {'get_weather': get_weather, 'run_query': run_query}
-result = TOOL_MAP[fn_name](**fn_args)
+messages.append({'role': 'tool', 'tool_call_id': call.id, 'content': f'Error: {err}'})
 ```
 
-### Tip 5. Pass tool outputs back as role='tool' with the matching tool_call_id
-_Why it matters:_ The API throws a 400 validation error if you fail to pair IDs correctly.
-
-```
-msgs.append({'role': 'tool', 'tool_call_id': tc.id, 'content': str(output)})
-```
-
-### Tip 6. Use tenacity to retry flaky API network calls automatically
-_Why it matters:_ Keeps your agent loop alive through standard OpenAI rate limits and timeouts.
+### Tip 6. Use rich.console to print live tool execution and thoughts during development
+_Why it matters:_ It lets you instantly see when the agent is looping or sending bad arguments without checking logs.
 
 ```python
-from tenacity import retry, stop_after_attempt
-@retry(stop=stop_after_attempt(3))
-def call_llm(msgs): ...
+from rich import print
+print(f'[yellow]Running {tool_name}[/] with {tool_args}')
 ```
 
-### Tip 7. Log message history with rich.pretty instead of standard print
-_Why it matters:_ Shows the exact conversational tree and payloads without unreadable JSON walls.
+### Tip 7. Track total token counts after each iteration using response.usage
+_Why it matters:_ Tool-heavy agent loops can blow past context limits in just three or four turns.
 
-```python
-from rich import print as rprint
-rprint(messages)
+```
+prompt_tokens += response.usage.prompt_tokens
 ```
 
 ## Step-by-step procedure
 
-### 1. Install the official OpenAI package
-Keep dependencies lean — you only need the official client to run full agents.
+### 1. Install the official OpenAI and Pydantic packages
+Keep your environment clean—avoid monolithic wrapper libraries that hide API mechanics.
 
 ```python
-pip install openai
+pip install openai pydantic
 ```
 
-### 2. Define a real Python function and its tool schema
-Write the tool your agent will execute and define the structure OpenAI expects.
+### 2. Define a plain Python tool function and its schema
+Write the function that performs the action and define its inputs using standard type hints.
 
 ```python
-def get_time(): return '01:15 AM IST'
-
-tools = [{'type': 'function', 'function': {'name': 'get_time', 'description': 'Gets current time'}}]
+def add_numbers(a: int, b: int) -> int:
+    return a + b
 ```
 
-### 3. Initialize your message history and client
-Set up your system prompt and wrap the conversation in a standard list.
+### 3. Register the tool definition with the OpenAI tool format
+Pass the JSON schema so the model knows what arguments it needs to extract.
 
-```python
-from openai import OpenAI
-client = OpenAI()
-messages = [{'role': 'user', 'content': 'What time is it right now?'}]
+```
+tools = [{'type': 'function', 'function': {'name': 'add_numbers', 'parameters': {'type': 'object', 'properties': {'a': {'type': 'integer'}, 'b': {'type': 'integer'}}, 'required': ['a', 'b']}}}]
 ```
 
-### 4. Write the execution loop
-Call the model, check for tool calls, execute the mapped function, and append the result.
+### 4. Build the while loop to handle tool executions
+Send messages to the model, parse tool calls, execute your local function, and append the result.
 
 ```
 response = client.chat.completions.create(model='gpt-4o-mini', messages=messages, tools=tools)
-msg = response.choices[0].message
-messages.append(msg)
-if msg.tool_calls:
-    messages.append({'role': 'tool', 'tool_call_id': msg.tool_calls[0].id, 'content': get_time()})
 ```
 
-### 5. Run the second pass to verify the final answer
-Send the updated message history back to the model to generate the final human-readable response.
+### 5. Run the script with a prompt that requires calculation
+Test the pipeline with a prompt like 'What is 143 plus 928?' and confirm the function executes locally before the final answer prints.
 
-```python
-final = client.chat.completions.create(model='gpt-4o-mini', messages=messages)
-print(final.choices[0].message.content)
+```
+python agent.py
 ```
 
 ## The mistake almost everyone makes
 
-> ⚠️  Forgetting to append the assistant's initial response containing the `tool_calls` object to the message array before appending the tool results. The API will reject the request because the tool response has no parent call to reference.
+> ⚠️  Forgetting to send the assistant message containing the tool_calls list back to the API before sending the tool response, which triggers an immediate 400 Bad Request error. Fix it by appending the raw assistant response message to your history first.
 
 ## X / Twitter thread (copy-paste ready)
 
-**1/** You don't need a heavy framework to build an AI agent in Python. Here is the entire architecture in 4 tweets.
+**1/** You don't need a massive framework to build an AI agent in Python. Here is the actual architecture in 6 tweets.
 
-**2/** Most agent frameworks wrap standard API calls in 10 layers of abstractions. Last night I stripped them all away. Here's what's actually under the hood.
+**2/** Wasted 3 hours last night fighting dependency hell. Agents aren't magic—they are just a while loop passing JSON back and forth with an LLM.
 
-**3/** 1. Define plain Python functions and map their names to an execution dict: `RUNNERS = {'search': search_db}`.
+**3/** 1. Define plain Python functions for tools and map them in a dictionary: `tools_map = {'search': search_fn}`. No wrapper classes needed.
 
-**4/** 2. Send your tools array to `client.chat.completions.create()`. If `message.tool_calls` exists, the LLM is requesting a function run.
+**4/** 2. Pass the JSON schema to OpenAI. When `response.choices[0].message.tool_calls` appears, parse the arguments using `json.loads`.
 
-**5/** 3. Execute the function locally, push the return value back with `role: 'tool'`, and call the API one more time for the final answer.
+**5/** 3. Execute the function locally and push the result back into `messages` with role='tool'. Catch errors and pass the string back so the LLM can self-heal.
 
-**6/** That's literally the whole loop. No bloat, no magic, complete control. Go build something cool tonight.
+**6/** Put a `max_steps=5` guardrail on your loop so you don't burn cash. Try building one from scratch tonight—it takes 40 lines of code.
 
 ## LinkedIn version
 
-It was 1:00 AM last night when I finally got fed up with agent frameworks.
+At 1 AM last night, I had 14 browser tabs open trying to figure out why an agent library kept swallowing my exceptions inside an opaque execution chain.
 
-I was debugging a broken dependency chain inside a massive library just to get an LLM to call a simple database query. It felt like using a sledgehammer to crack a peanut.
+I got annoyed, deleted the virtualenv, and decided to build the agent from scratch using just the official OpenAI client and native Python.
 
-So I threw out the dependencies, opened an empty script, and wrote the raw agent loop myself. Guess what? It took about 35 lines of vanilla Python.
+Turns out, a practical AI agent is roughly 40 lines of code. It is an LLM call inside a while loop. If the model returns tool calls, you run your local functions, append the results to the message history, and call the model again. If it returns text, you break the loop.
 
-At its core, an agent isn't magic. It's just an LLM returning structured JSON with a function name, your script running that function, and feeding the output back into the message array until the model decides it has enough context to answer.
+You don't need heavyweight abstractions that hide what is actually going on. Writing the raw loop gives you full control over error handling, token tracking, and tool execution security.
 
-Before you reach for a 50k-star orchestration framework for your next side project, build the loop from scratch once. You'll actually understand your error logs, your code won't break on every minor release, and you won't lose half your night to dependency hell.
+Once you build one manually, the magic evaporates and you're left with an inspectable, reliable automation tool.
 
-#python #ai #softwareengineering #coding #developers
+#python #softwareengineering #ai #automation #developers
 
 _Tags: python, aiagents, openai, coding_
 
