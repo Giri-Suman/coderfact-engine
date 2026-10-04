@@ -1,14 +1,11 @@
 {
   "topics": [
-    "Mermaid vs Reladraw: Why Mermaid Breaks Large Architecture Diagrams",
-    "AI Agent Canvas Loop: I Built It in Python in 1 Hour With Code",
-    "Apple Wallet Automation Python: Stop Generating Passes Manually"
+    "DIY E-Ink Dashboard in Python: I Built an Open-Source Bike Computer",
+    "AI Agent Budget Caps in Python: How I Stopped Runaway API Costs",
+    "Reladraw Diagram Syntax Fixed Why Auto-Layout Broke My Architecture Charts"
   ],
-  "date": "October 03, 2026",
+  "date": "October 04, 2026",
   "title_history": [
-    "Vibe coding tutorial: I built a $19 SaaS in 11 hours with Cursor",
-    "LangGraph Python tutorial: I replaced my morning news with an AI agent",
-    "GitHub Actions not working? How I fixed a silent fail in 3 hours",
     "This In-Browser AI Agent Saved Me $180/Month in 90 Lines of JavaScript",
     "Vibe Coding Cursor Claude: I Built a Wasm Canvas in 48 Hours",
     "Cactus Needle LLM: Stop Paying API Fees for Support Triage in Python",
@@ -35,115 +32,114 @@
     "Git 3.0 SHA256 Migration: Why It Breaks Your CI/CD (And How to Fix It)",
     "Mermaid vs Reladraw: Why Mermaid Breaks Large Architecture Diagrams",
     "AI Agent Canvas Loop: I Built It in Python in 1 Hour With Code",
-    "Apple Wallet Automation Python: Stop Generating Passes Manually"
+    "Apple Wallet Automation Python: Stop Generating Passes Manually",
+    "DIY E-Ink Dashboard in Python: I Built an Open-Source Bike Computer",
+    "AI Agent Budget Caps in Python: How I Stopped Runaway API Costs",
+    "Reladraw Diagram Syntax Fixed Why Auto-Layout Broke My Architecture Charts"
   ],
   "last_update_id": 70323306,
   "virality_data": [
     {
-      "topic": "Diagram-as-Code Architecture: Why I Switched from Mermaid to Declarative Canvas Positioning",
-      "category": "G",
-      "category_name": "Software Architecture Insight",
-      "virality_score": 89,
-      "analysis": "Developers are notoriously frustrated with auto-layout diagram tools like Mermaid and Graphviz randomly shifting node positions on single-line edits. With Reladraw trending on Hacker News, there is surging interest in declarative diagram systems where developers maintain explicit spatial control in markdown. This post provides an architecture deep-dive comparing layout engine tradeoffs with practical code snippets that readers can adopt immediately.",
+      "topic": "Building an E-Ink Bike Computer with OpenTrailPaper and Python GPS parser",
+      "category": "A",
+      "category_name": "Developer Success Story",
+      "virality_score": 91,
+      "analysis": "Hardware-software DIY builder stories paired with open-source code generate exceptional bookmark rates and claps on Medium. The OpenTrailPaper project gained massive traction on Hacker News (424 points) demonstrating strong dev interest in readable, battery-efficient e-ink displays. This post delivers a concrete step-by-step walkthrough of compiling and running an open-source e-ink dashboard for real-time telemetry.",
       "cross_source_signals": [
-        "Hacker News: Reladraw trending with 411 points and 119 comments",
-        "GitHub: reladraw/reladraw repo spiking in star velocity",
-        "Dev Community: Repeated discussions on diagram maintainability in documentation"
+        "Hacker News Show HN: Open-Source eInk Bike Computer (424 points, 134 comments)",
+        "GitHub: opentrailpaper repository activity spike",
+        "Reddit r/raspberry_pi: High demand for sunlight-readable e-ink displays"
+      ],
+      "developer_pain": "medium",
+      "freshness": "new",
+      "money_angle": "Replacing commercial $400 Garmin computers with a $45 open-source build",
+      "story_angle": "Frustrated with unreadable LCD bike computers draining in 3 hours under bright sunlight, I built a sunlight-readable e-ink navigation unit in a weekend.",
+      "suman_angle": "How I Built an Open-Source E-Ink Bike Computer in a Weekend (Full Build & Code)",
+      "target_keywords": [
+        "open source eink bike computer",
+        "diy e-ink dashboard python",
+        "opentrailpaper build guide"
+      ],
+      "competing_articles": "Most e-ink articles focus on static art frames, whereas this provides a practical, low-power GPS and route tracking device with real code.",
+      "real_story_evidence": [
+        {
+          "source": "Hacker News (Show HN)",
+          "title": "Show HN: Open-Source eInk Bike Computer",
+          "url": "https://opentrailpaper.com",
+          "what_to_cite": "Cite the author's open-source architecture that optimizes e-ink refresh rates and battery life for dynamic trail navigation."
+        }
+      ]
+    },
+    {
+      "topic": "Superpowers Agent Framework: Adding Agentic Skills and Hard Budget Caps to Local Workflows",
+      "category": "C",
+      "category_name": "AI Agents & Multi-Agent Workflows",
+      "virality_score": 93,
+      "analysis": "Agentic development frameworks and runaway LLM billing are the top two trending topics on Hacker News and GitHub this week. The emergence of 'superpowers' skills methodology combined with Simon Willison's call for hard budget caps provides the perfect technical sweet spot. This article shows developers how to implement deterministic agent capabilities with strict token and monetary guardrails.",
+      "cross_source_signals": [
+        "GitHub: obra/superpowers trending agentic skills repository (295k score cluster)",
+        "Hacker News: We're going to need default hard budget caps on pretty much everything (406 points, 203 comments)",
+        "GitHub: mattpocock/skills and affaan-m/ECC surging in agent tooling"
       ],
       "developer_pain": "high",
       "freshness": "breaking",
-      "money_angle": "",
-      "story_angle": "After spending 45 minutes fixing a Mermaid graph that jumbled our microservices topology after a one-line PR, I replaced our architecture docs with a coordinate-aware declarative syntax.",
-      "suman_angle": "Why I Replaced Mermaid with Declarative Canvas Code in Our Architecture Docs (And Saved Hours of Refactoring)",
+      "money_angle": "Preventing surprise $500 LLM API bills with programmatic hard caps and execution budgets",
+      "story_angle": "After a runaway autonomous agent burned $80 in loops overnight, I rebuilt my agent architecture using modular skills and hard budget caps.",
+      "suman_angle": "Building Safe AI Agents: How I Added Hard Budget Caps and Modular Skills in Python (Full Code)",
       "target_keywords": [
-        "mermaid vs reladraw",
-        "diagram as code tutorial",
-        "software architecture diagrams",
-        "system design documentation"
+        "superpowers agent framework",
+        "ai agent budget cap python",
+        "agentic skills methodology"
       ],
-      "competing_articles": "Most diagram-as-code posts are basic Mermaid syntax overviews; this article breaks down layout algorithm trade-offs and spatial state management for complex architectures.",
+      "competing_articles": "Most agent tutorials give infinite execution loops without cost containment; this article focuses on robust skills loading with fail-safe financial cutoffs.",
+      "real_story_evidence": [
+        {
+          "source": "Hacker News",
+          "title": "We're going to need default hard budget caps on pretty much everything",
+          "url": "https://simonwillison.net/2026/Oct/3/default-hard-budget-caps/",
+          "what_to_cite": "Cite Simon Willison's warning about agentic tooling requiring default non-negotiable spend ceilings."
+        },
+        {
+          "source": "GitHub",
+          "title": "obra/superpowers An agentic skills framework & software development methodology that works.",
+          "url": "https://github.com/obra/superpowers",
+          "what_to_cite": "Reference the structured .agents skills framework pattern for deterministic sub-tasks."
+        }
+      ]
+    },
+    {
+      "topic": "Replacing Heavy Diagram Generators with Reladraw Relative Layout Syntax",
+      "category": "G",
+      "category_name": "Software Architecture Insight",
+      "virality_score": 86,
+      "analysis": "Architecture documentation is a perennial pain point because auto-layout tools like Graphviz/Mermaid jumble complex topologies when diagrams grow. Reladraw surfaced on HN with 411 points by offering explicit relative placement control without brittle pixel coordinates. This post analyzes the architectural trade-offs between dynamic graph auto-layout and declarative relative positioning.",
+      "cross_source_signals": [
+        "Hacker News Show HN: Reladraw (411 points, 119 comments)",
+        "GitHub: reladraw/reladraw codebase release",
+        "Reddit r/softwarearchitecture: Ongoing discussions on reproducible architecture as code"
+      ],
+      "developer_pain": "medium",
+      "freshness": "new",
+      "money_angle": "",
+      "story_angle": "Every time our backend microservices expanded, Mermaid re-rendered our architecture diagrams into an unreadable knot\u2014until we swapped to relative layout syntax.",
+      "suman_angle": "Why Auto-Layout Broke Our System Architecture Diagrams (And How Relative Syntax Fixed Them)",
+      "target_keywords": [
+        "reladraw diagram syntax",
+        "architecture as code diagramming",
+        "mermaid alternatives relative layout"
+      ],
+      "competing_articles": "Generic comparison posts rehash Graphviz vs PlantUML; this provides an in-depth code migration showing how relative positioning scales in production docs.",
       "real_story_evidence": [
         {
           "source": "Hacker News (Show HN)",
           "title": "Show HN: Reladraw \u2013 A diagram language where you decide where to place things",
           "url": "https://github.com/reladraw/reladraw",
-          "what_to_cite": "Cite the community pain point around auto-placement engines breaking complex technical diagrams and the 411-point HN reception."
-        }
-      ]
-    },
-    {
-      "topic": "Building an Autonomous Canvas Agent: Orchestrating LLM Tool-Calling with Visual Feedback Loops",
-      "category": "C",
-      "category_name": "AI Agents & Multi-Agent Workflows",
-      "virality_score": 92,
-      "analysis": "Visual feedback loops for AI agents represent the cutting-edge frontier of agentic development in late 2026. Inspired by the Opus 5.5 simulated paint canvas project trending at #1 on Hacker News, this article shows how to build an agent loop that issues drawing/layout primitives, evaluates visual state diffs, and self-corrects. Concrete implementation code gives readers an actionable blueprint beyond standard text-based chatbot agents.",
-      "cross_source_signals": [
-        "Hacker News: 'Giving Opus 5.5 a simulated paint canvas' hit 270 points and 88 comments",
-        "GitHub: obra/superpowers and agentic skill frameworks surging",
-        "Product Hunt: High ranking for visual agent interfaces"
-      ],
-      "developer_pain": "medium",
-      "freshness": "breaking",
-      "money_angle": "",
-      "story_angle": "I built a Python orchestration agent that renders UI elements to a headless canvas, reads pixel state diffs via multimodal feedback, and self-corrects bad layouts in under 120 lines.",
-      "suman_angle": "I Built a Self-Correcting UI Agent with a Headless Canvas Loop in 120 Lines of Python",
-      "target_keywords": [
-        "ai agent canvas loop",
-        "multimodal tool calling python",
-        "build visual ai agent",
-        "langchain multimodal feedback"
-      ],
-      "competing_articles": "Most agent articles focus purely on terminal shell commands or text scraping; this post provides an end-to-end multimodal perception-action feedback loop.",
-      "real_story_evidence": [
-        {
-          "source": "Hacker News (Show HN)",
-          "title": "Show HN: Giving Opus 5.5 a simulated paint canvas",
-          "url": "https://stillwet.art/",
-          "what_to_cite": "Reference how giving LLMs direct simulation canvas environments unlocks emergent layout and spatial correction behaviors (270 points on HN)."
-        }
-      ]
-    },
-    {
-      "topic": "Automating Customer Onboarding: How I Built a Local PassKit Pipeline to Generate Apple Wallet Passes",
-      "category": "D",
-      "category_name": "AI Automation Across Domains",
-      "virality_score": 87,
-      "analysis": "Apple recently opened up Pass Designer, driving massive interest among developers and small businesses wanting to automate membership cards, tickets, and loyalty passes without paying SaaS middleman markups. This tutorial demonstrates how to connect customer webhook triggers to an automated Python PassKit generator that signs .pkpass bundles automatically. It directly targets developers seeking business workflow automation beyond typical webhooks.",
-      "cross_source_signals": [
-        "Hacker News: Apple Pass Designer launch with 405 points and 248 comments",
-        "Apple Developer Portal: High developer traffic on pass creation toolkits",
-        "Reddit r/SaaS: High demand for custom Apple Wallet automation"
-      ],
-      "developer_pain": "high",
-      "freshness": "breaking",
-      "money_angle": "Replaces third-party pass generation SaaS tools charging $0.05/pass or $99/month with a free automated backend script.",
-      "story_angle": "Tired of paying a $49/month SaaS just to generate Apple Wallet event passes, I built an automated backend script using Apple's new pass guidelines that signs and emails .pkpass files instantly.",
-      "suman_angle": "How I Automated Apple Wallet Pass Generation in Python (And Canceled a $49/mo SaaS)",
-      "target_keywords": [
-        "apple wallet automation python",
-        "generate pkpass backend",
-        "passkit automated pipeline",
-        "apple pass designer tutorial"
-      ],
-      "competing_articles": "Most Apple Wallet tutorials are outdated iOS Swift guides; this post teaches full-stack automation via backend Python scripting and webhooks.",
-      "real_story_evidence": [
-        {
-          "source": "Hacker News",
-          "title": "Apple Pass Designer",
-          "url": "https://developer.apple.com/pass-designer/",
-          "what_to_cite": "Cite Apple's official web-based Pass Designer tooling release that simplifies JSON pass schemas (405 points, 248 comments on HN)."
+          "what_to_cite": "Cite the author's benchmark on why auto-placement engines break mental models in multi-tier system diagrams."
         }
       ]
     }
   ],
   "success_stories": [
-    {
-      "source": "show_hn",
-      "title": "Show HN: Giving Opus 5.5 a simulated paint canvas",
-      "url": "https://stillwet.art/",
-      "signal": "270 points \u00b7 88 comments",
-      "snippet": ""
-    },
     {
       "source": "show_hn",
       "title": "Show HN: An e-ink frame that hears birds and draws them as 1800s illustrations",
@@ -160,17 +156,17 @@
     },
     {
       "source": "show_hn",
+      "title": "Show HN: Giving Opus 5.5 a simulated paint canvas",
+      "url": "https://stillwet.art/",
+      "signal": "378 points \u00b7 110 comments",
+      "snippet": ""
+    },
+    {
+      "source": "show_hn",
       "title": "Show HN: What if the speed of light was 5 km/h?",
       "url": "https://rivendell.dmitrybrant.com/relativity/",
       "signal": "633 points \u00b7 290 comments",
       "snippet": "I've always wanted to make a visualization where the speed of light was scaled down to human speeds, so that we could intuit relativistic effects with everyday objects. Here is the first version of it"
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: Real-time Solar System with 526k asteroids and all tracked satellites",
-      "url": "https://space.bl2.net/",
-      "signal": "402 points \u00b7 110 comments",
-      "snippet": ""
     },
     {
       "source": "show_hn",
@@ -185,6 +181,13 @@
       "url": "https://github.com/devdotfast/whiteboard",
       "signal": "424 points \u00b7 142 comments",
       "snippet": "Hello! We\u2019re Sid, Alex, Ketan, and Milan. We\u2019re building Whiteboard (https://whiteboard.dev.fast/), an open-source desktop app where humans and agents can architect software together in a common works"
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Real-time Solar System with 526k asteroids and all tracked satellites",
+      "url": "https://space.bl2.net/",
+      "signal": "406 points \u00b7 112 comments",
+      "snippet": ""
     },
     {
       "source": "show_hn",
@@ -209,17 +212,17 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Lofi Cities \u2013 Pixel-art city nights with browser-generated lofi",
-      "url": "https://loficities.com/",
-      "signal": "317 points \u00b7 138 comments",
-      "snippet": ""
-    },
-    {
-      "source": "show_hn",
       "title": "Show HN: Bodily Oddities",
       "url": "https://vester.si/bodily-oddities/",
       "signal": "341 points \u00b7 216 comments",
       "snippet": "When I was about 11 years old, my best friend and I were playing during recess at school, and I was carrying him around on my back, presumably pretending to be a multipart attack robot. All of a sudde"
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Lofi Cities \u2013 Pixel-art city nights with browser-generated lofi",
+      "url": "https://loficities.com/",
+      "signal": "319 points \u00b7 138 comments",
+      "snippet": ""
     },
     {
       "source": "show_hn",
@@ -265,16 +268,16 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: HN.watch \u2013 Videos of all Hacker News posts",
-      "url": "https://hn.watch/",
-      "signal": "221 points \u00b7 97 comments",
-      "snippet": "Hi HN, I\u2019m Per, founder of Scrimba (YC S20). We\u2019ve spent the last decade teaching people how to code with an HTML-based video format. We\u2019ve now plugged an LLM into it, so that people can create explai"
-    },
-    {
-      "source": "show_hn",
       "title": "Show HN: Hacker News, without AI",
       "url": "https://hcker.news/?ai=exclude",
       "signal": "207 points \u00b7 85 comments",
+      "snippet": ""
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Hacker News, Without AI",
+      "url": "https://www.unslop.news/",
+      "signal": "198 points \u00b7 82 comments",
       "snippet": ""
     }
   ]
