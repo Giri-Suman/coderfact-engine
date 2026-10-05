@@ -1,14 +1,11 @@
 {
   "topics": [
-    "DIY E-Ink Dashboard in Python: I Built an Open-Source Bike Computer",
-    "AI Agent Budget Caps in Python: How I Stopped Runaway API Costs",
-    "Reladraw Diagram Syntax Fixed Why Auto-Layout Broke My Architecture Charts"
+    "Claude Code Setup: How I Configured Garry Tan\u2019s 23-Tool Vibe Coding Loop",
+    "Lazy Coding Agent: I Built a 90-Line Python Tool That Writes 80% Less Code",
+    "Whiteboard IDE: How We Built a Viral Open-Source Desktop App"
   ],
-  "date": "October 04, 2026",
+  "date": "October 05, 2026",
   "title_history": [
-    "This In-Browser AI Agent Saved Me $180/Month in 90 Lines of JavaScript",
-    "Vibe Coding Cursor Claude: I Built a Wasm Canvas in 48 Hours",
-    "Cactus Needle LLM: Stop Paying API Fees for Support Triage in Python",
     "Block AI YouTube videos: I built a $1.99 Safari extension in 48 hours",
     "LLM tool calling simplified: How I built a local Python agent with .agents",
     "Python in WebAssembly cut my serverless GPU compute bill from $300 to $0",
@@ -35,106 +32,111 @@
     "Apple Wallet Automation Python: Stop Generating Passes Manually",
     "DIY E-Ink Dashboard in Python: I Built an Open-Source Bike Computer",
     "AI Agent Budget Caps in Python: How I Stopped Runaway API Costs",
-    "Reladraw Diagram Syntax Fixed Why Auto-Layout Broke My Architecture Charts"
+    "Reladraw Diagram Syntax Fixed Why Auto-Layout Broke My Architecture Charts",
+    "Claude Code Setup: How I Configured Garry Tan\u2019s 23-Tool Vibe Coding Loop",
+    "Lazy Coding Agent: I Built a 90-Line Python Tool That Writes 80% Less Code",
+    "Whiteboard IDE: How We Built a Viral Open-Source Desktop App"
   ],
   "last_update_id": 70323306,
   "virality_data": [
     {
-      "topic": "Building an E-Ink Bike Computer with OpenTrailPaper and Python GPS parser",
-      "category": "A",
-      "category_name": "Developer Success Story",
-      "virality_score": 91,
-      "analysis": "Hardware-software DIY builder stories paired with open-source code generate exceptional bookmark rates and claps on Medium. The OpenTrailPaper project gained massive traction on Hacker News (424 points) demonstrating strong dev interest in readable, battery-efficient e-ink displays. This post delivers a concrete step-by-step walkthrough of compiling and running an open-source e-ink dashboard for real-time telemetry.",
+      "topic": "I Configured Garry Tan's gstack Setup: How 23 Opinionated Claude Code Tools Changed My Dev Loop",
+      "category": "B",
+      "category_name": "Vibe Coding / AI-Assisted Workflow",
+      "virality_score": 94,
+      "analysis": "Claude Code and terminal-based AI agents are dominating developer mindshare in late 2026. Garry Tan's gstack repository recently went viral, and showing a practical walkthrough of setting up these 23 tools for vibe coding is highly actionable. This bridges the gap between high-level AI hype and terminal-level execution.",
       "cross_source_signals": [
-        "Hacker News Show HN: Open-Source eInk Bike Computer (424 points, 134 comments)",
-        "GitHub: opentrailpaper repository activity spike",
-        "Reddit r/raspberry_pi: High demand for sunlight-readable e-ink displays"
-      ],
-      "developer_pain": "medium",
-      "freshness": "new",
-      "money_angle": "Replacing commercial $400 Garmin computers with a $45 open-source build",
-      "story_angle": "Frustrated with unreadable LCD bike computers draining in 3 hours under bright sunlight, I built a sunlight-readable e-ink navigation unit in a weekend.",
-      "suman_angle": "How I Built an Open-Source E-Ink Bike Computer in a Weekend (Full Build & Code)",
-      "target_keywords": [
-        "open source eink bike computer",
-        "diy e-ink dashboard python",
-        "opentrailpaper build guide"
-      ],
-      "competing_articles": "Most e-ink articles focus on static art frames, whereas this provides a practical, low-power GPS and route tracking device with real code.",
-      "real_story_evidence": [
-        {
-          "source": "Hacker News (Show HN)",
-          "title": "Show HN: Open-Source eInk Bike Computer",
-          "url": "https://opentrailpaper.com",
-          "what_to_cite": "Cite the author's open-source architecture that optimizes e-ink refresh rates and battery life for dynamic trail navigation."
-        }
-      ]
-    },
-    {
-      "topic": "Superpowers Agent Framework: Adding Agentic Skills and Hard Budget Caps to Local Workflows",
-      "category": "C",
-      "category_name": "AI Agents & Multi-Agent Workflows",
-      "virality_score": 93,
-      "analysis": "Agentic development frameworks and runaway LLM billing are the top two trending topics on Hacker News and GitHub this week. The emergence of 'superpowers' skills methodology combined with Simon Willison's call for hard budget caps provides the perfect technical sweet spot. This article shows developers how to implement deterministic agent capabilities with strict token and monetary guardrails.",
-      "cross_source_signals": [
-        "GitHub: obra/superpowers trending agentic skills repository (295k score cluster)",
-        "Hacker News: We're going to need default hard budget caps on pretty much everything (406 points, 203 comments)",
-        "GitHub: mattpocock/skills and affaan-m/ECC surging in agent tooling"
+        "GitHub: garrytan/gstack trending with 135k+ engagement score",
+        "Hacker News: High interest in Claude Code workflows",
+        "Reddit r/LocalLLaMA: Active discussions on terminal-based agent tools"
       ],
       "developer_pain": "high",
       "freshness": "breaking",
-      "money_angle": "Preventing surprise $500 LLM API bills with programmatic hard caps and execution budgets",
-      "story_angle": "After a runaway autonomous agent burned $80 in loops overnight, I rebuilt my agent architecture using modular skills and hard budget caps.",
-      "suman_angle": "Building Safe AI Agents: How I Added Hard Budget Caps and Modular Skills in Python (Full Code)",
+      "money_angle": "Saved $1,200/month in senior contractor fees by automating local codebase refactoring",
+      "story_angle": "I spent a weekend replacing my complex VS Code extension stack with Garry Tan's terminal-based gstack setup to see if it actually lives up to the hype.",
+      "suman_angle": "How I Configured Garry Tan's gstack Setup: My New 23-Tool Claude Code Workflow for Vibe Coding",
       "target_keywords": [
-        "superpowers agent framework",
-        "ai agent budget cap python",
-        "agentic skills methodology"
+        "gstack claude",
+        "claude code setup",
+        "vibe coding tools",
+        "garry tan stack"
       ],
-      "competing_articles": "Most agent tutorials give infinite execution loops without cost containment; this article focuses on robust skills loading with fail-safe financial cutoffs.",
+      "competing_articles": "Most articles just mention Claude Code generally, but none provide a step-by-step setup of the opinionated gstack toolchain for real-world projects.",
       "real_story_evidence": [
         {
-          "source": "Hacker News",
-          "title": "We're going to need default hard budget caps on pretty much everything",
-          "url": "https://simonwillison.net/2026/Oct/3/default-hard-budget-caps/",
-          "what_to_cite": "Cite Simon Willison's warning about agentic tooling requiring default non-negotiable spend ceilings."
-        },
-        {
           "source": "GitHub",
-          "title": "obra/superpowers An agentic skills framework & software development methodology that works.",
-          "url": "https://github.com/obra/superpowers",
-          "what_to_cite": "Reference the structured .agents skills framework pattern for deterministic sub-tasks."
+          "title": "garrytan/gstack Use Garry Tan's exact Claude Code setup",
+          "url": "https://github.com/garrytan/gstack",
+          "what_to_cite": "The repository provides 23 opinionated tools that serve as CEO, Designer, and Engineer helpers inside the Claude Code CLI environment."
         }
       ]
     },
     {
-      "topic": "Replacing Heavy Diagram Generators with Reladraw Relative Layout Syntax",
-      "category": "G",
-      "category_name": "Software Architecture Insight",
-      "virality_score": 86,
-      "analysis": "Architecture documentation is a perennial pain point because auto-layout tools like Graphviz/Mermaid jumble complex topologies when diagrams grow. Reladraw surfaced on HN with 411 points by offering explicit relative placement control without brittle pixel coordinates. This post analyzes the architectural trade-offs between dynamic graph auto-layout and declarative relative positioning.",
+      "topic": "Building a Lazier AI Agent: Implementing 'ponytail' and 'agent-skills' for Minimalist Codebases",
+      "category": "C",
+      "category_name": "AI Agents & Multi-Agent Workflows",
+      "virality_score": 92,
+      "analysis": "Developers are tired of AI agents writing 500-line bloated PRs. This topic combines the trending 'ponytail' philosophy (making agents write the absolute minimum code) with Addy Osmani's 'agent-skills' library. It provides a highly practical, concrete implementation of production-grade agent engineering.",
       "cross_source_signals": [
-        "Hacker News Show HN: Reladraw (411 points, 119 comments)",
-        "GitHub: reladraw/reladraw codebase release",
-        "Reddit r/softwarearchitecture: Ongoing discussions on reproducible architecture as code"
+        "GitHub: DietrichGebert/ponytail trending",
+        "GitHub: addyosmani/agent-skills trending",
+        "Hacker News: Intense discussion on AI code bloat"
+      ],
+      "developer_pain": "high",
+      "freshness": "breaking",
+      "money_angle": "",
+      "story_angle": "I got tired of my AI agent writing 300-line PRs for simple bug fixes, so I rebuilt its core loop using ponytail and agent-skills to force it to think like a lazy senior developer.",
+      "suman_angle": "How I Built a 'Lazy' AI Agent in 90 Lines of Python That Writes 80% Less Code (And Actually Works)",
+      "target_keywords": [
+        "ai agent skills",
+        "lazy coding agent",
+        "ponytail github",
+        "agent-skills tutorial"
+      ],
+      "competing_articles": "Existing agent tutorials focus on generating massive amounts of code; this is the first tutorial focusing on constraint-based, minimalist agent design.",
+      "real_story_evidence": [
+        {
+          "source": "GitHub",
+          "title": "DietrichGebert/ponytail Makes your AI agent think like the laziest senior dev in the room.",
+          "url": "https://github.com/DietrichGebert/ponytail",
+          "what_to_cite": "The project focuses on making agents write minimal code because the best code is the code that was never written."
+        },
+        {
+          "source": "GitHub",
+          "title": "addyosmani/agent-skills Production-grade engineering skills for AI coding agents.",
+          "url": "https://github.com/addyosmani/agent-skills",
+          "what_to_cite": "Provides production-ready, discrete skills that can be injected directly into LLM agent execution loops."
+        }
+      ]
+    },
+    {
+      "topic": "Why We Built Whiteboard: The Journey to Launching an Open-Source Desktop IDE for Thoughtful Software Design",
+      "category": "A",
+      "category_name": "Developer Success Story",
+      "virality_score": 89,
+      "analysis": "Medium's builder community loves raw, behind-the-scenes stories of launching alternative IDEs. Whiteboard (YC W26) recently launched to massive acclaim on Hacker News. Analyzing their open-source desktop architecture and design choices offers high value to developers interested in building desktop software.",
+      "cross_source_signals": [
+        "Hacker News: Whiteboard (YC W26) launch post received 424 points",
+        "GitHub: devdotfast/whiteboard trending"
       ],
       "developer_pain": "medium",
-      "freshness": "new",
-      "money_angle": "",
-      "story_angle": "Every time our backend microservices expanded, Mermaid re-rendered our architecture diagrams into an unreadable knot\u2014until we swapped to relative layout syntax.",
-      "suman_angle": "Why Auto-Layout Broke Our System Architecture Diagrams (And How Relative Syntax Fixed Them)",
+      "freshness": "breaking",
+      "money_angle": "Secured YC W26 backing by rethinking the traditional text-grid IDE layout",
+      "story_angle": "When Sid, Alex, Ketan, and Milan realized that traditional IDEs restrict visual software architecture planning, they decided to build an open-source visual desktop IDE.",
+      "suman_angle": "Inside Whiteboard (YC W26): How Four Devs Built a Viral Open-Source Visual IDE",
       "target_keywords": [
-        "reladraw diagram syntax",
-        "architecture as code diagramming",
-        "mermaid alternatives relative layout"
+        "whiteboard ide",
+        "open source desktop app",
+        "visual programming environment",
+        "yc w26"
       ],
-      "competing_articles": "Generic comparison posts rehash Graphviz vs PlantUML; this provides an in-depth code migration showing how relative positioning scales in production docs.",
+      "competing_articles": "Most coverage of new IDEs is superficial; this article dives deep into the actual desktop architecture and the exact pain points of visual-first software design.",
       "real_story_evidence": [
         {
           "source": "Hacker News (Show HN)",
-          "title": "Show HN: Reladraw \u2013 A diagram language where you decide where to place things",
-          "url": "https://github.com/reladraw/reladraw",
-          "what_to_cite": "Cite the author's benchmark on why auto-placement engines break mental models in multi-tier system diagrams."
+          "title": "Show HN: Whiteboard (YC W26) \u2013 An open-source IDE for thoughtful software design",
+          "url": "https://github.com/devdotfast/whiteboard",
+          "what_to_cite": "Built by Sid, Alex, Ketan, and Milan as an open-source desktop application where developers can visually structure code."
         }
       ]
     }
@@ -151,15 +153,15 @@
       "source": "show_hn",
       "title": "Show HN: Make cursed fonts like Times New Bastard",
       "url": "https://bastardica.mitpit.com",
-      "signal": "862 points \u00b7 123 comments",
+      "signal": "862 points \u00b7 126 comments",
       "snippet": "A joke tool that abuses OpenType's ligature feature to mix fonts. It works pretty fast on client-side by loading Python in WASM."
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Giving Opus 5.5 a simulated paint canvas",
-      "url": "https://stillwet.art/",
-      "signal": "378 points \u00b7 110 comments",
-      "snippet": ""
+      "title": "Show HN: Glash\u00fctte Trash Clock \u2013 A 30-minute pendulum clock made from trash",
+      "url": "https://niklasroy.com/gtc/",
+      "signal": "199 points \u00b7 29 comments",
+      "snippet": "This is a functional 30-minute pendulum clock entirely from discarded materials\u2014cardboard, zip ties, tape, a yardstick, and a paperclip escapement, built in the German Eldorado of precision watchmakin"
     },
     {
       "source": "show_hn",
@@ -177,31 +179,31 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Whiteboard (YC W26) \u2013 An open-source IDE for thoughtful software design",
-      "url": "https://github.com/devdotfast/whiteboard",
-      "signal": "424 points \u00b7 142 comments",
-      "snippet": "Hello! We\u2019re Sid, Alex, Ketan, and Milan. We\u2019re building Whiteboard (https://whiteboard.dev.fast/), an open-source desktop app where humans and agents can architect software together in a common works"
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: Real-time Solar System with 526k asteroids and all tracked satellites",
-      "url": "https://space.bl2.net/",
-      "signal": "406 points \u00b7 112 comments",
+      "title": "Show HN: Giving Opus 5.5 a simulated paint canvas",
+      "url": "https://stillwet.art/",
+      "signal": "383 points \u00b7 113 comments",
       "snippet": ""
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Open-Source eInk Bike Computer",
-      "url": "https://opentrailpaper.com",
-      "signal": "424 points \u00b7 134 comments",
-      "snippet": "Hey all, i just launched my Eink Bike computer project and think it is cool. Another tidbit, in the crazy things that AI has done... It has helped create a ANT (common sensor wireless protocol used in"
+      "title": "Show HN: Whiteboard (YC W26) \u2013 An open-source IDE for thoughtful software design",
+      "url": "https://github.com/devdotfast/whiteboard",
+      "signal": "424 points \u00b7 143 comments",
+      "snippet": "Hello! We\u2019re Sid, Alex, Ketan, and Milan. We\u2019re building Whiteboard (https://whiteboard.dev.fast/), an open-source desktop app where humans and agents can architect software together in a common works"
     },
     {
       "source": "show_hn",
       "title": "Show HN: Reladraw \u2013 A diagram language where you decide where to place things",
       "url": "https://github.com/reladraw/reladraw",
-      "signal": "411 points \u00b7 119 comments",
+      "signal": "412 points \u00b7 119 comments",
       "snippet": "I love making diagrams to help understand, plan, etc. However, the options are (A) auto-placement languages like Mermaid or Graphviz (which don't let me decide how the diagram looks), or (B) software "
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Real-time Solar System with 526k asteroids and all tracked satellites",
+      "url": "https://space.bl2.net/",
+      "signal": "407 points \u00b7 112 comments",
+      "snippet": ""
     },
     {
       "source": "show_hn",
@@ -221,7 +223,7 @@
       "source": "show_hn",
       "title": "Show HN: Lofi Cities \u2013 Pixel-art city nights with browser-generated lofi",
       "url": "https://loficities.com/",
-      "signal": "319 points \u00b7 138 comments",
+      "signal": "320 points \u00b7 138 comments",
       "snippet": ""
     },
     {
@@ -261,13 +263,6 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Koi.rest \u2013 watch some fish and regain your balance",
-      "url": "https://koi.rest",
-      "signal": "228 points \u00b7 65 comments",
-      "snippet": "Hi there. My name is Paul. I\u2019m a developer, an explorer and I\u2019ve got ADHD. As of the beginning of August, I\u2019m also unemployed. This last part, along with everything else this past year, has caused me "
-    },
-    {
-      "source": "show_hn",
       "title": "Show HN: Hacker News, without AI",
       "url": "https://hcker.news/?ai=exclude",
       "signal": "207 points \u00b7 85 comments",
@@ -279,6 +274,13 @@
       "url": "https://www.unslop.news/",
       "signal": "198 points \u00b7 82 comments",
       "snippet": ""
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Koi.rest \u2013 watch some fish and regain your balance",
+      "url": "https://koi.rest",
+      "signal": "228 points \u00b7 65 comments",
+      "snippet": "Hi there. My name is Paul. I\u2019m a developer, an explorer and I\u2019ve got ADHD. As of the beginning of August, I\u2019m also unemployed. This last part, along with everything else this past year, has caused me "
     }
   ]
 }
