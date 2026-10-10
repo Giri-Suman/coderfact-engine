@@ -1,14 +1,11 @@
 {
   "topics": [
-    "Small Language Models Automation: How I Cut My Cloud Bill From $420 to $0",
-    "Stateless Web Apps: How I Built a Viral Tool With Zero Backend in JavaScript",
-    "Addy Osmani Agent Skills: The Fix That Stopped Claude From Breaking My Builds"
+    "Reverse Engineer API Python: How I Extracted Private Specs in 45 Mins",
+    "Cloudflare Deno Migration: My Edge Worker Setup & Real Benchmarks",
+    "AI Agent Screen Overlay Python Script That Cut My API Costs by $120/Mo"
   ],
-  "date": "October 08, 2026",
+  "date": "October 10, 2026",
   "title_history": [
-    "Vibe Coding Tutorial: I Built a $19 SaaS Using Cursor in 11 Hours \u2014 Full Walkthrough With Code",
-    "AI Agent Tutorial: I Built a 4-Agent Pipeline Using LangGraph in 80 Lines \u2014 Full Code",
-    "GitHub Actions Debug: I Found the Silent Fail Cause in 3 Hours \u2014 Here's the Fix",
     "Vibe coding tutorial: I built a $19 SaaS in 11 hrs \u2014 code Stripe screenshot",
     "AI agent tutorial: I replaced my news scroll with a 4-agent LangGraph flow \u2014 code",
     "GitHub actions silent fail: I fixed my zero error Action in 3 hours \u2014 debug",
@@ -35,103 +32,99 @@
     "DIY SMS Gateway: I Built a $450/Month SaaS Using a $20 Hotspot",
     "Small Language Models Automation: How I Cut My Cloud Bill From $420 to $0",
     "Stateless Web Apps: How I Built a Viral Tool With Zero Backend in JavaScript",
-    "Addy Osmani Agent Skills: The Fix That Stopped Claude From Breaking My Builds"
+    "Addy Osmani Agent Skills: The Fix That Stopped Claude From Breaking My Builds",
+    "Reverse Engineer API Python: How I Extracted Private Specs in 45 Mins",
+    "Cloudflare Deno Migration: My Edge Worker Setup & Real Benchmarks",
+    "AI Agent Screen Overlay Python Script That Cut My API Costs by $120/Mo"
   ],
   "last_update_id": 70323306,
   "virality_data": [
     {
-      "topic": "Replacing Heavy LLMs with Sub-30MB Local Models for Document Classification",
-      "category": "D",
-      "category_name": "AI Automation Across Domains",
-      "virality_score": 91,
-      "analysis": "Engineers are exhausted by cloud API bills and latency spikes when running standard enterprise automations like incoming document parsing and ticket tagging. Needle 3 hit Show HN with massive discussion by demonstrating that 8-29MB micro-models can achieve DeepSeek V4 Flash accuracy locally with zero API egress. This breaks away from typical toy tutorials by showing a production Python script that runs instant on-prem classification for pennies of electricity.",
+      "topic": "Reverse-Engineering Production Desktop Apps with Agentic Tooling: How I Extracted Private API Spec in 45 Minutes",
+      "category": "C",
+      "category_name": "AI Agents & Multi-Agent Workflows",
+      "virality_score": 93,
+      "analysis": "This addresses the massive spike in interest around autonomous reverse-engineering agents driven by the virality of REA. Medium tech readers are hunting for concrete agent workflows that go beyond simple RAG wrappers to solve hard systems engineering problems. Demonstrating a working Multi-Agent orchestration in Python that intercepts network traffic and reconstructs API specs provides extreme copy-paste value.",
       "cross_source_signals": [
-        "Hacker News: Cactus Needle 3 hit 236 points and 93 comments",
-        "GitHub: onnxruntime and edge ML models trending in Python",
-        "Reddit r/LocalLLaMA: ongoing surge in interest for sub-100MB task-specific slms"
-      ],
-      "developer_pain": "high",
-      "freshness": "breaking",
-      "money_angle": "Cut monthly Claude and OpenAI classification bills from $420 to $0 by running locally",
-      "story_angle": "After watching my cloud bill hit $420 just to auto-tag inbound customer support logs, I swapped out cloud calls for an 8MB local automation model that runs in under 4ms.",
-      "suman_angle": "I Replaced My $420/Month OpenAI Tagging Pipeline with an 8MB Local Model (Full Python Code)",
-      "target_keywords": [
-        "small language models automation",
-        "needle 3 local model",
-        "edge ai document classification python",
-        "replace openai api local slm"
-      ],
-      "competing_articles": "Most AI automation posts rely on paid external APIs like GPT-4o or Gemini; this tutorial delivers offline, zero-cost sub-30MB models executing via Python.",
-      "real_story_evidence": [
-        {
-          "source": "Hacker News (Show HN)",
-          "title": "Show HN: Cactus Needle 3: 8-29MB automation models can match DeepSeek V4 Flash",
-          "url": "https://cactuscompute.com/needle",
-          "what_to_cite": "Henry's benchmark showing 8-29MB quantized edge models matching DeepSeek V4 Flash quality on automation tasks"
-        }
-      ]
-    },
-    {
-      "topic": "Zero-Server Ephemeral Web Apps: URL-Encoded State Micro-Tools",
-      "category": "A",
-      "category_name": "Developer Success Story",
-      "virality_score": 87,
-      "analysis": "Single-purpose web utilities are experiencing a massive renaissance on developer forums when built without backend databases or authentication fatigue. The Bigwords.page launch proved that storing full state directly inside the URL slug captivates hundreds of thousands of users while incurring zero operational overhead. Devs love seeing how modern browser APIs eliminate database complexity entirely while creating viral utility products.",
-      "cross_source_signals": [
-        "Hacker News: Bigwords.page scored 498 points and 138 comments",
-        "GitHub: URL-compression and LZ-string libraries seeing spike in stars",
-        "Product Hunt: Minimalist single-purpose micro-tools gaining top slots"
-      ],
-      "developer_pain": "medium",
-      "freshness": "fresh",
-      "money_angle": "Built and hosted a micro-tool generating 40k pageviews at exactly $0 server cost",
-      "story_angle": "Tired of setting up Postgres and Auth0 for tiny utility tools, I built an app where the URL payload is the entire persistent database.",
-      "suman_angle": "How I Built a Viral Web Utility With Zero Servers and Zero Databases (The URL Is the App)",
-      "target_keywords": [
-        "stateless web apps",
-        "url state management javascript",
-        "zero backend micro apps",
-        "bigwords page architecture"
-      ],
-      "competing_articles": "Most success stories push complex Supabase or Next.js full-stack boilerplate; this shows how raw URL hashing eliminates database costs entirely.",
-      "real_story_evidence": [
-        {
-          "source": "Hacker News (Show HN)",
-          "title": "Show HN: Bigwords.page \u2013 Turn any screen into a sign. The URL is the app",
-          "url": "https://bigwords.page/",
-          "what_to_cite": "The 498-point launch demonstrating an entire full-screen sign application running purely via compressed URL parameters"
-        }
-      ]
-    },
-    {
-      "topic": "Standardizing Agent Tooling with Addy Osmani's Agent-Skills Pattern",
-      "category": "H",
-      "category_name": "Tips & Tricks / Real Workflow",
-      "virality_score": 89,
-      "analysis": "Engineers building with Claude and automated coders struggle with inconsistent CLI invocations, fragile JSON tool signatures, and agent hallucination during task execution. Addy Osmani's agent-skills repository went viral on GitHub by defining modular, production-ready Unix skill manifests for coding agents. A concrete deep-dive showing how to package daily Git, linting, and refactoring scripts into standardized agent skills fulfills immediate developer demand.",
-      "cross_source_signals": [
-        "GitHub: addyosmani/agent-skills trending with over 100k views",
-        "Hacker News: Heavy debate on standardized agent tool interfaces and reliability",
-        "X/Twitter: Senior devs sharing custom .agent skill modules for refactoring"
+        "GitHub: morluto/rea trending with over 56k stars",
+        "Hacker News: REA Reverse \u2013 Engineer Anything scored 375 points and 139 comments"
       ],
       "developer_pain": "high",
       "freshness": "breaking",
       "money_angle": "",
-      "story_angle": "My coding agent kept corrupting git branches and writing broken tests until I restructured its tool registry into standardized engineering skills.",
-      "suman_angle": "5 Production-Grade Agent Skills That Stopped My Coding Assistant From Breaking Builds (With Code)",
+      "story_angle": "I spent three days manually inspecting WebSocket frames before writing an 85-line LangGraph agent loop that extracted the entire schema automatically.",
+      "suman_angle": "How I Built a 3-Agent Python Loop to Reverse-Engineered an Undocumented API in 45 Minutes (Full Code)",
       "target_keywords": [
-        "addy osmani agent skills",
-        "ai agent tool calling patterns",
-        "claude coding agent skills",
-        "cursor agent bash workflows"
+        "reverse engineer api python",
+        "ai agent workflows langgraph",
+        "agentic API scraping"
       ],
-      "competing_articles": "Most workflow posts simply show raw prompt text; this breaks down production-grade executable scripts and structured manifests agents consume safely.",
+      "competing_articles": "Existing REA discussions are high-level project announcements, whereas this provides a lightweight, fully customized Python implementation readers can run locally.",
       "real_story_evidence": [
         {
-          "source": "GitHub",
-          "title": "addyosmani/agent-skills Production-grade engineering skills for AI coding agents.",
-          "url": "https://github.com/addyosmani/agent-skills",
-          "what_to_cite": "The schema pattern Addy Osmani uses to bundle deterministic engineering scripts into agent-consumable skill packages"
+          "source": "Hacker News",
+          "title": "REA Reverse \u2013 Engineer Anything",
+          "url": "https://rea.tools/",
+          "what_to_cite": "Cite how REA automated dynamic behavior extraction down to native code using autonomous LLM agents."
+        }
+      ]
+    },
+    {
+      "topic": "Why Cloudflare Buying Deno Changes JavaScript Edge Runtimes (And My 5-Minute Migration Setup)",
+      "category": "G",
+      "category_name": "Software Architecture Insight",
+      "virality_score": 91,
+      "analysis": "The Cloudflare acquiring Deno announcement is the single biggest architectural story in tech this week, driving over 600 comments on Hacker News. Devs are desperate for practical migration trade-offs and real benchmarks rather than corporate press releases. Showing exact configuration diffs and edge response time comparisons will generate high bookmarking and engagement.",
+      "cross_source_signals": [
+        "Hacker News: Cloudflare acquires Deno with 610 comments",
+        "Reddit r/programming: Deno is joining Cloudflare viral thread"
+      ],
+      "developer_pain": "high",
+      "freshness": "breaking",
+      "money_angle": "",
+      "story_angle": "When Cloudflare acquired Deno, I immediately moved my edge worker off Node-compat bundling to native Deno TS runtime to test latency gains.",
+      "suman_angle": "I Migrated My Edge Worker to Deno on Cloudflare: Here Are the Benchmarks and Migration Code",
+      "target_keywords": [
+        "cloudflare deno migration",
+        "edge runtime benchmarks typescript",
+        "cloudflare workers deno setup"
+      ],
+      "competing_articles": "Most coverage is news reporting; this article gives concrete code diffs and real cold-start latency numbers.",
+      "real_story_evidence": [
+        {
+          "source": "Hacker News",
+          "title": "Cloudflare acquires Deno",
+          "url": "https://deno.com/blog/cloudflare",
+          "what_to_cite": "Reference the official acquisition announcement detailing Deno runtime integration into Cloudflare Workers."
+        }
+      ]
+    },
+    {
+      "topic": "I Replaced Expensive Commercial Screen-Overlay APIs with a 70-Line Python Screen Painter for AI Agents",
+      "category": "E",
+      "category_name": "Money / Income Story",
+      "virality_score": 89,
+      "analysis": "Visual feedback loops for AI desktop agents are exploding on Hacker News, showing huge developer demand for local screen annotations. Bypassing costly third-party UI vision APIs or heavy electron wrappers saves monthly API spend while improving agent task accuracy. Providing a lightweight Python overlay tool bridges builder curiosity directly with cost optimization.",
+      "cross_source_signals": [
+        "Hacker News: Let your AI agents paint big arrows, boxes and text on your screen (397 points, 175 comments)"
+      ],
+      "developer_pain": "high",
+      "freshness": "breaking",
+      "money_angle": "Cut $120/mo in visual QA testing API costs by using a zero-cost local screen annotation script",
+      "story_angle": "I was paying $120/month for cloud visual debugging APIs until I realized a 70-line local Python canvas let my Claude Code agent draw bounding boxes directly on my screen.",
+      "suman_angle": "How I Cut $120/Mo in Agent Vision API Costs With a 70-Line Local Python Screen Painter (Full Code)",
+      "target_keywords": [
+        "ai agent screen overlay python",
+        "visual agent feedback loop",
+        "claude code UI automation"
+      ],
+      "competing_articles": "Existing posts discuss complex computer vision models, but this article gives a simple script that paints visual targets locally with zero cloud dependencies.",
+      "real_story_evidence": [
+        {
+          "source": "Hacker News (Show HN)",
+          "title": "Show HN: Let your AI agents paint big arrows, boxes and text on your screen",
+          "url": "https://github.com/franzenzenhofer/big-arrow-on-the-screen",
+          "what_to_cite": "Reference the 397-point Show HN project showing real-time agent screen painting for visual user feedback."
         }
       ]
     }
@@ -139,9 +132,23 @@
   "success_stories": [
     {
       "source": "show_hn",
+      "title": "Show HN: Carrier-Explode: iPhone, Pixel and Galaxy carrier settings decoded",
+      "url": "https://carrierexplode.com/",
+      "signal": "313 points \u00b7 40 comments",
+      "snippet": "Showing off carrier-explode, one of my side projects that continuously archives carrier settings for all major phone brands. carrier-explode also contains decoders and explanations for all the common "
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Let your AI agents paint big arrows, boxes and text on your screen",
+      "url": "https://github.com/franzenzenhofer/big-arrow-on-the-screen",
+      "signal": "397 points \u00b7 175 comments",
+      "snippet": ""
+    },
+    {
+      "source": "show_hn",
       "title": "Show HN: Bigwords.page \u2013 Turn any screen into a sign. The URL is the app",
       "url": "https://bigwords.page/",
-      "signal": "498 points \u00b7 138 comments",
+      "signal": "711 points \u00b7 163 comments",
       "snippet": ""
     },
     {
@@ -157,13 +164,6 @@
       "url": "https://bastardica.mitpit.com",
       "signal": "862 points \u00b7 126 comments",
       "snippet": "A joke tool that abuses OpenType's ligature feature to mix fonts. It works pretty fast on client-side by loading Python in WASM."
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: What if the speed of light was 5 km/h?",
-      "url": "https://rivendell.dmitrybrant.com/relativity/",
-      "signal": "633 points \u00b7 290 comments",
-      "snippet": "I've always wanted to make a visualization where the speed of light was scaled down to human speeds, so that we could intuit relativistic effects with everyday objects. Here is the first version of it"
     },
     {
       "source": "show_hn",
@@ -183,28 +183,35 @@
       "source": "show_hn",
       "title": "Show HN: Reladraw \u2013 A diagram language where you decide where to place things",
       "url": "https://github.com/reladraw/reladraw",
-      "signal": "414 points \u00b7 119 comments",
+      "signal": "415 points \u00b7 119 comments",
       "snippet": "I love making diagrams to help understand, plan, etc. However, the options are (A) auto-placement languages like Mermaid or Graphviz (which don't let me decide how the diagram looks), or (B) software "
     },
     {
       "source": "show_hn",
       "title": "Show HN: Real-time Solar System with 526k asteroids and all tracked satellites",
       "url": "https://space.bl2.net/",
-      "signal": "407 points \u00b7 112 comments",
+      "signal": "407 points \u00b7 111 comments",
+      "snippet": ""
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Quake ported to safe Rust, playable in browser",
+      "url": "https://quake-srp.pages.dev/",
+      "signal": "227 points \u00b7 176 comments",
       "snippet": ""
     },
     {
       "source": "show_hn",
       "title": "Show HN: Giving Opus 5.5 a simulated paint canvas",
       "url": "https://stillwet.art/",
-      "signal": "390 points \u00b7 113 comments",
+      "signal": "392 points \u00b7 113 comments",
       "snippet": ""
     },
     {
       "source": "show_hn",
       "title": "Show HN: Capsule \u2013 Single-file web apps that save their data into SQLite",
       "url": "https://withcapsule.app/",
-      "signal": "380 points \u00b7 167 comments",
+      "signal": "380 points \u00b7 166 comments",
       "snippet": "Hey HN, I always had the problem that building HTML pages is really simple now, but trying to save data required hosting it somewhere, and sharing it afterwards was not easy. Over the last few months,"
     },
     {
@@ -219,6 +226,13 @@
       "title": "Show HN: Lofi Cities \u2013 Pixel-art city nights with browser-generated lofi",
       "url": "https://loficities.com/",
       "signal": "320 points \u00b7 139 comments",
+      "snippet": ""
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Making a flexible \"neon\" t-shirt with LED filaments",
+      "url": "http://scottbezek.blogspot.com/2026/10/making-flexible-neon-t-shirt-with-leds.html",
+      "signal": "219 points \u00b7 37 comments",
       "snippet": ""
     },
     {
@@ -244,20 +258,6 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Copperhead \u2013 Cursor for circuit boards",
-      "url": "https://copperhead.sh/",
-      "signal": "250 points \u00b7 115 comments",
-      "snippet": ""
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: Glash\u00fctte Trash Clock \u2013 A 30-minute pendulum clock made from trash",
-      "url": "https://niklasroy.com/gtc/",
-      "signal": "234 points \u00b7 47 comments",
-      "snippet": "This is a functional 30-minute pendulum clock entirely from discarded materials\u2014cardboard, zip ties, tape, a yardstick, and a paperclip escapement, built in the German Eldorado of precision watchmakin"
-    },
-    {
-      "source": "show_hn",
       "title": "Show HN: Cactus Needle 3: 8-29MB automation models can match DeepSeek V4 Flash",
       "url": "https://cactuscompute.com/needle",
       "signal": "236 points \u00b7 93 comments",
@@ -265,17 +265,10 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: A walkable 3D art history museum built from Wikipedia",
-      "url": "https://artmuseum.artfrompixels.com/",
-      "signal": "155 points \u00b7 62 comments",
-      "snippet": "From Li Cheng to Banksy"
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: Hacker News, without AI",
-      "url": "https://hcker.news/?ai=exclude",
-      "signal": "207 points \u00b7 85 comments",
-      "snippet": ""
+      "title": "Show HN: Glash\u00fctte Trash Clock \u2013 A 30-minute pendulum clock made from trash",
+      "url": "https://niklasroy.com/gtc/",
+      "signal": "235 points \u00b7 48 comments",
+      "snippet": "This is a functional 30-minute pendulum clock entirely from discarded materials\u2014cardboard, zip ties, tape, a yardstick, and a paperclip escapement, built in the German Eldorado of precision watchmakin"
     }
   ]
 }
