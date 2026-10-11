@@ -1,14 +1,11 @@
 {
   "topics": [
-    "Reverse Engineer API Python: How I Extracted Private Specs in 45 Mins",
-    "Cloudflare Deno Migration: My Edge Worker Setup & Real Benchmarks",
-    "AI Agent Screen Overlay Python Script That Cut My API Costs by $120/Mo"
+    "Cloudflare Workers AI Agent: I Built It for $0/Month With D1 Memory (Code)",
+    "Claude Code Tutorial: I Vibe Coded a B2B Pipeline in 90 Minutes (Full Code)",
+    "Carrier Bundle Reverse Engineering: How I Decoded APN Files With Python"
   ],
-  "date": "October 10, 2026",
+  "date": "October 11, 2026",
   "title_history": [
-    "Vibe coding tutorial: I built a $19 SaaS in 11 hrs \u2014 code Stripe screenshot",
-    "AI agent tutorial: I replaced my news scroll with a 4-agent LangGraph flow \u2014 code",
-    "GitHub actions silent fail: I fixed my zero error Action in 3 hours \u2014 debug",
     "E-ink Raspberry Pi Frame: I Built a Local AI Bird Drawer (Full Python Code)",
     "AI Agent Arena: I Built a Real-Time Battle Game in 120 Lines of TypeScript",
     "Python WebAssembly Cut My Hosting Costs to $0 for a Viral App (Full Code)",
@@ -35,96 +32,112 @@
     "Addy Osmani Agent Skills: The Fix That Stopped Claude From Breaking My Builds",
     "Reverse Engineer API Python: How I Extracted Private Specs in 45 Mins",
     "Cloudflare Deno Migration: My Edge Worker Setup & Real Benchmarks",
-    "AI Agent Screen Overlay Python Script That Cut My API Costs by $120/Mo"
+    "AI Agent Screen Overlay Python Script That Cut My API Costs by $120/Mo",
+    "Cloudflare Workers AI Agent: I Built It for $0/Month With D1 Memory (Code)",
+    "Claude Code Tutorial: I Vibe Coded a B2B Pipeline in 90 Minutes (Full Code)",
+    "Carrier Bundle Reverse Engineering: How I Decoded APN Files With Python"
   ],
   "last_update_id": 70323306,
   "virality_data": [
     {
-      "topic": "Reverse-Engineering Production Desktop Apps with Agentic Tooling: How I Extracted Private API Spec in 45 Minutes",
+      "topic": "Building a self-hosted personal AI agent on Cloudflare Workers and D1 for $0/month",
       "category": "C",
       "category_name": "AI Agents & Multi-Agent Workflows",
       "virality_score": 93,
-      "analysis": "This addresses the massive spike in interest around autonomous reverse-engineering agents driven by the virality of REA. Medium tech readers are hunting for concrete agent workflows that go beyond simple RAG wrappers to solve hard systems engineering problems. Demonstrating a working Multi-Agent orchestration in Python that intercepts network traffic and reconstructs API specs provides extreme copy-paste value.",
+      "analysis": "Developers are suffering from massive cloud inference and orchestration bills while experimenting with always-on personal agents. Hacker News signal proves strong viral interest in lightweight edge-native agent architectures running entirely on free serverless tiers. This post provides the exact TypeScript orchestration script and SQLite D1 state model rather than another high-cost LangChain or AWS setup.",
       "cross_source_signals": [
-        "GitHub: morluto/rea trending with over 56k stars",
-        "Hacker News: REA Reverse \u2013 Engineer Anything scored 375 points and 139 comments"
+        "Hacker News: Talorys trending with 289 points and 133 comments",
+        "GitHub: rociiu/talorys trending repository in edge AI agents",
+        "Dev Community: surging demand for zero-cost serverless AI workers"
       ],
       "developer_pain": "high",
       "freshness": "breaking",
-      "money_angle": "",
-      "story_angle": "I spent three days manually inspecting WebSocket frames before writing an 85-line LangGraph agent loop that extracted the entire schema automatically.",
-      "suman_angle": "How I Built a 3-Agent Python Loop to Reverse-Engineered an Undocumented API in 45 Minutes (Full Code)",
+      "money_angle": "Cut agent cloud hosting and background worker costs from $45/month to $0/month using Cloudflare's free limits.",
+      "story_angle": "I was paying $45 a month on Supabase and Render just to keep a simple personal Telegram AI agent alive before rewriting the entire state loop into Cloudflare Workers and D1.",
+      "suman_angle": "How I Built a Zero-Cost Personal AI Agent on Cloudflare's Free Tier (TypeScript + D1 Code)",
       "target_keywords": [
-        "reverse engineer api python",
-        "ai agent workflows langgraph",
-        "agentic API scraping"
+        "cloudflare workers ai agent",
+        "self hosted ai agent",
+        "cloudflare d1 agent memory",
+        "zero cost ai agent"
       ],
-      "competing_articles": "Existing REA discussions are high-level project announcements, whereas this provides a lightweight, fully customized Python implementation readers can run locally.",
+      "competing_articles": "Most agent tutorials force you into expensive container setups like Docker on AWS or paid managed platforms; this provides a 100-line serverless edge loop.",
       "real_story_evidence": [
         {
           "source": "Hacker News",
-          "title": "REA Reverse \u2013 Engineer Anything",
-          "url": "https://rea.tools/",
-          "what_to_cite": "Cite how REA automated dynamic behavior extraction down to native code using autonomous LLM agents."
+          "title": "Talorys \u2013 A self-hosted personal AI agent on Cloudflare's free tier",
+          "url": "https://github.com/rociiu/talorys",
+          "what_to_cite": "Reference how Talorys achieves persistent agent memory and task triggers using Cloudflare Workers and D1 without dedicated VPS costs"
         }
       ]
     },
     {
-      "topic": "Why Cloudflare Buying Deno Changes JavaScript Edge Runtimes (And My 5-Minute Migration Setup)",
+      "topic": "Vibe coding a real-time prospect intelligence pipeline using Claude Code and Andrej Karpathy's workflow rules",
+      "category": "B",
+      "category_name": "Vibe Coding / AI-Assisted Workflow",
+      "virality_score": 91,
+      "analysis": "Vibe coding workflows with Claude Code are exploding across dev communities, but unconstrained prompting frequently breaks complex data parsing scripts. GitHub signal shows surging adoption of standardized CLAUDE.md guidelines adapted from Andrej Karpathy, paired with B2B lead enrichment needs on IndieHackers. Suman bridges the gap by showing the exact prompt config and Python scraper built in 90 minutes.",
+      "cross_source_signals": [
+        "GitHub: multica-ai/andrej-karpathy-skills CLAUDE.md repo trending rapidly",
+        "Reddit r/indiehackers: 'Looking for 5 founders who sell to SaaS companies to test a prospect-research tool'",
+        "Twitter/X: viral discourse on structured CLAUDE.md rule sets for autonomous coding"
+      ],
+      "developer_pain": "high",
+      "freshness": "breaking",
+      "money_angle": "Automates lead enrichment workflows that SaaS data tools typically charge $99/mo to run.",
+      "story_angle": "Claude Code kept hallucinating non-existent SDK methods and bloating my scraper code until I dropped Andrej Karpathy's strict rule guidelines into my repository root.",
+      "suman_angle": "I Vibe Coded a B2B Prospect Finder in 90 Minutes Using Claude Code (And Andrej Karpathy's Exact Rules)",
+      "target_keywords": [
+        "claude code tutorial",
+        "claude md setup",
+        "vibe coding workflow",
+        "ai prospect research tool"
+      ],
+      "competing_articles": "Other vibe coding articles treat prompting like magic text; this demonstrates exact context constraints, the CLAUDE.md file, and the resulting Python parser diffs.",
+      "real_story_evidence": [
+        {
+          "source": "GitHub",
+          "title": "multica-ai/andrej-karpathy-skills A single CLAUDE.md file to improve Claude Code behavior, derived from Andrej",
+          "url": "https://github.com/multica-ai/andrej-karpathy-skills",
+          "what_to_cite": "Cite Karpathy's minimalist project-level instructions that prevent the model from overengineering diffs and refactoring untouched code"
+        },
+        {
+          "source": "Reddit (r/indiehackers)",
+          "title": "Looking for 5 founders who sell to SaaS companies to test a prospect-research tool I built",
+          "url": "https://www.reddit.com/r/indiehackers/comments/1x2lfkb/what_is_your_goto_tool_to_make_a_promo_video_for/",
+          "what_to_cite": "Cite the indie builder demand for automated outbound prospect extraction tools"
+        }
+      ]
+    },
+    {
+      "topic": "Reverse engineering carrier bundles and APN profiles to automate network config debugging with Python",
       "category": "G",
       "category_name": "Software Architecture Insight",
-      "virality_score": 91,
-      "analysis": "The Cloudflare acquiring Deno announcement is the single biggest architectural story in tech this week, driving over 600 comments on Hacker News. Devs are desperate for practical migration trade-offs and real benchmarks rather than corporate press releases. Showing exact configuration diffs and edge response time comparisons will generate high bookmarking and engagement.",
+      "virality_score": 87,
+      "analysis": "Mobile network configuration files and carrier bundles are traditionally treated as black boxes by backend and mobile engineers, creating massive headaches for IoT and VoIP setups. Hacker News gave over 400 upvotes to Carrier-Explode for open-sourcing carrier setting dumps across iOS and Android. A technical architecture breakdown explaining how OTA carrier payload schemas work and how to unpack them in Python hits a deeply curious systems engineering niche.",
       "cross_source_signals": [
-        "Hacker News: Cloudflare acquires Deno with 610 comments",
-        "Reddit r/programming: Deno is joining Cloudflare viral thread"
+        "Hacker News: Carrier-Explode hit 415 points and 52 comments",
+        "GitHub: carrier bundle reverse-engineering tools trending in network analysis",
+        "Reddit r/networking: ongoing discussions on carrier overrides and APN configurations"
       ],
-      "developer_pain": "high",
-      "freshness": "breaking",
+      "developer_pain": "medium",
+      "freshness": "fresh",
       "money_angle": "",
-      "story_angle": "When Cloudflare acquired Deno, I immediately moved my edge worker off Node-compat bundling to native Deno TS runtime to test latency gains.",
-      "suman_angle": "I Migrated My Edge Worker to Deno on Cloudflare: Here Are the Benchmarks and Migration Code",
+      "story_angle": "I spent two full days diagnosing why our cellular telemetry devices couldn't maintain an APN handshake before ripping open iOS and Android carrier bundles to see what the networks actually enforce.",
+      "suman_angle": "Inside the Hidden Files That Control Your Phone: How I Decoded Carrier Bundles With Python",
       "target_keywords": [
-        "cloudflare deno migration",
-        "edge runtime benchmarks typescript",
-        "cloudflare workers deno setup"
+        "carrier bundle reverse engineering",
+        "apn configuration python",
+        "carrier explode teardown",
+        "mobile network protocol architecture"
       ],
-      "competing_articles": "Most coverage is news reporting; this article gives concrete code diffs and real cold-start latency numbers.",
-      "real_story_evidence": [
-        {
-          "source": "Hacker News",
-          "title": "Cloudflare acquires Deno",
-          "url": "https://deno.com/blog/cloudflare",
-          "what_to_cite": "Reference the official acquisition announcement detailing Deno runtime integration into Cloudflare Workers."
-        }
-      ]
-    },
-    {
-      "topic": "I Replaced Expensive Commercial Screen-Overlay APIs with a 70-Line Python Screen Painter for AI Agents",
-      "category": "E",
-      "category_name": "Money / Income Story",
-      "virality_score": 89,
-      "analysis": "Visual feedback loops for AI desktop agents are exploding on Hacker News, showing huge developer demand for local screen annotations. Bypassing costly third-party UI vision APIs or heavy electron wrappers saves monthly API spend while improving agent task accuracy. Providing a lightweight Python overlay tool bridges builder curiosity directly with cost optimization.",
-      "cross_source_signals": [
-        "Hacker News: Let your AI agents paint big arrows, boxes and text on your screen (397 points, 175 comments)"
-      ],
-      "developer_pain": "high",
-      "freshness": "breaking",
-      "money_angle": "Cut $120/mo in visual QA testing API costs by using a zero-cost local screen annotation script",
-      "story_angle": "I was paying $120/month for cloud visual debugging APIs until I realized a 70-line local Python canvas let my Claude Code agent draw bounding boxes directly on my screen.",
-      "suman_angle": "How I Cut $120/Mo in Agent Vision API Costs With a 70-Line Local Python Screen Painter (Full Code)",
-      "target_keywords": [
-        "ai agent screen overlay python",
-        "visual agent feedback loop",
-        "claude code UI automation"
-      ],
-      "competing_articles": "Existing posts discuss complex computer vision models, but this article gives a simple script that paints visual targets locally with zero cloud dependencies.",
+      "competing_articles": "Almost all carrier network guides are basic consumer APN setup guides; this breaks down the actual binary plist and XML configuration schemas.",
       "real_story_evidence": [
         {
           "source": "Hacker News (Show HN)",
-          "title": "Show HN: Let your AI agents paint big arrows, boxes and text on your screen",
-          "url": "https://github.com/franzenzenhofer/big-arrow-on-the-screen",
-          "what_to_cite": "Reference the 397-point Show HN project showing real-time agent screen painting for visual user feedback."
+          "title": "Show HN: Carrier-Explode: iPhone, Pixel and Galaxy carrier settings decoded",
+          "url": "https://carrierexplode.com/",
+          "what_to_cite": "Cite how Carrier-Explode archives and parses hundreds of proprietary carrier settings across iPhone, Pixel, and Galaxy devices into human-readable diffs"
         }
       ]
     }
@@ -134,21 +147,28 @@
       "source": "show_hn",
       "title": "Show HN: Carrier-Explode: iPhone, Pixel and Galaxy carrier settings decoded",
       "url": "https://carrierexplode.com/",
-      "signal": "313 points \u00b7 40 comments",
+      "signal": "415 points \u00b7 52 comments",
       "snippet": "Showing off carrier-explode, one of my side projects that continuously archives carrier settings for all major phone brands. carrier-explode also contains decoders and explanations for all the common "
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: WallHop \u2013 12ft.io is gone, so I built a replacement",
+      "url": "https://wallhop.io/",
+      "signal": "244 points \u00b7 98 comments",
+      "snippet": "Hi HN, I'm Josh. WallHop is a free paywall bypass: paste an article URL (or prefix any URL with wallhop.io/) and you get the readable article without the paywall popup, ads or clutter. No signup, no e"
     },
     {
       "source": "show_hn",
       "title": "Show HN: Let your AI agents paint big arrows, boxes and text on your screen",
       "url": "https://github.com/franzenzenhofer/big-arrow-on-the-screen",
-      "signal": "397 points \u00b7 175 comments",
+      "signal": "413 points \u00b7 188 comments",
       "snippet": ""
     },
     {
       "source": "show_hn",
       "title": "Show HN: Bigwords.page \u2013 Turn any screen into a sign. The URL is the app",
       "url": "https://bigwords.page/",
-      "signal": "711 points \u00b7 163 comments",
+      "signal": "720 points \u00b7 164 comments",
       "snippet": ""
     },
     {
@@ -164,6 +184,20 @@
       "url": "https://bastardica.mitpit.com",
       "signal": "862 points \u00b7 126 comments",
       "snippet": "A joke tool that abuses OpenType's ligature feature to mix fonts. It works pretty fast on client-side by loading Python in WASM."
+    },
+    {
+      "source": "indie_reddit",
+      "title": "Looking for 5 founders who sell to SaaS companies to test a prospect-research tool I built",
+      "url": "https://www.reddit.com/r/indiehackers/comments/1x2mpqy/looking_for_5_founders_who_sell_to_saas_companies/",
+      "signal": "r/indiehackers",
+      "snippet": ""
+    },
+    {
+      "source": "indie_reddit",
+      "title": "What is your go-to tool to make a promo video for SaaS for free?",
+      "url": "https://www.reddit.com/r/indiehackers/comments/1x2lfkb/what_is_your_goto_tool_to_make_a_promo_video_for/",
+      "signal": "r/indiehackers",
+      "snippet": ""
     },
     {
       "source": "show_hn",
@@ -197,7 +231,7 @@
       "source": "show_hn",
       "title": "Show HN: Quake ported to safe Rust, playable in browser",
       "url": "https://quake-srp.pages.dev/",
-      "signal": "227 points \u00b7 176 comments",
+      "signal": "236 points \u00b7 179 comments",
       "snippet": ""
     },
     {
@@ -216,23 +250,9 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Bodily Oddities",
-      "url": "https://vester.si/bodily-oddities/",
-      "signal": "341 points \u00b7 216 comments",
-      "snippet": "When I was about 11 years old, my best friend and I were playing during recess at school, and I was carrying him around on my back, presumably pretending to be a multipart attack robot. All of a sudde"
-    },
-    {
-      "source": "show_hn",
       "title": "Show HN: Lofi Cities \u2013 Pixel-art city nights with browser-generated lofi",
       "url": "https://loficities.com/",
       "signal": "320 points \u00b7 139 comments",
-      "snippet": ""
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: Making a flexible \"neon\" t-shirt with LED filaments",
-      "url": "http://scottbezek.blogspot.com/2026/10/making-flexible-neon-t-shirt-with-leds.html",
-      "signal": "219 points \u00b7 37 comments",
       "snippet": ""
     },
     {
@@ -258,17 +278,10 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Cactus Needle 3: 8-29MB automation models can match DeepSeek V4 Flash",
-      "url": "https://cactuscompute.com/needle",
-      "signal": "236 points \u00b7 93 comments",
-      "snippet": "Hey HN, Henry from Cactus here. We submitted Needle 2 here a few weeks ago, and the feedback in the discussion thread was incredibly valuable, thanks! Thanks to all that feedback, we\u2019ve been able to m"
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: Glash\u00fctte Trash Clock \u2013 A 30-minute pendulum clock made from trash",
-      "url": "https://niklasroy.com/gtc/",
-      "signal": "235 points \u00b7 48 comments",
-      "snippet": "This is a functional 30-minute pendulum clock entirely from discarded materials\u2014cardboard, zip ties, tape, a yardstick, and a paperclip escapement, built in the German Eldorado of precision watchmakin"
+      "title": "Show HN: Making a flexible \"neon\" t-shirt with LED filaments",
+      "url": "http://scottbezek.blogspot.com/2026/10/making-flexible-neon-t-shirt-with-leds.html",
+      "signal": "221 points \u00b7 37 comments",
+      "snippet": ""
     }
   ]
 }
