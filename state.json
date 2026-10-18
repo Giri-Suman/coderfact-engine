@@ -1,14 +1,11 @@
 {
   "topics": [
-    "Programmatic Video in Python: How I Automate Dev Shorts in 60 Lines",
-    "Web Audio API Tutorial: I Built a Guitar Synth in Pure JavaScript",
-    "Reduce Agent Context Bloat: How I Fixed Tool Failures in Python"
+    "Python WASM Tutorial: I Built a Client-Side Font App in 48 Hours With Pyodide",
+    "Local LLM Hardware Requirements: I Built a Speed Simulator in TypeScript",
+    "Building AI Agents Python Style: How I Wrote a Fast Agent Harness in 110 Lines"
   ],
-  "date": "October 17, 2026",
+  "date": "October 18, 2026",
   "title_history": [
-    "Self Hosted SMS Gateway: I Built a Twilio Alternative in 90 Lines of Python",
-    "AI Agent Skills Tutorial: I Rebuilt My Workflow in 80 Lines of Python",
-    "Git 3.0 SHA256 Migration: Why It Breaks Your CI/CD (And How to Fix It)",
     "Mermaid vs Reladraw: Why Mermaid Breaks Large Architecture Diagrams",
     "AI Agent Canvas Loop: I Built It in Python in 1 Hour With Code",
     "Apple Wallet Automation Python: Stop Generating Passes Manually",
@@ -35,103 +32,106 @@
     "GitHub actions silent fail: Why my Action had zero error \u2014 3\u2011hour root cause",
     "Programmatic Video in Python: How I Automate Dev Shorts in 60 Lines",
     "Web Audio API Tutorial: I Built a Guitar Synth in Pure JavaScript",
-    "Reduce Agent Context Bloat: How I Fixed Tool Failures in Python"
+    "Reduce Agent Context Bloat: How I Fixed Tool Failures in Python",
+    "Python WASM Tutorial: I Built a Client-Side Font App in 48 Hours With Pyodide",
+    "Local LLM Hardware Requirements: I Built a Speed Simulator in TypeScript",
+    "Building AI Agents Python Style: How I Wrote a Fast Agent Harness in 110 Lines"
   ],
   "last_update_id": 70323306,
   "virality_data": [
     {
-      "topic": "Building an automated video summary pipeline from Hacker News top threads using headless browser rendering",
-      "category": "D",
-      "category_name": "AI Automation Across Domains",
-      "virality_score": 89,
-      "analysis": "Content creators and founders waste hours manually skimming tech feeds and converting top discussions into short video formats for social growth. This post leverages the massive interest in programmatic video generation highlighted by Scrimba's founder launching HN.watch. Unlike generic video generation posts that rely on expensive proprietary SaaS APIs, this provides a practical, self-hosted script combining headless browser DOM capturing and Python automation to produce animated recap clips.",
-      "cross_source_signals": [
-        "Hacker News: Show HN: HN.watch \u2013 Videos of all Hacker News posts (226 points, 97 comments)",
-        "Dev.to: Programmatic content creation and headless browser automation trending in webdev tag",
-        "GitHub: Automated media pipelines and Remotion/Playwright scrapers gaining steady stars"
-      ],
-      "developer_pain": "high",
-      "freshness": "breaking",
-      "money_angle": "Cut social media video production agencies costing $1,200/mo down to a $0 automated cron job",
-      "story_angle": "I got tired of spending 45 minutes every morning turning technical discussions into visual social snippets, so I automated the entire video generation workflow using Python and browser rendering.",
-      "suman_angle": "Automated Dev Video Generator: How I Turn Tech Discussions Into Short Videos in 60 Lines of Python",
-      "target_keywords": [
-        "programmatic video python",
-        "hacker news automation bot",
-        "headless browser video generator",
-        "developer content automation"
-      ],
-      "competing_articles": "Most programmatic video tutorials push paid third-party rendering APIs; this shows a completely open-source, local DOM-to-canvas rendering loop with full code.",
-      "real_story_evidence": [
-        {
-          "source": "Hacker News (Show HN)",
-          "title": "Show HN: HN.watch \u2013 Videos of all Hacker News posts",
-          "url": "https://hn.watch/",
-          "what_to_cite": "Per (Scrimba founder) proved that HTML-based DOM rendering can turn static technical text posts into high-engagement video timelines without video editors."
-        }
-      ]
-    },
-    {
-      "topic": "Building an ultra-lightweight browser guitar synthesizer with the Web Audio API and zero heavy libraries",
+      "topic": "Python in WASM Font Abuse: Generating Dynamic OpenType Ligatures on the Client Side",
       "category": "A",
       "category_name": "Developer Success Story",
-      "virality_score": 86,
-      "analysis": "Web audio experiments consistently blow up on Hacker News and Medium because frontend devs love interactive, zero-dependency audio hacks that feel like magic. Guitoro hit 569 points demonstrating keyboard-strummed instrument physics directly in the client without heavy WASM or bloated audio bundles. This post shows the step-by-step solo build of a lightweight polyphonic Web Audio API engine that handles realistic strumming physics and keyboard events in pure vanilla JavaScript.",
+      "virality_score": 91,
+      "analysis": "Show HN hit #4 overall with 862 points demonstrating client-side Pyodide/WASM abusing OpenType font ligature tables. Devs on Medium are obsessed with client-side zero-backend architectures that push heavy binary generation directly to browser memory. This avoids server compute costs completely while demonstrating concrete Python-to-WASM font engineering that builders can fork.",
       "cross_source_signals": [
-        "Hacker News: Show HN: Guitoro, a virtual guitar you strum with your keyboard (569 points, 161 comments)",
-        "Dev.to: Interactive Web Audio API and canvas physics posts consistently hit top weekly rankings",
-        "GitHub: Vanilla JS audio synthesizers and interactive toy repos trending"
+        "Hacker News Show HN: Make cursed fonts like Times New Bastard (862 points, 126 comments)",
+        "GitHub: Trending pyodide / fontTools WASM implementations this week",
+        "Dev.to: Rising engagement on in-browser WebAssembly tooling"
       ],
-      "developer_pain": "medium",
-      "freshness": "fresh",
-      "money_angle": "Turned interactive browser experiments into portfolio pieces that landed freelance frontend contracts",
-      "story_angle": "I wanted to see if I could replicate physical guitar strum dynamics entirely in the browser without loading massive 50MB soundfont libraries.",
-      "suman_angle": "Web Audio API: How I Built a Zero-Dependency Virtual Guitar in Pure JavaScript (Full Code)",
+      "developer_pain": "high",
+      "freshness": "breaking",
+      "money_angle": "Cut cloud compute costs to $0 for dynamic font generation micro-tools",
+      "story_angle": "I wanted to generate custom ligatures dynamically without paying for an EC2 backend, so I compiled fontTools into browser WASM.",
+      "suman_angle": "How I Shipped an In-Browser Font Generator in 48 Hours Using Python in WASM (Zero Backend)",
       "target_keywords": [
-        "web audio api tutorial",
-        "javascript virtual guitar",
-        "browser synthesizer code",
-        "vanilla javascript interactive project"
+        "python wasm tutorial",
+        "pyodide fonttools browser",
+        "opentype ligature generator javascript",
+        "client side font generation"
       ],
-      "competing_articles": "Most Web Audio articles only show basic sine-wave beeps; this article provides real strum timing algorithms, polyphony handling, and keyboard event bindings.",
+      "competing_articles": "Most WASM tutorials show trivial counter apps or complex Rust builds; this provides a practical Python-in-browser script manipulating binary TTF/OTF files.",
       "real_story_evidence": [
         {
           "source": "Hacker News (Show HN)",
-          "title": "Show HN: Guitoro, a virtual guitar you strum with your keyboard",
-          "url": "https://guitoro.com/",
-          "what_to_cite": "Guitoro demonstrated that lightweight keyboard-bound acoustic strumming can capture 569 upvotes without requiring complex native desktop audio plugins."
+          "title": "Show HN: Make cursed fonts like Times New Bastard",
+          "url": "https://bastardica.mitpit.com",
+          "what_to_cite": "Abusing OpenType ligature tables completely client-side by running Python inside WASM (862 points on HN)"
         }
       ]
     },
     {
-      "topic": "Designing an Agentic Harness: Optimizing Skill Execution and Context Memory for Autonomous Coding Workflows",
-      "category": "C",
-      "category_name": "AI Agents & Multi-Agent Workflows",
-      "virality_score": 92,
-      "analysis": "The current bottleneck in autonomous AI agents has shifted from base LLM reasoning to agent harnesses\u2014managing skills, context bloat, and instinct memory without burning 100k tokens per task. The breakout traction of repositories like affaan-m/ECC and obra/superpowers proves developers are desperate for structured agent harness architectures. This tutorial breaks down how to build a modular, low-token agent harness in Python that caches instinctual instructions and exposes deterministic local tool calls.",
+      "topic": "Benchmarking Local LLMs Before Buying Hardware: Building a Token-Latency Simulator in TypeScript",
+      "category": "B",
+      "category_name": "Vibe Coding / AI-Assisted Workflow",
+      "virality_score": 89,
+      "analysis": "With DeepSeek-v4.1-Flash trending at #1 and Llmspeed hitting Show HN with strong interest, developers are wrestling with whether to invest in expensive local GPUs or stay on API calls. Vibe-coding an interactive token throughput and memory-bandwidth simulator reveals the exact breaking points of local hardware setups. It solves a real buying dilemma with actionable TypeScript code and interactive UI components.",
       "cross_source_signals": [
-        "GitHub: affaan-m/ECC trending with 280k+ signal (agent harness performance optimization)",
-        "GitHub: obra/superpowers trending with 300k+ signal (agentic skills framework & dev methodology)",
-        "Hacker News: Anthropic Claude Code review team workflow post highlighting agent tool discipline (314 points, 290 comments)"
+        "Hacker News: DeepSeek-V4.1-Flash-1017 release discussion (634 comments)",
+        "Hacker News Show HN: Llmspeed \u2013 feel how fast a local LLM runs before you buy the hardware (278 points)",
+        "Reddit r/LocalLLaMA: Persistent debates on memory bandwidth vs quantization speed"
       ],
       "developer_pain": "high",
       "freshness": "breaking",
-      "money_angle": "Decreased agent context token waste by 68%, cutting monthly API bills from $210 to under $70",
-      "story_angle": "My custom coding agent kept bloating its prompt context and forgetting tool contracts mid-execution, until I separated memory into an instinct harness with strict skill boundaries.",
-      "suman_angle": "Agent Harness Architecture: How I Fixed Context Bloat and Tool Failures in My Python AI Agents",
+      "money_angle": "Prevented wasting $1,800 on an underpowered local GPU rig for agent workflows",
+      "story_angle": "Before blowing $1,800 on a dual-GPU local setup for coding agents, I built an interactive token-stream emulator with Claude Code in 2 hours.",
+      "suman_angle": "I Vibe Coded an LLM Speed Simulator in Cursor to Test Hardware Before Spending $1,800",
       "target_keywords": [
-        "agent harness python",
-        "ai agent skills framework",
-        "reduce agent context bloat",
-        "autonomous coding agent architecture"
+        "local llm hardware requirements",
+        "llm tokens per second benchmark",
+        "vibe coding cursor claude code",
+        "simulate llm latency typescript"
       ],
-      "competing_articles": "Most multi-agent tutorials rely on bloated frameworks like CrewAI without explaining token efficiency; this provides a minimalist 120-line harness showing exact memory isolation and skill dispatching.",
+      "competing_articles": "Most posts offer static hardware charts; this shares the exact prompt loop and math model to simulate token streaming latency directly in a browser dev server.",
+      "real_story_evidence": [
+        {
+          "source": "Hacker News (Show HN)",
+          "title": "Show HN: Llmspeed \u2013 feel how fast a local LLM runs before you buy the hardware",
+          "url": "https://llmspeed.dev/",
+          "what_to_cite": "Letting developers feel interactive tokens/sec throughput across varying quantizations and memory bandwidths before purchasing hardware"
+        }
+      ]
+    },
+    {
+      "topic": "Multi-Agent Performance Harness: Building Self-Correcting Execution Loops With ECC Architecture",
+      "category": "C",
+      "category_name": "AI Agents & Multi-Agent Workflows",
+      "virality_score": 87,
+      "analysis": "Agent harnesses like affaan-m/ECC and anomalyco/opencode are surging on GitHub as engineers abandon fragile monolithic agents. The current meta is decoupling agent execution into skills, instincts, memory, and safety tripwires. Providing a concise, working 100-line multi-agent orchestration harness gives builders immediate copy-paste utility without heavy framework lock-in.",
+      "cross_source_signals": [
+        "GitHub Trending: affaan-m/ECC The agent harness performance optimization system (282k score signal)",
+        "GitHub Trending: anomalyco/opencode The open source coding agent",
+        "GitHub Trending: anthropics/claude-code terminal agent loop"
+      ],
+      "developer_pain": "high",
+      "freshness": "fresh",
+      "money_angle": "Cut repetitive task failure rates by 65%, slashing burned tokens on loop retries",
+      "story_angle": "My coding agent kept entering infinite hallucination loops when editing files, so I re-architected it into isolated memory and skill harnesses.",
+      "suman_angle": "Building a High-Performance Agent Harness: How I Split Skills, Memory, and Instincts in 110 Lines of Python",
+      "target_keywords": [
+        "agent harness architecture",
+        "building ai agents python",
+        "agent skills and memory harness",
+        "autonomous coding agent loop"
+      ],
+      "competing_articles": "Most agent articles lean on bloated abstractions like CrewAI; this explains raw execution harness mechanics with clean message-passing and recovery guards.",
       "real_story_evidence": [
         {
           "source": "GitHub",
           "title": "affaan-m/ECC The agent harness performance optimization system. Skills, instincts, memory, security, and resea",
           "url": "https://github.com/affaan-m/ECC",
-          "what_to_cite": "Proved that splitting execution into instincts, isolated skills, and targeted memory harnesses dramatically outperforms standard monolithic agent prompt loops."
+          "what_to_cite": "Deconstructing monolithic agent scripts into modular skills, instincts, memory, and security tripwires to maximize execution reliability"
         }
       ]
     }
@@ -139,16 +139,9 @@
   "success_stories": [
     {
       "source": "show_hn",
-      "title": "Show HN: Gemini 4 Argon plays StarCraft",
-      "url": "https://starskirmish.com/bench/v0-2/",
-      "signal": "211 points \u00b7 93 comments",
-      "snippet": "I've refreshed StarSkirmish Bench, a benchmark where LLMs play StarCraft BW by writing code, with results from the flagship models of OpenAI, Anthropic, Google, and Muse"
-    },
-    {
-      "source": "show_hn",
       "title": "Show HN: Guitoro, a virtual guitar you strum with your keyboard",
       "url": "https://guitoro.com/",
-      "signal": "569 points \u00b7 161 comments",
+      "signal": "571 points \u00b7 161 comments",
       "snippet": "Guitoro is a free browser guitar using recordings of real instruments. You can strum with your keyboard, mouse, or touchscreen, choose acoustic, classical, electric guitar or bass, and see chord finge"
     },
     {
@@ -167,9 +160,9 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Unfenced \u2013 Land for sale that borders public land",
-      "url": "https://unfenced.land/",
-      "signal": "311 points \u00b7 197 comments",
+      "title": "Show HN: Llmspeed \u2013 feel how fast a local LLM runs before you buy the hardware",
+      "url": "https://llmspeed.dev/",
+      "signal": "278 points \u00b7 80 comments",
       "snippet": ""
     },
     {
@@ -188,9 +181,16 @@
     },
     {
       "source": "show_hn",
+      "title": "Show HN: Unfenced \u2013 Land for sale that borders public land",
+      "url": "https://unfenced.land/",
+      "signal": "315 points \u00b7 200 comments",
+      "snippet": ""
+    },
+    {
+      "source": "show_hn",
       "title": "Show HN: Let your AI agents paint big arrows, boxes and text on your screen",
       "url": "https://github.com/franzenzenhofer/big-arrow-on-the-screen",
-      "signal": "420 points \u00b7 195 comments",
+      "signal": "421 points \u00b7 195 comments",
       "snippet": ""
     },
     {
@@ -199,6 +199,13 @@
       "url": "https://github.com/reladraw/reladraw",
       "signal": "415 points \u00b7 119 comments",
       "snippet": "I love making diagrams to help understand, plan, etc. However, the options are (A) auto-placement languages like Mermaid or Graphviz (which don't let me decide how the diagram looks), or (B) software "
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Gemini 4 Argon plays StarCraft",
+      "url": "https://starskirmish.com/bench/v0-2/",
+      "signal": "243 points \u00b7 110 comments",
+      "snippet": "I've refreshed StarSkirmish Bench, a benchmark where LLMs play StarCraft BW by writing code, with results from the flagship models of OpenAI, Anthropic, Google, and Muse"
     },
     {
       "source": "show_hn",
@@ -216,13 +223,6 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: PS2 games statically recompiled to WebAssembly",
-      "url": "https://github.com/snuri00/ps2-web-recomp",
-      "signal": "314 points \u00b7 158 comments",
-      "snippet": ""
-    },
-    {
-      "source": "show_hn",
       "title": "Show HN: Lofi Cities \u2013 Pixel-art city nights with browser-generated lofi",
       "url": "https://loficities.com/",
       "signal": "320 points \u00b7 139 comments",
@@ -230,9 +230,16 @@
     },
     {
       "source": "show_hn",
+      "title": "Show HN: PS2 games statically recompiled to WebAssembly",
+      "url": "https://github.com/snuri00/ps2-web-recomp",
+      "signal": "314 points \u00b7 158 comments",
+      "snippet": ""
+    },
+    {
+      "source": "show_hn",
       "title": "Show HN: WallHop \u2013 12ft.io is gone, so I built a replacement",
       "url": "https://wallhop.io/",
-      "signal": "286 points \u00b7 130 comments",
+      "signal": "287 points \u00b7 131 comments",
       "snippet": "Hi HN, I'm Josh. WallHop is a free paywall bypass: paste an article URL (or prefix any URL with wallhop.io/) and you get the readable article without the paywall popup, ads or clutter. No signup, no e"
     },
     {
@@ -251,24 +258,17 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Petal, open-source CoScreen/ScreenHero finally free",
-      "url": "https://petal.live/",
-      "signal": "221 points \u00b7 41 comments",
-      "snippet": "Hi HN! I\u2019m Jason Thomas, one of the founders of CoScreen. As some of you may know, Datadog sunset the CoScreen service on July 31st. Four of us from the original CoScreen team have spent the last coup"
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: Share your AI Setup, Learn from others",
-      "url": "https://mysetup.ai/",
-      "signal": "251 points \u00b7 140 comments",
-      "snippet": "I kept seeing engineers share what they were building with AI; however, I was always more curious about how they worked. Which agents did they use? What skills and tools had stuck or been thrown out t"
-    },
-    {
-      "source": "show_hn",
       "title": "Show HN: Quake ported to safe Rust, playable in browser",
       "url": "https://quake-srp.pages.dev/",
       "signal": "241 points \u00b7 181 comments",
       "snippet": ""
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Petal, open-source CoScreen/ScreenHero finally free",
+      "url": "https://petal.live/",
+      "signal": "225 points \u00b7 41 comments",
+      "snippet": "Hi HN! I\u2019m Jason Thomas, one of the founders of CoScreen. As some of you may know, Datadog sunset the CoScreen service on July 31st. Four of us from the original CoScreen team have spent the last coup"
     },
     {
       "source": "show_hn",
