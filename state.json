@@ -1,14 +1,11 @@
 {
   "topics": [
-    "DeepSeek V4.1 Flash: I Built a Local Coding Agent Fleet in TypeScript",
-    "Vibe Coding Git Hook: How I Stop AI Regressions in 75 Lines of Node",
-    "macOS 15.8.2 OpenGL Fix: How I Restored Broken Canvas Builds in 15 Minutes"
+    "macOS SSH Touch ID: Stop Typing Passwords Manually With This Config",
+    "AI Permit Automation: I Parsed 40 Pages of Building Code in 2 Minutes",
+    "Local Coding Agent Fleet: How I Built It for $0 Using DeepInfer"
   ],
-  "date": "October 19, 2026",
+  "date": "October 21, 2026",
   "title_history": [
-    "DIY E-Ink Dashboard in Python: I Built an Open-Source Bike Computer",
-    "AI Agent Budget Caps in Python: How I Stopped Runaway API Costs",
-    "Reladraw Diagram Syntax Fixed Why Auto-Layout Broke My Architecture Charts",
     "Claude Code Setup: How I Configured Garry Tan\u2019s 23-Tool Vibe Coding Loop",
     "Lazy Coding Agent: I Built a 90-Line Python Tool That Writes 80% Less Code",
     "Whiteboard IDE: How We Built a Viral Open-Source Desktop App",
@@ -35,107 +32,106 @@
     "Building AI Agents Python Style: How I Wrote a Fast Agent Harness in 110 Lines",
     "DeepSeek V4.1 Flash: I Built a Local Coding Agent Fleet in TypeScript",
     "Vibe Coding Git Hook: How I Stop AI Regressions in 75 Lines of Node",
-    "macOS 15.8.2 OpenGL Fix: How I Restored Broken Canvas Builds in 15 Minutes"
+    "macOS 15.8.2 OpenGL Fix: How I Restored Broken Canvas Builds in 15 Minutes",
+    "macOS SSH Touch ID: Stop Typing Passwords Manually With This Config",
+    "AI Permit Automation: I Parsed 40 Pages of Building Code in 2 Minutes",
+    "Local Coding Agent Fleet: How I Built It for $0 Using DeepInfer"
   ],
   "last_update_id": 70323306,
   "virality_data": [
     {
-      "topic": "Building a Fleet of Local Coding Agents with DeepSeek V4.1 Flash and Stably Orca",
-      "category": "C",
-      "category_name": "AI Agents & Multi-Agent Workflows",
-      "virality_score": 93,
-      "analysis": "DeepSeek V4.1 Flash 1017 just landed across Hacker News and r/LocalLLaMA alongside the sudden viral spike of Stably Orca for managing multi-agent fleets. Medium developers are aggressively moving away from monolithic LLM wrappers to coordinated agent swarms that divide testing, linting, and refactoring across cheap local endpoints. This post provides a concrete, runnable TypeScript and GGUF orchestration harness rather than theoretical agent architecture fluff.",
+      "topic": "How I Secured macOS SSH Keys with Touch ID in 15 Minutes (Zero Third-Party Apps)",
+      "category": "H",
+      "category_name": "Tips & Tricks / Real Workflow",
+      "virality_score": 89,
+      "analysis": "This addresses a massive daily friction point for macOS developers who enter SSH passphrases dozens of times a day. Surfacing simultaneously across Hacker News and Reddit with active discussion, it hits the exact sweet spot of instant developer payoff. Unlike complex PAM module hacks, a concise, native 2026 macOS Touch ID setup guide provides copy-paste utility with zero third-party bloat.",
       "cross_source_signals": [
-        "Hacker News: 38 comments on DeepSeek V4.1 Flash 1017 (Max) (Signal #1)",
-        "Reddit r/LocalLLaMA: unsloth/DeepSeek-V4.1-Flash-1017-GGUF trending release",
-        "GitHub: stablyai/orca trending with 97k+ activity (Signal #17)"
-      ],
-      "developer_pain": "high",
-      "freshness": "breaking",
-      "money_angle": "Slashing API bills from $240/month on cloud LLMs to $0 by running dual 1017 GGUF agent fleets locally",
-      "story_angle": "After watching Claude 3.5 Sonnet burn through $18 in API credits refactoring a single monolithic repo, I wired Stably Orca to coordinate two local DeepSeek V4.1 Flash agents running on my local rig.",
-      "suman_angle": "Multi-Agent Coding Fleet: How I Orchestrated 2 DeepSeek V4.1 Local Agents in TypeScript (Full Code)",
-      "target_keywords": [
-        "DeepSeek V4.1 Flash",
-        "stably orca multi agent",
-        "local coding agents gguf",
-        "multi agent workflow typescript"
-      ],
-      "competing_articles": "Most agent tutorials discuss theoretical LangGraph pipelines; this gives production code for orchestrating concurrent local coding bots with message-passing diff validation.",
-      "real_story_evidence": []
-    },
-    {
-      "topic": "Building a Pre-Push Quiz Hook to Stop Blind Vibe Coding Regressions",
-      "category": "B",
-      "category_name": "Vibe Coding / AI-Assisted Workflow",
-      "virality_score": 90,
-      "analysis": "As 'vibe coding' dominates 2026 dev workflows, teams face massive hallucinated code regressions where engineers merge AI-generated PRs they don't actually understand. Hacker News heavily rewarded Sphinx (245 points) for addressing this exact post-Cursor hangover with automated pre-push comprehension checks. Showing developers how to build an automated CLI quiz hook using Node and local LLM diff parsing hits the perfect balance of practical AI workflow and developer tooling.",
-      "cross_source_signals": [
-        "Hacker News Show HN: Sphinx \u2013 A hook that quizzes you on your AI's code before shipping (245 points \u00b7 86 comments)",
-        "Hacker News: Karri Saarinen's 'Someone behind the software' (425 points \u00b7 158 comments)",
-        "GitHub: anomalyco/opencode trending with 216k+ activity"
+        "Hacker News: Setting Up SSH Keys on macOS with Touch ID (33 points, 24 comments)",
+        "Reddit r/programming: SSH keys on macOS with Touch ID thread trending",
+        "RSS HN Feed: Dual cross-post corroboration"
       ],
       "developer_pain": "high",
       "freshness": "fresh",
-      "money_angle": "Preventing production incidents that cost dev teams thousands in downtime due to unchecked vibe-coded PRs",
-      "story_angle": "I shipped a hallucinated broken auth boundary because Cursor generated 400 lines of perfect-looking TypeScript that I blindly approved at 1 AM.",
-      "suman_angle": "Vibe Coding Safeguard: I Built a Git Hook That Quizzes Me on AI Code Before Pushing (75 Lines of Node)",
+      "money_angle": "",
+      "story_angle": "I was typing my 24-character SSH passphrase forty times a day until I spent 15 minutes binding macOS Touch ID natively to my ssh-agent.",
+      "suman_angle": "My Daily macOS Setup: How I Tied SSH Passphrases to Touch ID in 15 Minutes (With Config)",
       "target_keywords": [
-        "vibe coding git hook",
-        "ai code review automation",
-        "prevent ai regressions",
-        "cursor ai workflow node"
+        "macos ssh touch id",
+        "ssh agent touch id mac",
+        "developer macos workflow 2026"
       ],
-      "competing_articles": "Most vibe-coding articles are hype-filled 'look what I built in 5 mins'; this solves the real aftermath: preventing hallucinated bugs from entering production.",
+      "competing_articles": "Most guides rely on outdated third-party tools or incomplete pam_tid.so hacks; this post gives a verified, modern macOS setup script.",
+      "real_story_evidence": []
+    },
+    {
+      "topic": "I Automated B2B Permit Logic with an AI Agent System: $0 to Working Prototype in 48 Hours",
+      "category": "D",
+      "category_name": "AI Automation Across Domains",
+      "virality_score": 92,
+      "analysis": "This post bridges software engineering with high-value real-world bureaucracy (urban permits and zoning rules). Inspired by the massive viral interest in 'SimCity with Permits' on Hacker News, it demonstrates how to turn opaque municipal rules into an automated decision pipeline. Medium tech readers love posts that translate AI hype into tangible, domain-specific business automation.",
+      "cross_source_signals": [
+        "Hacker News: Show HN: SimCity, but with Permits (745 points, 359 comments)",
+        "GitHub: High interest in rule-engine and regulatory LLM parsing tools"
+      ],
+      "developer_pain": "high",
+      "freshness": "breaking",
+      "money_angle": "How solving compliance automation creates $5k/mo freelance or SaaS opportunities",
+      "story_angle": "After reading how complex permit workflows are, I spent a weekend building a Python AI workflow that parses municipal PDF codes into structured permit decision trees.",
+      "suman_angle": "I Built a Municipal Permit Automation Agent in Python (And Parsed 40 Pages of Building Code in 2 Mins)",
+      "target_keywords": [
+        "ai permit automation",
+        "pdf parser python llm",
+        "b2b ai workflow"
+      ],
+      "competing_articles": "Existing posts treat LLMs as generic chatbots; this post provides a structured rule engine using Python and Claude for domain automation.",
       "real_story_evidence": [
         {
           "source": "Hacker News (Show HN)",
-          "title": "Show HN: Sphinx \u2013 A hook that quizzes you on your AI's code before shipping",
-          "url": "https://sphinx-six-theta.vercel.app/",
-          "what_to_cite": "Sphinx's viral HN traction (245 points) validating that dev teams need interactive pre-push comprehension gates on AI-generated diffs."
+          "title": "Show HN: SimCity, but with Permits",
+          "url": "https://permit.petercai.com/",
+          "what_to_cite": "Reference how permit systems are notoriously complex administrative rule engines requiring multi-step verification."
         }
       ]
     },
     {
-      "topic": "macOS 15.8.2 OpenGL Deprecation Fix for Node and Python Toolchains",
-      "category": "F",
-      "category_name": "Debugging / Fix With Code",
-      "virality_score": 86,
-      "analysis": "The macOS 15.8.2 release silently broke legacy OpenGL bindings across developer setups, spiking emergency threads on Apple Developer Forums and HN with over 267 comments. Thousands of developers running legacy GUI visualizers, headless canvas renderers, and native bindings in Node/Python woke up to broken builds without clear migration paths. Delivering a deterministic shim and build-flag recipe captures instant high-intent Google search traffic from frustrated engineers.",
+      "topic": "How I Built a $0 Local Coding Agent Harness with DeepInfer and DeepSeek",
+      "category": "B",
+      "category_name": "Vibe Coding / AI-Assisted Workflow",
+      "virality_score": 94,
+      "analysis": "Local high-performance inference is taking over developer feeds following DeepSeek's release of DeepInfer. Developers are eager to replace expensive cloud token bills with high-throughput local agents. Showing a full local vibe-coding workflow with actual benchmarks and harness scripts fulfills huge search demand on LocalLLaMA and GitHub.",
       "cross_source_signals": [
-        "Hacker News: macOS 15.8.2 Breaks OpenGL (248 points \u00b7 267 comments)",
-        "Apple Developer Forums: Thread 850550 trending developer issue",
-        "Reddit r/programming: Multiple reports of broken local visualizer toolchains on Apple Silicon"
+        "Hacker News: DeepInfer framework launch (2229 points, 853 comments)",
+        "Reddit r/LocalLLaMA: Deepseek released DeepInfer thread trending",
+        "GitHub: deepseek-ai/DeepInfer trending #1 in LLM inference frameworks"
       ],
       "developer_pain": "high",
       "freshness": "breaking",
-      "money_angle": "",
-      "story_angle": "My automated UI testing suite and local canvas render tools completely crashed with symbol lookup errors the second macOS auto-updated to 15.8.2 overnight.",
-      "suman_angle": "macOS 15.8.2 Breaks OpenGL: The 15-Minute Shim and Environment Fix for Python & Node Devs",
+      "money_angle": "Cut cloud AI coding fees from $150/mo to $0 using local hardware acceleration",
+      "story_angle": "Tired of $100+ API bills every time my coding agent iterated on a bug, I replaced Claude API calls with a local DeepInfer setup running on my workstation.",
+      "suman_angle": "How I Built a 100% Local Vibe Coding Agent Fleet with DeepInfer (Zero API Costs)",
       "target_keywords": [
-        "macOS 15.8.2 OpenGL fix",
-        "macOS break opengl headless canvas",
-        "apple developer thread 850550 fix",
-        "pyopengl macos 15.8.2 workarounds"
+        "deepinfer tutorial",
+        "local coding agent deepseek",
+        "vibe coding local llm"
       ],
-      "competing_articles": "Apple forum threads are filled with complaints and vague workarounds; this provides an exact copy-paste environment variable shim and compiler flag script.",
+      "competing_articles": "Most DeepSeek guides focus on simple API calls; this post shows a full local terminal agent setup with working Python integration.",
       "real_story_evidence": []
     }
   ],
   "success_stories": [
     {
       "source": "show_hn",
+      "title": "Show HN: SimCity, but with Permits",
+      "url": "https://permit.petercai.com/",
+      "signal": "745 points \u00b7 359 comments",
+      "snippet": ""
+    },
+    {
+      "source": "show_hn",
       "title": "Show HN: Make cursed fonts like Times New Bastard",
       "url": "https://bastardica.mitpit.com",
       "signal": "862 points \u00b7 126 comments",
       "snippet": "A joke tool that abuses OpenType's ligature feature to mix fonts. It works pretty fast on client-side by loading Python in WASM."
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: Guitoro, a virtual guitar you strum with your keyboard",
-      "url": "https://guitoro.com/",
-      "signal": "572 points \u00b7 161 comments",
-      "snippet": "Guitoro is a free browser guitar using recordings of real instruments. You can strum with your keyboard, mouse, or touchscreen, choose acoustic, classical, electric guitar or bass, and see chord finge"
     },
     {
       "source": "show_hn",
@@ -146,16 +142,16 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Llmspeed \u2013 feel how fast a local LLM runs before you buy the hardware",
-      "url": "https://llmspeed.dev/",
-      "signal": "323 points \u00b7 86 comments",
-      "snippet": ""
+      "title": "Show HN: Guitoro, a virtual guitar you strum with your keyboard",
+      "url": "https://guitoro.com/",
+      "signal": "573 points \u00b7 161 comments",
+      "snippet": "Guitoro is a free browser guitar using recordings of real instruments. You can strum with your keyboard, mouse, or touchscreen, choose acoustic, classical, electric guitar or bass, and see chord finge"
     },
     {
       "source": "show_hn",
       "title": "Show HN: Carrier-Explode: iPhone, Pixel and Galaxy carrier settings decoded",
       "url": "https://carrierexplode.com/",
-      "signal": "432 points \u00b7 55 comments",
+      "signal": "433 points \u00b7 55 comments",
       "snippet": "Showing off carrier-explode, one of my side projects that continuously archives carrier settings for all major phone brands. carrier-explode also contains decoders and explanations for all the common "
     },
     {
@@ -174,13 +170,6 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Sphinx \u2013 A hook that quizzes you on your AI's code before shipping",
-      "url": "https://sphinx-six-theta.vercel.app/",
-      "signal": "245 points \u00b7 86 comments",
-      "snippet": "FOSS, Basically it plugs into your existing coding agent workflow and every time you push to prod it'll throw up a questionnaire that checks if you understand how the code you're pushing works."
-    },
-    {
-      "source": "show_hn",
       "title": "Show HN: Reladraw \u2013 A diagram language where you decide where to place things",
       "url": "https://github.com/reladraw/reladraw",
       "signal": "415 points \u00b7 119 comments",
@@ -188,16 +177,16 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Real-time Solar System with 526k asteroids and all tracked satellites",
-      "url": "https://space.bl2.net/",
-      "signal": "408 points \u00b7 111 comments",
+      "title": "Show HN: Llmspeed \u2013 feel how fast a local LLM runs before you buy the hardware",
+      "url": "https://llmspeed.dev/",
+      "signal": "329 points \u00b7 86 comments",
       "snippet": ""
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Unfenced \u2013 Land for sale that borders public land",
-      "url": "https://unfenced.land/",
-      "signal": "316 points \u00b7 200 comments",
+      "title": "Show HN: Real-time Solar System with 526k asteroids and all tracked satellites",
+      "url": "https://space.bl2.net/",
+      "signal": "408 points \u00b7 111 comments",
       "snippet": ""
     },
     {
@@ -209,6 +198,13 @@
     },
     {
       "source": "show_hn",
+      "title": "Show HN: Unfenced \u2013 Land for sale that borders public land",
+      "url": "https://unfenced.land/",
+      "signal": "319 points \u00b7 200 comments",
+      "snippet": ""
+    },
+    {
+      "source": "show_hn",
       "title": "Show HN: Lofi Cities \u2013 Pixel-art city nights with browser-generated lofi",
       "url": "https://loficities.com/",
       "signal": "320 points \u00b7 139 comments",
@@ -216,24 +212,31 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Gemini 4 Argon plays StarCraft",
-      "url": "https://starskirmish.com/bench/v0-2/",
-      "signal": "249 points \u00b7 111 comments",
-      "snippet": "I've refreshed StarSkirmish Bench, a benchmark where LLMs play StarCraft BW by writing code, with results from the flagship models of OpenAI, Anthropic, Google, and Muse"
+      "title": "Show HN: Sphinx \u2013 A hook that quizzes you on your AI's code before shipping",
+      "url": "https://sphinx-six-theta.vercel.app/",
+      "signal": "252 points \u00b7 89 comments",
+      "snippet": "FOSS, Basically it plugs into your existing coding agent workflow and every time you push to prod it'll throw up a questionnaire that checks if you understand how the code you're pushing works."
     },
     {
       "source": "show_hn",
       "title": "Show HN: PS2 games statically recompiled to WebAssembly",
       "url": "https://github.com/snuri00/ps2-web-recomp",
-      "signal": "314 points \u00b7 158 comments",
+      "signal": "315 points \u00b7 159 comments",
       "snippet": ""
     },
     {
       "source": "show_hn",
       "title": "Show HN: WallHop \u2013 12ft.io is gone, so I built a replacement",
       "url": "https://wallhop.io/",
-      "signal": "287 points \u00b7 131 comments",
+      "signal": "289 points \u00b7 132 comments",
       "snippet": "Hi HN, I'm Josh. WallHop is a free paywall bypass: paste an article URL (or prefix any URL with wallhop.io/) and you get the readable article without the paywall popup, ads or clutter. No signup, no e"
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Gemini 4 Argon plays StarCraft",
+      "url": "https://starskirmish.com/bench/v0-2/",
+      "signal": "254 points \u00b7 111 comments",
+      "snippet": "I've refreshed StarSkirmish Bench, a benchmark where LLMs play StarCraft BW by writing code, with results from the flagship models of OpenAI, Anthropic, Google, and Muse"
     },
     {
       "source": "show_hn",
@@ -244,24 +247,17 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Mini-AGI \u2013 Dynamic continual learning model trained on 8GB VRAM",
-      "url": "https://github.com/volotat/mini-AGI/",
-      "signal": "277 points \u00b7 80 comments",
-      "snippet": "Sorry for the pretentious name, I know, I know.. It just contains all the pieces I would like to see a AGI model to have, and I can't stand the temptation. Before throwing rocks at me, please take a g"
+      "title": "Show HN: VoidAccess \u2013 open-source dark web OSINT, from query to a graph",
+      "url": "https://github.com/KatrielMoses/voidaccess",
+      "signal": "185 points \u00b7 13 comments",
+      "snippet": "Hi HN! Im Katriel, and im a Security Researcher/Enthusiast and in the wave of AI, i wanted to build that next gen of security tooling that surpasses the current tools, and even the paid industries wit"
     },
     {
       "source": "show_hn",
       "title": "Show HN: The Zelda timeline to catch up before the Ocarina of Time remake",
       "url": "https://legendofhyrule.com/",
-      "signal": "179 points \u00b7 108 comments",
+      "signal": "222 points \u00b7 129 comments",
       "snippet": "I made this ahead of the Ocarina of Time remake which comes out in 17 days. I remember the feeling of playing it as a kid but I hadn\u2019t kept up with the story so I built a timeline to catch up before t"
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: Quake ported to safe Rust, playable in browser",
-      "url": "https://quake-srp.pages.dev/",
-      "signal": "241 points \u00b7 181 comments",
-      "snippet": ""
     }
   ]
 }
