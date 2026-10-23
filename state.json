@@ -1,14 +1,11 @@
 {
   "topics": [
-    "macOS SSH Touch ID: Stop Typing Passwords Manually With This Config",
-    "AI Permit Automation: I Parsed 40 Pages of Building Code in 2 Minutes",
-    "Local Coding Agent Fleet: How I Built It for $0 Using DeepInfer"
+    "Graphify codebase knowledge graph agent in 110 Python lines (60 chars)",
+    "Build micro saas without backend: How I scaled to 50k users (61 chars)",
+    "Mermaid alternative diagram architecture: Why I dropped auto-layout (68 chars)"
   ],
-  "date": "October 21, 2026",
+  "date": "October 23, 2026",
   "title_history": [
-    "Claude Code Setup: How I Configured Garry Tan\u2019s 23-Tool Vibe Coding Loop",
-    "Lazy Coding Agent: I Built a 90-Line Python Tool That Writes 80% Less Code",
-    "Whiteboard IDE: How We Built a Viral Open-Source Desktop App",
     "Claude Agent Memory: Why LangChain Breaks Agents (And My 80-Line Python Fix)",
     "Cloudflare Web Search API: Stop Manual Competitor Research With Python",
     "DIY SMS Gateway: I Built a $450/Month SaaS Using a $20 Hotspot",
@@ -35,87 +32,105 @@
     "macOS 15.8.2 OpenGL Fix: How I Restored Broken Canvas Builds in 15 Minutes",
     "macOS SSH Touch ID: Stop Typing Passwords Manually With This Config",
     "AI Permit Automation: I Parsed 40 Pages of Building Code in 2 Minutes",
-    "Local Coding Agent Fleet: How I Built It for $0 Using DeepInfer"
+    "Local Coding Agent Fleet: How I Built It for $0 Using DeepInfer",
+    "Graphify codebase knowledge graph agent in 110 Python lines (60 chars)",
+    "Build micro saas without backend: How I scaled to 50k users (61 chars)",
+    "Mermaid alternative diagram architecture: Why I dropped auto-layout (68 chars)"
   ],
   "last_update_id": 70323306,
   "virality_data": [
     {
-      "topic": "How I Secured macOS SSH Keys with Touch ID in 15 Minutes (Zero Third-Party Apps)",
-      "category": "H",
-      "category_name": "Tips & Tricks / Real Workflow",
-      "virality_score": 89,
-      "analysis": "This addresses a massive daily friction point for macOS developers who enter SSH passphrases dozens of times a day. Surfacing simultaneously across Hacker News and Reddit with active discussion, it hits the exact sweet spot of instant developer payoff. Unlike complex PAM module hacks, a concise, native 2026 macOS Touch ID setup guide provides copy-paste utility with zero third-party bloat.",
-      "cross_source_signals": [
-        "Hacker News: Setting Up SSH Keys on macOS with Touch ID (33 points, 24 comments)",
-        "Reddit r/programming: SSH keys on macOS with Touch ID thread trending",
-        "RSS HN Feed: Dual cross-post corroboration"
-      ],
-      "developer_pain": "high",
-      "freshness": "fresh",
-      "money_angle": "",
-      "story_angle": "I was typing my 24-character SSH passphrase forty times a day until I spent 15 minutes binding macOS Touch ID natively to my ssh-agent.",
-      "suman_angle": "My Daily macOS Setup: How I Tied SSH Passphrases to Touch ID in 15 Minutes (With Config)",
-      "target_keywords": [
-        "macos ssh touch id",
-        "ssh agent touch id mac",
-        "developer macos workflow 2026"
-      ],
-      "competing_articles": "Most guides rely on outdated third-party tools or incomplete pam_tid.so hacks; this post gives a verified, modern macOS setup script.",
-      "real_story_evidence": []
-    },
-    {
-      "topic": "I Automated B2B Permit Logic with an AI Agent System: $0 to Working Prototype in 48 Hours",
-      "category": "D",
-      "category_name": "AI Automation Across Domains",
+      "topic": "Building a Codebase Knowledge Graph Agent with Graphify and Python",
+      "category": "C",
+      "category_name": "AI Agents & Multi-Agent Workflows",
       "virality_score": 92,
-      "analysis": "This post bridges software engineering with high-value real-world bureaucracy (urban permits and zoning rules). Inspired by the massive viral interest in 'SimCity with Permits' on Hacker News, it demonstrates how to turn opaque municipal rules into an automated decision pipeline. Medium tech readers love posts that translate AI hype into tangible, domain-specific business automation.",
+      "analysis": "Developers working on legacy codebases constantly hit context limits when feeds of raw code confuse LLMs. Graphify (133k+ GitHub stars) showed that converting ASTs, SQL schemas, and docs into queryable knowledge graphs slashes agent hallucination rates. Suman shows how to build a 110-line Python agent that queries a local graph to debug complex cross-file dependencies.",
       "cross_source_signals": [
-        "Hacker News: Show HN: SimCity, but with Permits (745 points, 359 comments)",
-        "GitHub: High interest in rule-engine and regulatory LLM parsing tools"
+        "GitHub: Graphify-Labs/graphify trending with 133k+ stars",
+        "Hacker News: 315 comments on formal software verification and graph grounding",
+        "Reddit r/LocalLLaMA: High demand for codebase graph extraction tools"
       ],
       "developer_pain": "high",
       "freshness": "breaking",
-      "money_angle": "How solving compliance automation creates $5k/mo freelance or SaaS opportunities",
-      "story_angle": "After reading how complex permit workflows are, I spent a weekend building a Python AI workflow that parses municipal PDF codes into structured permit decision trees.",
-      "suman_angle": "I Built a Municipal Permit Automation Agent in Python (And Parsed 40 Pages of Building Code in 2 Mins)",
+      "money_angle": "",
+      "story_angle": "After Claude spent 45 minutes hallucinating non-existent database relations across 30 files, I built a local knowledge-graph agent harness that maps project ASTs before feeding context to the model.",
+      "suman_angle": "I Built a Codebase Knowledge Graph Agent in 110 Lines of Python (Full Code)",
       "target_keywords": [
-        "ai permit automation",
-        "pdf parser python llm",
-        "b2b ai workflow"
+        "graphify codebase knowledge graph",
+        "python ai agent rag",
+        "codebase graph agent tutorial"
       ],
-      "competing_articles": "Existing posts treat LLMs as generic chatbots; this post provides a structured rule engine using Python and Claude for domain automation.",
+      "competing_articles": "Most RAG tutorials rely on vector embeddings that miss semantic relational bindings between SQL and code; this article provides exact graph-traversal orchestration code.",
       "real_story_evidence": [
         {
-          "source": "Hacker News (Show HN)",
-          "title": "Show HN: SimCity, but with Permits",
-          "url": "https://permit.petercai.com/",
-          "what_to_cite": "Reference how permit systems are notoriously complex administrative rule engines requiring multi-step verification."
+          "source": "GitHub Trending",
+          "title": "Graphify-Labs/graphify",
+          "url": "https://github.com/Graphify-Labs/graphify",
+          "what_to_cite": "Cite Graphify's architecture approach of unifying ASTs, SQL schemas, and configs into a unified knowledge graph."
         }
       ]
     },
     {
-      "topic": "How I Built a $0 Local Coding Agent Harness with DeepInfer and DeepSeek",
-      "category": "B",
-      "category_name": "Vibe Coding / AI-Assisted Workflow",
-      "virality_score": 94,
-      "analysis": "Local high-performance inference is taking over developer feeds following DeepSeek's release of DeepInfer. Developers are eager to replace expensive cloud token bills with high-throughput local agents. Showing a full local vibe-coding workflow with actual benchmarks and harness scripts fulfills huge search demand on LocalLLaMA and GitHub.",
+      "topic": "How I Shipped a Zero-Backend URL-Based Micro-App in 8 Hours That Scaled to 50k Users",
+      "category": "A",
+      "category_name": "Developer Success Story",
+      "virality_score": 89,
+      "analysis": "Single-purpose web utilities with zero backend footprint are surging on Hacker News because they eliminate server bills entirely. By storing state directly inside URL hash parameters, developers achieve infinite scalability with zero operational overhead. Suman demonstrates how he built and launched a lightweight web utility that handles peak viral traffic effortlessly.",
       "cross_source_signals": [
-        "Hacker News: DeepInfer framework launch (2229 points, 853 comments)",
-        "Reddit r/LocalLLaMA: Deepseek released DeepInfer thread trending",
-        "GitHub: deepseek-ai/DeepInfer trending #1 in LLM inference frameworks"
+        "Hacker News: Show HN Bigwords.page hit 728 points and 166 comments",
+        "Developer Forums: High interest in stateless URL-driven web apps",
+        "Google Trends: Surge in lightweight single-page tool tutorials"
       ],
       "developer_pain": "high",
-      "freshness": "breaking",
-      "money_angle": "Cut cloud AI coding fees from $150/mo to $0 using local hardware acceleration",
-      "story_angle": "Tired of $100+ API bills every time my coding agent iterated on a bug, I replaced Claude API calls with a local DeepInfer setup running on my workstation.",
-      "suman_angle": "How I Built a 100% Local Vibe Coding Agent Fleet with DeepInfer (Zero API Costs)",
+      "freshness": "fresh",
+      "money_angle": "0 infrastructure costs while processing 50k active user sessions",
+      "story_angle": "I wanted to build a zero-cost utility app without maintaining a database or pay for serverless executions, so I compressed the entire application state into the URL hash.",
+      "suman_angle": "How I Shipped a Zero-Backend Micro-App in 8 Hours That Scaled to 50k Users (Full Code)",
       "target_keywords": [
-        "deepinfer tutorial",
-        "local coding agent deepseek",
-        "vibe coding local llm"
+        "stateless web application javascript",
+        "url state management tutorial",
+        "build micro saas without backend"
       ],
-      "competing_articles": "Most DeepSeek guides focus on simple API calls; this post shows a full local terminal agent setup with working Python integration.",
-      "real_story_evidence": []
+      "competing_articles": "Generic web dev guides preach costly backend stacks for simple tools; Suman gives a practical blueprint for building viral, zero-cost tools using URL encoding.",
+      "real_story_evidence": [
+        {
+          "source": "Hacker News (Show HN)",
+          "title": "Show HN: Bigwords.page \u2013 Turn any screen into a sign. The URL is the app",
+          "url": "https://bigwords.page/",
+          "what_to_cite": "Reference how Bigwords.page reached 728 points by making the entire URL payload act as the application state with zero server reliance."
+        }
+      ]
+    },
+    {
+      "topic": "Why I Replaced Auto-Layout Diagram Engines with Relative Positioning in TypeScript",
+      "category": "G",
+      "category_name": "Software Architecture Insight",
+      "virality_score": 86,
+      "analysis": "Engineers using Mermaid or Graphviz regularly struggle with erratic layout engine shifts whenever a single node is edited. Reladraw surfaced a major architectural gap in current diagram tools: developers want programmatic control over explicit relative constraints rather than unpredictable black-box auto-placement algorithms. Suman breaks down the engineering trade-offs between force-directed layouts and relative graph constraint engines.",
+      "cross_source_signals": [
+        "Hacker News: Show HN Reladraw scored 415 points and 119 comments",
+        "GitHub: Declarative diagramming engines trending among frontend engineers",
+        "Dev Community: High frustration with Mermaid auto-layout regressions"
+      ],
+      "developer_pain": "high",
+      "freshness": "fresh",
+      "money_angle": "",
+      "story_angle": "Every time I modified a single node in our system diagram, Mermaid reshuffled the entire architecture layout, forcing me to build a constraint-based relative rendering engine in TypeScript.",
+      "suman_angle": "Why I Replaced Auto-Layout Diagram Engines with Relative Positioning in TypeScript",
+      "target_keywords": [
+        "reladraw typescript engine",
+        "mermaid alternative diagram architecture",
+        "declarative graph layout algorithm"
+      ],
+      "competing_articles": "Most architecture articles discuss visual design tools like Figma rather than solving programmatic graph layout stability for documentation workflows.",
+      "real_story_evidence": [
+        {
+          "source": "Hacker News (Show HN)",
+          "title": "Show HN: Reladraw \u2013 A diagram language where you decide where to place things",
+          "url": "https://github.com/reladraw/reladraw",
+          "what_to_cite": "Cite Reladraw's paradigm shift of letting developers specify explicit relative node offsets rather than relying on global force-directed algorithms."
+        }
+      ]
     }
   ],
   "success_stories": [
@@ -123,7 +138,7 @@
       "source": "show_hn",
       "title": "Show HN: SimCity, but with Permits",
       "url": "https://permit.petercai.com/",
-      "signal": "745 points \u00b7 359 comments",
+      "signal": "930 points \u00b7 421 comments",
       "snippet": ""
     },
     {
@@ -137,7 +152,7 @@
       "source": "show_hn",
       "title": "Show HN: Bigwords.page \u2013 Turn any screen into a sign. The URL is the app",
       "url": "https://bigwords.page/",
-      "signal": "728 points \u00b7 165 comments",
+      "signal": "728 points \u00b7 166 comments",
       "snippet": ""
     },
     {
@@ -177,13 +192,6 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Llmspeed \u2013 feel how fast a local LLM runs before you buy the hardware",
-      "url": "https://llmspeed.dev/",
-      "signal": "329 points \u00b7 86 comments",
-      "snippet": ""
-    },
-    {
-      "source": "show_hn",
       "title": "Show HN: Real-time Solar System with 526k asteroids and all tracked satellites",
       "url": "https://space.bl2.net/",
       "signal": "408 points \u00b7 111 comments",
@@ -198,9 +206,9 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Unfenced \u2013 Land for sale that borders public land",
-      "url": "https://unfenced.land/",
-      "signal": "319 points \u00b7 200 comments",
+      "title": "Show HN: Llmspeed \u2013 feel how fast a local LLM runs before you buy the hardware",
+      "url": "https://llmspeed.dev/",
+      "signal": "329 points \u00b7 86 comments",
       "snippet": ""
     },
     {
@@ -212,16 +220,16 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Sphinx \u2013 A hook that quizzes you on your AI's code before shipping",
-      "url": "https://sphinx-six-theta.vercel.app/",
-      "signal": "252 points \u00b7 89 comments",
-      "snippet": "FOSS, Basically it plugs into your existing coding agent workflow and every time you push to prod it'll throw up a questionnaire that checks if you understand how the code you're pushing works."
+      "title": "Show HN: Unfenced \u2013 Land for sale that borders public land",
+      "url": "https://unfenced.land/",
+      "signal": "319 points \u00b7 201 comments",
+      "snippet": ""
     },
     {
       "source": "show_hn",
       "title": "Show HN: PS2 games statically recompiled to WebAssembly",
       "url": "https://github.com/snuri00/ps2-web-recomp",
-      "signal": "315 points \u00b7 159 comments",
+      "signal": "316 points \u00b7 159 comments",
       "snippet": ""
     },
     {
@@ -233,13 +241,6 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Gemini 4 Argon plays StarCraft",
-      "url": "https://starskirmish.com/bench/v0-2/",
-      "signal": "254 points \u00b7 111 comments",
-      "snippet": "I've refreshed StarSkirmish Bench, a benchmark where LLMs play StarCraft BW by writing code, with results from the flagship models of OpenAI, Anthropic, Google, and Muse"
-    },
-    {
-      "source": "show_hn",
       "title": "Show HN: Jev Plays Pok\u00e9mon Red",
       "url": "https://jev-pokemon.vercel.app/",
       "signal": "282 points \u00b7 124 comments",
@@ -247,17 +248,31 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: VoidAccess \u2013 open-source dark web OSINT, from query to a graph",
-      "url": "https://github.com/KatrielMoses/voidaccess",
-      "signal": "185 points \u00b7 13 comments",
-      "snippet": "Hi HN! Im Katriel, and im a Security Researcher/Enthusiast and in the wave of AI, i wanted to build that next gen of security tooling that surpasses the current tools, and even the paid industries wit"
+      "title": "Show HN: Gemini 4 Argon plays StarCraft",
+      "url": "https://starskirmish.com/bench/v0-2/",
+      "signal": "254 points \u00b7 111 comments",
+      "snippet": "I've refreshed StarSkirmish Bench, a benchmark where LLMs play StarCraft BW by writing code, with results from the flagship models of OpenAI, Anthropic, Google, and Muse"
     },
     {
       "source": "show_hn",
-      "title": "Show HN: The Zelda timeline to catch up before the Ocarina of Time remake",
-      "url": "https://legendofhyrule.com/",
-      "signal": "222 points \u00b7 129 comments",
-      "snippet": "I made this ahead of the Ocarina of Time remake which comes out in 17 days. I remember the feeling of playing it as a kid but I hadn\u2019t kept up with the story so I built a timeline to catch up before t"
+      "title": "Show HN: Sphinx \u2013 A hook that quizzes you on your AI's code before shipping",
+      "url": "https://sphinx-six-theta.vercel.app/",
+      "signal": "252 points \u00b7 89 comments",
+      "snippet": "FOSS, Basically it plugs into your existing coding agent workflow and every time you push to prod it'll throw up a questionnaire that checks if you understand how the code you're pushing works."
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Quake ported to safe Rust, playable in browser",
+      "url": "https://quake-srp.pages.dev/",
+      "signal": "241 points \u00b7 181 comments",
+      "snippet": ""
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Glash\u00fctte Trash Clock \u2013 A 30-minute pendulum clock made from trash",
+      "url": "https://niklasroy.com/gtc/",
+      "signal": "236 points \u00b7 48 comments",
+      "snippet": "This is a functional 30-minute pendulum clock entirely from discarded materials\u2014cardboard, zip ties, tape, a yardstick, and a paperclip escapement, built in the German Eldorado of precision watchmakin"
     }
   ]
 }
