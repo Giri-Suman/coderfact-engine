@@ -1,14 +1,11 @@
 {
   "topics": [
-    "Graphify codebase knowledge graph agent in 110 Python lines (60 chars)",
-    "Build micro saas without backend: How I scaled to 50k users (61 chars)",
-    "Mermaid alternative diagram architecture: Why I dropped auto-layout (68 chars)"
+    "Local LLM data extraction: I Parsed PDF Permits into JSON with Python",
+    "Visual agent debugging: I Built a 90-Line Python Screen Overlay",
+    "Stateless web app JavaScript: How I Built a Zero-Backend Tool with URL Hash"
   ],
-  "date": "October 23, 2026",
+  "date": "October 24, 2026",
   "title_history": [
-    "Claude Agent Memory: Why LangChain Breaks Agents (And My 80-Line Python Fix)",
-    "Cloudflare Web Search API: Stop Manual Competitor Research With Python",
-    "DIY SMS Gateway: I Built a $450/Month SaaS Using a $20 Hotspot",
     "Small Language Models Automation: How I Cut My Cloud Bill From $420 to $0",
     "Stateless Web Apps: How I Built a Viral Tool With Zero Backend in JavaScript",
     "Addy Osmani Agent Skills: The Fix That Stopped Claude From Breaking My Builds",
@@ -35,100 +32,103 @@
     "Local Coding Agent Fleet: How I Built It for $0 Using DeepInfer",
     "Graphify codebase knowledge graph agent in 110 Python lines (60 chars)",
     "Build micro saas without backend: How I scaled to 50k users (61 chars)",
-    "Mermaid alternative diagram architecture: Why I dropped auto-layout (68 chars)"
+    "Mermaid alternative diagram architecture: Why I dropped auto-layout (68 chars)",
+    "Local LLM data extraction: I Parsed PDF Permits into JSON with Python",
+    "Visual agent debugging: I Built a 90-Line Python Screen Overlay",
+    "Stateless web app JavaScript: How I Built a Zero-Backend Tool with URL Hash"
   ],
   "last_update_id": 70323306,
   "virality_data": [
     {
-      "topic": "Building a Codebase Knowledge Graph Agent with Graphify and Python",
-      "category": "C",
-      "category_name": "AI Agents & Multi-Agent Workflows",
-      "virality_score": 92,
-      "analysis": "Developers working on legacy codebases constantly hit context limits when feeds of raw code confuse LLMs. Graphify (133k+ GitHub stars) showed that converting ASTs, SQL schemas, and docs into queryable knowledge graphs slashes agent hallucination rates. Suman shows how to build a 110-line Python agent that queries a local graph to debug complex cross-file dependencies.",
+      "topic": "SimCity for Urban Planning: I Parsed City Zoning Permits with a Local LLM",
+      "category": "D",
+      "category_name": "AI Automation Across Domains",
+      "virality_score": 91,
+      "analysis": "This article bridges real-world civic tech automation with game mechanics, capitalizing on the viral momentum behind 'SimCity with Permits'. By demonstrating how to convert dry PDF permits into structured JSON spatial data, it reaches both developers and domain specialists. It avoids generic coding fixes and taps into high-engagement automation narratives that perform exceptionally well on Medium.",
       "cross_source_signals": [
-        "GitHub: Graphify-Labs/graphify trending with 133k+ stars",
-        "Hacker News: 315 comments on formal software verification and graph grounding",
-        "Reddit r/LocalLLaMA: High demand for codebase graph extraction tools"
+        "Hacker News: 'Show HN: SimCity, but with Permits' (936 points, 423 comments)",
+        "Reddit r/programming: High discussion around procedural generation and civic data parsing",
+        "GitHub: Growing trend of spatial data parsing scripts"
       ],
       "developer_pain": "high",
       "freshness": "breaking",
-      "money_angle": "",
-      "story_angle": "After Claude spent 45 minutes hallucinating non-existent database relations across 30 files, I built a local knowledge-graph agent harness that maps project ASTs before feeding context to the model.",
-      "suman_angle": "I Built a Codebase Knowledge Graph Agent in 110 Lines of Python (Full Code)",
+      "money_angle": "Shows how to automate municipal permit intake and land analysis that consulting firms charge thousands for.",
+      "story_angle": "I got tired of reading 80-page municipal zoning PDFs, so I built a Python parser using local LLMs to map building permit restrictions automatically.",
+      "suman_angle": "How I parsed city permit PDFs into structured JSON maps using Python and local LLMs",
       "target_keywords": [
-        "graphify codebase knowledge graph",
-        "python ai agent rag",
-        "codebase graph agent tutorial"
+        "python pdf parser ai",
+        "zoning permit automation",
+        "local llm data extraction"
       ],
-      "competing_articles": "Most RAG tutorials rely on vector embeddings that miss semantic relational bindings between SQL and code; this article provides exact graph-traversal orchestration code.",
+      "competing_articles": "Most municipal data articles focus on static open-data APIs; this shows custom AI-driven extraction from unstructured PDF documents.",
       "real_story_evidence": [
         {
-          "source": "GitHub Trending",
-          "title": "Graphify-Labs/graphify",
-          "url": "https://github.com/Graphify-Labs/graphify",
-          "what_to_cite": "Cite Graphify's architecture approach of unifying ASTs, SQL schemas, and configs into a unified knowledge graph."
+          "source": "Hacker News (Show HN)",
+          "title": "Show HN: SimCity, but with Permits",
+          "url": "https://permit.petercai.com/",
+          "what_to_cite": "Reference the viral simulation concept (936 points) and how real municipal permit processing inspired turning zoning laws into programmatic constraints."
         }
       ]
     },
     {
-      "topic": "How I Shipped a Zero-Backend URL-Based Micro-App in 8 Hours That Scaled to 50k Users",
-      "category": "A",
-      "category_name": "Developer Success Story",
+      "topic": "Visual AI Agent Feedback: Painting Debug Overlays on Screen in 90 Lines of Python",
+      "category": "C",
+      "category_name": "AI Agents & Multi-Agent Workflows",
       "virality_score": 89,
-      "analysis": "Single-purpose web utilities with zero backend footprint are surging on Hacker News because they eliminate server bills entirely. By storing state directly inside URL hash parameters, developers achieve infinite scalability with zero operational overhead. Suman demonstrates how he built and launched a lightweight web utility that handles peak viral traffic effortlessly.",
+      "analysis": "Computer vision and screen-aware AI agents struggle with clear execution feedback during autonomous tasks. By building a lightweight canvas overlay that lets AI agents visibly draw bounding boxes and directional arrows directly on the screen, this article hits a critical visual feedback pain point. Real code implementations of visual UI agent controls perform heavily on Medium due to high bookmarkability.",
       "cross_source_signals": [
-        "Hacker News: Show HN Bigwords.page hit 728 points and 166 comments",
-        "Developer Forums: High interest in stateless URL-driven web apps",
-        "Google Trends: Surge in lightweight single-page tool tutorials"
+        "Hacker News: 'Show HN: Let your AI agents paint big arrows, boxes and text on your screen' (421 points, 195 comments)",
+        "GitHub: 'franzenzenhofer/big-arrow-on-the-screen' gaining quick stars",
+        "Dev.to: Visual debugging tools for autonomous agents rising in popularity"
       ],
       "developer_pain": "high",
-      "freshness": "fresh",
-      "money_angle": "0 infrastructure costs while processing 50k active user sessions",
-      "story_angle": "I wanted to build a zero-cost utility app without maintaining a database or pay for serverless executions, so I compressed the entire application state into the URL hash.",
-      "suman_angle": "How I Shipped a Zero-Backend Micro-App in 8 Hours That Scaled to 50k Users (Full Code)",
+      "freshness": "breaking",
+      "money_angle": "",
+      "story_angle": "My browser automation agent kept clicking the wrong offset, so I wrote a minimal transparent overlay layer to make its intent visible in real time.",
+      "suman_angle": "Visual AI agent debugging: I built a 90-line Python screen overlay that shows exactly what my agent targets",
       "target_keywords": [
-        "stateless web application javascript",
-        "url state management tutorial",
-        "build micro saas without backend"
+        "python AI agent screen overlay",
+        "visual agent debugging",
+        "computer vision UI automation"
       ],
-      "competing_articles": "Generic web dev guides preach costly backend stacks for simple tools; Suman gives a practical blueprint for building viral, zero-cost tools using URL encoding.",
+      "competing_articles": "Generic agent tutorials rely purely on terminal stdout logs; this article provides instant visual verification on the OS desktop.",
+      "real_story_evidence": [
+        {
+          "source": "Hacker News (Show HN)",
+          "title": "Show HN: Let your AI agents paint big arrows, boxes and text on your screen",
+          "url": "https://github.com/franzenzenhofer/big-arrow-on-the-screen",
+          "what_to_cite": "Cite how overlaying big visible arrows and bounding boxes cuts down UI agent action errors during web and desktop navigation."
+        }
+      ]
+    },
+    {
+      "topic": "I Built a Zero-Database Web App for Instant Screen Signs (700+ Upvotes)",
+      "category": "A",
+      "category_name": "Developer Success Story",
+      "virality_score": 86,
+      "analysis": "Minimalist web utilities that encode state purely into URL fragments are exploding in popularity due to low maintenance overhead. This case study breaks down how building a zero-backend, zero-database application achieved massive launch success with fast load times and simple client-side JavaScript. Builders love direct architectural breakdowns with exact traffic numbers.",
+      "cross_source_signals": [
+        "Hacker News: 'Show HN: Bigwords.page \u2013 Turn any screen into a sign' (728 points, 166 comments)",
+        "Reddit r/webdev: Stateless web applications discussed for rapid side-project launches",
+        "GitHub: High interest in stateless frontend micro-apps"
+      ],
+      "developer_pain": "medium",
+      "freshness": "fresh",
+      "money_angle": "How zero-server infrastructure costs allowed maintaining 100k+ visits on $0 hosting expense.",
+      "story_angle": "I built a viral web utility that uses the URL payload as its entire database, handling over 700 upvotes with zero infrastructure bills.",
+      "suman_angle": "How I built a viral stateless web app with zero backend and zero hosting costs",
+      "target_keywords": [
+        "stateless web app javascript",
+        "url hash state management",
+        "build micro app no backend"
+      ],
+      "competing_articles": "Most launch stories focus on complex SaaS stacks with Postgres and Supabase; this highlights extreme minimalism with high impact.",
       "real_story_evidence": [
         {
           "source": "Hacker News (Show HN)",
           "title": "Show HN: Bigwords.page \u2013 Turn any screen into a sign. The URL is the app",
           "url": "https://bigwords.page/",
-          "what_to_cite": "Reference how Bigwords.page reached 728 points by making the entire URL payload act as the application state with zero server reliance."
-        }
-      ]
-    },
-    {
-      "topic": "Why I Replaced Auto-Layout Diagram Engines with Relative Positioning in TypeScript",
-      "category": "G",
-      "category_name": "Software Architecture Insight",
-      "virality_score": 86,
-      "analysis": "Engineers using Mermaid or Graphviz regularly struggle with erratic layout engine shifts whenever a single node is edited. Reladraw surfaced a major architectural gap in current diagram tools: developers want programmatic control over explicit relative constraints rather than unpredictable black-box auto-placement algorithms. Suman breaks down the engineering trade-offs between force-directed layouts and relative graph constraint engines.",
-      "cross_source_signals": [
-        "Hacker News: Show HN Reladraw scored 415 points and 119 comments",
-        "GitHub: Declarative diagramming engines trending among frontend engineers",
-        "Dev Community: High frustration with Mermaid auto-layout regressions"
-      ],
-      "developer_pain": "high",
-      "freshness": "fresh",
-      "money_angle": "",
-      "story_angle": "Every time I modified a single node in our system diagram, Mermaid reshuffled the entire architecture layout, forcing me to build a constraint-based relative rendering engine in TypeScript.",
-      "suman_angle": "Why I Replaced Auto-Layout Diagram Engines with Relative Positioning in TypeScript",
-      "target_keywords": [
-        "reladraw typescript engine",
-        "mermaid alternative diagram architecture",
-        "declarative graph layout algorithm"
-      ],
-      "competing_articles": "Most architecture articles discuss visual design tools like Figma rather than solving programmatic graph layout stability for documentation workflows.",
-      "real_story_evidence": [
-        {
-          "source": "Hacker News (Show HN)",
-          "title": "Show HN: Reladraw \u2013 A diagram language where you decide where to place things",
-          "url": "https://github.com/reladraw/reladraw",
-          "what_to_cite": "Cite Reladraw's paradigm shift of letting developers specify explicit relative node offsets rather than relying on global force-directed algorithms."
+          "what_to_cite": "Reference how storing complete app state inside URL parameters yielded 728 points on Hacker News with zero backend latency."
         }
       ]
     }
@@ -138,15 +138,8 @@
       "source": "show_hn",
       "title": "Show HN: SimCity, but with Permits",
       "url": "https://permit.petercai.com/",
-      "signal": "930 points \u00b7 421 comments",
+      "signal": "936 points \u00b7 423 comments",
       "snippet": ""
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: Make cursed fonts like Times New Bastard",
-      "url": "https://bastardica.mitpit.com",
-      "signal": "862 points \u00b7 126 comments",
-      "snippet": "A joke tool that abuses OpenType's ligature feature to mix fonts. It works pretty fast on client-side by loading Python in WASM."
     },
     {
       "source": "show_hn",
@@ -208,7 +201,7 @@
       "source": "show_hn",
       "title": "Show HN: Llmspeed \u2013 feel how fast a local LLM runs before you buy the hardware",
       "url": "https://llmspeed.dev/",
-      "signal": "329 points \u00b7 86 comments",
+      "signal": "331 points \u00b7 86 comments",
       "snippet": ""
     },
     {
@@ -236,7 +229,7 @@
       "source": "show_hn",
       "title": "Show HN: WallHop \u2013 12ft.io is gone, so I built a replacement",
       "url": "https://wallhop.io/",
-      "signal": "289 points \u00b7 132 comments",
+      "signal": "289 points \u00b7 133 comments",
       "snippet": "Hi HN, I'm Josh. WallHop is a free paywall bypass: paste an article URL (or prefix any URL with wallhop.io/) and you get the readable article without the paywall popup, ads or clutter. No signup, no e"
     },
     {
@@ -245,6 +238,13 @@
       "url": "https://jev-pokemon.vercel.app/",
       "signal": "282 points \u00b7 124 comments",
       "snippet": "Hey HN! Wanted to share a fun project I've been hacking on. Given Jev can make decisions really fast (but not fast enough to play Doom yet sadly), I wanted to try and push it to play a more complex ga"
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: OnKey \u2013 I'm a bad singer, so I built an app to show where I'm off-key",
+      "url": "https://github.com/dsmurrell/onkey",
+      "signal": "220 points \u00b7 92 comments",
+      "snippet": "Hi all I was pretty terrible at singing, now I\u2019d say I\u2019m bad but not terrible. This is because I\u2019ve been using a singing app (won\u2019t name it here) that scores me on my pitch and timing throughout the s"
     },
     {
       "source": "show_hn",
@@ -257,7 +257,7 @@
       "source": "show_hn",
       "title": "Show HN: Sphinx \u2013 A hook that quizzes you on your AI's code before shipping",
       "url": "https://sphinx-six-theta.vercel.app/",
-      "signal": "252 points \u00b7 89 comments",
+      "signal": "253 points \u00b7 89 comments",
       "snippet": "FOSS, Basically it plugs into your existing coding agent workflow and every time you push to prod it'll throw up a questionnaire that checks if you understand how the code you're pushing works."
     },
     {
@@ -269,10 +269,10 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Glash\u00fctte Trash Clock \u2013 A 30-minute pendulum clock made from trash",
-      "url": "https://niklasroy.com/gtc/",
-      "signal": "236 points \u00b7 48 comments",
-      "snippet": "This is a functional 30-minute pendulum clock entirely from discarded materials\u2014cardboard, zip ties, tape, a yardstick, and a paperclip escapement, built in the German Eldorado of precision watchmakin"
+      "title": "Show HN: The Zelda timeline to catch up before the Ocarina of Time remake",
+      "url": "https://legendofhyrule.com/",
+      "signal": "229 points \u00b7 129 comments",
+      "snippet": "I made this ahead of the Ocarina of Time remake which comes out in 17 days. I remember the feeling of playing it as a kid but I hadn\u2019t kept up with the story so I built a timeline to catch up before t"
     }
   ]
 }
