@@ -1,14 +1,11 @@
 {
   "topics": [
-    "ThreeJS performance: I built a real-time 3D space tracker for $0",
-    "Python AI agent overlay: I built a 70-line visual debugger (code included)",
-    "Micro SaaS zero backend: How my 3-hour JS script makes $420/month on Stripe"
+    "LangGraph Tutorial Python: I Built a 3-Agent Stock Analyzer With Code",
+    "Web Audio API Tutorial JS: I Built a Guitar Synth That Hit HN Front Page",
+    "Vibe Coding Claude Code Tutorial: I Built a UI System in 2 Hours"
   ],
-  "date": "October 25, 2026",
+  "date": "October 26, 2026",
   "title_history": [
-    "Reverse Engineer API Python: How I Extracted Private Specs in 45 Mins",
-    "Cloudflare Deno Migration: My Edge Worker Setup & Real Benchmarks",
-    "AI Agent Screen Overlay Python Script That Cut My API Costs by $120/Mo",
     "Cloudflare Workers AI Agent: I Built It for $0/Month With D1 Memory (Code)",
     "Claude Code Tutorial: I Vibe Coded a B2B Pipeline in 90 Minutes (Full Code)",
     "Carrier Bundle Reverse Engineering: How I Decoded APN Files With Python",
@@ -35,95 +32,94 @@
     "Stateless web app JavaScript: How I Built a Zero-Backend Tool with URL Hash",
     "ThreeJS performance: I built a real-time 3D space tracker for $0",
     "Python AI agent overlay: I built a 70-line visual debugger (code included)",
-    "Micro SaaS zero backend: How my 3-hour JS script makes $420/month on Stripe"
+    "Micro SaaS zero backend: How my 3-hour JS script makes $420/month on Stripe",
+    "LangGraph Tutorial Python: I Built a 3-Agent Stock Analyzer With Code",
+    "Web Audio API Tutorial JS: I Built a Guitar Synth That Hit HN Front Page",
+    "Vibe Coding Claude Code Tutorial: I Built a UI System in 2 Hours"
   ],
   "last_update_id": 70323306,
   "virality_data": [
     {
-      "topic": "How I Built a Real-Time 3D Space Tracker in Pure JS with Zero Server Infrastructure",
-      "category": "A",
-      "category_name": "Developer Success Story",
-      "virality_score": 91,
-      "analysis": "This taps directly into the high-engagement show-and-tell trend on Hacker News where client-side heavy visualization apps outperform traditional full-stack projects. With interest spiking for zero-cost client-side WebGL/Three.js renderers, developers love seeing complete client-side architecture that handles large data sets smoothly. It provides a blueprint for shipping zero-maintenance, high-impact web visualizers.",
-      "cross_source_signals": [
-        "Hacker News: Real-time Solar System with 526k asteroids (408 points)",
-        "Reddit r/javascript: 3 threads on browser orbital mechanics calculations"
-      ],
-      "developer_pain": "high",
-      "freshness": "fresh",
-      "money_angle": "$0 server cost forever while serving 50k monthly active users",
-      "story_angle": "I wanted to visualize satellite and asteroid trajectories without paying a $300/mo server bill, so I offloaded orbital calculations to Web Workers.",
-      "suman_angle": "How I built a real-time satellite tracker in pure JS with zero server cost",
-      "target_keywords": [
-        "javascript webgl visualization tutorial",
-        "threejs performance 3d web app",
-        "client side solar system js"
-      ],
-      "competing_articles": "Most WebGL articles rely on backend APIs to fetch pre-calculated trajectory steps; Suman shows how to run keplerian math directly in dynamic Web Workers.",
-      "real_story_evidence": [
-        {
-          "source": "Hacker News (Show HN)",
-          "title": "Show HN: Real-time Solar System with 526k asteroids and all tracked satellites",
-          "url": "https://space.bl2.net/",
-          "what_to_cite": "Reference tracking 526k asteroids in-browser without server rendering latency"
-        }
-      ]
-    },
-    {
+      "topic": "How I Built a Multi-Agent Stock Analysis Pipeline in Python Using LangGraph",
       "category": "C",
       "category_name": "AI Agents & Multi-Agent Workflows",
-      "virality_score": 94,
-      "analysis": "Visual debugging for autonomous AI agents is currently the single largest pain point for engineers building agentic loops in 2026. This topic addresses agent state unpredictability by providing an agent harness that visually annotates the OS screen during execution. The actionable code snippet gives immediate copy-paste utility that solves UI agent execution drift.",
+      "virality_score": 92,
+      "analysis": "Multi-agent LLM financial systems are heavily trending following the viral launch of TauricResearch's TradingAgents framework on GitHub. Developers want practical, low-line-count implementations rather than enterprise abstractions. Showing an executable 90-line LangGraph orchestration system taps into both financial automation interest and agent architecture trends.",
       "cross_source_signals": [
-        "Hacker News: Let your AI agents paint big arrows, boxes and text on your screen (421 points)",
-        "GitHub: Trending repositories in visual agent overlay tools"
+        "GitHub: TauricResearch/TradingAgents trending with over 115k stars",
+        "Hacker News: High engagement on multi-agent execution frameworks",
+        "Google Trends: 'multi agent python framework' breakout topic"
       ],
       "developer_pain": "high",
       "freshness": "breaking",
-      "money_angle": "",
-      "story_angle": "My UI automation agent kept misclicking hidden elements, so I built a 70-line Python screen overlay agent to debug its exact visual coordinates.",
-      "suman_angle": "Visual AI agent debugging: I built a 70-line Python overlay harness (full code)",
+      "money_angle": "Automating portfolio sentiment analysis and risk filtering without paying high API subscription fees",
+      "story_angle": "I built a 3-agent orchestration workflow to parse earnings transcripts and technical indicators in under 100 lines of Python.",
+      "suman_angle": "How I built a 3-agent stock analysis pipeline in Python (full LangGraph code)",
       "target_keywords": [
-        "python ai agent overlay",
-        "visual agent debugging tutorial",
-        "langchain visual feedback loop"
+        "langgraph tutorial python",
+        "tradingagents github python",
+        "multi agent workflow llm"
       ],
-      "competing_articles": "Most agent articles cover text-based execution logs; Suman gives a practical Python script that draws transparent bounding boxes on-screen in real time.",
+      "competing_articles": "Most agent posts explain conceptual topologies; Suman provides runnable Python orchestration code with state management and tool calling.",
+      "real_story_evidence": []
+    },
+    {
+      "topic": "How I Built a Browser Guitar Synth in Pure JavaScript and Got 570+ Upvotes on Hacker News",
+      "category": "A",
+      "category_name": "Developer Success Story",
+      "virality_score": 89,
+      "analysis": "Medium tech readers love builder post-mortems about simple interactive web tools that blow up on community platforms like Hacker News. Referencing real launch stats from Guitoro creates immediate credibility and high read ratio. The angle focuses on Web Audio API performance tricks and pure JS architecture.",
+      "cross_source_signals": [
+        "Hacker News: Show HN Guitoro hit 573 points and 161 comments",
+        "Dev.to: Interactive Web Audio API tutorials trending among frontend devs"
+      ],
+      "developer_pain": "medium",
+      "freshness": "fresh",
+      "money_angle": "",
+      "story_angle": "I built a browser guitar synth with zero heavy frontend frameworks and got featured on the front page of Hacker News.",
+      "suman_angle": "How I built a zero-dependency guitar synth in pure JS (and reached the HN front page)",
+      "target_keywords": [
+        "web audio api tutorial js",
+        "pure javascript interactive app",
+        "hacker news show hn project"
+      ],
+      "competing_articles": "Generic Web Audio API posts focus on basic oscillator synth code; Suman combines real instrument sampling tricks with real-world launch numbers.",
       "real_story_evidence": [
         {
           "source": "Hacker News (Show HN)",
-          "title": "Show HN: Let your AI agents paint big arrows, boxes and text on your screen",
-          "url": "https://github.com/franzenzenhofer/big-arrow-on-the-screen",
-          "what_to_cite": "Cite using on-screen arrows and boxes to visually trace agent click actions on desktop applications"
+          "title": "Show HN: Guitoro, a virtual guitar you strum with your keyboard",
+          "url": "https://guitoro.com/",
+          "what_to_cite": "Reference the 573 points, 161 comments, and real instrument audio sample loading strategy in browser JS."
         }
       ]
     },
     {
-      "category": "E",
-      "category_name": "Money / Income Story",
-      "virality_score": 89,
-      "analysis": "Income transparency posts with hyper-focused micro-SaaS utility consistently hit top read-ratios on Medium tech feeds. This post leverages the viral success of single-route web applications that monetize extreme simplicity without user authentication friction. It bridges the gap between side-project coding and instant monetization.",
+      "topic": "I Vibe Coded a Custom UI Design Harness Using Impeccable and Claude Code in 2 Hours",
+      "category": "B",
+      "category_name": "Vibe Coding / AI-Assisted Workflow",
+      "virality_score": 91,
+      "analysis": "Vibe coding continues to dominate 2026 dev searches, but the conversation is shifting toward AI design languages and prompt harnesses like pbakaus/impeccable. Demonstrating a fast feedback loop where Claude Code formats and polishes UI components using exact design constraints gives readers an immediate productivity upgrade.",
       "cross_source_signals": [
-        "Hacker News: Bigwords.page \u2013 Turn any screen into a sign (728 points)",
-        "Reddit r/MicroSaaS: discussions on URL-driven zero-signup web apps"
+        "GitHub: pbakaus/impeccable AI design language repository exploding in stars",
+        "Hacker News: Discussions on structured design harnesses for LLM coders"
       ],
-      "developer_pain": "medium",
-      "freshness": "fresh",
-      "money_angle": "$420/month passive revenue from a zero-backend web tool",
-      "story_angle": "I built a tiny URL-driven web tool in 3 hours, submitted it to product hubs, and turned it into a $420/mo passive income project.",
-      "suman_angle": "How my 3-hour zero-backend script makes $420/month on Stripe (full setup)",
+      "developer_pain": "high",
+      "freshness": "breaking",
+      "money_angle": "Saving dozens of hours of manual CSS tweak iterations for SaaS MVPs",
+      "story_angle": "I paired Claude Code with a dedicated AI design harness to vibe code production-ready UI components in one afternoon.",
+      "suman_angle": "I vibe coded a UI design system in 2 hours using Claude Code + Impeccable (workflow + prompts)",
       "target_keywords": [
-        "micro saas zero backend",
-        "monetize simple javascript app",
-        "make money side project dev"
+        "vibe coding claude code tutorial",
+        "impeccable ai design language",
+        "ai frontend generation workflow"
       ],
-      "competing_articles": "Most income stories talk vaguely about marketing strategy; Suman breaks down the exact zero-cost tech stack and URL payload architecture that powers the tool.",
+      "competing_articles": "Standard vibe coding articles show unstyled messy components; Suman shows how to feed strict design language rules into AI harnesses for polished results.",
       "real_story_evidence": [
         {
-          "source": "Hacker News (Show HN)",
-          "title": "Show HN: Bigwords.page \u2013 Turn any screen into a sign. The URL is the app",
-          "url": "https://bigwords.page/",
-          "what_to_cite": "Reference how keeping the entire app state inside the URL hash eliminates backend database costs completely"
+          "source": "GitHub Trending",
+          "title": "pbakaus/impeccable The design language that makes your AI harness better at design",
+          "url": "https://github.com/pbakaus/impeccable",
+          "what_to_cite": "Cite using structured design tokens and language constraints inside AI coding harnesses to prevent generic LLM tailwind soup."
         }
       ]
     }
@@ -133,14 +129,21 @@
       "source": "show_hn",
       "title": "Show HN: Steal My Bitcoin",
       "url": "https://stealmybitcoin.com/",
-      "signal": "459 points \u00b7 286 comments",
+      "signal": "599 points \u00b7 441 comments",
       "snippet": "Made this because I'm curious if anyone out there has figured out how to actually use this PHP RCE we spent the last few days panicking over. Have fun!"
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: TitleArt \u2013 Make text like it's 1997",
+      "url": "https://titleart.dvy.io/",
+      "signal": "167 points \u00b7 24 comments",
+      "snippet": ""
     },
     {
       "source": "show_hn",
       "title": "Show HN: SimCity, but with Permits",
       "url": "https://permit.petercai.com/",
-      "signal": "937 points \u00b7 425 comments",
+      "signal": "938 points \u00b7 425 comments",
       "snippet": ""
     },
     {
@@ -168,7 +171,7 @@
       "source": "show_hn",
       "title": "Show HN: Let your AI agents paint big arrows, boxes and text on your screen",
       "url": "https://github.com/franzenzenhofer/big-arrow-on-the-screen",
-      "signal": "421 points \u00b7 195 comments",
+      "signal": "421 points \u00b7 194 comments",
       "snippet": ""
     },
     {
@@ -182,7 +185,7 @@
       "source": "show_hn",
       "title": "Show HN: Real-time Solar System with 526k asteroids and all tracked satellites",
       "url": "https://space.bl2.net/",
-      "signal": "408 points \u00b7 111 comments",
+      "signal": "408 points \u00b7 109 comments",
       "snippet": ""
     },
     {
@@ -229,20 +232,6 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: OnKey \u2013 I'm a bad singer, so I built an app to show where I'm off-key",
-      "url": "https://github.com/dsmurrell/onkey",
-      "signal": "229 points \u00b7 91 comments",
-      "snippet": "Hi all I was pretty terrible at singing, now I\u2019d say I\u2019m bad but not terrible. This is because I\u2019ve been using a singing app (won\u2019t name it here) that scores me on my pitch and timing throughout the s"
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: Jev Plays Pok\u00e9mon Red",
-      "url": "https://jev-pokemon.vercel.app/",
-      "signal": "282 points \u00b7 124 comments",
-      "snippet": "Hey HN! Wanted to share a fun project I've been hacking on. Given Jev can make decisions really fast (but not fast enough to play Doom yet sadly), I wanted to try and push it to play a more complex ga"
-    },
-    {
-      "source": "show_hn",
       "title": "Show HN: Gemini 4 Argon plays StarCraft",
       "url": "https://starskirmish.com/bench/v0-2/",
       "signal": "254 points \u00b7 111 comments",
@@ -254,6 +243,13 @@
       "url": "https://sphinx-six-theta.vercel.app/",
       "signal": "253 points \u00b7 89 comments",
       "snippet": "FOSS, Basically it plugs into your existing coding agent workflow and every time you push to prod it'll throw up a questionnaire that checks if you understand how the code you're pushing works."
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: OnKey \u2013 I'm a bad singer, so I built an app to show where I'm off-key",
+      "url": "https://github.com/dsmurrell/onkey",
+      "signal": "234 points \u00b7 91 comments",
+      "snippet": "Hi all I was pretty terrible at singing, now I\u2019d say I\u2019m bad but not terrible. This is because I\u2019ve been using a singing app (won\u2019t name it here) that scores me on my pitch and timing throughout the s"
     },
     {
       "source": "show_hn",
