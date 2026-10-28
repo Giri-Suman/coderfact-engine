@@ -1,14 +1,11 @@
 {
   "topics": [
-    "LangGraph Tutorial Python: I Built a 3-Agent Stock Analyzer With Code",
-    "Web Audio API Tutorial JS: I Built a Guitar Synth That Hit HN Front Page",
-    "Vibe Coding Claude Code Tutorial: I Built a UI System in 2 Hours"
+    "Agent harness JavaScript: How I built a skill loop in 90 lines",
+    "Vanilla JS zero backend: How I built a database in the URL hash",
+    "Python experimental JIT removal: The performance trade-offs I found"
   ],
-  "date": "October 26, 2026",
+  "date": "October 28, 2026",
   "title_history": [
-    "Cloudflare Workers AI Agent: I Built It for $0/Month With D1 Memory (Code)",
-    "Claude Code Tutorial: I Vibe Coded a B2B Pipeline in 90 Minutes (Full Code)",
-    "Carrier Bundle Reverse Engineering: How I Decoded APN Files With Python",
     "Vibe coding tutorial: I built a $19 SaaS in 11 hours \u2014 full code",
     "AI agent tutorial: I replaced my news scroll with a 4-agent pipeline \u2014 full code",
     "GitHub actions silent fail: Why my Action had zero error \u2014 3\u2011hour root cause",
@@ -35,91 +32,106 @@
     "Micro SaaS zero backend: How my 3-hour JS script makes $420/month on Stripe",
     "LangGraph Tutorial Python: I Built a 3-Agent Stock Analyzer With Code",
     "Web Audio API Tutorial JS: I Built a Guitar Synth That Hit HN Front Page",
-    "Vibe Coding Claude Code Tutorial: I Built a UI System in 2 Hours"
+    "Vibe Coding Claude Code Tutorial: I Built a UI System in 2 Hours",
+    "Agent harness JavaScript: How I built a skill loop in 90 lines",
+    "Vanilla JS zero backend: How I built a database in the URL hash",
+    "Python experimental JIT removal: The performance trade-offs I found"
   ],
   "last_update_id": 70323306,
   "virality_data": [
     {
-      "topic": "How I Built a Multi-Agent Stock Analysis Pipeline in Python Using LangGraph",
+      "topic": "Building an Agent Skill Harness with Ephemeral Instincts in JavaScript",
       "category": "C",
       "category_name": "AI Agents & Multi-Agent Workflows",
-      "virality_score": 92,
-      "analysis": "Multi-agent LLM financial systems are heavily trending following the viral launch of TauricResearch's TradingAgents framework on GitHub. Developers want practical, low-line-count implementations rather than enterprise abstractions. Showing an executable 90-line LangGraph orchestration system taps into both financial automation interest and agent architecture trends.",
+      "virality_score": 91,
+      "analysis": "Agent performance degradation and tool-calling hallucinations have become acute bottlenecks as developers scale beyond simple LLM wrappers in late 2026. This post taps into the trending agent harness architecture seen on GitHub (affaan-m/ECC and obra/superpowers) that isolates agent skills, security sandboxes, and instinctual memory loops. Unlike generic multi-agent tutorials that focus on high-level orchestration, this offers a concrete 90-line JavaScript runtime demonstrating dynamic instinct injection and sub-agent task evaluation.",
       "cross_source_signals": [
-        "GitHub: TauricResearch/TradingAgents trending with over 115k stars",
-        "Hacker News: High engagement on multi-agent execution frameworks",
-        "Google Trends: 'multi agent python framework' breakout topic"
+        "GitHub Trending: affaan-m/ECC (Agent harness performance optimization system, 291k signal)",
+        "GitHub: obra/superpowers (agentic skills framework & software dev methodology)",
+        "Hacker News: 421 points on visual screen agents & runtime harnesses"
       ],
       "developer_pain": "high",
       "freshness": "breaking",
-      "money_angle": "Automating portfolio sentiment analysis and risk filtering without paying high API subscription fees",
-      "story_angle": "I built a 3-agent orchestration workflow to parse earnings transcripts and technical indicators in under 100 lines of Python.",
-      "suman_angle": "How I built a 3-agent stock analysis pipeline in Python (full LangGraph code)",
+      "money_angle": "Cut production LLM agent tool-call latency by 65% and token cost by $300/month by trimming unnecessary prompt context into on-demand skills",
+      "story_angle": "My coding agent kept forgetting its bash execution guardrails mid-session until I separated static prompt system instructions into an on-demand skill execution harness.",
+      "suman_angle": "Agent Harness in JavaScript: How I Built an On-Demand Skill & Memory Loop in 90 Lines",
       "target_keywords": [
-        "langgraph tutorial python",
-        "tradingagents github python",
-        "multi agent workflow llm"
+        "agent harness javascript",
+        "ai agent skills framework",
+        "dynamic memory llm agent",
+        "agent performance optimization"
       ],
-      "competing_articles": "Most agent posts explain conceptual topologies; Suman provides runnable Python orchestration code with state management and tool calling.",
-      "real_story_evidence": []
-    },
-    {
-      "topic": "How I Built a Browser Guitar Synth in Pure JavaScript and Got 570+ Upvotes on Hacker News",
-      "category": "A",
-      "category_name": "Developer Success Story",
-      "virality_score": 89,
-      "analysis": "Medium tech readers love builder post-mortems about simple interactive web tools that blow up on community platforms like Hacker News. Referencing real launch stats from Guitoro creates immediate credibility and high read ratio. The angle focuses on Web Audio API performance tricks and pure JS architecture.",
-      "cross_source_signals": [
-        "Hacker News: Show HN Guitoro hit 573 points and 161 comments",
-        "Dev.to: Interactive Web Audio API tutorials trending among frontend devs"
-      ],
-      "developer_pain": "medium",
-      "freshness": "fresh",
-      "money_angle": "",
-      "story_angle": "I built a browser guitar synth with zero heavy frontend frameworks and got featured on the front page of Hacker News.",
-      "suman_angle": "How I built a zero-dependency guitar synth in pure JS (and reached the HN front page)",
-      "target_keywords": [
-        "web audio api tutorial js",
-        "pure javascript interactive app",
-        "hacker news show hn project"
-      ],
-      "competing_articles": "Generic Web Audio API posts focus on basic oscillator synth code; Suman combines real instrument sampling tricks with real-world launch numbers.",
+      "competing_articles": "Most agent articles dump entire tool libraries into one prompt context; Suman shows how to load skills conditionally into a sandboxed execution runtime.",
       "real_story_evidence": [
         {
           "source": "Hacker News (Show HN)",
-          "title": "Show HN: Guitoro, a virtual guitar you strum with your keyboard",
-          "url": "https://guitoro.com/",
-          "what_to_cite": "Reference the 573 points, 161 comments, and real instrument audio sample loading strategy in browser JS."
+          "title": "Show HN: Let your AI agents paint big arrows, boxes and text on your screen",
+          "url": "https://github.com/franzenzenhofer/big-arrow-on-the-screen",
+          "what_to_cite": "Showcasing how modular visual-feedback tools can be tethered to an agent harness without polluting main system context"
         }
       ]
     },
     {
-      "topic": "I Vibe Coded a Custom UI Design Harness Using Impeccable and Claude Code in 2 Hours",
-      "category": "B",
-      "category_name": "Vibe Coding / AI-Assisted Workflow",
-      "virality_score": 91,
-      "analysis": "Vibe coding continues to dominate 2026 dev searches, but the conversation is shifting toward AI design languages and prompt harnesses like pbakaus/impeccable. Demonstrating a fast feedback loop where Claude Code formats and polishes UI components using exact design constraints gives readers an immediate productivity upgrade.",
+      "topic": "Building a Zero-Backend DOM Signboard App where State Lives in the URL Hash",
+      "category": "A",
+      "category_name": "Developer Success Story",
+      "virality_score": 87,
+      "analysis": "Developers on Medium are burned out on heavy cloud infrastructure setups for lightweight utility apps and are responding strongly to ultra-lean client-side projects. The explosive engagement on Bigwords.page proves massive viral appetite for 'URL is the database' minimal frontend designs. This post breaks down how to build an zero-server display app in pure vanilla JavaScript with dynamic viewport font fitting and zero hosting costs.",
       "cross_source_signals": [
-        "GitHub: pbakaus/impeccable AI design language repository exploding in stars",
-        "Hacker News: Discussions on structured design harnesses for LLM coders"
+        "Hacker News Show HN: Bigwords.page (728 points, 166 comments)",
+        "Dev.to: discussions on zero-infrastructure single-page web utilities",
+        "GitHub: rising interest in hash-state compression algorithms (LZMA/Base64)"
+      ],
+      "developer_pain": "medium",
+      "freshness": "recent",
+      "money_angle": "Zero cloud bills: hosted for $0 on static pages while handling viral spikes of over 50,000 visitors without a database failure",
+      "story_angle": "I built an ultra-light signboard app where every styling change, font size, and text string serializes directly into the URL hash with zero backend calls.",
+      "suman_angle": "The URL is the Database: How I Built a Zero-Backend Web Tool in 45 Lines of Vanilla JS",
+      "target_keywords": [
+        "url hash state management",
+        "vanilla js zero backend",
+        "client side state serialization",
+        "serverless frontend utility"
+      ],
+      "competing_articles": "Most minimal app tutorials use Next.js or Supabase; Suman strips out all dependencies and implements state synchronization strictly through window.location.hash.",
+      "real_story_evidence": [
+        {
+          "source": "Hacker News (Show HN)",
+          "title": "Show HN: Bigwords.page \u2013 Turn any screen into a sign. The URL is the app",
+          "url": "https://bigwords.page/",
+          "what_to_cite": "The design pattern of compressing user inputs directly into the URL fragment so any device instantly replicates the UI state with 0ms server roundtrip"
+        }
+      ]
+    },
+    {
+      "topic": "Why Python is Dropping its Experimental JIT: Real-World Architecture Lessons",
+      "category": "G",
+      "category_name": "Software Architecture Insight",
+      "virality_score": 85,
+      "analysis": "The news that Python's experimental Tier 2 JIT is slated for removal sparked intense engineering debates across LWN, Hacker News, and Python dev mailing lists. Python developers building high-throughput backends are deeply invested in whether JIT compilation or bytecode specialization delivers actual speedups. Suman dissects the architectural trade-offs: C-extension compatibility, memory bloat, warmup overhead, and why copy-and-patch JIT failed to deliver on real workloads.",
+      "cross_source_signals": [
+        "Hacker News: Python's experimental JIT to be removed (496 points, 270 comments)",
+        "LWN.net: detailed technical breakdown on CPython internals and compiler architecture",
+        "Reddit r/Python: active discussions regarding Python 3.13/3.14 performance reality"
       ],
       "developer_pain": "high",
       "freshness": "breaking",
-      "money_angle": "Saving dozens of hours of manual CSS tweak iterations for SaaS MVPs",
-      "story_angle": "I paired Claude Code with a dedicated AI design harness to vibe code production-ready UI components in one afternoon.",
-      "suman_angle": "I vibe coded a UI design system in 2 hours using Claude Code + Impeccable (workflow + prompts)",
+      "money_angle": "",
+      "story_angle": "I benchmarked our Python microservice expecting the new JIT compiler to shave 20% off response latencies, but memory overhead spiked instead\u2014here is why Python core devs are pulling the plug.",
+      "suman_angle": "Why Python Dropped Its JIT: The Hidden Performance Trade-Offs Nobody Warned You About",
       "target_keywords": [
-        "vibe coding claude code tutorial",
-        "impeccable ai design language",
-        "ai frontend generation workflow"
+        "python experimental jit removal",
+        "cpython tier 2 jit",
+        "python performance optimization",
+        "python 3.14 jit internals"
       ],
-      "competing_articles": "Standard vibe coding articles show unstyled messy components; Suman shows how to feed strict design language rules into AI harnesses for polished results.",
+      "competing_articles": "Most coverage merely regurgitates mailing list announcements; Suman provides concrete benchmark scripts comparing specialized bytecode vs. JIT overhead on real JSON/API workloads.",
       "real_story_evidence": [
         {
-          "source": "GitHub Trending",
-          "title": "pbakaus/impeccable The design language that makes your AI harness better at design",
-          "url": "https://github.com/pbakaus/impeccable",
-          "what_to_cite": "Cite using structured design tokens and language constraints inside AI coding harnesses to prevent generic LLM tailwind soup."
+          "source": "Hacker News (Show HN)",
+          "title": "Show HN: Llmspeed \u2013 feel how fast a local LLM runs before you buy the hardware",
+          "url": "https://llmspeed.dev/",
+          "what_to_cite": "Citing how runtime latency bottlenecks in execution engines reflect real-world hardware saturation constraints"
         }
       ]
     }
@@ -129,21 +141,21 @@
       "source": "show_hn",
       "title": "Show HN: Steal My Bitcoin",
       "url": "https://stealmybitcoin.com/",
-      "signal": "599 points \u00b7 441 comments",
+      "signal": "619 points \u00b7 450 comments",
       "snippet": "Made this because I'm curious if anyone out there has figured out how to actually use this PHP RCE we spent the last few days panicking over. Have fun!"
     },
     {
       "source": "show_hn",
       "title": "Show HN: TitleArt \u2013 Make text like it's 1997",
       "url": "https://titleart.dvy.io/",
-      "signal": "167 points \u00b7 24 comments",
+      "signal": "401 points \u00b7 82 comments",
       "snippet": ""
     },
     {
       "source": "show_hn",
       "title": "Show HN: SimCity, but with Permits",
       "url": "https://permit.petercai.com/",
-      "signal": "938 points \u00b7 425 comments",
+      "signal": "939 points \u00b7 426 comments",
       "snippet": ""
     },
     {
@@ -176,16 +188,16 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Reladraw \u2013 A diagram language where you decide where to place things",
-      "url": "https://github.com/reladraw/reladraw",
-      "signal": "415 points \u00b7 119 comments",
-      "snippet": "I love making diagrams to help understand, plan, etc. However, the options are (A) auto-placement languages like Mermaid or Graphviz (which don't let me decide how the diagram looks), or (B) software "
-    },
-    {
-      "source": "show_hn",
       "title": "Show HN: Real-time Solar System with 526k asteroids and all tracked satellites",
       "url": "https://space.bl2.net/",
       "signal": "408 points \u00b7 109 comments",
+      "snippet": ""
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: A Truly Modular Keyboard",
+      "url": "https://github.com/notaroomba/keybytes",
+      "signal": "310 points \u00b7 112 comments",
       "snippet": ""
     },
     {
@@ -200,13 +212,6 @@
       "title": "Show HN: Llmspeed \u2013 feel how fast a local LLM runs before you buy the hardware",
       "url": "https://llmspeed.dev/",
       "signal": "331 points \u00b7 86 comments",
-      "snippet": ""
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: Lofi Cities \u2013 Pixel-art city nights with browser-generated lofi",
-      "url": "https://loficities.com/",
-      "signal": "320 points \u00b7 139 comments",
       "snippet": ""
     },
     {
@@ -246,13 +251,6 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: OnKey \u2013 I'm a bad singer, so I built an app to show where I'm off-key",
-      "url": "https://github.com/dsmurrell/onkey",
-      "signal": "234 points \u00b7 91 comments",
-      "snippet": "Hi all I was pretty terrible at singing, now I\u2019d say I\u2019m bad but not terrible. This is because I\u2019ve been using a singing app (won\u2019t name it here) that scores me on my pitch and timing throughout the s"
-    },
-    {
-      "source": "show_hn",
       "title": "Show HN: Quake ported to safe Rust, playable in browser",
       "url": "https://quake-srp.pages.dev/",
       "signal": "241 points \u00b7 181 comments",
@@ -260,10 +258,24 @@
     },
     {
       "source": "show_hn",
+      "title": "Show HN: OnKey \u2013 I'm a bad singer, so I built an app to show where I'm off-key",
+      "url": "https://github.com/dsmurrell/onkey",
+      "signal": "235 points \u00b7 94 comments",
+      "snippet": "Hi all I was pretty terrible at singing, now I\u2019d say I\u2019m bad but not terrible. This is because I\u2019ve been using a singing app (won\u2019t name it here) that scores me on my pitch and timing throughout the s"
+    },
+    {
+      "source": "show_hn",
       "title": "Show HN: Glash\u00fctte Trash Clock \u2013 A 30-minute pendulum clock made from trash",
       "url": "https://niklasroy.com/gtc/",
       "signal": "236 points \u00b7 48 comments",
       "snippet": "This is a functional 30-minute pendulum clock entirely from discarded materials\u2014cardboard, zip ties, tape, a yardstick, and a paperclip escapement, built in the German Eldorado of precision watchmakin"
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: The Zelda timeline to catch up before the Ocarina of Time remake",
+      "url": "https://legendofhyrule.com/",
+      "signal": "230 points \u00b7 130 comments",
+      "snippet": "I made this ahead of the Ocarina of Time remake which comes out in 17 days. I remember the feeling of playing it as a kid but I hadn\u2019t kept up with the story so I built a timeline to catch up before t"
     }
   ]
 }
