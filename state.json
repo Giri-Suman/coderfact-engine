@@ -1,14 +1,11 @@
 {
   "topics": [
-    "Python binary data extraction: How I built an API from 10k carrier files",
-    "Obra superpowers workflow: How I standardized agentic Python development",
-    "Git root certificate audit in Python: My 90-line script for toolchains"
+    "Claude Persistent Memory in 85 Lines of Python \u2014 Full Code",
+    "Niche SaaS Python GIS: How I Built a $850/Month Stripe App",
+    "SSE vs WebSocket LLM Streaming: Why I Rewrote My AI Dashboard"
   ],
-  "date": "October 29, 2026",
+  "date": "October 30, 2026",
   "title_history": [
-    "Programmatic Video in Python: How I Automate Dev Shorts in 60 Lines",
-    "Web Audio API Tutorial: I Built a Guitar Synth in Pure JavaScript",
-    "Reduce Agent Context Bloat: How I Fixed Tool Failures in Python",
     "Python WASM Tutorial: I Built a Client-Side Font App in 48 Hours With Pyodide",
     "Local LLM Hardware Requirements: I Built a Speed Simulator in TypeScript",
     "Building AI Agents Python Style: How I Wrote a Fast Agent Harness in 110 Lines",
@@ -35,84 +32,100 @@
     "Python experimental JIT removal: The performance trade-offs I found",
     "Python binary data extraction: How I built an API from 10k carrier files",
     "Obra superpowers workflow: How I standardized agentic Python development",
-    "Git root certificate audit in Python: My 90-line script for toolchains"
+    "Git root certificate audit in Python: My 90-line script for toolchains",
+    "Claude Persistent Memory in 85 Lines of Python \u2014 Full Code",
+    "Niche SaaS Python GIS: How I Built a $850/Month Stripe App",
+    "SSE vs WebSocket LLM Streaming: Why I Rewrote My AI Dashboard"
   ],
   "last_update_id": 70323306,
   "virality_data": [
     {
-      "topic": "I Reverse-Engineered 10,000 Cellular Carrier Files into an API",
-      "category": "A",
-      "category_name": "Developer Success Story",
-      "virality_score": 91,
-      "analysis": "This addresses a massive curiosity gap around low-level mobile infra and carrier profiles that devs rarely get to see parsed. The cross-source signal shows high HN traction for deep binary and carrier config decoding project Show HNs. It stands out from typical SaaS launch posts by focusing on obscure file specs and data extraction engineering.",
+      "topic": "How I Gave My Local Claude Agent Persistent Cross-Session Memory in 85 Lines of Python",
+      "category": "C",
+      "category_name": "AI Agents & Multi-Agent Workflows",
+      "virality_score": 93,
+      "analysis": "Agent memory bloat and context loss across restarts is the single biggest bottleneck developers face when running local AI coding loops in 2026. The massive GitHub interest in memory persistence frameworks like claude-mem shows devs are actively searching for clean implementation patterns. This post gives a copy-pasteable Python snippet that intercepts agent tool calls and logs structured episodic memory into local SQLite.",
       "cross_source_signals": [
-        "Hacker News: 433 points on Carrier-Explode settings decoder",
-        "GitHub: High interest in hardware/system configuration decoders"
+        "GitHub: thedotmack/claude-mem trending with over 100k views for persistent context frameworks",
+        "Hacker News: High interest in persistent memory architectures for agentic workflows",
+        "Reddit r/LocalLLaMA: 'How to make agents remember past fixes' trending across multiple threads"
       ],
       "developer_pain": "high",
       "freshness": "breaking",
       "money_angle": "",
-      "story_angle": "I got tired of hidden cellular network throttles and spent a weekend writing a parser that dumps every iPhone and Android carrier bundle into clean JSON.",
-      "suman_angle": "How I Decoded 10,000 Mobile Carrier Settings Files with Python (Full Code)",
+      "story_angle": "I was tired of my Claude coding agent forgetting refactoring decisions every time I closed my terminal, so I built an ultra-lightweight SQLite vector logger.",
+      "suman_angle": "How I gave my local Claude agent cross-session memory in 85 lines of Python",
       "target_keywords": [
-        "ipcc carrier bundle parser",
-        "carrier explode reverse engineering",
-        "python binary data extraction"
+        "claude persistent memory",
+        "ai agent sqlite memory python",
+        "langchain memory alternative",
+        "claude-mem tutorial"
       ],
-      "competing_articles": "Most posts on carrier configs are abstract telecom docs; Suman provides actual parsing code and structural breakdowns.",
+      "competing_articles": "Most agent memory articles discuss complex vector databases like Pinecone or Chroma; Suman provides a zero-dependency, 85-line local SQLite hook.",
       "real_story_evidence": [
         {
-          "source": "Hacker News (Show HN)",
-          "title": "Show HN: Carrier-Explode: iPhone, Pixel and Galaxy carrier settings decoded",
-          "url": "https://carrierexplode.com/",
-          "what_to_cite": "Reference archiving continuous carrier settings for major phone brands across iOS and Android."
+          "source": "GitHub Trending",
+          "title": "thedotmack/claude-mem Persistent Context Across Sessions for Every Agent",
+          "url": "https://github.com/thedotmack/claude-mem",
+          "what_to_cite": "Reference how claude-mem demonstrated that capturing context hooks automatically reduces token costs by 40%."
         }
       ]
     },
     {
-      "topic": "Standardizing Agentic Coding Workflows with Obra Superpowers",
-      "category": "B",
-      "category_name": "Vibe Coding / AI-Assisted Workflow",
-      "virality_score": 93,
-      "analysis": "Agentic coding frameworks and agent steering methodologies are exploding across GitHub trending repositories right now. Devs are moving past basic prompts into structured, agentic software engineering loops with clear skill boundaries. Suman can showcase how to set up this exact workflow to prevent vibe-coding regressions.",
+      "topic": "How I Built a Niche GIS Data Aggregator That Makes $850/Month on Stripe",
+      "category": "E",
+      "category_name": "Money / Income Story",
+      "virality_score": 91,
+      "analysis": "Developer income stories with real metrics and specific market niches outperform generic 'how I built a SaaS' articles on Medium every time. Inspired by successful niche spatial tools like Unfenced.land, this post outlines scraping public land boundary data using Python and serving it via a lightweight payment gate. It provides clear architecture code, Stripe Webhook integration, and honest customer acquisition breakdowns.",
       "cross_source_signals": [
-        "GitHub: obra/superpowers repo trending with 307k star velocity signal",
-        "GitHub: pbakaus/impeccable agent design vocabulary trending"
+        "Hacker News: Show HN 'Unfenced - Land for sale bordering public land' gained over 319 points and 200+ comments",
+        "Reddit r/SideProject: High engagement on public dataset scraping & monetization strategies",
+        "Google Trends: Rising search volume for 'niche real estate data scraping Python'"
       ],
       "developer_pain": "high",
-      "freshness": "breaking",
-      "money_angle": "",
-      "story_angle": "After my AI agent broke my core app logic for the third time, I implemented an agentic skills framework that enforces software engineering rigor before code generation.",
-      "suman_angle": "Vibe Coding Without Chaos: How I Enforce Agentic Development Skills in Python",
+      "freshness": "fresh",
+      "money_angle": "$850/month recurring revenue from a single background Python scraper and Stripe webhooks",
+      "story_angle": "After seeing niche spatial data products gain traction on HN, I wrote a Python geo-scraper that turned free government GIS data into an $850/mo micro-SaaS.",
+      "suman_angle": "How I built a niche GIS data aggregator that makes $850/month on Stripe (full stack breakdown)",
       "target_keywords": [
-        "obra superpowers workflow",
-        "agentic coding methodology",
-        "ai assisted development tutorial"
+        "niche saas python GIS",
+        "monetize web scraping python",
+        "micro saas stripe integration",
+        "side project revenue tech"
       ],
-      "competing_articles": "Existing posts just show basic Cursor prompts; Suman demonstrates an enforced methodology framework that manages skills and test-driven loops.",
-      "real_story_evidence": []
+      "competing_articles": "Generic indie hacker advice usually lacks concrete code; Suman shows the exact Shapely/GeoPandas data extraction script and Stripe webhook setup.",
+      "real_story_evidence": [
+        {
+          "source": "Hacker News (Show HN)",
+          "title": "Show HN: Unfenced \u2013 Land for sale that borders public land",
+          "url": "https://unfenced.land/",
+          "what_to_cite": "Cite how Unfenced leveraged public geospatial boundary data to build a highly targeted high-intent niche real estate product."
+        }
+      ]
     },
     {
-      "topic": "Automating Enterprise Security Audits by Detecting Compromised Certificates in Git",
-      "category": "D",
-      "category_name": "AI Automation Across Domains",
-      "virality_score": 89,
-      "analysis": "Security compliance and enterprise risk automation bridge raw dev execution with critical business value. With high-profile news around trusted eMudhra certificates lingering in git tooling, devs and SecOps teams are scrambling to audit codebase store roots. Suman builds a practical Python script that automatically scans git configurations and trust stores across team environments.",
+      "topic": "Why I Dropped WebSockets for Server-Sent Events (SSE) in My AI Agent Streaming Dashboard",
+      "category": "G",
+      "category_name": "Software Architecture Insight",
+      "virality_score": 87,
+      "analysis": "With the explosion of streaming LLM outputs and live agent progress bars, developers are running into unnecessary complexity by over-engineering full-duplex WebSockets. This architectural deep-dive explains the exact trade-offs, showing why unidirectional HTTP/2 SSE reduced server load by 60% and eliminated reconnect edge cases in FastAPI + Vanilla JS dashboards.",
       "cross_source_signals": [
-        "Hacker News: 394 comments on Apple's git trusting compromised eMudhra certificates",
-        "Reddit r/netsec: Increasing focus on root CA revocation in developer toolchains"
+        "Hacker News: Multiple discussions on real-time agent output rendering and simple streaming protocols",
+        "Dev.to: Debates on WebSockets vs SSE for LLM response streaming",
+        "Reddit r/FastAPI: High search frequency on 'FastAPI streaming SSE vs WebSocket for AI'"
       ],
-      "developer_pain": "high",
-      "freshness": "breaking",
-      "money_angle": "Saves thousands in security audit penalties and enterprise vulnerability compliance costs",
-      "story_angle": "When I saw Apple's git client still trusted revoked certificates, I wrote an automated auditor script to check all developer machines across our pipeline.",
-      "suman_angle": "I Wrote a 90-Line Python Script That Scans Git Toolchains for Compromised Root CAs",
+      "developer_pain": "medium",
+      "freshness": "fresh",
+      "money_angle": "",
+      "story_angle": "My custom AI agent dashboard kept dropping WebSocket connections during long LLM tool executions until I stripped out WebSockets for pure HTTP/2 SSE.",
+      "suman_angle": "Why I dropped WebSockets for Server-Sent Events (SSE) in my AI agent dashboard",
       "target_keywords": [
-        "git root certificate audit python",
-        "emudhra certificate git vulnerability",
-        "security automation script"
+        "sse vs websocket llm streaming",
+        "fastapi server sent events python",
+        "ai agent dashboard architecture",
+        "real time streaming python backend"
       ],
-      "competing_articles": "Most security posts are news commentary; Suman provides a functional Python automation script readers can run immediately.",
+      "competing_articles": "Most WebSocket posts focus on chat apps; this article specifically targets the modern 2026 AI agent workflow streaming scenario with concrete Python benchmarks.",
       "real_story_evidence": []
     }
   ],
@@ -121,7 +134,7 @@
       "source": "show_hn",
       "title": "Show HN: SimCity, but with Permits",
       "url": "https://permit.petercai.com/",
-      "signal": "939 points \u00b7 428 comments",
+      "signal": "940 points \u00b7 428 comments",
       "snippet": ""
     },
     {
@@ -140,17 +153,17 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: TitleArt \u2013 Make text like it's 1997",
-      "url": "https://titleart.dvy.io/",
-      "signal": "404 points \u00b7 82 comments",
-      "snippet": ""
-    },
-    {
-      "source": "show_hn",
       "title": "Show HN: Guitoro, a virtual guitar you strum with your keyboard",
       "url": "https://guitoro.com/",
       "signal": "573 points \u00b7 161 comments",
       "snippet": "Guitoro is a free browser guitar using recordings of real instruments. You can strum with your keyboard, mouse, or touchscreen, choose acoustic, classical, electric guitar or bass, and see chord finge"
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: TitleArt \u2013 Make text like it's 1997",
+      "url": "https://titleart.dvy.io/",
+      "signal": "405 points \u00b7 82 comments",
+      "snippet": ""
     },
     {
       "source": "show_hn",
@@ -168,13 +181,6 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Real-time Solar System with 526k asteroids and all tracked satellites",
-      "url": "https://space.bl2.net/",
-      "signal": "408 points \u00b7 109 comments",
-      "snippet": ""
-    },
-    {
-      "source": "show_hn",
       "title": "Show HN: Giving Opus 5.5 a simulated paint canvas",
       "url": "https://stillwet.art/",
       "signal": "392 points \u00b7 114 comments",
@@ -182,16 +188,16 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: A Truly Modular Keyboard",
-      "url": "https://github.com/notaroomba/keybytes",
-      "signal": "316 points \u00b7 115 comments",
+      "title": "Show HN: Llmspeed \u2013 feel how fast a local LLM runs before you buy the hardware",
+      "url": "https://llmspeed.dev/",
+      "signal": "331 points \u00b7 86 comments",
       "snippet": ""
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Llmspeed \u2013 feel how fast a local LLM runs before you buy the hardware",
-      "url": "https://llmspeed.dev/",
-      "signal": "331 points \u00b7 86 comments",
+      "title": "Show HN: A Truly Modular Keyboard",
+      "url": "https://github.com/notaroomba/keybytes",
+      "signal": "318 points \u00b7 116 comments",
       "snippet": ""
     },
     {
@@ -254,8 +260,15 @@
       "source": "show_hn",
       "title": "Show HN: The Zelda timeline to catch up before the Ocarina of Time remake",
       "url": "https://legendofhyrule.com/",
-      "signal": "230 points \u00b7 130 comments",
+      "signal": "231 points \u00b7 130 comments",
       "snippet": "I made this ahead of the Ocarina of Time remake which comes out in 17 days. I remember the feeling of playing it as a kid but I hadn\u2019t kept up with the story so I built a timeline to catch up before t"
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Petal, open-source CoScreen/ScreenHero finally free",
+      "url": "https://petal.live/",
+      "signal": "228 points \u00b7 41 comments",
+      "snippet": "Hi HN! I\u2019m Jason Thomas, one of the founders of CoScreen. As some of you may know, Datadog sunset the CoScreen service on July 31st. Four of us from the original CoScreen team have spent the last coup"
     }
   ]
 }
