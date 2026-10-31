@@ -1,158 +1,163 @@
 # AI Agents in Python: Build One Tonight Without LangChain Bloat
 
-_Stop overcomplicating agents with massive frameworks. A simple while loop and function calling is all you need._
+_Stop overcomplicating state machines—here is how a while loop and tool calls actually work._
 
 ## Scroll-stopping hooks
 
-**Hook 1.** Most AI agent tutorials drown you in 12 layers of framework abstractions before making a single API call. You can write an actual working agent in 40 lines of raw Python.
+**Hook 1.** I spent three hours debugging a framework abstraction just to realize an AI agent is literally a while loop with tool calls.
 
-**Hook 2.** Spent until 1:30 AM debugging an agent framework issue only to realize an 'agent' is literally just an LLM sitting inside a while loop. Here is the bare minimum setup that actually works.
+**Hook 2.** You do not need a 50MB framework to build an AI agent—you just need Python, a system prompt, and a loop.
 
-**Hook 3.** You do not need LangChain, CrewAI, or an enterprise orchestration platform to build an AI agent that executes real code. Raw OpenAI function calling plus standard library is faster to debug.
+**Hook 3.** Most AI agent tutorials sell you complex DAG abstractions before you even understand how a model decides to execute a function.
 
-**Hook 4.** If your AI agent keeps hallucinating answers instead of using tools, stop tweaking your system prompt. Your function signatures are missing strict parameter schemas.
+**Hook 4.** If your agent crashes every time it gets a bad JSON response, your prompt isn't the problem—your loop is.
 
-**Hook 5.** The biggest scam in modern AI tooling is convincing developers they need a 400MB dependency tree to write a script that searches a directory and runs a tool.
+**Hook 5.** Wrote an AI agent at 1am last night using zero agent frameworks. It works better than the bloatware I was using last week.
 
 ## 7 tips that actually move the needle
 
-### Tip 1. Use pydantic to auto-generate strict OpenAI tool schemas instead of writing raw JSON
-_Why it matters:_ Hand-rolled JSON schemas inevitably miss edge-case types and break tool routing.
+### Tip 1. Use the official `google-genai` SDK over heavy wrapper libraries.
+_Why it matters:_ Wrapper frameworks hide the raw API response structure, making function-call debugging an absolute nightmare.
 
 ```python
-from pydantic import BaseModel, Field
-class WeatherQuery(BaseModel):
-    city: str = Field(description='City name to search')
+from google import genai
+client = genai.Client()
+response = client.models.generate_content(model='gemini-2.5-flash', contents='Hi')
 ```
 
-### Tip 2. Set tool_choice='auto' in client.chat.completions.create to let the LLM decide when to call tools
-_Why it matters:_ Forcing tools manually defeats the point of an autonomous agent loop.
-
-```
-res = client.chat.completions.create(
-    model='gpt-4o-mini', messages=msgs, tools=tools, tool_choice='auto'
-)
-```
-
-### Tip 3. Map function names directly to Python callables using a simple dictionary lookup
-_Why it matters:_ Avoid dangerous eval() patterns and keep your execution surface safe.
-
-```
-TOOL_MAP = {'fetch_weather': fetch_weather, 'run_sql': run_sql}
-result = TOOL_MAP[tool_call.function.name](**json.loads(tool_call.function.arguments))
-```
-
-### Tip 4. Append the tool execution result back to the messages list with role='tool' and matching tool_call_id
-_Why it matters:_ The LLM will crash or lose conversation state if the tool call ID is omitted.
-
-```
-msgs.append({
-    'role': 'tool', 'tool_call_id': call.id, 'content': str(result)
-})
-```
-
-### Tip 5. Wrap the tool dispatch inside a while loop with a strict max_iterations guard
-_Why it matters:_ Runaway loops will silently drain your API credits if the agent gets trapped in a cycle.
-
-```
-for _ in range(MAX_STEPS):
-    if not response.choices[0].message.tool_calls: break
-```
-
-### Tip 6. Use instructor library if you want typed structured outputs directly from local tools
-_Why it matters:_ It validates incoming tool arguments before your actual Python logic touches them.
+### Tip 2. Define tools with strict Python type hints and explicit docstrings.
+_Why it matters:_ Gemini reads your function's docstring and type annotations to figure out when and how to invoke it.
 
 ```python
-import instructor, openai
-client = instructor.from_openai(openai.OpenAI())
+def get_user_orders(user_id: str) -> list:
+    """Fetches active order IDs for a given user UUID."""
+    return ["ord_123", "ord_456"]
 ```
 
-### Tip 7. Log raw LLM responses with rich.pretty before parsing tool calls during local dev
-_Why it matters:_ Seeing malformed arguments directly in the terminal saves hours of mysterious traceback digging.
+### Tip 3. Pass Python functions directly inside the `tools` config parameter.
+_Why it matters:_ The SDK automatically converts raw functions into OpenAPI-compliant JSON schemas for the model.
+
+```
+config = {'tools': [get_user_orders]}
+response = client.models.generate_content(model='gemini-2.5-flash', contents=prompt, config=config)
+```
+
+### Tip 4. Inspect `response.candidates[0].function_calls` to catch execution requests.
+_Why it matters:_ Models don't run code—they return execution requests that your Python code must evaluate.
 
 ```python
-from rich import print
-print(response.choices[0].message.tool_calls)
+if response.function_calls:
+    call = response.function_calls[0]
+    print(call.name, call.args)
+```
+
+### Tip 5. Map function names to actual callables using a dictionary lookup.
+_Why it matters:_ It avoids dangerous `eval()` calls and makes tool routing completely explicit.
+
+```
+TOOL_MAP = {'get_user_orders': get_user_orders}
+result = TOOL_MAP[call.name](**call.args)
+```
+
+### Tip 6. Append tool execution responses back into the conversation history.
+_Why it matters:_ The model needs to see the tool's output to formulate its final natural language answer.
+
+```
+history.append({'role': 'tool', 'parts': [result]})
+```
+
+### Tip 7. Cap your execution loop with an explicit `max_iters` safe stop.
+_Why it matters:_ Prevents infinite loops and drained API credits when a tool continuously returns unexpected output.
+
+```
+for _ in range(MAX_ITERS):
+    # run agent loop
+    break
 ```
 
 ## Step-by-step procedure
 
-### 1. Install the official OpenAI SDK and Python dotenv
-Keep your environment clean — you do not need 30 transitive dependencies just to invoke a model with functions.
+### 1. Step 1: Install the native SDK and set environment keys
+Grab the latest SDK via pip and export your key so the client picks it up automatically.
 
 ```python
-pip install openai python-dotenv
+pip install google-genai
+export GEMINI_API_KEY="your_key_here"
 ```
 
-### 2. Define a plain Python function and its OpenAI tool schema
-Write the function that performs the real task, then describe it in a format the model understands.
+### 2. Step 2: Define your core Python tools
+Write clean standard functions with clear type hints—these act as the agent's hands.
 
 ```python
-def get_system_load():
-    import os
-    return str(os.getloadavg())
-
-tools = [{'type': 'function', 'function': {'name': 'get_system_load', 'description': 'Returns system CPU load average'}}]
+def fetch_weather(city: str) -> str:
+    """Returns current weather for a city."""
+    return f"Sunny, 28C in {city}"
 ```
 
-### 3. Initialize message history with a direct system instruction
-Tell the model what tools it has access to and explicitly instruct it to answer using data from tool calls.
-
-```
-messages = [{'role': 'system', 'content': 'You are a dev assistant. Use provided tools when requested.'}, {'role': 'user', 'content': 'What is the current server load?'}]
-```
-
-### 4. Build the execution loop that handles tool calls
-Call the API, check if the response requests a tool call, run the mapped function, and append the result.
-
-```
-resp = client.chat.completions.create(model='gpt-4o-mini', messages=messages, tools=tools)
-call = resp.choices[0].message.tool_calls[0]
-res = get_system_load()
-messages.extend([resp.choices[0].message, {'role': 'tool', 'tool_call_id': call.id, 'content': res}])
-```
-
-### 5. Send the updated history back to get the final synthesis
-Make the second API call so the model reads the tool output and gives you the final user-facing string.
+### 3. Step 3: Instantiate the client and register tools
+Pass the Python functions directly to the generation config.
 
 ```python
-final_resp = client.chat.completions.create(model='gpt-4o-mini', messages=messages)
-print(final_resp.choices[0].message.content)
+from google import genai
+client = genai.Client()
+tools = [fetch_weather]
+```
+
+### 4. Step 4: Build the execution loop
+Handle the back-and-forth loop between model tool calls and local Python execution.
+
+```python
+def run_agent(prompt):
+    messages = [prompt]
+    while True:
+        res = client.models.generate_content(model='gemini-2.5-flash', contents=messages, config={'tools': tools})
+        if not res.function_calls:
+            return res.text
+        for call in res.function_calls:
+            out = fetch_weather(**call.args)
+            messages.append({'role': 'tool', 'parts': [out]})
+```
+
+### 5. Step 5: Execute an end-to-end multi-step task
+Ask a query that requires tool use and print the final computed output.
+
+```python
+print(run_agent("What is the weather in Kolkata right now?"))
 ```
 
 ## The mistake almost everyone makes
 
-> ⚠️  Forgetting to feed the model's intermediate assistant response containing tool_calls back into the message history before sending the tool result. The API rejects orphaned tool messages; you must append the assistant message, then the tool message, then call the model again.
+> ⚠️  Writing docstrings without detailing parameter formats. If your docstring just says 'gets data', Gemini will guess argument formats and pass dirty inputs. Fix it by documenting what each argument expects directly inside the docstring.
 
 ## X / Twitter thread (copy-paste ready)
 
-**1/** You do not need massive agent frameworks to build a working AI assistant in Python. (1/6)
+**1/** Building your first AI agent doesn't require a 50MB orchestration framework.
 
-**2/** An AI agent is basically an LLM running inside a while loop with access to a function dispatcher. That is the entire architecture. (2/6)
+**2/** At its core, an AI agent is just a model inside a loop that decides when to trigger standard Python functions.
 
-**3/** Step 1: Write a normal Python function. Step 2: Write a JSON description of it. Feed both to OpenAI client.chat.completions with tools=[...]. (3/6)
+**3/** First, write plain Python functions with type hints and explicit docstrings. Gemini reads these docstrings as its tool specs.
 
-**4/** When response.choices[0].message.tool_calls is populated, execute your local Python function using a clean dictionary lookup. Skip eval(). (4/6)
+**4/** Pass those functions directly to `client.models.generate_content(..., config={'tools': [my_func]})` using the google-genai SDK.
 
-**5/** Always append both the assistant's tool-call message AND your tool output message back to the conversation array before calling the API again. (5/6)
+**5/** Catch `res.function_calls`, execute the function locally in Python, and append the result back to your chat history.
 
-**6/** Build it yourself once with 40 lines of standard Python before reaching for bloated orchestrators. What tools are you hooking up first? (6/6)
+**6/** Stop over-engineering your tools. Write a basic loop tonight and save yourself hours of framework debugging.
 
 ## LinkedIn version
 
-It was 1:00 AM, my terminal was spitting out mysterious recursion errors, and my Python virtual environment was bloated with 400MB of agent framework dependencies. All I wanted was a script that checked server logs, ran a quick diagnostic command, and summarized the issue.
+I stayed up until 1am last night trying to debug a simple AI agent task.
 
-After tearing out the framework completely, I went back to first principles. Turns out, an AI agent is not some arcane architectural puzzle. It is just an LLM inside a while loop that knows how to output JSON when it wants your code to run a task.
+The framework I was using had wrapped everything in so many layers of abstractions, state graphs, and custom schemas that I couldn't even see the raw API requests anymore. It took me two hours to realize the model was just returning a malformed tool call that the framework was silently dropping.
 
-Here is the entire mental model: you define a standard Python function, pass its parameter description to the model, check if the response asks for a tool call, run the function locally, and post the output back to the conversation. That is the whole trick.
+I scrapped the whole setup, opened a clean file, and wrote a raw agent using just the standard SDK and Python's built-in control flow. 
 
-Once you build this loop with raw Python and OpenAI function calling, you realize how much unnecessary complexity gets pushed on developers. No weird memory abstractions, no hidden prompt templates, no magical chains that break the moment you need custom logging.
+Turns out, an AI agent isn't magic—it's a while loop. You pass your Python functions into the model call, check if the model requested a tool call, run the function locally with those arguments, and feed the output back to the model until it gives you a final string response.
 
-If you want to understand agents, write one from scratch tonight with zero third-party orchestrators. You will learn more in 30 minutes of vanilla Python than in a week of fighting framework docs.
+Stop reaching for heavy frameworks before you build one from scratch. You'll save hours of debugging and actually understand what your code is doing under the hood.
 
-#python #automation #softwareengineering #developer #ai
+#python #ai #developer #automation #coding
 
-_Tags: python, automation, aiagents, devtips_
+_Tags: python, tutorial, ai, developer_
 
 ---
 *By Suman Giri — built with the CoderFact engine.*
