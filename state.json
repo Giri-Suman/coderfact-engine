@@ -1,14 +1,11 @@
 {
   "topics": [
-    "Claude Persistent Memory in 85 Lines of Python \u2014 Full Code",
-    "Niche SaaS Python GIS: How I Built a $850/Month Stripe App",
-    "SSE vs WebSocket LLM Streaming: Why I Rewrote My AI Dashboard"
+    "Build Agentic Workflow Node.js Scripts in 75 Lines of Code",
+    "Carrier Settings Extraction Python Script That Decodes 500 Profiles",
+    "Retro Text Generator JavaScript Build: Zero Backend, Pure Canvas"
   ],
-  "date": "October 30, 2026",
+  "date": "October 31, 2026",
   "title_history": [
-    "Python WASM Tutorial: I Built a Client-Side Font App in 48 Hours With Pyodide",
-    "Local LLM Hardware Requirements: I Built a Speed Simulator in TypeScript",
-    "Building AI Agents Python Style: How I Wrote a Fast Agent Harness in 110 Lines",
     "DeepSeek V4.1 Flash: I Built a Local Coding Agent Fleet in TypeScript",
     "Vibe Coding Git Hook: How I Stop AI Regressions in 75 Lines of Node",
     "macOS 15.8.2 OpenGL Fix: How I Restored Broken Canvas Builds in 15 Minutes",
@@ -35,101 +32,125 @@
     "Git root certificate audit in Python: My 90-line script for toolchains",
     "Claude Persistent Memory in 85 Lines of Python \u2014 Full Code",
     "Niche SaaS Python GIS: How I Built a $850/Month Stripe App",
-    "SSE vs WebSocket LLM Streaming: Why I Rewrote My AI Dashboard"
+    "SSE vs WebSocket LLM Streaming: Why I Rewrote My AI Dashboard",
+    "Build Agentic Workflow Node.js Scripts in 75 Lines of Code",
+    "Carrier Settings Extraction Python Script That Decodes 500 Profiles",
+    "Retro Text Generator JavaScript Build: Zero Backend, Pure Canvas"
   ],
   "last_update_id": 70323306,
   "virality_data": [
     {
-      "topic": "How I Gave My Local Claude Agent Persistent Cross-Session Memory in 85 Lines of Python",
+      "topic": "Building an engineering agent skill system from a local .agents directory using markdown workflows",
       "category": "C",
       "category_name": "AI Agents & Multi-Agent Workflows",
-      "virality_score": 93,
-      "analysis": "Agent memory bloat and context loss across restarts is the single biggest bottleneck developers face when running local AI coding loops in 2026. The massive GitHub interest in memory persistence frameworks like claude-mem shows devs are actively searching for clean implementation patterns. This post gives a copy-pasteable Python snippet that intercepts agent tool calls and logs structured episodic memory into local SQLite.",
+      "virality_score": 89,
+      "analysis": "Agent developer tooling is exploding right now with Matt Pocock's skills framework and obra/superpowers simultaneously leading GitHub trends. Rather than bloated agent frameworks with heavy dependencies, developers are rapidly pivoting to transparent filesystem-based skill loops stored in markdown. This post provides an immediately copyable, 75-line agent runner that parses executable shell actions and context directly from a local `.agents/` folder.",
       "cross_source_signals": [
-        "GitHub: thedotmack/claude-mem trending with over 100k views for persistent context frameworks",
-        "Hacker News: High interest in persistent memory architectures for agentic workflows",
-        "Reddit r/LocalLLaMA: 'How to make agents remember past fixes' trending across multiple threads"
+        "GitHub Trending: mattpocock/skills (Skills for Real Engineers straight from .agents)",
+        "GitHub Trending: obra/superpowers (Agentic skills framework & software development methodology)",
+        "Hacker News: 520+ comments debating agent extension backdoors and the need for inspectable local execution"
       ],
       "developer_pain": "high",
       "freshness": "breaking",
       "money_angle": "",
-      "story_angle": "I was tired of my Claude coding agent forgetting refactoring decisions every time I closed my terminal, so I built an ultra-lightweight SQLite vector logger.",
-      "suman_angle": "How I gave my local Claude agent cross-session memory in 85 lines of Python",
+      "story_angle": "After Cursor extensions caused security panics, I ditched bloated third-party agent harnesses and built a transparent, file-based skill runner directly inside my repo's `.agents` directory.",
+      "suman_angle": "Agent Skills in Plain Markdown: How I Built a Local Code Reviewer in 75 Lines of Node",
       "target_keywords": [
-        "claude persistent memory",
-        "ai agent sqlite memory python",
-        "langchain memory alternative",
-        "claude-mem tutorial"
+        "ai agent skills tutorial",
+        "matt pocock skills agents",
+        "build agentic workflow nodejs",
+        "local coding agent markdown"
       ],
-      "competing_articles": "Most agent memory articles discuss complex vector databases like Pinecone or Chroma; Suman provides a zero-dependency, 85-line local SQLite hook.",
+      "competing_articles": "Most agent tutorials force complex LangChain/CrewAI abstractions; this tutorial demonstrates a simple, dependency-free local skill harness anyone can read and audit.",
       "real_story_evidence": [
         {
           "source": "GitHub Trending",
-          "title": "thedotmack/claude-mem Persistent Context Across Sessions for Every Agent",
-          "url": "https://github.com/thedotmack/claude-mem",
-          "what_to_cite": "Reference how claude-mem demonstrated that capturing context hooks automatically reduces token costs by 40%."
+          "title": "mattpocock/skills Skills for Real Engineers. Straight from my .agents directory.",
+          "url": "https://github.com/mattpocock/skills",
+          "what_to_cite": "Showcases managing discrete prompt-driven tasks as plain markdown/shell files under an in-repo `.agents` folder instead of complex framework wrappers."
         }
       ]
     },
     {
-      "topic": "How I Built a Niche GIS Data Aggregator That Makes $850/Month on Stripe",
-      "category": "E",
-      "category_name": "Money / Income Story",
-      "virality_score": 91,
-      "analysis": "Developer income stories with real metrics and specific market niches outperform generic 'how I built a SaaS' articles on Medium every time. Inspired by successful niche spatial tools like Unfenced.land, this post outlines scraping public land boundary data using Python and serving it via a lightweight payment gate. It provides clear architecture code, Stripe Webhook integration, and honest customer acquisition breakdowns.",
+      "topic": "Extracting carrier settings and binary profile blobs across major mobile brands without vendor SDKs",
+      "category": "D",
+      "category_name": "AI Automation Across Domains",
+      "virality_score": 84,
+      "analysis": "Telecom configurations and APN payload reverse-engineering usually live behind NDA paywalls or messy forum threads, making carrier-explode an instant hit on Hacker News with over 430 points. Telecom, IoT, and embedded automation engineers waste days extracting hidden carrier bundles, baseband rules, and MMS gateways from iOS `.ipcc` files and Android system images. This tutorial bridges Python automation into cellular engineering by showing how to batch-extract, unpack, and normalize raw carrier configuration payloads into clean JSON.",
       "cross_source_signals": [
-        "Hacker News: Show HN 'Unfenced - Land for sale bordering public land' gained over 319 points and 200+ comments",
-        "Reddit r/SideProject: High engagement on public dataset scraping & monetization strategies",
-        "Google Trends: Rising search volume for 'niche real estate data scraping Python'"
+        "Hacker News Show HN: Carrier-Explode hit 433 points and 55 comments",
+        "Reddit r/reverseengineering: Growing interest in extraction pipelines for mobile carrier bundles",
+        "GitHub: carrier-explode open-source configuration decoder trending"
       ],
-      "developer_pain": "high",
-      "freshness": "fresh",
-      "money_angle": "$850/month recurring revenue from a single background Python scraper and Stripe webhooks",
-      "story_angle": "After seeing niche spatial data products gain traction on HN, I wrote a Python geo-scraper that turned free government GIS data into an $850/mo micro-SaaS.",
-      "suman_angle": "How I built a niche GIS data aggregator that makes $850/month on Stripe (full stack breakdown)",
+      "developer_pain": "medium",
+      "freshness": "recent",
+      "money_angle": "Telecom QA automation and enterprise SIM provisioning tools charge steep recurring enterprise licensing fees for this exact dataset.",
+      "story_angle": "I needed to test roaming behavior for an IoT tracker without buying twenty SIM cards, so I built an automated scraper that decompresses carrier settings across iPhone, Pixel, and Galaxy firmwares.",
+      "suman_angle": "Telecom Automation: How I Batch-Parsed 500 Carrier Firmware Configs into Clean JSON with Python",
       "target_keywords": [
-        "niche saas python GIS",
-        "monetize web scraping python",
-        "micro saas stripe integration",
-        "side project revenue tech"
+        "carrier settings extraction python",
+        "decode ipcc carrier bundle",
+        "parse android carrier config",
+        "carrier explode reverse engineering"
       ],
-      "competing_articles": "Generic indie hacker advice usually lacks concrete code; Suman shows the exact Shapely/GeoPandas data extraction script and Stripe webhook setup.",
+      "competing_articles": "Existing cellular guides are vague carrier manuals; this is an automated, runnable script that rips apart binary archives into structured data.",
       "real_story_evidence": [
         {
           "source": "Hacker News (Show HN)",
-          "title": "Show HN: Unfenced \u2013 Land for sale that borders public land",
-          "url": "https://unfenced.land/",
-          "what_to_cite": "Cite how Unfenced leveraged public geospatial boundary data to build a highly targeted high-intent niche real estate product."
+          "title": "Show HN: Carrier-Explode: iPhone, Pixel and Galaxy carrier settings decoded",
+          "url": "https://carrierexplode.com/",
+          "what_to_cite": "Continuous archiving and programmatic decoding of hidden carrier settings across Apple, Google, and Samsung ecosystems."
         }
       ]
     },
     {
-      "topic": "Why I Dropped WebSockets for Server-Sent Events (SSE) in My AI Agent Streaming Dashboard",
-      "category": "G",
-      "category_name": "Software Architecture Insight",
-      "virality_score": 87,
-      "analysis": "With the explosion of streaming LLM outputs and live agent progress bars, developers are running into unnecessary complexity by over-engineering full-duplex WebSockets. This architectural deep-dive explains the exact trade-offs, showing why unidirectional HTTP/2 SSE reduced server load by 60% and eliminated reconnect edge cases in FastAPI + Vanilla JS dashboards.",
+      "topic": "Building a zero-backend interactive 90s aesthetic generator using raw SVG filters and modern Canvas",
+      "category": "A",
+      "category_name": "Developer Success Story",
+      "virality_score": 86,
+      "analysis": "Show HN projects focused on retro aesthetics and instant client-side tools like TitleArt and Guitoro reliably capture front-page developer attention because they require zero login, zero backend, and deliver instant tactile feedback. Readers love solo dev breakdown stories explaining how to leverage modern SVG displacement filters, bevel effects, and Canvas compositing entirely on the client. This post walks through shipping a client-side nostalgic text engine that achieved 400+ points on Hacker News with zero cloud operating costs.",
       "cross_source_signals": [
-        "Hacker News: Multiple discussions on real-time agent output rendering and simple streaming protocols",
-        "Dev.to: Debates on WebSockets vs SSE for LLM response streaming",
-        "Reddit r/FastAPI: High search frequency on 'FastAPI streaming SSE vs WebSocket for AI'"
+        "Hacker News Show HN: TitleArt scored 409 points and 82 comments",
+        "Hacker News Show HN: Guitoro gained 573 points with pure client-side interaction",
+        "Reddit r/frontend: High engagement on retro CSS/SVG recreation experiments"
       ],
       "developer_pain": "medium",
-      "freshness": "fresh",
-      "money_angle": "",
-      "story_angle": "My custom AI agent dashboard kept dropping WebSocket connections during long LLM tool executions until I stripped out WebSockets for pure HTTP/2 SSE.",
-      "suman_angle": "Why I dropped WebSockets for Server-Sent Events (SSE) in my AI agent dashboard",
+      "freshness": "recent",
+      "money_angle": "Turned into an embeddable micro-SaaS asset generator monetized via digital badge and typography downloads.",
+      "story_angle": "Tired of bloated AI image generators that cost $0.04 per prompt, I built a pure client-side retro text engine using zero backend and SVG displacement maps that went viral overnight.",
+      "suman_angle": "How I Built a 1990s WordArt Generator in 180 Lines of Vanilla JS (Zero Backend, 400 Upvotes)",
       "target_keywords": [
-        "sse vs websocket llm streaming",
-        "fastapi server sent events python",
-        "ai agent dashboard architecture",
-        "real time streaming python backend"
+        "retro text generator javascript",
+        "svg filters canvas tutorial",
+        "build zero backend web app",
+        "titleart hacker news architecture"
       ],
-      "competing_articles": "Most WebSocket posts focus on chat apps; this article specifically targets the modern 2026 AI agent workflow streaming scenario with concrete Python benchmarks.",
-      "real_story_evidence": []
+      "competing_articles": "Most creative coding tutorials use heavy WebGL engines like Three.js; this shows how native SVG filters and standard Canvas can create complex retro effects with zero bundle bloat.",
+      "real_story_evidence": [
+        {
+          "source": "Hacker News (Show HN)",
+          "title": "Show HN: TitleArt \u2013 Make text like it's 1997",
+          "url": "https://titleart.dvy.io/",
+          "what_to_cite": "Hit 409 points and 82 comments on Hacker News by recreating authentic 90s WordArt completely in the browser with zero server rendering."
+        }
+      ]
     }
   ],
   "success_stories": [
+    {
+      "source": "show_hn",
+      "title": "Show HN: To Honor Sir Patrick Stewart, Enjoy the TNG Episode Guessing Game",
+      "url": "https://tng.episodle.com/",
+      "signal": "186 points \u00b7 50 comments",
+      "snippet": ""
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: A working Nintendo in ~1GB of Qwen weights",
+      "url": "https://github.com/dbreunig/nesformer",
+      "signal": "245 points \u00b7 121 comments",
+      "snippet": ""
+    },
     {
       "source": "show_hn",
       "title": "Show HN: SimCity, but with Permits",
@@ -139,16 +160,23 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Steal My Bitcoin",
-      "url": "https://stealmybitcoin.com/",
-      "signal": "623 points \u00b7 450 comments",
-      "snippet": "Made this because I'm curious if anyone out there has figured out how to actually use this PHP RCE we spent the last few days panicking over. Have fun!"
-    },
-    {
-      "source": "show_hn",
       "title": "Show HN: Bigwords.page \u2013 Turn any screen into a sign. The URL is the app",
       "url": "https://bigwords.page/",
       "signal": "728 points \u00b7 166 comments",
+      "snippet": ""
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Steal My Bitcoin",
+      "url": "https://stealmybitcoin.com/",
+      "signal": "625 points \u00b7 450 comments",
+      "snippet": "Made this because I'm curious if anyone out there has figured out how to actually use this PHP RCE we spent the last few days panicking over. Have fun!"
+    },
+    {
+      "source": "indie_reddit",
+      "title": "Launched my first digital product: a budget PC build guide for first-time builders",
+      "url": "https://www.reddit.com/r/indiehackers/comments/1xjqza8/launched_my_first_digital_product_a_budget_pc/",
+      "signal": "r/indiehackers",
       "snippet": ""
     },
     {
@@ -160,17 +188,17 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: TitleArt \u2013 Make text like it's 1997",
-      "url": "https://titleart.dvy.io/",
-      "signal": "405 points \u00b7 82 comments",
-      "snippet": ""
-    },
-    {
-      "source": "show_hn",
       "title": "Show HN: Carrier-Explode: iPhone, Pixel and Galaxy carrier settings decoded",
       "url": "https://carrierexplode.com/",
       "signal": "433 points \u00b7 55 comments",
       "snippet": "Showing off carrier-explode, one of my side projects that continuously archives carrier settings for all major phone brands. carrier-explode also contains decoders and explanations for all the common "
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: TitleArt \u2013 Make text like it's 1997",
+      "url": "https://titleart.dvy.io/",
+      "signal": "409 points \u00b7 82 comments",
+      "snippet": ""
     },
     {
       "source": "show_hn",
@@ -197,7 +225,7 @@
       "source": "show_hn",
       "title": "Show HN: A Truly Modular Keyboard",
       "url": "https://github.com/notaroomba/keybytes",
-      "signal": "318 points \u00b7 116 comments",
+      "signal": "320 points \u00b7 116 comments",
       "snippet": ""
     },
     {
@@ -246,29 +274,8 @@
       "source": "show_hn",
       "title": "Show HN: OnKey \u2013 I'm a bad singer, so I built an app to show where I'm off-key",
       "url": "https://github.com/dsmurrell/onkey",
-      "signal": "236 points \u00b7 94 comments",
+      "signal": "237 points \u00b7 94 comments",
       "snippet": "Hi all I was pretty terrible at singing, now I\u2019d say I\u2019m bad but not terrible. This is because I\u2019ve been using a singing app (won\u2019t name it here) that scores me on my pitch and timing throughout the s"
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: Glash\u00fctte Trash Clock \u2013 A 30-minute pendulum clock made from trash",
-      "url": "https://niklasroy.com/gtc/",
-      "signal": "236 points \u00b7 48 comments",
-      "snippet": "This is a functional 30-minute pendulum clock entirely from discarded materials\u2014cardboard, zip ties, tape, a yardstick, and a paperclip escapement, built in the German Eldorado of precision watchmakin"
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: The Zelda timeline to catch up before the Ocarina of Time remake",
-      "url": "https://legendofhyrule.com/",
-      "signal": "231 points \u00b7 130 comments",
-      "snippet": "I made this ahead of the Ocarina of Time remake which comes out in 17 days. I remember the feeling of playing it as a kid but I hadn\u2019t kept up with the story so I built a timeline to catch up before t"
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: Petal, open-source CoScreen/ScreenHero finally free",
-      "url": "https://petal.live/",
-      "signal": "228 points \u00b7 41 comments",
-      "snippet": "Hi HN! I\u2019m Jason Thomas, one of the founders of CoScreen. As some of you may know, Datadog sunset the CoScreen service on July 31st. Four of us from the original CoScreen team have spent the last coup"
     }
   ]
 }
