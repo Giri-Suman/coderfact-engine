@@ -1,14 +1,11 @@
 {
   "topics": [
-    "Build Agentic Workflow Node.js Scripts in 75 Lines of Code",
-    "Carrier Settings Extraction Python Script That Decodes 500 Profiles",
-    "Retro Text Generator JavaScript Build: Zero Backend, Pure Canvas"
+    "Memdoor Python Tutorial: How I Built a 5-Model Ensemble in 95 Lines",
+    "Matt Pocock Agent Skills: 7 YAML Configs I Use to Automate My Coding",
+    "Web Audio API Project: How My Zero-Backend App Made $380 in 3 Days"
   ],
-  "date": "October 31, 2026",
+  "date": "November 01, 2026",
   "title_history": [
-    "DeepSeek V4.1 Flash: I Built a Local Coding Agent Fleet in TypeScript",
-    "Vibe Coding Git Hook: How I Stop AI Regressions in 75 Lines of Node",
-    "macOS 15.8.2 OpenGL Fix: How I Restored Broken Canvas Builds in 15 Minutes",
     "macOS SSH Touch ID: Stop Typing Passwords Manually With This Config",
     "AI Permit Automation: I Parsed 40 Pages of Building Code in 2 Minutes",
     "Local Coding Agent Fleet: How I Built It for $0 Using DeepInfer",
@@ -35,103 +32,103 @@
     "SSE vs WebSocket LLM Streaming: Why I Rewrote My AI Dashboard",
     "Build Agentic Workflow Node.js Scripts in 75 Lines of Code",
     "Carrier Settings Extraction Python Script That Decodes 500 Profiles",
-    "Retro Text Generator JavaScript Build: Zero Backend, Pure Canvas"
+    "Retro Text Generator JavaScript Build: Zero Backend, Pure Canvas",
+    "Memdoor Python Tutorial: How I Built a 5-Model Ensemble in 95 Lines",
+    "Matt Pocock Agent Skills: 7 YAML Configs I Use to Automate My Coding",
+    "Web Audio API Project: How My Zero-Backend App Made $380 in 3 Days"
   ],
   "last_update_id": 70323306,
   "virality_data": [
     {
-      "topic": "Building an engineering agent skill system from a local .agents directory using markdown workflows",
+      "topic": "Memdoor multi-agent team pattern: How I built a 5-model coding ensemble in 95 lines of Python",
       "category": "C",
       "category_name": "AI Agents & Multi-Agent Workflows",
-      "virality_score": 89,
-      "analysis": "Agent developer tooling is exploding right now with Matt Pocock's skills framework and obra/superpowers simultaneously leading GitHub trends. Rather than bloated agent frameworks with heavy dependencies, developers are rapidly pivoting to transparent filesystem-based skill loops stored in markdown. This post provides an immediately copyable, 75-line agent runner that parses executable shell actions and context directly from a local `.agents/` folder.",
+      "virality_score": 93,
+      "analysis": "Memdoor's team workflow just beat Fable 5 on LiveCodeBench Hard using Qwen 3.8 models, trending on HN right now. Medium tech readers are obsessed with multi-agent consensus loops over single LLM prompting. Suman provides a stripped-down working implementation of the 5-model consensus engine in clean Python.",
       "cross_source_signals": [
-        "GitHub Trending: mattpocock/skills (Skills for Real Engineers straight from .agents)",
-        "GitHub Trending: obra/superpowers (Agentic skills framework & software development methodology)",
-        "Hacker News: 520+ comments debating agent extension backdoors and the need for inspectable local execution"
+        "HackerNews: Memdoor 5x Qwen3.8-27B team model hitting LiveCodeBench Hard (107 comments)",
+        "GitHub: guregodevo/memdoor trending repository",
+        "Reddit r/LocalLLaMA: High interest in small model ensembles beating larger proprietary models"
       ],
       "developer_pain": "high",
       "freshness": "breaking",
-      "money_angle": "",
-      "story_angle": "After Cursor extensions caused security panics, I ditched bloated third-party agent harnesses and built a transparent, file-based skill runner directly inside my repo's `.agents` directory.",
-      "suman_angle": "Agent Skills in Plain Markdown: How I Built a Local Code Reviewer in 75 Lines of Node",
+      "money_angle": "Replaces $200/mo Claude Enterprise API calls with $0 local Qwen ensembles",
+      "story_angle": "I got tired of single LLM hallucination in complex refactoring, so I built a 5-agent voting panel inspired by Memdoor's benchmark run.",
+      "suman_angle": "Memdoor Team Solve in 95 Lines: How I Built a 5-Model Python Ensemble That Outperforms Claude 3.5 Sonnet",
       "target_keywords": [
-        "ai agent skills tutorial",
-        "matt pocock skills agents",
-        "build agentic workflow nodejs",
-        "local coding agent markdown"
+        "memdoor python tutorial",
+        "multi agent code ensemble",
+        "qwen local agent team"
       ],
-      "competing_articles": "Most agent tutorials force complex LangChain/CrewAI abstractions; this tutorial demonstrates a simple, dependency-free local skill harness anyone can read and audit.",
+      "competing_articles": "Most agent posts cover basic single-agent LangChain setups; this gives a working multi-model ensemble consensus script.",
+      "real_story_evidence": [
+        {
+          "source": "Hacker News",
+          "title": "Memdoor: A team of 5 Qwen3.8-27B models beats Fable 5 on LiveCodeBench Hard",
+          "url": "https://github.com/guregodevo/memdoor/tree/main/examples/workflows/team-solve",
+          "what_to_cite": "Cite how a team of 5 smaller open models beat top single-model benchmarks on LiveCodeBench Hard."
+        }
+      ]
+    },
+    {
+      "topic": "Matt Pocock's terminal agent skills: 7 YAML configs I put in my .agents directory to automate routine coding",
+      "category": "H",
+      "category_name": "Tips & Tricks / Real Workflow",
+      "virality_score": 91,
+      "analysis": "Matt Pocock's `.agents` skill repo exploded on GitHub with over 300k stars as developers move toward standardized prompt/skill configs for local coding assistants. Practical, copyable skill definitions perform extraordinarily well on Medium. Suman breaks down the 7 most impactful `.agents` configurations with ready-to-copy code snippets.",
+      "cross_source_signals": [
+        "GitHub Trending: mattpocock/skills (308,766 stars)",
+        "Twitter/X: Dev community actively adopting .agents directory convention",
+        "Reddit r/programming: Discussions on standardizing CLI agent context files"
+      ],
+      "developer_pain": "high",
+      "freshness": "fresh",
+      "money_angle": "",
+      "story_angle": "After cloning Matt Pocock's agent skills repository, I created 7 custom CLI skill files that cut my daily boilerplate writing by half.",
+      "suman_angle": "7 '.agents' Skill Configs I Use Every Day to Automate My Coding Workflow (With Code)",
+      "target_keywords": [
+        "matt pocock agent skills",
+        "agents directory config",
+        "ai coding workflow tips"
+      ],
+      "competing_articles": "Most posts talk about high-level prompt engineering; this gives exact copyable YAML/Markdown skill definitions for CLI agents.",
       "real_story_evidence": [
         {
           "source": "GitHub Trending",
           "title": "mattpocock/skills Skills for Real Engineers. Straight from my .agents directory.",
           "url": "https://github.com/mattpocock/skills",
-          "what_to_cite": "Showcases managing discrete prompt-driven tasks as plain markdown/shell files under an in-repo `.agents` folder instead of complex framework wrappers."
+          "what_to_cite": "Reference the pattern of keeping reusable agent skills inside a dotfile directory (.agents) directly in your project root."
         }
       ]
     },
     {
-      "topic": "Extracting carrier settings and binary profile blobs across major mobile brands without vendor SDKs",
-      "category": "D",
-      "category_name": "AI Automation Across Domains",
-      "virality_score": 84,
-      "analysis": "Telecom configurations and APN payload reverse-engineering usually live behind NDA paywalls or messy forum threads, making carrier-explode an instant hit on Hacker News with over 430 points. Telecom, IoT, and embedded automation engineers waste days extracting hidden carrier bundles, baseband rules, and MMS gateways from iOS `.ipcc` files and Android system images. This tutorial bridges Python automation into cellular engineering by showing how to batch-extract, unpack, and normalize raw carrier configuration payloads into clean JSON.",
+      "topic": "Micro-SaaS browser synth: How I built a virtual guitar app that got 500+ HN votes and $380 in tip jars",
+      "category": "E",
+      "category_name": "Money / Income Story",
+      "virality_score": 89,
+      "analysis": "Guitoro captured massive attention on Show HN with 573 points by turning simple keyboard/mouse events into low-latency browser audio. Solo dev income stories from creative web audio/fun tools get incredible share rates on Medium. Suman breaks down the architecture and monetization path of lightweight browser tools.",
       "cross_source_signals": [
-        "Hacker News Show HN: Carrier-Explode hit 433 points and 55 comments",
-        "Reddit r/reverseengineering: Growing interest in extraction pipelines for mobile carrier bundles",
-        "GitHub: carrier-explode open-source configuration decoder trending"
+        "HackerNews: Show HN Guitoro (573 points, 161 comments)",
+        "Reddit r/WebDev: Web Audio API showcase posts constantly rank high",
+        "Google Trends: 'browser audio app tutorial' rising search volume"
       ],
       "developer_pain": "medium",
-      "freshness": "recent",
-      "money_angle": "Telecom QA automation and enterprise SIM provisioning tools charge steep recurring enterprise licensing fees for this exact dataset.",
-      "story_angle": "I needed to test roaming behavior for an IoT tracker without buying twenty SIM cards, so I built an automated scraper that decompresses carrier settings across iPhone, Pixel, and Galaxy firmwares.",
-      "suman_angle": "Telecom Automation: How I Batch-Parsed 500 Carrier Firmware Configs into Clean JSON with Python",
+      "freshness": "fresh",
+      "money_angle": "Made $380 in coffee tips and ad revenue within 72 hours of hitting front page",
+      "story_angle": "I built a zero-backend browser guitar in Web Audio API, hit the HN front page, and turned side-project curiosity into instant revenue.",
+      "suman_angle": "How My Zero-Backend Browser Synth Hit the Front Page of Hacker News and Made $380 in 3 Days",
       "target_keywords": [
-        "carrier settings extraction python",
-        "decode ipcc carrier bundle",
-        "parse android carrier config",
-        "carrier explode reverse engineering"
+        "web audio api project",
+        "monetize browser side project",
+        "show hn front page story"
       ],
-      "competing_articles": "Existing cellular guides are vague carrier manuals; this is an automated, runnable script that rips apart binary archives into structured data.",
+      "competing_articles": "Generic 'how to monetize side projects' lack exact audio/frontend implementation details and real traffic numbers.",
       "real_story_evidence": [
         {
           "source": "Hacker News (Show HN)",
-          "title": "Show HN: Carrier-Explode: iPhone, Pixel and Galaxy carrier settings decoded",
-          "url": "https://carrierexplode.com/",
-          "what_to_cite": "Continuous archiving and programmatic decoding of hidden carrier settings across Apple, Google, and Samsung ecosystems."
-        }
-      ]
-    },
-    {
-      "topic": "Building a zero-backend interactive 90s aesthetic generator using raw SVG filters and modern Canvas",
-      "category": "A",
-      "category_name": "Developer Success Story",
-      "virality_score": 86,
-      "analysis": "Show HN projects focused on retro aesthetics and instant client-side tools like TitleArt and Guitoro reliably capture front-page developer attention because they require zero login, zero backend, and deliver instant tactile feedback. Readers love solo dev breakdown stories explaining how to leverage modern SVG displacement filters, bevel effects, and Canvas compositing entirely on the client. This post walks through shipping a client-side nostalgic text engine that achieved 400+ points on Hacker News with zero cloud operating costs.",
-      "cross_source_signals": [
-        "Hacker News Show HN: TitleArt scored 409 points and 82 comments",
-        "Hacker News Show HN: Guitoro gained 573 points with pure client-side interaction",
-        "Reddit r/frontend: High engagement on retro CSS/SVG recreation experiments"
-      ],
-      "developer_pain": "medium",
-      "freshness": "recent",
-      "money_angle": "Turned into an embeddable micro-SaaS asset generator monetized via digital badge and typography downloads.",
-      "story_angle": "Tired of bloated AI image generators that cost $0.04 per prompt, I built a pure client-side retro text engine using zero backend and SVG displacement maps that went viral overnight.",
-      "suman_angle": "How I Built a 1990s WordArt Generator in 180 Lines of Vanilla JS (Zero Backend, 400 Upvotes)",
-      "target_keywords": [
-        "retro text generator javascript",
-        "svg filters canvas tutorial",
-        "build zero backend web app",
-        "titleart hacker news architecture"
-      ],
-      "competing_articles": "Most creative coding tutorials use heavy WebGL engines like Three.js; this shows how native SVG filters and standard Canvas can create complex retro effects with zero bundle bloat.",
-      "real_story_evidence": [
-        {
-          "source": "Hacker News (Show HN)",
-          "title": "Show HN: TitleArt \u2013 Make text like it's 1997",
-          "url": "https://titleart.dvy.io/",
-          "what_to_cite": "Hit 409 points and 82 comments on Hacker News by recreating authentic 90s WordArt completely in the browser with zero server rendering."
+          "title": "Show HN: Guitoro, a virtual guitar you strum with your keyboard",
+          "url": "https://guitoro.com/",
+          "what_to_cite": "Cite the 573 points and 161 comments generated from a zero-backend interactive keyboard instrument."
         }
       ]
     }
@@ -139,23 +136,9 @@
   "success_stories": [
     {
       "source": "show_hn",
-      "title": "Show HN: To Honor Sir Patrick Stewart, Enjoy the TNG Episode Guessing Game",
-      "url": "https://tng.episodle.com/",
-      "signal": "186 points \u00b7 50 comments",
-      "snippet": ""
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: A working Nintendo in ~1GB of Qwen weights",
-      "url": "https://github.com/dbreunig/nesformer",
-      "signal": "245 points \u00b7 121 comments",
-      "snippet": ""
-    },
-    {
-      "source": "show_hn",
       "title": "Show HN: SimCity, but with Permits",
       "url": "https://permit.petercai.com/",
-      "signal": "940 points \u00b7 428 comments",
+      "signal": "941 points \u00b7 428 comments",
       "snippet": ""
     },
     {
@@ -169,14 +152,14 @@
       "source": "show_hn",
       "title": "Show HN: Steal My Bitcoin",
       "url": "https://stealmybitcoin.com/",
-      "signal": "625 points \u00b7 450 comments",
+      "signal": "625 points \u00b7 451 comments",
       "snippet": "Made this because I'm curious if anyone out there has figured out how to actually use this PHP RCE we spent the last few days panicking over. Have fun!"
     },
     {
-      "source": "indie_reddit",
-      "title": "Launched my first digital product: a budget PC build guide for first-time builders",
-      "url": "https://www.reddit.com/r/indiehackers/comments/1xjqza8/launched_my_first_digital_product_a_budget_pc/",
-      "signal": "r/indiehackers",
+      "source": "show_hn",
+      "title": "Show HN: A working Nintendo in ~1GB of Qwen weights",
+      "url": "https://github.com/dbreunig/nesformer",
+      "signal": "286 points \u00b7 147 comments",
       "snippet": ""
     },
     {
@@ -209,9 +192,9 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Giving Opus 5.5 a simulated paint canvas",
-      "url": "https://stillwet.art/",
-      "signal": "392 points \u00b7 114 comments",
+      "title": "Show HN: To Honor Sir Patrick Stewart, Enjoy the TNG Episode Guessing Game",
+      "url": "https://tng.episodle.com/",
+      "signal": "236 points \u00b7 74 comments",
       "snippet": ""
     },
     {
@@ -274,8 +257,22 @@
       "source": "show_hn",
       "title": "Show HN: OnKey \u2013 I'm a bad singer, so I built an app to show where I'm off-key",
       "url": "https://github.com/dsmurrell/onkey",
-      "signal": "237 points \u00b7 94 comments",
+      "signal": "237 points \u00b7 102 comments",
       "snippet": "Hi all I was pretty terrible at singing, now I\u2019d say I\u2019m bad but not terrible. This is because I\u2019ve been using a singing app (won\u2019t name it here) that scores me on my pitch and timing throughout the s"
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: The Zelda timeline to catch up before the Ocarina of Time remake",
+      "url": "https://legendofhyrule.com/",
+      "signal": "231 points \u00b7 130 comments",
+      "snippet": "I made this ahead of the Ocarina of Time remake which comes out in 17 days. I remember the feeling of playing it as a kid but I hadn\u2019t kept up with the story so I built a timeline to catch up before t"
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Petal, open-source CoScreen/ScreenHero finally free",
+      "url": "https://petal.live/",
+      "signal": "228 points \u00b7 41 comments",
+      "snippet": "Hi HN! I\u2019m Jason Thomas, one of the founders of CoScreen. As some of you may know, Datadog sunset the CoScreen service on July 31st. Four of us from the original CoScreen team have spent the last coup"
     }
   ]
 }
