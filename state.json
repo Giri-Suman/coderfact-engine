@@ -1,14 +1,11 @@
 {
   "topics": [
-    "Memdoor Python Tutorial: How I Built a 5-Model Ensemble in 95 Lines",
-    "Matt Pocock Agent Skills: 7 YAML Configs I Use to Automate My Coding",
-    "Web Audio API Project: How My Zero-Backend App Made $380 in 3 Days"
+    "Vibe Coding Tutorial: How I Built a 16k Book App in 4 Hours",
+    "Python AI Agent Tool Harness: I Added Screen Overlay Skills in 85 Lines",
+    "Go JSON v2 Benchmark: Memory Allocations and Production Trade-Offs"
   ],
-  "date": "November 01, 2026",
+  "date": "November 05, 2026",
   "title_history": [
-    "macOS SSH Touch ID: Stop Typing Passwords Manually With This Config",
-    "AI Permit Automation: I Parsed 40 Pages of Building Code in 2 Minutes",
-    "Local Coding Agent Fleet: How I Built It for $0 Using DeepInfer",
     "Graphify codebase knowledge graph agent in 110 Python lines (60 chars)",
     "Build micro saas without backend: How I scaled to 50k users (61 chars)",
     "Mermaid alternative diagram architecture: Why I dropped auto-layout (68 chars)",
@@ -35,105 +32,129 @@
     "Retro Text Generator JavaScript Build: Zero Backend, Pure Canvas",
     "Memdoor Python Tutorial: How I Built a 5-Model Ensemble in 95 Lines",
     "Matt Pocock Agent Skills: 7 YAML Configs I Use to Automate My Coding",
-    "Web Audio API Project: How My Zero-Backend App Made $380 in 3 Days"
+    "Web Audio API Project: How My Zero-Backend App Made $380 in 3 Days",
+    "Vibe Coding Tutorial: How I Built a 16k Book App in 4 Hours",
+    "Python AI Agent Tool Harness: I Added Screen Overlay Skills in 85 Lines",
+    "Go JSON v2 Benchmark: Memory Allocations and Production Trade-Offs"
   ],
   "last_update_id": 70323306,
   "virality_data": [
     {
-      "topic": "Memdoor multi-agent team pattern: How I built a 5-model coding ensemble in 95 lines of Python",
-      "category": "C",
-      "category_name": "AI Agents & Multi-Agent Workflows",
+      "topic": "I built HackerBooks in an afternoon with Claude Opus 5.5: How I turned 16k HN book mentions into a searchable web app",
+      "category": "B",
+      "category_name": "Vibe Coding / AI-Assisted Workflow",
       "virality_score": 93,
-      "analysis": "Memdoor's team workflow just beat Fable 5 on LiveCodeBench Hard using Qwen 3.8 models, trending on HN right now. Medium tech readers are obsessed with multi-agent consensus loops over single LLM prompting. Suman provides a stripped-down working implementation of the 5-model consensus engine in clean Python.",
+      "analysis": "This topic rides the exact wave of Karpathy's HackerTube trend while proving how Claude Opus 5.5 enables single-session dev loops for complete web products. The Show HN launch hit 1853 points and 306 comments, proving massive developer curiosity around turning forum signal into niche content apps. Suman breaks down the vibe coding prompts and data extraction workflow used to build the 16.5k book index without writing backend boilerplate.",
       "cross_source_signals": [
-        "HackerNews: Memdoor 5x Qwen3.8-27B team model hitting LiveCodeBench Hard (107 comments)",
-        "GitHub: guregodevo/memdoor trending repository",
-        "Reddit r/LocalLLaMA: High interest in small model ensembles beating larger proprietary models"
+        "Hacker News: 1853 points on HackerBooks launch",
+        "GitHub: Trending repo garrytan/gstack (Claude Code setup)",
+        "Medium 2026 Trend: Vibe coding single-page indices"
       ],
       "developer_pain": "high",
       "freshness": "breaking",
-      "money_angle": "Replaces $200/mo Claude Enterprise API calls with $0 local Qwen ensembles",
-      "story_angle": "I got tired of single LLM hallucination in complex refactoring, so I built a 5-agent voting panel inspired by Memdoor's benchmark run.",
-      "suman_angle": "Memdoor Team Solve in 95 Lines: How I Built a 5-Model Python Ensemble That Outperforms Claude 3.5 Sonnet",
+      "money_angle": "How niche curations like this convert HN organic traffic into passive affiliate revenue",
+      "story_angle": "After seeing Karpathy's HackerTube go viral, I gave Claude Opus 5.5 19 years of HN post data and prompted a full book discovery engine in 4 hours.",
+      "suman_angle": "Vibe Coding HackerBooks: How I built a 16,500-book search app in 4 hours using Claude Opus 5.5",
       "target_keywords": [
-        "memdoor python tutorial",
-        "multi agent code ensemble",
-        "qwen local agent team"
+        "vibe coding tutorial",
+        "claude opus 5.5 coding",
+        "build hn book index",
+        "hackerbooks tech stack"
       ],
-      "competing_articles": "Most agent posts cover basic single-agent LangChain setups; this gives a working multi-model ensemble consensus script.",
+      "competing_articles": "Most AI vibe-coding posts show trivial To-Do apps; Suman shows how to process 19 years of text data into a production web app using LLM prompts.",
       "real_story_evidence": [
         {
-          "source": "Hacker News",
-          "title": "Memdoor: A team of 5 Qwen3.8-27B models beats Fable 5 on LiveCodeBench Hard",
-          "url": "https://github.com/guregodevo/memdoor/tree/main/examples/workflows/team-solve",
-          "what_to_cite": "Cite how a team of 5 smaller open models beat top single-model benchmarks on LiveCodeBench Hard."
+          "source": "Hacker News (Show HN)",
+          "title": "Show HN: HackerBooks \u2013 HackerTube, but for books mentioned on HN",
+          "url": "https://hackerbooks.org",
+          "what_to_cite": "Reference how 16.5k books mentioned at least twice on HN were structured into a frontend UI via LLM prompts."
         }
       ]
     },
     {
-      "topic": "Matt Pocock's terminal agent skills: 7 YAML configs I put in my .agents directory to automate routine coding",
-      "category": "H",
-      "category_name": "Tips & Tricks / Real Workflow",
+      "category": "C",
+      "category_name": "AI Agents & Multi-Agent Workflows",
       "virality_score": 91,
-      "analysis": "Matt Pocock's `.agents` skill repo exploded on GitHub with over 300k stars as developers move toward standardized prompt/skill configs for local coding assistants. Practical, copyable skill definitions perform extraordinarily well on Medium. Suman breaks down the 7 most impactful `.agents` configurations with ready-to-copy code snippets.",
+      "analysis": "Agentic skills standards are exploding after Matt Pocock's `.agents` skills directory hit over 300k GitHub engagements. Developers are struggling to make LLM agents consistently format UI overlays and terminal annotations without breaking context. Suman provides a clean 85-line Python harness that hooks agent tool calls into screen draw commands.",
       "cross_source_signals": [
-        "GitHub Trending: mattpocock/skills (308,766 stars)",
-        "Twitter/X: Dev community actively adopting .agents directory convention",
-        "Reddit r/programming: Discussions on standardizing CLI agent context files"
+        "GitHub: mattpocock/skills (313,956 points/stars cluster)",
+        "Hacker News: Ask HN on agentic setups (344 comments)",
+        "Hacker News: Show HN on AI agents painting arrows on screen (421 points)"
       ],
       "developer_pain": "high",
       "freshness": "fresh",
       "money_angle": "",
-      "story_angle": "After cloning Matt Pocock's agent skills repository, I created 7 custom CLI skill files that cut my daily boilerplate writing by half.",
-      "suman_angle": "7 '.agents' Skill Configs I Use Every Day to Automate My Coding Workflow (With Code)",
+      "story_angle": "I got tired of terminal-only AI agents failing visual verification tasks, so I built an 85-line Python tool harness that lets LLMs draw annotations directly on my desktop.",
+      "suman_angle": "Building a Visual AI Agent Harness: How I Gave My Python Scripts Screen Drawing Skills in 85 Lines",
       "target_keywords": [
-        "matt pocock agent skills",
-        "agents directory config",
-        "ai coding workflow tips"
+        "python ai agent tool harness",
+        "agentic screen overlay python",
+        "matt pocock agent skills format"
       ],
-      "competing_articles": "Most posts talk about high-level prompt engineering; this gives exact copyable YAML/Markdown skill definitions for CLI agents.",
-      "real_story_evidence": [
-        {
-          "source": "GitHub Trending",
-          "title": "mattpocock/skills Skills for Real Engineers. Straight from my .agents directory.",
-          "url": "https://github.com/mattpocock/skills",
-          "what_to_cite": "Reference the pattern of keeping reusable agent skills inside a dotfile directory (.agents) directly in your project root."
-        }
-      ]
+      "competing_articles": "Existing agent tutorials rely heavily on heavy frameworks like AutoGen; this provides a zero-dependency script showing clean tool-call integration.",
+      "real_story_evidence": []
     },
     {
-      "topic": "Micro-SaaS browser synth: How I built a virtual guitar app that got 500+ HN votes and $380 in tip jars",
-      "category": "E",
-      "category_name": "Money / Income Story",
-      "virality_score": 89,
-      "analysis": "Guitoro captured massive attention on Show HN with 573 points by turning simple keyboard/mouse events into low-latency browser audio. Solo dev income stories from creative web audio/fun tools get incredible share rates on Medium. Suman breaks down the architecture and monetization path of lightweight browser tools.",
+      "topic": "Why I stopped using Go for modern JSON APIs: Benchmarking Go's experimental JSON v2 against Python and Node",
+      "category": "G",
+      "category_name": "Software Architecture Insight",
+      "virality_score": 87,
+      "analysis": "The official announcement of Go's new `encoding/json/v2` API sparked deep technical debate across the dev ecosystem regarding performance vs interface stability. Devs are constantly evaluating high-throughput JSON processing trade-offs in microservice architectures. Suman runs real load-testing benchmarks comparing v1, v2, and alternative runtimes to reveal when upgrading is worth the migration cost.",
       "cross_source_signals": [
-        "HackerNews: Show HN Guitoro (573 points, 161 comments)",
-        "Reddit r/WebDev: Web Audio API showcase posts constantly rank high",
-        "Google Trends: 'browser audio app tutorial' rising search volume"
+        "Hacker News: A new Go API for JSON (142 comments)",
+        "Dev.to: JSON parser optimization discussions",
+        "Google Trends: Go json v2 performance search spike"
       ],
-      "developer_pain": "medium",
-      "freshness": "fresh",
-      "money_angle": "Made $380 in coffee tips and ad revenue within 72 hours of hitting front page",
-      "story_angle": "I built a zero-backend browser guitar in Web Audio API, hit the HN front page, and turned side-project curiosity into instant revenue.",
-      "suman_angle": "How My Zero-Backend Browser Synth Hit the Front Page of Hacker News and Made $380 in 3 Days",
+      "developer_pain": "high",
+      "freshness": "breaking",
+      "money_angle": "",
+      "story_angle": "When Go announced its JSON v2 spec rewrite, I benchmarked our core serialization pipelines to see if it actually solves memory allocation bottlenecks.",
+      "suman_angle": "Go\u2019s New JSON v2 API Tested: Performance Benchmarks, Allocation Diffs, and Production Trade-Offs",
       "target_keywords": [
-        "web audio api project",
-        "monetize browser side project",
-        "show hn front page story"
+        "go json v2 benchmark",
+        "golang json performance",
+        "go encoding json v2 migration"
       ],
-      "competing_articles": "Generic 'how to monetize side projects' lack exact audio/frontend implementation details and real traffic numbers.",
-      "real_story_evidence": [
-        {
-          "source": "Hacker News (Show HN)",
-          "title": "Show HN: Guitoro, a virtual guitar you strum with your keyboard",
-          "url": "https://guitoro.com/",
-          "what_to_cite": "Cite the 573 points and 161 comments generated from a zero-backend interactive keyboard instrument."
-        }
-      ]
+      "competing_articles": "Most blogs just summarize the official Go blog post; Suman provides actual CPU/memory flamegraphs and benchmark code comparing v1 vs v2.",
+      "real_story_evidence": []
     }
   ],
   "success_stories": [
+    {
+      "source": "show_hn",
+      "title": "Show HN: HackerBooks \u2013 HackerTube, but for books mentioned on HN",
+      "url": "https://hackerbooks.org",
+      "signal": "1853 points \u00b7 306 comments",
+      "snippet": "Saw Karpathy's HackerTube and wanted the same thing for books. So I had Claude build one (Opus 5.5). It's ~16.5k books that at least two different HN commenters brought up, from 2007 till now. Each bo"
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Wikihack \u2013 HackerTube, but for Wikipedia articles mentioned on HN",
+      "url": "https://wikihack.netlify.app",
+      "signal": "339 points \u00b7 104 comments",
+      "snippet": "After seeing Karpathy's Hackertube and Hackerbooks, I just had to make Wikihack. I scraped all mentions of wikipedia on hackernews and ranked them, and turn them into a scrollable feed to make it a bi"
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Subvocal \u2013 Talk to your computer without making noise",
+      "url": "https://news.ycombinator.com/item?id=50340088",
+      "signal": "830 points \u00b7 390 comments",
+      "snippet": "Hi HN, we're Aarush and Arnav from The Subvocal Company (YC F26) (https://subvocal.company/). We\u2019re building smart glasses that let you talk to your computer without talking out loud. You can mouth wo"
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Hacker Times, a New York Times-inspired version of Hacker News",
+      "url": "https://hackertimes.ca/",
+      "signal": "471 points \u00b7 148 comments",
+      "snippet": "I thought it would be fun to browse HN as if it were a newspaper. The site updates once an hour. Enjoy!"
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: HackerTV \u2013 HN's most-recommended Youtube videos as 24/7 TV channels",
+      "url": "https://hackertv.org",
+      "signal": "467 points \u00b7 80 comments",
+      "snippet": "I saw HackerTube (https://news.ycombinator.com/item?id=50319510) a few days ago, the YouTube videos HN keeps recommending, pulled from 19 years of comments. It made me want to flip through them instea"
+    },
     {
       "source": "show_hn",
       "title": "Show HN: SimCity, but with Permits",
@@ -152,15 +173,8 @@
       "source": "show_hn",
       "title": "Show HN: Steal My Bitcoin",
       "url": "https://stealmybitcoin.com/",
-      "signal": "625 points \u00b7 451 comments",
+      "signal": "627 points \u00b7 451 comments",
       "snippet": "Made this because I'm curious if anyone out there has figured out how to actually use this PHP RCE we spent the last few days panicking over. Have fun!"
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: A working Nintendo in ~1GB of Qwen weights",
-      "url": "https://github.com/dbreunig/nesformer",
-      "signal": "286 points \u00b7 147 comments",
-      "snippet": ""
     },
     {
       "source": "show_hn",
@@ -171,17 +185,17 @@
     },
     {
       "source": "show_hn",
+      "title": "Show HN: Warsaw in voxels \u2013 An interactive 3D map of the city centre",
+      "url": "https://p.migdal.pl/warsaw-vibe-voxel/",
+      "signal": "324 points \u00b7 52 comments",
+      "snippet": "Explore central Warsaw in voxels - slightly inspired by Minecraft, and MagicaVoxel. You can change the date, time of day and weather, explore the city, or click on a pedestrian to control them (here a"
+    },
+    {
+      "source": "show_hn",
       "title": "Show HN: Carrier-Explode: iPhone, Pixel and Galaxy carrier settings decoded",
       "url": "https://carrierexplode.com/",
       "signal": "433 points \u00b7 55 comments",
       "snippet": "Showing off carrier-explode, one of my side projects that continuously archives carrier settings for all major phone brands. carrier-explode also contains decoders and explanations for all the common "
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: TitleArt \u2013 Make text like it's 1997",
-      "url": "https://titleart.dvy.io/",
-      "signal": "409 points \u00b7 82 comments",
-      "snippet": ""
     },
     {
       "source": "show_hn",
@@ -192,10 +206,17 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: To Honor Sir Patrick Stewart, Enjoy the TNG Episode Guessing Game",
-      "url": "https://tng.episodle.com/",
-      "signal": "236 points \u00b7 74 comments",
+      "title": "Show HN: TitleArt \u2013 Make text like it's 1997",
+      "url": "https://titleart.dvy.io/",
+      "signal": "410 points \u00b7 82 comments",
       "snippet": ""
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: OmniDiff \u2013 Opensource, super fast, content aware Git difftool, in Rust",
+      "url": "https://github.com/ivankovic/omnidiff",
+      "signal": "319 points \u00b7 96 comments",
+      "snippet": "I have been researching what the ultimate diff tool would look like, based on actual diffs in open source repositories. OmniDiff can diff: code (25 languages), config, images, PDFs, archives, cursors,"
     },
     {
       "source": "show_hn",
@@ -220,6 +241,13 @@
     },
     {
       "source": "show_hn",
+      "title": "Show HN: A working Nintendo in ~1GB of Qwen weights",
+      "url": "https://github.com/dbreunig/nesformer",
+      "signal": "297 points \u00b7 153 comments",
+      "snippet": ""
+    },
+    {
+      "source": "show_hn",
       "title": "Show HN: PS2 games statically recompiled to WebAssembly",
       "url": "https://github.com/snuri00/ps2-web-recomp",
       "signal": "316 points \u00b7 159 comments",
@@ -231,48 +259,6 @@
       "url": "https://wallhop.io/",
       "signal": "289 points \u00b7 133 comments",
       "snippet": "Hi HN, I'm Josh. WallHop is a free paywall bypass: paste an article URL (or prefix any URL with wallhop.io/) and you get the readable article without the paywall popup, ads or clutter. No signup, no e"
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: Gemini 4 Argon plays StarCraft",
-      "url": "https://starskirmish.com/bench/v0-2/",
-      "signal": "254 points \u00b7 111 comments",
-      "snippet": "I've refreshed StarSkirmish Bench, a benchmark where LLMs play StarCraft BW by writing code, with results from the flagship models of OpenAI, Anthropic, Google, and Muse"
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: Sphinx \u2013 A hook that quizzes you on your AI's code before shipping",
-      "url": "https://sphinx-six-theta.vercel.app/",
-      "signal": "253 points \u00b7 89 comments",
-      "snippet": "FOSS, Basically it plugs into your existing coding agent workflow and every time you push to prod it'll throw up a questionnaire that checks if you understand how the code you're pushing works."
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: Quake ported to safe Rust, playable in browser",
-      "url": "https://quake-srp.pages.dev/",
-      "signal": "241 points \u00b7 181 comments",
-      "snippet": ""
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: OnKey \u2013 I'm a bad singer, so I built an app to show where I'm off-key",
-      "url": "https://github.com/dsmurrell/onkey",
-      "signal": "237 points \u00b7 102 comments",
-      "snippet": "Hi all I was pretty terrible at singing, now I\u2019d say I\u2019m bad but not terrible. This is because I\u2019ve been using a singing app (won\u2019t name it here) that scores me on my pitch and timing throughout the s"
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: The Zelda timeline to catch up before the Ocarina of Time remake",
-      "url": "https://legendofhyrule.com/",
-      "signal": "231 points \u00b7 130 comments",
-      "snippet": "I made this ahead of the Ocarina of Time remake which comes out in 17 days. I remember the feeling of playing it as a kid but I hadn\u2019t kept up with the story so I built a timeline to catch up before t"
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: Petal, open-source CoScreen/ScreenHero finally free",
-      "url": "https://petal.live/",
-      "signal": "228 points \u00b7 41 comments",
-      "snippet": "Hi HN! I\u2019m Jason Thomas, one of the founders of CoScreen. As some of you may know, Datadog sunset the CoScreen service on July 31st. Four of us from the original CoScreen team have spent the last coup"
     }
   ]
 }
