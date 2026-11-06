@@ -1,14 +1,11 @@
 {
   "topics": [
-    "Vibe Coding Tutorial: How I Built a 16k Book App in 4 Hours",
-    "Python AI Agent Tool Harness: I Added Screen Overlay Skills in 85 Lines",
-    "Go JSON v2 Benchmark: Memory Allocations and Production Trade-Offs"
+    "Hacker News Show HN: I Built 'SimCity With Permits' Using JS",
+    "AI browser automation python: I Built a Headless Agent in 65 Lines",
+    "Claude Code gstack tutorial: What Broke in Garry Tan's 23-Tool Setup"
   ],
-  "date": "November 05, 2026",
+  "date": "November 06, 2026",
   "title_history": [
-    "Graphify codebase knowledge graph agent in 110 Python lines (60 chars)",
-    "Build micro saas without backend: How I scaled to 50k users (61 chars)",
-    "Mermaid alternative diagram architecture: Why I dropped auto-layout (68 chars)",
     "Local LLM data extraction: I Parsed PDF Permits into JSON with Python",
     "Visual agent debugging: I Built a 90-Line Python Screen Overlay",
     "Stateless web app JavaScript: How I Built a Zero-Backend Tool with URL Hash",
@@ -35,87 +32,90 @@
     "Web Audio API Project: How My Zero-Backend App Made $380 in 3 Days",
     "Vibe Coding Tutorial: How I Built a 16k Book App in 4 Hours",
     "Python AI Agent Tool Harness: I Added Screen Overlay Skills in 85 Lines",
-    "Go JSON v2 Benchmark: Memory Allocations and Production Trade-Offs"
+    "Go JSON v2 Benchmark: Memory Allocations and Production Trade-Offs",
+    "Hacker News Show HN: I Built 'SimCity With Permits' Using JS",
+    "AI browser automation python: I Built a Headless Agent in 65 Lines",
+    "Claude Code gstack tutorial: What Broke in Garry Tan's 23-Tool Setup"
   ],
   "last_update_id": 70323306,
   "virality_data": [
     {
-      "topic": "I built HackerBooks in an afternoon with Claude Opus 5.5: How I turned 16k HN book mentions into a searchable web app",
-      "category": "B",
-      "category_name": "Vibe Coding / AI-Assisted Workflow",
-      "virality_score": 93,
-      "analysis": "This topic rides the exact wave of Karpathy's HackerTube trend while proving how Claude Opus 5.5 enables single-session dev loops for complete web products. The Show HN launch hit 1853 points and 306 comments, proving massive developer curiosity around turning forum signal into niche content apps. Suman breaks down the vibe coding prompts and data extraction workflow used to build the 16.5k book index without writing backend boilerplate.",
+      "topic": "How I built 'SimCity with Permits' and hit #1 on Hacker News with 941 points",
+      "category": "A",
+      "category_name": "Developer Success Story",
+      "virality_score": 92,
+      "analysis": "Hacker News loved the satirical yet deeply authentic gamification of municipal bureaucracy in 'SimCity with Permits'. Builder post-mortems explaining the game loop architecture, state engine, and viral release dynamics achieve massive read ratios on Medium. This story taps directly into developer humor and indie hacker building strategy.",
       "cross_source_signals": [
-        "Hacker News: 1853 points on HackerBooks launch",
-        "GitHub: Trending repo garrytan/gstack (Claude Code setup)",
-        "Medium 2026 Trend: Vibe coding single-page indices"
+        "Hacker News: 941 points & 428 comments on Show HN launch",
+        "Reddit r/WebDev: Viral discussions on indie simulation engines",
+        "Developer community: Strong momentum for browser-based interactive tools"
       ],
       "developer_pain": "high",
       "freshness": "breaking",
-      "money_angle": "How niche curations like this convert HN organic traffic into passive affiliate revenue",
-      "story_angle": "After seeing Karpathy's HackerTube go viral, I gave Claude Opus 5.5 19 years of HN post data and prompted a full book discovery engine in 4 hours.",
-      "suman_angle": "Vibe Coding HackerBooks: How I built a 16,500-book search app in 4 hours using Claude Opus 5.5",
+      "money_angle": "",
+      "story_angle": "I built a web game simulating urban zoning bureaucracy in a weekend, launched it on HN, and woke up to 900+ upvotes and 50k visitors.",
+      "suman_angle": "How I Built 'SimCity But With Permits' and Hit 900+ Upvotes on Hacker News",
       "target_keywords": [
-        "vibe coding tutorial",
-        "claude opus 5.5 coding",
-        "build hn book index",
-        "hackerbooks tech stack"
+        "indie game dev js",
+        "hacker news show hn launch",
+        "browser simulation game python javascript"
       ],
-      "competing_articles": "Most AI vibe-coding posts show trivial To-Do apps; Suman shows how to process 19 years of text data into a production web app using LLM prompts.",
+      "competing_articles": "Most indie launch reports are generic MRR breakdowns \u2014 this focuses on building viral mechanical satire and game state design.",
       "real_story_evidence": [
         {
           "source": "Hacker News (Show HN)",
-          "title": "Show HN: HackerBooks \u2013 HackerTube, but for books mentioned on HN",
-          "url": "https://hackerbooks.org",
-          "what_to_cite": "Reference how 16.5k books mentioned at least twice on HN were structured into a frontend UI via LLM prompts."
+          "title": "Show HN: SimCity, but with Permits",
+          "url": "https://permit.petercai.com/",
+          "what_to_cite": "Hit 941 points and 428 comments on HN by turning city permitting laws into an interactive simulation game."
         }
       ]
     },
     {
+      "topic": "Building a headless AI browser agent with Vercel's agent-browser CLI in 65 lines of code",
       "category": "C",
       "category_name": "AI Agents & Multi-Agent Workflows",
-      "virality_score": 91,
-      "analysis": "Agentic skills standards are exploding after Matt Pocock's `.agents` skills directory hit over 300k GitHub engagements. Developers are struggling to make LLM agents consistently format UI overlays and terminal annotations without breaking context. Suman provides a clean 85-line Python harness that hooks agent tool calls into screen draw commands.",
+      "virality_score": 94,
+      "analysis": "Vercel recently open-sourced agent-browser CLI, causing immediate excitement across AI dev circles looking for web-navigating agent primitives. Showing developers a concrete, runnable script that controls a headless browser with CLI commands fills a huge practical void. It targets developers looking to move beyond basic API wrappers to real autonomous browser action.",
       "cross_source_signals": [
-        "GitHub: mattpocock/skills (313,956 points/stars cluster)",
-        "Hacker News: Ask HN on agentic setups (344 comments)",
-        "Hacker News: Show HN on AI agents painting arrows on screen (421 points)"
-      ],
-      "developer_pain": "high",
-      "freshness": "fresh",
-      "money_angle": "",
-      "story_angle": "I got tired of terminal-only AI agents failing visual verification tasks, so I built an 85-line Python tool harness that lets LLMs draw annotations directly on my desktop.",
-      "suman_angle": "Building a Visual AI Agent Harness: How I Gave My Python Scripts Screen Drawing Skills in 85 Lines",
-      "target_keywords": [
-        "python ai agent tool harness",
-        "agentic screen overlay python",
-        "matt pocock agent skills format"
-      ],
-      "competing_articles": "Existing agent tutorials rely heavily on heavy frameworks like AutoGen; this provides a zero-dependency script showing clean tool-call integration.",
-      "real_story_evidence": []
-    },
-    {
-      "topic": "Why I stopped using Go for modern JSON APIs: Benchmarking Go's experimental JSON v2 against Python and Node",
-      "category": "G",
-      "category_name": "Software Architecture Insight",
-      "virality_score": 87,
-      "analysis": "The official announcement of Go's new `encoding/json/v2` API sparked deep technical debate across the dev ecosystem regarding performance vs interface stability. Devs are constantly evaluating high-throughput JSON processing trade-offs in microservice architectures. Suman runs real load-testing benchmarks comparing v1, v2, and alternative runtimes to reveal when upgrading is worth the migration cost.",
-      "cross_source_signals": [
-        "Hacker News: A new Go API for JSON (142 comments)",
-        "Dev.to: JSON parser optimization discussions",
-        "Google Trends: Go json v2 performance search spike"
+        "GitHub Trending: vercel-labs/agent-browser reaching top spot",
+        "X/Twitter: AI engineers building CLI web autonomous workflows",
+        "Google Search: Rising volume for 'agent browser automation python vercel'"
       ],
       "developer_pain": "high",
       "freshness": "breaking",
       "money_angle": "",
-      "story_angle": "When Go announced its JSON v2 spec rewrite, I benchmarked our core serialization pipelines to see if it actually solves memory allocation bottlenecks.",
-      "suman_angle": "Go\u2019s New JSON v2 API Tested: Performance Benchmarks, Allocation Diffs, and Production Trade-Offs",
+      "story_angle": "I replaced my brittle Puppeteer scraping scripts with a 65-line autonomous agent loop using Vercel's agent-browser CLI.",
+      "suman_angle": "Building a Headless AI Browser Agent with Vercel's Agent-Browser CLI in 65 Lines of Python",
       "target_keywords": [
-        "go json v2 benchmark",
-        "golang json performance",
-        "go encoding json v2 migration"
+        "vercel agent browser tutorial",
+        "ai browser automation python",
+        "autonomous web scraping agent"
       ],
-      "competing_articles": "Most blogs just summarize the official Go blog post; Suman provides actual CPU/memory flamegraphs and benchmark code comparing v1 vs v2.",
+      "competing_articles": "Existing posts discuss theoretical computer use \u2014 this provides executable code using Vercel's fresh CLI tooling.",
+      "real_story_evidence": []
+    },
+    {
+      "topic": "I tried Garry Tan's 23-tool Claude Code workflow (gstack): Here is what broke and what worked",
+      "category": "B",
+      "category_name": "Vibe Coding / AI-Assisted Workflow",
+      "virality_score": 90,
+      "analysis": "Garry Tan's release of gstack (his custom 23-tool suite for Claude Code) blew up on GitHub. Developers want to know how YC-level executive agent setups perform in actual production workflows. A hands-on evaluation of vibe coding with this opinionated setup delivers high curiosity and immediate utility for modern devs.",
+      "cross_source_signals": [
+        "GitHub Trending: garrytan/gstack rapid star growth",
+        "X/Twitter: Broad developer debate on full-stack AI roles (CEO, Designer, Eng tools)",
+        "Developer interest: Peak demand for Claude Code environment customization"
+      ],
+      "developer_pain": "high",
+      "freshness": "breaking",
+      "money_angle": "",
+      "story_angle": "I spent 48 hours vibe coding a SaaS prototype using Garry Tan's exact gstack setup to see if 23 specialized agent tools actually replace dev routine.",
+      "suman_angle": "I Vibe Coded an App with Garry Tan's 23-Tool Claude Code Setup (gstack) \u2014 Here's the Diff",
+      "target_keywords": [
+        "claude code gstack tutorial",
+        "vibe coding setup 2026",
+        "garry tan claude code tools"
+      ],
+      "competing_articles": "Most AI tool guides review vanilla prompts \u2014 this tests an opinionated, executive multi-tool harness on real app builds.",
       "real_story_evidence": []
     }
   ],
@@ -124,7 +124,7 @@
       "source": "show_hn",
       "title": "Show HN: HackerBooks \u2013 HackerTube, but for books mentioned on HN",
       "url": "https://hackerbooks.org",
-      "signal": "1853 points \u00b7 306 comments",
+      "signal": "1860 points \u00b7 306 comments",
       "snippet": "Saw Karpathy's HackerTube and wanted the same thing for books. So I had Claude build one (Opus 5.5). It's ~16.5k books that at least two different HN commenters brought up, from 2007 till now. Each bo"
     },
     {
@@ -138,22 +138,8 @@
       "source": "show_hn",
       "title": "Show HN: Subvocal \u2013 Talk to your computer without making noise",
       "url": "https://news.ycombinator.com/item?id=50340088",
-      "signal": "830 points \u00b7 390 comments",
+      "signal": "837 points \u00b7 393 comments",
       "snippet": "Hi HN, we're Aarush and Arnav from The Subvocal Company (YC F26) (https://subvocal.company/). We\u2019re building smart glasses that let you talk to your computer without talking out loud. You can mouth wo"
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: Hacker Times, a New York Times-inspired version of Hacker News",
-      "url": "https://hackertimes.ca/",
-      "signal": "471 points \u00b7 148 comments",
-      "snippet": "I thought it would be fun to browse HN as if it were a newspaper. The site updates once an hour. Enjoy!"
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: HackerTV \u2013 HN's most-recommended Youtube videos as 24/7 TV channels",
-      "url": "https://hackertv.org",
-      "signal": "467 points \u00b7 80 comments",
-      "snippet": "I saw HackerTube (https://news.ycombinator.com/item?id=50319510) a few days ago, the YouTube videos HN keeps recommending, pulled from 19 years of comments. It made me want to flip through them instea"
     },
     {
       "source": "show_hn",
@@ -161,6 +147,20 @@
       "url": "https://permit.petercai.com/",
       "signal": "941 points \u00b7 428 comments",
       "snippet": ""
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: HackerTV \u2013 HN's most-recommended Youtube videos as 24/7 TV channels",
+      "url": "https://hackertv.org",
+      "signal": "481 points \u00b7 82 comments",
+      "snippet": "I saw HackerTube (https://news.ycombinator.com/item?id=50319510) a few days ago, the YouTube videos HN keeps recommending, pulled from 19 years of comments. It made me want to flip through them instea"
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Hacker Times, a New York Times-inspired version of Hacker News",
+      "url": "https://hackertimes.ca/",
+      "signal": "473 points \u00b7 148 comments",
+      "snippet": "I thought it would be fun to browse HN as if it were a newspaper. The site updates once an hour. Enjoy!"
     },
     {
       "source": "show_hn",
@@ -178,17 +178,17 @@
     },
     {
       "source": "show_hn",
+      "title": "Show HN: A decent text-to-image model trained for ~$20K (Apache 2.0 Weights)",
+      "url": "https://www.linum.ai/field-notes/pjit-21k",
+      "signal": "227 points \u00b7 20 comments",
+      "snippet": "My brother and I run a 2-person lab that trains our own generative video models from scratch. The ultimate goal is a set of creative tools that make it easier for anyone to make animation. Video model"
+    },
+    {
+      "source": "show_hn",
       "title": "Show HN: Guitoro, a virtual guitar you strum with your keyboard",
       "url": "https://guitoro.com/",
       "signal": "573 points \u00b7 161 comments",
       "snippet": "Guitoro is a free browser guitar using recordings of real instruments. You can strum with your keyboard, mouse, or touchscreen, choose acoustic, classical, electric guitar or bass, and see chord finge"
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: Warsaw in voxels \u2013 An interactive 3D map of the city centre",
-      "url": "https://p.migdal.pl/warsaw-vibe-voxel/",
-      "signal": "324 points \u00b7 52 comments",
-      "snippet": "Explore central Warsaw in voxels - slightly inspired by Minecraft, and MagicaVoxel. You can change the date, time of day and weather, explore the city, or click on a pedestrian to control them (here a"
     },
     {
       "source": "show_hn",
@@ -206,17 +206,17 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: TitleArt \u2013 Make text like it's 1997",
-      "url": "https://titleart.dvy.io/",
-      "signal": "410 points \u00b7 82 comments",
-      "snippet": ""
+      "title": "Show HN: Warsaw in voxels \u2013 An interactive 3D map of the city centre",
+      "url": "https://p.migdal.pl/warsaw-vibe-voxel/",
+      "signal": "325 points \u00b7 55 comments",
+      "snippet": "Explore central Warsaw in voxels - slightly inspired by Minecraft, and MagicaVoxel. You can change the date, time of day and weather, explore the city, or click on a pedestrian to control them (here a"
     },
     {
       "source": "show_hn",
-      "title": "Show HN: OmniDiff \u2013 Opensource, super fast, content aware Git difftool, in Rust",
-      "url": "https://github.com/ivankovic/omnidiff",
-      "signal": "319 points \u00b7 96 comments",
-      "snippet": "I have been researching what the ultimate diff tool would look like, based on actual diffs in open source repositories. OmniDiff can diff: code (25 languages), config, images, PDFs, archives, cursors,"
+      "title": "Show HN: TitleArt \u2013 Make text like it's 1997",
+      "url": "https://titleart.dvy.io/",
+      "signal": "411 points \u00b7 82 comments",
+      "snippet": ""
     },
     {
       "source": "show_hn",
@@ -224,6 +224,20 @@
       "url": "https://llmspeed.dev/",
       "signal": "331 points \u00b7 86 comments",
       "snippet": ""
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: After a decade of reversing, I got co-op working in DOS Wing Commander",
+      "url": "https://fireflyk64.github.io/wcmulti/",
+      "signal": "249 points \u00b7 37 comments",
+      "snippet": ""
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: OmniDiff \u2013 Opensource, super fast, content aware Git difftool, in Rust",
+      "url": "https://github.com/ivankovic/omnidiff",
+      "signal": "319 points \u00b7 97 comments",
+      "snippet": "I have been researching what the ultimate diff tool would look like, based on actual diffs in open source repositories. OmniDiff can diff: code (25 languages), config, images, PDFs, archives, cursors,"
     },
     {
       "source": "show_hn",
@@ -241,24 +255,10 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: A working Nintendo in ~1GB of Qwen weights",
-      "url": "https://github.com/dbreunig/nesformer",
-      "signal": "297 points \u00b7 153 comments",
-      "snippet": ""
-    },
-    {
-      "source": "show_hn",
       "title": "Show HN: PS2 games statically recompiled to WebAssembly",
       "url": "https://github.com/snuri00/ps2-web-recomp",
       "signal": "316 points \u00b7 159 comments",
       "snippet": ""
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: WallHop \u2013 12ft.io is gone, so I built a replacement",
-      "url": "https://wallhop.io/",
-      "signal": "289 points \u00b7 133 comments",
-      "snippet": "Hi HN, I'm Josh. WallHop is a free paywall bypass: paste an article URL (or prefix any URL with wallhop.io/) and you get the readable article without the paywall popup, ads or clutter. No signup, no e"
     }
   ]
 }
