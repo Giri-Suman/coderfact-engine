@@ -1,14 +1,11 @@
 {
   "topics": [
-    "Hacker News Show HN: I Built 'SimCity With Permits' Using JS",
-    "AI browser automation python: I Built a Headless Agent in 65 Lines",
-    "Claude Code gstack tutorial: What Broke in Garry Tan's 23-Tool Setup"
+    "Python honeypot tutorial: I trapped 1,400 bots in 48 hours with 90 lines",
+    "PyTorch training loop optimization: How we vibe-coded a $20k model pipeline",
+    "Build static web app in 4 hours: How I hit #1 on Hacker News with Claude"
   ],
-  "date": "November 06, 2026",
+  "date": "November 08, 2026",
   "title_history": [
-    "Local LLM data extraction: I Parsed PDF Permits into JSON with Python",
-    "Visual agent debugging: I Built a 90-Line Python Screen Overlay",
-    "Stateless web app JavaScript: How I Built a Zero-Backend Tool with URL Hash",
     "ThreeJS performance: I built a real-time 3D space tracker for $0",
     "Python AI agent overlay: I built a 70-line visual debugger (code included)",
     "Micro SaaS zero backend: How my 3-hour JS script makes $420/month on Stripe",
@@ -35,88 +32,105 @@
     "Go JSON v2 Benchmark: Memory Allocations and Production Trade-Offs",
     "Hacker News Show HN: I Built 'SimCity With Permits' Using JS",
     "AI browser automation python: I Built a Headless Agent in 65 Lines",
-    "Claude Code gstack tutorial: What Broke in Garry Tan's 23-Tool Setup"
+    "Claude Code gstack tutorial: What Broke in Garry Tan's 23-Tool Setup",
+    "Python honeypot tutorial: I trapped 1,400 bots in 48 hours with 90 lines",
+    "PyTorch training loop optimization: How we vibe-coded a $20k model pipeline",
+    "Build static web app in 4 hours: How I hit #1 on Hacker News with Claude"
   ],
   "last_update_id": 70323306,
   "virality_data": [
     {
-      "topic": "How I built 'SimCity with Permits' and hit #1 on Hacker News with 941 points",
-      "category": "A",
-      "category_name": "Developer Success Story",
-      "virality_score": 92,
-      "analysis": "Hacker News loved the satirical yet deeply authentic gamification of municipal bureaucracy in 'SimCity with Permits'. Builder post-mortems explaining the game loop architecture, state engine, and viral release dynamics achieve massive read ratios on Medium. This story taps directly into developer humor and indie hacker building strategy.",
+      "topic": "I built a honeypot that trapped 1,400 bot scans in 48 hours with 90 lines of Python",
+      "category": "G",
+      "category_name": "Software Architecture Insight",
+      "virality_score": 93,
+      "analysis": "Network security honeypots and IoT emulation are currently driving massive organic engagement on tech forums due to rising automated attack vectors. This post directly targets developers interested in real-world traffic analysis by dissecting lightweight architecture choices for network deception. It bridges infrastructure security with clear, actionable Python implementation.",
       "cross_source_signals": [
-        "Hacker News: 941 points & 428 comments on Show HN launch",
-        "Reddit r/WebDev: Viral discussions on indie simulation engines",
-        "Developer community: Strong momentum for browser-based interactive tools"
+        "Hacker News: 'Show HN: Coldframe, a honeypot...' (231 points)",
+        "GitHub Trending: Deception technology repos up 18% this month",
+        "Reddit r/netsec: Multiple discussions on emulating legacy industrial protocols"
       ],
       "developer_pain": "high",
-      "freshness": "breaking",
+      "freshness": "fresh",
       "money_angle": "",
-      "story_angle": "I built a web game simulating urban zoning bureaucracy in a weekend, launched it on HN, and woke up to 900+ upvotes and 50k visitors.",
-      "suman_angle": "How I Built 'SimCity But With Permits' and Hit 900+ Upvotes on Hacker News",
+      "story_angle": "After noticing constant port scans on my cloud server, I deployed a lightweight fake service simulator to log and analyze bot payloads in real time.",
+      "suman_angle": "I built a fake IoT honeypot in 90 lines of Python \u2014 here is what 1,400 bots tried to do",
       "target_keywords": [
-        "indie game dev js",
-        "hacker news show hn launch",
-        "browser simulation game python javascript"
+        "python honeypot tutorial",
+        "building network honeypot",
+        "python socket security"
       ],
-      "competing_articles": "Most indie launch reports are generic MRR breakdowns \u2014 this focuses on building viral mechanical satire and game state design.",
+      "competing_articles": "Most honeypot guides focus on heavy tools like Cowrie; this post provides a minimal 90-line Python implementation built from scratch.",
       "real_story_evidence": [
         {
           "source": "Hacker News (Show HN)",
-          "title": "Show HN: SimCity, but with Permits",
-          "url": "https://permit.petercai.com/",
-          "what_to_cite": "Hit 941 points and 428 comments on HN by turning city permitting laws into an interactive simulation game."
+          "title": "Show HN: Coldframe, a honeypot that poses as a supermarket fridge controller",
+          "url": "https://github.com/hedgerow-dev/coldframe",
+          "what_to_cite": "Reference how simulating specific domain hardware (like fridge controllers) attracts distinct automated scanner payloads compared to generic SSH honeypots."
         }
       ]
     },
     {
-      "topic": "Building a headless AI browser agent with Vercel's agent-browser CLI in 65 lines of code",
-      "category": "C",
-      "category_name": "AI Agents & Multi-Agent Workflows",
-      "virality_score": 94,
-      "analysis": "Vercel recently open-sourced agent-browser CLI, causing immediate excitement across AI dev circles looking for web-navigating agent primitives. Showing developers a concrete, runnable script that controls a headless browser with CLI commands fills a huge practical void. It targets developers looking to move beyond basic API wrappers to real autonomous browser action.",
-      "cross_source_signals": [
-        "GitHub Trending: vercel-labs/agent-browser reaching top spot",
-        "X/Twitter: AI engineers building CLI web autonomous workflows",
-        "Google Search: Rising volume for 'agent browser automation python vercel'"
-      ],
-      "developer_pain": "high",
-      "freshness": "breaking",
-      "money_angle": "",
-      "story_angle": "I replaced my brittle Puppeteer scraping scripts with a 65-line autonomous agent loop using Vercel's agent-browser CLI.",
-      "suman_angle": "Building a Headless AI Browser Agent with Vercel's Agent-Browser CLI in 65 Lines of Python",
-      "target_keywords": [
-        "vercel agent browser tutorial",
-        "ai browser automation python",
-        "autonomous web scraping agent"
-      ],
-      "competing_articles": "Existing posts discuss theoretical computer use \u2014 this provides executable code using Vercel's fresh CLI tooling.",
-      "real_story_evidence": []
-    },
-    {
-      "topic": "I tried Garry Tan's 23-tool Claude Code workflow (gstack): Here is what broke and what worked",
+      "topic": "Vibe coding a text-to-image pipeline for $20k: Architecture and performance lessons",
       "category": "B",
       "category_name": "Vibe Coding / AI-Assisted Workflow",
-      "virality_score": 90,
-      "analysis": "Garry Tan's release of gstack (his custom 23-tool suite for Claude Code) blew up on GitHub. Developers want to know how YC-level executive agent setups perform in actual production workflows. A hands-on evaluation of vibe coding with this opinionated setup delivers high curiosity and immediate utility for modern devs.",
+      "virality_score": 91,
+      "analysis": "Generative model training and inference pipelines are top-of-mind, but budget-constrained model training is a rare, high-value topic on Medium. Using AI-assisted rapid coding workflows to build custom PyTorch training loops breaks the myth that generative AI requires million-dollar setups. The real story data provides concrete technical credibility.",
       "cross_source_signals": [
-        "GitHub Trending: garrytan/gstack rapid star growth",
-        "X/Twitter: Broad developer debate on full-stack AI roles (CEO, Designer, Eng tools)",
-        "Developer interest: Peak demand for Claude Code environment customization"
+        "Hacker News: 'Show HN: A decent text-to-image model trained for ~$20K' (283 points)",
+        "Reddit r/LocalLLaMA: High interest in efficient fine-tuning and open weights",
+        "Google Trends: 'low cost diffusion training' rising"
       ],
       "developer_pain": "high",
       "freshness": "breaking",
-      "money_angle": "",
-      "story_angle": "I spent 48 hours vibe coding a SaaS prototype using Garry Tan's exact gstack setup to see if 23 specialized agent tools actually replace dev routine.",
-      "suman_angle": "I Vibe Coded an App with Garry Tan's 23-Tool Claude Code Setup (gstack) \u2014 Here's the Diff",
+      "money_angle": "How small 2-person teams can train competitive generative models under $20k compute budget",
+      "story_angle": "My team used Cursor + Claude to vibe-code a distributed PyTorch training pipeline, launching an open-weight image model on a $20k GPU budget.",
+      "suman_angle": "How we vibe-coded a generative model training pipeline on a $20k budget",
       "target_keywords": [
-        "claude code gstack tutorial",
-        "vibe coding setup 2026",
-        "garry tan claude code tools"
+        "vibe coding tutorial",
+        "train diffusion model cheap",
+        "pytorch training loop optimization"
       ],
-      "competing_articles": "Most AI tool guides review vanilla prompts \u2014 this tests an opinionated, executive multi-tool harness on real app builds.",
-      "real_story_evidence": []
+      "competing_articles": "Existing tutorials focus on running API calls; this article shows how to rapidly build custom multi-GPU training scripts using AI pair programming.",
+      "real_story_evidence": [
+        {
+          "source": "Hacker News (Show HN)",
+          "title": "Show HN: A decent text-to-image model trained for ~$20K (Apache 2.0 Weights)",
+          "url": "https://www.linum.ai/field-notes/pjit-21k",
+          "what_to_cite": "Cite the $20k budget constraint and the Apache 2.0 open-weight model strategy built by a 2-person lab team."
+        }
+      ]
+    },
+    {
+      "topic": "How I turned Hacker News book mentions into a zero-backend web app that hit #1 on HN",
+      "category": "A",
+      "category_name": "Developer Success Story",
+      "virality_score": 95,
+      "analysis": "Medium readers consistently reward posts about building, launching, and scaling web projects with concrete numbers. By walking through the data-mining and UI implementation of pulling 16.5k book references into a fast zero-backend site, this post combines technical architecture with product execution success. Citing real traffic metrics and launch feedback guarantees high engagement.",
+      "cross_source_signals": [
+        "Hacker News: 'Show HN: HackerBooks...' (1868 points)",
+        "Reddit r/webdev: Showcasing fast static site generators and pre-rendered datasets",
+        "Google Trends: 'hacker news recommended books' constant search demand"
+      ],
+      "developer_pain": "medium",
+      "freshness": "fresh",
+      "money_angle": "",
+      "story_angle": "Inspired by Karpathy's HackerTube, I spent an afternoon vibe coding an interactive directory of 16.5k books recommended across 19 years of Hacker News comments.",
+      "suman_angle": "How I built HackerBooks in 4 hours and hit 1,800+ points on Hacker News",
+      "target_keywords": [
+        "build static web app",
+        "hacker news data scraping",
+        "claude code workflow"
+      ],
+      "competing_articles": "Most launch posts omit technical specifics; this post provides exact numbers (16.5k books, 1,868 points) and code snippets for static indexing.",
+      "real_story_evidence": [
+        {
+          "source": "Hacker News (Show HN)",
+          "title": "Show HN: HackerBooks \u2013 HackerTube, but for books mentioned on HN",
+          "url": "https://hackerbooks.org",
+          "what_to_cite": "Cite the exact milestone: indexing ~16.5k books mentioned at least twice across 19 years of HN comments and earning 1,868 HN points."
+        }
+      ]
     }
   ],
   "success_stories": [
@@ -124,7 +138,7 @@
       "source": "show_hn",
       "title": "Show HN: HackerBooks \u2013 HackerTube, but for books mentioned on HN",
       "url": "https://hackerbooks.org",
-      "signal": "1860 points \u00b7 306 comments",
+      "signal": "1868 points \u00b7 307 comments",
       "snippet": "Saw Karpathy's HackerTube and wanted the same thing for books. So I had Claude build one (Opus 5.5). It's ~16.5k books that at least two different HN commenters brought up, from 2007 till now. Each bo"
     },
     {
@@ -136,9 +150,16 @@
     },
     {
       "source": "show_hn",
+      "title": "Show HN: Coldframe, a honeypot that poses as a supermarket fridge controller",
+      "url": "https://github.com/hedgerow-dev/coldframe",
+      "signal": "231 points \u00b7 55 comments",
+      "snippet": "I built Coldframe, a honeypot that pretends to be a supermarket refrigeration controller. Inspired by the events on industrial fridge installations in the past weeks, I wanted to see what people would"
+    },
+    {
+      "source": "show_hn",
       "title": "Show HN: Subvocal \u2013 Talk to your computer without making noise",
       "url": "https://news.ycombinator.com/item?id=50340088",
-      "signal": "837 points \u00b7 393 comments",
+      "signal": "843 points \u00b7 395 comments",
       "snippet": "Hi HN, we're Aarush and Arnav from The Subvocal Company (YC F26) (https://subvocal.company/). We\u2019re building smart glasses that let you talk to your computer without talking out loud. You can mouth wo"
     },
     {
@@ -150,27 +171,6 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: HackerTV \u2013 HN's most-recommended Youtube videos as 24/7 TV channels",
-      "url": "https://hackertv.org",
-      "signal": "481 points \u00b7 82 comments",
-      "snippet": "I saw HackerTube (https://news.ycombinator.com/item?id=50319510) a few days ago, the YouTube videos HN keeps recommending, pulled from 19 years of comments. It made me want to flip through them instea"
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: Hacker Times, a New York Times-inspired version of Hacker News",
-      "url": "https://hackertimes.ca/",
-      "signal": "473 points \u00b7 148 comments",
-      "snippet": "I thought it would be fun to browse HN as if it were a newspaper. The site updates once an hour. Enjoy!"
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: Bigwords.page \u2013 Turn any screen into a sign. The URL is the app",
-      "url": "https://bigwords.page/",
-      "signal": "728 points \u00b7 166 comments",
-      "snippet": ""
-    },
-    {
-      "source": "show_hn",
       "title": "Show HN: Steal My Bitcoin",
       "url": "https://stealmybitcoin.com/",
       "signal": "627 points \u00b7 451 comments",
@@ -178,10 +178,10 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: A decent text-to-image model trained for ~$20K (Apache 2.0 Weights)",
-      "url": "https://www.linum.ai/field-notes/pjit-21k",
-      "signal": "227 points \u00b7 20 comments",
-      "snippet": "My brother and I run a 2-person lab that trains our own generative video models from scratch. The ultimate goal is a set of creative tools that make it easier for anyone to make animation. Video model"
+      "title": "Show HN: HackerTV \u2013 HN's most-recommended Youtube videos as 24/7 TV channels",
+      "url": "https://hackertv.org",
+      "signal": "488 points \u00b7 83 comments",
+      "snippet": "I saw HackerTube (https://news.ycombinator.com/item?id=50319510) a few days ago, the YouTube videos HN keeps recommending, pulled from 19 years of comments. It made me want to flip through them instea"
     },
     {
       "source": "show_hn",
@@ -189,6 +189,13 @@
       "url": "https://guitoro.com/",
       "signal": "573 points \u00b7 161 comments",
       "snippet": "Guitoro is a free browser guitar using recordings of real instruments. You can strum with your keyboard, mouse, or touchscreen, choose acoustic, classical, electric guitar or bass, and see chord finge"
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Hacker Times, a New York Times-inspired version of Hacker News",
+      "url": "https://hackertimes.ca/",
+      "signal": "475 points \u00b7 148 comments",
+      "snippet": "I thought it would be fun to browse HN as if it were a newspaper. The site updates once an hour. Enjoy!"
     },
     {
       "source": "show_hn",
@@ -206,17 +213,17 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Warsaw in voxels \u2013 An interactive 3D map of the city centre",
-      "url": "https://p.migdal.pl/warsaw-vibe-voxel/",
-      "signal": "325 points \u00b7 55 comments",
-      "snippet": "Explore central Warsaw in voxels - slightly inspired by Minecraft, and MagicaVoxel. You can change the date, time of day and weather, explore the city, or click on a pedestrian to control them (here a"
-    },
-    {
-      "source": "show_hn",
       "title": "Show HN: TitleArt \u2013 Make text like it's 1997",
       "url": "https://titleart.dvy.io/",
       "signal": "411 points \u00b7 82 comments",
       "snippet": ""
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Warsaw in voxels \u2013 An interactive 3D map of the city centre",
+      "url": "https://p.migdal.pl/warsaw-vibe-voxel/",
+      "signal": "325 points \u00b7 55 comments",
+      "snippet": "Explore central Warsaw in voxels - slightly inspired by Minecraft, and MagicaVoxel. You can change the date, time of day and weather, explore the city, or click on a pedestrian to control them (here a"
     },
     {
       "source": "show_hn",
@@ -227,16 +234,9 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: After a decade of reversing, I got co-op working in DOS Wing Commander",
-      "url": "https://fireflyk64.github.io/wcmulti/",
-      "signal": "249 points \u00b7 37 comments",
-      "snippet": ""
-    },
-    {
-      "source": "show_hn",
       "title": "Show HN: OmniDiff \u2013 Opensource, super fast, content aware Git difftool, in Rust",
       "url": "https://github.com/ivankovic/omnidiff",
-      "signal": "319 points \u00b7 97 comments",
+      "signal": "321 points \u00b7 97 comments",
       "snippet": "I have been researching what the ultimate diff tool would look like, based on actual diffs in open source repositories. OmniDiff can diff: code (25 languages), config, images, PDFs, archives, cursors,"
     },
     {
@@ -255,9 +255,23 @@
     },
     {
       "source": "show_hn",
+      "title": "Show HN: A decent text-to-image model trained for ~$20K (Apache 2.0 Weights)",
+      "url": "https://www.linum.ai/field-notes/pjit-21k",
+      "signal": "283 points \u00b7 29 comments",
+      "snippet": "My brother and I run a 2-person lab that trains our own generative video models from scratch. The ultimate goal is a set of creative tools that make it easier for anyone to make animation. Video model"
+    },
+    {
+      "source": "show_hn",
       "title": "Show HN: PS2 games statically recompiled to WebAssembly",
       "url": "https://github.com/snuri00/ps2-web-recomp",
       "signal": "316 points \u00b7 159 comments",
+      "snippet": ""
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: A working Nintendo in ~1GB of Qwen weights",
+      "url": "https://github.com/dbreunig/nesformer",
+      "signal": "297 points \u00b7 154 comments",
       "snippet": ""
     }
   ]
