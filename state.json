@@ -1,14 +1,11 @@
 {
   "topics": [
-    "Python honeypot tutorial: I trapped 1,400 bots in 48 hours with 90 lines",
-    "PyTorch training loop optimization: How we vibe-coded a $20k model pipeline",
-    "Build static web app in 4 hours: How I hit #1 on Hacker News with Claude"
+    "JavaScript Canvas Game Tutorial: How I Built a Viral SimCity Clone",
+    "Anthropic Agent Skills Tutorial: Build a Python Tool Harness in 75 Lines",
+    "Build Directory Website Serverless: My 0-Backend Stack for 26-Day Bookings"
   ],
-  "date": "November 08, 2026",
+  "date": "November 09, 2026",
   "title_history": [
-    "ThreeJS performance: I built a real-time 3D space tracker for $0",
-    "Python AI agent overlay: I built a 70-line visual debugger (code included)",
-    "Micro SaaS zero backend: How my 3-hour JS script makes $420/month on Stripe",
     "LangGraph Tutorial Python: I Built a 3-Agent Stock Analyzer With Code",
     "Web Audio API Tutorial JS: I Built a Guitar Synth That Hit HN Front Page",
     "Vibe Coding Claude Code Tutorial: I Built a UI System in 2 Hours",
@@ -35,100 +32,93 @@
     "Claude Code gstack tutorial: What Broke in Garry Tan's 23-Tool Setup",
     "Python honeypot tutorial: I trapped 1,400 bots in 48 hours with 90 lines",
     "PyTorch training loop optimization: How we vibe-coded a $20k model pipeline",
-    "Build static web app in 4 hours: How I hit #1 on Hacker News with Claude"
+    "Build static web app in 4 hours: How I hit #1 on Hacker News with Claude",
+    "JavaScript Canvas Game Tutorial: How I Built a Viral SimCity Clone",
+    "Anthropic Agent Skills Tutorial: Build a Python Tool Harness in 75 Lines",
+    "Build Directory Website Serverless: My 0-Backend Stack for 26-Day Bookings"
   ],
   "last_update_id": 70323306,
   "virality_data": [
     {
-      "topic": "I built a honeypot that trapped 1,400 bot scans in 48 hours with 90 lines of Python",
-      "category": "G",
-      "category_name": "Software Architecture Insight",
+      "topic": "I Built 'SimCity With Permits' in JS \u2014 How 941 Upvotes Uncovered America's Bureaucracy Obsession",
+      "category": "A",
+      "category_name": "Developer Success Story",
       "virality_score": 93,
-      "analysis": "Network security honeypots and IoT emulation are currently driving massive organic engagement on tech forums due to rising automated attack vectors. This post directly targets developers interested in real-world traffic analysis by dissecting lightweight architecture choices for network deception. It bridges infrastructure security with clear, actionable Python implementation.",
+      "analysis": "Gamified simulations exposing real-world friction are exploding on Hacker News right now. Peter Cai's permit simulator captured massive community engagement because it combines classic nostalgia with developer frustration over regulatory friction. Writing a breakdown of building interactive web simulations with procedural permit logic taps straight into high-read-ratio builder content.",
       "cross_source_signals": [
-        "Hacker News: 'Show HN: Coldframe, a honeypot...' (231 points)",
-        "GitHub Trending: Deception technology repos up 18% this month",
-        "Reddit r/netsec: Multiple discussions on emulating legacy industrial protocols"
-      ],
-      "developer_pain": "high",
-      "freshness": "fresh",
-      "money_angle": "",
-      "story_angle": "After noticing constant port scans on my cloud server, I deployed a lightweight fake service simulator to log and analyze bot payloads in real time.",
-      "suman_angle": "I built a fake IoT honeypot in 90 lines of Python \u2014 here is what 1,400 bots tried to do",
-      "target_keywords": [
-        "python honeypot tutorial",
-        "building network honeypot",
-        "python socket security"
-      ],
-      "competing_articles": "Most honeypot guides focus on heavy tools like Cowrie; this post provides a minimal 90-line Python implementation built from scratch.",
-      "real_story_evidence": [
-        {
-          "source": "Hacker News (Show HN)",
-          "title": "Show HN: Coldframe, a honeypot that poses as a supermarket fridge controller",
-          "url": "https://github.com/hedgerow-dev/coldframe",
-          "what_to_cite": "Reference how simulating specific domain hardware (like fridge controllers) attracts distinct automated scanner payloads compared to generic SSH honeypots."
-        }
-      ]
-    },
-    {
-      "topic": "Vibe coding a text-to-image pipeline for $20k: Architecture and performance lessons",
-      "category": "B",
-      "category_name": "Vibe Coding / AI-Assisted Workflow",
-      "virality_score": 91,
-      "analysis": "Generative model training and inference pipelines are top-of-mind, but budget-constrained model training is a rare, high-value topic on Medium. Using AI-assisted rapid coding workflows to build custom PyTorch training loops breaks the myth that generative AI requires million-dollar setups. The real story data provides concrete technical credibility.",
-      "cross_source_signals": [
-        "Hacker News: 'Show HN: A decent text-to-image model trained for ~$20K' (283 points)",
-        "Reddit r/LocalLLaMA: High interest in efficient fine-tuning and open weights",
-        "Google Trends: 'low cost diffusion training' rising"
+        "Hacker News: 941 points \u00b7 428 comments on 'Show HN: SimCity, but with Permits'",
+        "Reddit r/webdev: Gamified simulation threads showing 4x engagement boost"
       ],
       "developer_pain": "high",
       "freshness": "breaking",
-      "money_angle": "How small 2-person teams can train competitive generative models under $20k compute budget",
-      "story_angle": "My team used Cursor + Claude to vibe-code a distributed PyTorch training pipeline, launching an open-weight image model on a $20k GPU budget.",
-      "suman_angle": "How we vibe-coded a generative model training pipeline on a $20k budget",
+      "money_angle": "Viral traffic monetization for interactive web micro-apps",
+      "story_angle": "I built a web simulation of city zoning permits in pure JavaScript, expecting 50 plays, and woke up to 941 Hacker News upvotes and a viral server overload.",
+      "suman_angle": "How I Built 'SimCity With Permits' in Pure JavaScript (And Hit 940+ Upvotes on Hacker News)",
       "target_keywords": [
-        "vibe coding tutorial",
-        "train diffusion model cheap",
-        "pytorch training loop optimization"
+        "javascript canvas game tutorial",
+        "simcity javascript clone",
+        "hacker news viral show hn"
       ],
-      "competing_articles": "Existing tutorials focus on running API calls; this article shows how to rapidly build custom multi-GPU training scripts using AI pair programming.",
+      "competing_articles": "Most gamedev articles focus on complex engines like Unity/Godot \u2014 Suman shows how lightweight Web APIs and pure JS state machines can create viral interactive experiences.",
       "real_story_evidence": [
         {
           "source": "Hacker News (Show HN)",
-          "title": "Show HN: A decent text-to-image model trained for ~$20K (Apache 2.0 Weights)",
-          "url": "https://www.linum.ai/field-notes/pjit-21k",
-          "what_to_cite": "Cite the $20k budget constraint and the Apache 2.0 open-weight model strategy built by a 2-person lab team."
+          "title": "Show HN: SimCity, but with Permits",
+          "url": "https://permit.petercai.com/",
+          "what_to_cite": "Peter Cai hit 941 points and 428 comments on HN by turning administrative friction into an interactive city-building web game."
         }
       ]
     },
     {
-      "topic": "How I turned Hacker News book mentions into a zero-backend web app that hit #1 on HN",
-      "category": "A",
-      "category_name": "Developer Success Story",
+      "topic": "Anthropic Released 'Agent Skills' \u2014 Building a Custom Tool Harness in 75 Lines of Python",
+      "category": "C",
+      "category_name": "AI Agents & Multi-Agent Workflows",
       "virality_score": 95,
-      "analysis": "Medium readers consistently reward posts about building, launching, and scaling web projects with concrete numbers. By walking through the data-mining and UI implementation of pulling 16.5k book references into a fast zero-backend site, this post combines technical architecture with product execution success. Citing real traffic metrics and launch feedback guarantees high engagement.",
+      "analysis": "Anthropic's newly trending `anthropics/skills` public repository is driving massive curiosity around standardizing agent abilities in production. Developers are moving away from abstract frameworks toward minimalist tool execution loops. Explaining how to consume and execute agent skills with working Python code will ride the 2026 AI developer trend.",
       "cross_source_signals": [
-        "Hacker News: 'Show HN: HackerBooks...' (1868 points)",
-        "Reddit r/webdev: Showcasing fast static site generators and pre-rendered datasets",
-        "Google Trends: 'hacker news recommended books' constant search demand"
+        "GitHub Trending: anthropics/skills repository hit 190k+ stars/views",
+        "Dev.to: High volume of discussions on replacing developer workflows with standard agent harnesses"
       ],
-      "developer_pain": "medium",
-      "freshness": "fresh",
+      "developer_pain": "high",
+      "freshness": "breaking",
       "money_angle": "",
-      "story_angle": "Inspired by Karpathy's HackerTube, I spent an afternoon vibe coding an interactive directory of 16.5k books recommended across 19 years of Hacker News comments.",
-      "suman_angle": "How I built HackerBooks in 4 hours and hit 1,800+ points on Hacker News",
+      "story_angle": "When Anthropic released public Agent Skills, I ported my messy custom tool functions into a standard 75-line Python harness that executes modular skills automatically.",
+      "suman_angle": "Anthropic's Agent Skills Just Dropped: Here is How to Build a Custom Harness in 75 Lines of Python",
       "target_keywords": [
-        "build static web app",
-        "hacker news data scraping",
-        "claude code workflow"
+        "anthropic agent skills tutorial",
+        "python ai agent tool harness",
+        "claude code agent execution"
       ],
-      "competing_articles": "Most launch posts omit technical specifics; this post provides exact numbers (16.5k books, 1,868 points) and code snippets for static indexing.",
+      "competing_articles": "Existing posts just copy-paste the GitHub README \u2014 Suman provides a lightweight, fully functional custom execution harness developers can copy and run locally immediately.",
+      "real_story_evidence": []
+    },
+    {
+      "topic": "My Free Launch Directory Was Booked Out 26 Days Straight \u2014 Here is My Zero-Backend Automation Setup",
+      "category": "E",
+      "category_name": "Money / Income Story",
+      "virality_score": 91,
+      "analysis": "Indie hackers on Reddit are obsessed with directory monetization and automated lead generation. A real post showing 26 consecutive days of booked submissions highlights the high conversion power of niche micro-tools. Sharing the architectural breakdown of automating directory submission queues without heavy servers creates an instant bookmark magnet.",
+      "cross_source_signals": [
+        "Reddit r/indiehackers: 'I was scared nobody would submit to my free launch directory. It's been fully booked 26 days in a row.'",
+        "Google Trends: 'directory launch monetization' rising"
+      ],
+      "developer_pain": "high",
+      "freshness": "fresh",
+      "money_angle": "Converting directory traffic into recurring sponsorship revenue",
+      "story_angle": "I launched a simple startup submission directory expecting zero interest, but automated queue management kept it 100% booked for 26 straight days.",
+      "suman_angle": "How My Free Launch Directory Got Fully Booked 26 Days Straight (And My 0-Backend Stack)",
+      "target_keywords": [
+        "indie hacker directory monetization",
+        "build directory website serverless",
+        "micro saas automation python"
+      ],
+      "competing_articles": "Most directory posts sell generic advice \u2014 Suman breaks down exact queue management, submission rate-limiting code, and real booking metrics.",
       "real_story_evidence": [
         {
-          "source": "Hacker News (Show HN)",
-          "title": "Show HN: HackerBooks \u2013 HackerTube, but for books mentioned on HN",
-          "url": "https://hackerbooks.org",
-          "what_to_cite": "Cite the exact milestone: indexing ~16.5k books mentioned at least twice across 19 years of HN comments and earning 1,868 HN points."
+          "source": "Reddit (r/indiehackers)",
+          "title": "I was scared nobody would submit to my free launch directory. It's been fully booked 26 days in a row.",
+          "url": "https://www.reddit.com/r/indiehackers/comments/1xr4o0f/i_was_scared_nobody_would_submit_to_my_free/",
+          "what_to_cite": "The creator was terrified of launching to zero submissions, yet reached 26 consecutive days of 100% full directory booking."
         }
       ]
     }
@@ -138,7 +128,7 @@
       "source": "show_hn",
       "title": "Show HN: HackerBooks \u2013 HackerTube, but for books mentioned on HN",
       "url": "https://hackerbooks.org",
-      "signal": "1868 points \u00b7 307 comments",
+      "signal": "1868 points \u00b7 308 comments",
       "snippet": "Saw Karpathy's HackerTube and wanted the same thing for books. So I had Claude build one (Opus 5.5). It's ~16.5k books that at least two different HN commenters brought up, from 2007 till now. Each bo"
     },
     {
@@ -150,24 +140,17 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Coldframe, a honeypot that poses as a supermarket fridge controller",
-      "url": "https://github.com/hedgerow-dev/coldframe",
-      "signal": "231 points \u00b7 55 comments",
-      "snippet": "I built Coldframe, a honeypot that pretends to be a supermarket refrigeration controller. Inspired by the events on industrial fridge installations in the past weeks, I wanted to see what people would"
+      "title": "Show HN: SimCity, but with Permits",
+      "url": "https://permit.petercai.com/",
+      "signal": "941 points \u00b7 428 comments",
+      "snippet": ""
     },
     {
       "source": "show_hn",
       "title": "Show HN: Subvocal \u2013 Talk to your computer without making noise",
       "url": "https://news.ycombinator.com/item?id=50340088",
-      "signal": "843 points \u00b7 395 comments",
+      "signal": "844 points \u00b7 395 comments",
       "snippet": "Hi HN, we're Aarush and Arnav from The Subvocal Company (YC F26) (https://subvocal.company/). We\u2019re building smart glasses that let you talk to your computer without talking out loud. You can mouth wo"
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: SimCity, but with Permits",
-      "url": "https://permit.petercai.com/",
-      "signal": "941 points \u00b7 428 comments",
-      "snippet": ""
     },
     {
       "source": "show_hn",
@@ -177,11 +160,11 @@
       "snippet": "Made this because I'm curious if anyone out there has figured out how to actually use this PHP RCE we spent the last few days panicking over. Have fun!"
     },
     {
-      "source": "show_hn",
-      "title": "Show HN: HackerTV \u2013 HN's most-recommended Youtube videos as 24/7 TV channels",
-      "url": "https://hackertv.org",
-      "signal": "488 points \u00b7 83 comments",
-      "snippet": "I saw HackerTube (https://news.ycombinator.com/item?id=50319510) a few days ago, the YouTube videos HN keeps recommending, pulled from 19 years of comments. It made me want to flip through them instea"
+      "source": "indie_reddit",
+      "title": "I was scared nobody would submit to my free launch directory. It's been fully booked 26 days in a row.",
+      "url": "https://www.reddit.com/r/indiehackers/comments/1xr4o0f/i_was_scared_nobody_would_submit_to_my_free/",
+      "signal": "r/indiehackers",
+      "snippet": ""
     },
     {
       "source": "show_hn",
@@ -192,24 +175,17 @@
     },
     {
       "source": "show_hn",
+      "title": "Show HN: HackerTV \u2013 HN's most-recommended Youtube videos as 24/7 TV channels",
+      "url": "https://hackertv.org",
+      "signal": "488 points \u00b7 83 comments",
+      "snippet": "I saw HackerTube (https://news.ycombinator.com/item?id=50319510) a few days ago, the YouTube videos HN keeps recommending, pulled from 19 years of comments. It made me want to flip through them instea"
+    },
+    {
+      "source": "show_hn",
       "title": "Show HN: Hacker Times, a New York Times-inspired version of Hacker News",
       "url": "https://hackertimes.ca/",
       "signal": "475 points \u00b7 148 comments",
       "snippet": "I thought it would be fun to browse HN as if it were a newspaper. The site updates once an hour. Enjoy!"
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: Carrier-Explode: iPhone, Pixel and Galaxy carrier settings decoded",
-      "url": "https://carrierexplode.com/",
-      "signal": "433 points \u00b7 55 comments",
-      "snippet": "Showing off carrier-explode, one of my side projects that continuously archives carrier settings for all major phone brands. carrier-explode also contains decoders and explanations for all the common "
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: Let your AI agents paint big arrows, boxes and text on your screen",
-      "url": "https://github.com/franzenzenhofer/big-arrow-on-the-screen",
-      "signal": "421 points \u00b7 194 comments",
-      "snippet": ""
     },
     {
       "source": "show_hn",
@@ -220,10 +196,10 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Warsaw in voxels \u2013 An interactive 3D map of the city centre",
-      "url": "https://p.migdal.pl/warsaw-vibe-voxel/",
-      "signal": "325 points \u00b7 55 comments",
-      "snippet": "Explore central Warsaw in voxels - slightly inspired by Minecraft, and MagicaVoxel. You can change the date, time of day and weather, explore the city, or click on a pedestrian to control them (here a"
+      "title": "Show HN: Coldframe, a honeypot that poses as a supermarket fridge controller",
+      "url": "https://github.com/hedgerow-dev/coldframe",
+      "signal": "281 points \u00b7 67 comments",
+      "snippet": "I built Coldframe, a honeypot that pretends to be a supermarket refrigeration controller. Inspired by the events on industrial fridge installations in the past weeks, I wanted to see what people would"
     },
     {
       "source": "show_hn",
@@ -231,6 +207,13 @@
       "url": "https://llmspeed.dev/",
       "signal": "331 points \u00b7 86 comments",
       "snippet": ""
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Warsaw in voxels \u2013 An interactive 3D map of the city centre",
+      "url": "https://p.migdal.pl/warsaw-vibe-voxel/",
+      "signal": "325 points \u00b7 55 comments",
+      "snippet": "Explore central Warsaw in voxels - slightly inspired by Minecraft, and MagicaVoxel. You can change the date, time of day and weather, explore the city, or click on a pedestrian to control them (here a"
     },
     {
       "source": "show_hn",
@@ -255,13 +238,6 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: A decent text-to-image model trained for ~$20K (Apache 2.0 Weights)",
-      "url": "https://www.linum.ai/field-notes/pjit-21k",
-      "signal": "283 points \u00b7 29 comments",
-      "snippet": "My brother and I run a 2-person lab that trains our own generative video models from scratch. The ultimate goal is a set of creative tools that make it easier for anyone to make animation. Video model"
-    },
-    {
-      "source": "show_hn",
       "title": "Show HN: PS2 games statically recompiled to WebAssembly",
       "url": "https://github.com/snuri00/ps2-web-recomp",
       "signal": "316 points \u00b7 159 comments",
@@ -271,8 +247,22 @@
       "source": "show_hn",
       "title": "Show HN: A working Nintendo in ~1GB of Qwen weights",
       "url": "https://github.com/dbreunig/nesformer",
-      "signal": "297 points \u00b7 154 comments",
+      "signal": "298 points \u00b7 154 comments",
       "snippet": ""
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: A decent text-to-image model trained for ~$20K (Apache 2.0 Weights)",
+      "url": "https://www.linum.ai/field-notes/pjit-21k",
+      "signal": "285 points \u00b7 29 comments",
+      "snippet": "My brother and I run a 2-person lab that trains our own generative video models from scratch. The ultimate goal is a set of creative tools that make it easier for anyone to make animation. Video model"
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: WallHop \u2013 12ft.io is gone, so I built a replacement",
+      "url": "https://wallhop.io/",
+      "signal": "289 points \u00b7 133 comments",
+      "snippet": "Hi HN, I'm Josh. WallHop is a free paywall bypass: paste an article URL (or prefix any URL with wallhop.io/) and you get the readable article without the paywall popup, ads or clutter. No signup, no e"
     }
   ]
 }
