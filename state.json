@@ -1,14 +1,11 @@
 {
   "topics": [
-    "JavaScript Canvas Game Tutorial: How I Built a Viral SimCity Clone",
-    "Anthropic Agent Skills Tutorial: Build a Python Tool Harness in 75 Lines",
-    "Build Directory Website Serverless: My 0-Backend Stack for 26-Day Bookings"
+    "Vanilla JS Map Tutorial: Build a Satellite Tracker in 4 Hours",
+    "Anthropic Agent Skills Python: Build a Harness in 80 Lines",
+    "Vibe Coding Tutorial: I Built an AR Canvas App in 3 Hours"
   ],
-  "date": "November 09, 2026",
+  "date": "November 10, 2026",
   "title_history": [
-    "LangGraph Tutorial Python: I Built a 3-Agent Stock Analyzer With Code",
-    "Web Audio API Tutorial JS: I Built a Guitar Synth That Hit HN Front Page",
-    "Vibe Coding Claude Code Tutorial: I Built a UI System in 2 Hours",
     "Agent harness JavaScript: How I built a skill loop in 90 lines",
     "Vanilla JS zero backend: How I built a database in the URL hash",
     "Python experimental JIT removal: The performance trade-offs I found",
@@ -35,90 +32,96 @@
     "Build static web app in 4 hours: How I hit #1 on Hacker News with Claude",
     "JavaScript Canvas Game Tutorial: How I Built a Viral SimCity Clone",
     "Anthropic Agent Skills Tutorial: Build a Python Tool Harness in 75 Lines",
-    "Build Directory Website Serverless: My 0-Backend Stack for 26-Day Bookings"
+    "Build Directory Website Serverless: My 0-Backend Stack for 26-Day Bookings",
+    "Vanilla JS Map Tutorial: Build a Satellite Tracker in 4 Hours",
+    "Anthropic Agent Skills Python: Build a Harness in 80 Lines",
+    "Vibe Coding Tutorial: I Built an AR Canvas App in 3 Hours"
   ],
   "last_update_id": 70323306,
   "virality_data": [
     {
-      "topic": "I Built 'SimCity With Permits' in JS \u2014 How 941 Upvotes Uncovered America's Bureaucracy Obsession",
+      "topic": "I Built a Satellite Tracker Map with Vanilla JS and Open TLE Data in 4 Hours",
       "category": "A",
       "category_name": "Developer Success Story",
-      "virality_score": 93,
-      "analysis": "Gamified simulations exposing real-world friction are exploding on Hacker News right now. Peter Cai's permit simulator captured massive community engagement because it combines classic nostalgia with developer frustration over regulatory friction. Writing a breakdown of building interactive web simulations with procedural permit logic taps straight into high-read-ratio builder content.",
+      "virality_score": 92,
+      "analysis": "Show HN readers and builder communities heavily reward real-time geospatial projects built with lightweight stacks. watched.earth surfaced on HN with 355 points this week, showing massive audience interest in real-time satellite footprint visualizations. Suman bridges this interest by showing devs how to calculate satellite passes and paint footprints on a WebGL/Canvas map with zero backend dependencies.",
       "cross_source_signals": [
-        "Hacker News: 941 points \u00b7 428 comments on 'Show HN: SimCity, but with Permits'",
-        "Reddit r/webdev: Gamified simulation threads showing 4x engagement boost"
+        "Hacker News: Show HN watched.earth (355 points, 61 comments)",
+        "GitHub: satellite.js / TLE parsing libraries trending",
+        "Google Trends: 'satellite tracking API javascript' rising"
       ],
       "developer_pain": "high",
-      "freshness": "breaking",
-      "money_angle": "Viral traffic monetization for interactive web micro-apps",
-      "story_angle": "I built a web simulation of city zoning permits in pure JavaScript, expecting 50 plays, and woke up to 941 Hacker News upvotes and a viral server overload.",
-      "suman_angle": "How I Built 'SimCity With Permits' in Pure JavaScript (And Hit 940+ Upvotes on Hacker News)",
+      "freshness": "fresh",
+      "money_angle": "",
+      "story_angle": "After seeing watched.earth hit the HN front page, Suman decided to reverse-engineer a browser-only TLE satellite passing predictor using vanilla JS and Canvas.",
+      "suman_angle": "How I Built a Real-Time Satellite Passing Tracker in 4 Hours (Zero Backend Vanilla JS)",
       "target_keywords": [
-        "javascript canvas game tutorial",
-        "simcity javascript clone",
-        "hacker news viral show hn"
+        "vanilla js map tutorial",
+        "satellite tracking javascript",
+        "tle data parser js"
       ],
-      "competing_articles": "Most gamedev articles focus on complex engines like Unity/Godot \u2014 Suman shows how lightweight Web APIs and pure JS state machines can create viral interactive experiences.",
+      "competing_articles": "Most orbital tracking tutorials require complex Python backends or expensive GIS servers, whereas Suman demonstrates client-side TLE propagation in pure JS.",
       "real_story_evidence": [
         {
           "source": "Hacker News (Show HN)",
-          "title": "Show HN: SimCity, but with Permits",
-          "url": "https://permit.petercai.com/",
-          "what_to_cite": "Peter Cai hit 941 points and 428 comments on HN by turning administrative friction into an interactive city-building web game."
+          "title": "Show HN: Every satellite that passed over any place this week, and its photos",
+          "url": "https://www.watched.earth",
+          "what_to_cite": "Built by a satellite enthusiast over a weekend to show every satellite pass and image over any coordinate."
         }
       ]
     },
     {
-      "topic": "Anthropic Released 'Agent Skills' \u2014 Building a Custom Tool Harness in 75 Lines of Python",
+      "topic": "Building an Anthropic Agent Skills Harness in Python in 80 Lines of Code",
       "category": "C",
       "category_name": "AI Agents & Multi-Agent Workflows",
       "virality_score": 95,
-      "analysis": "Anthropic's newly trending `anthropics/skills` public repository is driving massive curiosity around standardizing agent abilities in production. Developers are moving away from abstract frameworks toward minimalist tool execution loops. Explaining how to consume and execute agent skills with working Python code will ride the 2026 AI developer trend.",
+      "analysis": "Anthropic's official `skills` public repository just hit nearly 200k stars on GitHub, making agent skill standardization the highest-demand developer topic this week. Medium readers are starving for practical execution code that parses and executes Anthropic-style skill definitions without bloated frameworks. Suman provides a clean 80-line Python harness that loads skills dynamically and handles execution state.",
       "cross_source_signals": [
-        "GitHub Trending: anthropics/skills repository hit 190k+ stars/views",
-        "Dev.to: High volume of discussions on replacing developer workflows with standard agent harnesses"
+        "GitHub: anthropics/skills repository trending (#5 overall signal cluster)",
+        "Reddit r/LocalLLaMA: High discussion on standardized agent tool schemas",
+        "Hacker News: Anthropic 5.2 models update driving high engagement"
       ],
       "developer_pain": "high",
       "freshness": "breaking",
       "money_angle": "",
-      "story_angle": "When Anthropic released public Agent Skills, I ported my messy custom tool functions into a standard 75-line Python harness that executes modular skills automatically.",
-      "suman_angle": "Anthropic's Agent Skills Just Dropped: Here is How to Build a Custom Harness in 75 Lines of Python",
+      "story_angle": "When Anthropic open-sourced their agent skills repository, Suman immediately built a lightweight Python harness to run custom agent tools locally without heavy framework overhead.",
+      "suman_angle": "How to Build a Custom Anthropic Agent Skill Harness in 80 Lines of Python",
       "target_keywords": [
-        "anthropic agent skills tutorial",
-        "python ai agent tool harness",
-        "claude code agent execution"
+        "anthropic agent skills python",
+        "build ai agent skills",
+        "python agent harness tutorial"
       ],
-      "competing_articles": "Existing posts just copy-paste the GitHub README \u2014 Suman provides a lightweight, fully functional custom execution harness developers can copy and run locally immediately.",
+      "competing_articles": "Existing posts discuss Anthropic skills abstractly or copy docs, but Suman provides a lightweight runnable runtime script.",
       "real_story_evidence": []
     },
     {
-      "topic": "My Free Launch Directory Was Booked Out 26 Days Straight \u2014 Here is My Zero-Backend Automation Setup",
-      "category": "E",
-      "category_name": "Money / Income Story",
-      "virality_score": 91,
-      "analysis": "Indie hackers on Reddit are obsessed with directory monetization and automated lead generation. A real post showing 26 consecutive days of booked submissions highlights the high conversion power of niche micro-tools. Sharing the architectural breakdown of automating directory submission queues without heavy servers creates an instant bookmark magnet.",
+      "topic": "How I Built an AR Geology Web App with Canvas and DeviceOrientation API",
+      "category": "B",
+      "category_name": "Vibe Coding / AI-Assisted Workflow",
+      "virality_score": 89,
+      "analysis": "Augmented reality web tools are trending on Hacker News, showcased by the viral success of outcrop.rocks (263 points). Vibe coding interactive web tools using camera feeds and mobile APIs via Cursor + Claude is a major 2026 dev workflow trend. Suman documents the exact prompts, math tricks, and code diffs used to vibe-code a camera overlay web app in one afternoon.",
       "cross_source_signals": [
-        "Reddit r/indiehackers: 'I was scared nobody would submit to my free launch directory. It's been fully booked 26 days in a row.'",
-        "Google Trends: 'directory launch monetization' rising"
+        "Hacker News: Show HN Outcrop.rocks (263 points, 55 comments)",
+        "GitHub: WebXR / Canvas camera overlay templates rising",
+        "Google Trends: 'vibe coding web app tutorial' high search volume"
       ],
-      "developer_pain": "high",
+      "developer_pain": "medium",
       "freshness": "fresh",
-      "money_angle": "Converting directory traffic into recurring sponsorship revenue",
-      "story_angle": "I launched a simple startup submission directory expecting zero interest, but automated queue management kept it 100% booked for 26 straight days.",
-      "suman_angle": "How My Free Launch Directory Got Fully Booked 26 Days Straight (And My 0-Backend Stack)",
+      "money_angle": "",
+      "story_angle": "Inspired by outcrop.rocks, Suman spent 3 hours vibe coding a mobile web app with Claude that overlays custom visual metadata onto live camera streams.",
+      "suman_angle": "I Vibe-Coded an AR Camera Overlay Web App in 3 Hours with Claude (Full Code + Prompts)",
       "target_keywords": [
-        "indie hacker directory monetization",
-        "build directory website serverless",
-        "micro saas automation python"
+        "vibe coding tutorial",
+        "javascript camera canvas overlay",
+        "claude cursor web app"
       ],
-      "competing_articles": "Most directory posts sell generic advice \u2014 Suman breaks down exact queue management, submission rate-limiting code, and real booking metrics.",
+      "competing_articles": "Most AR web guides rely on heavy 3D frameworks like Three.js; Suman shows a light 2D canvas overlay built rapidly with AI assistance.",
       "real_story_evidence": [
         {
-          "source": "Reddit (r/indiehackers)",
-          "title": "I was scared nobody would submit to my free launch directory. It's been fully booked 26 days in a row.",
-          "url": "https://www.reddit.com/r/indiehackers/comments/1xr4o0f/i_was_scared_nobody_would_submit_to_my_free/",
-          "what_to_cite": "The creator was terrified of launching to zero submissions, yet reached 26 consecutive days of 100% full directory booking."
+          "source": "Hacker News (Show HN)",
+          "title": "Show HN: Point your camera at a landscape to learn about its geology",
+          "url": "https://outcrop.rocks/",
+          "what_to_cite": "App that paints geologic maps over landscapes using augmented reality directly in the browser."
         }
       ]
     }
@@ -126,9 +129,16 @@
   "success_stories": [
     {
       "source": "show_hn",
+      "title": "Show HN: Every satellite that passed over any place this week, and its photos",
+      "url": "https://www.watched.earth",
+      "signal": "355 points \u00b7 61 comments",
+      "snippet": "hey HN, i built this because I'm a satellite nerd who was bored this past weekend. type in any place and it finds every satellite that passed over it in the last 7 days (SGP4 on the CelesTrak catalog,"
+    },
+    {
+      "source": "show_hn",
       "title": "Show HN: HackerBooks \u2013 HackerTube, but for books mentioned on HN",
       "url": "https://hackerbooks.org",
-      "signal": "1868 points \u00b7 308 comments",
+      "signal": "1869 points \u00b7 308 comments",
       "snippet": "Saw Karpathy's HackerTube and wanted the same thing for books. So I had Claude build one (Opus 5.5). It's ~16.5k books that at least two different HN commenters brought up, from 2007 till now. Each bo"
     },
     {
@@ -149,7 +159,7 @@
       "source": "show_hn",
       "title": "Show HN: Subvocal \u2013 Talk to your computer without making noise",
       "url": "https://news.ycombinator.com/item?id=50340088",
-      "signal": "844 points \u00b7 395 comments",
+      "signal": "847 points \u00b7 395 comments",
       "snippet": "Hi HN, we're Aarush and Arnav from The Subvocal Company (YC F26) (https://subvocal.company/). We\u2019re building smart glasses that let you talk to your computer without talking out loud. You can mouth wo"
     },
     {
@@ -158,13 +168,6 @@
       "url": "https://stealmybitcoin.com/",
       "signal": "627 points \u00b7 451 comments",
       "snippet": "Made this because I'm curious if anyone out there has figured out how to actually use this PHP RCE we spent the last few days panicking over. Have fun!"
-    },
-    {
-      "source": "indie_reddit",
-      "title": "I was scared nobody would submit to my free launch directory. It's been fully booked 26 days in a row.",
-      "url": "https://www.reddit.com/r/indiehackers/comments/1xr4o0f/i_was_scared_nobody_would_submit_to_my_free/",
-      "signal": "r/indiehackers",
-      "snippet": ""
     },
     {
       "source": "show_hn",
@@ -177,14 +180,14 @@
       "source": "show_hn",
       "title": "Show HN: HackerTV \u2013 HN's most-recommended Youtube videos as 24/7 TV channels",
       "url": "https://hackertv.org",
-      "signal": "488 points \u00b7 83 comments",
+      "signal": "490 points \u00b7 83 comments",
       "snippet": "I saw HackerTube (https://news.ycombinator.com/item?id=50319510) a few days ago, the YouTube videos HN keeps recommending, pulled from 19 years of comments. It made me want to flip through them instea"
     },
     {
       "source": "show_hn",
       "title": "Show HN: Hacker Times, a New York Times-inspired version of Hacker News",
       "url": "https://hackertimes.ca/",
-      "signal": "475 points \u00b7 148 comments",
+      "signal": "476 points \u00b7 148 comments",
       "snippet": "I thought it would be fun to browse HN as if it were a newspaper. The site updates once an hour. Enjoy!"
     },
     {
@@ -193,13 +196,6 @@
       "url": "https://titleart.dvy.io/",
       "signal": "411 points \u00b7 82 comments",
       "snippet": ""
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: Coldframe, a honeypot that poses as a supermarket fridge controller",
-      "url": "https://github.com/hedgerow-dev/coldframe",
-      "signal": "281 points \u00b7 67 comments",
-      "snippet": "I built Coldframe, a honeypot that pretends to be a supermarket refrigeration controller. Inspired by the events on industrial fridge installations in the past weeks, I wanted to see what people would"
     },
     {
       "source": "show_hn",
@@ -212,14 +208,21 @@
       "source": "show_hn",
       "title": "Show HN: Warsaw in voxels \u2013 An interactive 3D map of the city centre",
       "url": "https://p.migdal.pl/warsaw-vibe-voxel/",
-      "signal": "325 points \u00b7 55 comments",
+      "signal": "327 points \u00b7 55 comments",
       "snippet": "Explore central Warsaw in voxels - slightly inspired by Minecraft, and MagicaVoxel. You can change the date, time of day and weather, explore the city, or click on a pedestrian to control them (here a"
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Coldframe, a honeypot that poses as a supermarket fridge controller",
+      "url": "https://github.com/hedgerow-dev/coldframe",
+      "signal": "288 points \u00b7 69 comments",
+      "snippet": "I built Coldframe, a honeypot that pretends to be a supermarket refrigeration controller. Inspired by the events on industrial fridge installations in the past weeks, I wanted to see what people would"
     },
     {
       "source": "show_hn",
       "title": "Show HN: OmniDiff \u2013 Opensource, super fast, content aware Git difftool, in Rust",
       "url": "https://github.com/ivankovic/omnidiff",
-      "signal": "321 points \u00b7 97 comments",
+      "signal": "322 points \u00b7 97 comments",
       "snippet": "I have been researching what the ultimate diff tool would look like, based on actual diffs in open source repositories. OmniDiff can diff: code (25 languages), config, images, PDFs, archives, cursors,"
     },
     {
@@ -254,15 +257,15 @@
       "source": "show_hn",
       "title": "Show HN: A decent text-to-image model trained for ~$20K (Apache 2.0 Weights)",
       "url": "https://www.linum.ai/field-notes/pjit-21k",
-      "signal": "285 points \u00b7 29 comments",
+      "signal": "286 points \u00b7 30 comments",
       "snippet": "My brother and I run a 2-person lab that trains our own generative video models from scratch. The ultimate goal is a set of creative tools that make it easier for anyone to make animation. Video model"
     },
     {
       "source": "show_hn",
-      "title": "Show HN: WallHop \u2013 12ft.io is gone, so I built a replacement",
-      "url": "https://wallhop.io/",
-      "signal": "289 points \u00b7 133 comments",
-      "snippet": "Hi HN, I'm Josh. WallHop is a free paywall bypass: paste an article URL (or prefix any URL with wallhop.io/) and you get the readable article without the paywall popup, ads or clutter. No signup, no e"
+      "title": "Show HN: After a decade of reversing, I got co-op working in DOS Wing Commander",
+      "url": "https://fireflyk64.github.io/wcmulti/",
+      "signal": "256 points \u00b7 41 comments",
+      "snippet": ""
     }
   ]
 }
