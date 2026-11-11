@@ -1,14 +1,11 @@
 {
   "topics": [
-    "Vanilla JS Map Tutorial: Build a Satellite Tracker in 4 Hours",
-    "Anthropic Agent Skills Python: Build a Harness in 80 Lines",
-    "Vibe Coding Tutorial: I Built an AR Canvas App in 3 Hours"
+    "Cursor Prompt Rules That Stopped Claude from Writing 2019 JavaScript",
+    "YouTube API Automation: How I Built a 24/7 TV Channel in 85 Lines",
+    "Web Audio API Tutorial: I Built a Synth in Vanilla JS with Zero Lag"
   ],
-  "date": "November 10, 2026",
+  "date": "November 11, 2026",
   "title_history": [
-    "Agent harness JavaScript: How I built a skill loop in 90 lines",
-    "Vanilla JS zero backend: How I built a database in the URL hash",
-    "Python experimental JIT removal: The performance trade-offs I found",
     "Python binary data extraction: How I built an API from 10k carrier files",
     "Obra superpowers workflow: How I standardized agentic Python development",
     "Git root certificate audit in Python: My 90-line script for toolchains",
@@ -35,93 +32,106 @@
     "Build Directory Website Serverless: My 0-Backend Stack for 26-Day Bookings",
     "Vanilla JS Map Tutorial: Build a Satellite Tracker in 4 Hours",
     "Anthropic Agent Skills Python: Build a Harness in 80 Lines",
-    "Vibe Coding Tutorial: I Built an AR Canvas App in 3 Hours"
+    "Vibe Coding Tutorial: I Built an AR Canvas App in 3 Hours",
+    "Cursor Prompt Rules That Stopped Claude from Writing 2019 JavaScript",
+    "YouTube API Automation: How I Built a 24/7 TV Channel in 85 Lines",
+    "Web Audio API Tutorial: I Built a Synth in Vanilla JS with Zero Lag"
   ],
   "last_update_id": 70323306,
   "virality_data": [
     {
-      "topic": "I Built a Satellite Tracker Map with Vanilla JS and Open TLE Data in 4 Hours",
-      "category": "A",
-      "category_name": "Developer Success Story",
-      "virality_score": 92,
-      "analysis": "Show HN readers and builder communities heavily reward real-time geospatial projects built with lightweight stacks. watched.earth surfaced on HN with 355 points this week, showing massive audience interest in real-time satellite footprint visualizations. Suman bridges this interest by showing devs how to calculate satellite passes and paint footprints on a WebGL/Canvas map with zero backend dependencies.",
+      "topic": "Teaching Claude to stop generating 2019 JavaScript using modern web guidance rules",
+      "category": "B",
+      "category_name": "Vibe Coding / AI-Assisted Workflow",
+      "virality_score": 91,
+      "analysis": "AI coding assistants hallucinate obsolete 2019 JS patterns like polyfills, bulky fetch wrappers, and outdated canvas loops instead of modern Web APIs. Google Chrome's release of 'modern-web-guidance' shot straight to the top of Hacker News with 367 points and over 100 passionate comments this week. Positioning this as a direct Cursor/Claude prompt and system config injection turns an abstract GitHub spec into an instant, copy-paste workflow upgrade for frontend devs.",
       "cross_source_signals": [
-        "Hacker News: Show HN watched.earth (355 points, 61 comments)",
-        "GitHub: satellite.js / TLE parsing libraries trending",
-        "Google Trends: 'satellite tracking API javascript' rising"
-      ],
-      "developer_pain": "high",
-      "freshness": "fresh",
-      "money_angle": "",
-      "story_angle": "After seeing watched.earth hit the HN front page, Suman decided to reverse-engineer a browser-only TLE satellite passing predictor using vanilla JS and Canvas.",
-      "suman_angle": "How I Built a Real-Time Satellite Passing Tracker in 4 Hours (Zero Backend Vanilla JS)",
-      "target_keywords": [
-        "vanilla js map tutorial",
-        "satellite tracking javascript",
-        "tle data parser js"
-      ],
-      "competing_articles": "Most orbital tracking tutorials require complex Python backends or expensive GIS servers, whereas Suman demonstrates client-side TLE propagation in pure JS.",
-      "real_story_evidence": [
-        {
-          "source": "Hacker News (Show HN)",
-          "title": "Show HN: Every satellite that passed over any place this week, and its photos",
-          "url": "https://www.watched.earth",
-          "what_to_cite": "Built by a satellite enthusiast over a weekend to show every satellite pass and image over any coordinate."
-        }
-      ]
-    },
-    {
-      "topic": "Building an Anthropic Agent Skills Harness in Python in 80 Lines of Code",
-      "category": "C",
-      "category_name": "AI Agents & Multi-Agent Workflows",
-      "virality_score": 95,
-      "analysis": "Anthropic's official `skills` public repository just hit nearly 200k stars on GitHub, making agent skill standardization the highest-demand developer topic this week. Medium readers are starving for practical execution code that parses and executes Anthropic-style skill definitions without bloated frameworks. Suman provides a clean 80-line Python harness that loads skills dynamically and handles execution state.",
-      "cross_source_signals": [
-        "GitHub: anthropics/skills repository trending (#5 overall signal cluster)",
-        "Reddit r/LocalLLaMA: High discussion on standardized agent tool schemas",
-        "Hacker News: Anthropic 5.2 models update driving high engagement"
+        "Hacker News: 367 points, 108 comments on GoogleChrome/modern-web-guidance",
+        "GitHub: GoogleChrome/modern-web-guidance trending repo",
+        "Reddit r/webdev: Repeated complaints about LLMs writing legacy bundling and obsolete DOM APIs"
       ],
       "developer_pain": "high",
       "freshness": "breaking",
       "money_angle": "",
-      "story_angle": "When Anthropic open-sourced their agent skills repository, Suman immediately built a lightweight Python harness to run custom agent tools locally without heavy framework overhead.",
-      "suman_angle": "How to Build a Custom Anthropic Agent Skill Harness in 80 Lines of Python",
+      "story_angle": "I spent two hours deleting unnecessary Babel dependencies and polyfills that Claude 3.5 Sonnet generated for a simple modern client app until I discovered Google Chrome's modern web primitives guide.",
+      "suman_angle": "Stop Vibe Coding Like It's 2019: How I Updated Claude's JavaScript Memory in 15 Minutes",
       "target_keywords": [
-        "anthropic agent skills python",
-        "build ai agent skills",
-        "python agent harness tutorial"
+        "cursor prompt rules",
+        "claude coding web primitives",
+        "modern javascript prompt",
+        "google modern web guidance"
       ],
-      "competing_articles": "Existing posts discuss Anthropic skills abstractly or copy docs, but Suman provides a lightweight runnable runtime script.",
-      "real_story_evidence": []
-    },
-    {
-      "topic": "How I Built an AR Geology Web App with Canvas and DeviceOrientation API",
-      "category": "B",
-      "category_name": "Vibe Coding / AI-Assisted Workflow",
-      "virality_score": 89,
-      "analysis": "Augmented reality web tools are trending on Hacker News, showcased by the viral success of outcrop.rocks (263 points). Vibe coding interactive web tools using camera feeds and mobile APIs via Cursor + Claude is a major 2026 dev workflow trend. Suman documents the exact prompts, math tricks, and code diffs used to vibe-code a camera overlay web app in one afternoon.",
-      "cross_source_signals": [
-        "Hacker News: Show HN Outcrop.rocks (263 points, 55 comments)",
-        "GitHub: WebXR / Canvas camera overlay templates rising",
-        "Google Trends: 'vibe coding web app tutorial' high search volume"
-      ],
-      "developer_pain": "medium",
-      "freshness": "fresh",
-      "money_angle": "",
-      "story_angle": "Inspired by outcrop.rocks, Suman spent 3 hours vibe coding a mobile web app with Claude that overlays custom visual metadata onto live camera streams.",
-      "suman_angle": "I Vibe-Coded an AR Camera Overlay Web App in 3 Hours with Claude (Full Code + Prompts)",
-      "target_keywords": [
-        "vibe coding tutorial",
-        "javascript camera canvas overlay",
-        "claude cursor web app"
-      ],
-      "competing_articles": "Most AR web guides rely on heavy 3D frameworks like Three.js; Suman shows a light 2D canvas overlay built rapidly with AI assistance.",
+      "competing_articles": "Most Cursor/Claude setup articles focus on general markdown rules; this is the first deep dive into modern native browser primitives (Web Streams, native Dialog, CSS nesting) preventing bloated AI output.",
       "real_story_evidence": [
         {
           "source": "Hacker News (Show HN)",
-          "title": "Show HN: Point your camera at a landscape to learn about its geology",
-          "url": "https://outcrop.rocks/",
-          "what_to_cite": "App that paints geologic maps over landscapes using augmented reality directly in the browser."
+          "title": "Show HN: Get your coding agent off ~2019 JavaScript, onto modern web primitives",
+          "url": "https://github.com/GoogleChrome/modern-web-guidance",
+          "what_to_cite": "Google Chrome team's repository designed specifically to stop coding agents from using 2019-era web practices and polyfills"
+        }
+      ]
+    },
+    {
+      "topic": "Building a headless automated TV streaming channel from Hacker News video links",
+      "category": "D",
+      "category_name": "AI Automation Across Domains",
+      "virality_score": 87,
+      "analysis": "Automating continuous media programming out of public comment threads is a wildly viral format on Hacker News right now, with HackerTV earning 490 points and 83 comments. Readers love seeing practical automation scripts that scrape unstructured discussions, filter high-signal URLs, and programmatically orchestrate media playlists with zero infrastructure overhead. This post reveals the exact Node.js playlist pipeline and YouTube API automation required to turn any subreddit or community feed into a 24/7 video stream.",
+      "cross_source_signals": [
+        "Hacker News: 490 points, 83 comments on HackerTV launch",
+        "Hacker News: 1869 points on HackerBooks confirming high appetite for community-curated media pipelines",
+        "GitHub: media-crawler and automated playlist repositories spiking in starred forks"
+      ],
+      "developer_pain": "medium",
+      "freshness": "hot",
+      "money_angle": "Monetizing automated niche curation sites via affiliate links and passive sponsorships",
+      "story_angle": "Tired of YouTube recommendation rabbit holes, I automated a script that scrapes HN's historical archive to stream curated tech documentaries on loop.",
+      "suman_angle": "How I Built an Automated 24/7 Tech TV Channel with Node.js and the YouTube API in 85 Lines",
+      "target_keywords": [
+        "youtube api automation",
+        "nodejs video aggregator",
+        "build tv channel script",
+        "automated web curation"
+      ],
+      "competing_articles": "Existing media bots focus on basic discord webhook alerts, whereas this shows complete automated queueing, time-offset synchronization, and continuous client-side player orchestration.",
+      "real_story_evidence": [
+        {
+          "source": "Hacker News (Show HN)",
+          "title": "Show HN: HackerTV \u2013 HN's most-recommended Youtube videos as 24/7 TV channels",
+          "url": "https://hackertv.org",
+          "what_to_cite": "Pulling curated YouTube recommendations across 19 years of community comment history into continuous synchronized channels"
+        }
+      ]
+    },
+    {
+      "topic": "Zero-backend browser audio synthesis with the Web Audio API",
+      "category": "A",
+      "category_name": "Developer Success Story",
+      "virality_score": 84,
+      "analysis": "Solo projects that deliver tactile, delightful interactions purely in the browser without backends or complex audio engines consistently trend at the top of Hacker News. Guitoro generated 573 points and 161 comments by showing how far native browser audio capabilities have come with clever keyboard-to-frequency mappings. Medium builders respond strongly to realistic teardowns showing how to manage low-latency audio sample loading and key-event debouncing in lightweight vanilla JavaScript.",
+      "cross_source_signals": [
+        "Hacker News: 573 points, 161 comments on Guitoro virtual guitar launch",
+        "Reddit r/javascript: Growing interest in zero-framework native Web Audio projects",
+        "GitHub: Web Audio synthesizer and sampler repos trending in creative coding tags"
+      ],
+      "developer_pain": "medium",
+      "freshness": "trending",
+      "money_angle": "",
+      "story_angle": "After struggling with latency and complex external frameworks for a browser project, I decided to build a playable instrument using zero dependencies and pure Web Audio buffers.",
+      "suman_angle": "How to Build a Zero-Latency Virtual Instrument in Vanilla JavaScript (No External Audio Libraries)",
+      "target_keywords": [
+        "web audio api tutorial",
+        "vanilla js sound synthesizer",
+        "browser keyboard instrument",
+        "audio buffer javascript"
+      ],
+      "competing_articles": "Most Web Audio tutorials rely on heavy abstractions like Tone.js or Howler; this breaks down raw AudioContext buffers, gain nodes, and event-driven multi-touch strumming directly.",
+      "real_story_evidence": [
+        {
+          "source": "Hacker News (Show HN)",
+          "title": "Show HN: Guitoro, a virtual guitar you strum with your keyboard",
+          "url": "https://guitoro.com/",
+          "what_to_cite": "Building an interactive real-instrument guitar simulation played entirely via keyboard, mouse, and touch events without server latency"
         }
       ]
     }
@@ -129,10 +139,10 @@
   "success_stories": [
     {
       "source": "show_hn",
-      "title": "Show HN: Every satellite that passed over any place this week, and its photos",
-      "url": "https://www.watched.earth",
-      "signal": "355 points \u00b7 61 comments",
-      "snippet": "hey HN, i built this because I'm a satellite nerd who was bored this past weekend. type in any place and it finds every satellite that passed over it in the last 7 days (SGP4 on the CelesTrak catalog,"
+      "title": "Show HN: Get your coding agent off ~2019 JavaScript, onto modern web primitives",
+      "url": "https://github.com/GoogleChrome/modern-web-guidance",
+      "signal": "367 points \u00b7 108 comments",
+      "snippet": "Browsers natively handle a lot of what used to take 50 lines of JS (or a dependency): `CSS.highlights` for text range highlighting without <span>s everywhere, `<dialog>` and showModal() give you backd"
     },
     {
       "source": "show_hn",
@@ -150,6 +160,13 @@
     },
     {
       "source": "show_hn",
+      "title": "Show HN: Every satellite that passed over any place this week, and its photos",
+      "url": "https://www.watched.earth",
+      "signal": "464 points \u00b7 81 comments",
+      "snippet": "hey HN, i built this because I'm a satellite nerd who was bored this past weekend. type in any place and it finds every satellite that passed over it in the last 7 days (SGP4 on the CelesTrak catalog,"
+    },
+    {
+      "source": "show_hn",
       "title": "Show HN: SimCity, but with Permits",
       "url": "https://permit.petercai.com/",
       "signal": "941 points \u00b7 428 comments",
@@ -159,7 +176,7 @@
       "source": "show_hn",
       "title": "Show HN: Subvocal \u2013 Talk to your computer without making noise",
       "url": "https://news.ycombinator.com/item?id=50340088",
-      "signal": "847 points \u00b7 395 comments",
+      "signal": "848 points \u00b7 395 comments",
       "snippet": "Hi HN, we're Aarush and Arnav from The Subvocal Company (YC F26) (https://subvocal.company/). We\u2019re building smart glasses that let you talk to your computer without talking out loud. You can mouth wo"
     },
     {
@@ -187,7 +204,7 @@
       "source": "show_hn",
       "title": "Show HN: Hacker Times, a New York Times-inspired version of Hacker News",
       "url": "https://hackertimes.ca/",
-      "signal": "476 points \u00b7 148 comments",
+      "signal": "476 points \u00b7 149 comments",
       "snippet": "I thought it would be fun to browse HN as if it were a newspaper. The site updates once an hour. Enjoy!"
     },
     {
@@ -213,10 +230,10 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Coldframe, a honeypot that poses as a supermarket fridge controller",
-      "url": "https://github.com/hedgerow-dev/coldframe",
-      "signal": "288 points \u00b7 69 comments",
-      "snippet": "I built Coldframe, a honeypot that pretends to be a supermarket refrigeration controller. Inspired by the events on industrial fridge installations in the past weeks, I wanted to see what people would"
+      "title": "Show HN: Valencia, Spain in Sim City/Isometric View",
+      "url": "https://tinyvalencia.com/",
+      "signal": "228 points \u00b7 55 comments",
+      "snippet": ""
     },
     {
       "source": "show_hn",
@@ -224,6 +241,13 @@
       "url": "https://github.com/ivankovic/omnidiff",
       "signal": "322 points \u00b7 97 comments",
       "snippet": "I have been researching what the ultimate diff tool would look like, based on actual diffs in open source repositories. OmniDiff can diff: code (25 languages), config, images, PDFs, archives, cursors,"
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Coldframe, a honeypot that poses as a supermarket fridge controller",
+      "url": "https://github.com/hedgerow-dev/coldframe",
+      "signal": "288 points \u00b7 70 comments",
+      "snippet": "I built Coldframe, a honeypot that pretends to be a supermarket refrigeration controller. Inspired by the events on industrial fridge installations in the past weeks, I wanted to see what people would"
     },
     {
       "source": "show_hn",
@@ -241,16 +265,9 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: PS2 games statically recompiled to WebAssembly",
-      "url": "https://github.com/snuri00/ps2-web-recomp",
-      "signal": "316 points \u00b7 159 comments",
-      "snippet": ""
-    },
-    {
-      "source": "show_hn",
       "title": "Show HN: A working Nintendo in ~1GB of Qwen weights",
       "url": "https://github.com/dbreunig/nesformer",
-      "signal": "298 points \u00b7 154 comments",
+      "signal": "298 points \u00b7 155 comments",
       "snippet": ""
     },
     {
@@ -259,13 +276,6 @@
       "url": "https://www.linum.ai/field-notes/pjit-21k",
       "signal": "286 points \u00b7 30 comments",
       "snippet": "My brother and I run a 2-person lab that trains our own generative video models from scratch. The ultimate goal is a set of creative tools that make it easier for anyone to make animation. Video model"
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: After a decade of reversing, I got co-op working in DOS Wing Commander",
-      "url": "https://fireflyk64.github.io/wcmulti/",
-      "signal": "256 points \u00b7 41 comments",
-      "snippet": ""
     }
   ]
 }
