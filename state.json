@@ -1,14 +1,11 @@
 {
   "topics": [
-    "Cursor Prompt Rules That Stopped Claude from Writing 2019 JavaScript",
-    "YouTube API Automation: How I Built a 24/7 TV Channel in 85 Lines",
-    "Web Audio API Tutorial: I Built a Synth in Vanilla JS with Zero Lag"
+    "Claude Code agent skills: How I stopped AI writing 2019 JS (With Config)",
+    "Python AI stock analysis agent in 90 lines \u2014 Full walkthrough with code",
+    "AWS emulator local development cut our integration test times by 60%"
   ],
-  "date": "November 11, 2026",
+  "date": "November 12, 2026",
   "title_history": [
-    "Python binary data extraction: How I built an API from 10k carrier files",
-    "Obra superpowers workflow: How I standardized agentic Python development",
-    "Git root certificate audit in Python: My 90-line script for toolchains",
     "Claude Persistent Memory in 85 Lines of Python \u2014 Full Code",
     "Niche SaaS Python GIS: How I Built a $850/Month Stripe App",
     "SSE vs WebSocket LLM Streaming: Why I Rewrote My AI Dashboard",
@@ -35,115 +32,106 @@
     "Vibe Coding Tutorial: I Built an AR Canvas App in 3 Hours",
     "Cursor Prompt Rules That Stopped Claude from Writing 2019 JavaScript",
     "YouTube API Automation: How I Built a 24/7 TV Channel in 85 Lines",
-    "Web Audio API Tutorial: I Built a Synth in Vanilla JS with Zero Lag"
+    "Web Audio API Tutorial: I Built a Synth in Vanilla JS with Zero Lag",
+    "Claude Code agent skills: How I stopped AI writing 2019 JS (With Config)",
+    "Python AI stock analysis agent in 90 lines \u2014 Full walkthrough with code",
+    "AWS emulator local development cut our integration test times by 60%"
   ],
   "last_update_id": 70323306,
   "virality_data": [
     {
-      "topic": "Teaching Claude to stop generating 2019 JavaScript using modern web guidance rules",
+      "topic": "I modernised my Claude Code setup with Chrome's modern-web-guidance to stop AI writing 2019 JS",
       "category": "B",
       "category_name": "Vibe Coding / AI-Assisted Workflow",
-      "virality_score": 91,
-      "analysis": "AI coding assistants hallucinate obsolete 2019 JS patterns like polyfills, bulky fetch wrappers, and outdated canvas loops instead of modern Web APIs. Google Chrome's release of 'modern-web-guidance' shot straight to the top of Hacker News with 367 points and over 100 passionate comments this week. Positioning this as a direct Cursor/Claude prompt and system config injection turns an abstract GitHub spec into an instant, copy-paste workflow upgrade for frontend devs.",
+      "virality_score": 92,
+      "analysis": "This directly targets the frustration developers experience when coding agents produce legacy JS syntax or add unnecessary polyfills. It links Google's newly released 'modern-web-guidance' GitHub repo to AI agent skills integration for immediate developer utility. The cross-source signal between GitHub trending repos and HN discussions makes it prime material for a high-read-ratio Medium post.",
       "cross_source_signals": [
-        "Hacker News: 367 points, 108 comments on GoogleChrome/modern-web-guidance",
-        "GitHub: GoogleChrome/modern-web-guidance trending repo",
-        "Reddit r/webdev: Repeated complaints about LLMs writing legacy bundling and obsolete DOM APIs"
+        "HN: Show HN: Get your coding agent off ~2019 JavaScript (429 points)",
+        "GitHub: GoogleChrome/modern-web-guidance trending",
+        "GitHub: addyosmani/agent-skills (116k+ views/stars)"
       ],
       "developer_pain": "high",
       "freshness": "breaking",
       "money_angle": "",
-      "story_angle": "I spent two hours deleting unnecessary Babel dependencies and polyfills that Claude 3.5 Sonnet generated for a simple modern client app until I discovered Google Chrome's modern web primitives guide.",
-      "suman_angle": "Stop Vibe Coding Like It's 2019: How I Updated Claude's JavaScript Memory in 15 Minutes",
+      "story_angle": "I got tired of Claude appending 50-line polyfills for web features that browsers have natively supported since 2022, so I injected Chrome's web primitives into its skill context.",
+      "suman_angle": "How I forced Claude Code to write modern 2026 Web APIs instead of 2019 JavaScript (with config files)",
       "target_keywords": [
-        "cursor prompt rules",
-        "claude coding web primitives",
-        "modern javascript prompt",
-        "google modern web guidance"
+        "claude code agent skills",
+        "modern web guidance google chrome",
+        "vibe coding javascript primitives"
       ],
-      "competing_articles": "Most Cursor/Claude setup articles focus on general markdown rules; this is the first deep dive into modern native browser primitives (Web Streams, native Dialog, CSS nesting) preventing bloated AI output.",
+      "competing_articles": "Most AI coding tips offer vague prompt advice; this article gives exact YAML/system prompt configs using Google Chrome's brand-new guidance repository.",
       "real_story_evidence": [
         {
           "source": "Hacker News (Show HN)",
           "title": "Show HN: Get your coding agent off ~2019 JavaScript, onto modern web primitives",
           "url": "https://github.com/GoogleChrome/modern-web-guidance",
-          "what_to_cite": "Google Chrome team's repository designed specifically to stop coding agents from using 2019-era web practices and polyfills"
+          "what_to_cite": "Browser primitives like CSS.highlights now replace 50-line JS dependencies when guided by modern agent skills."
         }
       ]
     },
     {
-      "topic": "Building a headless automated TV streaming channel from Hacker News video links",
-      "category": "D",
-      "category_name": "AI Automation Across Domains",
-      "virality_score": 87,
-      "analysis": "Automating continuous media programming out of public comment threads is a wildly viral format on Hacker News right now, with HackerTV earning 490 points and 83 comments. Readers love seeing practical automation scripts that scrape unstructured discussions, filter high-signal URLs, and programmatically orchestrate media playlists with zero infrastructure overhead. This post reveals the exact Node.js playlist pipeline and YouTube API automation required to turn any subreddit or community feed into a 24/7 video stream.",
+      "topic": "How I built a multi-market stock analysis & automated daily alert system in 90 lines of Python",
+      "category": "C",
+      "category_name": "AI Agents & Multi-Agent Workflows",
+      "virality_score": 89,
+      "analysis": "Automated financial intelligence agents are a major high-intent topic on Medium in 2026. Leveraging open-source multi-market stock automation trends, this post shows how to wire LLMs to multi-source market news and automated notification webhooks cleanly. It provides concrete code instead of high-level architecture slides.",
       "cross_source_signals": [
-        "Hacker News: 490 points, 83 comments on HackerTV launch",
-        "Hacker News: 1869 points on HackerBooks confirming high appetite for community-curated media pipelines",
-        "GitHub: media-crawler and automated playlist repositories spiking in starred forks"
+        "GitHub: ZhuLinsen/daily_stock_analysis trending (70k+ stars)",
+        "HN: High interest in zero-cost automated LLM cron jobs"
       ],
-      "developer_pain": "medium",
-      "freshness": "hot",
-      "money_angle": "Monetizing automated niche curation sites via affiliate links and passive sponsorships",
-      "story_angle": "Tired of YouTube recommendation rabbit holes, I automated a script that scrapes HN's historical archive to stream curated tech documentaries on loop.",
-      "suman_angle": "How I Built an Automated 24/7 Tech TV Channel with Node.js and the YouTube API in 85 Lines",
+      "developer_pain": "high",
+      "freshness": "fresh",
+      "money_angle": "Replaces $100/mo financial newsletter/alert subscriptions with a zero-cost automated script.",
+      "story_angle": "I needed a daily portfolio briefing across global markets without spending 2 hours reading RSS feeds, so I built an LLM market-sentinel script.",
+      "suman_angle": "Building a zero-cost AI stock analysis agent in 90 lines of Python",
       "target_keywords": [
-        "youtube api automation",
-        "nodejs video aggregator",
-        "build tv channel script",
-        "automated web curation"
+        "python ai stock analysis agent",
+        "daily stock analysis llm script",
+        "automated financial agent python"
       ],
-      "competing_articles": "Existing media bots focus on basic discord webhook alerts, whereas this shows complete automated queueing, time-offset synchronization, and continuous client-side player orchestration.",
+      "competing_articles": "Existing posts explain theoretical agent concepts; this provides a copy-pasteable script that aggregates live market data and news into actionable daily briefs.",
       "real_story_evidence": [
         {
-          "source": "Hacker News (Show HN)",
-          "title": "Show HN: HackerTV \u2013 HN's most-recommended Youtube videos as 24/7 TV channels",
-          "url": "https://hackertv.org",
-          "what_to_cite": "Pulling curated YouTube recommendations across 19 years of community comment history into continuous synchronized channels"
+          "source": "GitHub Trending",
+          "title": "ZhuLinsen/daily_stock_analysis",
+          "url": "https://github.com/ZhuLinsen/daily_stock_analysis",
+          "what_to_cite": "Using multi-source financial feeds paired with zero-cost scheduled LLM runners to output daily decision dashboards."
         }
       ]
     },
     {
-      "topic": "Zero-backend browser audio synthesis with the Web Audio API",
-      "category": "A",
-      "category_name": "Developer Success Story",
-      "virality_score": 84,
-      "analysis": "Solo projects that deliver tactile, delightful interactions purely in the browser without backends or complex audio engines consistently trend at the top of Hacker News. Guitoro generated 573 points and 161 comments by showing how far native browser audio capabilities have come with clever keyboard-to-frequency mappings. Medium builders respond strongly to realistic teardowns showing how to manage low-latency audio sample loading and key-event debouncing in lightweight vanilla JavaScript.",
+      "topic": "Why I replaced local AWS mock containers with the official AWS Emulator in my integration tests",
+      "category": "G",
+      "category_name": "Software Architecture Insight",
+      "virality_score": 86,
+      "analysis": "AWS recently released/trending toolings around lightweight AWS emulation have sparked intense backend engineering discussions. Developers dealing with slow LocalStack setups or flaky unit tests are actively seeking real production trade-offs. This post focuses on architectural shift, execution speed, and local dev parity.",
       "cross_source_signals": [
-        "Hacker News: 573 points, 161 comments on Guitoro virtual guitar launch",
-        "Reddit r/javascript: Growing interest in zero-framework native Web Audio projects",
-        "GitHub: Web Audio synthesizer and sampler repos trending in creative coding tags"
+        "HN: AWS emulator discussion (848 points, 235 comments)",
+        "GitHub: aws/aws-emulator repository launch"
       ],
-      "developer_pain": "medium",
-      "freshness": "trending",
+      "developer_pain": "high",
+      "freshness": "breaking",
       "money_angle": "",
-      "story_angle": "After struggling with latency and complex external frameworks for a browser project, I decided to build a playable instrument using zero dependencies and pure Web Audio buffers.",
-      "suman_angle": "How to Build a Zero-Latency Virtual Instrument in Vanilla JavaScript (No External Audio Libraries)",
+      "story_angle": "After watching my CI pipeline spend 4 minutes just spinning up local cloud mocks, I tested the new AWS Emulator for our local integration setup.",
+      "suman_angle": "Why I migrated our integration suite to the new AWS Emulator (and cut test times by 60%)",
       "target_keywords": [
-        "web audio api tutorial",
-        "vanilla js sound synthesizer",
-        "browser keyboard instrument",
-        "audio buffer javascript"
+        "aws emulator local development",
+        "localstack alternatives aws",
+        "integration testing aws python"
       ],
-      "competing_articles": "Most Web Audio tutorials rely on heavy abstractions like Tone.js or Howler; this breaks down raw AudioContext buffers, gain nodes, and event-driven multi-touch strumming directly.",
+      "competing_articles": "Most AWS testing guides default to standard docker-compose or LocalStack without comparing memory footprint and cold-start speed against the official AWS emulator.",
       "real_story_evidence": [
         {
-          "source": "Hacker News (Show HN)",
-          "title": "Show HN: Guitoro, a virtual guitar you strum with your keyboard",
-          "url": "https://guitoro.com/",
-          "what_to_cite": "Building an interactive real-instrument guitar simulation played entirely via keyboard, mouse, and touch events without server latency"
+          "source": "Hacker News",
+          "title": "AWS emulator",
+          "url": "https://github.com/aws/aws-emulator",
+          "what_to_cite": "The 848-point HN discussion highlighting developers seeking lighter, faster alternatives for offline AWS service emulation."
         }
       ]
     }
   ],
   "success_stories": [
-    {
-      "source": "show_hn",
-      "title": "Show HN: Get your coding agent off ~2019 JavaScript, onto modern web primitives",
-      "url": "https://github.com/GoogleChrome/modern-web-guidance",
-      "signal": "367 points \u00b7 108 comments",
-      "snippet": "Browsers natively handle a lot of what used to take 50 lines of JS (or a dependency): `CSS.highlights` for text range highlighting without <span>s everywhere, `<dialog>` and showModal() give you backd"
-    },
     {
       "source": "show_hn",
       "title": "Show HN: HackerBooks \u2013 HackerTube, but for books mentioned on HN",
@@ -160,9 +148,16 @@
     },
     {
       "source": "show_hn",
+      "title": "Show HN: Get your coding agent off ~2019 JavaScript, onto modern web primitives",
+      "url": "https://github.com/GoogleChrome/modern-web-guidance",
+      "signal": "429 points \u00b7 142 comments",
+      "snippet": "Browsers natively handle a lot of what used to take 50 lines of JS (or a dependency): `CSS.highlights` for text range highlighting without <span>s everywhere, `<dialog>` and showModal() give you backd"
+    },
+    {
+      "source": "show_hn",
       "title": "Show HN: Every satellite that passed over any place this week, and its photos",
       "url": "https://www.watched.earth",
-      "signal": "464 points \u00b7 81 comments",
+      "signal": "480 points \u00b7 82 comments",
       "snippet": "hey HN, i built this because I'm a satellite nerd who was bored this past weekend. type in any place and it finds every satellite that passed over it in the last 7 days (SGP4 on the CelesTrak catalog,"
     },
     {
@@ -216,6 +211,13 @@
     },
     {
       "source": "show_hn",
+      "title": "Show HN: Yogurt \u2013 Free, private, open-source alternative to Granola",
+      "url": "https://github.com/FrigadeHQ/yogurt",
+      "signal": "241 points \u00b7 95 comments",
+      "snippet": "Hey HN, I\u2019m Eric and I want to share an OSS project that I\u2019ve been building in my free time. Yogurt is a free, MIT licensed desktop app that uses on-device AI models to transcribe, summarize, and chat"
+    },
+    {
+      "source": "show_hn",
       "title": "Show HN: Llmspeed \u2013 feel how fast a local LLM runs before you buy the hardware",
       "url": "https://llmspeed.dev/",
       "signal": "331 points \u00b7 86 comments",
@@ -230,13 +232,6 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Valencia, Spain in Sim City/Isometric View",
-      "url": "https://tinyvalencia.com/",
-      "signal": "228 points \u00b7 55 comments",
-      "snippet": ""
-    },
-    {
-      "source": "show_hn",
       "title": "Show HN: OmniDiff \u2013 Opensource, super fast, content aware Git difftool, in Rust",
       "url": "https://github.com/ivankovic/omnidiff",
       "signal": "322 points \u00b7 97 comments",
@@ -244,10 +239,17 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Coldframe, a honeypot that poses as a supermarket fridge controller",
-      "url": "https://github.com/hedgerow-dev/coldframe",
-      "signal": "288 points \u00b7 70 comments",
-      "snippet": "I built Coldframe, a honeypot that pretends to be a supermarket refrigeration controller. Inspired by the events on industrial fridge installations in the past weeks, I wanted to see what people would"
+      "title": "Show HN: I recreated Papers Please but you're deciding which YC startups to fund",
+      "url": "https://termsheetplease.com/",
+      "signal": "226 points \u00b7 86 comments",
+      "snippet": ""
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Valencia, Spain in Sim City/Isometric View",
+      "url": "https://tinyvalencia.com/",
+      "signal": "247 points \u00b7 61 comments",
+      "snippet": ""
     },
     {
       "source": "show_hn",
@@ -258,24 +260,17 @@
     },
     {
       "source": "show_hn",
+      "title": "Show HN: Coldframe, a honeypot that poses as a supermarket fridge controller",
+      "url": "https://github.com/hedgerow-dev/coldframe",
+      "signal": "289 points \u00b7 70 comments",
+      "snippet": "I built Coldframe, a honeypot that pretends to be a supermarket refrigeration controller. Inspired by the events on industrial fridge installations in the past weeks, I wanted to see what people would"
+    },
+    {
+      "source": "show_hn",
       "title": "Show HN: Unfenced \u2013 Land for sale that borders public land",
       "url": "https://unfenced.land/",
       "signal": "319 points \u00b7 201 comments",
       "snippet": ""
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: A working Nintendo in ~1GB of Qwen weights",
-      "url": "https://github.com/dbreunig/nesformer",
-      "signal": "298 points \u00b7 155 comments",
-      "snippet": ""
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: A decent text-to-image model trained for ~$20K (Apache 2.0 Weights)",
-      "url": "https://www.linum.ai/field-notes/pjit-21k",
-      "signal": "286 points \u00b7 30 comments",
-      "snippet": "My brother and I run a 2-person lab that trains our own generative video models from scratch. The ultimate goal is a set of creative tools that make it easier for anyone to make animation. Video model"
     }
   ]
 }
