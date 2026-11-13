@@ -1,14 +1,11 @@
 {
   "topics": [
-    "Claude Code agent skills: How I stopped AI writing 2019 JS (With Config)",
-    "Python AI stock analysis agent in 90 lines \u2014 Full walkthrough with code",
-    "AWS emulator local development cut our integration test times by 60%"
+    "Python hardware hacking: How I bypassed my $300 machine\u2019s paywall",
+    "Agent skills python harness: Stop Gemini from writing outdated JS",
+    "Modern web primitives tutorial: How I deleted 300 lines of JS"
   ],
-  "date": "November 12, 2026",
+  "date": "November 13, 2026",
   "title_history": [
-    "Claude Persistent Memory in 85 Lines of Python \u2014 Full Code",
-    "Niche SaaS Python GIS: How I Built a $850/Month Stripe App",
-    "SSE vs WebSocket LLM Streaming: Why I Rewrote My AI Dashboard",
     "Build Agentic Workflow Node.js Scripts in 75 Lines of Code",
     "Carrier Settings Extraction Python Script That Decodes 500 Profiles",
     "Retro Text Generator JavaScript Build: Zero Backend, Pure Canvas",
@@ -35,98 +32,96 @@
     "Web Audio API Tutorial: I Built a Synth in Vanilla JS with Zero Lag",
     "Claude Code agent skills: How I stopped AI writing 2019 JS (With Config)",
     "Python AI stock analysis agent in 90 lines \u2014 Full walkthrough with code",
-    "AWS emulator local development cut our integration test times by 60%"
+    "AWS emulator local development cut our integration test times by 60%",
+    "Python hardware hacking: How I bypassed my $300 machine\u2019s paywall",
+    "Agent skills python harness: Stop Gemini from writing outdated JS",
+    "Modern web primitives tutorial: How I deleted 300 lines of JS"
   ],
   "last_update_id": 70323306,
   "virality_data": [
     {
-      "topic": "I modernised my Claude Code setup with Chrome's modern-web-guidance to stop AI writing 2019 JS",
-      "category": "B",
-      "category_name": "Vibe Coding / AI-Assisted Workflow",
-      "virality_score": 92,
-      "analysis": "This directly targets the frustration developers experience when coding agents produce legacy JS syntax or add unnecessary polyfills. It links Google's newly released 'modern-web-guidance' GitHub repo to AI agent skills integration for immediate developer utility. The cross-source signal between GitHub trending repos and HN discussions makes it prime material for a high-read-ratio Medium post.",
+      "topic": "I Reverse-Engineered My $300 Smart Embroidery Machine with Python to Bypass the Subscription",
+      "category": "A",
+      "category_name": "Developer Success Story",
+      "virality_score": 93,
+      "analysis": "Hardware subscription lockouts spark massive developer outrage, making this builder journey hit the sweet spot of tech open-source triumph. The topic has strong cross-source verification with over 500 points on Hacker News and a trending GitHub repository. It delivers high reader engagement because it combines practical hardware-software hacking with a tangible anti-subscription victory.",
       "cross_source_signals": [
-        "HN: Show HN: Get your coding agent off ~2019 JavaScript (429 points)",
-        "GitHub: GoogleChrome/modern-web-guidance trending",
-        "GitHub: addyosmani/agent-skills (116k+ views/stars)"
+        "Hacker News: Show HN with 518 points and 182 comments",
+        "GitHub: simpsoka/zigzag repository trending",
+        "X/Twitter: Viral hardware hack thread"
+      ],
+      "developer_pain": "high",
+      "freshness": "breaking",
+      "money_angle": "Bypassing a $15/month forced hardware subscription using open-source Python code",
+      "story_angle": "When my connected embroidery machine demanded a monthly subscription just to send pattern files over USB, I spent the weekend sniffing packets and writing my own Python controller app.",
+      "suman_angle": "How I Bypassed My $300 Smart Machine\u2019s Subscription with a 90-Line Python Script",
+      "target_keywords": [
+        "python hardware hacking",
+        "reverse engineer smart device",
+        "bypass hardware subscription"
+      ],
+      "competing_articles": "Most IoT articles focus on basic ESP32 tutorials; this provides a real-world teardown and functional open-source replacement protocol.",
+      "real_story_evidence": [
+        {
+          "source": "Hacker News (Show HN)",
+          "title": "Show HN: My $300 embroidery machine needed a subscription, so I built my own app",
+          "url": "https://github.com/simpsoka/zigzag",
+          "what_to_cite": "Reference how a $300 machine forced a subscription lock and was replaced by the open-source Zigzag app."
+        }
+      ]
+    },
+    {
+      "category": "C",
+      "category_name": "AI Agents & Multi-Agent Workflows",
+      "topic": "Building a Modern JS Agent Skills Harness in Python for Google Antigravity & Gemini 4",
+      "virality_score": 90,
+      "analysis": "With Gemini 4 Hydrogen and Antigravity orchestrator breaking onto the scene alongside Addy Osmani's agent-skills repository, agentic coding workflows are shifting fast. Developers are struggling to prevent AI agents from generating obsolete ES6/2019 JavaScript patterns. Providing a practical 80-line Python harness that injects modern web primitive rules into multi-agent loops solves an immediate daily friction point.",
+      "cross_source_signals": [
+        "Hacker News: Gemini 4 Hydrogen discussion (414 points)",
+        "GitHub: addyosmani/agent-skills reaching 116k+ stars",
+        "Hacker News: Modern web guidance for coding agents (439 points)"
       ],
       "developer_pain": "high",
       "freshness": "breaking",
       "money_angle": "",
-      "story_angle": "I got tired of Claude appending 50-line polyfills for web features that browsers have natively supported since 2022, so I injected Chrome's web primitives into its skill context.",
-      "suman_angle": "How I forced Claude Code to write modern 2026 Web APIs instead of 2019 JavaScript (with config files)",
+      "story_angle": "I got tired of AI coding agents generating verbose 2019 JavaScript polyfills, so I built a Python orchestration harness using modern web primitives for agent skill injection.",
+      "suman_angle": "I Built an 80-Line Agent Skill Harness That Stopped Claude & Gemini from Writing Outdated JS",
       "target_keywords": [
-        "claude code agent skills",
-        "modern web guidance google chrome",
-        "vibe coding javascript primitives"
+        "agent skills python harness",
+        "gemini 4 hydrogen agent workflow",
+        "modern web primitives coding agent"
       ],
-      "competing_articles": "Most AI coding tips offer vague prompt advice; this article gives exact YAML/system prompt configs using Google Chrome's brand-new guidance repository.",
+      "competing_articles": "Existing agent tutorials talk theoretically about prompt engineering, whereas this provides an exact Python message-passing harness using production skill definitions.",
+      "real_story_evidence": []
+    },
+    {
+      "category": "H",
+      "category_name": "Tips & Tricks / Real Workflow",
+      "topic": "7 Modern Web Primitives That Saved Me 300 Lines of JavaScript in 2026",
+      "virality_score": 87,
+      "analysis": " Chrome's guidance on native browser primitives is trending heavily on Hacker News because devs are realizing how much bloated JS dependency code they can delete. This post taps directly into senior dev workflow optimizations by demonstrating quick, copyable code replacements for common web UI tasks. The practical snippets give it high bookmarking and sharing potential across Medium.",
+      "cross_source_signals": [
+        "Hacker News: Show HN on getting coding agents onto modern web primitives (439 points)",
+        "GitHub: GoogleChrome/modern-web-guidance release",
+        "Dev.to: Frontend optimization discussion"
+      ],
+      "developer_pain": "high",
+      "freshness": "fresh",
+      "money_angle": "",
+      "story_angle": "After auditing my web app dependencies, I replaced 300 lines of complex utility scripts with 7 native browser primitives introduced in modern standards.",
+      "suman_angle": "7 Modern Native Web API Replacements That Let Me Delete 300 Lines of JS",
+      "target_keywords": [
+        "modern web primitives tutorial",
+        "vanilla javascript tips 2026",
+        "native browser apis vs dependencies"
+      ],
+      "competing_articles": "Most JS tips posts list generic ES6 functions, while this highlights cutting-edge native browser features like native text highlights and popover attributes with exact refactoring code.",
       "real_story_evidence": [
         {
           "source": "Hacker News (Show HN)",
           "title": "Show HN: Get your coding agent off ~2019 JavaScript, onto modern web primitives",
           "url": "https://github.com/GoogleChrome/modern-web-guidance",
-          "what_to_cite": "Browser primitives like CSS.highlights now replace 50-line JS dependencies when guided by modern agent skills."
-        }
-      ]
-    },
-    {
-      "topic": "How I built a multi-market stock analysis & automated daily alert system in 90 lines of Python",
-      "category": "C",
-      "category_name": "AI Agents & Multi-Agent Workflows",
-      "virality_score": 89,
-      "analysis": "Automated financial intelligence agents are a major high-intent topic on Medium in 2026. Leveraging open-source multi-market stock automation trends, this post shows how to wire LLMs to multi-source market news and automated notification webhooks cleanly. It provides concrete code instead of high-level architecture slides.",
-      "cross_source_signals": [
-        "GitHub: ZhuLinsen/daily_stock_analysis trending (70k+ stars)",
-        "HN: High interest in zero-cost automated LLM cron jobs"
-      ],
-      "developer_pain": "high",
-      "freshness": "fresh",
-      "money_angle": "Replaces $100/mo financial newsletter/alert subscriptions with a zero-cost automated script.",
-      "story_angle": "I needed a daily portfolio briefing across global markets without spending 2 hours reading RSS feeds, so I built an LLM market-sentinel script.",
-      "suman_angle": "Building a zero-cost AI stock analysis agent in 90 lines of Python",
-      "target_keywords": [
-        "python ai stock analysis agent",
-        "daily stock analysis llm script",
-        "automated financial agent python"
-      ],
-      "competing_articles": "Existing posts explain theoretical agent concepts; this provides a copy-pasteable script that aggregates live market data and news into actionable daily briefs.",
-      "real_story_evidence": [
-        {
-          "source": "GitHub Trending",
-          "title": "ZhuLinsen/daily_stock_analysis",
-          "url": "https://github.com/ZhuLinsen/daily_stock_analysis",
-          "what_to_cite": "Using multi-source financial feeds paired with zero-cost scheduled LLM runners to output daily decision dashboards."
-        }
-      ]
-    },
-    {
-      "topic": "Why I replaced local AWS mock containers with the official AWS Emulator in my integration tests",
-      "category": "G",
-      "category_name": "Software Architecture Insight",
-      "virality_score": 86,
-      "analysis": "AWS recently released/trending toolings around lightweight AWS emulation have sparked intense backend engineering discussions. Developers dealing with slow LocalStack setups or flaky unit tests are actively seeking real production trade-offs. This post focuses on architectural shift, execution speed, and local dev parity.",
-      "cross_source_signals": [
-        "HN: AWS emulator discussion (848 points, 235 comments)",
-        "GitHub: aws/aws-emulator repository launch"
-      ],
-      "developer_pain": "high",
-      "freshness": "breaking",
-      "money_angle": "",
-      "story_angle": "After watching my CI pipeline spend 4 minutes just spinning up local cloud mocks, I tested the new AWS Emulator for our local integration setup.",
-      "suman_angle": "Why I migrated our integration suite to the new AWS Emulator (and cut test times by 60%)",
-      "target_keywords": [
-        "aws emulator local development",
-        "localstack alternatives aws",
-        "integration testing aws python"
-      ],
-      "competing_articles": "Most AWS testing guides default to standard docker-compose or LocalStack without comparing memory footprint and cold-start speed against the official AWS emulator.",
-      "real_story_evidence": [
-        {
-          "source": "Hacker News",
-          "title": "AWS emulator",
-          "url": "https://github.com/aws/aws-emulator",
-          "what_to_cite": "The 848-point HN discussion highlighting developers seeking lighter, faster alternatives for offline AWS service emulation."
+          "what_to_cite": "Cite how native browser primitives like CSS.highlights replace 50+ lines of DOM range manipulation."
         }
       ]
     }
@@ -134,9 +129,16 @@
   "success_stories": [
     {
       "source": "show_hn",
+      "title": "Show HN: My $300 embroidery machine needed a subscription, so I built my own app",
+      "url": "https://github.com/simpsoka/zigzag",
+      "signal": "518 points \u00b7 182 comments",
+      "snippet": "https://x.com/simpsoka/status/2115254318161182876"
+    },
+    {
+      "source": "show_hn",
       "title": "Show HN: HackerBooks \u2013 HackerTube, but for books mentioned on HN",
       "url": "https://hackerbooks.org",
-      "signal": "1869 points \u00b7 308 comments",
+      "signal": "1870 points \u00b7 308 comments",
       "snippet": "Saw Karpathy's HackerTube and wanted the same thing for books. So I had Claude build one (Opus 5.5). It's ~16.5k books that at least two different HN commenters brought up, from 2007 till now. Each bo"
     },
     {
@@ -145,20 +147,6 @@
       "url": "https://wikihack.netlify.app",
       "signal": "339 points \u00b7 104 comments",
       "snippet": "After seeing Karpathy's Hackertube and Hackerbooks, I just had to make Wikihack. I scraped all mentions of wikipedia on hackernews and ranked them, and turn them into a scrollable feed to make it a bi"
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: Get your coding agent off ~2019 JavaScript, onto modern web primitives",
-      "url": "https://github.com/GoogleChrome/modern-web-guidance",
-      "signal": "429 points \u00b7 142 comments",
-      "snippet": "Browsers natively handle a lot of what used to take 50 lines of JS (or a dependency): `CSS.highlights` for text range highlighting without <span>s everywhere, `<dialog>` and showModal() give you backd"
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: Every satellite that passed over any place this week, and its photos",
-      "url": "https://www.watched.earth",
-      "signal": "480 points \u00b7 82 comments",
-      "snippet": "hey HN, i built this because I'm a satellite nerd who was bored this past weekend. type in any place and it finds every satellite that passed over it in the last 7 days (SGP4 on the CelesTrak catalog,"
     },
     {
       "source": "show_hn",
@@ -171,8 +159,22 @@
       "source": "show_hn",
       "title": "Show HN: Subvocal \u2013 Talk to your computer without making noise",
       "url": "https://news.ycombinator.com/item?id=50340088",
-      "signal": "848 points \u00b7 395 comments",
+      "signal": "849 points \u00b7 395 comments",
       "snippet": "Hi HN, we're Aarush and Arnav from The Subvocal Company (YC F26) (https://subvocal.company/). We\u2019re building smart glasses that let you talk to your computer without talking out loud. You can mouth wo"
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Get your coding agent off ~2019 JavaScript, onto modern web primitives",
+      "url": "https://github.com/GoogleChrome/modern-web-guidance",
+      "signal": "439 points \u00b7 145 comments",
+      "snippet": "Browsers natively handle a lot of what used to take 50 lines of JS (or a dependency): `CSS.highlights` for text range highlighting without <span>s everywhere, `<dialog>` and showModal() give you backd"
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Every satellite that passed over any place this week, and its photos",
+      "url": "https://www.watched.earth",
+      "signal": "486 points \u00b7 85 comments",
+      "snippet": "hey HN, i built this because I'm a satellite nerd who was bored this past weekend. type in any place and it finds every satellite that passed over it in the last 7 days (SGP4 on the CelesTrak catalog,"
     },
     {
       "source": "show_hn",
@@ -180,13 +182,6 @@
       "url": "https://stealmybitcoin.com/",
       "signal": "627 points \u00b7 451 comments",
       "snippet": "Made this because I'm curious if anyone out there has figured out how to actually use this PHP RCE we spent the last few days panicking over. Have fun!"
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: Guitoro, a virtual guitar you strum with your keyboard",
-      "url": "https://guitoro.com/",
-      "signal": "573 points \u00b7 161 comments",
-      "snippet": "Guitoro is a free browser guitar using recordings of real instruments. You can strum with your keyboard, mouse, or touchscreen, choose acoustic, classical, electric guitar or bass, and see chord finge"
     },
     {
       "source": "show_hn",
@@ -204,17 +199,17 @@
     },
     {
       "source": "show_hn",
+      "title": "Show HN: Yogurt \u2013 Free, private, open-source alternative to Granola",
+      "url": "https://github.com/FrigadeHQ/yogurt",
+      "signal": "290 points \u00b7 111 comments",
+      "snippet": "Hey HN, I\u2019m Eric and I want to share an OSS project that I\u2019ve been building in my free time. Yogurt is a free, MIT licensed desktop app that uses on-device AI models to transcribe, summarize, and chat"
+    },
+    {
+      "source": "show_hn",
       "title": "Show HN: TitleArt \u2013 Make text like it's 1997",
       "url": "https://titleart.dvy.io/",
       "signal": "411 points \u00b7 82 comments",
       "snippet": ""
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: Yogurt \u2013 Free, private, open-source alternative to Granola",
-      "url": "https://github.com/FrigadeHQ/yogurt",
-      "signal": "241 points \u00b7 95 comments",
-      "snippet": "Hey HN, I\u2019m Eric and I want to share an OSS project that I\u2019ve been building in my free time. Yogurt is a free, MIT licensed desktop app that uses on-device AI models to transcribe, summarize, and chat"
     },
     {
       "source": "show_hn",
@@ -239,23 +234,30 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: I recreated Papers Please but you're deciding which YC startups to fund",
-      "url": "https://termsheetplease.com/",
-      "signal": "226 points \u00b7 86 comments",
-      "snippet": ""
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: Valencia, Spain in Sim City/Isometric View",
-      "url": "https://tinyvalencia.com/",
-      "signal": "247 points \u00b7 61 comments",
-      "snippet": ""
-    },
-    {
-      "source": "show_hn",
       "title": "Show HN: A Truly Modular Keyboard",
       "url": "https://github.com/notaroomba/keybytes",
       "signal": "320 points \u00b7 116 comments",
+      "snippet": ""
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Unfenced \u2013 Land for sale that borders public land",
+      "url": "https://unfenced.land/",
+      "signal": "319 points \u00b7 201 comments",
+      "snippet": ""
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: A working Nintendo in ~1GB of Qwen weights",
+      "url": "https://github.com/dbreunig/nesformer",
+      "signal": "298 points \u00b7 155 comments",
+      "snippet": ""
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: I recreated Papers Please but you're deciding which YC startups to fund",
+      "url": "https://termsheetplease.com/",
+      "signal": "239 points \u00b7 93 comments",
       "snippet": ""
     },
     {
@@ -264,13 +266,6 @@
       "url": "https://github.com/hedgerow-dev/coldframe",
       "signal": "289 points \u00b7 70 comments",
       "snippet": "I built Coldframe, a honeypot that pretends to be a supermarket refrigeration controller. Inspired by the events on industrial fridge installations in the past weeks, I wanted to see what people would"
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: Unfenced \u2013 Land for sale that borders public land",
-      "url": "https://unfenced.land/",
-      "signal": "319 points \u00b7 201 comments",
-      "snippet": ""
     }
   ]
 }
