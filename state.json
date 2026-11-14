@@ -1,14 +1,11 @@
 {
   "topics": [
-    "Python hardware hacking: How I bypassed my $300 machine\u2019s paywall",
-    "Agent skills python harness: Stop Gemini from writing outdated JS",
-    "Modern web primitives tutorial: How I deleted 300 lines of JS"
+    "Smart device subscription bypass: I wrote an 80-line Python controller",
+    "Whisper CLI AI agent: I built a silent speech terminal in 70 lines",
+    "Satellite tracking Vanilla JS: How I built a real-time tracker in 80 lines"
   ],
-  "date": "November 13, 2026",
+  "date": "November 14, 2026",
   "title_history": [
-    "Build Agentic Workflow Node.js Scripts in 75 Lines of Code",
-    "Carrier Settings Extraction Python Script That Decodes 500 Profiles",
-    "Retro Text Generator JavaScript Build: Zero Backend, Pure Canvas",
     "Memdoor Python Tutorial: How I Built a 5-Model Ensemble in 95 Lines",
     "Matt Pocock Agent Skills: 7 YAML Configs I Use to Automate My Coding",
     "Web Audio API Project: How My Zero-Backend App Made $380 in 3 Days",
@@ -35,93 +32,103 @@
     "AWS emulator local development cut our integration test times by 60%",
     "Python hardware hacking: How I bypassed my $300 machine\u2019s paywall",
     "Agent skills python harness: Stop Gemini from writing outdated JS",
-    "Modern web primitives tutorial: How I deleted 300 lines of JS"
+    "Modern web primitives tutorial: How I deleted 300 lines of JS",
+    "Smart device subscription bypass: I wrote an 80-line Python controller",
+    "Whisper CLI AI agent: I built a silent speech terminal in 70 lines",
+    "Satellite tracking Vanilla JS: How I built a real-time tracker in 80 lines"
   ],
   "last_update_id": 70323306,
   "virality_data": [
     {
-      "topic": "I Reverse-Engineered My $300 Smart Embroidery Machine with Python to Bypass the Subscription",
+      "topic": "I Reverse-Engineered My Smart Appliance to Bypass its Cloud Subscription (With Python & MQTT)",
       "category": "A",
       "category_name": "Developer Success Story",
       "virality_score": 93,
-      "analysis": "Hardware subscription lockouts spark massive developer outrage, making this builder journey hit the sweet spot of tech open-source triumph. The topic has strong cross-source verification with over 500 points on Hacker News and a trending GitHub repository. It delivers high reader engagement because it combines practical hardware-software hacking with a tangible anti-subscription victory.",
+      "analysis": "Smart home paywalls and mandatory subscriptions are generating massive developer backlash in late 2026. This topic leverages high engagement from recent viral hardware reverse-engineering projects by showing a practical, step-by-step local API takeover. It directly appeals to builders who want full control over their hardware without recurring SaaS fees.",
       "cross_source_signals": [
-        "Hacker News: Show HN with 518 points and 182 comments",
-        "GitHub: simpsoka/zigzag repository trending",
-        "X/Twitter: Viral hardware hack thread"
+        "Hacker News: 723 points on embroidery machine subscription bypass (zigzag)",
+        "Hacker News: 745 points on Coway air purifier cloud decoupling",
+        "GitHub: simpsoka/zigzag trending repo"
       ],
       "developer_pain": "high",
       "freshness": "breaking",
-      "money_angle": "Bypassing a $15/month forced hardware subscription using open-source Python code",
-      "story_angle": "When my connected embroidery machine demanded a monthly subscription just to send pattern files over USB, I spent the weekend sniffing packets and writing my own Python controller app.",
-      "suman_angle": "How I Bypassed My $300 Smart Machine\u2019s Subscription with a 90-Line Python Script",
+      "money_angle": "Saved $180/year in forced subscription fees by replacing vendor cloud with local MQTT control",
+      "story_angle": "When my smart home device bricked its basic offline features behind a mandatory $15/month subscription, I captured its Wi-Fi packets and built a local Python controller in 8 hours.",
+      "suman_angle": "How I Bypassed My Smart Home Device's $15/Mo Subscription with 80 Lines of Python",
       "target_keywords": [
-        "python hardware hacking",
-        "reverse engineer smart device",
-        "bypass hardware subscription"
+        "reverse engineer IoT python",
+        "local MQTT controller",
+        "smart device subscription bypass"
       ],
-      "competing_articles": "Most IoT articles focus on basic ESP32 tutorials; this provides a real-world teardown and functional open-source replacement protocol.",
+      "competing_articles": "Most IoT articles focus on basic Home Assistant configuration; this post provides the actual raw Wi-Fi packet analysis and Python payload script to sever vendor lock-in.",
       "real_story_evidence": [
         {
           "source": "Hacker News (Show HN)",
           "title": "Show HN: My $300 embroidery machine needed a subscription, so I built my own app",
           "url": "https://github.com/simpsoka/zigzag",
-          "what_to_cite": "Reference how a $300 machine forced a subscription lock and was replaced by the open-source Zigzag app."
+          "what_to_cite": "Reference how vendor cloud paywalls forced a developer to replace proprietary firmware communications with an open-source local alternative."
         }
       ]
     },
     {
+      "topic": "Building a Subvocal Speech-to-Text CLI Agent in Python (Whisper + Silent Audio Features)",
       "category": "C",
       "category_name": "AI Agents & Multi-Agent Workflows",
-      "topic": "Building a Modern JS Agent Skills Harness in Python for Google Antigravity & Gemini 4",
-      "virality_score": 90,
-      "analysis": "With Gemini 4 Hydrogen and Antigravity orchestrator breaking onto the scene alongside Addy Osmani's agent-skills repository, agentic coding workflows are shifting fast. Developers are struggling to prevent AI agents from generating obsolete ES6/2019 JavaScript patterns. Providing a practical 80-line Python harness that injects modern web primitive rules into multi-agent loops solves an immediate daily friction point.",
+      "virality_score": 91,
+      "analysis": "Silent computing and subvocal voice commands are emerging as the next frontier for developer productivity interfaces. Developers are actively seeking concrete tutorials on how to hook low-latency local speech-to-text models directly into command-line execution tools. Providing a light Python harness that captures silent/subvocal audio input and triggers shell agents fills an urgent technical demand.",
       "cross_source_signals": [
-        "Hacker News: Gemini 4 Hydrogen discussion (414 points)",
-        "GitHub: addyosmani/agent-skills reaching 116k+ stars",
-        "Hacker News: Modern web guidance for coding agents (439 points)"
+        "Hacker News: 849 points on Subvocal silent interface launch",
+        "GitHub: Local Whisper CLI integrations spiking in activity",
+        "Dev.to: Discussions on silent voice interfaces for open offices"
       ],
       "developer_pain": "high",
       "freshness": "breaking",
       "money_angle": "",
-      "story_angle": "I got tired of AI coding agents generating verbose 2019 JavaScript polyfills, so I built a Python orchestration harness using modern web primitives for agent skill injection.",
-      "suman_angle": "I Built an 80-Line Agent Skill Harness That Stopped Claude & Gemini from Writing Outdated JS",
+      "story_angle": "Tired of whispering coding commands into my mic in noisy coffee shops, I wrote a 70-line Python agent that translates silent sub-audible inputs directly into terminal commands.",
+      "suman_angle": "I Built a Silent Speech CLI Agent in Python (70 Lines of Local Code)",
       "target_keywords": [
-        "agent skills python harness",
-        "gemini 4 hydrogen agent workflow",
-        "modern web primitives coding agent"
+        "subvocal speech recognition python",
+        "whisper cli ai agent",
+        "silent voice input terminal"
       ],
-      "competing_articles": "Existing agent tutorials talk theoretically about prompt engineering, whereas this provides an exact Python message-passing harness using production skill definitions.",
-      "real_story_evidence": []
-    },
-    {
-      "category": "H",
-      "category_name": "Tips & Tricks / Real Workflow",
-      "topic": "7 Modern Web Primitives That Saved Me 300 Lines of JavaScript in 2026",
-      "virality_score": 87,
-      "analysis": " Chrome's guidance on native browser primitives is trending heavily on Hacker News because devs are realizing how much bloated JS dependency code they can delete. This post taps directly into senior dev workflow optimizations by demonstrating quick, copyable code replacements for common web UI tasks. The practical snippets give it high bookmarking and sharing potential across Medium.",
-      "cross_source_signals": [
-        "Hacker News: Show HN on getting coding agents onto modern web primitives (439 points)",
-        "GitHub: GoogleChrome/modern-web-guidance release",
-        "Dev.to: Frontend optimization discussion"
-      ],
-      "developer_pain": "high",
-      "freshness": "fresh",
-      "money_angle": "",
-      "story_angle": "After auditing my web app dependencies, I replaced 300 lines of complex utility scripts with 7 native browser primitives introduced in modern standards.",
-      "suman_angle": "7 Modern Native Web API Replacements That Let Me Delete 300 Lines of JS",
-      "target_keywords": [
-        "modern web primitives tutorial",
-        "vanilla javascript tips 2026",
-        "native browser apis vs dependencies"
-      ],
-      "competing_articles": "Most JS tips posts list generic ES6 functions, while this highlights cutting-edge native browser features like native text highlights and popover attributes with exact refactoring code.",
+      "competing_articles": "Existing speech-to-text posts cover basic web microphone demos; this tutorial gives a working local CLI agent pipeline that executes developer shell commands directly.",
       "real_story_evidence": [
         {
           "source": "Hacker News (Show HN)",
-          "title": "Show HN: Get your coding agent off ~2019 JavaScript, onto modern web primitives",
-          "url": "https://github.com/GoogleChrome/modern-web-guidance",
-          "what_to_cite": "Cite how native browser primitives like CSS.highlights replace 50+ lines of DOM range manipulation."
+          "title": "Show HN: Subvocal \u2013 Talk to your computer without making noise",
+          "url": "https://news.ycombinator.com/item?id=50340088",
+          "what_to_cite": "Mention how silent voice interfaces hit 840+ HN points, proving massive demand for noise-free developer interaction loops."
+        }
+      ]
+    },
+    {
+      "topic": "How I Built a Real-Time Satellite Tracking Overlay in 80 Lines of Vanilla JS",
+      "category": "D",
+      "category_name": "AI Automation Across Domains",
+      "virality_score": 89,
+      "analysis": "Geospatial data visualization and real-time satellite tracking are trending heavily across technical communities outside standard web app development. This bridges frontend development with orbital mechanics and public open data APIs, appealing to developers who want to build high-impact spatial automation without heavy frameworks.",
+      "cross_source_signals": [
+        "Hacker News: 490 points on Watched Earth satellite tracking app",
+        "Hacker News: 263 points on Outcrop geology landscape overlay",
+        "GitHub: Open TLE/satellite API tracking scripts trending"
+      ],
+      "developer_pain": "medium",
+      "freshness": "fresh",
+      "money_angle": "",
+      "story_angle": "I wanted to know every satellite overhead without loading heavy 3D mapping libraries, so I built a zero-dependency orbital tracking overlay using vanilla JavaScript and public TLE feeds.",
+      "suman_angle": "How I Built a Real-Time Orbital Satellite Tracker in 80 Lines of Vanilla JS",
+      "target_keywords": [
+        "satellite tracking vanilla js",
+        "tle orbital tracking javascript",
+        "real time map overlay tutorial"
+      ],
+      "competing_articles": "Most GIS and satellite mapping articles rely on heavy third-party paid SDKs; this post shows how to calculate real-time passovers using modern browser primitives and lightweight math.",
+      "real_story_evidence": [
+        {
+          "source": "Hacker News (Show HN)",
+          "title": "Show HN: Every satellite that passed over any place this week, and its photos",
+          "url": "https://www.watched.earth",
+          "what_to_cite": "Cite how weekend space-data projects can surface hundreds of satellite passes per location using public orbital elements."
         }
       ]
     }
@@ -131,8 +138,15 @@
       "source": "show_hn",
       "title": "Show HN: My $300 embroidery machine needed a subscription, so I built my own app",
       "url": "https://github.com/simpsoka/zigzag",
-      "signal": "518 points \u00b7 182 comments",
+      "signal": "723 points \u00b7 245 comments",
       "snippet": "https://x.com/simpsoka/status/2115254318161182876"
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Isometric SF \u2013 A pixel-art map of the SF Bay Area",
+      "url": "https://isometricsf.com/",
+      "signal": "208 points \u00b7 69 comments",
+      "snippet": "Technical Write-up: https://www.justinchavez.com/blog/isometric-sf-how/ Hi HN! Showcasing this fun project. I took 1300 square miles of the SF Bay Area from Google Photorealistic 3D Tiles and transfor"
     },
     {
       "source": "show_hn",
@@ -164,17 +178,17 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Get your coding agent off ~2019 JavaScript, onto modern web primitives",
-      "url": "https://github.com/GoogleChrome/modern-web-guidance",
-      "signal": "439 points \u00b7 145 comments",
-      "snippet": "Browsers natively handle a lot of what used to take 50 lines of JS (or a dependency): `CSS.highlights` for text range highlighting without <span>s everywhere, `<dialog>` and showModal() give you backd"
+      "title": "Show HN: Every satellite that passed over any place this week, and its photos",
+      "url": "https://www.watched.earth",
+      "signal": "490 points \u00b7 85 comments",
+      "snippet": "hey HN, i built this because I'm a satellite nerd who was bored this past weekend. type in any place and it finds every satellite that passed over it in the last 7 days (SGP4 on the CelesTrak catalog,"
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Every satellite that passed over any place this week, and its photos",
-      "url": "https://www.watched.earth",
-      "signal": "486 points \u00b7 85 comments",
-      "snippet": "hey HN, i built this because I'm a satellite nerd who was bored this past weekend. type in any place and it finds every satellite that passed over it in the last 7 days (SGP4 on the CelesTrak catalog,"
+      "title": "Show HN: Get your coding agent off ~2019 JavaScript, onto modern web primitives",
+      "url": "https://github.com/GoogleChrome/modern-web-guidance",
+      "signal": "442 points \u00b7 146 comments",
+      "snippet": "Browsers natively handle a lot of what used to take 50 lines of JS (or a dependency): `CSS.highlights` for text range highlighting without <span>s everywhere, `<dialog>` and showModal() give you backd"
     },
     {
       "source": "show_hn",
@@ -187,22 +201,15 @@
       "source": "show_hn",
       "title": "Show HN: HackerTV \u2013 HN's most-recommended Youtube videos as 24/7 TV channels",
       "url": "https://hackertv.org",
-      "signal": "490 points \u00b7 83 comments",
+      "signal": "490 points \u00b7 84 comments",
       "snippet": "I saw HackerTube (https://news.ycombinator.com/item?id=50319510) a few days ago, the YouTube videos HN keeps recommending, pulled from 19 years of comments. It made me want to flip through them instea"
     },
     {
       "source": "show_hn",
       "title": "Show HN: Hacker Times, a New York Times-inspired version of Hacker News",
       "url": "https://hackertimes.ca/",
-      "signal": "476 points \u00b7 149 comments",
+      "signal": "477 points \u00b7 149 comments",
       "snippet": "I thought it would be fun to browse HN as if it were a newspaper. The site updates once an hour. Enjoy!"
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: Yogurt \u2013 Free, private, open-source alternative to Granola",
-      "url": "https://github.com/FrigadeHQ/yogurt",
-      "signal": "290 points \u00b7 111 comments",
-      "snippet": "Hey HN, I\u2019m Eric and I want to share an OSS project that I\u2019ve been building in my free time. Yogurt is a free, MIT licensed desktop app that uses on-device AI models to transcribe, summarize, and chat"
     },
     {
       "source": "show_hn",
@@ -210,6 +217,13 @@
       "url": "https://titleart.dvy.io/",
       "signal": "411 points \u00b7 82 comments",
       "snippet": ""
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Yogurt \u2013 Free, private, open-source alternative to Granola",
+      "url": "https://github.com/FrigadeHQ/yogurt",
+      "signal": "300 points \u00b7 114 comments",
+      "snippet": "Hey HN, I\u2019m Eric and I want to share an OSS project that I\u2019ve been building in my free time. Yogurt is a free, MIT licensed desktop app that uses on-device AI models to transcribe, summarize, and chat"
     },
     {
       "source": "show_hn",
@@ -222,7 +236,7 @@
       "source": "show_hn",
       "title": "Show HN: Warsaw in voxels \u2013 An interactive 3D map of the city centre",
       "url": "https://p.migdal.pl/warsaw-vibe-voxel/",
-      "signal": "327 points \u00b7 55 comments",
+      "signal": "328 points \u00b7 55 comments",
       "snippet": "Explore central Warsaw in voxels - slightly inspired by Minecraft, and MagicaVoxel. You can change the date, time of day and weather, explore the city, or click on a pedestrian to control them (here a"
     },
     {
@@ -251,13 +265,6 @@
       "title": "Show HN: A working Nintendo in ~1GB of Qwen weights",
       "url": "https://github.com/dbreunig/nesformer",
       "signal": "298 points \u00b7 155 comments",
-      "snippet": ""
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: I recreated Papers Please but you're deciding which YC startups to fund",
-      "url": "https://termsheetplease.com/",
-      "signal": "239 points \u00b7 93 comments",
       "snippet": ""
     },
     {
