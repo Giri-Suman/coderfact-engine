@@ -1,14 +1,11 @@
 {
   "topics": [
-    "Smart device subscription bypass: I wrote an 80-line Python controller",
-    "Whisper CLI AI agent: I built a silent speech terminal in 70 lines",
-    "Satellite tracking Vanilla JS: How I built a real-time tracker in 80 lines"
+    "DeepSeek V3 Jax: I Built the Architecture in 200 Lines of Code",
+    "Chrome DevTools MCP: Stop Copy-Pasting Debug Errors to Your AI Agent",
+    "Bypass Hardware Subscriptions: How I Built My Own Controller App"
   ],
-  "date": "November 14, 2026",
+  "date": "November 15, 2026",
   "title_history": [
-    "Memdoor Python Tutorial: How I Built a 5-Model Ensemble in 95 Lines",
-    "Matt Pocock Agent Skills: 7 YAML Configs I Use to Automate My Coding",
-    "Web Audio API Project: How My Zero-Backend App Made $380 in 3 Days",
     "Vibe Coding Tutorial: How I Built a 16k Book App in 4 Hours",
     "Python AI Agent Tool Harness: I Added Screen Overlay Skills in 85 Lines",
     "Go JSON v2 Benchmark: Memory Allocations and Production Trade-Offs",
@@ -35,100 +32,103 @@
     "Modern web primitives tutorial: How I deleted 300 lines of JS",
     "Smart device subscription bypass: I wrote an 80-line Python controller",
     "Whisper CLI AI agent: I built a silent speech terminal in 70 lines",
-    "Satellite tracking Vanilla JS: How I built a real-time tracker in 80 lines"
+    "Satellite tracking Vanilla JS: How I built a real-time tracker in 80 lines",
+    "DeepSeek V3 Jax: I Built the Architecture in 200 Lines of Code",
+    "Chrome DevTools MCP: Stop Copy-Pasting Debug Errors to Your AI Agent",
+    "Bypass Hardware Subscriptions: How I Built My Own Controller App"
   ],
   "last_update_id": 70323306,
   "virality_data": [
     {
-      "topic": "I Reverse-Engineered My Smart Appliance to Bypass its Cloud Subscription (With Python & MQTT)",
-      "category": "A",
-      "category_name": "Developer Success Story",
-      "virality_score": 93,
-      "analysis": "Smart home paywalls and mandatory subscriptions are generating massive developer backlash in late 2026. This topic leverages high engagement from recent viral hardware reverse-engineering projects by showing a practical, step-by-step local API takeover. It directly appeals to builders who want full control over their hardware without recurring SaaS fees.",
+      "topic": "Implementing DeepSeek V3 architecture in Jax for local experimentation",
+      "category": "C",
+      "category_name": "AI Agents & Multi-Agent Workflows",
+      "virality_score": 92,
+      "analysis": "DeepSeek V3 is currently the hottest topic in the LLM space due to its efficiency. The Show HN signal is massive, and providing a condensed Jax implementation moves the conversation from theoretical to actionable. It targets the 'hardcore' dev audience that wants to understand the weights and architecture rather than just calling an API.",
       "cross_source_signals": [
-        "Hacker News: 723 points on embroidery machine subscription bypass (zigzag)",
-        "Hacker News: 745 points on Coway air purifier cloud decoupling",
-        "GitHub: simpsoka/zigzag trending repo"
+        "Hacker News: DeepSeek V3 in Jax trending (233 pts)",
+        "GitHub: Vaibhaav-Tiwari/deepseek-v3-jax gaining stars",
+        "X/Twitter: High volume of 'DeepSeek V3 vs GPT-4o' discussions"
       ],
       "developer_pain": "high",
       "freshness": "breaking",
-      "money_angle": "Saved $180/year in forced subscription fees by replacing vendor cloud with local MQTT control",
-      "story_angle": "When my smart home device bricked its basic offline features behind a mandatory $15/month subscription, I captured its Wi-Fi packets and built a local Python controller in 8 hours.",
-      "suman_angle": "How I Bypassed My Smart Home Device's $15/Mo Subscription with 80 Lines of Python",
+      "money_angle": "",
+      "story_angle": "Suman tried to run a full V3 model locally and crashed his system, leading him to implement a stripped-down version in Jax to understand the core mechanism.",
+      "suman_angle": "DeepSeek V3 in 200 Lines: How I implemented the architecture in Jax to understand its efficiency",
       "target_keywords": [
-        "reverse engineer IoT python",
-        "local MQTT controller",
-        "smart device subscription bypass"
+        "DeepSeek V3 Jax",
+        "implement LLM from scratch",
+        "Jax AI tutorial"
       ],
-      "competing_articles": "Most IoT articles focus on basic Home Assistant configuration; this post provides the actual raw Wi-Fi packet analysis and Python payload script to sever vendor lock-in.",
+      "competing_articles": "Most articles are high-level summaries of the whitepaper; this provides a working, minimal implementation.",
+      "real_story_evidence": [
+        {
+          "source": "Hacker News (Show HN)",
+          "title": "Show HN: DeepSeek V3 in ~200 lines of pure Jax",
+          "url": "https://github.com/Vaibhaav-Tiwari/deepseek-v3-jax",
+          "what_to_cite": "The fact that the core architecture can be represented in approximately 200 lines of Jax code."
+        }
+      ]
+    },
+    {
+      "topic": "Integrating Chrome DevTools MCP into AI coding agents for real-time debugging",
+      "category": "B",
+      "category_name": "Vibe Coding / AI-Assisted Workflow",
+      "virality_score": 85,
+      "analysis": "The Model Context Protocol (MCP) is the new standard for agent tools in 2026. Showing a coding agent that can actually 'see' the Chrome DevTools console and network tab solves the biggest pain point in vibe coding: the 'guess-and-check' loop. High search volume for MCP implementations.",
+      "cross_source_signals": [
+        "GitHub: ChromeDevTools/chrome-devtools-mcp trending",
+        "Hacker News: Discussions on 'modern web primitives' for agents",
+        "Reddit r/Cursor: Users asking for better browser integration"
+      ],
+      "developer_pain": "high",
+      "freshness": "breaking",
+      "money_angle": "",
+      "story_angle": "Suman was tired of copy-pasting console errors into Claude, so he connected his agent directly to the browser's internals.",
+      "suman_angle": "Stop Copy-Pasting Errors: I gave my AI agent access to Chrome DevTools using MCP",
+      "target_keywords": [
+        "Chrome DevTools MCP",
+        "AI coding agent workflow",
+        "Model Context Protocol tutorial"
+      ],
+      "competing_articles": "Most MCP guides are basic file-system examples; this is a high-value, specific integration for frontend devs.",
+      "real_story_evidence": [
+        {
+          "source": "GitHub",
+          "title": "ChromeDevTools/chrome-devtools-mcp Chrome DevTools for coding agents",
+          "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+          "what_to_cite": "The utility of providing coding agents direct access to the Chrome DevTools protocol for automated debugging."
+        }
+      ]
+    },
+    {
+      "topic": "Building a custom app to replace a hardware subscription",
+      "category": "E",
+      "category_name": "Money / Income Story",
+      "virality_score": 89,
+      "analysis": "The 'anti-subscription' narrative is incredibly viral on Medium. Combining a hardware hack with a software solution creates a strong 'builder' story. It bridges the gap between a personal annoyance and a technical victory, which drives high engagement and claps.",
+      "cross_source_signals": [
+        "Hacker News: 'My $300 embroidery machine needed a subscription' (740 pts)",
+        "GitHub: zigzag repo trending for hardware-software bypass",
+        "Reddit r/selfhosted: High interest in removing vendor lock-in"
+      ],
+      "developer_pain": "medium",
+      "freshness": "fresh",
+      "money_angle": "Saving monthly subscription fees and potential for open-sourcing a paid alternative",
+      "story_angle": "Suman bought a piece of hardware only to find it locked behind a monthly paywall, triggering a weekend of reverse-engineering.",
+      "suman_angle": "I refused to pay a monthly subscription for my $300 hardware, so I built my own controller app",
+      "target_keywords": [
+        "bypass hardware subscription",
+        "reverse engineering tutorial",
+        "build custom hardware app"
+      ],
+      "competing_articles": "Most 'income' stories are about SaaS; this is a 'savings' story based on a tangible physical object, which is more refreshing.",
       "real_story_evidence": [
         {
           "source": "Hacker News (Show HN)",
           "title": "Show HN: My $300 embroidery machine needed a subscription, so I built my own app",
           "url": "https://github.com/simpsoka/zigzag",
-          "what_to_cite": "Reference how vendor cloud paywalls forced a developer to replace proprietary firmware communications with an open-source local alternative."
-        }
-      ]
-    },
-    {
-      "topic": "Building a Subvocal Speech-to-Text CLI Agent in Python (Whisper + Silent Audio Features)",
-      "category": "C",
-      "category_name": "AI Agents & Multi-Agent Workflows",
-      "virality_score": 91,
-      "analysis": "Silent computing and subvocal voice commands are emerging as the next frontier for developer productivity interfaces. Developers are actively seeking concrete tutorials on how to hook low-latency local speech-to-text models directly into command-line execution tools. Providing a light Python harness that captures silent/subvocal audio input and triggers shell agents fills an urgent technical demand.",
-      "cross_source_signals": [
-        "Hacker News: 849 points on Subvocal silent interface launch",
-        "GitHub: Local Whisper CLI integrations spiking in activity",
-        "Dev.to: Discussions on silent voice interfaces for open offices"
-      ],
-      "developer_pain": "high",
-      "freshness": "breaking",
-      "money_angle": "",
-      "story_angle": "Tired of whispering coding commands into my mic in noisy coffee shops, I wrote a 70-line Python agent that translates silent sub-audible inputs directly into terminal commands.",
-      "suman_angle": "I Built a Silent Speech CLI Agent in Python (70 Lines of Local Code)",
-      "target_keywords": [
-        "subvocal speech recognition python",
-        "whisper cli ai agent",
-        "silent voice input terminal"
-      ],
-      "competing_articles": "Existing speech-to-text posts cover basic web microphone demos; this tutorial gives a working local CLI agent pipeline that executes developer shell commands directly.",
-      "real_story_evidence": [
-        {
-          "source": "Hacker News (Show HN)",
-          "title": "Show HN: Subvocal \u2013 Talk to your computer without making noise",
-          "url": "https://news.ycombinator.com/item?id=50340088",
-          "what_to_cite": "Mention how silent voice interfaces hit 840+ HN points, proving massive demand for noise-free developer interaction loops."
-        }
-      ]
-    },
-    {
-      "topic": "How I Built a Real-Time Satellite Tracking Overlay in 80 Lines of Vanilla JS",
-      "category": "D",
-      "category_name": "AI Automation Across Domains",
-      "virality_score": 89,
-      "analysis": "Geospatial data visualization and real-time satellite tracking are trending heavily across technical communities outside standard web app development. This bridges frontend development with orbital mechanics and public open data APIs, appealing to developers who want to build high-impact spatial automation without heavy frameworks.",
-      "cross_source_signals": [
-        "Hacker News: 490 points on Watched Earth satellite tracking app",
-        "Hacker News: 263 points on Outcrop geology landscape overlay",
-        "GitHub: Open TLE/satellite API tracking scripts trending"
-      ],
-      "developer_pain": "medium",
-      "freshness": "fresh",
-      "money_angle": "",
-      "story_angle": "I wanted to know every satellite overhead without loading heavy 3D mapping libraries, so I built a zero-dependency orbital tracking overlay using vanilla JavaScript and public TLE feeds.",
-      "suman_angle": "How I Built a Real-Time Orbital Satellite Tracker in 80 Lines of Vanilla JS",
-      "target_keywords": [
-        "satellite tracking vanilla js",
-        "tle orbital tracking javascript",
-        "real time map overlay tutorial"
-      ],
-      "competing_articles": "Most GIS and satellite mapping articles rely on heavy third-party paid SDKs; this post shows how to calculate real-time passovers using modern browser primitives and lightweight math.",
-      "real_story_evidence": [
-        {
-          "source": "Hacker News (Show HN)",
-          "title": "Show HN: Every satellite that passed over any place this week, and its photos",
-          "url": "https://www.watched.earth",
-          "what_to_cite": "Cite how weekend space-data projects can surface hundreds of satellite passes per location using public orbital elements."
+          "what_to_cite": "The specific scenario of a $300 machine requiring a subscription and the creation of the 'zigzag' app to bypass it."
         }
       ]
     }
@@ -136,17 +136,10 @@
   "success_stories": [
     {
       "source": "show_hn",
-      "title": "Show HN: My $300 embroidery machine needed a subscription, so I built my own app",
-      "url": "https://github.com/simpsoka/zigzag",
-      "signal": "723 points \u00b7 245 comments",
-      "snippet": "https://x.com/simpsoka/status/2115254318161182876"
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: Isometric SF \u2013 A pixel-art map of the SF Bay Area",
-      "url": "https://isometricsf.com/",
-      "signal": "208 points \u00b7 69 comments",
-      "snippet": "Technical Write-up: https://www.justinchavez.com/blog/isometric-sf-how/ Hi HN! Showcasing this fun project. I took 1300 square miles of the SF Bay Area from Google Photorealistic 3D Tiles and transfor"
+      "title": "Show HN: DeepSeek V3 in ~200 lines of pure Jax",
+      "url": "https://github.com/Vaibhaav-Tiwari/deepseek-v3-jax",
+      "signal": "233 points \u00b7 21 comments",
+      "snippet": ""
     },
     {
       "source": "show_hn",
@@ -161,6 +154,13 @@
       "url": "https://wikihack.netlify.app",
       "signal": "339 points \u00b7 104 comments",
       "snippet": "After seeing Karpathy's Hackertube and Hackerbooks, I just had to make Wikihack. I scraped all mentions of wikipedia on hackernews and ranked them, and turn them into a scrollable feed to make it a bi"
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: My $300 embroidery machine needed a subscription, so I built my own app",
+      "url": "https://github.com/simpsoka/zigzag",
+      "signal": "740 points \u00b7 253 comments",
+      "snippet": "https://x.com/simpsoka/status/2115254318161182876"
     },
     {
       "source": "show_hn",
@@ -180,15 +180,8 @@
       "source": "show_hn",
       "title": "Show HN: Every satellite that passed over any place this week, and its photos",
       "url": "https://www.watched.earth",
-      "signal": "490 points \u00b7 85 comments",
+      "signal": "493 points \u00b7 87 comments",
       "snippet": "hey HN, i built this because I'm a satellite nerd who was bored this past weekend. type in any place and it finds every satellite that passed over it in the last 7 days (SGP4 on the CelesTrak catalog,"
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: Get your coding agent off ~2019 JavaScript, onto modern web primitives",
-      "url": "https://github.com/GoogleChrome/modern-web-guidance",
-      "signal": "442 points \u00b7 146 comments",
-      "snippet": "Browsers natively handle a lot of what used to take 50 lines of JS (or a dependency): `CSS.highlights` for text range highlighting without <span>s everywhere, `<dialog>` and showModal() give you backd"
     },
     {
       "source": "show_hn",
@@ -199,9 +192,16 @@
     },
     {
       "source": "show_hn",
+      "title": "Show HN: Get your coding agent off ~2019 JavaScript, onto modern web primitives",
+      "url": "https://github.com/GoogleChrome/modern-web-guidance",
+      "signal": "445 points \u00b7 146 comments",
+      "snippet": "Browsers natively handle a lot of what used to take 50 lines of JS (or a dependency): `CSS.highlights` for text range highlighting without <span>s everywhere, `<dialog>` and showModal() give you backd"
+    },
+    {
+      "source": "show_hn",
       "title": "Show HN: HackerTV \u2013 HN's most-recommended Youtube videos as 24/7 TV channels",
       "url": "https://hackertv.org",
-      "signal": "490 points \u00b7 84 comments",
+      "signal": "491 points \u00b7 84 comments",
       "snippet": "I saw HackerTube (https://news.ycombinator.com/item?id=50319510) a few days ago, the YouTube videos HN keeps recommending, pulled from 19 years of comments. It made me want to flip through them instea"
     },
     {
@@ -220,17 +220,17 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Yogurt \u2013 Free, private, open-source alternative to Granola",
-      "url": "https://github.com/FrigadeHQ/yogurt",
-      "signal": "300 points \u00b7 114 comments",
-      "snippet": "Hey HN, I\u2019m Eric and I want to share an OSS project that I\u2019ve been building in my free time. Yogurt is a free, MIT licensed desktop app that uses on-device AI models to transcribe, summarize, and chat"
-    },
-    {
-      "source": "show_hn",
       "title": "Show HN: Llmspeed \u2013 feel how fast a local LLM runs before you buy the hardware",
       "url": "https://llmspeed.dev/",
       "signal": "331 points \u00b7 86 comments",
       "snippet": ""
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Yogurt \u2013 Free, private, open-source alternative to Granola",
+      "url": "https://github.com/FrigadeHQ/yogurt",
+      "signal": "303 points \u00b7 115 comments",
+      "snippet": "Hey HN, I\u2019m Eric and I want to share an OSS project that I\u2019ve been building in my free time. Yogurt is a free, MIT licensed desktop app that uses on-device AI models to transcribe, summarize, and chat"
     },
     {
       "source": "show_hn",
@@ -255,10 +255,10 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Unfenced \u2013 Land for sale that borders public land",
-      "url": "https://unfenced.land/",
-      "signal": "319 points \u00b7 201 comments",
-      "snippet": ""
+      "title": "Show HN: Isometric SF \u2013 A pixel-art map of the SF Bay Area",
+      "url": "https://isometricsf.com/",
+      "signal": "251 points \u00b7 74 comments",
+      "snippet": "Technical Write-up: https://www.justinchavez.com/blog/isometric-sf-how/ Hi HN! Showcasing this fun project. I took 1300 square miles of the SF Bay Area from Google Photorealistic 3D Tiles and transfor"
     },
     {
       "source": "show_hn",
@@ -271,7 +271,7 @@
       "source": "show_hn",
       "title": "Show HN: Coldframe, a honeypot that poses as a supermarket fridge controller",
       "url": "https://github.com/hedgerow-dev/coldframe",
-      "signal": "289 points \u00b7 70 comments",
+      "signal": "290 points \u00b7 70 comments",
       "snippet": "I built Coldframe, a honeypot that pretends to be a supermarket refrigeration controller. Inspired by the events on industrial fridge installations in the past weeks, I wanted to see what people would"
     }
   ]
