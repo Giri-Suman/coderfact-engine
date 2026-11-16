@@ -1,14 +1,11 @@
 {
   "topics": [
-    "DeepSeek V3 Jax: I Built the Architecture in 200 Lines of Code",
-    "Chrome DevTools MCP: Stop Copy-Pasting Debug Errors to Your AI Agent",
-    "Bypass Hardware Subscriptions: How I Built My Own Controller App"
+    "Chrome DevTools MCP: How I Auto-Fixed UI Bugs with Python",
+    "Subvocal Voice Interface: I Built a Silent Python CLI Agent",
+    "Hacker News Dataset Analysis: I Built a 16.5K Site in One Weekend"
   ],
-  "date": "November 15, 2026",
+  "date": "November 16, 2026",
   "title_history": [
-    "Vibe Coding Tutorial: How I Built a 16k Book App in 4 Hours",
-    "Python AI Agent Tool Harness: I Added Screen Overlay Skills in 85 Lines",
-    "Go JSON v2 Benchmark: Memory Allocations and Production Trade-Offs",
     "Hacker News Show HN: I Built 'SimCity With Permits' Using JS",
     "AI browser automation python: I Built a Headless Agent in 65 Lines",
     "Claude Code gstack tutorial: What Broke in Garry Tan's 23-Tool Setup",
@@ -35,112 +32,104 @@
     "Satellite tracking Vanilla JS: How I built a real-time tracker in 80 lines",
     "DeepSeek V3 Jax: I Built the Architecture in 200 Lines of Code",
     "Chrome DevTools MCP: Stop Copy-Pasting Debug Errors to Your AI Agent",
-    "Bypass Hardware Subscriptions: How I Built My Own Controller App"
+    "Bypass Hardware Subscriptions: How I Built My Own Controller App",
+    "Chrome DevTools MCP: How I Auto-Fixed UI Bugs with Python",
+    "Subvocal Voice Interface: I Built a Silent Python CLI Agent",
+    "Hacker News Dataset Analysis: I Built a 16.5K Site in One Weekend"
   ],
   "last_update_id": 70323306,
   "virality_data": [
     {
-      "topic": "Implementing DeepSeek V3 architecture in Jax for local experimentation",
+      "topic": "How I Built a Chrome DevTools MCP Bridge to Stop Copy-Pasting AI Agent Debug Logs",
       "category": "C",
       "category_name": "AI Agents & Multi-Agent Workflows",
-      "virality_score": 92,
-      "analysis": "DeepSeek V3 is currently the hottest topic in the LLM space due to its efficiency. The Show HN signal is massive, and providing a condensed Jax implementation moves the conversation from theoretical to actionable. It targets the 'hardcore' dev audience that wants to understand the weights and architecture rather than just calling an API.",
+      "virality_score": 94,
+      "analysis": "Chrome DevTools MCP is currently trending heavily on GitHub with over 57k stars as devs scramble to give AI agents native browser debugging capabilities. Medium readers are deeply engaged with practical agent tooling that eliminates repetitive context-switching workflows. This post details a concrete model-context-protocol setup connecting Claude to runtime DOM/console inspection.",
       "cross_source_signals": [
-        "Hacker News: DeepSeek V3 in Jax trending (233 pts)",
-        "GitHub: Vaibhaav-Tiwari/deepseek-v3-jax gaining stars",
-        "X/Twitter: High volume of 'DeepSeek V3 vs GPT-4o' discussions"
+        "GitHub Trending: ChromeDevTools/chrome-devtools-mcp (57.3k stars)",
+        "Hacker News: High discussion around coding agents interacting with browser runtimes",
+        "Dev.to: Discussions on modern developer productivity loops"
       ],
       "developer_pain": "high",
       "freshness": "breaking",
       "money_angle": "",
-      "story_angle": "Suman tried to run a full V3 model locally and crashed his system, leading him to implement a stripped-down version in Jax to understand the core mechanism.",
-      "suman_angle": "DeepSeek V3 in 200 Lines: How I implemented the architecture in Jax to understand its efficiency",
+      "story_angle": "I got tired of constantly copy-pasting devtool console logs into my LLM, so I wired up a model context protocol server that lets my agent debug live DOM elements directly.",
+      "suman_angle": "How I hooked Chrome DevTools MCP into my Python agent harness so it inspects and fixes UI bugs automatically",
       "target_keywords": [
-        "DeepSeek V3 Jax",
-        "implement LLM from scratch",
-        "Jax AI tutorial"
+        "chrome devtools mcp",
+        "mcp python tutorial",
+        "ai agent browser debugging",
+        "model context protocol"
       ],
-      "competing_articles": "Most articles are high-level summaries of the whitepaper; this provides a working, minimal implementation.",
+      "competing_articles": "Most coverage is just the raw README repository link; this article provides an end-to-end operational setup script and real debugging workflow logs.",
+      "real_story_evidence": []
+    },
+    {
+      "topic": "How We Built a Silent Subvocal Voice Command Loop for Terminal Agents",
+      "category": "B",
+      "category_name": "Vibe Coding / AI-Assisted Workflow",
+      "virality_score": 91,
+      "analysis": "Subvocal speech input surfaced on Show HN to massive engagement (849 points), proving strong developer interest in silent, non-disruptive voice interface workflows. Medium tech readers are obsessing over frictionless AI interaction loops beyond standard keyboard typing. This article demonstrates how to wire silent whisper triggers directly into local terminal automation scripts.",
+      "cross_source_signals": [
+        "Hacker News: Show HN: Subvocal (849 points, 395 comments)",
+        "GitHub: High interest in silent speech recognition tools",
+        "Google Trends: Rising queries for voice-driven coding interfaces"
+      ],
+      "developer_pain": "high",
+      "freshness": "breaking",
+      "money_angle": "",
+      "story_angle": "After seeing Subvocal hit the top of Hacker News, I set out to build a lightweight silent speech trigger loop for controlling my terminal AI agent without speaking out loud in public spaces.",
+      "suman_angle": "I built a silent subvocal voice pipeline for my CLI agent in 85 lines of Python",
+      "target_keywords": [
+        "subvocal voice interface",
+        "terminal ai agent voice",
+        "python whisper cli",
+        "vibe coding workflow"
+      ],
+      "competing_articles": "Existing discussions focus on hardware prototypes; this gives a software engineer's practical Python implementation to control CLI tools silently.",
       "real_story_evidence": [
         {
           "source": "Hacker News (Show HN)",
-          "title": "Show HN: DeepSeek V3 in ~200 lines of pure Jax",
-          "url": "https://github.com/Vaibhaav-Tiwari/deepseek-v3-jax",
-          "what_to_cite": "The fact that the core architecture can be represented in approximately 200 lines of Jax code."
+          "title": "Show HN: Subvocal \u2013 Talk to your computer without making noise",
+          "url": "https://news.ycombinator.com/item?id=50340088",
+          "what_to_cite": "Show HN team Aarush and Arnav built smart glasses for silent speech input, gaining 849 points on HN."
         }
       ]
     },
     {
-      "topic": "Integrating Chrome DevTools MCP into AI coding agents for real-time debugging",
-      "category": "B",
-      "category_name": "Vibe Coding / AI-Assisted Workflow",
-      "virality_score": 85,
-      "analysis": "The Model Context Protocol (MCP) is the new standard for agent tools in 2026. Showing a coding agent that can actually 'see' the Chrome DevTools console and network tab solves the biggest pain point in vibe coding: the 'guess-and-check' loop. High search volume for MCP implementations.",
-      "cross_source_signals": [
-        "GitHub: ChromeDevTools/chrome-devtools-mcp trending",
-        "Hacker News: Discussions on 'modern web primitives' for agents",
-        "Reddit r/Cursor: Users asking for better browser integration"
-      ],
-      "developer_pain": "high",
-      "freshness": "breaking",
-      "money_angle": "",
-      "story_angle": "Suman was tired of copy-pasting console errors into Claude, so he connected his agent directly to the browser's internals.",
-      "suman_angle": "Stop Copy-Pasting Errors: I gave my AI agent access to Chrome DevTools using MCP",
-      "target_keywords": [
-        "Chrome DevTools MCP",
-        "AI coding agent workflow",
-        "Model Context Protocol tutorial"
-      ],
-      "competing_articles": "Most MCP guides are basic file-system examples; this is a high-value, specific integration for frontend devs.",
-      "real_story_evidence": [
-        {
-          "source": "GitHub",
-          "title": "ChromeDevTools/chrome-devtools-mcp Chrome DevTools for coding agents",
-          "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
-          "what_to_cite": "The utility of providing coding agents direct access to the Chrome DevTools protocol for automated debugging."
-        }
-      ]
-    },
-    {
-      "topic": "Building a custom app to replace a hardware subscription",
-      "category": "E",
-      "category_name": "Money / Income Story",
+      "topic": "How I Curated 16,500 Hacker News Books into a Zero-Backend Directory",
+      "category": "A",
+      "category_name": "Developer Success Story",
       "virality_score": 89,
-      "analysis": "The 'anti-subscription' narrative is incredibly viral on Medium. Combining a hardware hack with a software solution creates a strong 'builder' story. It bridges the gap between a personal annoyance and a technical victory, which drives high engagement and claps.",
+      "analysis": "HackerBooks achieved massive HN success (1870 points) by using Claude to transform decades of forum recommendations into a highly usable resource. Medium tech audiences love breakdown stories of solo builders leveraging AI to parse large unstructured datasets into simple static sites. The post breaks down the data pipeline, deduplication logic, and zero-cost hosting stack.",
       "cross_source_signals": [
-        "Hacker News: 'My $300 embroidery machine needed a subscription' (740 pts)",
-        "GitHub: zigzag repo trending for hardware-software bypass",
-        "Reddit r/selfhosted: High interest in removing vendor lock-in"
+        "Hacker News: Show HN: HackerBooks (1870 points, 308 comments)",
+        "GitHub: High activity around automated curation and scraping scripts",
+        "Dev.to: Popularity of zero-cost static directory tutorials"
       ],
       "developer_pain": "medium",
       "freshness": "fresh",
-      "money_angle": "Saving monthly subscription fees and potential for open-sourcing a paid alternative",
-      "story_angle": "Suman bought a piece of hardware only to find it locked behind a monthly paywall, triggering a weekend of reverse-engineering.",
-      "suman_angle": "I refused to pay a monthly subscription for my $300 hardware, so I built my own controller app",
+      "money_angle": "How to launch zero-maintenance content aggregation sites with $0 infra cost",
+      "story_angle": "Inspired by Karpathy's HackerTube, I used Claude to extract, index, and organize 16.5k books mentioned across 19 years of Hacker News comments into a fast search app.",
+      "suman_angle": "How I parsed 19 years of Hacker News comments into a 16.5k book search directory in one weekend",
       "target_keywords": [
-        "bypass hardware subscription",
-        "reverse engineering tutorial",
-        "build custom hardware app"
+        "hacker news dataset analysis",
+        "claude data pipeline tutorial",
+        "static site directory python",
+        "zero backend web app"
       ],
-      "competing_articles": "Most 'income' stories are about SaaS; this is a 'savings' story based on a tangible physical object, which is more refreshing.",
+      "competing_articles": "Generic data scraping posts don't show real community validation; anchoring to the HackerBooks launch gives immediate credibility and real tech stack metrics.",
       "real_story_evidence": [
         {
           "source": "Hacker News (Show HN)",
-          "title": "Show HN: My $300 embroidery machine needed a subscription, so I built my own app",
-          "url": "https://github.com/simpsoka/zigzag",
-          "what_to_cite": "The specific scenario of a $300 machine requiring a subscription and the creation of the 'zigzag' app to bypass it."
+          "title": "Show HN: HackerBooks \u2013 HackerTube, but for books mentioned on HN",
+          "url": "https://hackerbooks.org",
+          "what_to_cite": "Built using Claude (Opus) to extract 16.5k books mentioned at least twice across HN history, reaching 1870 HN points."
         }
       ]
     }
   ],
   "success_stories": [
-    {
-      "source": "show_hn",
-      "title": "Show HN: DeepSeek V3 in ~200 lines of pure Jax",
-      "url": "https://github.com/Vaibhaav-Tiwari/deepseek-v3-jax",
-      "signal": "233 points \u00b7 21 comments",
-      "snippet": ""
-    },
     {
       "source": "show_hn",
       "title": "Show HN: HackerBooks \u2013 HackerTube, but for books mentioned on HN",
@@ -159,7 +148,7 @@
       "source": "show_hn",
       "title": "Show HN: My $300 embroidery machine needed a subscription, so I built my own app",
       "url": "https://github.com/simpsoka/zigzag",
-      "signal": "740 points \u00b7 253 comments",
+      "signal": "741 points \u00b7 257 comments",
       "snippet": "https://x.com/simpsoka/status/2115254318161182876"
     },
     {
@@ -178,13 +167,6 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Every satellite that passed over any place this week, and its photos",
-      "url": "https://www.watched.earth",
-      "signal": "493 points \u00b7 87 comments",
-      "snippet": "hey HN, i built this because I'm a satellite nerd who was bored this past weekend. type in any place and it finds every satellite that passed over it in the last 7 days (SGP4 on the CelesTrak catalog,"
-    },
-    {
-      "source": "show_hn",
       "title": "Show HN: Steal My Bitcoin",
       "url": "https://stealmybitcoin.com/",
       "signal": "627 points \u00b7 451 comments",
@@ -192,10 +174,10 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Get your coding agent off ~2019 JavaScript, onto modern web primitives",
-      "url": "https://github.com/GoogleChrome/modern-web-guidance",
-      "signal": "445 points \u00b7 146 comments",
-      "snippet": "Browsers natively handle a lot of what used to take 50 lines of JS (or a dependency): `CSS.highlights` for text range highlighting without <span>s everywhere, `<dialog>` and showModal() give you backd"
+      "title": "Show HN: Every satellite that passed over any place this week, and its photos",
+      "url": "https://www.watched.earth",
+      "signal": "494 points \u00b7 88 comments",
+      "snippet": "hey HN, i built this because I'm a satellite nerd who was bored this past weekend. type in any place and it finds every satellite that passed over it in the last 7 days (SGP4 on the CelesTrak catalog,"
     },
     {
       "source": "show_hn",
@@ -203,6 +185,13 @@
       "url": "https://hackertv.org",
       "signal": "491 points \u00b7 84 comments",
       "snippet": "I saw HackerTube (https://news.ycombinator.com/item?id=50319510) a few days ago, the YouTube videos HN keeps recommending, pulled from 19 years of comments. It made me want to flip through them instea"
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Get your coding agent off ~2019 JavaScript, onto modern web primitives",
+      "url": "https://github.com/GoogleChrome/modern-web-guidance",
+      "signal": "447 points \u00b7 146 comments",
+      "snippet": "Browsers natively handle a lot of what used to take 50 lines of JS (or a dependency): `CSS.highlights` for text range highlighting without <span>s everywhere, `<dialog>` and showModal() give you backd"
     },
     {
       "source": "show_hn",
@@ -220,17 +209,10 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Llmspeed \u2013 feel how fast a local LLM runs before you buy the hardware",
-      "url": "https://llmspeed.dev/",
-      "signal": "331 points \u00b7 86 comments",
+      "title": "Show HN: DeepSeek V3 in ~200 lines of pure Jax",
+      "url": "https://github.com/Vaibhaav-Tiwari/deepseek-v3-jax",
+      "signal": "273 points \u00b7 28 comments",
       "snippet": ""
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: Yogurt \u2013 Free, private, open-source alternative to Granola",
-      "url": "https://github.com/FrigadeHQ/yogurt",
-      "signal": "303 points \u00b7 115 comments",
-      "snippet": "Hey HN, I\u2019m Eric and I want to share an OSS project that I\u2019ve been building in my free time. Yogurt is a free, MIT licensed desktop app that uses on-device AI models to transcribe, summarize, and chat"
     },
     {
       "source": "show_hn",
@@ -248,17 +230,17 @@
     },
     {
       "source": "show_hn",
+      "title": "Show HN: Yogurt \u2013 Free, private, open-source alternative to Granola",
+      "url": "https://github.com/FrigadeHQ/yogurt",
+      "signal": "305 points \u00b7 115 comments",
+      "snippet": "Hey HN, I\u2019m Eric and I want to share an OSS project that I\u2019ve been building in my free time. Yogurt is a free, MIT licensed desktop app that uses on-device AI models to transcribe, summarize, and chat"
+    },
+    {
+      "source": "show_hn",
       "title": "Show HN: A Truly Modular Keyboard",
       "url": "https://github.com/notaroomba/keybytes",
       "signal": "320 points \u00b7 116 comments",
       "snippet": ""
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: Isometric SF \u2013 A pixel-art map of the SF Bay Area",
-      "url": "https://isometricsf.com/",
-      "signal": "251 points \u00b7 74 comments",
-      "snippet": "Technical Write-up: https://www.justinchavez.com/blog/isometric-sf-how/ Hi HN! Showcasing this fun project. I took 1300 square miles of the SF Bay Area from Google Photorealistic 3D Tiles and transfor"
     },
     {
       "source": "show_hn",
@@ -273,6 +255,20 @@
       "url": "https://github.com/hedgerow-dev/coldframe",
       "signal": "290 points \u00b7 70 comments",
       "snippet": "I built Coldframe, a honeypot that pretends to be a supermarket refrigeration controller. Inspired by the events on industrial fridge installations in the past weeks, I wanted to see what people would"
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Isometric SF \u2013 A pixel-art map of the SF Bay Area",
+      "url": "https://isometricsf.com/",
+      "signal": "253 points \u00b7 75 comments",
+      "snippet": "Technical Write-up: https://www.justinchavez.com/blog/isometric-sf-how/ Hi HN! Showcasing this fun project. I took 1300 square miles of the SF Bay Area from Google Photorealistic 3D Tiles and transfor"
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: A decent text-to-image model trained for ~$20K (Apache 2.0 Weights)",
+      "url": "https://www.linum.ai/field-notes/pjit-21k",
+      "signal": "287 points \u00b7 30 comments",
+      "snippet": "My brother and I run a 2-person lab that trains our own generative video models from scratch. The ultimate goal is a set of creative tools that make it easier for anyone to make animation. Video model"
     }
   ]
 }
