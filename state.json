@@ -1,14 +1,11 @@
 {
   "topics": [
-    "Chrome DevTools MCP: How I Auto-Fixed UI Bugs with Python",
-    "Subvocal Voice Interface: I Built a Silent Python CLI Agent",
-    "Hacker News Dataset Analysis: I Built a 16.5K Site in One Weekend"
+    "FastMCP Document Automation: I Built an Invoice Audit Agent in 85 Lines",
+    "Zero Backend Web App: The Static Rebuild That Cut My Server Costs to $0",
+    "Dynamic Tool Injection Python: Why Passing 50 Tools Breaks Claude Agents"
   ],
-  "date": "November 16, 2026",
+  "date": "November 18, 2026",
   "title_history": [
-    "Hacker News Show HN: I Built 'SimCity With Permits' Using JS",
-    "AI browser automation python: I Built a Headless Agent in 65 Lines",
-    "Claude Code gstack tutorial: What Broke in Garry Tan's 23-Tool Setup",
     "Python honeypot tutorial: I trapped 1,400 bots in 48 hours with 90 lines",
     "PyTorch training loop optimization: How we vibe-coded a $20k model pipeline",
     "Build static web app in 4 hours: How I hit #1 on Hacker News with Claude",
@@ -35,98 +32,94 @@
     "Bypass Hardware Subscriptions: How I Built My Own Controller App",
     "Chrome DevTools MCP: How I Auto-Fixed UI Bugs with Python",
     "Subvocal Voice Interface: I Built a Silent Python CLI Agent",
-    "Hacker News Dataset Analysis: I Built a 16.5K Site in One Weekend"
+    "Hacker News Dataset Analysis: I Built a 16.5K Site in One Weekend",
+    "FastMCP Document Automation: I Built an Invoice Audit Agent in 85 Lines",
+    "Zero Backend Web App: The Static Rebuild That Cut My Server Costs to $0",
+    "Dynamic Tool Injection Python: Why Passing 50 Tools Breaks Claude Agents"
   ],
   "last_update_id": 70323306,
   "virality_data": [
     {
-      "topic": "How I Built a Chrome DevTools MCP Bridge to Stop Copy-Pasting AI Agent Debug Logs",
-      "category": "C",
-      "category_name": "AI Agents & Multi-Agent Workflows",
-      "virality_score": 94,
-      "analysis": "Chrome DevTools MCP is currently trending heavily on GitHub with over 57k stars as devs scramble to give AI agents native browser debugging capabilities. Medium readers are deeply engaged with practical agent tooling that eliminates repetitive context-switching workflows. This post details a concrete model-context-protocol setup connecting Claude to runtime DOM/console inspection.",
+      "topic": "Building a custom Model Context Protocol (MCP) server to automate invoice and receipt auditing",
+      "category": "D",
+      "category_name": "AI Automation Across Domains",
+      "virality_score": 91,
+      "analysis": "With Dev.to sounding alarms on MCP's hidden design flaws and enterprise devs scrambling to automate finance ops with local LLMs, practical MCP implementations are seeing explosive engagement. Medium readers are fatigued by simple chatbot tutorials and actively look for operational AI bridges between raw PDFs, bank records, and accounting ledgers. This post provides a tangible, copy-paste FastMCP script in Python that extracts structured ledger entries from chaotic invoices without third-party SaaS fees.",
       "cross_source_signals": [
-        "GitHub Trending: ChromeDevTools/chrome-devtools-mcp (57.3k stars)",
-        "Hacker News: High discussion around coding agents interacting with browser runtimes",
-        "Dev.to: Discussions on modern developer productivity loops"
+        "Dev.to: 'MCP Is Dead Simple. And That's Exactly the Problem' (211 reactions)",
+        "HackerNews: Model Context Protocol security & tooling debates (multiple threads)",
+        "ProductHunt: Automated finance and invoice parsing agent launches trending"
       ],
       "developer_pain": "high",
-      "freshness": "breaking",
-      "money_angle": "",
-      "story_angle": "I got tired of constantly copy-pasting devtool console logs into my LLM, so I wired up a model context protocol server that lets my agent debug live DOM elements directly.",
-      "suman_angle": "How I hooked Chrome DevTools MCP into my Python agent harness so it inspects and fixes UI bugs automatically",
+      "freshness": "fresh",
+      "money_angle": "Saved $180/month on document parsing SaaS subscriptions by running local MCP pipeline",
+      "story_angle": "After watching my small business client spend hours manually cross-referencing messy vendor PDF invoices against Stripe records, I built an 85-line FastMCP server that does it automatically via Claude Desktop.",
+      "suman_angle": "Stop Paying for OCR SaaS: How I Built an Invoice Audit Agent in 85 Lines of FastMCP",
       "target_keywords": [
-        "chrome devtools mcp",
-        "mcp python tutorial",
-        "ai agent browser debugging",
-        "model context protocol"
+        "mcp server python tutorial",
+        "fastmcp document automation",
+        "ai invoice parser python",
+        "model context protocol finance"
       ],
-      "competing_articles": "Most coverage is just the raw README repository link; this article provides an end-to-end operational setup script and real debugging workflow logs.",
+      "competing_articles": "Most MCP articles are superficial 'hello world' weather fetchers; this guides developers through building an actual business utility with strict JSON schema validation and file-system sandbox safety.",
       "real_story_evidence": []
     },
     {
-      "topic": "How We Built a Silent Subvocal Voice Command Loop for Terminal Agents",
-      "category": "B",
-      "category_name": "Vibe Coding / AI-Assisted Workflow",
-      "virality_score": 91,
-      "analysis": "Subvocal speech input surfaced on Show HN to massive engagement (849 points), proving strong developer interest in silent, non-disruptive voice interface workflows. Medium tech readers are obsessing over frictionless AI interaction loops beyond standard keyboard typing. This article demonstrates how to wire silent whisper triggers directly into local terminal automation scripts.",
-      "cross_source_signals": [
-        "Hacker News: Show HN: Subvocal (849 points, 395 comments)",
-        "GitHub: High interest in silent speech recognition tools",
-        "Google Trends: Rising queries for voice-driven coding interfaces"
-      ],
-      "developer_pain": "high",
-      "freshness": "breaking",
-      "money_angle": "",
-      "story_angle": "After seeing Subvocal hit the top of Hacker News, I set out to build a lightweight silent speech trigger loop for controlling my terminal AI agent without speaking out loud in public spaces.",
-      "suman_angle": "I built a silent subvocal voice pipeline for my CLI agent in 85 lines of Python",
-      "target_keywords": [
-        "subvocal voice interface",
-        "terminal ai agent voice",
-        "python whisper cli",
-        "vibe coding workflow"
-      ],
-      "competing_articles": "Existing discussions focus on hardware prototypes; this gives a software engineer's practical Python implementation to control CLI tools silently.",
-      "real_story_evidence": [
-        {
-          "source": "Hacker News (Show HN)",
-          "title": "Show HN: Subvocal \u2013 Talk to your computer without making noise",
-          "url": "https://news.ycombinator.com/item?id=50340088",
-          "what_to_cite": "Show HN team Aarush and Arnav built smart glasses for silent speech input, gaining 849 points on HN."
-        }
-      ]
-    },
-    {
-      "topic": "How I Curated 16,500 Hacker News Books into a Zero-Backend Directory",
+      "topic": "Rebuilding a dynamic directory website using static pre-rendering and 0 backends after Google AI drops search impressions",
       "category": "A",
       "category_name": "Developer Success Story",
       "virality_score": 89,
-      "analysis": "HackerBooks achieved massive HN success (1870 points) by using Claude to transform decades of forum recommendations into a highly usable resource. Medium tech audiences love breakdown stories of solo builders leveraging AI to parse large unstructured datasets into simple static sites. The post breaks down the data pipeline, deduplication logic, and zero-cost hosting stack.",
+      "analysis": "The viral discussion surrounding Google AI Overviews wiping out 40% of search traffic has pushed independent builders into panic mode regarding infrastructure bloat and dynamic hosting costs. HackerBooks demonstrated the massive appeal of curated static datasets by hitting #1 on Hacker News with 1,870 points using pre-rendered book recommendation pages. Showing developers how to pivot from high-cost Node servers to an ultra-fast, pre-rendered static architecture with zero backend maintenance directly capitalizes on this zeitgeist.",
       "cross_source_signals": [
-        "Hacker News: Show HN: HackerBooks (1870 points, 308 comments)",
-        "GitHub: High activity around automated curation and scraping scripts",
-        "Dev.to: Popularity of zero-cost static directory tutorials"
+        "HackerNews: HackerBooks hits 1,870 points and 308 comments",
+        "HackerNews: 'Google's AI answers reducing search traffic by 40%' (404 points)",
+        "GitHub: Svelte and static site generator discussions trending"
       ],
-      "developer_pain": "medium",
-      "freshness": "fresh",
-      "money_angle": "How to launch zero-maintenance content aggregation sites with $0 infra cost",
-      "story_angle": "Inspired by Karpathy's HackerTube, I used Claude to extract, index, and organize 16.5k books mentioned across 19 years of Hacker News comments into a fast search app.",
-      "suman_angle": "How I parsed 19 years of Hacker News comments into a 16.5k book search directory in one weekend",
+      "developer_pain": "high",
+      "freshness": "breaking",
+      "money_angle": "Cut monthly Supabase/Vercel compute costs from $74/month to $0 on Cloudflare Pages",
+      "story_angle": "When my dynamic side project lost 40% of its traffic to AI previews, I stopped paying for idle Postgres instances and rebuilt the entire 16,500-item directory as a static pre-rendered Svelte app.",
+      "suman_angle": "My Dynamic SaaS Was Bleeding Money: How I Rebuilt a 16,000-Item Directory with Zero Servers",
       "target_keywords": [
-        "hacker news dataset analysis",
-        "claude data pipeline tutorial",
-        "static site directory python",
-        "zero backend web app"
+        "static site architecture",
+        "svelte static pre-rendering",
+        "zero backend web app",
+        "hackerbooks architecture"
       ],
-      "competing_articles": "Generic data scraping posts don't show real community validation; anchoring to the HackerBooks launch gives immediate credibility and real tech stack metrics.",
+      "competing_articles": "Generic static site tutorials ignore large-scale data handling; this explains how to bundle and pre-render tens of thousands of data points without running into build-time out-of-memory errors.",
       "real_story_evidence": [
         {
           "source": "Hacker News (Show HN)",
           "title": "Show HN: HackerBooks \u2013 HackerTube, but for books mentioned on HN",
           "url": "https://hackerbooks.org",
-          "what_to_cite": "Built using Claude (Opus) to extract 16.5k books mentioned at least twice across HN history, reaching 1870 HN points."
+          "what_to_cite": "Showcased how 16.5k curated entries collected across 19 years of comments could be built into a lightning-fast web experience using AI extraction."
         }
       ]
+    },
+    {
+      "topic": "Building an Agent Skill Harness with persistent memory and dynamic tool injection in Python",
+      "category": "C",
+      "category_name": "AI Agents & Multi-Agent Workflows",
+      "virality_score": 92,
+      "analysis": "The explosion of obra/superpowers and affaan-m/ECC on GitHub highlights an industry-wide realization: monolithic prompt loops are dead, and modular 'skills' systems with memory reflection are the standard for 2026. Medium readers are actively migrating away from brittle LangChain abstractions to lightweight, decoupled agent harnesses. Demonstrating how to build an explicit tool-switching memory harness in pure Python addresses developers' highest-ranked agent pain point: tool drift and context blowout.",
+      "cross_source_signals": [
+        "GitHub: obra/superpowers trending with 319,656 points",
+        "GitHub: affaan-m/ECC trending with 305,972 points",
+        "HackerNews: GPT-6.2 Astra & Sol tool calling architecture discussion (796 comments)"
+      ],
+      "developer_pain": "high",
+      "freshness": "breaking",
+      "money_angle": "Reduced wasted OpenAI tool-calling token bills by 65% through dynamic skill injection",
+      "story_angle": "My coding agent kept dumping 40 tool schemas into its prompt window until it ran out of tokens, so I wrote an open skill harness that hot-swaps tools into context based on task intent.",
+      "suman_angle": "Stop Passing 50 Tools to Claude: How to Build a Dynamic Agent Skill Harness in Python",
+      "target_keywords": [
+        "agent skills harness",
+        "dynamic tool injection python",
+        "ecc agent architecture",
+        "llm memory optimization"
+      ],
+      "competing_articles": "Most agent posts just wrap standard OpenAI Assistant SDK calls; this breaks down the actual runtime harness architecture (skill isolation, memory retention, reflection loop) in under 120 lines of clean Python.",
+      "real_story_evidence": []
     }
   ],
   "success_stories": [
@@ -146,17 +139,17 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: My $300 embroidery machine needed a subscription, so I built my own app",
-      "url": "https://github.com/simpsoka/zigzag",
-      "signal": "741 points \u00b7 257 comments",
-      "snippet": "https://x.com/simpsoka/status/2115254318161182876"
-    },
-    {
-      "source": "show_hn",
       "title": "Show HN: SimCity, but with Permits",
       "url": "https://permit.petercai.com/",
       "signal": "941 points \u00b7 428 comments",
       "snippet": ""
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: My $300 embroidery machine needed a subscription, so I built my own app",
+      "url": "https://github.com/simpsoka/zigzag",
+      "signal": "742 points \u00b7 258 comments",
+      "snippet": "https://x.com/simpsoka/status/2115254318161182876"
     },
     {
       "source": "show_hn",
@@ -176,7 +169,7 @@
       "source": "show_hn",
       "title": "Show HN: Every satellite that passed over any place this week, and its photos",
       "url": "https://www.watched.earth",
-      "signal": "494 points \u00b7 88 comments",
+      "signal": "497 points \u00b7 89 comments",
       "snippet": "hey HN, i built this because I'm a satellite nerd who was bored this past weekend. type in any place and it finds every satellite that passed over it in the last 7 days (SGP4 on the CelesTrak catalog,"
     },
     {
@@ -188,13 +181,6 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Get your coding agent off ~2019 JavaScript, onto modern web primitives",
-      "url": "https://github.com/GoogleChrome/modern-web-guidance",
-      "signal": "447 points \u00b7 146 comments",
-      "snippet": "Browsers natively handle a lot of what used to take 50 lines of JS (or a dependency): `CSS.highlights` for text range highlighting without <span>s everywhere, `<dialog>` and showModal() give you backd"
-    },
-    {
-      "source": "show_hn",
       "title": "Show HN: Hacker Times, a New York Times-inspired version of Hacker News",
       "url": "https://hackertimes.ca/",
       "signal": "477 points \u00b7 149 comments",
@@ -202,16 +188,16 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: TitleArt \u2013 Make text like it's 1997",
-      "url": "https://titleart.dvy.io/",
-      "signal": "411 points \u00b7 82 comments",
-      "snippet": ""
+      "title": "Show HN: Get your coding agent off ~2019 JavaScript, onto modern web primitives",
+      "url": "https://github.com/GoogleChrome/modern-web-guidance",
+      "signal": "448 points \u00b7 146 comments",
+      "snippet": "Browsers natively handle a lot of what used to take 50 lines of JS (or a dependency): `CSS.highlights` for text range highlighting without <span>s everywhere, `<dialog>` and showModal() give you backd"
     },
     {
       "source": "show_hn",
-      "title": "Show HN: DeepSeek V3 in ~200 lines of pure Jax",
-      "url": "https://github.com/Vaibhaav-Tiwari/deepseek-v3-jax",
-      "signal": "273 points \u00b7 28 comments",
+      "title": "Show HN: TitleArt \u2013 Make text like it's 1997",
+      "url": "https://titleart.dvy.io/",
+      "signal": "411 points \u00b7 82 comments",
       "snippet": ""
     },
     {
@@ -230,16 +216,30 @@
     },
     {
       "source": "show_hn",
+      "title": "Show HN: A Truly Modular Keyboard",
+      "url": "https://github.com/notaroomba/keybytes",
+      "signal": "320 points \u00b7 116 comments",
+      "snippet": ""
+    },
+    {
+      "source": "show_hn",
       "title": "Show HN: Yogurt \u2013 Free, private, open-source alternative to Granola",
       "url": "https://github.com/FrigadeHQ/yogurt",
-      "signal": "305 points \u00b7 115 comments",
+      "signal": "306 points \u00b7 118 comments",
       "snippet": "Hey HN, I\u2019m Eric and I want to share an OSS project that I\u2019ve been building in my free time. Yogurt is a free, MIT licensed desktop app that uses on-device AI models to transcribe, summarize, and chat"
     },
     {
       "source": "show_hn",
-      "title": "Show HN: A Truly Modular Keyboard",
-      "url": "https://github.com/notaroomba/keybytes",
-      "signal": "320 points \u00b7 116 comments",
+      "title": "Show HN: Alloy CSS, dialogs, menus and tabs that work with JavaScript off",
+      "url": "https://alloyhtml.com/example.html",
+      "signal": "196 points \u00b7 33 comments",
+      "snippet": ""
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: DeepSeek V3 in ~200 lines of pure Jax",
+      "url": "https://github.com/Vaibhaav-Tiwari/deepseek-v3-jax",
+      "signal": "276 points \u00b7 30 comments",
       "snippet": ""
     },
     {
@@ -255,13 +255,6 @@
       "url": "https://github.com/hedgerow-dev/coldframe",
       "signal": "290 points \u00b7 70 comments",
       "snippet": "I built Coldframe, a honeypot that pretends to be a supermarket refrigeration controller. Inspired by the events on industrial fridge installations in the past weeks, I wanted to see what people would"
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: Isometric SF \u2013 A pixel-art map of the SF Bay Area",
-      "url": "https://isometricsf.com/",
-      "signal": "253 points \u00b7 75 comments",
-      "snippet": "Technical Write-up: https://www.justinchavez.com/blog/isometric-sf-how/ Hi HN! Showcasing this fun project. I took 1300 square miles of the SF Bay Area from Google Photorealistic 3D Tiles and transfor"
     },
     {
       "source": "show_hn",
