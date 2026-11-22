@@ -1,14 +1,11 @@
 {
   "topics": [
-    "FastMCP Document Automation: I Built an Invoice Audit Agent in 85 Lines",
-    "Zero Backend Web App: The Static Rebuild That Cut My Server Costs to $0",
-    "Dynamic Tool Injection Python: Why Passing 50 Tools Breaks Claude Agents"
+    "Bypass hardware subscription Python script saved me $180 a year",
+    "Firecrawl Python agent I built in 85 lines for automated web research",
+    "Vibe coding tutorial Cursor: I built a live dashboard in 3 hours"
   ],
-  "date": "November 18, 2026",
+  "date": "November 22, 2026",
   "title_history": [
-    "Python honeypot tutorial: I trapped 1,400 bots in 48 hours with 90 lines",
-    "PyTorch training loop optimization: How we vibe-coded a $20k model pipeline",
-    "Build static web app in 4 hours: How I hit #1 on Hacker News with Claude",
     "JavaScript Canvas Game Tutorial: How I Built a Viral SimCity Clone",
     "Anthropic Agent Skills Tutorial: Build a Python Tool Harness in 75 Lines",
     "Build Directory Website Serverless: My 0-Backend Stack for 26-Day Bookings",
@@ -35,91 +32,98 @@
     "Hacker News Dataset Analysis: I Built a 16.5K Site in One Weekend",
     "FastMCP Document Automation: I Built an Invoice Audit Agent in 85 Lines",
     "Zero Backend Web App: The Static Rebuild That Cut My Server Costs to $0",
-    "Dynamic Tool Injection Python: Why Passing 50 Tools Breaks Claude Agents"
+    "Dynamic Tool Injection Python: Why Passing 50 Tools Breaks Claude Agents",
+    "Bypass hardware subscription Python script saved me $180 a year",
+    "Firecrawl Python agent I built in 85 lines for automated web research",
+    "Vibe coding tutorial Cursor: I built a live dashboard in 3 hours"
   ],
   "last_update_id": 70323306,
   "virality_data": [
     {
-      "topic": "Building a custom Model Context Protocol (MCP) server to automate invoice and receipt auditing",
-      "category": "D",
-      "category_name": "AI Automation Across Domains",
-      "virality_score": 91,
-      "analysis": "With Dev.to sounding alarms on MCP's hidden design flaws and enterprise devs scrambling to automate finance ops with local LLMs, practical MCP implementations are seeing explosive engagement. Medium readers are fatigued by simple chatbot tutorials and actively look for operational AI bridges between raw PDFs, bank records, and accounting ledgers. This post provides a tangible, copy-paste FastMCP script in Python that extracts structured ledger entries from chaotic invoices without third-party SaaS fees.",
+      "topic": "I replaced a $15/mo embroidery app subscription with an 80-line Python reverse-engineering script",
+      "category": "E",
+      "category_name": "Money / Income Story",
+      "virality_score": 94,
+      "analysis": "Anti-subscription hardware hacking posts trigger massive engagement on Medium because they blend personal spite with concrete dev savings. Built on the viral Show HN hit where a developer bypassed paywalled embroidery hardware, this taps right into the current reader anger toward micro-subscription bloat. Suman can detail how inspecting raw USB/hardware protocols in Python turned an overpriced subscription into a free 80-line open-source utility.",
       "cross_source_signals": [
-        "Dev.to: 'MCP Is Dead Simple. And That's Exactly the Problem' (211 reactions)",
-        "HackerNews: Model Context Protocol security & tooling debates (multiple threads)",
-        "ProductHunt: Automated finance and invoice parsing agent launches trending"
-      ],
-      "developer_pain": "high",
-      "freshness": "fresh",
-      "money_angle": "Saved $180/month on document parsing SaaS subscriptions by running local MCP pipeline",
-      "story_angle": "After watching my small business client spend hours manually cross-referencing messy vendor PDF invoices against Stripe records, I built an 85-line FastMCP server that does it automatically via Claude Desktop.",
-      "suman_angle": "Stop Paying for OCR SaaS: How I Built an Invoice Audit Agent in 85 Lines of FastMCP",
-      "target_keywords": [
-        "mcp server python tutorial",
-        "fastmcp document automation",
-        "ai invoice parser python",
-        "model context protocol finance"
-      ],
-      "competing_articles": "Most MCP articles are superficial 'hello world' weather fetchers; this guides developers through building an actual business utility with strict JSON schema validation and file-system sandbox safety.",
-      "real_story_evidence": []
-    },
-    {
-      "topic": "Rebuilding a dynamic directory website using static pre-rendering and 0 backends after Google AI drops search impressions",
-      "category": "A",
-      "category_name": "Developer Success Story",
-      "virality_score": 89,
-      "analysis": "The viral discussion surrounding Google AI Overviews wiping out 40% of search traffic has pushed independent builders into panic mode regarding infrastructure bloat and dynamic hosting costs. HackerBooks demonstrated the massive appeal of curated static datasets by hitting #1 on Hacker News with 1,870 points using pre-rendered book recommendation pages. Showing developers how to pivot from high-cost Node servers to an ultra-fast, pre-rendered static architecture with zero backend maintenance directly capitalizes on this zeitgeist.",
-      "cross_source_signals": [
-        "HackerNews: HackerBooks hits 1,870 points and 308 comments",
-        "HackerNews: 'Google's AI answers reducing search traffic by 40%' (404 points)",
-        "GitHub: Svelte and static site generator discussions trending"
+        "Hacker News: 743 points on 'My $300 embroidery machine needed a subscription, so I built my own app'",
+        "GitHub: simpsoka/zigzag repository gaining rapid stars",
+        "X/Twitter: 2100+ likes on original hardware teardown thread"
       ],
       "developer_pain": "high",
       "freshness": "breaking",
-      "money_angle": "Cut monthly Supabase/Vercel compute costs from $74/month to $0 on Cloudflare Pages",
-      "story_angle": "When my dynamic side project lost 40% of its traffic to AI previews, I stopped paying for idle Postgres instances and rebuilt the entire 16,500-item directory as a static pre-rendered Svelte app.",
-      "suman_angle": "My Dynamic SaaS Was Bleeding Money: How I Rebuilt a 16,000-Item Directory with Zero Servers",
+      "money_angle": "$180/year saved per device by refusing SaaS micro-transactions on owned hardware",
+      "story_angle": "When my hardware started demanding a monthly SaaS subscription to send files over USB, I spent my weekend reverse-engineering the protocol instead of paying $15/month.",
+      "suman_angle": "How I saved $180/year by writing an 80-line Python controller for my 'smart' device",
       "target_keywords": [
-        "static site architecture",
-        "svelte static pre-rendering",
-        "zero backend web app",
-        "hackerbooks architecture"
+        "bypass hardware subscription python",
+        "reverse engineer usb device python",
+        "hardware saas alternative script"
       ],
-      "competing_articles": "Generic static site tutorials ignore large-scale data handling; this explains how to bundle and pre-render tens of thousands of data points without running into build-time out-of-memory errors.",
+      "competing_articles": "Most hardware hacking posts are overly academic; Suman gives a direct 80-line Python solution that any developer can clone to bypass predatory hardware lock-in.",
       "real_story_evidence": [
         {
           "source": "Hacker News (Show HN)",
-          "title": "Show HN: HackerBooks \u2013 HackerTube, but for books mentioned on HN",
-          "url": "https://hackerbooks.org",
-          "what_to_cite": "Showcased how 16.5k curated entries collected across 19 years of comments could be built into a lightning-fast web experience using AI extraction."
+          "title": "Show HN: My $300 embroidery machine needed a subscription, so I built my own app",
+          "url": "https://github.com/simpsoka/zigzag",
+          "what_to_cite": "Reference how simpsoka built 'zigzag' to replace a forced monthly subscription on a $300 machine, proving hardware can be freed with open-source code."
         }
       ]
     },
     {
-      "topic": "Building an Agent Skill Harness with persistent memory and dynamic tool injection in Python",
+      "topic": "Building an autonomous research web scraper agent using Firecrawl and Python in under 100 lines",
       "category": "C",
       "category_name": "AI Agents & Multi-Agent Workflows",
-      "virality_score": 92,
-      "analysis": "The explosion of obra/superpowers and affaan-m/ECC on GitHub highlights an industry-wide realization: monolithic prompt loops are dead, and modular 'skills' systems with memory reflection are the standard for 2026. Medium readers are actively migrating away from brittle LangChain abstractions to lightweight, decoupled agent harnesses. Demonstrating how to build an explicit tool-switching memory harness in pure Python addresses developers' highest-ranked agent pain point: tool drift and context blowout.",
+      "virality_score": 91,
+      "analysis": "Firecrawl is currently dominating GitHub trending as the go-to web data infrastructure for LLM agents, making concrete integration code extremely valuable. Readers are looking for clean patterns to feed dynamic web data into LLMs without dealing with raw HTML junk. Suman can share a modular 90-line Python workflow that orchestrates web search, scraping, and markdown synthesis for agent memory.",
       "cross_source_signals": [
-        "GitHub: obra/superpowers trending with 319,656 points",
-        "GitHub: affaan-m/ECC trending with 305,972 points",
-        "HackerNews: GPT-6.2 Astra & Sol tool calling architecture discussion (796 comments)"
+        "GitHub: firecrawl/firecrawl trending with 200,000+ stars",
+        "Dev.to: surge in 'AI agent data pipeline' posts",
+        "Google Trends: high search volume for 'firecrawl python tutorial'"
       ],
       "developer_pain": "high",
       "freshness": "breaking",
-      "money_angle": "Reduced wasted OpenAI tool-calling token bills by 65% through dynamic skill injection",
-      "story_angle": "My coding agent kept dumping 40 tool schemas into its prompt window until it ran out of tokens, so I wrote an open skill harness that hot-swaps tools into context based on task intent.",
-      "suman_angle": "Stop Passing 50 Tools to Claude: How to Build a Dynamic Agent Skill Harness in Python",
+      "money_angle": "",
+      "story_angle": "I built an autonomous deep-research agent that scrapes 50+ pages in seconds without hitting rate limits or returning dirty HTML.",
+      "suman_angle": "How I built a zero-bloat web research agent in 85 lines of Python using Firecrawl",
       "target_keywords": [
-        "agent skills harness",
-        "dynamic tool injection python",
-        "ecc agent architecture",
-        "llm memory optimization"
+        "firecrawl python agent",
+        "build research agent python",
+        "llm web scraper architecture"
       ],
-      "competing_articles": "Most agent posts just wrap standard OpenAI Assistant SDK calls; this breaks down the actual runtime harness architecture (skill isolation, memory retention, reflection loop) in under 120 lines of clean Python.",
+      "competing_articles": "Existing agent tutorials rely on heavy multi-agent frameworks like CrewAI; Suman shows a light, dependency-free Python script using native APIs.",
       "real_story_evidence": []
+    },
+    {
+      "topic": "How I built a zero-backend 24/7 tech broadcast stream using HN data and Node.js",
+      "category": "B",
+      "category_name": "Vibe Coding / AI-Assisted Workflow",
+      "virality_score": 88,
+      "analysis": "Content curation platforms converting forum signals (like Hacker News) into dynamic web interfaces are consistently topping Hacker News and trending on GitHub. Combining AI assistance (Cursor + Claude) to vibe-code a real-time media player in an afternoon delivers high bookmark rates on Medium. Suman demonstrates how to quickly wire public RSS/API endpoints into a sleek, automated frontend interface.",
+      "cross_source_signals": [
+        "Hacker News: 491 points on HackerTV project",
+        "Hacker News: 1870 points on HackerBooks project",
+        "GitHub: rising trend of single-weekend curation applications"
+      ],
+      "developer_pain": "medium",
+      "freshness": "fresh",
+      "money_angle": "$0 hosting costs using static web hosting and public APIs",
+      "story_angle": "I wanted a continuous stream of top tech media playing in my background, so I vibe-coded a static broadcast dashboard in 3 hours using Cursor.",
+      "suman_angle": "How I vibe-coded a zero-backend tech dashboard in 3 hours with Cursor + Claude",
+      "target_keywords": [
+        "vibe coding tutorial cursor",
+        "hacker news api dashboard nodejs",
+        "build static web app claude"
+      ],
+      "competing_articles": "Most vibe-coding stories lack concrete repo architecture; Suman provides the full frontend loop and prompt history.",
+      "real_story_evidence": [
+        {
+          "source": "Hacker News (Show HN)",
+          "title": "Show HN: HackerTV \u2013 HN's most-recommended Youtube videos as 24/7 TV channels",
+          "url": "https://hackertv.org",
+          "what_to_cite": "Cite how HackerTV aggregated 19 years of Hacker News video recommendations into automated 24/7 streams."
+        }
+      ]
     }
   ],
   "success_stories": [
@@ -139,24 +143,17 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: SimCity, but with Permits",
-      "url": "https://permit.petercai.com/",
-      "signal": "941 points \u00b7 428 comments",
-      "snippet": ""
+      "title": "Show HN: Subvocal \u2013 Talk to your computer without making noise",
+      "url": "https://news.ycombinator.com/item?id=50340088",
+      "signal": "849 points \u00b7 395 comments",
+      "snippet": "Hi HN, we're Aarush and Arnav from The Subvocal Company (YC F26) (https://subvocal.company/). We\u2019re building smart glasses that let you talk to your computer without talking out loud. You can mouth wo"
     },
     {
       "source": "show_hn",
       "title": "Show HN: My $300 embroidery machine needed a subscription, so I built my own app",
       "url": "https://github.com/simpsoka/zigzag",
-      "signal": "742 points \u00b7 258 comments",
+      "signal": "743 points \u00b7 260 comments",
       "snippet": "https://x.com/simpsoka/status/2115254318161182876"
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: Subvocal \u2013 Talk to your computer without making noise",
-      "url": "https://news.ycombinator.com/item?id=50340088",
-      "signal": "849 points \u00b7 395 comments",
-      "snippet": "Hi HN, we're Aarush and Arnav from The Subvocal Company (YC F26) (https://subvocal.company/). We\u2019re building smart glasses that let you talk to your computer without talking out loud. You can mouth wo"
     },
     {
       "source": "show_hn",
@@ -169,7 +166,7 @@
       "source": "show_hn",
       "title": "Show HN: Every satellite that passed over any place this week, and its photos",
       "url": "https://www.watched.earth",
-      "signal": "497 points \u00b7 89 comments",
+      "signal": "503 points \u00b7 89 comments",
       "snippet": "hey HN, i built this because I'm a satellite nerd who was bored this past weekend. type in any place and it finds every satellite that passed over it in the last 7 days (SGP4 on the CelesTrak catalog,"
     },
     {
@@ -190,7 +187,7 @@
       "source": "show_hn",
       "title": "Show HN: Get your coding agent off ~2019 JavaScript, onto modern web primitives",
       "url": "https://github.com/GoogleChrome/modern-web-guidance",
-      "signal": "448 points \u00b7 146 comments",
+      "signal": "449 points \u00b7 146 comments",
       "snippet": "Browsers natively handle a lot of what used to take 50 lines of JS (or a dependency): `CSS.highlights` for text range highlighting without <span>s everywhere, `<dialog>` and showModal() give you backd"
     },
     {
@@ -223,24 +220,17 @@
     },
     {
       "source": "show_hn",
+      "title": "Show HN: I made an audio-to-MIDI model 60x more efficient",
+      "url": "https://kobi.music/research/dettato",
+      "signal": "305 points \u00b7 69 comments",
+      "snippet": "I released dettato, my open weight audio to midi transcription model. It beats muscriptor 1.3b on every set and is roughly 60x smaller, without training on copyrighted recordings. Feel free to ask que"
+    },
+    {
+      "source": "show_hn",
       "title": "Show HN: Yogurt \u2013 Free, private, open-source alternative to Granola",
       "url": "https://github.com/FrigadeHQ/yogurt",
-      "signal": "306 points \u00b7 118 comments",
+      "signal": "307 points \u00b7 119 comments",
       "snippet": "Hey HN, I\u2019m Eric and I want to share an OSS project that I\u2019ve been building in my free time. Yogurt is a free, MIT licensed desktop app that uses on-device AI models to transcribe, summarize, and chat"
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: Alloy CSS, dialogs, menus and tabs that work with JavaScript off",
-      "url": "https://alloyhtml.com/example.html",
-      "signal": "196 points \u00b7 33 comments",
-      "snippet": ""
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: DeepSeek V3 in ~200 lines of pure Jax",
-      "url": "https://github.com/Vaibhaav-Tiwari/deepseek-v3-jax",
-      "signal": "276 points \u00b7 30 comments",
-      "snippet": ""
     },
     {
       "source": "show_hn",
@@ -253,7 +243,7 @@
       "source": "show_hn",
       "title": "Show HN: Coldframe, a honeypot that poses as a supermarket fridge controller",
       "url": "https://github.com/hedgerow-dev/coldframe",
-      "signal": "290 points \u00b7 70 comments",
+      "signal": "291 points \u00b7 70 comments",
       "snippet": "I built Coldframe, a honeypot that pretends to be a supermarket refrigeration controller. Inspired by the events on industrial fridge installations in the past weeks, I wanted to see what people would"
     },
     {
@@ -262,6 +252,20 @@
       "url": "https://www.linum.ai/field-notes/pjit-21k",
       "signal": "287 points \u00b7 30 comments",
       "snippet": "My brother and I run a 2-person lab that trains our own generative video models from scratch. The ultimate goal is a set of creative tools that make it easier for anyone to make animation. Video model"
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: DeepSeek V3 in ~200 lines of pure Jax",
+      "url": "https://github.com/Vaibhaav-Tiwari/deepseek-v3-jax",
+      "signal": "276 points \u00b7 30 comments",
+      "snippet": ""
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: ExitPath \u2013 Open-source ways out of Slack, Notion and Microsoft 365",
+      "url": "https://exitpath-ruddy.vercel.app/",
+      "signal": "251 points \u00b7 94 comments",
+      "snippet": ""
     }
   ]
 }
