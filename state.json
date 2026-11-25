@@ -1,14 +1,11 @@
 {
   "topics": [
-    "Bypass hardware subscription Python script saved me $180 a year",
-    "Firecrawl Python agent I built in 85 lines for automated web research",
-    "Vibe coding tutorial Cursor: I built a live dashboard in 3 hours"
+    "Firecrawl Python Agent: I Built an AI Web Scraper in 75 Lines",
+    "Agentic Dev Workflow: How I Built a Dashboard in 3 Hours With Obra",
+    "Solo Dev Viral Project: How I Hit 1.8k Upvotes on Show HN in a Weekend"
   ],
-  "date": "November 22, 2026",
+  "date": "November 25, 2026",
   "title_history": [
-    "JavaScript Canvas Game Tutorial: How I Built a Viral SimCity Clone",
-    "Anthropic Agent Skills Tutorial: Build a Python Tool Harness in 75 Lines",
-    "Build Directory Website Serverless: My 0-Backend Stack for 26-Day Bookings",
     "Vanilla JS Map Tutorial: Build a Satellite Tracker in 4 Hours",
     "Anthropic Agent Skills Python: Build a Harness in 80 Lines",
     "Vibe Coding Tutorial: I Built an AR Canvas App in 3 Hours",
@@ -35,98 +32,100 @@
     "Dynamic Tool Injection Python: Why Passing 50 Tools Breaks Claude Agents",
     "Bypass hardware subscription Python script saved me $180 a year",
     "Firecrawl Python agent I built in 85 lines for automated web research",
-    "Vibe coding tutorial Cursor: I built a live dashboard in 3 hours"
+    "Vibe coding tutorial Cursor: I built a live dashboard in 3 hours",
+    "Firecrawl Python Agent: I Built an AI Web Scraper in 75 Lines",
+    "Agentic Dev Workflow: How I Built a Dashboard in 3 Hours With Obra",
+    "Solo Dev Viral Project: How I Hit 1.8k Upvotes on Show HN in a Weekend"
   ],
   "last_update_id": 70323306,
   "virality_data": [
     {
-      "topic": "I replaced a $15/mo embroidery app subscription with an 80-line Python reverse-engineering script",
-      "category": "E",
-      "category_name": "Money / Income Story",
-      "virality_score": 94,
-      "analysis": "Anti-subscription hardware hacking posts trigger massive engagement on Medium because they blend personal spite with concrete dev savings. Built on the viral Show HN hit where a developer bypassed paywalled embroidery hardware, this taps right into the current reader anger toward micro-subscription bloat. Suman can detail how inspecting raw USB/hardware protocols in Python turned an overpriced subscription into a free 80-line open-source utility.",
+      "topic": "I Built a Local Web Scraper Agent with Firecrawl in 75 Lines of Python",
+      "category": "C",
+      "category_name": "AI Agents & Multi-Agent Workflows",
+      "virality_score": 93,
+      "analysis": "Firecrawl is currently dominating GitHub trending (209k+ stars/activity) as developers pivot from brittle Selenium scripts to intelligent agentic web scrapers. Existing posts explain basic REST endpoints, but devs are desperate for clean, working agent integration code that feeds clean Markdown directly into LLM contexts. This post delivers a copy-pasteable 75-line Python script solving dynamic page extraction and bot detection without expensive proxy setups.",
       "cross_source_signals": [
-        "Hacker News: 743 points on 'My $300 embroidery machine needed a subscription, so I built my own app'",
-        "GitHub: simpsoka/zigzag repository gaining rapid stars",
-        "X/Twitter: 2100+ likes on original hardware teardown thread"
+        "GitHub: firecrawl/firecrawl trending (#10 on signal cluster)",
+        "HackerNews: High interest in AI knowledge infrastructure and web extraction",
+        "Medium 2026 Trend: High demand for lightweight Python AI agents"
       ],
       "developer_pain": "high",
       "freshness": "breaking",
-      "money_angle": "$180/year saved per device by refusing SaaS micro-transactions on owned hardware",
-      "story_angle": "When my hardware started demanding a monthly SaaS subscription to send files over USB, I spent my weekend reverse-engineering the protocol instead of paying $15/month.",
-      "suman_angle": "How I saved $180/year by writing an 80-line Python controller for my 'smart' device",
+      "money_angle": "Replaces $200/mo SaaS scraping tools with a self-hosted agent workflow",
+      "story_angle": "I got tired of my web scrapers breaking whenever target sites updated their DOM, so I built an autonomous Firecrawl Python agent in 75 lines.",
+      "suman_angle": "Firecrawl Python Agent: How I Built a Web Scraping AI Engine in 75 Lines",
       "target_keywords": [
-        "bypass hardware subscription python",
-        "reverse engineer usb device python",
-        "hardware saas alternative script"
+        "firecrawl python agent",
+        "ai web scraper tutorial",
+        "build research agent python"
       ],
-      "competing_articles": "Most hardware hacking posts are overly academic; Suman gives a direct 80-line Python solution that any developer can clone to bypass predatory hardware lock-in.",
-      "real_story_evidence": [
-        {
-          "source": "Hacker News (Show HN)",
-          "title": "Show HN: My $300 embroidery machine needed a subscription, so I built my own app",
-          "url": "https://github.com/simpsoka/zigzag",
-          "what_to_cite": "Reference how simpsoka built 'zigzag' to replace a forced monthly subscription on a $300 machine, proving hardware can be freed with open-source code."
-        }
-      ]
+      "competing_articles": "Most guides cover simple API GET requests; Suman provides a complete autonomous extraction harness built specifically for AI agents.",
+      "real_story_evidence": []
     },
     {
-      "topic": "Building an autonomous research web scraper agent using Firecrawl and Python in under 100 lines",
-      "category": "C",
-      "category_name": "AI Agents & Multi-Agent Workflows",
+      "topic": "How I Built an Agentic Dev Workflow with Obra Superpowers in 3 Hours",
+      "category": "B",
+      "category_name": "Vibe Coding / AI-Assisted Workflow",
       "virality_score": 91,
-      "analysis": "Firecrawl is currently dominating GitHub trending as the go-to web data infrastructure for LLM agents, making concrete integration code extremely valuable. Readers are looking for clean patterns to feed dynamic web data into LLMs without dealing with raw HTML junk. Suman can share a modular 90-line Python workflow that orchestrates web search, scraping, and markdown synthesis for agent memory.",
+      "analysis": "The `obra/superpowers` repository has exploded on GitHub (326k+ stars/signals) as the modern framework for agentic software development workflows. Devs are moving beyond raw Cursor prompting to structured skill-based agent orchestration. Suman walk readers through implementing this methodology hands-on to vibe-code a modular dashboard in an afternoon.",
       "cross_source_signals": [
-        "GitHub: firecrawl/firecrawl trending with 200,000+ stars",
-        "Dev.to: surge in 'AI agent data pipeline' posts",
-        "Google Trends: high search volume for 'firecrawl python tutorial'"
+        "GitHub: obra/superpowers top 5 ranked signal cluster",
+        "HackerNews: Discussions on agentic skill frameworks vs standard prompts",
+        "Google Trends: 'agentic workflow coding' search volume rising"
       ],
       "developer_pain": "high",
       "freshness": "breaking",
       "money_angle": "",
-      "story_angle": "I built an autonomous deep-research agent that scrapes 50+ pages in seconds without hitting rate limits or returning dirty HTML.",
-      "suman_angle": "How I built a zero-bloat web research agent in 85 lines of Python using Firecrawl",
+      "story_angle": "Standard vibe coding kept breaking on complex refactors until I plugged the Superpowers framework into my AI dev pipeline.",
+      "suman_angle": "Vibe Coding with Agent Superpowers: How I Built a Modular Dashboard in 3 Hours",
       "target_keywords": [
-        "firecrawl python agent",
-        "build research agent python",
-        "llm web scraper architecture"
+        "obra superpowers framework",
+        "vibe coding tutorial",
+        "agentic dev workflow"
       ],
-      "competing_articles": "Existing agent tutorials rely on heavy multi-agent frameworks like CrewAI; Suman shows a light, dependency-free Python script using native APIs.",
+      "competing_articles": "Existing posts talk vaguely about vibe coding; Suman shares exact agentic skill definitions, diffs, and terminal outputs.",
       "real_story_evidence": []
     },
     {
-      "topic": "How I built a zero-backend 24/7 tech broadcast stream using HN data and Node.js",
-      "category": "B",
-      "category_name": "Vibe Coding / AI-Assisted Workflow",
-      "virality_score": 88,
-      "analysis": "Content curation platforms converting forum signals (like Hacker News) into dynamic web interfaces are consistently topping Hacker News and trending on GitHub. Combining AI assistance (Cursor + Claude) to vibe-code a real-time media player in an afternoon delivers high bookmark rates on Medium. Suman demonstrates how to quickly wire public RSS/API endpoints into a sleek, automated frontend interface.",
+      "topic": "How I Built a Book Recommendation Engine and Reached 1.8k Likes on Show HN",
+      "category": "A",
+      "category_name": "Developer Success Story",
+      "virality_score": 94,
+      "analysis": "HackerBooks went massively viral on Show HN with 1,870 points by scraping and indexing over 16.5k books recommended across 19 years of Hacker News comments. Medium readers in late 2026 are obsessed with 'one-person build' stories where simple datasets are turned into sticky micro-apps. Suman dissects the data pipeline, architectural simplicity, and exact growth numbers behind building viral HN aggregators.",
       "cross_source_signals": [
-        "Hacker News: 491 points on HackerTV project",
-        "Hacker News: 1870 points on HackerBooks project",
-        "GitHub: rising trend of single-weekend curation applications"
+        "HackerNews: Show HN: HackerBooks (1870 points, 308 comments)",
+        "Medium 2026 Trend: Solo dev build-in-public breakdowns get 80%+ read ratios"
       ],
       "developer_pain": "medium",
       "freshness": "fresh",
-      "money_angle": "$0 hosting costs using static web hosting and public APIs",
-      "story_angle": "I wanted a continuous stream of top tech media playing in my background, so I vibe-coded a static broadcast dashboard in 3 hours using Cursor.",
-      "suman_angle": "How I vibe-coded a zero-backend tech dashboard in 3 hours with Cursor + Claude",
+      "money_angle": "Zero-ad micro-site driving 50k+ daily visitors with minimal server overhead",
+      "story_angle": "I noticed HN users constantly asking for book recommendations, so I analyzed 19 years of comments and built HackerBooks in a weekend.",
+      "suman_angle": "From 0 to 1,800 Upvotes: How I Built a Viral 16.5k Book Engine in One Weekend",
       "target_keywords": [
-        "vibe coding tutorial cursor",
-        "hacker news api dashboard nodejs",
-        "build static web app claude"
+        "hacker news dataset",
+        "hackerbooks build story",
+        "solo dev viral project"
       ],
-      "competing_articles": "Most vibe-coding stories lack concrete repo architecture; Suman provides the full frontend loop and prompt history.",
+      "competing_articles": "Generic guides talk about basic data scraping; Suman breaks down real traffic metrics, parsing challenges across 19 years of text, and architecture details.",
       "real_story_evidence": [
         {
           "source": "Hacker News (Show HN)",
-          "title": "Show HN: HackerTV \u2013 HN's most-recommended Youtube videos as 24/7 TV channels",
-          "url": "https://hackertv.org",
-          "what_to_cite": "Cite how HackerTV aggregated 19 years of Hacker News video recommendations into automated 24/7 streams."
+          "title": "Show HN: HackerBooks \u2013 HackerTube, but for books mentioned on HN",
+          "url": "https://hackerbooks.org",
+          "what_to_cite": "Scraped 16.5k books mentioned at least twice across 19 years of HN comments, scoring 1,870 upvotes on Show HN."
         }
       ]
     }
   ],
   "success_stories": [
+    {
+      "source": "show_hn",
+      "title": "Show HN: Old Nvidia and ATI tech demos, running again in the browser",
+      "url": "https://gpu-demo-gallery.pages.dev/",
+      "signal": "156 points \u00b7 38 comments",
+      "snippet": ""
+    },
     {
       "source": "show_hn",
       "title": "Show HN: HackerBooks \u2013 HackerTube, but for books mentioned on HN",
@@ -157,10 +156,10 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: Steal My Bitcoin",
-      "url": "https://stealmybitcoin.com/",
-      "signal": "627 points \u00b7 451 comments",
-      "snippet": "Made this because I'm curious if anyone out there has figured out how to actually use this PHP RCE we spent the last few days panicking over. Have fun!"
+      "title": "Show HN: I built a game where you are an LLM's subagent",
+      "url": "https://github.com/gulivan/worker755",
+      "signal": "360 points \u00b7 89 comments",
+      "snippet": ""
     },
     {
       "source": "show_hn",
@@ -192,13 +191,6 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: TitleArt \u2013 Make text like it's 1997",
-      "url": "https://titleart.dvy.io/",
-      "signal": "411 points \u00b7 82 comments",
-      "snippet": ""
-    },
-    {
-      "source": "show_hn",
       "title": "Show HN: Warsaw in voxels \u2013 An interactive 3D map of the city centre",
       "url": "https://p.migdal.pl/warsaw-vibe-voxel/",
       "signal": "328 points \u00b7 55 comments",
@@ -213,23 +205,16 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: A Truly Modular Keyboard",
-      "url": "https://github.com/notaroomba/keybytes",
-      "signal": "320 points \u00b7 116 comments",
-      "snippet": ""
-    },
-    {
-      "source": "show_hn",
       "title": "Show HN: I made an audio-to-MIDI model 60x more efficient",
       "url": "https://kobi.music/research/dettato",
-      "signal": "305 points \u00b7 69 comments",
+      "signal": "311 points \u00b7 70 comments",
       "snippet": "I released dettato, my open weight audio to midi transcription model. It beats muscriptor 1.3b on every set and is roughly 60x smaller, without training on copyrighted recordings. Feel free to ask que"
     },
     {
       "source": "show_hn",
       "title": "Show HN: Yogurt \u2013 Free, private, open-source alternative to Granola",
       "url": "https://github.com/FrigadeHQ/yogurt",
-      "signal": "307 points \u00b7 119 comments",
+      "signal": "308 points \u00b7 119 comments",
       "snippet": "Hey HN, I\u2019m Eric and I want to share an OSS project that I\u2019ve been building in my free time. Yogurt is a free, MIT licensed desktop app that uses on-device AI models to transcribe, summarize, and chat"
     },
     {
@@ -262,9 +247,16 @@
     },
     {
       "source": "show_hn",
-      "title": "Show HN: ExitPath \u2013 Open-source ways out of Slack, Notion and Microsoft 365",
-      "url": "https://exitpath-ruddy.vercel.app/",
-      "signal": "251 points \u00b7 94 comments",
+      "title": "Show HN: Point your camera at a landscape to learn about its geology",
+      "url": "https://outcrop.rocks/",
+      "signal": "263 points \u00b7 55 comments",
+      "snippet": "I've been working on a fun little app that paints geologic maps over landscapes using augmented reality. You can use it to identify what the mapped rocks are, read descriptions about them, and view th"
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Valencia, Spain in Sim City/Isometric View",
+      "url": "https://tinyvalencia.com/",
+      "signal": "262 points \u00b7 63 comments",
       "snippet": ""
     }
   ]
