@@ -1,14 +1,11 @@
 {
   "topics": [
-    "Firecrawl Python Agent: I Built an AI Web Scraper in 75 Lines",
-    "Agentic Dev Workflow: How I Built a Dashboard in 3 Hours With Obra",
-    "Solo Dev Viral Project: How I Hit 1.8k Upvotes on Show HN in a Weekend"
+    "Local LLM setup guide: How I Cancelled $45/mo in AI Subscriptions",
+    "Automate data scraping python: How I Extracted 500+ Docs Daily",
+    "Agentic software development methodology: My Python Agent Workflow"
   ],
-  "date": "November 25, 2026",
+  "date": "November 27, 2026",
   "title_history": [
-    "Vanilla JS Map Tutorial: Build a Satellite Tracker in 4 Hours",
-    "Anthropic Agent Skills Python: Build a Harness in 80 Lines",
-    "Vibe Coding Tutorial: I Built an AR Canvas App in 3 Hours",
     "Cursor Prompt Rules That Stopped Claude from Writing 2019 JavaScript",
     "YouTube API Automation: How I Built a 24/7 TV Channel in 85 Lines",
     "Web Audio API Tutorial: I Built a Synth in Vanilla JS with Zero Lag",
@@ -35,97 +32,106 @@
     "Vibe coding tutorial Cursor: I built a live dashboard in 3 hours",
     "Firecrawl Python Agent: I Built an AI Web Scraper in 75 Lines",
     "Agentic Dev Workflow: How I Built a Dashboard in 3 Hours With Obra",
-    "Solo Dev Viral Project: How I Hit 1.8k Upvotes on Show HN in a Weekend"
+    "Solo Dev Viral Project: How I Hit 1.8k Upvotes on Show HN in a Weekend",
+    "Local LLM setup guide: How I Cancelled $45/mo in AI Subscriptions",
+    "Automate data scraping python: How I Extracted 500+ Docs Daily",
+    "Agentic software development methodology: My Python Agent Workflow"
   ],
   "last_update_id": 70323306,
   "virality_data": [
     {
-      "topic": "I Built a Local Web Scraper Agent with Firecrawl in 75 Lines of Python",
-      "category": "C",
-      "category_name": "AI Agents & Multi-Agent Workflows",
-      "virality_score": 93,
-      "analysis": "Firecrawl is currently dominating GitHub trending (209k+ stars/activity) as developers pivot from brittle Selenium scripts to intelligent agentic web scrapers. Existing posts explain basic REST endpoints, but devs are desperate for clean, working agent integration code that feeds clean Markdown directly into LLM contexts. This post delivers a copy-pasteable 75-line Python script solving dynamic page extraction and bot detection without expensive proxy setups.",
+      "topic": "I built a self-hosted AI dashboard using JanLukas's stack that replaced my $45/mo cloud tools",
+      "category": "A",
+      "category_name": "Developer Success Story",
+      "virality_score": 91,
+      "analysis": "Self-hosting with local LLMs and modern light stacks is exploding on Hacker News right now (741+ points). Developers are exhausted by micro-subscriptions for simple services and want complete local control. Bridging JanLukas's self-hosting philosophy with a practical dev setup hits the exact sweet spot for high Medium read-ratios.",
       "cross_source_signals": [
-        "GitHub: firecrawl/firecrawl trending (#10 on signal cluster)",
-        "HackerNews: High interest in AI knowledge infrastructure and web extraction",
-        "Medium 2026 Trend: High demand for lightweight Python AI agents"
+        "Hacker News: 'AI made self-hosting fun again' (741 points, 368 comments)",
+        "GitHub: Ollama and LocalAI daily trending",
+        "Dev.to: Self-hosting topics seeing 2x engagement growth"
       ],
       "developer_pain": "high",
       "freshness": "breaking",
-      "money_angle": "Replaces $200/mo SaaS scraping tools with a self-hosted agent workflow",
-      "story_angle": "I got tired of my web scrapers breaking whenever target sites updated their DOM, so I built an autonomous Firecrawl Python agent in 75 lines.",
-      "suman_angle": "Firecrawl Python Agent: How I Built a Web Scraping AI Engine in 75 Lines",
+      "money_angle": "Cut $540/year in SaaS subscriptions by moving to a local AI self-hosted stack",
+      "story_angle": "After auditing my credit card statements, I realized I was paying $45/month for basic SaaS AI tools that I could easily self-host on an old mini-PC.",
+      "suman_angle": "How I replaced $45/mo in AI micro-SaaS with a self-hosted local stack (and why it's faster)",
       "target_keywords": [
-        "firecrawl python agent",
-        "ai web scraper tutorial",
-        "build research agent python"
+        "self hosted ai dashboard",
+        "local llm setup guide",
+        "ai micro saas alternatives"
       ],
-      "competing_articles": "Most guides cover simple API GET requests; Suman provides a complete autonomous extraction harness built specifically for AI agents.",
-      "real_story_evidence": []
+      "competing_articles": "Most self-hosting guides are heavy Kubernetes/Docker-compose dumps; Suman shows a ultra-lean Python + Vanilla JS architecture with real performance benchmarks.",
+      "real_story_evidence": [
+        {
+          "source": "Hacker News",
+          "title": "AI made self-hosting fun again",
+          "url": "https://janlukas.blog/posts/ai-self-hosting",
+          "what_to_cite": "Cite JanLukas's thesis that local LLMs render complex cloud setups obsolete for personal workflows."
+        }
+      ]
     },
     {
-      "topic": "How I Built an Agentic Dev Workflow with Obra Superpowers in 3 Hours",
-      "category": "B",
-      "category_name": "Vibe Coding / AI-Assisted Workflow",
-      "virality_score": 91,
-      "analysis": "The `obra/superpowers` repository has exploded on GitHub (326k+ stars/signals) as the modern framework for agentic software development workflows. Devs are moving beyond raw Cursor prompting to structured skill-based agent orchestration. Suman walk readers through implementing this methodology hands-on to vibe-code a modular dashboard in an afternoon.",
+      "topic": "Automating 500+ document extractions a day with Firecrawl and Python",
+      "category": "D",
+      "category_name": "AI Automation Across Domains",
+      "virality_score": 89,
+      "analysis": "Firecrawl is currently exploding on GitHub with over 200k+ stars as the premier knowledge scraping engine for agents. Devs are desperate to bridge web data directly into structured business pipelines. This topic moves beyond basic web scraping into robust enterprise data extraction.",
       "cross_source_signals": [
-        "GitHub: obra/superpowers top 5 ranked signal cluster",
-        "HackerNews: Discussions on agentic skill frameworks vs standard prompts",
-        "Google Trends: 'agentic workflow coding' search volume rising"
+        "GitHub: firecrawl/firecrawl (211k+ stars, top trending repository)",
+        "Medium: High search demand for LLM data extraction pipelines"
+      ],
+      "developer_pain": "high",
+      "freshness": "fresh",
+      "money_angle": "Replaced an expensive enterprise web-scraping API subscription with an open-source pipeline",
+      "story_angle": "My client spent 15 hours a week manually copy-pasting specs from tech vendor pages into PostgreSQL\u2014so I automated the entire web pipeline in 80 lines of Python.",
+      "suman_angle": "How I automated 500+ document extractions a day with Firecrawl and Python (Full Code)",
+      "target_keywords": [
+        "firecrawl python tutorial",
+        "ai web data extraction pipeline",
+        "automate data scraping python"
+      ],
+      "competing_articles": "Most scraping articles cover static BeautifulSoup scripts that break on modern JS rendering; Suman uses modern Firecrawl agent primitives for clean JSON extraction.",
+      "real_story_evidence": [
+        {
+          "source": "GitHub",
+          "title": "firecrawl/firecrawl Knowledge infrastructure to make your agents smarter",
+          "url": "https://github.com/firecrawl/firecrawl",
+          "what_to_cite": "Reference Firecrawl's web-to-LLM ready markdown format and dynamic crawling capabilities."
+        }
+      ]
+    },
+    {
+      "topic": "Building a custom software development methodology using Obra Superpowers",
+      "category": "C",
+      "category_name": "AI Agents & Multi-Agent Workflows",
+      "virality_score": 93,
+      "analysis": "The 'obra/superpowers' framework is one of the viral repositories on GitHub right now (over 320k stars signal), defining agentic skills and software development workflows. Medium readers want concrete orchestration patterns, not just basic single-prompt scripts. Showing how to implement an agentic methodology step-by-step is prime editorial boost material.",
+      "cross_source_signals": [
+        "GitHub: obra/superpowers (327k stars, top trending repo)",
+        "Hacker News: High discussion volume around agentic software development"
       ],
       "developer_pain": "high",
       "freshness": "breaking",
       "money_angle": "",
-      "story_angle": "Standard vibe coding kept breaking on complex refactors until I plugged the Superpowers framework into my AI dev pipeline.",
-      "suman_angle": "Vibe Coding with Agent Superpowers: How I Built a Modular Dashboard in 3 Hours",
+      "story_angle": "Single-prompt coding tools kept breaking my larger codebases, so I configured an agentic skills framework to automate modular code architecture.",
+      "suman_angle": "Building an agentic skills framework in Python: How I structured autonomous dev workflows",
       "target_keywords": [
-        "obra superpowers framework",
-        "vibe coding tutorial",
-        "agentic dev workflow"
+        "agentic software development methodology",
+        "obra superpowers tutorial",
+        "multi agent dev workflow python"
       ],
-      "competing_articles": "Existing posts talk vaguely about vibe coding; Suman shares exact agentic skill definitions, diffs, and terminal outputs.",
-      "real_story_evidence": []
-    },
-    {
-      "topic": "How I Built a Book Recommendation Engine and Reached 1.8k Likes on Show HN",
-      "category": "A",
-      "category_name": "Developer Success Story",
-      "virality_score": 94,
-      "analysis": "HackerBooks went massively viral on Show HN with 1,870 points by scraping and indexing over 16.5k books recommended across 19 years of Hacker News comments. Medium readers in late 2026 are obsessed with 'one-person build' stories where simple datasets are turned into sticky micro-apps. Suman dissects the data pipeline, architectural simplicity, and exact growth numbers behind building viral HN aggregators.",
-      "cross_source_signals": [
-        "HackerNews: Show HN: HackerBooks (1870 points, 308 comments)",
-        "Medium 2026 Trend: Solo dev build-in-public breakdowns get 80%+ read ratios"
-      ],
-      "developer_pain": "medium",
-      "freshness": "fresh",
-      "money_angle": "Zero-ad micro-site driving 50k+ daily visitors with minimal server overhead",
-      "story_angle": "I noticed HN users constantly asking for book recommendations, so I analyzed 19 years of comments and built HackerBooks in a weekend.",
-      "suman_angle": "From 0 to 1,800 Upvotes: How I Built a Viral 16.5k Book Engine in One Weekend",
-      "target_keywords": [
-        "hacker news dataset",
-        "hackerbooks build story",
-        "solo dev viral project"
-      ],
-      "competing_articles": "Generic guides talk about basic data scraping; Suman breaks down real traffic metrics, parsing challenges across 19 years of text, and architecture details.",
+      "competing_articles": "Most agent articles treat LLMs as simple chat interfaces; Suman demonstrates an actual agentic skills framework that enforces code standards and project structures.",
       "real_story_evidence": [
         {
-          "source": "Hacker News (Show HN)",
-          "title": "Show HN: HackerBooks \u2013 HackerTube, but for books mentioned on HN",
-          "url": "https://hackerbooks.org",
-          "what_to_cite": "Scraped 16.5k books mentioned at least twice across 19 years of HN comments, scoring 1,870 upvotes on Show HN."
+          "source": "GitHub",
+          "title": "obra/superpowers An agentic skills framework & software development methodology that works",
+          "url": "https://github.com/obra/superpowers",
+          "what_to_cite": "Cite the superpowers agentic framework architecture and skill definition patterns."
         }
       ]
     }
   ],
   "success_stories": [
-    {
-      "source": "show_hn",
-      "title": "Show HN: Old Nvidia and ATI tech demos, running again in the browser",
-      "url": "https://gpu-demo-gallery.pages.dev/",
-      "signal": "156 points \u00b7 38 comments",
-      "snippet": ""
-    },
     {
       "source": "show_hn",
       "title": "Show HN: HackerBooks \u2013 HackerTube, but for books mentioned on HN",
@@ -149,17 +155,24 @@
     },
     {
       "source": "show_hn",
+      "title": "Show HN: Old Nvidia and ATI tech demos, running again in the browser",
+      "url": "https://gpu-demo-gallery.pages.dev/",
+      "signal": "355 points \u00b7 80 comments",
+      "snippet": ""
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: I wrote an entire Vim manual over 4 years",
+      "url": "http://themouseless.dev/vim/",
+      "signal": "186 points \u00b7 57 comments",
+      "snippet": "I'm glad to announce that I'm releasing my new book, Learning to Play Vim. When I started using Vim more than a decade ago, I wished there was a manual out there teaching how to use this fantastic edi"
+    },
+    {
+      "source": "show_hn",
       "title": "Show HN: My $300 embroidery machine needed a subscription, so I built my own app",
       "url": "https://github.com/simpsoka/zigzag",
       "signal": "743 points \u00b7 260 comments",
       "snippet": "https://x.com/simpsoka/status/2115254318161182876"
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: I built a game where you are an LLM's subagent",
-      "url": "https://github.com/gulivan/worker755",
-      "signal": "360 points \u00b7 89 comments",
-      "snippet": ""
     },
     {
       "source": "show_hn",
@@ -184,6 +197,13 @@
     },
     {
       "source": "show_hn",
+      "title": "Show HN: I built a game where you are an LLM's subagent",
+      "url": "https://github.com/gulivan/worker755",
+      "signal": "362 points \u00b7 90 comments",
+      "snippet": ""
+    },
+    {
+      "source": "show_hn",
       "title": "Show HN: Get your coding agent off ~2019 JavaScript, onto modern web primitives",
       "url": "https://github.com/GoogleChrome/modern-web-guidance",
       "signal": "449 points \u00b7 146 comments",
@@ -202,6 +222,13 @@
       "url": "https://github.com/ivankovic/omnidiff",
       "signal": "322 points \u00b7 97 comments",
       "snippet": "I have been researching what the ultimate diff tool would look like, based on actual diffs in open source repositories. OmniDiff can diff: code (25 languages), config, images, PDFs, archives, cursors,"
+    },
+    {
+      "source": "show_hn",
+      "title": "Show HN: Fuck_data_brokers.py",
+      "url": "https://github.com/gary23w/f-ck_data_brokers",
+      "signal": "236 points \u00b7 52 comments",
+      "snippet": ""
     },
     {
       "source": "show_hn",
@@ -243,20 +270,6 @@
       "title": "Show HN: DeepSeek V3 in ~200 lines of pure Jax",
       "url": "https://github.com/Vaibhaav-Tiwari/deepseek-v3-jax",
       "signal": "276 points \u00b7 30 comments",
-      "snippet": ""
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: Point your camera at a landscape to learn about its geology",
-      "url": "https://outcrop.rocks/",
-      "signal": "263 points \u00b7 55 comments",
-      "snippet": "I've been working on a fun little app that paints geologic maps over landscapes using augmented reality. You can use it to identify what the mapped rocks are, read descriptions about them, and view th"
-    },
-    {
-      "source": "show_hn",
-      "title": "Show HN: Valencia, Spain in Sim City/Isometric View",
-      "url": "https://tinyvalencia.com/",
-      "signal": "262 points \u00b7 63 comments",
       "snippet": ""
     }
   ]
